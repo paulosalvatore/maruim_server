@@ -166,7 +166,7 @@ function Player.addProfissaoSkillExp(self, profissaoId, experiencia)
 	local skillExp = self:getProfissaoSkillExp(profissaoId)
 	local skillExpProxLevel = calcularLevelProfissao(skill+1)
 	local novaExperiencia = 0
-	if experiencia + skillExp >= skillExpProxLevel then
+	if skill < configProfissoes.nivelMaximoProfissao and experiencia + skillExp >= skillExpProxLevel then
 		novaExperiencia = experiencia+skillExp-skillExpProxLevel
 		self:addProfissaoSkill(profissaoId)
 	else
