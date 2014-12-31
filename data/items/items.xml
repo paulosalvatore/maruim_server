@@ -21562,6 +21562,24 @@
 	<item id="13190" article="a" name="hole">
 		<attribute key="floorchange" value="down" />
 	</item>
+	<item id="13193" name="small red powder">
+		<attribute key="weight" value="10" />
+	</item>
+	<item id="13194" name="small yellow powder">
+		<attribute key="weight" value="10" />
+	</item>
+	<item id="13195" name="small blue powder">
+		<attribute key="weight" value="10" />
+	</item>
+	<item id="13196" name="strange green powder">
+		<attribute key="weight" value="50" />
+	</item>
+	<item id="13197" name="strange purple powder">
+		<attribute key="weight" value="50" />
+	</item>
+	<item id="13198" name="strange orange powder">
+		<attribute key="weight" value="50" />
+	</item>
 	<item fromid="13199" toid="13200" article="a" name="stone" />
 	<item fromid="13201" toid="13212" article="a" name="dark sand" />
 	<item id="13213" name="strange red powder">
