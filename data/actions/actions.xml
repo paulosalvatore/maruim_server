@@ -35,6 +35,14 @@
 	<action itemid="1791" script="crafting.lua"/>
 	<action itemid="1793" script="crafting.lua"/>
 	
+	<!-- Testes -->
+	<!--
+	<action fromid="1786" toid="1793" script="teste.lua"/>
+	<action itemid="1445" script="teste.lua"/>
+	<action actionid="7618" script="teste.lua"/>
+	<action itemid="9067" script="teste.lua"/>
+	-->
+	
 	<!-- Quests -->
 	<action itemid="1740" script="quests/quests.lua"/>
 	<action fromid="1747" toid="1749" script="quests/quests.lua"/>
@@ -81,13 +89,9 @@
 	<action itemid="2096" function="increaseItemId"/>
 	<action itemid="2097" function="decreaseItemId"/>
 	<action itemid="1786" function="increaseItemId"/>
-	<action itemid="1787" function="decreaseItemId"/>
 	<action itemid="1788" function="increaseItemId"/>
-	<action itemid="1789" function="decreaseItemId"/>
 	<action itemid="1790" function="increaseItemId"/>
-	<action itemid="1791" function="decreaseItemId"/>
 	<action itemid="1792" function="increaseItemId"/>
-	<action itemid="1793" function="decreaseItemId"/>
 	<action itemid="1634" function="increaseItemId"/>
 	<action itemid="1635" function="decreaseItemId"/>
 	<action itemid="1636" function="increaseItemId"/>
