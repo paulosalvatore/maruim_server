@@ -1,4 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if itemEx.itemid == 5464 then
 		local iEx = Item(itemEx.uid)
 		iEx:transform(5463)
@@ -12,5 +12,5 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		Game.createItem(11245, 1, toPosition)
 		return true
 	end
-	return destroyItem(cid, itemEx, toPosition)
+	return destroyItem(player, itemEx, toPosition)
 end

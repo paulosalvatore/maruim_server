@@ -1,4 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local plantas = {
 		7681,
 		7683,
@@ -60,7 +60,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			doSendMagicEffect(iEx:getPosition(), CONST_ME_BLOCKHIT)
 			return true
 		elseif(isInArray(plantas, itemEx.itemid) or itemEx.itemid == 7678) then
-			local player = Player(cid)
 			player:sendTextMessage(MESSAGE_EVENT_ORANGE, "Essa planta não precisa de água.")
 			return true
 		elseif(plantas_regar[itemEx.itemid]) then
@@ -93,7 +92,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif(item.itemid == 15269) then
 		local chance = math.random(0, 100)
 		if(chance < 20) then
-			local player = Player(cid)
 			player:addItem(15271, 1)
 		end
 		local it = Item(item.uid)

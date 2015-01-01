@@ -26,6 +26,8 @@
 
 	<action actionid="1000" script="tartaruga.lua"/>
 
+	<action itemid="10153" script="golem_disassembler.lua"/>
+
 	<!-- Crafting -->
 	<action itemid="2555" script="crafting.lua"/>
 	<action itemid="8671" script="crafting.lua"/>
@@ -323,6 +325,7 @@
 	<action fromid="17235" toid="17238" script="other/doors.lua" />
 	<action fromid="18208" toid="18209" script="other/doors.lua" />
 	<action fromid="13020" toid="13023" script="other/doors.lua" />
+	<action fromid="14634" toid="14635" script="other/doors.lua" />
 	<action itemid="14405" function="market"/>
 	<action fromid="18488" toid="18492" script="other/skilltrainer.lua" />
 </actions>

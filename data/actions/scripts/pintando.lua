@@ -1,4 +1,4 @@
-function onUse(cid, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if(item.itemid == 16016 and itemEx.itemid == 16017) then
 		Item(item.uid):transform(itemEx.itemid+2)
 	elseif(item.itemid == 16018 and (itemEx.itemid == 16020 or itemEx.itemid == 16021)) then

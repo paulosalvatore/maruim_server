@@ -86,9 +86,8 @@ function criarAgua(posicao, passo)
 	end
 	return true
 end
-function moverTartaruga(cid, direcao_y, posicao, passo)
-	if(isPlayer(cid)) then
-		local player = Player(cid)
+function moverTartaruga(player, direcao_y, posicao, passo)
+	if(isPlayer(player)) then
 		if(passo >= 0) then
 			local posicao_player = posicao + {y = direcao_y - passo}
 			player:teleportTo(posicao_player, true)
@@ -100,8 +99,7 @@ function moverTartaruga(cid, direcao_y, posicao, passo)
 	end
 	if(passo == passos) then
 		posicao = posicao + {y = -4 - passos}
-		if(isPlayer(cid)) then
-			local player = Player(cid)
+		if(isPlayer(player)) then
 			player:teleportTo(posicao, true)
 			posicao:sendMagicEffect(CONST_ME_TELEPORT)
 		end
@@ -109,13 +107,12 @@ function moverTartaruga(cid, direcao_y, posicao, passo)
 	end
 	return true
 end
-function onUse(cid, item, fromPosition, itemEx, toPosition)
-	local player = Player(cid)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local posicao_player = player:getPosition()
 	posicao_player:sendMagicEffect(CONST_ME_POFF)
 	local posicao_objeto = posicao_player + {y = -2}
 	local checar_tartaruga = posicao_objeto:getTile():getGround():getId()
-	local inFight = getCreatureCondition(cid, CONDITION_INFIGHT)
+	local inFight = getCreatureCondition(player, CONDITION_INFIGHT)
 	if(inFight == false) then
 		if(checar_tartaruga == 5755) then
 			if(item.itemid == 1945) then
@@ -126,7 +123,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			local posicao_player = posicao_player + {y = -3}
 			player:teleportTo(posicao_player, true)
 			for i = 0, passos, 1 do
-				addEvent(moverTartaruga, tempo*i, cid, -1, posicao_player, i)
+				addEvent(moverTartaruga, tempo*i, player, -1, posicao_player, i)
 			end
 		else
 			player:sendTextMessage(MESSAGE_STATUS_SMALL, "Aguarde o retorno da tartaruga.")
