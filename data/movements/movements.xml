@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <movements>
+	<!-- Aman -->
 	<movevent event="StepIn" actionid="60000" script="allowMovement.lua"/>
 	<movevent event="StepOut" actionid="60000" script="allowMovement.lua"/>
+	<movevent event="StepIn" itemid="5755" script="tartaruga.lua"/>
+	<movevent event="AddItem" tileitem="1" itemid="6279" script="bolo.lua"/>
 	
 	<!-- Decaying tiles -->
 	<movevent event="StepIn" itemid="293" script="decay.lua"/>
@@ -137,6 +140,10 @@
 	<movevent event="AddItem" tileitem="1" itemid="1788" script="dough.lua"/>
 	<movevent event="AddItem" tileitem="1" itemid="1790" script="dough.lua"/>
 	<movevent event="AddItem" tileitem="1" itemid="1792" script="dough.lua"/>
+	<movevent event="AddItem" tileitem="1" itemid="6356" script="dough.lua"/>
+	<movevent event="AddItem" tileitem="1" itemid="6358" script="dough.lua"/>
+	<movevent event="AddItem" tileitem="1" itemid="6360" script="dough.lua"/>
+	<movevent event="AddItem" tileitem="1" itemid="6362" script="dough.lua"/>
 
 	<!-- Campfires -->
 	<movevent event="StepIn" itemid="1423" function="onStepInField"/>
