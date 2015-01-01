@@ -16,7 +16,7 @@ configProfissoes = {
 profissoes = {
 	[20000] = {
 		nome = "Ferreiro",
-		mesaTrabalho = {2555},
+		mesaTrabalho = {2555, 8671},
 		mesaTrabalhando = {},
 		receitas = {
 			[1] = {item = 2400, nivel = 1, nivelJogador = 1, ferramenta = 2421, materiais = {{2160, 1}}, tempo = 0, experiencia = 1301, pontos = 10, chanceSucesso = 100, aprender = 0, atributos = {ataque = {1, 10}, defesa = {1, 10}, defesaExtra = 1, armadura = {1, 3}}},

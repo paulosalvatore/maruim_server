@@ -7306,7 +7306,10 @@
 	<item fromid="3986" toid="4005" article="a" name="thorn bush" />
 	<item id="4006" article="an" name="orange tree" />
 	<item id="4007" article="a" name="thread tree" />
-	<item id="4008" article="a" name="jungle dweller bush" />
+	<item id="4008" article="a" name="orange tree">
+		<attribute key="decayTo" value="4006" />
+		<attribute key="duration" value="300" />
+	</item>
 	<item id="4009" article="a" name="tower fern" />
 	<item id="4010" article="a" name="snake nest bush" />
 	<item id="4011" article="a" name="green wig bush" />
@@ -8403,7 +8406,10 @@
 		<attribute key="type" value="door" />
 	</item>
 	<item fromid="5146" toid="5155" article="a" name="framework wall" />
-	<item fromid="5156" toid="5157" article="a" name="mango tree" />
+	<item id="5156" article="a" name="mango tree">
+		<attribute key="decayTo" value="5157" />
+		<attribute key="duration" value="300" />
+	</item>
 	<item fromid="5158" toid="5205" article="a" name="striped marquee" />
 	<item fromid="5206" toid="5253" article="a" name="marquee" />
 	<item fromid="5254" toid="5255" article="a" name="wooden railing" />

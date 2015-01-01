@@ -1,12 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
+	<!-- Geral -->
+	<action actionid="2500" script="item_desativado.lua"/>
+
+	<action itemid="6277" script="geral.lua"/>
+	<action itemid="8846" script="geral.lua"/>
+	<action itemid="8848" script="geral.lua"/>
+	<action itemid="9112" script="geral.lua"/>
+	<action itemid="5467" script="geral.lua"/>
+	<action itemid="2566" script="geral.lua"/>
+	<action itemid="4006" script="geral.lua"/>
+	<action itemid="5157" script="geral.lua"/>
+	<action fromid="12014" toid="12017" script="geral.lua"/>
+
+	<action itemid="16016" script="pintando.lua"/>
+	<action fromid="16018" toid="16019" script="pintando.lua"/>
+
+	<action itemid="7734" script="flores.lua"/>
+	<action itemid="15271" script="flores.lua"/>
+	<action itemid="15269" script="flores.lua"/>
+
+	<action itemid="5468" script="firebug.lua"/>
+
+	<action itemid="2405" script="sickle.lua"/>
+
+	<action actionid="1000" script="tartaruga.lua"/>
+
+	<!-- Crafting -->
 	<action itemid="2555" script="crafting.lua"/>
+	<action itemid="8671" script="crafting.lua"/>
 	<action fromid="9909" toid="9910" script="crafting.lua"/>
 	<action itemid="1787" script="crafting.lua"/>
 	<action itemid="1789" script="crafting.lua"/>
 	<action itemid="1791" script="crafting.lua"/>
 	<action itemid="1793" script="crafting.lua"/>
-	<action actionid="2500" script="item_desativado.lua"/>
 	
 	<!-- Quests -->
 	<action itemid="1740" script="quests/quests.lua"/>
@@ -53,14 +80,14 @@
 	<action itemid="2578" function="increaseItemId"/>
 	<action itemid="2096" function="increaseItemId"/>
 	<action itemid="2097" function="decreaseItemId"/>
-	<!--<action itemid="1787" function="decreaseItemId"/>
-	<action itemid="1789" function="decreaseItemId"/>
-	<action itemid="1791" function="decreaseItemId"/>
-	<action itemid="1793" function="decreaseItemId"/>-->
 	<action itemid="1786" function="increaseItemId"/>
+	<action itemid="1787" function="decreaseItemId"/>
 	<action itemid="1788" function="increaseItemId"/>
+	<action itemid="1789" function="decreaseItemId"/>
 	<action itemid="1790" function="increaseItemId"/>
+	<action itemid="1791" function="decreaseItemId"/>
 	<action itemid="1792" function="increaseItemId"/>
+	<action itemid="1793" function="decreaseItemId"/>
 	<action itemid="1634" function="increaseItemId"/>
 	<action itemid="1635" function="decreaseItemId"/>
 	<action itemid="1636" function="increaseItemId"/>
@@ -95,8 +122,36 @@
 	<action itemid="9748" function="decreaseItemId"/>
 	<action itemid="9749" function="increaseItemId"/>
 	<action itemid="9750" function="decreaseItemId"/>
+	<action itemid="11915" function="increaseItemId"/>
+	<action itemid="11916" function="decreaseItemId"/>
+	<action itemid="11995" function="increaseItemId"/>
+	<action itemid="11996" function="decreaseItemId"/>
+	<action itemid="11997" function="increaseItemId"/>
+	<action itemid="11998" function="decreaseItemId"/>
+	<action itemid="12005" function="increaseItemId"/>
+	<action itemid="12006" function="decreaseItemId"/>
+	<action itemid="12007" function="increaseItemId"/>
+	<action itemid="12008" function="decreaseItemId"/>
+	<action itemid="19689" function="increaseItemId"/>
+	<action itemid="19690" function="decreaseItemId"/>
 	<action itemid="19691" function="increaseItemId"/>
 	<action itemid="19692" function="decreaseItemId"/>
+	<action itemid="19695" function="increaseItemId"/>
+	<action itemid="19696" function="decreaseItemId"/>
+	<action itemid="19697" function="increaseItemId"/>
+	<action itemid="19698" function="decreaseItemId"/>
+	<action itemid="3943" function="increaseItemId"/>
+	<action itemid="3944" function="decreaseItemId"/>
+	<action itemid="3945" function="increaseItemId"/>
+	<action itemid="3946" function="decreaseItemId"/>
+	<action itemid="6356" function="increaseItemId"/>
+	<action itemid="6357" function="decreaseItemId"/>
+	<action itemid="6358" function="increaseItemId"/>
+	<action itemid="6359" function="decreaseItemId"/>
+	<action itemid="6360" function="increaseItemId"/>
+	<action itemid="6361" function="decreaseItemId"/>
+	<action itemid="6362" function="increaseItemId"/>
+	<action itemid="6363" function="decreaseItemId"/>
 
 	<!-- Food -->
 	<action itemid="2362" script="other/food.lua"/>
