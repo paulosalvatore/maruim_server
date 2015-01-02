@@ -74,6 +74,12 @@ local items = {
 				removerItemEx = 1,
 				efeito = {"hit"},
 				tempo = 5*60*1000
+			},
+			[8573] = {
+				itensPlayer = {{7247, 1}},
+				removerItemEx = 1,
+				efeito = {"hit"},
+				tempo = 5*60*1000
 			}
 		}
 	},
@@ -161,6 +167,11 @@ local items = {
 			removerItensPlayer = {{2006, 1, 0}},
 			removerItemEx = 1,
 		},
+		[2678] = {
+			itensPlayer = {{2006, 1, 14}},
+			removerItensPlayer = {{2006, 1, 0}},
+			removerItemEx = 1,
+		},
 		[8841] = {
 			itensPlayer = {{2006, 1, 5}},
 			removerItensPlayer = {{2006, 1, 0}},
@@ -179,7 +190,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition)
 			((isInArray(fruits, itemEx.itemid)) and (i["fruits"])) then
 			if i["default"] then
 				i = i["default"]
-			elseif ((i["sparkling"][Tile(toPosition):getTopTopItem():getId()] and #Tile(toPosition):getItems() == 2) and (itemEx.itemid == 8046 or itemEx.itemid == 8047)) then
+			elseif ((itemEx.itemid == 8046 or itemEx.itemid == 8047) and (i["sparkling"][Tile(toPosition):getTopTopItem():getId()] and #Tile(toPosition):getItems() == 2)) then
 				i = i["sparkling"][Tile(toPosition):getTopTopItem():getId()]
 				adicionar_evento = 1
 			elseif (isInArray(fire_source, itemEx.itemid)) and (i["fire_source"]) then
