@@ -8,10 +8,12 @@
 	<action itemid="8848" script="geral.lua"/>
 	<action itemid="9112" script="geral.lua"/>
 	<action itemid="5467" script="geral.lua"/>
+	<action itemid="2565" script="geral.lua"/>
 	<action itemid="2566" script="geral.lua"/>
 	<action itemid="4006" script="geral.lua"/>
 	<action itemid="5157" script="geral.lua"/>
 	<action fromid="12014" toid="12017" script="geral.lua"/>
+	<action itemid="5865" script="geral.lua"/>
 
 	<action itemid="16016" script="pintando.lua"/>
 	<action fromid="16018" toid="16019" script="pintando.lua"/>
@@ -28,6 +30,8 @@
 
 	<action itemid="10153" script="golem_disassembler.lua"/>
 
+	<action itemid="10223" script="tools/fishing.lua" allowfaruse="1"/>
+
 	<!-- Crafting -->
 	<action itemid="2555" script="crafting.lua"/>
 	<action itemid="8671" script="crafting.lua"/>
@@ -36,7 +40,7 @@
 	<action itemid="1789" script="crafting.lua"/>
 	<action itemid="1791" script="crafting.lua"/>
 	<action itemid="1793" script="crafting.lua"/>
-	
+
 	<!-- Testes -->
 	<!--
 	<action fromid="1786" toid="1793" script="teste.lua"/>
@@ -44,7 +48,7 @@
 	<action actionid="7618" script="teste.lua"/>
 	<action itemid="9067" script="teste.lua"/>
 	-->
-	
+
 	<!-- Quests -->
 	<action itemid="1740" script="quests/quests.lua"/>
 	<action fromid="1747" toid="1749" script="quests/quests.lua"/>

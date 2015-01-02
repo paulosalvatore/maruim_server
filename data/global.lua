@@ -59,7 +59,10 @@ fluids = {
 }
 CONTAINER_POSITION = 0xFFFF
 ITEMCOUNT_MAX = 100
-
+efeitos = {
+	["fire"] = CONST_ME_HITBYFIRE,
+	["hit"] = CONST_ME_BLOCKHIT
+}
 function doCreatureSayWithRadius(cid, text, type, radiusx, radiusy, position)
 	if position == nil then
 		position = getCreaturePosition(cid)
