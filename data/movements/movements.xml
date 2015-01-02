@@ -5,7 +5,9 @@
 	<movevent event="StepOut" actionid="60000" script="allowMovement.lua"/>
 	<movevent event="StepIn" itemid="5755" script="tartaruga.lua"/>
 	<movevent event="AddItem" tileitem="1" itemid="6279" script="add_item.lua"/>
-	<movevent event="AddItem" fromid="2744" toid="2746" script="add_item.lua"/>
+	<movevent event="AddItem" tileitem="1" itemid="1410" script="add_item.lua"/>
+	<movevent event="AddItem" tileitem="1" itemid="2096" script="add_item.lua"/>
+	<movevent event="AddItem" tileitem="1" itemid="2229" script="add_item.lua"/>
 	
 	<!-- Decaying tiles -->
 	<movevent event="StepIn" itemid="293" script="decay.lua"/>
