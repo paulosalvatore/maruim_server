@@ -109,19 +109,37 @@ local items = {
 				itensPlayer = {{7248, 1}},
 				removerItemEx = 1,
 				efeito = {"hit"},
-				tempo = 5*60*1000
+				tempo = 5*60*1000,
+				chanceSucesso = 2000,
+				chanceNeutra = 4000,
+				profissao = "alquimista"
 			},
 			[4017] = {
 				itensPlayer = {{7249, 1}},
 				removerItemEx = 1,
 				efeito = {"hit"},
-				tempo = 5*60*1000
+				tempo = 5*60*1000,
+				chanceSucesso = 2000,
+				chanceNeutra = 4000,
+				profissao = "alquimista"
 			},
 			[2733] = {
 				itensPlayer = {{7245, 1}},
 				removerItemEx = 1,
 				efeito = {"hit"},
-				tempo = 5*60*1000
+				tempo = 5*60*1000,
+				chanceSucesso = 2000,
+				chanceNeutra = 4000,
+				profissao = "alquimista"
+			},
+			[2720] = {
+				itensPlayer = {{2798, 1}},
+				removerItemEx = 1,
+				efeito = {"hit"},
+				tempo = 5*60*1000,
+				chanceSucesso = 2000,
+				chanceNeutra = 4000,
+				profissao = "alquimista"
 			}
 		}
 	},
@@ -200,34 +218,49 @@ function onUse(player, item, fromPosition, itemEx, toPosition)
 			else
 				i = i[itemEx.itemid]
 			end
-			if i["removerItensPlayer"] ~= nil then
-				for c,v in pairs(i["removerItensPlayer"]) do
+			local chanceSucesso = i.chanceSucesso
+			local efeito = i.efeito
+			if i.profissao ~= nil and verificiarProfissaoPorNome(i.profissao) and chanceSucesso ~= nil and chanceSucesso <= 10000 then
+				local profissaoId = verificiarProfissaoPorNome(i.profissao)
+				local profissaoSkill = player:getProfissaoSkill(profissaoId)
+				chanceSucesso = chanceSucesso+player:getProfissaoChanceColetaAdicional(profissaoId)
+			end
+			local chance = 10000
+			if chanceSucesso ~= nil and chanceSucesso <= 10000 then
+				chance = math.random(1, 10000)
+			else
+				chanceSucesso = 10000
+			end
+			if i.removerItensPlayer ~= nil then
+				for c,v in pairs(i.removerItensPlayer) do
 					local v3 = v[3] or -1
 					if player:getItemCount(v[1], v3) < v[2] then
 						return false
 					end
 				end
-				for c,v in pairs(i["removerItensPlayer"]) do
+				for c,v in pairs(i.removerItensPlayer) do
 					local v3 = v[3] or -1
 					player:getItemById(v[1], v3, 0):remove(v[2])
 				end
 			end
-			if i["removerItem"] ~= nil and i["removerItem"] == 1 and not item:remove(1) then
+			if i.removerItem ~= nil and i.removerItem == 1 and not item:remove(1) then
 				return false
 			end
-			if i["itensPlayer"] ~= nil then
-				for c,v in pairs(i["itensPlayer"]) do
-					itemPlayerAdicionar = v[1]
-					quantidadeItemPlayerAdicionar = v[2]
-					typeItemPlayerAdicionar = v[3] or 1
+			if i.itensPlayer ~= nil then
+				for c,v in pairs(i.itensPlayer) do
+					local itemPlayerAdicionar = v[1]
+					local quantidadeItemPlayerAdicionar = v[2]
+					local typeItemPlayerAdicionar = v[3] or 1
 					if type(quantidadeItemPlayerAdicionar) == "table" then
 						quantidadeItemPlayerAdicionar = math.random(quantidadeItemPlayerAdicionar[1], quantidadeItemPlayerAdicionar[2])
 					end
-					player:addItem(itemPlayerAdicionar, quantidadeItemPlayerAdicionar, true, typeItemPlayerAdicionar)
+					if chance <= chanceSucesso then
+						player:addItem(itemPlayerAdicionar, quantidadeItemPlayerAdicionar, true, typeItemPlayerAdicionar)
+					end
 				end
 			end
-			if i["itensGame"] ~= nil then
-				for c,v in pairs(i["itensGame"]) do
+			if i.itensGame ~= nil then
+				for c,v in pairs(i.itensGame) do
 					local itemGameAdicionar = v[1]
 					local quantidadeGameAdicionar = v[2]
 					local posicaoGameAdicionar = nil
@@ -247,24 +280,36 @@ function onUse(player, item, fromPosition, itemEx, toPosition)
 					Game.createItem(itemGameAdicionar, quantidadeGameAdicionar, posicaoGameAdicionar)
 				end
 			end
-			if i["transformar"] ~= nil and table.getn(i["transformar"]) >= 2 then
-				local itemTransformar = i["transformar"][1]
-				local quantidadeTransformar = i["transformar"][2]
+			if i.transformar ~= nil and table.getn(i.transformar) >= 2 then
+				local itemTransformar = i.transformar[1]
+				local quantidadeTransformar = i.transformar[2]
 				if type(quantidadeTransformar) == "table" then
 					quantidadeTransformar = math.random(quantidadeTransformar[1], quantidadeTransformar[2])
 				end
 				local transformar = itemEx
-				if i["transformar"][3] ~= nil and i["transformar"][3] == "item" then
+				if i.transformar[3] ~= nil and i.transformar[3] == "item" then
 					transformar = item
 				end
 				transformar:transform(itemTransformar, quantidadeTransformar)
 				transformar:decay()
 			end
-			if i["removerItemEx"] == 1 then
-				itemEx:remove(1)
+			if i.removerItemEx == 1 then
+				if i.chanceNeutra ~= nil and i.chanceNeutra <= 10000 then
+					local chanceNeutra = i.chanceNeutra+chanceSucesso
+					if (not (chance <= chanceSucesso)) and (chance <= chanceNeutra) then
+						adicionar_evento = 0
+						efeito = {"poff"}
+					elseif (not (chance <= chanceSucesso)) then
+						efeito = {"poff"}
+						itemEx:remove(1)
+					else
+						itemEx:remove(1)
+					end
+				else
+					itemEx:remove(1)
+				end
 			end
-			if i["efeito"] ~= nil and table.getn(i["efeito"]) > 0 then
-				local efeito = i["efeito"]
+			if efeito ~= nil and table.getn(efeito) > 0 then
 				local posicao_efeito = nil
 				if (efeito[2]) and (efeito[2] ~= "to") then
 					if efeito[2] == "from" then
@@ -278,19 +323,19 @@ function onUse(player, item, fromPosition, itemEx, toPosition)
 				end
 				posicao_efeito:sendMagicEffect(efeitos[efeito[1]])
 			end
-			if i["criatura"] ~= nil and table.getn(i["criatura"]) > 0 then
+			if i.criatura ~= nil and table.getn(i.criatura) > 0 then
 				local chance = 10000
-				if (i["criatura"][2]) and (type(i["criatura"][2]) == "number") and (i["criatura"][2] >= 1) and (i["criatura"][2] <= 10000) then
-					chance = i["criatura"][2]
+				if (i.criatura[2]) and (type(i.criatura[2]) == "number") and (i.criatura[2] >= 1) and (i.criatura[2] <= 10000) then
+					chance = i.criatura[2]
 				end
 				if math.random(1, 10000) <= chance then
-					Game.createMonster(i["criatura"][1], toPosition)
+					Game.createMonster(i.criatura[1], toPosition)
 				end
 			end
 			if adicionar_evento == 1 then
 				addEvent(function(posicao, item)
 				Game.createItem(item, 1, posicao)
-				end, i["tempo"], toPosition, itemEx.itemid)
+				end, i.tempo, toPosition, itemEx.itemid)
 			end
 			return true
 		end

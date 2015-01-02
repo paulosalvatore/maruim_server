@@ -129,6 +129,14 @@ function verificiarProfissao(value)
 	end
 	return 0
 end
+function verificiarProfissaoPorNome(value)
+	for a,b in pairs(profissoes) do
+		if string.lower(b.nome) == value then
+			return a
+		end
+	end
+	return 0
+end
 function Player.getProfissaoSkill(self, profissaoId)
 	return math.max(1, self:getStorageValue(profissaoId+configProfissoes.skill))
 end
@@ -216,8 +224,12 @@ function Player.getProfissaoBonusAdicional(self, profissaoId)
 	return math.floor(0.05*nivel)
 end
 function Player.getProfissaoChanceSucessoAdicional(self, profissaoId)
-	local nivel = math.max(1, self:getStorageValue(profissaoId+configProfissoes.skill))
+	local nivel = self:getProfissaoSkill(profissaoId)
 	return (20*(nivel-1))
+end
+function Player.getProfissaoChanceColetaAdicional(self, profissaoId)
+	local nivel = self:getProfissaoSkill(profissaoId)
+	return (40*(nivel-1))
 end
 function Player.getProfissaoChanceSucessoReceita(self, profissaoId, receitaId)
 	local profissao = profissoes[profissaoId]
