@@ -104,6 +104,10 @@ local items = {
 			removerItensPlayer = {{6278, 1}},
 			removerItemEx = 1,
 		},
+		[2683] = {
+			transformar = {2096, 1},
+			efeito = {"hit"}
+		},
 		["sparkling"] = {
 			[7261] = {
 				itensPlayer = {{7248, 1}},
@@ -195,6 +199,54 @@ local items = {
 			removerItensPlayer = {{2006, 1, 0}},
 			removerItemEx = 1,
 		}
+	},
+	[18336] = {
+		["default"] = {
+			itensPlayer = {{18337, 1}},
+			transformar = {18333, 1, "item"},
+			efeito = {"hit"},
+			chanceSucesso = 2000,
+			chanceNeutra = 4000,
+			profissao = "ferreiro"
+		}
+	},
+	[5908] = {
+		[7441] = {
+			transformar = {7442, 1},
+			efeito = {"hit"},
+			chanceQuebrar = 4000
+		},
+		[7442] = {
+			transformar = {7444, 1},
+			efeito = {"hit"},
+			chanceQuebrar = 3000
+		},
+		[7444] = {
+			transformar = {7445, 1},
+			efeito = {"hit"},
+			chanceQuebrar = 2000
+		},
+		[7445] = {
+			transformar = {7446, 1},
+			efeito = {"hit"},
+			chanceQuebrar = 1000
+		},
+		[11343] = {
+			transformarAleatorio = {{11344, 1, 4500}, {11345, 1, 4500}, {11346, 1, 1000}},
+			efeito = {"hit"}
+		}
+	},
+	[11339] = {
+		["default"] = {
+			transformarAleatorio = {{11340, 1, 4500}, {11341, 1, 4500}, {11342, 1, 1000}},
+			efeito = {"hit"}
+		}
+	},
+	[19948] = {
+		[19959] = {
+			transformar= {19960, 1},
+			efeito = {"hit"}
+		}
 	}
 }
 function onUse(player, item, fromPosition, itemEx, toPosition)
@@ -219,6 +271,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition)
 				i = i[itemEx.itemid]
 			end
 			local chanceSucesso = i.chanceSucesso
+			local chanceQuebrar = i.chanceQuebrar
 			local efeito = i.efeito
 			if i.profissao ~= nil and verificiarProfissaoPorNome(i.profissao) and chanceSucesso ~= nil and chanceSucesso <= 10000 then
 				local profissaoId = verificiarProfissaoPorNome(i.profissao)
@@ -226,19 +279,21 @@ function onUse(player, item, fromPosition, itemEx, toPosition)
 				chanceSucesso = chanceSucesso+player:getProfissaoChanceColetaAdicional(profissaoId)
 			end
 			local chance = 10000
-			if chanceSucesso ~= nil and chanceSucesso <= 10000 then
+			if	(chanceSucesso ~= nil and chanceSucesso <= 10000) or
+				(chanceQuebrar ~= nil and chanceQuebrar <= 10000) or
+				(i.transformarAleatorio ~= nil and table.getn(i.transformarAleatorio) >= 2) then
 				chance = math.random(1, 10000)
 			else
 				chanceSucesso = 10000
 			end
 			if i.removerItensPlayer ~= nil then
-				for c,v in pairs(i.removerItensPlayer) do
+				for c, v in pairs(i.removerItensPlayer) do
 					local v3 = v[3] or -1
 					if player:getItemCount(v[1], v3) < v[2] then
 						return false
 					end
 				end
-				for c,v in pairs(i.removerItensPlayer) do
+				for c, v in pairs(i.removerItensPlayer) do
 					local v3 = v[3] or -1
 					player:getItemById(v[1], v3, 0):remove(v[2])
 				end
@@ -247,7 +302,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition)
 				return false
 			end
 			if i.itensPlayer ~= nil then
-				for c,v in pairs(i.itensPlayer) do
+				for c, v in pairs(i.itensPlayer) do
 					local itemPlayerAdicionar = v[1]
 					local quantidadeItemPlayerAdicionar = v[2]
 					local typeItemPlayerAdicionar = v[3] or 1
@@ -260,7 +315,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition)
 				end
 			end
 			if i.itensGame ~= nil then
-				for c,v in pairs(i.itensGame) do
+				for c, v in pairs(i.itensGame) do
 					local itemGameAdicionar = v[1]
 					local quantidadeGameAdicionar = v[2]
 					local posicaoGameAdicionar = nil
@@ -290,8 +345,30 @@ function onUse(player, item, fromPosition, itemEx, toPosition)
 				if i.transformar[3] ~= nil and i.transformar[3] == "item" then
 					transformar = item
 				end
-				transformar:transform(itemTransformar, quantidadeTransformar)
-				transformar:decay()
+				local realizar_transformacao = 1
+				if i.chanceNeutra ~= nil and i.chanceNeutra <= 10000 then
+					local chanceNeutra = i.chanceNeutra+chanceSucesso
+					if (not (chance <= chanceSucesso)) and (chance <= chanceNeutra) then
+						efeito = {"poff"}
+						realizar_transformacao = 0
+					elseif (not (chance <= chanceSucesso)) then
+						efeito = {"poff"}
+					end
+				end
+				if realizar_transformacao == 1 then
+					transformar:transform(itemTransformar, quantidadeTransformar)
+					transformar:decay()
+				end
+			end
+			if i.transformarAleatorio ~= nil and table.getn(i.transformarAleatorio) >= 2 then
+				local chanceTransformar = 0
+				for c, v in pairs(i.transformarAleatorio) do
+					chanceTransformar = chanceTransformar+v[3]
+					if chance <= chanceTransformar then
+						itemEx:transform(v[1], v[2])
+						break
+					end
+				end
 			end
 			if i.removerItemEx == 1 then
 				if i.chanceNeutra ~= nil and i.chanceNeutra <= 10000 then
@@ -308,6 +385,9 @@ function onUse(player, item, fromPosition, itemEx, toPosition)
 				else
 					itemEx:remove(1)
 				end
+			end
+			if chanceQuebrar ~= nil and chanceQuebrar <= 10000 and chance <= chanceQuebrar then
+				itemEx:remove(1)
 			end
 			if efeito ~= nil and table.getn(efeito) > 0 then
 				local posicao_efeito = nil

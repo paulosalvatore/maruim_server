@@ -23971,6 +23971,7 @@
 		<attribute key="corpseType" value="blood" />
 	</item>
 	<item id="15501" article="a" name="dragon's nest" />
+	<item fromid="15503" toid="15514" article="a" name="lava" />
 	<item id="15515" article="a" name="bar of gold">
 		<attribute key="weight" value="2100" />
 	</item>
@@ -24642,7 +24643,7 @@
 	<item id="17599" name="red crystals" />
 	<item fromid="17600" toid="17611" article="a" name="fossilised spine" />
 	<item fromid="17612" toid="17624" name="fossilised spine parts" />
-	<item fromid="17625" toid="17628" name="basalt floor" />
+	<item fromid="17625" toid="17640" name="basalt floor" />
 	<item fromid="17641" toid="17646" article="a" name="crystal trail" />
 	<item fromid="17647" toid="17664" name="mold floor" />
 	<item fromid="17665" toid="17684" name="mossy floor" />
@@ -24949,26 +24950,26 @@
 	<item id="18333" article="a" name="strange stone">
 		<attribute key="description" value="As long as it is immersed that deep you won't be able to get a whetstone." />
 		<attribute key="decayTo" value="18334" />
-		<attribute key="duration" value="25" />
+		<attribute key="duration" value="100" />
 	</item>
 	<item id="18334" article="a" name="strange stone">
-		<attribute key="description" value="As long as it is immersed that deep you won't be able to get a whetstone." />
+		<attribute key="description" value="As long as it is immersed that deep you won't be able to get a whetstone. It seems that is coming to surface." />
 		<attribute key="decayTo" value="18335" />
-		<attribute key="duration" value="25" />
+		<attribute key="duration" value="100" />
 	</item>
 	<item id="18335" article="a" name="strange stone">
-		<attribute key="description" value="As long as it is immersed that deep you won't be able to get a whetstone." />
+		<attribute key="description" value="As long as it is immersed that deep you won't be able to get a whetstone. It is almost on the surface." />
 		<attribute key="decayTo" value="18336" />
-		<attribute key="duration" value="25" />
+		<attribute key="duration" value="100" />
 	</item>
 	<item id="18336" article="a" name="strange stone">
 		<attribute key="description" value="With some luck you might be able to pluck a grindstone from the formation." />
 		<attribute key="decayTo" value="18333" />
-		<attribute key="duration" value="17" />
+		<attribute key="duration" value="30" />
 	</item>
 	<item id="18337" article="a" name="whetstone">
 		<attribute key="weight" value="280" />
-		<attribute key="description" value="You have to deliver the Whetstone while it is still hot. It will crumble within one hour." />
+		<attribute key="description" value="You have to use the Whetstone while it is still hot. It will crumble within one hour." />
 		<attribute key="decayTo" value="0" />
 		<attribute key="duration" value="3600" />
 	</item>
@@ -26227,6 +26228,7 @@
 	</item>
 	<item fromid="19858" toid="19877" article="a" name="roof" />
 	<item fromid="19881" toid="19896" name="swamp" />
+	<item id="19897" article="a" name="grind stone" />
 	<item id="19898" article="a" name="pillar railing" />
 	<item id="19899" article="a" name="pillar railing" />
 	<item id="19900" article="a" name="pillar railing" />
@@ -26279,6 +26281,10 @@
 	</item>
 	<item id="19957" article="a" name="junk trunk" />
 	<item id="19959" article="a" name="cracked stone" />
+	<item id="19960" article="a" name="advertising sign cracked stone">
+		<attribute key="decayTo" value="19959" />
+		<attribute key="duration" value="300" />
+	</item>
 	<item id="19962" article="a" name="dead lost husher">
 		<attribute key="containerSize" value="15" />
 		<attribute key="decayTo" value="19964" />

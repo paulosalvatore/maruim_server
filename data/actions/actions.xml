@@ -14,6 +14,10 @@
 	<action itemid="5157" script="geral.lua"/>
 	<action fromid="12014" toid="12017" script="geral.lua"/>
 	<action itemid="5865" script="geral.lua"/>
+	<action itemid="18336" script="geral.lua"/>
+	<action itemid="5908" script="geral.lua"/>
+	<action itemid="11339" script="geral.lua"/>
+	<action itemid="19948" script="geral.lua"/>
 
 	<action itemid="16016" script="pintando.lua"/>
 	<action fromid="16018" toid="16019" script="pintando.lua"/>
