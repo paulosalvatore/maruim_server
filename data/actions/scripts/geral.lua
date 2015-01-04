@@ -234,6 +234,71 @@ local items = {
 		[11343] = {
 			transformarAleatorio = {{11344, 1, 4500}, {11345, 1, 4500}, {11346, 1, 1000}},
 			efeito = {"hit"}
+		},
+		["sparkling"] = {
+			[10803] = {
+				itensPlayer = {{13219, 1}},
+				removerItemEx = 1,
+				efeito = {"hit"},
+				tempo = 5*60*1000,
+				chanceSucesso = 2000,
+				chanceNeutra = 4000,
+				profissao = "alquimista"
+			},
+			[10917] = {
+				itensPlayer = {{13216, 1}},
+				removerItemEx = 1,
+				efeito = {"hit"},
+				tempo = 5*60*1000,
+				chanceSucesso = 2000,
+				chanceNeutra = 4000,
+				profissao = "alquimista"
+			},
+			[11671] = {
+				itensPlayer = {{13222, 1}},
+				removerItemEx = 1,
+				efeito = {"hit"},
+				tempo = 5*60*1000,
+				chanceSucesso = 2000,
+				chanceNeutra = 4000,
+				profissao = "alquimista"
+			},
+			[11672] = {
+				itensPlayer = {{13217, 1}},
+				removerItemEx = 1,
+				efeito = {"hit"},
+				tempo = 5*60*1000,
+				chanceSucesso = 2000,
+				chanceNeutra = 4000,
+				profissao = "alquimista"
+			},
+			[11673] = {
+				itensPlayer = {{13220, 1}},
+				removerItemEx = 1,
+				efeito = {"hit"},
+				tempo = 5*60*1000,
+				chanceSucesso = 2000,
+				chanceNeutra = 4000,
+				profissao = "alquimista"
+			},
+			[11675] = {
+				itensPlayer = {{13221, 1}},
+				removerItemEx = 1,
+				efeito = {"hit"},
+				tempo = 5*60*1000,
+				chanceSucesso = 2000,
+				chanceNeutra = 4000,
+				profissao = "alquimista"
+			},
+			[11676] = {
+				itensPlayer = {{13218, 1}},
+				removerItemEx = 1,
+				efeito = {"hit"},
+				tempo = 5*60*1000,
+				chanceSucesso = 2000,
+				chanceNeutra = 4000,
+				profissao = "alquimista"
+			},
 		}
 	},
 	[11339] = {
