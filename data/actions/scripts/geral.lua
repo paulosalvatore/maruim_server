@@ -314,7 +314,7 @@ local items = {
 		}
 	}
 }
-function onUse(player, item, fromPosition, itemEx, toPosition)
+function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if items[item.itemid] then
 		local i = items[item.itemid]
 		local adicionar_evento = 0
