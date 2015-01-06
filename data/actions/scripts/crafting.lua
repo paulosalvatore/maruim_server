@@ -1,6 +1,6 @@
 local function verificiarMesaTrabalho(table, value)
-	for a,b in pairs(table) do
-		for c,d in pairs(b) do
+	for a, b in pairs(table) do
+		for c, d in pairs(b) do
 			if((c == "mesaTrabalho") and (type(d) == "table")) then
 				if(isInArray(d, value)) then
 					return a

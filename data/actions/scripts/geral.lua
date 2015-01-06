@@ -1,17 +1,22 @@
 local fire_source = {1786, 1788, 1790, 1792, 1481, 1482, 1483, 1484, 6356, 6358, 6360, 6362}
 local fruits = {2673, 2674, 2675, 2677, 2679, 2680, 2681, 2682, 5097, 8840, 12415}
+local sparkling = {8046, 8047}
 local items = {
 	-- [item_id] = {
-		-- [itemEx_id] = {
+		-- [itemEx_id ou "fire_source" ou "fruits" ou "sparkling" ou "default"] = {
 			-- itensPlayer = {{id, quantidade ou {min, max}}},
 			-- removerItensPlayer = {{id, quantidade}},
-			-- checarQuantidade = {id, quantidade},
+			-- transformarAleatorio = {{id, quantidade, chance}},
 			-- itensGame = {{id, quantidade {min, max}, posicao}},
 			-- removerItem = 0 ou 1,
 			-- removerItemEx = 0 ou 1,
 			-- transformar = {id, quantidade ou {min, max}},
 			-- efeito = {efeito, posicao},
 			-- criatura = {nome_criatura, chance}
+			-- tempo = milissegundos,
+			-- chanceSucesso = 1% = 100,
+			-- chanceNeutra = 1% = 100,
+			-- profissao = "nome da profissão"
 		-- },
 	-- }
 	[6277] = {
@@ -144,6 +149,16 @@ local items = {
 				chanceSucesso = 2000,
 				chanceNeutra = 4000,
 				profissao = "alquimista"
+			},
+			[4018] = {
+				itensPlayer = {{2801, 1}},
+				removerItemEx = 1,
+				efeito = {"hit"},
+				-- tempo = 5*60*1000,
+				tempo = 1000,
+				chanceSucesso = 2000,
+				chanceNeutra = 4000,
+				profissao = "alquimista"
 			}
 		}
 	},
@@ -235,6 +250,27 @@ local items = {
 			transformarAleatorio = {{11344, 1, 4500}, {11345, 1, 4500}, {11346, 1, 1000}},
 			efeito = {"hit"}
 		},
+		[7339] = {
+			itensPlayer = {{11209, 1}},
+			transformar = {7340, 1},
+			efeito = {"hit"},
+			chanceSucesso = 2000,
+			profissao = "alfaiate"
+		},
+		[2905] = {
+			itensPlayer = {{11236, 1}},
+			transformar = {2906, 1},
+			efeito = {"hit"},
+			chanceSucesso = 2000,
+			profissao = "alfaiate"
+		},
+		[2914] = {
+			itensPlayer = {{12404, 1}},
+			transformar = {2915, 1},
+			efeito = {"hit"},
+			chanceSucesso = 2000,
+			profissao = "alfaiate"
+		},
 		["sparkling"] = {
 			[10803] = {
 				itensPlayer = {{13219, 1}},
@@ -298,7 +334,7 @@ local items = {
 				chanceSucesso = 2000,
 				chanceNeutra = 4000,
 				profissao = "alquimista"
-			},
+			}
 		}
 	},
 	[11339] = {
@@ -309,7 +345,54 @@ local items = {
 	},
 	[19948] = {
 		[19959] = {
-			transformar= {19960, 1},
+			transformar = {19960, 1},
+			efeito = {"hit"}
+		}
+	},
+	[10317] = {
+		["default"] = {
+			transformar = {10363, 1},
+			efeito = {"rage_skies", "player"}
+		}
+	},
+	[7286] = {
+		[7106] = {
+			itensGame = {{7108, 1}}
+		}
+	},
+	[13193] = {
+		[13215] = {
+			transformar = {13197, 1},
+			removerItem = 1,
+			efeito = {"hit"}
+		},
+		[13214] = {
+			transformar = {13198, 1},
+			removerItem = 1,
+			efeito = {"hit"}
+		}
+	},
+	[13194] = {
+		[13213] = {
+			transformar = {13198, 1},
+			removerItem = 1,
+			efeito = {"hit"}
+		},
+		[13215] = {
+			transformar = {13196, 1},
+			removerItem = 1,
+			efeito = {"hit"}
+		}
+	},
+	[13195] = {
+		[13214] = {
+			transformar = {13196, 1},
+			removerItem = 1,
+			efeito = {"hit"}
+		},
+		[13213] = {
+			transformar = {13197, 1},
+			removerItem = 1,
 			efeito = {"hit"}
 		}
 	}
@@ -320,12 +403,12 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		local adicionar_evento = 0
 		if	(i[itemEx.itemid]) or
 			(i["default"]) or
-			((i["sparkling"][Tile(toPosition):getTopTopItem():getId()] and #Tile(toPosition):getItems() == 2) and (itemEx.itemid == 8046 or itemEx.itemid == 8047)) or
+			((isInArray(sparkling, itemEx.itemid)) and (i["sparkling"][Tile(toPosition):getTopTopItem():getId()] and #Tile(toPosition):getItems() == 2)) or
 			((isInArray(fire_source, itemEx.itemid)) and (i["fire_source"])) or
 			((isInArray(fruits, itemEx.itemid)) and (i["fruits"])) then
 			if i["default"] then
 				i = i["default"]
-			elseif ((itemEx.itemid == 8046 or itemEx.itemid == 8047) and (i["sparkling"][Tile(toPosition):getTopTopItem():getId()] and #Tile(toPosition):getItems() == 2)) then
+			elseif isInArray(sparkling, itemEx.itemid) and i["sparkling"][Tile(toPosition):getTopTopItem():getId()] and #Tile(toPosition):getItems() == 2 then
 				i = i["sparkling"][Tile(toPosition):getTopTopItem():getId()]
 				adicionar_evento = 1
 			elseif (isInArray(fire_source, itemEx.itemid)) and (i["fire_source"]) then
@@ -376,6 +459,8 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 					end
 					if chance <= chanceSucesso then
 						player:addItem(itemPlayerAdicionar, quantidadeItemPlayerAdicionar, true, typeItemPlayerAdicionar)
+					else
+						efeito = {"poff"}
 					end
 				end
 			end
@@ -391,13 +476,14 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 						if v[3] == "from" then
 							posicaoGameAdicionar = fromPosition
 						elseif v[3] == "player" then
-							posicaoGameAdicionar = getPlayerPosition(cid)
+							posicaoGameAdicionar = getPlayerPosition(player)
 						end
 					end
 					if posicaoGameAdicionar == nil then
 						posicaoGameAdicionar = toPosition
 					end
-					Game.createItem(itemGameAdicionar, quantidadeGameAdicionar, posicaoGameAdicionar)
+					local itemGame = Game.createItem(itemGameAdicionar, quantidadeGameAdicionar, posicaoGameAdicionar)
+					itemGame:decay()
 				end
 			end
 			if i.transformar ~= nil and table.getn(i.transformar) >= 2 then
@@ -460,7 +546,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 					if efeito[2] == "from" then
 						posicao_efeito = fromPosition
 					elseif efeito[2] == "player" then
-						posicao_efeito = getPlayerPosition(cid)
+						posicao_efeito = getPlayerPosition(player)
 					end
 				end
 				if posicao_efeito == nil then

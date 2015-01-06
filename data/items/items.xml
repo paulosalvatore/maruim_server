@@ -11845,7 +11845,11 @@
 	<item fromid="7102" toid="7105" article="a" name="stone wall" />
 	<item id="7106" article="an" name="inactive geyser" />
 	<item id="7107" name="ice" />
-	<item fromid="7108" toid="7109" article="a" name="geyser" />
+	<item fromid="7108" toid="7109" article="a" name="geyser">
+		<attribute key="description" value="It is filled with warm geyser water." />
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="600" />
+	</item>
 	<item fromid="7110" toid="7120" name="ice" />
 	<item fromid="7121" toid="7130" name="rails" />
 	<item fromid="7131" toid="7132" article="an" name="ore wagon" />
@@ -24809,6 +24813,7 @@
 	<item id="18132" article="a" name="stone pillar" />
 	<item fromid="18133" toid="18136" name="wooden floor" />
 	<item fromid="18137" toid="18140" article="a" name="small stream" />
+	<item fromid="18141" toid="18152" name="mossy floor" />
 	<item id="18153" article="a" name="giant carrot">
 		<attribute key="description" value="Someone turned it upside down." />
 	</item>
@@ -29503,6 +29508,10 @@
 	</item>
 	<item id="21925" article="a" name="ruined stair">
 		<attribute key="floorchange" value="west" />
+	</item>
+	<item id="22363" name="broken dream">
+		<attribute key="description" value="The fragment of a dream. Strange pictures seem to flit through the shards." />
+		<attribute key="weight" value="10" />
 	</item>
 	<item id="22381" name="ancient dream">
 		<attribute key="description" value="The dream glows as if alive." />
