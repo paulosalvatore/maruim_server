@@ -199,7 +199,7 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 					local chanceSucesso = player:getProfissaoChanceSucessoReceita(profissaoId, receitaId)
 					local experiencia = receita.experiencia
 					local pontos = receita.pontos
-					local chance = math.random(1, 10000)
+					local chance = math.random(10000)
 					if chance <= chanceSucesso then
 						local itemCriado = receita.item
 						local atributos = receita.atributos

@@ -412,6 +412,11 @@ function Player.hasAllowMovement(self)
 	return self:getStorageValue(Storage.blockMovementStorage) ~= 1
 end
 
+function Tile.getTileTopTopItem(self)
+	local items = self:getItems()
+	return items[#items].itemid
+end
+
 local function inArray(table, value)
 	for i,v in pairs(table) do
 		if (v.name == string.lower(value)) then

@@ -1,11 +1,12 @@
 function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	local failChance = 5
+	local failChance = 20
 	local items = {
 		[5466] = {transformar = 5465},
 		[1485] = {transformar = 1484, duracao = 600, decairPara = {{1483, 2}, {1482, 2}, {1481, 2}}},
 		[7538] = {transformar = 7544},
 		[7539] = {transformar = 7545},
-		[13757] = {transformar = 21585}
+		[13757] = {transformar = 21585},
+		[5880] = {transformar = 18427}
 	}
 	local itemExId = itemEx.itemid
 	if(items[itemExId]) then

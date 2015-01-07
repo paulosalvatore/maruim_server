@@ -7988,9 +7988,8 @@
 		<attribute key="description" value="It contains a collection of beautiful elven poems." />
 		<attribute key="weight" value="1300" />
 	</item>
-	<item id="4856" article="an" name="ice pick">
-		<attribute key="description" value="It might come in handy in cold regions." />
-		<attribute key="weight" value="7000" />
+	<item id="4856" article="a" name="blacksmith's pick">
+		<attribute key="weight" value="14500" />
 	</item>
 	<item id="4857" article="a" name="wrinkled parchment">
 		<attribute key="description" value="It is covered with strange numbers." />
@@ -17784,6 +17783,7 @@
 		<attribute key="weight" value="250" />
 	</item>
 	<item id="10035" article="a" name="ladder" />
+	<item id="10037" article="a" name="coal wagon" />
 	<item id="10038" article="a" name="crucible" />
 	<item fromid="10039" toid="10040" article="a" name="bellow" />
 	<item fromid="10041" toid="10043" article="a" name="crucible" />
@@ -30031,6 +30031,9 @@
 	</item>
 	<item id="22541" article="a" name="pool of chitinous glue">
 		<attribute key="weight" value="270" />
+	</item>
+	<item id="22542" article="a" name="string of mending">
+		<attribute key="description" value="This extraordinary smooth string feels quite cool to the touch." />
 	</item>
 	<item id="22546" article="a" name="dead demon outcast">
 		<attribute key="containerSize" value="20" />

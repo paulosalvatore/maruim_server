@@ -395,6 +395,35 @@ local items = {
 			removerItem = 1,
 			efeito = {"hit"}
 		}
+	},
+	[4856] = {
+		["sparkling"] = {
+			[5868] = {
+				itensPlayerAleatorio = {{5880, 1, 4000}, {2225, 1, 6000}},
+				removerItemEx = 1,
+				efeito = {"hit"},
+				tempo = 3*60*1000,
+				tempo = 500,
+				chanceSucesso = 6000,
+				chanceNeutra = 8000,
+				profissao = "ferreiro"
+			},
+			[8748] = {
+				itensPlayer = {{13757, 1}},
+				removerItemEx = 1,
+				efeito = {"hit"},
+				tempo = 5*60*1000,
+				chanceSucesso = 2000,
+				chanceNeutra = 4000,
+				profissao = "ferreiro"
+			}
+		}
+	},
+	[13757] = {
+		[7131] = {
+			transformar = {10037, 1},
+			removerItemEx = 1
+		}
 	}
 }
 function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
@@ -403,13 +432,13 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		local adicionar_evento = 0
 		if	(i[itemEx.itemid]) or
 			(i["default"]) or
-			((isInArray(sparkling, itemEx.itemid)) and (i["sparkling"][Tile(toPosition):getTopTopItem():getId()] and #Tile(toPosition):getItems() == 2)) or
+			(isInArray(sparkling, itemEx.itemid) and #Tile(toPosition):getItems() == 2 and i["sparkling"][Tile(toPosition):getTileTopTopItem()]) or
 			((isInArray(fire_source, itemEx.itemid)) and (i["fire_source"])) or
 			((isInArray(fruits, itemEx.itemid)) and (i["fruits"])) then
 			if i["default"] then
 				i = i["default"]
-			elseif isInArray(sparkling, itemEx.itemid) and i["sparkling"][Tile(toPosition):getTopTopItem():getId()] and #Tile(toPosition):getItems() == 2 then
-				i = i["sparkling"][Tile(toPosition):getTopTopItem():getId()]
+			elseif isInArray(sparkling, itemEx.itemid) and i["sparkling"][Tile(toPosition):getTileTopTopItem()] and #Tile(toPosition):getItems() == 2 then
+				i = i["sparkling"][Tile(toPosition):getTileTopTopItem()]
 				adicionar_evento = 1
 			elseif (isInArray(fire_source, itemEx.itemid)) and (i["fire_source"]) then
 				i = i["fire_source"]
@@ -430,7 +459,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			if	(chanceSucesso ~= nil and chanceSucesso <= 10000) or
 				(chanceQuebrar ~= nil and chanceQuebrar <= 10000) or
 				(i.transformarAleatorio ~= nil and table.getn(i.transformarAleatorio) >= 2) then
-				chance = math.random(1, 10000)
+				chance = math.random(10000)
 			else
 				chanceSucesso = 10000
 			end
@@ -450,18 +479,36 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 				return false
 			end
 			if i.itensPlayer ~= nil then
-				for c, v in pairs(i.itensPlayer) do
-					local itemPlayerAdicionar = v[1]
-					local quantidadeItemPlayerAdicionar = v[2]
-					local typeItemPlayerAdicionar = v[3] or 1
-					if type(quantidadeItemPlayerAdicionar) == "table" then
-						quantidadeItemPlayerAdicionar = math.random(quantidadeItemPlayerAdicionar[1], quantidadeItemPlayerAdicionar[2])
-					end
-					if chance <= chanceSucesso then
+				if chance <= chanceSucesso then
+					for c, v in pairs(i.itensPlayer) do
+						local itemPlayerAdicionar = v[1]
+						local quantidadeItemPlayerAdicionar = v[2]
+						local typeItemPlayerAdicionar = v[3] or 1
+						if type(quantidadeItemPlayerAdicionar) == "table" then
+							quantidadeItemPlayerAdicionar = math.random(quantidadeItemPlayerAdicionar[1], quantidadeItemPlayerAdicionar[2])
+						end
 						player:addItem(itemPlayerAdicionar, quantidadeItemPlayerAdicionar, true, typeItemPlayerAdicionar)
-					else
-						efeito = {"poff"}
 					end
+				else
+					efeito = {"poff"}
+				end
+			end
+			if i.itensPlayerAleatorio ~= nil then
+				if chance <= chanceSucesso then
+					local chanceItemAleatorio = math.random(10000)
+					local chanceItem = 0
+					for c, v in pairs(i.itensPlayerAleatorio) do
+						chanceItem = chanceItem+v[3]
+						if chanceItemAleatorio <= chanceItem then
+							local itemAleatorioAdicionar = v[1]
+							local quantidadeItemAleatorioAdicionar = v[2]
+							local typeItemAleatorioAdicionar = v[4] or 1
+							player:addItem(itemAleatorioAdicionar, quantidadeItemAleatorioAdicionar, true, typeItemAleatorioAdicionar)
+							chanceItemAleatorio = 100000
+						end
+					end
+				else
+					efeito = {"poff"}
 				end
 			end
 			if i.itensGame ~= nil then
@@ -559,7 +606,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 				if (i.criatura[2]) and (type(i.criatura[2]) == "number") and (i.criatura[2] >= 1) and (i.criatura[2] <= 10000) then
 					chance = i.criatura[2]
 				end
-				if math.random(1, 10000) <= chance then
+				if math.random(10000) <= chance then
 					Game.createMonster(i.criatura[1], toPosition)
 				end
 			end

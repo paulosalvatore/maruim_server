@@ -21,6 +21,8 @@
 	<action itemid="10317" script="geral.lua"/>
 	<action itemid="7286" script="geral.lua"/>
 	<action fromid="13193" toid="13195" script="geral.lua"/>
+	<action itemid="4856" script="geral.lua"/>
+	<action itemid="13757" script="geral.lua"/>
 
 	<action itemid="16016" script="pintando.lua"/>
 	<action fromid="16018" toid="16019" script="pintando.lua"/>
@@ -55,7 +57,7 @@
 	<action fromid="1786" toid="1793" script="teste.lua"/>
 	<action itemid="1445" script="teste.lua"/>
 	<action actionid="7618" script="teste.lua"/>
-	<action itemid="9067" script="teste.lua"/>
+	<action itemid="8046" script="teste.lua"/>
 	-->
 
 	<!-- Quests -->
