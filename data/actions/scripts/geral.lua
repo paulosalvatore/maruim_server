@@ -346,6 +346,7 @@ local items = {
 	[19948] = {
 		[19959] = {
 			transformar = {19960, 1},
+			removerItem = 1,
 			efeito = {"hit"}
 		}
 	},
@@ -422,7 +423,7 @@ local items = {
 	[13757] = {
 		[7131] = {
 			transformar = {10037, 1},
-			removerItemEx = 1
+			removerItem = 1
 		}
 	}
 }
