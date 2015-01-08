@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2014  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -163,6 +163,8 @@ Weapon::Weapon(LuaScriptInterface* _interface) :
 	enabled = true;
 	wieldUnproperly = false;
 	range = 1;
+	breakChance = 0;
+	action = WEAPONACTION_NONE;
 }
 
 bool Weapon::configureEvent(const pugi::xml_node& node)
