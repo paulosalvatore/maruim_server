@@ -28953,6 +28953,62 @@
 		<attribute key="duration" value="10" />
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
+	</item>	<item id="21266" article="a" name="slain nightfiend">
+		<attribute key="containerSize" value="20" />
+		<attribute key="decayTo" value="21267" />
+		<attribute key="duration" value="300" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="21267" article="a" name="slain nightfiend">
+		<attribute key="containerSize" value="20" />
+		<attribute key="decayTo" value="21268" />
+		<attribute key="duration" value="300" />
+		<attribute key="corpseType" value="blood" />
+	</item>
+	<item id="21268" article="a" name="slain nightfiend">
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="300" />
+		<attribute key="corpseType" value="blood" />
+	</item>
+	<item id="21269" article="a" name="slain nightfiend">
+		<attribute key="containerSize" value="15" />
+		<attribute key="decayTo" value="21266" />
+		<attribute key="duration" value="10" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="21270" article="a" name="slain pale count">
+		<attribute key="containerSize" value="15" />
+		<attribute key="decayTo" value="21271" />
+		<attribute key="duration" value="10" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="21271" article="a" name="slain pale count">
+		<attribute key="containerSize" value="20" />
+		<attribute key="decayTo" value="21272" />
+		<attribute key="duration" value="300" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="21272" article="a" name="slain pale count">
+		<attribute key="containerSize" value="20" />
+		<attribute key="decayTo" value="21273" />
+		<attribute key="duration" value="300" />
+		<attribute key="corpseType" value="blood" />
+	</item>
+	<item id="21273" article="a" name="slain pale count">
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="300" />
+		<attribute key="corpseType" value="blood" />
+	</item>
+	<item id="21274" article="a" name="slain vicious manbat">
+		<attribute key="containerSize" value="15" />
+		<attribute key="decayTo" value="21453" />
+		<attribute key="duration" value="10" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
 	</item>
 	<item id="21275" article="a" name="slain vampire viscount">
 		<attribute key="containerSize" value="15" />
@@ -29297,6 +29353,24 @@
 	<item id="21452" article="a" name="nail case">
 		<attribute key="weight" value="200" />
 		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
+	</item>
+	<item id="21453" article="a" name="slain vicious manbat">
+		<attribute key="containerSize" value="20" />
+		<attribute key="decayTo" value="21454" />
+		<attribute key="duration" value="300" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="21454" article="a" name="slain vicious manbat">
+		<attribute key="containerSize" value="20" />
+		<attribute key="decayTo" value="21455" />
+		<attribute key="duration" value="300" />
+		<attribute key="corpseType" value="blood" />
+	</item>
+	<item id="21455" article="a" name="slain vicious manbat">
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="300" />
+		<attribute key="corpseType" value="blood" />
 	</item>
 	<item id="21456" article="a" name="grave stone">
 		<attribute key="description" value="You read: House of the Bronze Dragon. When the Silent Gong tolls three times, the pillars of the earth will shake and the House of the Bronze Dragon shall rise again." />
