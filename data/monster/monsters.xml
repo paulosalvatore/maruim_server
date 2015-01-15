@@ -1,4 +1,4 @@
-<?xml version=".0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <monsters>
 	<monster name="Island Tortoise" file="island tortoise.xml"/>
 	<monster name="Farm Black Sheep" file="farm black sheep.xml"/>
