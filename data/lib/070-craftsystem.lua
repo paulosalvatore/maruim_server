@@ -282,3 +282,153 @@ function Player.getProfissaoModalPrincipal(self, profissaoId)
 		return modal
 	end
 end
+function Player.iniciarReceita(self, profissaoId, receitaId)
+	local mesaTrabalho = profissoes[profissaoId].extraData[self:getId()].mesaTrabalho
+	local actionItemDesativado = configProfissoes.actionItemDesativado
+	if mesaTrabalho:getActionId() == actionItemDesativado then
+		return false
+	end
+	local profissaoNivel = self:getProfissaoSkill(profissaoId)
+	local profissao = profissoes[profissaoId]
+	local efeitoTrabalhando = profissao.efeitoTrabalhando
+	local mesaTrabalhoKey = searchArrayKey(profissao.mesaTrabalho, mesaTrabalho:getType():getId())
+	local mesaTrabalhando = profissao.mesaTrabalhando[mesaTrabalhoKey]
+	local receita = profissao.receitas[receitaId]
+	local ferramenta = receita.ferramenta
+	local materiais = receita.materiais
+	if	self:getItemCount(ferramenta) == 0 or
+		profissaoNivel < receita.nivel or
+		self:getLevel() < receita.nivelJogador or
+		(receita.aprender == 1 and self:getProfissaoReceitaAprendizado(profissaoId, receitaId) == 1) then
+		return false
+	end
+	for a,b in pairs(materiais) do
+		if b[3] ~= -1 then
+			b[3] = -1
+		end
+		if self:getItemCount(b[1], b[3]) < b[2] then
+			return false
+		end
+	end
+	mesaTrabalho:setActionId(actionItemDesativado)
+	if mesaTrabalhando ~= nil then
+		mesaTrabalho:transform(mesaTrabalhando)
+		mesaTrabalhando = profissao.mesaTrabalho[mesaTrabalhoKey]
+	end
+	local tempo = receita.tempo
+	local craftCD = Condition(CONDITION_SPELLCOOLDOWN)
+	craftCD:setParameter(COMBAT_PARAM_AGGRESSIVE, 0)
+	craftCD:setParameter(CONDITION_PARAM_SUBID, 160)
+	craftCD:setParameter(CONDITION_PARAM_TICKS, tempo*1000)
+	self:addCondition(craftCD)
+	self:allowMovement(false)
+	self:say("Trabalhando...", TALKTYPE_MONSTER_SAY)
+	local posicaoMesaTrabalho = self:getPosicaoMesaTrabalho(profissaoId)
+	function enviarAnimacao(tempo, posicao, efeito)
+		if tempo > 0 then
+			posicao:sendMagicEffect(efeito)
+			addEvent(enviarAnimacao, 1000, tempo-1, posicao, efeito)
+		end
+	end
+	enviarAnimacao(tempo, posicaoMesaTrabalho.efeito, efeitoTrabalhando)
+	for i = 1, #materiais do
+		if materiais[i][3] == nil then
+			materiais[i][3] = -1
+		end
+		self:removeItem(materiais[i][1], materiais[i][2], materiais[i][3])
+	end
+	addEvent(function(self, receitaId, profissaoId, mesaTrabalhando)
+		self:fabricarItem(receitaId, profissaoId, mesaTrabalhando) 
+	end, tempo*1000, self, receitaId, profissaoId, mesaTrabalhando)
+	-- addEvent(function(player, receitaId, receita, efeitoSucesso, efeitoFalha, posicaoMesaTrabalho, mesaTrabalho, mesaTrabalhando)
+	-- tempo*1000, self, receitaId, receita, efeitoSucesso, efeitoFalha, posicaoMesaTrabalho.mesaTrabalho, mesaTrabalho, mesaTrabalhando)
+	return true
+end
+function Player.fabricarItem(self, receitaId, profissaoId, mesaTrabalhando)
+	local profissao = profissoes[profissaoId]
+	local mesaTrabalho = profissao.extraData[self:getId()].mesaTrabalho
+	local posicaoMesaTrabalho = self:getPosicaoMesaTrabalho(profissaoId).efeito
+	local efeitoSucesso = profissao.efeitoSucesso
+	local efeitoFalha = profissao.efeitoFalha
+	local receita = profissao.receitas[receitaId]
+	local nivel = receita.nivel
+	local chanceSucesso = self:getProfissaoChanceSucessoReceita(profissaoId, receitaId)
+	local experiencia = receita.experiencia
+	local pontos = receita.pontos
+	local chance = math.random(10000)
+	if chance <= chanceSucesso then
+		local itemCriado = receita.item
+		local atributos = receita.atributos
+		local itemCriado = self:addItem(itemCriado, 1)
+		if itemCriado:getType():getDescription() ~= "" then
+			itemCriado:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, itemCriado:getType():getDescription().."\nCriado por "..self:getName()..".")
+		else
+			itemCriado:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, "Criado por "..self:getName()..".")
+		end
+		if receita.atributos ~= nil then
+			local bonusAdicional = self:getProfissaoBonusAdicional(profissaoId)
+			if itemCriado:getType():getAttack() > 0 and receita.atributos.ataque ~= nil then
+				if type(receita.atributos.ataque) == "table" then
+					ataqueAdicional = math.random(receita.atributos.ataque[1], receita.atributos.ataque[2])
+				else
+					ataqueAdicional = receita.atributos.ataque
+				end
+				itemCriado:setAttribute(ITEM_ATTRIBUTE_ATTACK, itemCriado:getType():getAttack()+ataqueAdicional+bonusAdicional)
+			end
+			if itemCriado:getType():getDefense() > 0 and receita.atributos.defesa ~= nil then
+				if type(receita.atributos.defesa) == "table" then
+					defesaAdicional = math.random(receita.atributos.defesa[1], receita.atributos.defesa[2])
+				else
+					defesaAdicional = receita.atributos.defesa
+				end
+				itemCriado:setAttribute(ITEM_ATTRIBUTE_DEFENSE, itemCriado:getType():getDefense()+defesaAdicional+bonusAdicional)
+			end
+			if itemCriado:getType():getExtraDefense() > 0 and receita.atributos.defesaExtra ~= nil then
+				itemCriado:setAttribute(ITEM_ATTRIBUTE_EXTRADEFENSE, itemCriado:getType():getExtraDefense()+receita.atributos.defesaExtra)
+			end
+			if itemCriado:getType():getArmor() > 0 and receita.atributos.armadura ~= nil then
+				if type(receita.atributos.armadura) == "table" then
+					armaduraAdicional = math.random(receita.atributos.armadura[1], receita.atributos.armadura[2])
+				else
+					armaduraAdicional = receita.atributos.armadura
+				end
+				itemCriado:setAttribute(ITEM_ATTRIBUTE_ARMOR, itemCriado:getType():getArmor()+armaduraAdicional+bonusAdicional)
+			end
+			if itemCriado:getType():getShootRange() > 0 then
+				itemCriado:setAttribute(ITEM_ATTRIBUTE_SHOOTRANGE, itemCriado:getType():getShootRange()+math.random(0, 1))
+			end
+			if receita.atributos.health ~= nil then
+				if type(receita.atributos.health) == "table" then
+					healthAdicional = math.random(receita.atributos.health[1], receita.atributos.health[2])
+				else
+					healthAdicional = receita.atributos.health
+				end
+				itemCriado:setAttribute(ITEM_ATTRIBUTE_NAME, itemCriado:getType():getName().." [health: "..healthAdicional.."]")
+			end
+			if receita.atributos.mana ~= nil then
+				if type(receita.atributos.mana) == "table" then
+					manaAdicional = math.random(receita.atributos.mana[1], receita.atributos.mana[2])
+				else
+					manaAdicional = receita.atributos.mana
+				end
+				itemCriado:setAttribute(ITEM_ATTRIBUTE_NAME, itemCriado:getType():getName().." [mana: "..manaAdicional.."]")
+			end
+		end
+		self:addProfissaoReceitasFabricadas(profissaoId)
+		self:resetProfissaoUltimasReceitasFalhadas(profissaoId, receitaId)
+		self:sendTextMessage(MESSAGE_EVENT_DEFAULT, "Você fabricou com sucesso o item '"..capAll(itemCriado:getName()).."'.")
+		self:addProfissaoPontos(profissaoId, pontos)
+		posicaoMesaTrabalho:sendMagicEffect(efeitoSucesso)
+	else
+		self:addProfissaoReceitasFalhadas(profissaoId)
+		self:addProfissaoUltimasReceitasFalhadas(profissaoId, receitaId)
+		posicaoMesaTrabalho:sendMagicEffect(efeitoFalha)
+		self:sendCancelMessage("O processo de criação falhou.")
+	end
+	self:addProfissaoSkillExp(profissaoId, experiencia)
+	if mesaTrabalhando ~= nil then
+		mesaTrabalho:transform(mesaTrabalhando)
+	end
+	mesaTrabalho:removeAttribute(ITEM_ATTRIBUTE_ACTIONID)
+	self:allowMovement(true)
+end
