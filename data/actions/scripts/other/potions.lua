@@ -67,8 +67,8 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			local health_max = potion.health[2] or 0
 			local mana_min = potion.mana[1] or 0
 			local mana_max = potion.mana[2] or 0
-			local health = Item(item.uid):getName():match('health: (.-)]')
-			local mana = Item(item.uid):getName():match('mana: (.-)]')
+			local health = item:getName():match("health: (.-)]")
+			local mana = item:getName():match("mana: (.-)]")
 			if health ~= nil then
 				health_min = health
 				health_max = health
@@ -83,7 +83,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		end
 		player:addCondition(exhaust)
 		player:say("Aaaah...", TALKTYPE_MONSTER_SAY)
-		Item(item.uid):remove(1)
+		item:remove(1)
 		player:addItem(potion.emptyPot, 1)
 	end
 	return true

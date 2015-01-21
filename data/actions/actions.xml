@@ -43,6 +43,9 @@
 	
 	<action itemid="9930" script="rusty_remover.lua"/>
 
+	<action itemid="21309" script="pocoes_profissao.lua"/>
+	<action itemid="21426" script="pocoes_profissao.lua"/>
+	
 	<!-- Crafting -->
 	<action itemid="2555" script="crafting.lua"/>
 	<action itemid="8671" script="crafting.lua"/>

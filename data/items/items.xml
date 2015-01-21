@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <items>
 	<item id="100" name="void" />
 	<item id="101" name="earth" />
@@ -29085,6 +29085,9 @@
 		<attribute key="duration" value="300" />
 		<attribute key="corpseType" value="blood" />
 	</item>
+	<item fromid="21308" toid="21309" article="a" name="profession potion">
+		<attribute key="weight" value="500" />
+	</item>
 	<item id="21310" article="a" name="rorc feather">
 		<attribute key="weight" value="250" />
 	</item>
@@ -29289,6 +29292,9 @@
 	<item id="21419" article="a" name="blood vial">
 		<attribute key="weight" value="180" />
 		<attribute key="description" value="The blood in the vial is of a strange colour, as if tainted." />
+	</item>
+	<item fromid="21425" toid="21426" article="a" name="special profession potion">
+		<attribute key="weight" value="500" />
 	</item>
 	<item id="21427" article="a" name="dowser">
 		<attribute key="weight" value="360" />

@@ -5,13 +5,23 @@ configProfissoes = {
 	receitasFabricadas = 3,
 	receitasFalhadas = 4,
 	pontosProfissao = 5,
-	aprendizado = 10,
+	ultimaReceita = 6,
+	ingredienteMelhoria = 7,
+	receitasInicio = 10,
 	ultimasReceitasFalhadas = 500,
 	modalInfo = 1,
 	modalLista1 = 2,
 	modalLista2 = 3,
 	modalLista3 = 4,
-	actionItemDesativado = 2500
+	actionItemDesativado = 2500,
+	pocaoCD = 700,
+	pocaoChanceStorage = 19900,
+	pocaoProfissaoStorage = 19901,
+	pocoes = {
+		[21309] = {duracao = 10},
+		[21426] = {duracao = 10}
+	},
+	maxQuantidadeFabricacao = 10
 }
 profissoes = {
 	[20000] = {
@@ -19,13 +29,25 @@ profissoes = {
 		mesaTrabalho = {2555, 8671},
 		mesaTrabalhando = {},
 		receitas = {
-			[1] = {item = 2400, nivel = 1, nivelJogador = 1, ferramenta = 2421, materiais = {{2160, 1}}, tempo = 0, experiencia = 1301, pontos = 10, chanceSucesso = 100, aprender = 0, atributos = {ataque = {1, 10}, defesa = {1, 10}, defesaExtra = 1, armadura = {1, 3}}},
-			[2] = {item = 2401, nivel = 1, nivelJogador = 1, ferramenta = 2421, materiais = {{2160, 1}}, tempo = 2, experiencia = 273, pontos = 10, chanceSucesso = 100, aprender = 0, atributos = {ataque = {1, 10}, defesa = {1, 10}, defesaExtra = 1, armadura = {1, 3}}},
+			[1] = {item = 2400, nivel = 1, nivelJogador = 1, ferramenta = 2421, materiais = {{2148, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, aprender = 0, atributos = {ataque = {1, 10}, defesa = {1, 10}, defesaExtra = 1, armadura = {1, 3}}},
+			[2] = {item = 2401, nivel = 1, nivelJogador = 1, ferramenta = 2421, materiais = {{2148, 1}}, fabricarQuantidade = 1, tempo = 2, experiencia = 20, pontos = 10, chanceSucesso = 1000, aprender = 0, atributos = {ataque = {1, 10}, defesa = {1, 10}, defesaExtra = 1, armadura = {1, 3}}},
+			[3] = {item = 2401, nome = "Staff (sem quantidade)", nivel = 1, nivelJogador = 1, ferramenta = 2421, materiais = {{2148, 1}}, tempo = 2, experiencia = 20, pontos = 10, chanceSucesso = 1000, aprender = 0, atributos = {ataque = {1, 10}, defesa = {1, 10}, defesaExtra = 1, armadura = {1, 3}}},
 		},
 		mensagem = "A forja permite você criar equipamentos únicos e poderosos, basta você ter os materiais necessários para isso.",
 		efeitoTrabalhando = CONST_ME_BLOCKHIT,
 		efeitoSucesso = CONST_ME_FIREWORK_RED,
 		efeitoFalha = CONST_ME_POFF,
+		ingredientesMelhoria = {
+			{item = 18413, chance = 1500},
+			{item = 18414, chance = 1500},
+			{item = 18415, chance = 1500},
+			{item = 18416, chance = 1000},
+			{item = 18417, chance = 1000},
+			{item = 18418, chance = 1000},
+			{item = 18419, chance = 500},
+			{item = 18420, chance = 500},
+			{item = 18421, chance = 500}
+		},
 		extraData = {}
 	},
 	[21000] = {
@@ -33,12 +55,22 @@ profissoes = {
 		mesaTrabalho = {9909, 9910},
 		mesaTrabalhando = {},
 		receitas = {
-			[1] = {item = 7618, nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2006, 2, 6}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {health = {50, 60}}},
+			[1] = {item = 7618, nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, fabricarQuantidade = 1, ingredienteSecreto = {2152, 1, 1000}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 5000, aprender = 0, atributos = {health = {50, 60}}},
+			[2] = {item = 21309, nome = "Profession Potion [Profissão: Aleatória]", nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0, atributos = {profissao = 1, chance = {8, 13}}},
+			[3] = {item = 21309, nome = "Profession Potion [Profissão: Alquimista]", nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0, atributos = {profissao = "alquimista", chance = {8, 13}}},
+			[4] = {item = 21309, nome = "Profession Potion [Profissão: Alfaiate]", nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0, atributos = {profissao = "alfaiate", chance = {8, 13}}},
+			[5] = {item = 21309, nome = "Profession Potion [Profissão: Cozinheiro]", nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0, atributos = {profissao = "cozinheiro", chance = {8, 13}}},
+			[6] = {item = 21309, nome = "Profession Potion [Profissão: Ferreiro]", nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0, atributos = {profissao = "ferreiro", chance = {8, 13}}},
+			[7] = {item = 21426, nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0, atributos = {chance = {8, 13}}},
 		},
 		mensagem = "A alquimia permite você criar poções únicas e encantamentos poderosos, basta você ter os materiais necessários para isso.",
 		efeitoTrabalhando = CONST_ME_BLOCKHIT,
 		efeitoSucesso = CONST_ME_FIREWORK_BLUE,
 		efeitoFalha = CONST_ME_POFF,
+		ingredientesMelhoria = {
+			{item = 22472, chance = 1000},
+			{item = 22473, chance = 1500},
+		},
 		extraData = {}
 	},
 	[22000] = {
@@ -52,6 +84,17 @@ profissoes = {
 		efeitoTrabalhando = CONST_ME_BLOCKHIT,
 		efeitoSucesso = CONST_ME_FIREWORK_BLUE,
 		efeitoFalha = CONST_ME_POFF,
+		ingredientesMelhoria = {
+			{item = 13193, chance = 500},
+			{item = 13194, chance = 500},
+			{item = 13195, chance = 500},
+			{item = 13196, chance = 1500},
+			{item = 13197, chance = 1500},
+			{item = 13198, chance = 1500},
+			{item = 13213, chance = 1000},
+			{item = 13214, chance = 1000},
+			{item = 13215, chance = 1000},
+		},
 		extraData = {}
 	},
 	[23000] = {
@@ -80,19 +123,25 @@ profissoes = {
 		efeitoSucesso = CONST_ME_FIREWORK_BLUE,
 		efeitoFalha = CONST_ME_BLACKSMOKE,
 		extraData = {}
-	},
+	}
 }
 listaProfissoes = {}
+listaProfissoesNomes = {}
 listaProfissoesInfo = {}
 listaProfissoesLista1 = {}
 listaProfissoesLista2 = {}
 listaProfissoesLista3 = {}
-for a,b in pairs(profissoes) do
+listaProfissoesReceitas = {}
+for a, b in pairs(profissoes) do
 	table.insert(listaProfissoes, a)
+	table.insert(listaProfissoesNomes, string.lower(b.nome))
 	table.insert(listaProfissoesInfo, a+configProfissoes.modalInfo)
 	table.insert(listaProfissoesLista1, a+configProfissoes.modalLista1)
 	table.insert(listaProfissoesLista2, a+configProfissoes.modalLista2)
 	table.insert(listaProfissoesLista3, a+configProfissoes.modalLista3)
+	for c, d in pairs(b.receitas) do
+		table.insert(listaProfissoesReceitas, a+c+configProfissoes.receitasInicio)
+	end
 end
 function doCalcLevel(n)
 	if n == 0 then
@@ -118,13 +167,21 @@ end
 function calcularPontosProfissao(n)
 	return math.floor(doCalcLevelPontos(n))
 end
-function verificiarProfissao(value)
-	for a,b in pairs(profissoes) do
-		if	a+configProfissoes.modalInfo == value or
-			a+configProfissoes.modalLista1 == value or
-			a+configProfissoes.modalLista2 == value or
-			a+configProfissoes.modalLista3 == value then
-			return a
+function verificiarProfissao(value, verificarReceita)
+	for a, b in pairs(profissoes) do
+		if verificarReceita == nil then
+			if	a+configProfissoes.modalInfo == value or
+				a+configProfissoes.modalLista1 == value or
+				a+configProfissoes.modalLista2 == value or
+				a+configProfissoes.modalLista3 == value then
+				return a
+			end
+		else
+			for c, d in pairs(b.receitas) do
+				if a+c+configProfissoes.receitasInicio == value then
+					return {a, c}
+				end
+			end
 		end
 	end
 	return 0
@@ -208,6 +265,12 @@ function Player.addProfissaoReceitasFalhadas(self, profissaoId)
 	local receitasFalhadas = math.max(0, self:getStorageValue(storageReceitasFalhadas))
 	self:setStorageValue(storageReceitasFalhadas, receitasFalhadas+1)
 end
+function Player.addProfissaoUltimaReceita(self, profissaoId, receitaId)
+	self:setStorageValue(profissaoId+configProfissoes.ultimaReceita, receitaId)
+end
+function Player.getProfissaoUltimaReceita(self, profissaoId)
+	return math.max(0, self:getStorageValue(profissaoId+configProfissoes.ultimaReceita))
+end
 function Player.getProfissaoUltimasReceitasFalhadas(self, profissaoId, receitaId)
 	return math.floor(math.max(0, self:getStorageValue(profissaoId+configProfissoes.ultimasReceitasFalhadas+receitaId))*50)
 end
@@ -223,9 +286,24 @@ function Player.getProfissaoBonusAdicional(self, profissaoId)
 	local nivel = self:getProfissaoSkill(profissaoId)
 	return math.floor(0.05*nivel)
 end
+function Player.getProfissaoIngredienteMelhoria(self, profissaoId)
+	return math.max(0, self:getStorageValue(profissaoId+configProfissoes.ingredienteMelhoria))
+end
+function Player.addProfissaoIngredienteMelhoria(self, profissaoId, ingredienteMelhoria)
+	self:setStorageValue(profissaoId+configProfissoes.ingredienteMelhoria, ingredienteMelhoria)
+end
+function Player.resetProfissaoIngredienteMelhoria(self, profissaoId)
+	self:addProfissaoIngredienteMelhoria(profissaoId, 0)
+end
 function Player.getProfissaoChanceSucessoAdicional(self, profissaoId)
 	local nivel = self:getProfissaoSkill(profissaoId)
-	return (20*(nivel-1))
+	local chanceSucessoAdicional = (20*(nivel-1))
+	local pocaoProfissaoStorage = self:getStorageValue(configProfissoes.pocaoProfissaoStorage)
+	if	((pocaoProfissaoStorage > 1 and pocaoProfissaoStorage == profissaoId) or (pocaoProfissaoStorage == 1)) and
+		getCreatureCondition(self, CONDITION_ATTRIBUTES, configProfissoes.pocaoCD) then
+		chanceSucessoAdicional = chanceSucessoAdicional+(math.max(0, self:getStorageValue(configProfissoes.pocaoChanceStorage))*100)
+	end
+	return chanceSucessoAdicional
 end
 function Player.getProfissaoChanceColetaAdicional(self, profissaoId)
 	local nivel = self:getProfissaoSkill(profissaoId)
@@ -233,17 +311,27 @@ function Player.getProfissaoChanceColetaAdicional(self, profissaoId)
 end
 function Player.getProfissaoChanceSucessoReceita(self, profissaoId, receitaId)
 	local profissao = profissoes[profissaoId]
+	local receita = profissao.receitas[receitaId]
 	local chanceSucessoAdicional = self:getProfissaoChanceSucessoAdicional(profissaoId)
 	local chanceSucessoUltimasReceitasFalhadas = self:getProfissaoUltimasReceitasFalhadas(profissaoId, receitaId)
-	local chanceSucesso = profissao.receitas[receitaId].chanceSucesso
-	return chanceSucesso+chanceSucessoUltimasReceitasFalhadas+chanceSucessoAdicional
+	local chanceSucesso = receita.chanceSucesso
+	local chanceSucessoReceita = chanceSucesso+chanceSucessoUltimasReceitasFalhadas+chanceSucessoAdicional
+	local ingredienteSecreto = receita.ingredienteSecreto
+	if ingredienteSecreto ~= nil and self:getItemCount(ingredienteSecreto[1]) >= ingredienteSecreto[2] then
+		chanceSucessoReceita = chanceSucessoReceita+ingredienteSecreto[3]
+	end
+	local ingredienteMelhoria = profissao.ingredientesMelhoria[self:getProfissaoIngredienteMelhoria(profissaoId)]
+	if ingredienteMelhoria ~= nil and self:getItemCount(ingredienteMelhoria.item) > 0 then
+		chanceSucessoReceita = chanceSucessoReceita+ingredienteMelhoria.chance
+	end
+	return math.min(10000, chanceSucessoReceita)
 end
-function Player.getProfissaoReceitaAprendizado(self, profissaoId, receitaId)
-	return math.max(0, self:getStorageValue(profissaoId+configProfissoes.aprendizado+receitaId))
+function Player.getProfissaoReceitareceitasInicio(self, profissaoId, receitaId)
+	return math.max(0, self:getStorageValue(profissaoId+configProfissoes.receitasInicio+receitaId))
 end
-function Player.addProfissaoReceitaAprendizado(self, profissaoId, receitaId)
-	local storageAprendizado = profissaoId+configProfissoes.aprendizado+receitaId
-	self:setStorageValue(storageAprendizado, 1)
+function Player.addProfissaoReceitareceitasInicio(self, profissaoId, receitaId)
+	local storagereceitasInicio = profissaoId+configProfissoes.receitasInicio+receitaId
+	self:setStorageValue(storagereceitasInicio, 1)
 end
 function Player.getPosicaoMesaTrabalho(self, profissaoId)
 	local extraData = profissoes[profissaoId].extraData[self:getId()]
@@ -261,54 +349,143 @@ function Player.getPosicaoMesaTrabalho(self, profissaoId)
 	end
 	return {mesaTrabalho = posicaoMesaTrabalho, efeito = posicaoEfeitoMesaTrabalho}
 end
+function Player.getProfissaoModalQuantidade(self, profissaoId, receitaId, cristalAtivo)
+	local profissao = profissoes[profissaoId]
+	local receita = profissao.receitas[receitaId]
+	local modalId = profissaoId+configProfissoes.receitasInicio+receitaId
+	local modalTitulo = self:getProfissaoModalTitulo(profissaoId).." - Selecione a Quantidade"
+	local modalMensagem = "Selecione a quantidade de itens que deseja fabricar.\n\nClique no botão 'Criar', tecle 'Enter' ou dê dois cliques para iniciar o processo de fabricação.\n\n"
+	local modal = ModalWindow(modalId, modalTitulo, modalMensagem)
+	local quantidadePossivel = self:verificarJogadorItensReceita(profissaoId, receitaId, configProfissoes.maxQuantidadeFabricacao)
+	for i = 1, quantidadePossivel do
+		modal:addChoice(i, i)
+	end
+	modal:setDefaultEnterButton(1)
+	modal:addButton(1, "Criar")
+	modal:addButton(2, "Sair")
+	modal:setDefaultEscapeButton(2)
+	return modal
+end
 function Player.getProfissaoModalPrincipal(self, profissaoId)
 	local profissao = profissoes[profissaoId]
 	local profissaoMensagem = profissao.mensagem
 	local profissaoNome = profissao.nome
 	local profissaoNivel = self:getProfissaoSkill(profissaoId)
 	local profissaoExpPorcentagem = self:getProfissaoSkillPorcentagem(profissaoId)
-	local modal_titulo = profissaoNome.." - Nível: "..profissaoNivel.." ("..profissaoExpPorcentagem.."%)"
-	local modal_mensagem = profissaoMensagem.."\n\nO que você deseja fazer?\n"
-	local modal = ModalWindow(profissaoId, modal_titulo, modal_mensagem)
+	local modalTitulo = profissaoNome.." - Nível: "..profissaoNivel.." ("..profissaoExpPorcentagem.."%)"
+	local modalMensagem = profissaoMensagem.."\n\nO que você deseja fazer?\n"
+	local modal = ModalWindow(profissaoId, modalTitulo, modalMensagem)
+	local receitaId = self:getProfissaoUltimaReceita(profissaoId)
+	if receitaId > 0 and self:verificarJogadorItensReceita(profissaoId, receitaId) > 0 then
+		modal:addChoice(5, "Fabricar Última Receita")
+	end
 	modal:addChoice(1, "Informações da Profissão")
 	modal:addChoice(2, "Lista de Receitas - Prontas para Fabricação")
 	modal:addChoice(3, "Lista de Receitas - Conhecidas")
 	modal:addChoice(4, "Lista de Receitas - Geral")
-	if modal:getChoiceCount() ~= 0 then
-		modal:addButton(1, "Ok")
-		modal:setDefaultEnterButton(1)
-		modal:addButton(2, "Sair")
-		modal:setDefaultEscapeButton(2)
-		return modal
-	end
+	modal:addButton(1, "Ok")
+	modal:setDefaultEnterButton(1)
+	modal:addButton(2, "Sair")
+	modal:setDefaultEscapeButton(2)
+	return modal
 end
-function Player.iniciarReceita(self, profissaoId, receitaId)
+function Player.getProfissaoModalTitulo(self, profissaoId)
+	local profissao = profissoes[profissaoId]
+	local profissaoNome = profissao.nome
+	local profissaoNivel = self:getProfissaoSkill(profissaoId)
+	local profissaoExpPorcentagem = self:getProfissaoSkillPorcentagem(profissaoId)
+	return profissaoNome.." - Nível: "..profissaoNivel.." ("..profissaoExpPorcentagem.."%)"
+end
+function Player.verificarJogadorItensReceita(self, profissaoId, receitaId, quantidade)
+	if quantidade == nil then
+		quantidade = 1
+	end
+	local profissao = profissoes[profissaoId]
+	local receita = profissao.receitas[receitaId]
+	local ferramenta = receita.ferramenta
+	local materiais = receita.materiais
+	local quantidadePossivel = 0
+	if self:getItemCount(ferramenta) == 0 then
+		return quantidadePossivel
+	end
+	local verificarQuantidade = 0
+	for i = 1, quantidade do
+		for a, b in pairs(materiais) do
+			if b[3] ~= -1 then
+				b[3] = -1
+			end
+			verificarQuantidade = verificarQuantidade+b[2]
+			if	self:getItemCount(b[1], b[3]) < verificarQuantidade or
+				quantidade == quantidadePossivel then
+				return quantidadePossivel
+			else
+				quantidadePossivel = quantidadePossivel+1
+			end
+		end
+	end
+	return quantidadePossivel
+end
+function Player.iniciarReceitaQuantidade(self, profissaoId, receitaId, quantidadeTotal, quantidadeAtual, tempo)
+	if quantidadeAtual == 0 then
+		self:allowMovement(false)
+	end
+	if quantidadeAtual == 0 then
+		delay = 0
+	else
+		delay = tempo+1
+	end
+	addEvent(function(self, profissaoId, receitaId, quantidadeTotal, quantidadeAtual, tempo)
+		local bloquearMovimento = 1
+		if quantidadeAtual == quantidadeTotal then
+			bloquearMovimento = 0
+		end
+		local iniciarReceita = self:iniciarReceita(profissaoId, receitaId, bloquearMovimento)
+		if iniciarReceita and quantidadeAtual < quantidadeTotal then
+			self:iniciarReceitaQuantidade(profissaoId, receitaId, quantidadeTotal, quantidadeAtual, tempo)
+		elseif not iniciarReceita then
+			self:resetProfissaoIngredienteMelhoria(profissaoId)
+			self:allowMovement(true)
+		end
+	end, delay*1000, self, profissaoId, receitaId, quantidadeTotal, quantidadeAtual+1, tempo)
+end
+function Player.getIngredientesMelhoria(self, profissaoId)
+	local profissao = profissoes[profissaoId]
+	local ingredientesMelhoria = profissao.ingredientesMelhoria
+	local ingredientesMelhoriaDisponiveis = {}
+	for a, b in pairs(ingredientesMelhoria) do
+		if self:getItemCount(b.item) > 0 then
+			table.insert(ingredientesMelhoriaDisponiveis, a+configProfissoes.receitasInicio)
+		end
+	end
+	return ingredientesMelhoriaDisponiveis
+end
+function Player.iniciarReceita(self, profissaoId, receitaId, bloquearMovimento)
 	local mesaTrabalho = profissoes[profissaoId].extraData[self:getId()].mesaTrabalho
 	local actionItemDesativado = configProfissoes.actionItemDesativado
 	if mesaTrabalho:getActionId() == actionItemDesativado then
 		return false
 	end
-	local profissaoNivel = self:getProfissaoSkill(profissaoId)
 	local profissao = profissoes[profissaoId]
+	local profissaoNivel = self:getProfissaoSkill(profissaoId)
 	local efeitoTrabalhando = profissao.efeitoTrabalhando
 	local mesaTrabalhoKey = searchArrayKey(profissao.mesaTrabalho, mesaTrabalho:getType():getId())
 	local mesaTrabalhando = profissao.mesaTrabalhando[mesaTrabalhoKey]
 	local receita = profissao.receitas[receitaId]
 	local ferramenta = receita.ferramenta
 	local materiais = receita.materiais
-	if	self:getItemCount(ferramenta) == 0 or
-		profissaoNivel < receita.nivel or
+	if	profissaoNivel < receita.nivel or
 		self:getLevel() < receita.nivelJogador or
-		(receita.aprender == 1 and self:getProfissaoReceitaAprendizado(profissaoId, receitaId) == 1) then
+		(receita.aprender == 1 and self:getProfissaoReceitareceitasInicio(profissaoId, receitaId) == 1) then
 		return false
 	end
-	for a,b in pairs(materiais) do
-		if b[3] ~= -1 then
+	if self:verificarJogadorItensReceita(profissaoId, receitaId) == 0 then
+		return false
+	end
+	for a, b in pairs(materiais) do
+		if b[3] == nil then
 			b[3] = -1
 		end
-		if self:getItemCount(b[1], b[3]) < b[2] then
-			return false
-		end
+		self:removeItem(b[1], b[2], b[3])
 	end
 	mesaTrabalho:setActionId(actionItemDesativado)
 	if mesaTrabalhando ~= nil then
@@ -319,9 +496,11 @@ function Player.iniciarReceita(self, profissaoId, receitaId)
 	local craftCD = Condition(CONDITION_SPELLCOOLDOWN)
 	craftCD:setParameter(COMBAT_PARAM_AGGRESSIVE, 0)
 	craftCD:setParameter(CONDITION_PARAM_SUBID, 160)
-	craftCD:setParameter(CONDITION_PARAM_TICKS, tempo*1000)
+	craftCD:setParameter(CONDITION_PARAM_TICKS, (tempo+1)*1000)
 	self:addCondition(craftCD)
-	self:allowMovement(false)
+	if bloquearMovimento == nil then
+		self:allowMovement(false)
+	end
 	self:say("Trabalhando...", TALKTYPE_MONSTER_SAY)
 	local posicaoMesaTrabalho = self:getPosicaoMesaTrabalho(profissaoId)
 	function enviarAnimacao(tempo, posicao, efeito)
@@ -331,20 +510,12 @@ function Player.iniciarReceita(self, profissaoId, receitaId)
 		end
 	end
 	enviarAnimacao(tempo, posicaoMesaTrabalho.efeito, efeitoTrabalhando)
-	for i = 1, #materiais do
-		if materiais[i][3] == nil then
-			materiais[i][3] = -1
-		end
-		self:removeItem(materiais[i][1], materiais[i][2], materiais[i][3])
-	end
-	addEvent(function(self, receitaId, profissaoId, mesaTrabalhando)
-		self:fabricarItem(receitaId, profissaoId, mesaTrabalhando) 
-	end, tempo*1000, self, receitaId, profissaoId, mesaTrabalhando)
-	-- addEvent(function(player, receitaId, receita, efeitoSucesso, efeitoFalha, posicaoMesaTrabalho, mesaTrabalho, mesaTrabalhando)
-	-- tempo*1000, self, receitaId, receita, efeitoSucesso, efeitoFalha, posicaoMesaTrabalho.mesaTrabalho, mesaTrabalho, mesaTrabalhando)
+	addEvent(function(self, receitaId, profissaoId, mesaTrabalhando, bloquearMovimento)
+		self:fabricarItem(receitaId, profissaoId, mesaTrabalhando, bloquearMovimento) 
+	end, tempo*1000, self, receitaId, profissaoId, mesaTrabalhando, bloquearMovimento)
 	return true
 end
-function Player.fabricarItem(self, receitaId, profissaoId, mesaTrabalhando)
+function Player.fabricarItem(self, receitaId, profissaoId, mesaTrabalhando, bloquearMovimento)
 	local profissao = profissoes[profissaoId]
 	local mesaTrabalho = profissao.extraData[self:getId()].mesaTrabalho
 	local posicaoMesaTrabalho = self:getPosicaoMesaTrabalho(profissaoId).efeito
@@ -353,6 +524,17 @@ function Player.fabricarItem(self, receitaId, profissaoId, mesaTrabalhando)
 	local receita = profissao.receitas[receitaId]
 	local nivel = receita.nivel
 	local chanceSucesso = self:getProfissaoChanceSucessoReceita(profissaoId, receitaId)
+	local ingredienteSecreto = receita.ingredienteSecreto
+	if ingredienteSecreto ~= nil and self:getItemCount(ingredienteSecreto[1]) >= ingredienteSecreto[2] then
+		self:removeItem(ingredienteSecreto[1], ingredienteSecreto[2])
+	end
+	ingredienteMelhoria = self:getProfissaoIngredienteMelhoria(profissaoId)
+	if ingredienteMelhoria > 0 then
+		local ingredienteMelhoriaItem = profissao.ingredientesMelhoria[ingredienteMelhoria].item
+		if ingredienteMelhoriaItem ~= nil and self:getItemCount(ingredienteMelhoriaItem) > 0 then
+			self:removeItem(ingredienteMelhoriaItem, 1)
+		end
+	end
 	local experiencia = receita.experiencia
 	local pontos = receita.pontos
 	local chance = math.random(10000)
@@ -403,7 +585,7 @@ function Player.fabricarItem(self, receitaId, profissaoId, mesaTrabalhando)
 				else
 					healthAdicional = receita.atributos.health
 				end
-				itemCriado:setAttribute(ITEM_ATTRIBUTE_NAME, itemCriado:getType():getName().." [health: "..healthAdicional.."]")
+				itemCriado:setAttribute(ITEM_ATTRIBUTE_NAME, itemCriado:getName().." [health: "..healthAdicional.."]")
 			end
 			if receita.atributos.mana ~= nil then
 				if type(receita.atributos.mana) == "table" then
@@ -411,7 +593,22 @@ function Player.fabricarItem(self, receitaId, profissaoId, mesaTrabalhando)
 				else
 					manaAdicional = receita.atributos.mana
 				end
-				itemCriado:setAttribute(ITEM_ATTRIBUTE_NAME, itemCriado:getType():getName().." [mana: "..manaAdicional.."]")
+				itemCriado:setAttribute(ITEM_ATTRIBUTE_NAME, itemCriado:getName().." [mana: "..manaAdicional.."]")
+			end
+			if receita.atributos.profissao ~= nil then
+				local profissaoNome = receita.atributos.profissao
+				if profissaoNome == 1 then
+					profissaoNome = listaProfissoesNomes[math.random(#listaProfissoesNomes)]
+				end
+				itemCriado:setAttribute(ITEM_ATTRIBUTE_NAME, itemCriado:getName().." [profissão: "..profissaoNome.."]")
+			end
+			if receita.atributos.chance ~= nil then
+				if type(receita.atributos.chance) == "table" then
+					chanceAdicional = math.random(receita.atributos.chance[1], receita.atributos.chance[2])
+				else
+					chanceAdicional = receita.atributos.chance
+				end
+				itemCriado:setAttribute(ITEM_ATTRIBUTE_NAME, itemCriado:getName().." [chance adicional: "..chanceAdicional.."%]")
 			end
 		end
 		self:addProfissaoReceitasFabricadas(profissaoId)
@@ -426,9 +623,14 @@ function Player.fabricarItem(self, receitaId, profissaoId, mesaTrabalhando)
 		self:sendCancelMessage("O processo de criação falhou.")
 	end
 	self:addProfissaoSkillExp(profissaoId, experiencia)
+	self:addProfissaoUltimaReceita(profissaoId, receitaId)
 	if mesaTrabalhando ~= nil then
 		mesaTrabalho:transform(mesaTrabalhando)
 	end
 	mesaTrabalho:removeAttribute(ITEM_ATTRIBUTE_ACTIONID)
-	self:allowMovement(true)
+	if bloquearMovimento == nil or bloquearMovimento == 0 then
+		self:resetProfissaoIngredienteMelhoria(profissaoId)
+		self:allowMovement(true)
+	end
+	return true
 end

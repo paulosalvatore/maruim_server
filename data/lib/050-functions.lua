@@ -1,5 +1,14 @@
 function capAll(str)
-	local novaStr = ""; palavraSeparada = string.gmatch(str, "([^%s]+)")
+	local strLimpa = str
+	local b = string.gmatch(str, "(.*) %[")
+	for a in b do
+		b = string.gmatch(a, "(.*) %[")
+		strLimpa = a
+	end
+	for a in b do
+		strLimpa = a
+	end
+	local novaStr = ""; palavraSeparada = string.gmatch(strLimpa, "([^%s]+)")
 	for v in palavraSeparada do
 		v = v:gsub("^%l", string.upper)
 		if novaStr ~= "" then
@@ -8,7 +17,13 @@ function capAll(str)
 			novaStr = v
 		end
 	end
-	novaStr = novaStr:gsub("Of", "of")
+	local formatar = {
+		{"Of", "of"}
+	}
+	for a, b in pairs(formatar) do
+		novaStr = novaStr:gsub(b[1], b[2])
+	end
+	novaStr = str:gsub(strLimpa, novaStr)
 	return novaStr
 end
 function formatarValor(valor)

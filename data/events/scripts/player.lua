@@ -87,6 +87,10 @@ function Player:onLookInShop(itemType, count)
 end
 
 function Player:onMoveItem(item, count, fromPosition, toPosition)
+	if getCreatureCondition(self, CONDITION_SPELLCOOLDOWN, 160) then
+		self:sendCancelMessage("Você está ocupado.")
+		return false
+	end
 	return true
 end
 
@@ -99,10 +103,18 @@ function Player:onTurn(direction)
 end
 
 function Player:onTradeRequest(target, item)
+	if getCreatureCondition(self, CONDITION_SPELLCOOLDOWN, 160) then
+		self:sendCancelMessage("Você está ocupado.")
+		return false
+	end
 	return true
 end
 
 function Player:onTradeAccept(target, item, targetItem)
+	if getCreatureCondition(self, CONDITION_SPELLCOOLDOWN, 160) then
+		self:sendCancelMessage("Você está ocupado.")
+		return false
+	end
 	return true
 end
 
