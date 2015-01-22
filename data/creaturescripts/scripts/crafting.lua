@@ -229,9 +229,10 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 				local experiencia = receita.experiencia
 				local pontos = receita.pontos
 				local chanceSucesso = formatarValor(receita.chanceSucesso).."%"
+				local maxChanceSucesso = formatarValor(receita.maxChanceSucesso).."%"
 				local chanceSucessoAtual = formatarValor(player:getProfissaoChanceSucessoReceita(profissaoId, receitaId)).."%"
 				local materiais = receita.materiais
-				local mensagemMateriaisNecessarios = capAll(getItemName(item)).."\nNivel de Profissão Necessário: "..nivel.."\nNivel de Jogador Necessário: "..nivelJogador.."\nNecessário Aprender: "..necessarioAprender.."\n\nFerramenta Necessária:\n"..ferramenta.."\n\nTempo de Fabricação: "..tempo.."\nExperiência: "..experiencia.."\nPontos de Profissão: "..pontos.."\nChance de Sucesso Base: "..chanceSucesso.."\nChance de Sucesso Atual: "..chanceSucessoAtual.."\n\nMateriais:"
+				local mensagemMateriaisNecessarios = capAll(getItemName(item)).."\nNivel de Profissão Necessário: "..nivel.."\nNivel de Jogador Necessário: "..nivelJogador.."\nNecessário Aprender: "..necessarioAprender.."\n\nFerramenta Necessária:\n"..ferramenta.."\n\nTempo de Fabricação: "..tempo.."\nExperiência: "..experiencia.."\nPontos de Profissão: "..pontos.."\n\nChance de Sucesso Base: "..chanceSucesso.."\nChance de Sucesso Atual: "..chanceSucessoAtual.."\nChance de Sucesso Máxima: "..maxChanceSucesso.."\n\nMateriais:"
 				for a,b in pairs(materiais) do
 					local itemNome = capAll(getItemName(b[1]))
 					if b[3] ~= nil and b[3] > 0 then

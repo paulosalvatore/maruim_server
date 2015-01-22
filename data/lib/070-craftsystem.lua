@@ -29,7 +29,7 @@ profissoes = {
 		mesaTrabalho = {2555, 8671},
 		mesaTrabalhando = {},
 		receitas = {
-			[1] = {item = 2400, nivel = 1, nivelJogador = 1, ferramenta = 2421, materiais = {{2148, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, aprender = 0, atributos = {ataque = {1, 10}, defesa = {1, 10}, defesaExtra = 1, armadura = {1, 3}}},
+			[1] = {item = 2400, nivel = 1, nivelJogador = 1, ferramenta = 2421, materiais = {{2148, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {ataque = {1, 10}, defesa = {1, 10}, defesaExtra = 1, armadura = {1, 3}}},
 			[2] = {item = 2401, nivel = 1, nivelJogador = 1, ferramenta = 2421, materiais = {{2148, 1}}, fabricarQuantidade = 1, tempo = 2, experiencia = 20, pontos = 10, chanceSucesso = 1000, aprender = 0, atributos = {ataque = {1, 10}, defesa = {1, 10}, defesaExtra = 1, armadura = {1, 3}}},
 			[3] = {item = 2401, nome = "Staff (sem quantidade)", nivel = 1, nivelJogador = 1, ferramenta = 2421, materiais = {{2148, 1}}, tempo = 2, experiencia = 20, pontos = 10, chanceSucesso = 1000, aprender = 0, atributos = {ataque = {1, 10}, defesa = {1, 10}, defesaExtra = 1, armadura = {1, 3}}},
 		},
@@ -315,6 +315,7 @@ function Player.getProfissaoChanceSucessoReceita(self, profissaoId, receitaId)
 	local chanceSucessoAdicional = self:getProfissaoChanceSucessoAdicional(profissaoId)
 	local chanceSucessoUltimasReceitasFalhadas = self:getProfissaoUltimasReceitasFalhadas(profissaoId, receitaId)
 	local chanceSucesso = receita.chanceSucesso
+	local maxChanceSucesso = receita.maxChanceSucesso
 	local chanceSucessoReceita = chanceSucesso+chanceSucessoUltimasReceitasFalhadas+chanceSucessoAdicional
 	local ingredienteSecreto = receita.ingredienteSecreto
 	if ingredienteSecreto ~= nil and self:getItemCount(ingredienteSecreto[1]) >= ingredienteSecreto[2] then
@@ -324,7 +325,11 @@ function Player.getProfissaoChanceSucessoReceita(self, profissaoId, receitaId)
 	if ingredienteMelhoria ~= nil and self:getItemCount(ingredienteMelhoria.item) > 0 then
 		chanceSucessoReceita = chanceSucessoReceita+ingredienteMelhoria.chance
 	end
-	return math.min(10000, chanceSucessoReceita)
+	if maxChanceSucesso ~= nil then
+		chanceSucessoReceita = math.max(chanceSucessoReceita, maxChanceSucesso)
+	end
+	chanceSucessoReceita = math.min(10000, chanceSucessoReceita)
+	return chanceSucessoReceita
 end
 function Player.getProfissaoReceitareceitasInicio(self, profissaoId, receitaId)
 	return math.max(0, self:getStorageValue(profissaoId+configProfissoes.receitasInicio+receitaId))
