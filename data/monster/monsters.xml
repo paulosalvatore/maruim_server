@@ -5,8 +5,8 @@
 	<monster name="Farm Sheep" file="farm sheep.xml"/>
 	<monster name="Farm Deer" file="farm deer.xml"/>
 	<monster name="Farm Horse" file="farm horse.xml"/>
-	<monster name="Farm HorseBrown)" file="farm horsebrown).xml"/>
-	<monster name="Farm HorseGrey)" file="farm horsegrey).xml"/>
+	<monster name="Farm Horse (Brown)" file="farm horse (brown).xml"/>
+	<monster name="Farm Horse (Grey)" file="farm horse (grey).xml"/>
 	<monster name="Farm Pig" file="farm pig.xml"/>
 	<monster name="Shadow Pupil" file="shadow pupil.xml"/>
 	<monster name="Vampire" file="vampire.xml"/>
@@ -18,8 +18,8 @@
 	<monster name="Tarnished Spirit" file="tarnished spirit.xml"/>
 	<monster name="Vampire Bride" file="vampire bride.xml"/>
 	<monster name="Vampire Viscount" file="vampire viscount.xml"/>
-	<monster name="Blood Beast" file="blood beast.xml"/><!-- Fazer - Saiu no 10.5 -->
-	<monster name="Vampire Lord" file="vampire lord.xml"/><!-- Fazer -->
+	<monster name="Blood Beast" file="blood beast.xml"/>
+	<monster name="Vampire Lord" file="vampire lord.xml"/>
 	<monster name="Grim Reaper" file="grim reaper.xml"/>
 	<monster name="Lich" file="lich.xml"/>
 	<monster name="Undead Gladiator" file="undead gladiator.xml"/>
@@ -65,9 +65,21 @@
 	<monster name="Mutated Rat" file="mutated rat.xml"/>
 	<monster name="Mutated Bat" file="mutated bat.xml"/>
 	<monster name="Mutated Tiger" file="mutated tiger.xml"/>
-	<monster name="Rot Elemental" file="rot elemental.xml"/><!-- Fazer -->
+	<monster name="Rot Elemental" file="rot elemental.xml"/>
 	<monster name="Acid Blob" file="acid blob.xml"/>
 	<monster name="Death Blob" file="death blob.xml"/>
 	<monster name="Bog Raider" file="bog raider.xml"/>
-	<monster name="Defiler" file="Defiler.xml"/>
+	<monster name="Defiler" file="defiler.xml"/>
+	<monster name="Dragon" file="dragon.xml"/>
+	<monster name="Dragon Hatchling" file="dragon hatchling.xml"/>
+	<monster name="Dragon Lord" file="dragon lord.xml"/>
+	<monster name="Dragon Lord Hatchling" file="dragon lord hatchling.xml"/>
+	<monster name="Frost Dragon" file="frost dragon.xml"/>
+	<monster name="Frost Dragon Hatchling" file="frost dragon hatchling.xml"/>
+	<monster name="Wyrm" file="wyrm.xml"/>
+	<monster name="Elder Wyrm" file="elder wyrm.xml"/>
+	<monster name="Draptor" file="draptor.xml"/>
+	<monster name="Ghastly Dragon" file="ghastly dragon.xml"/>
+	<monster name="Undead Dragon" file="undead dragon.xml"/>
+	<monster name="Crab" file="crab.xml"/>
 </monsters>

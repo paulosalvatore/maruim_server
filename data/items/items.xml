@@ -12515,6 +12515,7 @@
 		<attribute key="weight" value="500" />
 	</item>
 	<item id="7402" article="a" name="dragon slayer">
+		<attribute key="description" value="Forged with slayer enchantments, this blade pierces through dragon scales. Deals 10% more damage against Dragons." />
 		<attribute key="weight" value="8200" />
 		<attribute key="defense" value="28" />
 		<attribute key="attack" value="44" />
@@ -17788,7 +17789,13 @@
 	<item fromid="10039" toid="10040" article="a" name="bellow" />
 	<item fromid="10041" toid="10043" article="a" name="crucible" />
 	<item fromid="10044" toid="10045" article="a" name="lever" />
-	<item fromid="10046" toid="10048" article="a" name="hat for Eclesius">
+	<item id="10046" article="a" name="hat for Eclesius">
+		<attribute key="weight" value="110" />
+	</item>
+	<item id="10047" article="a" name="chef's hat">
+		<attribute key="weight" value="110" />
+	</item>
+	<item id="10048" article="a" name="hat for Eclesius">
 		<attribute key="weight" value="110" />
 	</item>
 	<item id="10050" name="Eclesius' sandals">

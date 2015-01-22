@@ -39,7 +39,8 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 			local receitas = profissao.receitas
 			local modalTitulo = modalTitulo.." - Lista de Receitas - Prontas para Fabricação"
 			local modal = ModalWindow(modalId, modalTitulo, modalMensagemLista)
-			for i = 1, #receitas do
+			local exibirReceitas = ordenarReceitasPorNome(receitas)
+			for i = 1, #exibirReceitas do
 				receitaId = i
 				receita = receitas[receitaId]
 				if profissaoNivel >= receita.nivel then
@@ -57,11 +58,7 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 									end
 								end
 								if validar == 1 then
-									local nomeReceita = getItemName(receita.item)
-									if receita.nome ~= nil then
-										nomeReceita = receita.nome
-									end
-									modal:addChoice(receitaId, capAll(nomeReceita))
+									modal:addChoice(receitaId, exibirReceitas[receitaId])
 								end
 							end
 						end
@@ -90,15 +87,12 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 			local receitas = profissao.receitas
 			local modalTitulo = modalTitulo.." - Lista de Receitas - Conhecidas"
 			local modal = ModalWindow(modalId, modalTitulo, modalMensagemLista)
-			for i = 1, #receitas do
+			local exibirReceitas = ordenarReceitasPorNome(receitas)
+			for i = 1, #exibirReceitas do
 				receitaId = i
 				receita = receitas[receitaId]
 				if(receita.aprender == 0) or (receita.aprender == 1 and player:getProfissaoReceitareceitasInicio(profissaoId, receitaId) == 1) then
-					local nomeReceita = getItemName(receita.item)
-					if receita.nome ~= nil then
-						nomeReceita = receita.nome
-					end
-					modal:addChoice(receitaId, capAll(nomeReceita))
+					modal:addChoice(receitaId, exibirReceitas[receitaId])
 				end
 			end
 			if modal:getChoiceCount() == 0 then
@@ -123,12 +117,9 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 			local receitas = profissao.receitas
 			local modalTitulo = modalTitulo.." - Lista de Receitas - Geral"
 			local modal = ModalWindow(modalId, modalTitulo, modalMensagemLista)
-			for i = 1, #receitas do
-				local nomeReceita = getItemName(receitas[i].item)
-				if receitas[i].nome ~= nil then
-					nomeReceita = receitas[i].nome
-				end
-				modal:addChoice(i, capAll(nomeReceita))
+			local exibirReceitas = ordenarReceitasPorNome(receitas)
+			for a, b in pairs(exibirReceitas) do
+				modal:addChoice(a, b)
 			end
 			modal:addButton(4, "Materiais")
 			modal:setDefaultEnterButton(1)
@@ -182,7 +173,7 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 					modal:sendToPlayer(player)
 				else
 					player:resetProfissaoIngredienteMelhoria(profissaoId)
-					if receita.fabricarQuantidade == nil then
+					if receita.fabricarQuantidade == nil or receita.fabricarQuantidade == 0 then
 						local iniciarReceita = player:iniciarReceita(profissaoId, receitaId)
 						if not iniciarReceita then
 							return false
@@ -229,7 +220,11 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 				local experiencia = receita.experiencia
 				local pontos = receita.pontos
 				local chanceSucesso = formatarValor(receita.chanceSucesso).."%"
-				local maxChanceSucesso = formatarValor(receita.maxChanceSucesso).."%"
+				local maxChanceSucesso = receita.maxChanceSucesso
+				if maxChanceSucesso == nil then
+					maxChanceSucesso = 10000
+				end
+				maxChanceSucesso = formatarValor(maxChanceSucesso).."%"
 				local chanceSucessoAtual = formatarValor(player:getProfissaoChanceSucessoReceita(profissaoId, receitaId)).."%"
 				local materiais = receita.materiais
 				local mensagemMateriaisNecessarios = capAll(getItemName(item)).."\nNivel de Profissão Necessário: "..nivel.."\nNivel de Jogador Necessário: "..nivelJogador.."\nNecessário Aprender: "..necessarioAprender.."\n\nFerramenta Necessária:\n"..ferramenta.."\n\nTempo de Fabricação: "..tempo.."\nExperiência: "..experiencia.."\nPontos de Profissão: "..pontos.."\n\nChance de Sucesso Base: "..chanceSucesso.."\nChance de Sucesso Atual: "..chanceSucessoAtual.."\nChance de Sucesso Máxima: "..maxChanceSucesso.."\n\nMateriais:"
@@ -261,7 +256,7 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 		elseif choiceId >= configProfissoes.maxQuantidadeFabricacao then
 			local ingredienteMelhoria = choiceId
 			player:addProfissaoIngredienteMelhoria(profissaoId, ingredienteMelhoria-configProfissoes.receitasInicio)
-			if receita.fabricarQuantidade == nil then
+			if receita.fabricarQuantidade == nil or receita.fabricarQuantidade == 0 then
 				local iniciarReceita = player:iniciarReceita(profissaoId, receitaId, 0)
 				if not iniciarReceita then
 					return false

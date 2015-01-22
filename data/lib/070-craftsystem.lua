@@ -29,9 +29,9 @@ profissoes = {
 		mesaTrabalho = {2555, 8671},
 		mesaTrabalhando = {},
 		receitas = {
-			[1] = {item = 2400, nivel = 1, nivelJogador = 1, ferramenta = 2421, materiais = {{2148, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {ataque = {1, 10}, defesa = {1, 10}, defesaExtra = 1, armadura = {1, 3}}},
-			[2] = {item = 2401, nivel = 1, nivelJogador = 1, ferramenta = 2421, materiais = {{2148, 1}}, fabricarQuantidade = 1, tempo = 2, experiencia = 20, pontos = 10, chanceSucesso = 1000, aprender = 0, atributos = {ataque = {1, 10}, defesa = {1, 10}, defesaExtra = 1, armadura = {1, 3}}},
-			[3] = {item = 2401, nome = "Staff (sem quantidade)", nivel = 1, nivelJogador = 1, ferramenta = 2421, materiais = {{2148, 1}}, tempo = 2, experiencia = 20, pontos = 10, chanceSucesso = 1000, aprender = 0, atributos = {ataque = {1, 10}, defesa = {1, 10}, defesaExtra = 1, armadura = {1, 3}}},
+			{item = 2400, nivel = 1, nivelJogador = 1, ferramenta = 2421, materiais = {{2148, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 1, atributos = {ataque = {1, 10}, defesa = {1, 10}, defesaExtra = 1, armadura = {1, 3}}},
+			{item = 2401, nivel = 1, nivelJogador = 1, ferramenta = 2421, materiais = {{2148, 1}}, fabricarQuantidade = 1, tempo = 2, experiencia = 20, pontos = 10, chanceSucesso = 1000, aprender = 0, atributos = {ataque = {1, 10}, defesa = {1, 10}, defesaExtra = 1, armadura = {1, 3}}},
+			{item = 2401, nome = "Staff (sem quantidade)", nivel = 1, nivelJogador = 1, ferramenta = 2421, materiais = {{2148, 1}}, tempo = 2, experiencia = 20, pontos = 10, chanceSucesso = 1000, aprender = 1, atributos = {ataque = {1, 10}, defesa = {1, 10}, defesaExtra = 1, armadura = {1, 3}}},
 		},
 		mensagem = "A forja permite você criar equipamentos únicos e poderosos, basta você ter os materiais necessários para isso.",
 		efeitoTrabalhando = CONST_ME_BLOCKHIT,
@@ -55,13 +55,13 @@ profissoes = {
 		mesaTrabalho = {9909, 9910},
 		mesaTrabalhando = {},
 		receitas = {
-			[1] = {item = 7618, nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, fabricarQuantidade = 1, ingredienteSecreto = {2152, 1, 1000}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 5000, aprender = 0, atributos = {health = {50, 60}}},
-			[2] = {item = 21309, nome = "Profession Potion [Profissão: Aleatória]", nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0, atributos = {profissao = 1, chance = {8, 13}}},
-			[3] = {item = 21309, nome = "Profession Potion [Profissão: Alquimista]", nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0, atributos = {profissao = "alquimista", chance = {8, 13}}},
-			[4] = {item = 21309, nome = "Profession Potion [Profissão: Alfaiate]", nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0, atributos = {profissao = "alfaiate", chance = {8, 13}}},
-			[5] = {item = 21309, nome = "Profession Potion [Profissão: Cozinheiro]", nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0, atributos = {profissao = "cozinheiro", chance = {8, 13}}},
-			[6] = {item = 21309, nome = "Profession Potion [Profissão: Ferreiro]", nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0, atributos = {profissao = "ferreiro", chance = {8, 13}}},
-			[7] = {item = 21426, nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0, atributos = {chance = {8, 13}}},
+			{item = 7618, nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, fabricarQuantidade = 1, ingredienteSecreto = {2152, 1, 1000}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 5000, aprender = 0, atributos = {health = {50, 60}}},
+			{item = 21309, nome = "Profession Potion [Profissão: Aleatória]", nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0, atributos = {profissao = 1, chance = {8, 13}}},
+			{item = 21309, nome = "Profession Potion [Profissão: Alquimista]", nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0, atributos = {profissao = "alquimista", chance = {8, 13}}},
+			{item = 21309, nome = "Profession Potion [Profissão: Alfaiate]", nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0, atributos = {profissao = "alfaiate", chance = {8, 13}}},
+			{item = 21309, nome = "Profession Potion [Profissão: Cozinheiro]", nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0, atributos = {profissao = "cozinheiro", chance = {8, 13}}},
+			{item = 21309, nome = "Profession Potion [Profissão: Ferreiro]", nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0, atributos = {profissao = "ferreiro", chance = {8, 13}}},
+			{item = 21426, nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0, atributos = {chance = {8, 13}}},
 		},
 		mensagem = "A alquimia permite você criar poções únicas e encantamentos poderosos, basta você ter os materiais necessários para isso.",
 		efeitoTrabalhando = CONST_ME_BLOCKHIT,
@@ -78,7 +78,7 @@ profissoes = {
 		mesaTrabalho = {10086},
 		mesaTrabalhando = {},
 		receitas = {
-			[1] = {item = 7439, nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{7636, 1}, {2798, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
+			{item = 7439, nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{7636, 1}, {2798, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
 		},
 		mensagem = "Ser um alfaiate permite você criar vestimentas únicas e equipamentos poderosos, basta você ter os materiais necessários para isso.",
 		efeitoTrabalhando = CONST_ME_BLOCKHIT,
@@ -102,21 +102,21 @@ profissoes = {
 		mesaTrabalho = {1787, 1789, 1791, 1793},
 		mesaTrabalhando = {1786, 1788, 1790, 1792},
 		receitas = {
-			[1] = {item = 9992, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{11192, 2}, {2671, 5}, {8838, 3}, {2787, 3}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
-			[2] = {item = 9993, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{7259, 3}, {8838, 3}, {8842, 5}, {2805, 2}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
-			[3] = {item = 9994, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{12638, 3}, {11429, 3}, {2795, 4}, {2677, 3}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
-			[4] = {item = 9995, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{11190, 2}, {2006, 2, 3}, {8841, 2}, {7909, 7}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
-			[5] = {item = 9996, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{6574, 1}, {2676, 10}, {2006, 1, 6}, {2800, 1}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
-			[6] = {item = 9997, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{12639, 2}, {12416, 3}, {12418, 4}, {12417, 4}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
-			[7] = {item = 9998, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{8844, 5}, {2666, 5}, {2096, 1}, {2685, 2}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
-			[8] = {item = 9999, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{2672, 5}, {8843, 2}, {9114, 4}, {8844, 2}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
-			[9] = {item = 10000, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{2685, 5}, {2695, 2}, {2692, 5}, {2006, 1, 6}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
-			[10] = {item = 10001, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{7963, 1}, {2689, 1}, {2667, 7}, {2696, 4}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
-			[11] = {item = 12540, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{2678, 2}, {2670, 8}, {2789, 1}, {8845, 2}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
-			[12] = {item = 12542, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{8844, 4}, {8838, 4}, {2006, 2, 14}, {2686, 3}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
-			[13] = {item = 12543, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{6500, 1}, {6569, 8}, {6574, 2}, {8840, 2}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
-			[14] = {item = 12544, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{20100, 1}, {12415, 4}, {2006, 4, 14}, {7910, 4}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
-			[15] = {item = 12637, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{11246, 5}, {2668, 3}, {2669, 3}, {2800, 2}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}}
+			{item = 9992, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{11192, 2}, {2671, 5}, {8838, 3}, {2787, 3}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
+			{item = 9993, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{7259, 3}, {8838, 3}, {8842, 5}, {2805, 2}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
+			{item = 9994, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{12638, 3}, {11429, 3}, {2795, 4}, {2677, 3}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
+			{item = 9995, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{11190, 2}, {2006, 2, 3}, {8841, 2}, {7909, 7}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
+			{item = 9996, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{6574, 1}, {2676, 10}, {2006, 1, 6}, {2800, 1}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
+			{item = 9997, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{12639, 2}, {12416, 3}, {12418, 4}, {12417, 4}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
+			{item = 9998, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{8844, 5}, {2666, 5}, {2096, 1}, {2685, 2}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
+			{item = 9999, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{2672, 5}, {8843, 2}, {9114, 4}, {8844, 2}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
+			{item = 10000, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{2685, 5}, {2695, 2}, {2692, 5}, {2006, 1, 6}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
+			{item = 10001, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{7963, 1}, {2689, 1}, {2667, 7}, {2696, 4}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
+			{item = 12540, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{2678, 2}, {2670, 8}, {2789, 1}, {8845, 2}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
+			{item = 12542, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{8844, 4}, {8838, 4}, {2006, 2, 14}, {2686, 3}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
+			{item = 12543, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{6500, 1}, {6569, 8}, {6574, 2}, {8840, 2}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
+			{item = 12544, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{20100, 1}, {12415, 4}, {2006, 4, 14}, {7910, 4}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
+			{item = 12637, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{11246, 5}, {2668, 3}, {2669, 3}, {2800, 2}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}}
 		},
 		mensagem = "Cozinhar permite você criar comidas únicas e poderosos, basta você ter os materiais necessários para isso.",
 		efeitoTrabalhando = CONST_ME_SMOKE,
@@ -187,12 +187,24 @@ function verificiarProfissao(value, verificarReceita)
 	return 0
 end
 function verificiarProfissaoPorNome(value)
-	for a,b in pairs(profissoes) do
+	for a, b in pairs(profissoes) do
 		if string.lower(b.nome) == value then
 			return a
 		end
 	end
 	return 0
+end
+function ordenarReceitasPorNome(receitas)
+	local exibirReceitas = {}
+	for a, b in pairs(receitas) do
+		local nomeReceita = capAll(getItemName(b.item))
+		if b.nome ~= nil then
+			nomeReceita = b.nome
+		end
+		table.insert(exibirReceitas, nomeReceita)
+	end
+	table.sort(a)
+	return exibirReceitas
 end
 function Player.getProfissaoSkill(self, profissaoId)
 	return math.max(1, self:getStorageValue(profissaoId+configProfissoes.skill))
@@ -331,12 +343,12 @@ function Player.getProfissaoChanceSucessoReceita(self, profissaoId, receitaId)
 	chanceSucessoReceita = math.min(10000, chanceSucessoReceita)
 	return chanceSucessoReceita
 end
-function Player.getProfissaoReceitareceitasInicio(self, profissaoId, receitaId)
+function Player.getProfissaoReceitaAprendizado(self, profissaoId, receitaId)
 	return math.max(0, self:getStorageValue(profissaoId+configProfissoes.receitasInicio+receitaId))
 end
-function Player.addProfissaoReceitareceitasInicio(self, profissaoId, receitaId)
-	local storagereceitasInicio = profissaoId+configProfissoes.receitasInicio+receitaId
-	self:setStorageValue(storagereceitasInicio, 1)
+function Player.addProfissaoReceitaAprendizado(self, profissaoId, receitaId)
+	local storageReceitasInicio = profissaoId+configProfissoes.receitasInicio+receitaId
+	self:setStorageValue(storageReceitasInicio, 1)
 end
 function Player.getPosicaoMesaTrabalho(self, profissaoId)
 	local extraData = profissoes[profissaoId].extraData[self:getId()]
@@ -480,7 +492,7 @@ function Player.iniciarReceita(self, profissaoId, receitaId, bloquearMovimento)
 	local materiais = receita.materiais
 	if	profissaoNivel < receita.nivel or
 		self:getLevel() < receita.nivelJogador or
-		(receita.aprender == 1 and self:getProfissaoReceitareceitasInicio(profissaoId, receitaId) == 1) then
+		(receita.aprender == 1 and self:getProfissaoReceitaAprendizado(profissaoId, receitaId) == 0) then
 		return false
 	end
 	if self:verificarJogadorItensReceita(profissaoId, receitaId) == 0 then

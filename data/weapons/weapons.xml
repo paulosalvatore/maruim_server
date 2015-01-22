@@ -108,7 +108,7 @@
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
 	<melee id="2446" level="45" unproperly="1" />
-	<melee id="7402" level="45" unproperly="1">
+	<melee id="7402" level="45" unproperly="1" script="dragon slayer.lua">
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
@@ -651,34 +651,34 @@
 	</distance>
 
  	<!-- Ammunition -->
-	<distance id="1294" breakchance="3" /> <!-- small stone -->
-	<distance id="2111" action="removecount" /> <!-- snowball -->
-	<distance id="2389" breakchance="3" /> <!-- spear -->
-	<distance id="2399" breakchance="10" /> <!-- throwing star -->
-	<distance id="2410" breakchance="7" /> <!-- throwing knife -->
-	<distance id="2543" action="removecount" /> <!-- bolt -->
-	<distance id="2544" action="removecount" /> <!-- arrow -->
-	<distance id="2545" action="removecount" script="poison_arrow.lua" /> <!-- poison arrow -->
-	<distance id="2546" action="removecount" script="explosive_arrow.lua" /> <!-- burst arrow -->
-	<distance id="2547" action="removecount" unproperly="1" level="55" />	<!-- Power Bolt -->
-	<distance id="3965" breakchance="6" unproperly="1" level="20" />	<!-- Hunting Spear -->
-	<distance id="6529" action="removecount" unproperly="1" level="110" />	<!-- Infernal Bolt -->
-	<distance id="7363" action="removecount" unproperly="1" level="30" />	<!-- Piercing Bolt -->
-	<distance id="7364" action="removecount" unproperly="1" level="20" />	<!-- Sniper Arrow -->
-	<distance id="7365" action="removecount" unproperly="1" level="40" />	<!-- Onyx Arrow -->
-	<distance id="7366" breakchance="9" script="viper_star.lua" />
-	<distance id="7367" breakchance="1" unproperly="1" level="42" />	<!-- Enchanted Spear -->
-	<distance id="7368" breakchance="33" unproperly="1" level="80" />	<!-- Assassin Star -->
-	<distance id="7378" breakchance="3" unproperly="1" level="25" />	<!-- Royal Spear -->
-	<distance id="7838" action="removecount" unproperly="1" level="20" />	<!-- Flash Arrow -->
-	<distance id="7839" action="removecount" unproperly="1" level="20" />	<!-- Shiver Arrow -->
-	<distance id="7840" action="removecount" unproperly="1" level="20" />	<!-- Flaming Arrow -->
-	<distance id="7850" action="removecount" unproperly="1" level="20" />	<!-- Earth Arrow -->
-	<distance id="15648" action="removecount" unproperly="1" level="30" />	<!-- Tarsal Arrow -->
-	<distance id="15649" action="removecount" unproperly="1" level="40" />	<!-- Vortex Bolt -->
-	<distance id="18303" action="removecount" />	<!-- crystal bolt -->
-	<distance id="18304" action="removecount" unproperly="1" level="90" />	<!-- Crystalline Arrow -->
-	<distance id="18435" action="removecount" unproperly="1" level="90" />	<!-- Prismatic Bolt -->
-	<distance id="18436" action="removecount" unproperly="1" level="70" />	<!-- Drill Bolt -->
-	<distance id="18437" action="removecount" unproperly="1" level="70" />	<!-- Envenomed Arrow -->
+	<distance id="1294" breakchance="3" /> <!-- Small Stone -->
+	<distance id="2111" action="removecount" /> <!-- Snowball -->
+	<distance id="2389" breakchance="3" /> <!-- Spear -->
+	<distance id="2399" breakchance="10" /> <!-- Throwing Star -->
+	<distance id="2410" breakchance="7" /> <!-- Throwing Knife -->
+	<distance id="2543" action="removecount" /> <!-- Bolt -->
+	<distance id="2544" action="removecount" /> <!-- Arrow -->
+	<distance id="2545" action="removecount" script="poison arrow.lua" /> <!-- Poison Arrow -->
+	<distance id="2546" action="removecount" script="explosive arrow.lua" /> <!-- Burst Arrow -->
+	<distance id="2547" action="removecount" unproperly="1" level="55" /> <!-- Power Bolt -->
+	<distance id="3965" breakchance="6" unproperly="1" level="20" /> <!-- Hunting Spear -->
+	<distance id="6529" action="removecount" unproperly="1" level="110" /> <!-- Infernal Bolt -->
+	<distance id="7363" action="removecount" unproperly="1" level="30" /> <!-- Piercing Bolt -->
+	<distance id="7364" action="removecount" unproperly="1" level="20" /> <!-- Sniper Arrow -->
+	<distance id="7365" action="removecount" unproperly="1" level="40" /> <!-- Onyx Arrow -->
+	<distance id="7366" breakchance="9" script="viper star.lua" /> <!-- Viper Star -->
+	<distance id="7367" breakchance="1" unproperly="1" level="42" /> <!-- Enchanted Spear -->
+	<distance id="7368" breakchance="33" unproperly="1" level="80" /> <!-- Assassin Star -->
+	<distance id="7378" breakchance="3" unproperly="1" level="25" /> <!-- Royal Spear -->
+	<distance id="7838" action="removecount" unproperly="1" level="20" /> <!-- Flash Arrow -->
+	<distance id="7839" action="removecount" unproperly="1" level="20" /> <!-- Shiver Arrow -->
+	<distance id="7840" action="removecount" unproperly="1" level="20" /> <!-- Flaming Arrow -->
+	<distance id="7850" action="removecount" unproperly="1" level="20" /> <!-- Earth Arrow -->
+	<distance id="15648" action="removecount" unproperly="1" level="30" /> <!-- Tarsal Arrow -->
+	<distance id="15649" action="removecount" unproperly="1" level="40" /> <!-- Vortex Bolt -->
+	<distance id="18303" action="removecount" /> <!-- crystal bolt -->
+	<distance id="18304" action="removecount" unproperly="1" level="90" /> <!-- Crystalline Arrow -->
+	<distance id="18435" action="removecount" unproperly="1" level="90" /> <!-- Prismatic Bolt -->
+	<distance id="18436" action="removecount" unproperly="1" level="70" /> <!-- Drill Bolt -->
+	<distance id="18437" action="removecount" unproperly="1" level="70" /> <!-- Envenomed Arrow -->
 </weapons>
