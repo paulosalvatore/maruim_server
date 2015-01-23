@@ -1,6 +1,10 @@
 local fire_source = {1786, 1788, 1790, 1792, 1481, 1482, 1483, 1484, 6356, 6358, 6360, 6362}
 local fruits = {2673, 2674, 2675, 2677, 2679, 2680, 2681, 2682, 5097, 8840, 12415}
 local sparkling = {8046, 8047}
+local ice_shrine = {7508, 7509, 7510, 7511}
+local fire_shrine = {7504, 7505, 7506, 7507}
+local earth_shrine = {7516, 7517, 7518, 7519}
+local energy_shrine = {7512, 7513, 7514, 7515}
 local items = {
 	-- [item_id] = {
 		-- [itemEx_id ou "fire_source" ou "fruits" ou "sparkling" ou "default"] = {
@@ -154,8 +158,7 @@ local items = {
 				itensPlayer = {{2801, 1}},
 				removerItemEx = 1,
 				efeito = {"hit"},
-				-- tempo = 5*60*1000,
-				tempo = 1000,
+				tempo = 5*60*1000,
 				chanceSucesso = 2000,
 				chanceNeutra = 4000,
 				profissao = "alquimista"
@@ -425,199 +428,253 @@ local items = {
 			transformar = {10037, 1},
 			removerItem = 1
 		}
+	},
+	[2146] = {
+		["ice_shrine"] = {
+			itensPlayer = {{7759, 1}},
+			removerItensPlayer = {{21246, 1}},
+			efeito = {42},
+			removerItem = 1
+		}
+	},
+	[2147] = {
+		["fire_shrine"] = {
+			itensPlayer = {{7760, 1}},
+			removerItensPlayer = {{21246, 1}},
+			efeito = {7},
+			removerItem = 1
+		}
+	},
+	[2149] = {
+		["earth_shrine"] = {
+			itensPlayer = {{7761, 1}},
+			removerItensPlayer = {{21246, 1}},
+			efeito = {9},
+			removerItem = 1
+		}
+	},
+	[2150] = {
+		["energy_shrine"] = {
+			itensPlayer = {{7762, 1}},
+			removerItensPlayer = {{21246, 1}},
+			efeito = {12},
+			removerItem = 1
+		}
+	},
+	[21247] = {
+		[21430] = {
+			itensPlayer = {{21446, 1}},
+			transformar = {21431, 1},
+			efeito = {48},
+			removerItem = 1
+		}
 	}
 }
 function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	if items[item.itemid] then
 		local i = items[item.itemid]
 		local adicionar_evento = 0
-		if	(i[itemEx.itemid]) or
-			(i["default"]) or
-			(isInArray(sparkling, itemEx.itemid) and #Tile(toPosition):getItems() == 2 and i["sparkling"][Tile(toPosition):getTileTopTopItem()]) or
-			((isInArray(fire_source, itemEx.itemid)) and (i["fire_source"])) or
-			((isInArray(fruits, itemEx.itemid)) and (i["fruits"])) then
-			if i["default"] then
-				i = i["default"]
-			elseif isInArray(sparkling, itemEx.itemid) and i["sparkling"][Tile(toPosition):getTileTopTopItem()] and #Tile(toPosition):getItems() == 2 then
-				i = i["sparkling"][Tile(toPosition):getTileTopTopItem()]
-				adicionar_evento = 1
-			elseif (isInArray(fire_source, itemEx.itemid)) and (i["fire_source"]) then
-				i = i["fire_source"]
-			elseif (isInArray(fruits, itemEx.itemid)) and (i["fruits"]) then
-				i = i["fruits"]
+		if i["default"] then
+			i = i["default"]
+		elseif isInArray(sparkling, itemEx.itemid) and #Tile(toPosition):getItems() == 2 and i["sparkling"][Tile(toPosition):getTileTopTopItem()] then
+			i = i["sparkling"][Tile(toPosition):getTileTopTopItem()]
+			adicionar_evento = 1
+		elseif (isInArray(fire_source, itemEx.itemid)) and (i["fire_source"]) then
+			i = i["fire_source"]
+		elseif (isInArray(fruits, itemEx.itemid)) and (i["fruits"]) then
+			i = i["fruits"]
+		elseif (isInArray(ice_shrine, itemEx.itemid)) and (i["ice_shrine"]) then
+			i = i["ice_shrine"]
+		elseif (isInArray(fire_shrine, itemEx.itemid)) and (i["fire_shrine"]) then
+			i = i["fire_shrine"]
+		elseif (isInArray(earth_shrine, itemEx.itemid)) and (i["earth_shrine"]) then
+			i = i["earth_shrine"]
+		elseif (isInArray(energy_shrine, itemEx.itemid)) and (i["energy_shrine"]) then
+			i = i["energy_shrine"]
+		elseif i[itemEx.itemid] then
+			i = i[itemEx.itemid]
+		else
+			return false
+		end
+		local chanceSucesso = i.chanceSucesso
+		local chanceQuebrar = i.chanceQuebrar
+		local efeito = i.efeito
+		if i.profissao ~= nil and verificiarProfissaoPorNome(i.profissao) and chanceSucesso ~= nil and chanceSucesso <= 10000 then
+			local profissaoId = verificiarProfissaoPorNome(i.profissao)
+			local profissaoSkill = player:getProfissaoSkill(profissaoId)
+			chanceSucesso = chanceSucesso+player:getProfissaoChanceColetaAdicional(profissaoId)
+		end
+		local chance = 10000
+		if	(chanceSucesso ~= nil and chanceSucesso <= 10000) or
+			(chanceQuebrar ~= nil and chanceQuebrar <= 10000) or
+			(i.transformarAleatorio ~= nil and table.getn(i.transformarAleatorio) >= 2) then
+			chance = math.random(10000)
+		else
+			chanceSucesso = 10000
+		end
+		if i.removerItensPlayer ~= nil then
+			for c, v in pairs(i.removerItensPlayer) do
+				local v3 = -1
+				if v[3] ~= nil then
+					v3 = v[3]
+				end
+				if player:getItemCount(v[1], v3) < v[2] then
+					return false
+				end
+			end
+			for c, v in pairs(i.removerItensPlayer) do
+				local v3 = -1
+				if v[3] ~= nil then
+					v3 = v[3]
+				end
+				player:getItemById(v[1], v3):remove(v[2])
+			end
+		end
+		if i.removerItem ~= nil and i.removerItem == 1 and not item:remove(1) then
+			return false
+		end
+		if i.itensPlayer ~= nil then
+			if chance <= chanceSucesso then
+				for c, v in pairs(i.itensPlayer) do
+					local itemPlayerAdicionar = v[1]
+					local quantidadeItemPlayerAdicionar = v[2]
+					local typeItemPlayerAdicionar = v[3] or 1
+					if type(quantidadeItemPlayerAdicionar) == "table" then
+						quantidadeItemPlayerAdicionar = math.random(quantidadeItemPlayerAdicionar[1], quantidadeItemPlayerAdicionar[2])
+					end
+					player:addItem(itemPlayerAdicionar, quantidadeItemPlayerAdicionar, true, typeItemPlayerAdicionar)
+				end
 			else
-				i = i[itemEx.itemid]
+				efeito = {"poff"}
 			end
-			local chanceSucesso = i.chanceSucesso
-			local chanceQuebrar = i.chanceQuebrar
-			local efeito = i.efeito
-			if i.profissao ~= nil and verificiarProfissaoPorNome(i.profissao) and chanceSucesso ~= nil and chanceSucesso <= 10000 then
-				local profissaoId = verificiarProfissaoPorNome(i.profissao)
-				local profissaoSkill = player:getProfissaoSkill(profissaoId)
-				chanceSucesso = chanceSucesso+player:getProfissaoChanceColetaAdicional(profissaoId)
-			end
-			local chance = 10000
-			if	(chanceSucesso ~= nil and chanceSucesso <= 10000) or
-				(chanceQuebrar ~= nil and chanceQuebrar <= 10000) or
-				(i.transformarAleatorio ~= nil and table.getn(i.transformarAleatorio) >= 2) then
-				chance = math.random(10000)
-			else
-				chanceSucesso = 10000
-			end
-			if i.removerItensPlayer ~= nil then
-				for c, v in pairs(i.removerItensPlayer) do
-					local v3 = v[3] or -1
-					if player:getItemCount(v[1], v3) < v[2] then
-						return false
+		end
+		if i.itensPlayerAleatorio ~= nil then
+			if chance <= chanceSucesso then
+				local chanceItemAleatorio = math.random(10000)
+				local chanceItem = 0
+				for c, v in pairs(i.itensPlayerAleatorio) do
+					chanceItem = chanceItem+v[3]
+					if chanceItemAleatorio <= chanceItem then
+						local itemAleatorioAdicionar = v[1]
+						local quantidadeItemAleatorioAdicionar = v[2]
+						local typeItemAleatorioAdicionar = v[4] or 1
+						player:addItem(itemAleatorioAdicionar, quantidadeItemAleatorioAdicionar, true, typeItemAleatorioAdicionar)
+						chanceItemAleatorio = 100000
 					end
 				end
-				for c, v in pairs(i.removerItensPlayer) do
-					local v3 = v[3] or -1
-					player:getItemById(v[1], v3, 0):remove(v[2])
+			else
+				efeito = {"poff"}
+			end
+		end
+		if i.itensGame ~= nil then
+			for c, v in pairs(i.itensGame) do
+				local itemGameAdicionar = v[1]
+				local quantidadeGameAdicionar = v[2]
+				local posicaoGameAdicionar = nil
+				if type(quantidadeGameAdicionar) == "table" then
+					quantidadeGameAdicionar = math.random(quantidadeGameAdicionar[1], quantidadeGameAdicionar[2])
 				end
-			end
-			if i.removerItem ~= nil and i.removerItem == 1 and not item:remove(1) then
-				return false
-			end
-			if i.itensPlayer ~= nil then
-				if chance <= chanceSucesso then
-					for c, v in pairs(i.itensPlayer) do
-						local itemPlayerAdicionar = v[1]
-						local quantidadeItemPlayerAdicionar = v[2]
-						local typeItemPlayerAdicionar = v[3] or 1
-						if type(quantidadeItemPlayerAdicionar) == "table" then
-							quantidadeItemPlayerAdicionar = math.random(quantidadeItemPlayerAdicionar[1], quantidadeItemPlayerAdicionar[2])
-						end
-						player:addItem(itemPlayerAdicionar, quantidadeItemPlayerAdicionar, true, typeItemPlayerAdicionar)
+				if (v[3]) and (v[3] ~= "to") then
+					if v[3] == "from" then
+						posicaoGameAdicionar = fromPosition
+					elseif v[3] == "player" then
+						posicaoGameAdicionar = getPlayerPosition(player)
 					end
-				else
+				end
+				if posicaoGameAdicionar == nil then
+					posicaoGameAdicionar = toPosition
+				end
+				local itemGame = Game.createItem(itemGameAdicionar, quantidadeGameAdicionar, posicaoGameAdicionar)
+				itemGame:decay()
+			end
+		end
+		if i.transformar ~= nil and table.getn(i.transformar) >= 2 then
+			local itemTransformar = i.transformar[1]
+			local quantidadeTransformar = i.transformar[2]
+			if type(quantidadeTransformar) == "table" then
+				quantidadeTransformar = math.random(quantidadeTransformar[1], quantidadeTransformar[2])
+			end
+			local transformar = itemEx
+			if i.transformar[3] ~= nil and i.transformar[3] == "item" then
+				transformar = item
+			end
+			local realizar_transformacao = 1
+			if i.chanceNeutra ~= nil and i.chanceNeutra <= 10000 then
+				local chanceNeutra = i.chanceNeutra+chanceSucesso
+				if (not (chance <= chanceSucesso)) and (chance <= chanceNeutra) then
+					efeito = {"poff"}
+					realizar_transformacao = 0
+				elseif (not (chance <= chanceSucesso)) then
 					efeito = {"poff"}
 				end
 			end
-			if i.itensPlayerAleatorio ~= nil then
-				if chance <= chanceSucesso then
-					local chanceItemAleatorio = math.random(10000)
-					local chanceItem = 0
-					for c, v in pairs(i.itensPlayerAleatorio) do
-						chanceItem = chanceItem+v[3]
-						if chanceItemAleatorio <= chanceItem then
-							local itemAleatorioAdicionar = v[1]
-							local quantidadeItemAleatorioAdicionar = v[2]
-							local typeItemAleatorioAdicionar = v[4] or 1
-							player:addItem(itemAleatorioAdicionar, quantidadeItemAleatorioAdicionar, true, typeItemAleatorioAdicionar)
-							chanceItemAleatorio = 100000
-						end
-					end
-				else
+			if realizar_transformacao == 1 then
+				transformar:transform(itemTransformar, quantidadeTransformar)
+				transformar:decay()
+			end
+		end
+		if i.transformarAleatorio ~= nil and table.getn(i.transformarAleatorio) >= 2 then
+			local chanceTransformar = 0
+			for c, v in pairs(i.transformarAleatorio) do
+				chanceTransformar = chanceTransformar+v[3]
+				if chance <= chanceTransformar then
+					itemEx:transform(v[1], v[2])
+					break
+				end
+			end
+		end
+		if i.removerItemEx == 1 then
+			if i.chanceNeutra ~= nil and i.chanceNeutra <= 10000 then
+				local chanceNeutra = i.chanceNeutra+chanceSucesso
+				if (not (chance <= chanceSucesso)) and (chance <= chanceNeutra) then
+					adicionar_evento = 0
 					efeito = {"poff"}
-				end
-			end
-			if i.itensGame ~= nil then
-				for c, v in pairs(i.itensGame) do
-					local itemGameAdicionar = v[1]
-					local quantidadeGameAdicionar = v[2]
-					local posicaoGameAdicionar = nil
-					if type(quantidadeGameAdicionar) == "table" then
-						quantidadeGameAdicionar = math.random(quantidadeGameAdicionar[1], quantidadeGameAdicionar[2])
-					end
-					if (v[3]) and (v[3] ~= "to") then
-						if v[3] == "from" then
-							posicaoGameAdicionar = fromPosition
-						elseif v[3] == "player" then
-							posicaoGameAdicionar = getPlayerPosition(player)
-						end
-					end
-					if posicaoGameAdicionar == nil then
-						posicaoGameAdicionar = toPosition
-					end
-					local itemGame = Game.createItem(itemGameAdicionar, quantidadeGameAdicionar, posicaoGameAdicionar)
-					itemGame:decay()
-				end
-			end
-			if i.transformar ~= nil and table.getn(i.transformar) >= 2 then
-				local itemTransformar = i.transformar[1]
-				local quantidadeTransformar = i.transformar[2]
-				if type(quantidadeTransformar) == "table" then
-					quantidadeTransformar = math.random(quantidadeTransformar[1], quantidadeTransformar[2])
-				end
-				local transformar = itemEx
-				if i.transformar[3] ~= nil and i.transformar[3] == "item" then
-					transformar = item
-				end
-				local realizar_transformacao = 1
-				if i.chanceNeutra ~= nil and i.chanceNeutra <= 10000 then
-					local chanceNeutra = i.chanceNeutra+chanceSucesso
-					if (not (chance <= chanceSucesso)) and (chance <= chanceNeutra) then
-						efeito = {"poff"}
-						realizar_transformacao = 0
-					elseif (not (chance <= chanceSucesso)) then
-						efeito = {"poff"}
-					end
-				end
-				if realizar_transformacao == 1 then
-					transformar:transform(itemTransformar, quantidadeTransformar)
-					transformar:decay()
-				end
-			end
-			if i.transformarAleatorio ~= nil and table.getn(i.transformarAleatorio) >= 2 then
-				local chanceTransformar = 0
-				for c, v in pairs(i.transformarAleatorio) do
-					chanceTransformar = chanceTransformar+v[3]
-					if chance <= chanceTransformar then
-						itemEx:transform(v[1], v[2])
-						break
-					end
-				end
-			end
-			if i.removerItemEx == 1 then
-				if i.chanceNeutra ~= nil and i.chanceNeutra <= 10000 then
-					local chanceNeutra = i.chanceNeutra+chanceSucesso
-					if (not (chance <= chanceSucesso)) and (chance <= chanceNeutra) then
-						adicionar_evento = 0
-						efeito = {"poff"}
-					elseif (not (chance <= chanceSucesso)) then
-						efeito = {"poff"}
-						itemEx:remove(1)
-					else
-						itemEx:remove(1)
-					end
+				elseif (not (chance <= chanceSucesso)) then
+					efeito = {"poff"}
+					itemEx:remove(1)
 				else
 					itemEx:remove(1)
 				end
-			end
-			if chanceQuebrar ~= nil and chanceQuebrar <= 10000 and chance <= chanceQuebrar then
+			else
 				itemEx:remove(1)
 			end
-			if efeito ~= nil and table.getn(efeito) > 0 then
-				local posicao_efeito = nil
-				if (efeito[2]) and (efeito[2] ~= "to") then
-					if efeito[2] == "from" then
-						posicao_efeito = fromPosition
-					elseif efeito[2] == "player" then
-						posicao_efeito = getPlayerPosition(player)
-					end
-				end
-				if posicao_efeito == nil then
-					posicao_efeito = toPosition
-				end
-				posicao_efeito:sendMagicEffect(efeitos[efeito[1]])
-			end
-			if i.criatura ~= nil and table.getn(i.criatura) > 0 then
-				local chance = 10000
-				if (i.criatura[2]) and (type(i.criatura[2]) == "number") and (i.criatura[2] >= 1) and (i.criatura[2] <= 10000) then
-					chance = i.criatura[2]
-				end
-				if math.random(10000) <= chance then
-					Game.createMonster(i.criatura[1], toPosition)
-				end
-			end
-			if adicionar_evento == 1 then
-				addEvent(function(posicao, item)
-				Game.createItem(item, 1, posicao)
-				end, i.tempo, toPosition, itemEx.itemid)
-			end
-			return true
 		end
+		if chanceQuebrar ~= nil and chanceQuebrar <= 10000 and chance <= chanceQuebrar then
+			itemEx:remove(1)
+		end
+		if efeito ~= nil and table.getn(efeito) > 0 then
+			local posicao_efeito = nil
+			if efeito[2] and efeito[2] ~= "to" then
+				if efeito[2] == "from" then
+					posicao_efeito = fromPosition
+				elseif efeito[2] == "player" then
+					posicao_efeito = getPlayerPosition(player)
+				end
+			end
+			if posicao_efeito == nil then
+				posicao_efeito = toPosition
+			end
+			local exibirEfeito = efeito[1]
+			if type(efeito[1]) ~= "number" then
+				exibirEfeito = efeitos[efeito[1]]
+			end
+			posicao_efeito:sendMagicEffect(exibirEfeito)
+		end
+		if i.criatura ~= nil and table.getn(i.criatura) > 0 then
+			local chance = 10000
+			if (i.criatura[2]) and (type(i.criatura[2]) == "number") and (i.criatura[2] >= 1) and (i.criatura[2] <= 10000) then
+				chance = i.criatura[2]
+			end
+			if math.random(10000) <= chance then
+				Game.createMonster(i.criatura[1], toPosition)
+			end
+		end
+		if adicionar_evento == 1 then
+			addEvent(function(posicao, item)
+			Game.createItem(item, 1, posicao)
+			end, i.tempo, toPosition, itemEx.itemid)
+		end
+		return true
 	end
 	return false
 end
