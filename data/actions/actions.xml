@@ -57,6 +57,8 @@
 	<action itemid="1789" script="crafting.lua"/>
 	<action itemid="1791" script="crafting.lua"/>
 	<action itemid="1793" script="crafting.lua"/>
+	<action itemid="9895" script="crafting.lua"/>
+	<action itemid="9898" script="crafting.lua"/>
 
 	<!-- Testes -->
 	<action fromid="1945" toid="1946" script="teste.lua"/>

@@ -120,8 +120,8 @@ profissoes = {
 	},
 	[22000] = {
 		nome = "Alfaiate",
-		mesaTrabalho = {10086},
-		mesaTrabalhando = {},
+		mesaTrabalho = {9895, 9898},
+		mesaTrabalhando = {9896, 9899},
 		receitas = {
 			{item = 7439, nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{7636, 1}, {2798, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
 		},
