@@ -205,7 +205,7 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
-	<melee id="7748" level="45" unproperly="1">
+	<melee id="7748" level="45" unproperly="1" script="dragon slayer.lua">
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
@@ -217,7 +217,7 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
-	<melee id="7767" level="45" unproperly="1">
+	<melee id="7767" level="45" unproperly="1" script="dragon slayer.lua">
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
@@ -229,7 +229,7 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
-	<melee id="7858" level="45" unproperly="1">
+	<melee id="7858" level="45" unproperly="1" script="dragon slayer.lua">
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
@@ -241,7 +241,7 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
-	<melee id="7873" level="45" unproperly="1">
+	<melee id="7873" level="45" unproperly="1" script="dragon slayer.lua">
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
