@@ -40,25 +40,25 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 			local modalTitulo = modalTitulo.." - Lista de Receitas - Prontas para Fabricação"
 			local modal = ModalWindow(modalId, modalTitulo, modalMensagemLista)
 			local exibirReceitas = ordenarReceitasPorNome(receitas)
-			for i = 1, #exibirReceitas do
-				receitaId = i
+			for a, b in pairs(exibirReceitas) do
+				receitaId = b[1]
 				receita = receitas[receitaId]
 				if profissaoNivel >= receita.nivel then
 					if player:getLevel() >= receita.nivelJogador then
 						if player:getItemCount(receita.ferramenta) > 0 then
-							if(receita.aprender == 0) or (receita.aprender == 1 and player:getProfissaoReceitareceitasInicio(profissaoId, receitaId) == 1) then
+							if(receita.aprender == 0) or (receita.aprender == 1 and player:getProfissaoReceitaAprendizado(profissaoId, receitaId) == 1) then
 								local validar = 1
-								for a,b in pairs(receita.materiais) do
-									if b[3] ~= -1 then
-										b[3] = -1
+								for c, d in pairs(receita.materiais) do
+									if d[3] ~= -1 then
+										d[3] = -1
 									end
-									if player:getItemCount(b[1], b[3]) < b[2] then
+									if player:getItemCount(d[1], d[3]) < d[2] then
 										validar = 0
 										break
 									end
 								end
 								if validar == 1 then
-									modal:addChoice(receitaId, exibirReceitas[receitaId])
+									modal:addChoice(receitaId, b[2])
 								end
 							end
 						end
@@ -88,11 +88,11 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 			local modalTitulo = modalTitulo.." - Lista de Receitas - Conhecidas"
 			local modal = ModalWindow(modalId, modalTitulo, modalMensagemLista)
 			local exibirReceitas = ordenarReceitasPorNome(receitas)
-			for i = 1, #exibirReceitas do
-				receitaId = i
+			for a, b in pairs(exibirReceitas) do
+				receitaId = b[1]
 				receita = receitas[receitaId]
-				if(receita.aprender == 0) or (receita.aprender == 1 and player:getProfissaoReceitareceitasInicio(profissaoId, receitaId) == 1) then
-					modal:addChoice(receitaId, exibirReceitas[receitaId])
+				if(receita.aprender == 0) or (receita.aprender == 1 and player:getProfissaoReceitaAprendizado(profissaoId, receitaId) == 1) then
+					modal:addChoice(receitaId, b[2])
 				end
 			end
 			if modal:getChoiceCount() == 0 then
@@ -119,7 +119,10 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 			local modal = ModalWindow(modalId, modalTitulo, modalMensagemLista)
 			local exibirReceitas = ordenarReceitasPorNome(receitas)
 			for a, b in pairs(exibirReceitas) do
-				modal:addChoice(a, b)
+				local receita = receitas[b[1]]
+				if receita.ocultar == nil or (receita.ocultar ~= nil and receita.ocultar == 0) or (receita.ocultar ~= nil and receita.ocultar == 1 and player:getProfissaoReceitaAprendizado(profissaoId, receitaId) == 1) then
+					modal:addChoice(b[1], b[2])
+				end
 			end
 			modal:addButton(4, "Materiais")
 			modal:setDefaultEnterButton(1)
