@@ -82,4 +82,5 @@
 	<monster name="Ghastly Dragon" file="ghastly dragon.xml"/>
 	<monster name="Undead Dragon" file="undead dragon.xml"/>
 	<monster name="Crab" file="crab.xml"/>
+	<monster name="Carniphila" file="carniphila.xml"/>
 </monsters>
