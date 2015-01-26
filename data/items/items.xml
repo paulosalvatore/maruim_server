@@ -22295,8 +22295,7 @@
 		<attribute key="weight" value="5000" />
 	</item>
 	<item fromid="13636" toid="13643" name="rocky floor" />
-	<item fromid="13644" toid="13654" name="rocky wall" />
-	<item fromid="13658" toid="13659" name="rocky wall" />
+	<item fromid="13644" toid="13660" name="rocky wall" />
 	<item fromid="13663" toid="13668" article="a" name="rocky wall" />
 	<item id="13670" name="belongings of a deceased">
 		<attribute key="weight" value="3000" />
@@ -22305,6 +22304,7 @@
 	<item id="13678" name="greasy stone" />
 	<item id="13681" article="a" name="strange bonepile" />
 	<item id="13682" article="a" name="floating stone" />
+	<item fromid="13683" toid="13684" article="a" name="rocky wall" />
 	<item fromid="13686" toid="13687" article="a" name="rocky wall" />
 	<item fromid="13688" toid="13691" article="a" name="lamp" />
 	<item fromid="13692" toid="13693" article="a" name="hieroglyph banner" />
