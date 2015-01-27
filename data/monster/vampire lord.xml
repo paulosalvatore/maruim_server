@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Vampire Lord" nameDescription="a vampire lord" race="blood" experience="1050" speed="230" manacost="0">
-	<health now="1200" max="1200"/>
-	<look type="312" corpse="9658"/>
-	<targetchange interval="4000" chance="10"/>
+<monster name="Vampire Lord" nameDescription="a vampire lord" race="undead" experience="1800" speed="300" manacost="0">
+	<health now="3500" max="3500"/>
+	<look type="287" corpse="8937"/>
+	<targetchange interval="5000" chance="10"/>
+	<strategy attack="100" defense="0"/>
 	<flags>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
@@ -13,51 +14,58 @@
 		<flag canpushitems="1"/>
 		<flag canpushcreatures="1"/>
 		<flag targetdistance="1"/>
-		<flag staticattack="80"/>
+		<flag staticattack="90"/>
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="0" max="-190"/>
-		<attack name="lifedrain" interval="3000" chance="15" target="1" range="1" min="-60" max="-130">
-			<attribute key="areaEffect" value="redshimmer"/>
-		</attack>
-		<attack name="death" interval="2000" chance="10" target="1" range="7" min="-60" max="-150">
-			<attribute key="shootEffect" value="suddendeath"/>
+		<attack name="melee" interval="2000" skill="110" attack="100"/>
+		<attack name="death" interval="2000" chance="10" radius="3" range="6" target="1" min="-400" max="-700">
+			<attribute key="shootEffect" value="death"/>
 			<attribute key="areaEffect" value="mortarea"/>
 		</attack>
-		<attack name="death" interval="4000" chance="5" target="1" range="7" min="-60" max="-150">
-			<attribute key="shootEffect" value="suddendeath"/>
-			<attribute key="areaEffect" value="hearts"/>
+		<attack name="lifedrain" interval="2000" chance="40" radius="1" range="1" target="1" min="-100" max="-230">
+			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
-		<attack name="energy" interval="2000" chance="15" target="1" range="7" min="-60" max="-150">
-			<attribute key="shootEffect" value="energy"/>
+		<attack name="bleedcondition" interval="2000" chance="20" radius="6" target="1" min="-320" max="-560">
+			<attribute key="areaEffect" value="bats"/>
 		</attack>
 	</attacks>
-	<defenses armor="20" defense="20">
-		<defense name="healing" interval="2000" chance="15" min="40" max="80">
+	<defenses armor="30" defense="30">
+		<defense name="healing" interval="1000" chance="15" min="200" max="400">
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
+		<defense name="speed" interval="2000" chance="30" speedchange="450" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+		<defense name="outfit" interval="4500" chance="30" monster="bat" duration="4000"/>
 	</defenses>
 	<elements>
-		<element energyPercent="10"/>
-		<element earthPercent="20"/>
-		<element drownPercent="10"/>
-		<element icePercent="20"/>
-		<element firePercent="-10"/>
+		<element physicalPercent="10"/>
 		<element holyPercent="-10"/>
+		<element firePercent="-10"/>
+		<element icePercent="10"/>
 	</elements>
 	<immunities>
+		<immunity lifedrain="1"/>
 		<immunity death="1"/>
 		<immunity invisible="1"/>
+		<immunity paralyze="1"/>
+		<immunity earth="1"/>
 	</immunities>
 	<voices interval="5000" chance="10">
-		<voice sentence="Kneel before your Mistress!"/>
-		<voice sentence="Dead is the new alive."/>
-		<voice sentence="Come, let me kiss you, darling. Oh wait, I meant kill."/>
-		<voice sentence="Enjoy the pain - I know you love it."/>
-		<voice sentence="Are you suffering nicely enough?"/>
-		<voice sentence="You won't regret you came to me, sweetheart."/>
+		<voice sentence="I was the shadow that haunted the cradle of humanity!"/>
+		<voice sentence="I exist since eons and you want to defy me?"/>
+		<voice sentence="Can you feel the passage of time, mortal?"/>
 	</voices>
 	<loot>
+		<item id="7416" chance="1200"/>
+		<item id="7588" chance="10000"/>
+		<item id="2229" chance="10000"/>
+		<item id="2148" chance1="100000" countmax="98"/>
+		<item id="9020" chance1="100000" />
+		<item id="2152" chance1="50000" countmax="5"/>
+		<item id="2216" chance="11111"/>
+		<item id="2534" chance="6300"/>
+		<item id="2144" chance1="8980" countmax="1"/>
 	</loot>
 </monster>

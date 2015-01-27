@@ -61,7 +61,9 @@
 	<action itemid="9898" script="crafting.lua"/>
 
 	<!-- Testes -->
+	<!--
 	<action fromid="1945" toid="1946" script="teste.lua"/>
+	-->
 
 	<!-- Quests -->
 	<action itemid="1740" script="quests/quests.lua"/>
