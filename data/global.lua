@@ -343,6 +343,24 @@ function Player.getDepotItems(self, depotId)
 	return self:getDepotChest(depotId, true):getItemHoldingCount()
 end
 
+function Player.getLossPercent(self)
+	local blessings = 0
+	local lossPercent = {
+		[0] = 100,
+		[1] = 70,
+		[2] = 45,
+		[3] = 25,
+		[4] = 10,
+		[5] = 0
+	}
+	for i = 1, 5 do
+		if self:hasBlessing(i) then
+			blessings = blessings + 1
+		end
+	end
+	return lossPercent[blessings]
+end
+
 function Player.isUsingOtClient(self)
 	return self:getClient().os >= CLIENTOS_OTCLIENT_LINUX
 end
@@ -424,4 +442,8 @@ local function inArray(table, value)
 		end
 	end
 	return 0
+end
+
+if nextUseStaminaTime == nil then
+	nextUseStaminaTime = {}
 end

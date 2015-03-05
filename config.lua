@@ -6,7 +6,6 @@ protectionLevel = 1
 killsToRedSkull = 3
 killsToBlackSkull = 6
 pzLocked = 60000
-removeAmmoWhenUsingDistanceWeapon = "yes"
 removeChargesFromRunes = "yes"
 timeToDecreaseFrags = 24 * 60 * 60 * 1000
 whiteSkullTime = 15 * 60 * 1000
@@ -24,7 +23,7 @@ gameProtocolPort = 7172
 statusProtocolPort = 7171
 maxPlayers = 0
 motd = "Welcome to The Forgotten Server!"
-onePlayerOnlinePerAccount = "no"
+onePlayerOnlinePerAccount = "yes"
 allowClones = "no"
 serverName = "Forgotten"
 statusTimeout = 5000
@@ -49,7 +48,7 @@ timeBetweenExActions = 1000
 -- Map
 -- NOTE: set mapName WITHOUT .otbm at the end
 mapName = "map"
-mapAuthor = "Komic"
+mapAuthor = "Aman"
 
 -- Market
 marketOfferDuration = 30 * 24 * 60 * 60
@@ -71,6 +70,7 @@ freePremium = "no"
 kickIdlePlayerAfterMinutes = 15
 maxMessageBuffer = 4
 emoteSpells = "no"
+classicEquipmentSlots = "no"
 
 -- Rates
 -- NOTE: rateExp is not used if you have enabled stages in data/XML/stages.xml
@@ -86,6 +86,10 @@ deSpawnRadius = 50
 
 -- Stamina
 staminaSystem = "yes"
+
+-- Scripts
+warnUnsafeScripts = "yes"
+convertUnsafeScripts = "yes"
 
 -- Startup
 -- NOTE: defaultPriority only works on Windows and sets process priority.
