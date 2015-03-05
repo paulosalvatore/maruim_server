@@ -210,8 +210,6 @@ class Player final : public Creature, public Cylinder
 		uint16_t getStaminaMinutes() const {
 			return staminaMinutes;
 		}
-		void regenerateStamina(int32_t offlineTime);
-		void useStamina();
 
 		bool addOfflineTrainingTries(skills_t skill, uint64_t tries);
 
@@ -249,7 +247,9 @@ class Player final : public Creature, public Cylinder
 		uint8_t getGuildLevel() const {
 			return guildLevel;
 		}
-		void setGuildLevel(uint8_t newGuildLevel);
+		void setGuildLevel(uint8_t newGuildLevel) {
+			guildLevel = newGuildLevel;
+		}
 
 		bool isGuildMate(const Player* player) const;
 
@@ -378,7 +378,9 @@ class Player final : public Creature, public Cylinder
 		bool getStorageValue(const uint32_t key, int32_t& value) const;
 		void genReservedStorageRange();
 
-		void setGroup(Group* newGroup);
+		void setGroup(Group* newGroup) {
+			group = newGroup;
+		}
 		Group* getGroup() const {
 			return group;
 		}
@@ -708,6 +710,9 @@ class Player final : public Creature, public Cylinder
 		bool getOutfitAddons(const Outfit& outfit, uint8_t& addons) const;
 
 		bool canLogout();
+
+		size_t getMaxVIPEntries() const;
+		size_t getMaxDepotItems() const;
 
 		//tile
 		//send methods
@@ -1174,7 +1179,7 @@ class Player final : public Creature, public Cylinder
 		bool hasCapacity(const Item* item, uint32_t count) const;
 
 		void gainExperience(uint64_t exp, Creature* source);
-		void addExperience(Creature* source, uint64_t exp, bool sendText = false, bool applyStaminaChange = false, bool applyMultiplier = false);
+		void addExperience(Creature* source, uint64_t exp, bool sendText = false);
 		void removeExperience(uint64_t exp, bool sendText = false);
 
 		void updateInventoryWeight();
@@ -1189,31 +1194,31 @@ class Player final : public Creature, public Cylinder
 		Item* getCorpse(Creature* _lastHitCreature, Creature* mostDamageCreature) final;
 
 		//cylinder implementations
-		ReturnValue __queryAdd(int32_t index, const Thing* thing, uint32_t count,
-			uint32_t flags, Creature* actor = nullptr) const final;
-		ReturnValue __queryMaxCount(int32_t index, const Thing* thing, uint32_t count, uint32_t& maxQueryCount,
-			uint32_t flags) const final;
-		ReturnValue __queryRemove(const Thing* thing, uint32_t count, uint32_t flags) const final;
-		Cylinder* __queryDestination(int32_t& index, const Thing* thing, Item** destItem,
-			uint32_t& flags) final;
+		ReturnValue queryAdd(int32_t index, const Thing& thing, uint32_t count,
+				uint32_t flags, Creature* actor = nullptr) const final;
+		ReturnValue queryMaxCount(int32_t index, const Thing& thing, uint32_t count, uint32_t& maxQueryCount,
+				uint32_t flags) const final;
+		ReturnValue queryRemove(const Thing& thing, uint32_t count, uint32_t flags) const final;
+		Cylinder* queryDestination(int32_t& index, const Thing& thing, Item** destItem,
+				uint32_t& flags) final;
 
-		void __addThing(Thing*) final {}
-		void __addThing(int32_t index, Thing* thing) final;
+		void addThing(Thing*) final {}
+		void addThing(int32_t index, Thing* thing) final;
 
-		void __updateThing(Thing* thing, uint16_t itemId, uint32_t count) final;
-		void __replaceThing(uint32_t index, Thing* thing) final;
+		void updateThing(Thing* thing, uint16_t itemId, uint32_t count) final;
+		void replaceThing(uint32_t index, Thing* thing) final;
 
-		void __removeThing(Thing* thing, uint32_t count) final;
+		void removeThing(Thing* thing, uint32_t count) final;
 
-		int32_t __getIndexOfThing(const Thing* thing) const final;
-		int32_t __getFirstIndex() const final;
-		int32_t __getLastIndex() const final;
-		uint32_t __getItemTypeCount(uint16_t itemId, int32_t subType = -1) const final;
-		std::map<uint32_t, uint32_t>& __getAllItemTypeCount(std::map<uint32_t, uint32_t>& countMap) const final;
-		Thing* __getThing(size_t index) const final;
+		int32_t getThingIndex(const Thing* thing) const final;
+		int32_t getFirstIndex() const final;
+		int32_t getLastIndex() const final;
+		uint32_t getItemTypeCount(uint16_t itemId, int32_t subType = -1) const final;
+		std::map<uint32_t, uint32_t>& getAllItemTypeCount(std::map<uint32_t, uint32_t> &countMap) const final;
+		Thing*getThing(size_t index) const final;
 
-		void __internalAddThing(Thing* thing) final;
-		void __internalAddThing(uint32_t index, Thing* thing) final;
+		void internalAddThing(Thing* thing) final;
+		void internalAddThing(uint32_t index, Thing* thing) final;
 
 		std::unordered_set<uint32_t> attackedSet;
 		std::unordered_set<uint32_t> VIPList;
@@ -1243,7 +1248,6 @@ class Player final : public Creature, public Cylinder
 
 		time_t lastLoginSaved;
 		time_t lastLogout;
-		time_t nextUseStaminaTime;
 
 		uint64_t experience;
 		uint64_t manaSpent;
@@ -1290,10 +1294,7 @@ class Player final : public Creature, public Cylinder
 		uint32_t guid;
 		uint32_t windowTextId;
 		uint32_t editListId;
-		uint32_t maxDepotItems;
-		uint32_t maxVipEntries;
 		uint32_t soul;
-		uint32_t soulMax;
 		uint32_t manaMax;
 		int32_t varSkills[SKILL_LAST + 1];
 		int32_t varStats[STAT_LAST + 1];
@@ -1355,14 +1356,11 @@ class Player final : public Creature, public Cylinder
 			return vocation->getAttackSpeed();
 		}
 
-		uint16_t getDropPercent() const;
-
 		static uint8_t getPercentLevel(uint64_t count, uint64_t nextLevelCount);
 		double getLostPercent() const;
 		uint64_t getLostExperience() const final {
 			return skillLoss ? static_cast<uint64_t>(experience * getLostPercent()) : 0;
 		}
-		void dropLoot(Container* corpse, Creature* _lastHitCreature) final;
 		uint32_t getDamageImmunities() const final {
 			return damageImmunities;
 		}

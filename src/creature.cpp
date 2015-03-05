@@ -45,7 +45,7 @@ Creature::Creature() :
 
 	id = 0;
 	_tile = nullptr;
-	direction = SOUTH;
+	direction = DIRECTION_SOUTH;
 	master = nullptr;
 	lootDrop = true;
 	skillLoss = true;
@@ -129,7 +129,6 @@ bool Creature::canSeeCreature(const Creature* creature) const
 	if (!canSeeInvisibility() && creature->isInvisible()) {
 		return false;
 	}
-
 	return true;
 }
 
@@ -186,7 +185,6 @@ void Creature::onThink(uint32_t interval)
 	}
 
 	blockTicks += interval;
-
 	if (blockTicks >= 1000) {
 		blockCount = std::min<uint32_t>(blockCount + 1, 2);
 		blockTicks = 0;
@@ -194,7 +192,6 @@ void Creature::onThink(uint32_t interval)
 
 	if (followCreature) {
 		walkUpdateTicks += interval;
-
 		if (forceUpdateFollowPath || walkUpdateTicks >= 2000) {
 			walkUpdateTicks = 0;
 			forceUpdateFollowPath = false;
@@ -241,10 +238,8 @@ void Creature::onWalk()
 	if (getWalkDelay() <= 0) {
 		Direction dir;
 		uint32_t flags = FLAG_IGNOREFIELDDAMAGE;
-
 		if (getNextStep(dir, flags)) {
 			ReturnValue ret = g_game.internalMoveCreature(this, dir, flags);
-
 			if (ret != RETURNVALUE_NOERROR) {
 				if (Player* player = getPlayer()) {
 					player->sendCancelMessage(ret);
@@ -278,25 +273,10 @@ void Creature::onWalk(Direction& dir)
 {
 	if (hasCondition(CONDITION_DRUNK)) {
 		uint32_t r = uniform_random(0, 20);
-		if (r <= 4) {
-			switch (r) {
-				case 0:
-					dir = NORTH;
-					break;
-				case 1:
-					dir = WEST;
-					break;
-				case 3:
-					dir = SOUTH;
-					break;
-				case 4:
-					dir = EAST;
-					break;
-
-				default:
-					break;
+		if (r <= DIRECTION_DIAGONAL_MASK) {
+			if (r < DIRECTION_DIAGONAL_MASK) {
+				dir = static_cast<Direction>(r);
 			}
-
 			g_game.internalCreatureSay(this, TALKTYPE_MONSTER_SAY, "Hicks!", false);
 		}
 	}
@@ -363,7 +343,7 @@ void Creature::updateMapCache()
 		for (int32_t x = -maxWalkCacheWidth; x <= maxWalkCacheWidth; ++x) {
 			pos.x = myPos.getX() + x;
 			pos.y = myPos.getY() + y;
-			tile = g_game.getTile(pos.x, pos.y, myPos.z);
+			tile = g_game.map.getTile(pos);
 			updateTileCache(tile, pos);
 		}
 	}
@@ -372,7 +352,7 @@ void Creature::updateMapCache()
 void Creature::updateTileCache(const Tile* tile, int32_t dx, int32_t dy)
 {
 	if (std::abs(dx) <= maxWalkCacheWidth && std::abs(dy) <= maxWalkCacheHeight) {
-		localMapCache[maxWalkCacheHeight + dy][maxWalkCacheWidth + dx] = tile && tile->__queryAdd(0, this, 1, FLAG_PATHFINDING | FLAG_IGNOREFIELDDAMAGE) == RETURNVALUE_NOERROR;
+		localMapCache[maxWalkCacheHeight + dy][maxWalkCacheWidth + dx] = tile && tile->queryAdd(0, *this, 1, FLAG_PATHFINDING | FLAG_IGNOREFIELDDAMAGE) == RETURNVALUE_NOERROR;
 	}
 }
 
@@ -451,16 +431,12 @@ void Creature::onRemoveTileItem(const Tile* tile, const Position& pos, const Ite
 	}
 }
 
-void Creature::onCreatureAppear(Creature* creature, bool isLogin)
+void Creature::onCreatureAppear(Creature* creature, bool)
 {
 	if (creature == this) {
 		if (useCacheMap()) {
 			isMapLoaded = true;
 			updateMapCache();
-		}
-
-		if (isLogin) {
-			setLastPosition(getPosition());
 		}
 	} else if (isMapLoaded) {
 		if (creature->getPosition().z == getPosition().z) {
@@ -565,7 +541,7 @@ void Creature::onCreatureMove(Creature* creature, const Tile* newTile, const Pos
 
 					//update 0
 					for (int32_t x = -maxWalkCacheWidth; x <= maxWalkCacheWidth; ++x) {
-						tile = g_game.getTile(myPos.getX() + x, myPos.getY() - maxWalkCacheHeight, myPos.z);
+						tile = g_game.map.getTile(myPos.getX() + x, myPos.getY() - maxWalkCacheHeight, myPos.z);
 						updateTileCache(tile, x, -maxWalkCacheHeight);
 					}
 				} else if (oldPos.y < newPos.y) { // south
@@ -576,7 +552,7 @@ void Creature::onCreatureMove(Creature* creature, const Tile* newTile, const Pos
 
 					//update mapWalkHeight - 1
 					for (int32_t x = -maxWalkCacheWidth; x <= maxWalkCacheWidth; ++x) {
-						tile = g_game.getTile(myPos.getX() + x, myPos.getY() + maxWalkCacheHeight, myPos.z);
+						tile = g_game.map.getTile(myPos.getX() + x, myPos.getY() + maxWalkCacheHeight, myPos.z);
 						updateTileCache(tile, x, maxWalkCacheHeight);
 					}
 				}
@@ -601,7 +577,7 @@ void Creature::onCreatureMove(Creature* creature, const Tile* newTile, const Pos
 
 					//update mapWalkWidth - 1
 					for (int32_t y = -maxWalkCacheHeight; y <= maxWalkCacheHeight; ++y) {
-						tile = g_game.getTile(myPos.x + maxWalkCacheWidth, myPos.y + y, myPos.z);
+						tile = g_game.map.getTile(myPos.x + maxWalkCacheWidth, myPos.y + y, myPos.z);
 						updateTileCache(tile, maxWalkCacheWidth, y);
 					}
 				} else if (oldPos.x > newPos.x) { // west
@@ -624,7 +600,7 @@ void Creature::onCreatureMove(Creature* creature, const Tile* newTile, const Pos
 
 					//update 0
 					for (int32_t y = -maxWalkCacheHeight; y <= maxWalkCacheHeight; ++y) {
-						tile = g_game.getTile(myPos.x - maxWalkCacheWidth, myPos.y + y, myPos.z);
+						tile = g_game.map.getTile(myPos.x - maxWalkCacheWidth, myPos.y + y, myPos.z);
 						updateTileCache(tile, -maxWalkCacheWidth, y);
 					}
 				}
@@ -939,7 +915,7 @@ void Creature::goToFollowCreature()
 
 		Monster* monster = getMonster();
 		if (monster && !monster->getMaster() && (monster->isFleeing() || fpp.maxTargetDist > 1)) {
-			Direction dir = NODIR;
+			Direction dir = DIRECTION_NONE;
 
 			if (monster->isFleeing()) {
 				monster->getDistanceStep(followCreature->getPosition(), dir, true);
@@ -958,7 +934,7 @@ void Creature::goToFollowCreature()
 				}
 			}
 
-			if (dir != NODIR) {
+			if (dir != DIRECTION_NONE) {
 				listWalkDir.clear();
 				listWalkDir.push_back(dir);
 
@@ -1414,7 +1390,7 @@ bool Creature::isSuppress(ConditionType_t type) const
 int64_t Creature::getStepDuration(Direction dir) const
 {
 	int64_t stepDuration = getStepDuration();
-	if (dir == NORTHWEST || dir == NORTHEAST || dir == SOUTHWEST || dir == SOUTHEAST) {
+	if ((dir & DIRECTION_DIAGONAL_MASK) != 0) {
 		stepDuration *= 3;
 	}
 	return stepDuration;
@@ -1645,7 +1621,7 @@ bool Creature::isInvisible() const
 
 bool Creature::getPathTo(const Position& targetPos, std::list<Direction>& dirList, const FindPathParams& fpp) const
 {
-	return g_game.getMap()->getPathMatching(*this, dirList, FrozenPathingConditionCall(targetPos), fpp);
+	return g_game.map.getPathMatching(*this, dirList, FrozenPathingConditionCall(targetPos), fpp);
 }
 
 bool Creature::getPathTo(const Position& targetPos, std::list<Direction>& dirList, int32_t minTargetDist, int32_t maxTargetDist, bool fullPathSearch /*= true*/, bool clearSight /*= true*/, int32_t maxSearchDist /*= 0*/) const

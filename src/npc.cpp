@@ -411,12 +411,12 @@ bool Npc::canWalkTo(const Position& fromPos, Direction dir) const
 	}
 
 	Position toPos = getNextPosition(dir, fromPos);
-	if (!Spawns::getInstance()->isInZone(masterPos, masterRadius, toPos)) {
+	if (!Spawns::isInZone(masterPos, masterRadius, toPos)) {
 		return false;
 	}
 
-	Tile* tile = g_game.getTile(toPos);
-	if (!tile || tile->__queryAdd(0, this, 1, 0) != RETURNVALUE_NOERROR) {
+	Tile* tile = g_game.map.getTile(toPos);
+	if (!tile || tile->queryAdd(0, *this, 1, 0) != RETURNVALUE_NOERROR) {
 		return false;
 	}
 
@@ -436,20 +436,20 @@ bool Npc::getRandomStep(Direction& dir) const
 	std::vector<Direction> dirList;
 	const Position& creaturePos = getPosition();
 
-	if (canWalkTo(creaturePos, NORTH)) {
-		dirList.push_back(NORTH);
+	if (canWalkTo(creaturePos, DIRECTION_NORTH)) {
+		dirList.push_back(DIRECTION_NORTH);
 	}
 
-	if (canWalkTo(creaturePos, SOUTH)) {
-		dirList.push_back(SOUTH);
+	if (canWalkTo(creaturePos, DIRECTION_SOUTH)) {
+		dirList.push_back(DIRECTION_SOUTH);
 	}
 
-	if (canWalkTo(creaturePos, EAST)) {
-		dirList.push_back(EAST);
+	if (canWalkTo(creaturePos, DIRECTION_EAST)) {
+		dirList.push_back(DIRECTION_EAST);
 	}
 
-	if (canWalkTo(creaturePos, WEST)) {
-		dirList.push_back(WEST);
+	if (canWalkTo(creaturePos, DIRECTION_WEST)) {
+		dirList.push_back(DIRECTION_WEST);
 	}
 
 	if (dirList.empty()) {
@@ -485,15 +485,15 @@ void Npc::turnToCreature(Creature* creature)
 	Direction dir;
 	if (std::abs(tan) < 1) {
 		if (dx > 0) {
-			dir = WEST;
+			dir = DIRECTION_WEST;
 		} else {
-			dir = EAST;
+			dir = DIRECTION_EAST;
 		}
 	} else {
 		if (dy > 0) {
-			dir = NORTH;
+			dir = DIRECTION_NORTH;
 		} else {
-			dir = SOUTH;
+			dir = DIRECTION_SOUTH;
 		}
 	}
 	g_game.internalCreatureTurn(this, dir);
@@ -738,7 +738,7 @@ int32_t NpcScriptInterface::luaGetNpcPos(lua_State* L)
 	Npc* npc = getScriptEnv()->getNpc();
 	if (npc) {
 		pos = npc->getPosition();
-		stackpos = npc->getParent()->__getIndexOfThing(npc);
+		stackpos = npc->getParent()->getThingIndex(npc);
 	}
 
 	pushPosition(L, pos, stackpos);

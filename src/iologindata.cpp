@@ -171,7 +171,7 @@ bool IOLoginData::preloadPlayer(Player* player, const std::string& name)
 	}
 
 	player->setGUID(result->getDataInt("id"));
-	Group* group = g_game.getGroup(result->getDataInt("group_id"));
+	Group* group = g_game.groups.getGroup(result->getDataInt("group_id"));
 	if (!group) {
 		std::cout << "[Error - IOLoginData::preloadPlayer] " << player->name << " has Group ID " << result->getDataInt("group_id") << " which doesn't exist." << std::endl;
 		return false;
@@ -225,7 +225,7 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 		player->premiumDays = acc.premiumDays;
 	}
 
-	Group* group = g_game.getGroup(result->getDataInt("group_id"));
+	Group* group = g_game.groups.getGroup(result->getDataInt("group_id"));
 	if (!group) {
 		std::cout << "[Error - IOLoginData::loadPlayer] " << player->name << " has Group ID " << result->getDataInt("group_id") << " which doesn't exist." << std::endl;
 		return false;
@@ -306,8 +306,8 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 		if (skullSeconds > 0) {
 			//ensure that we round up the number of ticks
 			player->skullTicks = (skullSeconds + 2) * 1000;
-			int32_t skull = result->getDataInt("skull");
 
+			int32_t skull = result->getDataInt("skull");
 			if (skull == SKULL_RED) {
 				player->skull = SKULL_RED;
 			} else if (skull == SKULL_BLACK) {
@@ -326,7 +326,7 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 	player->offlineTrainingTime = result->getDataInt("offlinetraining_time") * 1000;
 	player->offlineTrainingSkill = result->getDataInt("offlinetraining_skill");
 
-	Town* town = Towns::getInstance().getTown(result->getDataInt("town_id"));
+	Town* town = g_game.map.towns.getTown(result->getDataInt("town_id"));
 	if (!town) {
 		std::cout << "[Error - IOLoginData::loadPlayer] " << player->name << " has Town ID " << result->getDataInt("town_id") << " which doesn't exist." << std::endl;
 		return false;
@@ -423,7 +423,7 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 			Item* item = pair.first;
 			int32_t pid = pair.second;
 			if (pid >= 1 && pid <= 10) {
-				player->__internalAddThing(pid, item);
+				player->internalAddThing(pid, item);
 			} else {
 				ItemMap::const_iterator it2 = itemMap.find(pid);
 				if (it2 == itemMap.end()) {
@@ -432,7 +432,7 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 
 				Container* container = it2->second.first->getContainer();
 				if (container) {
-					container->__internalAddThing(item);
+					container->internalAddThing(item);
 				}
 			}
 		}
@@ -454,7 +454,7 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 			if (pid >= 0 && pid < 100) {
 				DepotChest* depotChest = player->getDepotChest(pid, true);
 				if (depotChest) {
-					depotChest->__internalAddThing(item);
+					depotChest->internalAddThing(item);
 				}
 			} else {
 				ItemMap::const_iterator it2 = itemMap.find(pid);
@@ -464,7 +464,7 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 
 				Container* container = it2->second.first->getContainer();
 				if (container) {
-					container->__internalAddThing(item);
+					container->internalAddThing(item);
 				}
 			}
 		}
@@ -484,7 +484,7 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 			int32_t pid = pair.second;
 
 			if (pid >= 0 && pid < 100) {
-				player->getInbox()->__internalAddThing(item);
+				player->getInbox()->internalAddThing(item);
 			} else {
 				ItemMap::const_iterator it2 = itemMap.find(pid);
 
@@ -494,7 +494,7 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 
 				Container* container = it2->second.first->getContainer();
 				if (container) {
-					container->__internalAddThing(item);
+					container->internalAddThing(item);
 				}
 			}
 		}
@@ -858,7 +858,7 @@ bool IOLoginData::getGuidByNameEx(uint32_t& guid, bool& specialVip, std::string&
 
 	name = result->getDataString("name");
 	guid = result->getDataInt("id");
-	Group* group = g_game.getGroup(result->getDataInt("group_id"));
+	Group* group = g_game.groups.getGroup(result->getDataInt("group_id"));
 
 	uint64_t flags;
 	if (group) {

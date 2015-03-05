@@ -155,7 +155,7 @@ bool Map::placeCreature(const Position& centerPos, Creature* creature, bool exte
 	Tile* tile = getTile(centerPos.x, centerPos.y, centerPos.z);
 	if (tile) {
 		placeInPZ = tile->hasFlag(TILESTATE_PROTECTIONZONE);
-		ReturnValue ret = tile->__queryAdd(0, creature, 1, FLAG_IGNOREBLOCKITEM);
+		ReturnValue ret = tile->queryAdd(0, *creature, 1, FLAG_IGNOREBLOCKITEM);
 		foundTile = forceLogin || ret == RETURNVALUE_NOERROR || ret == RETURNVALUE_PLAYERISNOTINVITED;
 	} else {
 		placeInPZ = false;
@@ -194,7 +194,7 @@ bool Map::placeCreature(const Position& centerPos, Creature* creature, bool exte
 				continue;
 			}
 
-			if (tile->__queryAdd(0, creature, 1, 0) == RETURNVALUE_NOERROR) {
+			if (tile->queryAdd(0, *creature, 1, 0) == RETURNVALUE_NOERROR) {
 				if (!extendedPos || isSightClear(centerPos, tryPos, false)) {
 					foundTile = true;
 					break;
@@ -208,13 +208,91 @@ bool Map::placeCreature(const Position& centerPos, Creature* creature, bool exte
 	}
 
 	int32_t index = 0;
-	Item* toItem = nullptr;
 	uint32_t flags = 0;
-	Cylinder* toCylinder = tile->__queryDestination(index, creature, &toItem, flags);
-	toCylinder->__internalAddThing(creature);
+	Item* toItem = nullptr;
+
+	Cylinder* toCylinder = tile->queryDestination(index, *creature, &toItem, flags);
+	toCylinder->internalAddThing(creature);
+
 	Tile* toTile = toCylinder->getTile();
 	toTile->qt_node->addCreature(creature);
 	return true;
+}
+
+void Map::moveCreature(Creature& creature, Tile& newTile, bool forceTeleport/* = false*/)
+{
+	Tile& oldTile = *creature.getTile();
+	int32_t oldStackPos = oldTile.getThingIndex(&creature);
+
+	Position oldPos = oldTile.getPosition();
+	Position newPos = newTile.getPosition();
+
+	bool teleport = forceTeleport || !newTile.ground || !Position::areInRange<1, 1, 0>(oldPos, newPos);
+
+	SpectatorVec list;
+	getSpectators(list, oldPos, true);
+	getSpectators(list, newPos, true);
+
+	std::vector<int32_t> oldStackPosVector;
+	for (Creature* spectator : list) {
+		if (Player* tmpPlayer = spectator->getPlayer()) {
+			if (tmpPlayer->canSeeCreature(&creature)) {
+				oldStackPosVector.push_back(oldTile.getClientIndexOfCreature(tmpPlayer, &creature));
+			} else {
+				oldStackPosVector.push_back(-1);
+			}
+		}
+	}
+
+	//remove the creature
+	oldTile.removeThing(&creature, 0);
+
+	auto leaf = const_cast<QTreeLeafNode*>(QTreeNode::getLeafStatic(&root, oldPos.x, oldPos.y));
+	auto new_leaf = const_cast<QTreeLeafNode*>(QTreeLeafNode::getLeafStatic(&root, newPos.x, newPos.y));
+
+	// Switch the node ownership
+	if (leaf != new_leaf) {
+		leaf->removeCreature(&creature);
+		new_leaf->addCreature(&creature);
+	}
+
+	//add the creature
+	newTile.addThing(&creature);
+	int32_t newStackPos = newTile.getThingIndex(&creature);
+
+	if (!teleport) {
+		if (oldPos.y > newPos.y) {
+			creature.setDirection(DIRECTION_NORTH);
+		} else if (oldPos.y < newPos.y) {
+			creature.setDirection(DIRECTION_SOUTH);
+		}
+
+		if (oldPos.x < newPos.x) {
+			creature.setDirection(DIRECTION_EAST);
+		} else if (oldPos.x > newPos.x) {
+			creature.setDirection(DIRECTION_WEST);
+		}
+	}
+
+	//send to client
+	size_t i = 0;
+	for (Creature* spectator : list) {
+		if (Player* tmpPlayer = spectator->getPlayer()) {
+			//Use the correct stackpos
+			int32_t stackpos = oldStackPosVector[i++];
+			if (stackpos != -1) {
+				tmpPlayer->sendCreatureMove(&creature, newPos, newTile.getStackposOfCreature(tmpPlayer, &creature), oldPos, stackpos, teleport);
+			}
+		}
+	}
+
+	//event method
+	for (Creature* spectator : list) {
+		spectator->onCreatureMove(&creature, &newTile, newPos, &oldTile, oldPos, teleport);
+	}
+
+	oldTile.postRemoveNotification(&creature, &newTile, oldStackPos, true);
+	newTile.postAddNotification(&creature, &oldTile, newStackPos);
 }
 
 bool Map::removeCreature(Creature* creature)
@@ -225,7 +303,7 @@ bool Map::removeCreature(Creature* creature)
 	}
 
 	tile->qt_node->removeCreature(creature);
-	tile->__removeThing(creature, 0);
+	tile->removeThing(creature, 0);
 	return true;
 }
 
@@ -542,7 +620,7 @@ const Tile* Map::canWalkTo(const Creature& creature, const Position& pos) const
 	//used for non-cached tiles
 	Tile* tile = getTile(pos.x, pos.y, pos.z);
 	if (creature.getTile() != tile) {
-		if (!tile || tile->__queryAdd(0, &creature, 1, FLAG_PATHFINDING | FLAG_IGNOREFIELDDAMAGE) != RETURNVALUE_NOERROR) {
+		if (!tile || tile->queryAdd(0, creature, 1, FLAG_PATHFINDING | FLAG_IGNOREFIELDDAMAGE) != RETURNVALUE_NOERROR) {
 			return nullptr;
 		}
 	}
@@ -603,26 +681,26 @@ bool Map::getPathMatching(const Creature& creature, std::list<Direction>& dirLis
 			const int_fast32_t offset_y = n->parent->y - y;
 			if (offset_y == 0) {
 				if (offset_x == -1) {
-					neighbors = *dirNeighbors[WEST];
+					neighbors = *dirNeighbors[DIRECTION_WEST];
 				} else {
-					neighbors = *dirNeighbors[EAST];
+					neighbors = *dirNeighbors[DIRECTION_EAST];
 				}
 			} else if (!fpp.allowDiagonal || offset_x == 0) {
 				if (offset_y == -1) {
-					neighbors = *dirNeighbors[NORTH];
+					neighbors = *dirNeighbors[DIRECTION_NORTH];
 				} else {
-					neighbors = *dirNeighbors[SOUTH];
+					neighbors = *dirNeighbors[DIRECTION_SOUTH];
 				}
 			} else if (offset_y == -1) {
 				if (offset_x == -1) {
-					neighbors = *dirNeighbors[NORTHWEST];
+					neighbors = *dirNeighbors[DIRECTION_NORTHWEST];
 				} else {
-					neighbors = *dirNeighbors[NORTHEAST];
+					neighbors = *dirNeighbors[DIRECTION_NORTHEAST];
 				}
 			} else if (offset_x == -1) {
-				neighbors = *dirNeighbors[SOUTHWEST];
+				neighbors = *dirNeighbors[DIRECTION_SOUTHWEST];
 			} else {
-				neighbors = *dirNeighbors[SOUTHEAST];
+				neighbors = *dirNeighbors[DIRECTION_SOUTHEAST];
 			}
 			dirCount = fpp.allowDiagonal ? 5 : 3;
 		} else {
@@ -703,21 +781,21 @@ bool Map::getPathMatching(const Creature& creature, std::list<Direction>& dirLis
 		prevy = pos.y;
 
 		if (dx == 1 && dy == 1) {
-			dirList.push_front(NORTHWEST);
+			dirList.push_front(DIRECTION_NORTHWEST);
 		} else if (dx == -1 && dy == 1) {
-			dirList.push_front(NORTHEAST);
+			dirList.push_front(DIRECTION_NORTHEAST);
 		} else if (dx == 1 && dy == -1) {
-			dirList.push_front(SOUTHWEST);
+			dirList.push_front(DIRECTION_SOUTHWEST);
 		} else if (dx == -1 && dy == -1) {
-			dirList.push_front(SOUTHEAST);
+			dirList.push_front(DIRECTION_SOUTHEAST);
 		} else if (dx == 1) {
-			dirList.push_front(WEST);
+			dirList.push_front(DIRECTION_WEST);
 		} else if (dx == -1) {
-			dirList.push_front(EAST);
+			dirList.push_front(DIRECTION_EAST);
 		} else if (dy == 1) {
-			dirList.push_front(NORTH);
+			dirList.push_front(DIRECTION_NORTH);
 		} else if (dy == -1) {
-			dirList.push_front(SOUTH);
+			dirList.push_front(DIRECTION_SOUTH);
 		}
 
 		found = found->parent;
@@ -725,7 +803,7 @@ bool Map::getPathMatching(const Creature& creature, std::list<Direction>& dirLis
 	return true;
 }
 
-//*********** AStarNodes *************
+// AStarNodes
 
 AStarNodes::AStarNodes(uint32_t x, uint32_t y)
 	: openNodes()
@@ -768,7 +846,7 @@ AStarNode* AStarNodes::getBestNode()
 
 	int32_t best_node_f = std::numeric_limits<int32_t>::max();
 	int32_t best_node = -1;
-	for (uint32_t i = 0; i < curNode; i++) {
+	for (size_t i = 0; i < curNode; i++) {
 		if (openNodes[i] && nodes[i].f < best_node_f) {
 			best_node_f = nodes[i].f;
 			best_node = i;
@@ -847,8 +925,7 @@ int_fast32_t AStarNodes::getTileWalkCost(const Creature& creature, const Tile* t
 	return cost;
 }
 
-//*********** Floor **************
-
+// Floor
 Floor::~Floor()
 {
 	for (uint32_t i = 0; i < FLOOR_SIZE; ++i) {
@@ -858,7 +935,7 @@ Floor::~Floor()
 	}
 }
 
-//**************** QTreeNode **********************
+// QTreeNode
 QTreeNode::QTreeNode()
 {
 	m_isLeaf = false;
@@ -920,7 +997,7 @@ QTreeLeafNode* QTreeNode::createLeaf(uint32_t x, uint32_t y, uint32_t level)
 	return reinterpret_cast<QTreeLeafNode*>(this);
 }
 
-//************ LeafNode ************************
+// QTreeLeafNode
 bool QTreeLeafNode::newLeaf = false;
 QTreeLeafNode::QTreeLeafNode()
 {

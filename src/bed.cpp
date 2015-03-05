@@ -89,7 +89,7 @@ BedItem* BedItem::getNextBedItem() const
 	Direction dir = Item::items[id].bedPartnerDir;
 	Position targetPos = getNextPosition(dir, getPosition());
 
-	Tile* tile = g_game.getTile(targetPos);
+	Tile* tile = g_game.map.getTile(targetPos);
 	if (!tile) {
 		return nullptr;
 	}
@@ -160,7 +160,7 @@ bool BedItem::sleep(Player* player)
 	g_game.setBedSleeper(this, player->getGUID());
 
 	// make the player walk onto the bed
-	player->getTile()->moveCreature(player, getTile());
+	g_game.map.moveCreature(*player, *getTile());
 
 	// display 'Zzzz'/sleep effect
 	g_game.addMagicEffect(player->getPosition(), CONST_ME_SLEEP);

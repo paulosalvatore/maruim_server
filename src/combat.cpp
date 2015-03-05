@@ -138,10 +138,10 @@ void Combat::getCombatArea(const Position& centerPos, const Position& targetPos,
 	if (area) {
 		area->getList(centerPos, targetPos, list);
 	} else {
-		Tile* tile = g_game.getTile(targetPos);
+		Tile* tile = g_game.map.getTile(targetPos);
 		if (!tile) {
 			tile = new StaticTile(targetPos.x, targetPos.y, targetPos.z);
-			g_game.setTile(tile);
+			g_game.map.setTile(targetPos, tile);
 		}
 		list.push_back(tile);
 	}
@@ -1127,10 +1127,10 @@ void AreaCombat::getList(const Position& centerPos, const Position& targetPos, s
 		for (uint32_t x = 0; x < cols; ++x) {
 			if (area->getValue(y, x) != 0) {
 				if (g_game.isSightClear(targetPos, tmpPos, true)) {
-					Tile* tile = g_game.getTile(tmpPos);
+					Tile* tile = g_game.map.getTile(tmpPos);
 					if (!tile) {
 						tile = new StaticTile(tmpPos.x, tmpPos.y, tmpPos.z);
-						g_game.setTile(tile);
+						g_game.map.setTile(tmpPos, tile);
 					}
 					list.push_back(tile);
 				}
@@ -1262,24 +1262,24 @@ void AreaCombat::setupArea(const std::list<uint32_t>& list, uint32_t rows)
 	MatrixArea* area = createArea(list, rows);
 
 	//NORTH
-	areas[NORTH] = area;
+	areas[DIRECTION_NORTH] = area;
 
 	uint32_t maxOutput = std::max<uint32_t>(area->getCols(), area->getRows()) * 2;
 
 	//SOUTH
 	MatrixArea* southArea = new MatrixArea(maxOutput, maxOutput);
 	copyArea(area, southArea, MATRIXOPERATION_ROTATE180);
-	areas[SOUTH] = southArea;
+	areas[DIRECTION_SOUTH] = southArea;
 
 	//EAST
 	MatrixArea* eastArea = new MatrixArea(maxOutput, maxOutput);
 	copyArea(area, eastArea, MATRIXOPERATION_ROTATE90);
-	areas[EAST] = eastArea;
+	areas[DIRECTION_EAST] = eastArea;
 
 	//WEST
 	MatrixArea* westArea = new MatrixArea(maxOutput, maxOutput);
 	copyArea(area, westArea, MATRIXOPERATION_ROTATE270);
-	areas[WEST] = westArea;
+	areas[DIRECTION_WEST] = westArea;
 }
 
 void AreaCombat::setupArea(int32_t length, int32_t spread)
@@ -1362,24 +1362,24 @@ void AreaCombat::setupExtArea(const std::list<uint32_t>& list, uint32_t rows)
 	MatrixArea* area = createArea(list, rows);
 
 	//NORTH-WEST
-	areas[NORTHWEST] = area;
+	areas[DIRECTION_NORTHWEST] = area;
 
 	uint32_t maxOutput = std::max<uint32_t>(area->getCols(), area->getRows()) * 2;
 
 	//NORTH-EAST
 	MatrixArea* neArea = new MatrixArea(maxOutput, maxOutput);
 	copyArea(area, neArea, MATRIXOPERATION_MIRROR);
-	areas[NORTHEAST] = neArea;
+	areas[DIRECTION_NORTHEAST] = neArea;
 
 	//SOUTH-WEST
 	MatrixArea* swArea = new MatrixArea(maxOutput, maxOutput);
 	copyArea(area, swArea, MATRIXOPERATION_FLIP);
-	areas[SOUTHWEST] = swArea;
+	areas[DIRECTION_SOUTHWEST] = swArea;
 
 	//SOUTH-EAST
 	MatrixArea* seArea = new MatrixArea(maxOutput, maxOutput);
 	copyArea(swArea, seArea, MATRIXOPERATION_MIRROR);
-	areas[SOUTHEAST] = seArea;
+	areas[DIRECTION_SOUTHEAST] = seArea;
 }
 
 //**********************************************************//
