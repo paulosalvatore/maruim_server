@@ -512,7 +512,8 @@ profissoes = {
 		mesaTrabalho = {1787, 1789, 1791, 1793},
 		mesaTrabalhando = {1786, 1788, 1790, 1792},
 		receitas = {
-			{item = 9992, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{11192, 2}, {2671, 5}, {8838, 3}, {2787, 3}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
+			{item = 9992, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{2148, 1}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 1000, aprender = 0, atributos = {}},
+			-- {item = 9992, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{11192, 2}, {2671, 5}, {8838, 3}, {2787, 3}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
 			{item = 9993, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{7259, 3}, {8838, 3}, {8842, 5}, {2805, 2}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
 			{item = 9994, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{12638, 3}, {11429, 3}, {2795, 4}, {2677, 3}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
 			{item = 9995, nivel = 1, nivelJogador = 1, ferramenta = 2347, materiais = {{11190, 2}, {2006, 2, 3}, {8841, 2}, {7909, 7}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {}},
@@ -758,9 +759,11 @@ function Player.getProfissaoChanceSucessoReceita(self, profissaoId, receitaId)
 	if ingredienteSecreto ~= nil and self:getItemCount(ingredienteSecreto[1]) >= ingredienteSecreto[2] then
 		chanceSucessoReceita = chanceSucessoReceita+ingredienteSecreto[3]
 	end
-	local ingredienteMelhoria = profissao.ingredientesMelhoria[self:getProfissaoIngredienteMelhoria(profissaoId)]
-	if ingredienteMelhoria ~= nil and self:getItemCount(ingredienteMelhoria.item) > 0 then
-		chanceSucessoReceita = chanceSucessoReceita+ingredienteMelhoria.chance
+	if profissao.ingredientesMelhoria ~= nil then
+		local ingredienteMelhoria = profissao.ingredientesMelhoria[self:getProfissaoIngredienteMelhoria(profissaoId)]
+		if ingredienteMelhoria ~= nil and self:getItemCount(ingredienteMelhoria.item) > 0 then
+			chanceSucessoReceita = chanceSucessoReceita+ingredienteMelhoria.chance
+		end
 	end
 	if maxChanceSucesso ~= nil then
 		chanceSucessoReceita = math.max(chanceSucessoReceita, maxChanceSucesso)
@@ -775,19 +778,21 @@ function Player.addProfissaoReceitaAprendizado(self, profissaoId, receitaId)
 	local storageReceitasInicio = profissaoId+configProfissoes.receitasInicio+receitaId
 	self:setStorageValue(storageReceitasInicio, 1)
 end
-function Player.getPosicaoMesaTrabalho(self, profissaoId)
+function Player.getPosicaoMesaTrabalho(self, profissaoId, trabalhando)
 	local extraData = profissoes[profissaoId].extraData[self:getId()]
 	local posicaoMesaTrabalho = extraData.mesaTrabalho:getPosition()
 	local posicaoEfeitoMesaTrabalho = extraData.mesaTrabalho:getPosition()
 	local mesaTrabalho = extraData.mesaTrabalho:getType():getId()
-	if mesaTrabalho == 1786 then
-		posicaoEfeitoMesaTrabalho.x = posicaoEfeitoMesaTrabalho.x+1
-		posicaoEfeitoMesaTrabalho.y = posicaoEfeitoMesaTrabalho.y-1
-	elseif mesaTrabalho == 1788 then
-		posicaoEfeitoMesaTrabalho.x = posicaoEfeitoMesaTrabalho.x+1
-		posicaoEfeitoMesaTrabalho.y = posicaoEfeitoMesaTrabalho.y-1
-	elseif mesaTrabalho == 1790 then
-		posicaoEfeitoMesaTrabalho.x = posicaoEfeitoMesaTrabalho.x+1
+	if trabalhando ~= nil and trabalhando == 1 then
+		if mesaTrabalho == 1786 then
+			posicaoEfeitoMesaTrabalho.x = posicaoEfeitoMesaTrabalho.x+1
+			posicaoEfeitoMesaTrabalho.y = posicaoEfeitoMesaTrabalho.y-1
+		elseif mesaTrabalho == 1788 then
+			posicaoEfeitoMesaTrabalho.x = posicaoEfeitoMesaTrabalho.x+1
+			posicaoEfeitoMesaTrabalho.y = posicaoEfeitoMesaTrabalho.y-1
+		elseif mesaTrabalho == 1790 then
+			posicaoEfeitoMesaTrabalho.x = posicaoEfeitoMesaTrabalho.x+1
+		end
 	end
 	return {mesaTrabalho = posicaoMesaTrabalho, efeito = posicaoEfeitoMesaTrabalho}
 end
@@ -894,9 +899,11 @@ function Player.getIngredientesMelhoria(self, profissaoId)
 	local profissao = profissoes[profissaoId]
 	local ingredientesMelhoria = profissao.ingredientesMelhoria
 	local ingredientesMelhoriaDisponiveis = {}
-	for a, b in pairs(ingredientesMelhoria) do
-		if self:getItemCount(b.item) > 0 then
-			table.insert(ingredientesMelhoriaDisponiveis, a+configProfissoes.receitasInicio)
+	if type(ingredientesMelhoria) == "table" then
+		for a, b in pairs(ingredientesMelhoria) do
+			if self:getItemCount(b.item) > 0 then
+				table.insert(ingredientesMelhoriaDisponiveis, a+configProfissoes.receitasInicio)
+			end
 		end
 	end
 	return ingredientesMelhoriaDisponiveis
@@ -944,7 +951,7 @@ function Player.iniciarReceita(self, profissaoId, receitaId, bloquearMovimento)
 		self:allowMovement(false)
 	end
 	self:say("Trabalhando...", TALKTYPE_MONSTER_SAY)
-	local posicaoMesaTrabalho = self:getPosicaoMesaTrabalho(profissaoId)
+	local posicaoMesaTrabalho = self:getPosicaoMesaTrabalho(profissaoId, 1)
 	function enviarAnimacao(tempo, posicao, efeito)
 		if tempo > 0 then
 			posicao:sendMagicEffect(efeito)
