@@ -26,6 +26,8 @@
 	<action fromid="2146" toid="2147" script="geral.lua"/>
 	<action fromid="2149" toid="2150" script="geral.lua"/>
 	<action itemid="21247" script="geral.lua"/>
+	<action itemid="2093" script="geral.lua"/>
+	<action itemid="2099" script="geral.lua"/>
 
 	<action itemid="16016" script="pintando.lua"/>
 	<action fromid="16018" toid="16019" script="pintando.lua"/>

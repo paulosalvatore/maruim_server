@@ -468,6 +468,16 @@ local items = {
 			efeito = {48},
 			removerItem = 1
 		}
+	},
+	[2093] = {
+		["default"] = {
+			efeito = {68, {y = -1}}
+		}
+	},
+	[2099] = {
+		["default"] = {
+			efeito = {68, {y = -1}}
+		}
 	}
 }
 function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
@@ -645,7 +655,10 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		if efeito ~= nil and table.getn(efeito) > 0 then
 			local posicao_efeito = nil
 			if efeito[2] and efeito[2] ~= "to" then
-				if efeito[2] == "from" then
+				if type(efeito[2] == "table") then
+					-- posicao_efeito = 
+					posicao_efeito = fromPosition+efeito[2]
+				elseif efeito[2] == "from" then
 					posicao_efeito = fromPosition
 				elseif efeito[2] == "player" then
 					posicao_efeito = getPlayerPosition(player)
