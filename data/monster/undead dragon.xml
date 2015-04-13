@@ -3,6 +3,7 @@
 	<health now="8350" max="8350"/>
 	<look type="231" corpse="6306"/>
 	<targetchange interval="4000" chance="10"/>
+	<strategy attack="100" defense="0"/>
 	<flags>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
@@ -68,5 +69,11 @@
 		<voice sentence="I SENSE LIFE" yell="1"/>
 	</voices>
 	<loot>
+		<item id="6500" countmax="1" chance="10000"/><!-- demonic essence -->
+		<item id="5925" countmax="1" chance="10000"/><!-- hardened bone -->
+		<item id="2146" countmax="1" chance="10000"/><!-- small sapphire -->
+		<item id="2144" countmax="1" chance="10000"/><!-- black pearl -->
+		<item id="5944" countmax="1" chance="10000" /><!-- soul orb -->
+		<item id="11367" countmax="1" chance="10000" /><!-- undead heart -->
 	</loot>
 </monster>

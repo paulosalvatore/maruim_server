@@ -3,6 +3,7 @@
 	<health now="1825" max="1825"/>
 	<look type="291" corpse="8941"/>
 	<targetchange interval="4000" chance="10"/>
+	<strategy attack="100" defense="0"/>
 	<flags>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
@@ -58,6 +59,7 @@
 		<voice sentence="GROOOOAAAAAAAAR!"/>
 	</voices>
 	<loot>
-		<item id="10582" chance="15360"/><!--wyrm scale -->
+		<item id="2150" countmax="1" chance="10000"/><!-- small amethyst-->
+		<item id="10582" countmax="1" chance="10000"/><!--wyrm scale -->
 	</loot>
 </monster>

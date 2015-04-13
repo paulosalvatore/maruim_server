@@ -3,6 +3,7 @@
 	<health now="55" max="55"/>
 	<look type="112" corpse="6039"/>
 	<targetchange interval="4000" chance="0"/>
+	<strategy attack="100" defense="0"/>
 	<flags>
 		<flag summonable="1"/>
 		<flag attackable="1"/>
@@ -30,5 +31,7 @@
 		<immunity drown="1"/>
 	</immunities>
 	<loot>
+		<item id="11189" chance="10000"/><!-- crab pincers -->
+		<item id="2146" chance="10000"/><!-- Small Sapphire -->
 	</loot>
 </monster>

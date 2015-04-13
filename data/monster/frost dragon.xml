@@ -3,6 +3,7 @@
 	<health now="1800" max="1800"/>
 	<look type="248" corpse="7091"/>
 	<targetchange interval="4000" chance="10"/>
+	<strategy attack="100" defense="0"/>
 	<flags>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
@@ -67,7 +68,9 @@
 		<voice sentence="Chill out!."/>
 	</voices>
 	<loot>
-		<item id="2672" countmax="5" chance="80370"/><!-- dragon ham -->
-		<item id="7290" chance="550"/><!-- shard -->
+		<item id="13028" countmax="1" chance="10000"/><!-- frozen heart -->
+		<item id="7289" countmax="1" chance="10000"/><!-- frost charm -->
+		<item id="8300" countmax="1" chance="10000"/><!-- flawless ice crystal -->
+		<item id="7314" countmax="1" chance="10000"/><!-- scale from a frozen dragon -->
 	</loot>
 </monster>

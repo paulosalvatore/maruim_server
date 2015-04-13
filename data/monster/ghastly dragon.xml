@@ -3,6 +3,7 @@
 	<health now="7800" max="7800"/>
 	<look type="351" corpse="11362"/>
 	<targetchange interval="4000" chance="5"/>
+	<strategy attack="100" defense="0"/>
 	<flags>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
@@ -55,6 +56,11 @@
 		<voice sentence="I WILL FEAST ON YOUR SOUL!" yell="1"/>
 	</voices>
 	<loot>
-		<item id="11366" chance="6650" /><!-- Ghastly Dragon Head -->
+		<item id="11366" chance="10000" /><!-- ghastly dragon head -->
+		<item id="5944" chance="10000" /><!-- soul orb -->
+		<item id="11367" chance="10000" /><!-- undead heart -->
+		<item id="6500" chance="10000" /><!-- demonic essence -->
+		<item id="2158" chance="10000" /><!-- blue gem -->
+		<item id="2149" chance="10000" /><!-- small emerald -->
 	</loot>
 </monster>

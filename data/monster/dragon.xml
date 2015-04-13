@@ -3,6 +3,7 @@
 	<health now="1000" max="1000"/>
 	<look type="34" corpse="5973"/>
 	<targetchange interval="4000" chance="10"/>
+	<strategy attack="100" defense="0"/>
 	<flags>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
@@ -46,7 +47,11 @@
 		<voice sentence="FCHHHHH" yell="1"/>
 	</voices>
 	<loot>
-		<item id="12413" chance="9740"/><!-- dragon's tail -->
-		<item id="2672" countmax="3" chance="65500"/><!-- dragon ham -->
+		<item id="21401" countmax="1" chance="10000"/><!-- small dragon tear -->
+		<item id="12413" countmax="1" chance="10000"/><!-- dragon's tail -->
+		<item id="5920" countmax="1" chance="10000"/><!-- green dragon scale -->
+		<item id="5877" countmax="1" chance="10000"/><!-- green dragon leather -->
+		<item id="10020" countmax="1" chance="10000"/><!-- dragon claw -->
+		<item id="2145" countmax="1" chance="10000"/><!-- small diamond -->
 	</loot>
 </monster>
