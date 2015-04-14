@@ -347,4 +347,5 @@
 	<monster name="Yeti" file="yeti.xml"/>
 	<monster name="Young Sea Serpent" file="young sea serpent.xml"/>
 	<monster name="Zombie" file="zombie.xml"/>
+	<monster name="Raging Fire" file="raging fire.xml"/>
 </monsters>

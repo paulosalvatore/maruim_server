@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Massive Fire Elemental" nameDescription="a massive fire elemental" race="fire" experience="1400" speed="240" manacost="0">
-	<health now="1200" max="1200"/>
+<monster name="Raging Fire" nameDescription="a Raging Fire" race="fire" experience="2000" speed="210" manacost="0">
+	<health now="1800" max="1800"/>
 	<look type="242" corpse="8964"/>
 	<targetchange interval="4000" chance="10"/>
 	<strategy attack="100" defense="0"/>
@@ -18,24 +18,28 @@
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="70" attack="75"/>
+		<attack name="melee" interval="2000" skill="100" attack="75"/>
 		<attack name="firefield" interval="2000" chance="10" range="7" target="0" radius="3"> <!-- self fire bomb -->
 			<attribute key="shootEffect" value="fire"/>
 		</attack>
-		<attack name="firefield" interval="2000" chance="10" target="1" range="7" radius="3"> <!-- target fire bomb -->
+		<attack name="firefield" interval="2000" chance="10" range="7" target="1" radius="3"> <!-- target fire bomb -->
 			<attribute key="shootEffect" value="fire"/>
 		</attack>
 		<attack name="fire" interval="2000" chance="10" length="7" spread="0" min="-200" max="-700"> <!-- fire beam -->
-			<attribute key="areaEffect" value="fire"/>
-		</attack>
-		<attack name="fire" interval="1000" chance="15" radius="3" target="0" min="-60" max="-250"> <!-- self fire explosion -->
 			<attribute key="areaEffect" value="explosion"/>
 		</attack>
-		<attack name="massive fire elemental soulfire" interval="2000" chance="15"/> <!-- fire condition -->
+		<attack name="fire" interval="2000" chance="15" radius="3" target="0" min="-60" max="-250"> <!-- self fire explosion -->
+			<attribute key="areaEffect" value="explosion"/>
+		</attack>
+		<attack name="fire" interval="2000" chance="10" range="7" radius="6" target="1" min="-110" max="-200"> <!-- target great fire ball -->
+			<attribute key="shootEffect" value="fire"/>
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+		<attack name="hellfire fighter soulfire" interval="2000" chance="15"/> <!-- fire condition -->
 	</attacks>
 	<defenses armor="30" defense="30"/>
 	<elements>
-		<element icePercent="-15"/>
+		<element icePercent="-25"/>
 		<element physicalPercent="40"/>
 		<element deathPercent="20"/>
 		<element energyPercent="30"/>
