@@ -11311,7 +11311,7 @@
 		<attribute key="armor" value="1" />
 		<attribute key="slotType" value="head" />
 	</item>
-	<item id="6532" article="a" name="dead defiler">
+	<item id="6532" article="some" name="poison remains">
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="6552" />
 		<attribute key="duration" value="10" />
@@ -11368,7 +11368,7 @@
 		<attribute key="description" value="Sun can be a merciless killer, but so can you." />
 		<attribute key="weight" value="100" />
 	</item>
-	<item id="6552" article="a" name="dead defiler">
+	<item id="6552" article="some" name="poison remains">
 		<attribute key="decayTo" value="0" />
 		<attribute key="duration" value="360" />
 		<attribute key="corpseType" value="venom" />
@@ -29202,7 +29202,7 @@
 		<attribute key="duration" value="10" />
 		<attribute key="corpseType" value="undead" />
 	</item>
-	<item id="21368" article="a" name="dead enraged soul">
+	<item id="21367" article="a" name="dead enraged soul">
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="21372" />
 		<attribute key="duration" value="10" />
