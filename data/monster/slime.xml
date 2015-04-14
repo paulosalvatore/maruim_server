@@ -35,6 +35,7 @@
 	<summons maxSummons="3">
 		<summon name="Slime" interval="2000" chance="10"/>
 	</summons>
+	<loot>
 		<item id="10557" countmax="1" chance="10000"/><!-- Poisonous Slime -->
 		<item id="18396" countmax="1" chance="10000"/><!-- Mucus Plug -->
 	</loot>

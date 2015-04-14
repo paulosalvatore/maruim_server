@@ -37,4 +37,5 @@
 		<item id="2148" countmax="1" chance="10000"/><!-- gold coin -->
 		<item id="5913" countmax="1" chance="10000"/><!-- brown piece of cloth -->
 		<item id="5909" countmax="1" chance="10000"/><!-- white piece of cloth -->
+	</loot>
 </monster>

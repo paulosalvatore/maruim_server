@@ -54,4 +54,5 @@
 		<item id="18432" countmax="1" chance="10000"/><!-- Crystalline Spikes -->
 		<item id="2225" countmax="1" chance="10000"/><!-- Piece of Iron -->
 		<item id="18422" countmax="1" chance="10000"/><!-- Minor Crystalline Token -->
+	</loot>
 </monster>

@@ -59,4 +59,5 @@
 		<item id="12426" chance="10000"/><!-- jewelled belt -->
 		<item id="12412" chance="10000"/><!-- dirty turban -->
 		<item id="2158" chance="10000"/><!-- blue gem -->
+	</loot>
 </monster>

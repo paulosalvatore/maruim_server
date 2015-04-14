@@ -42,4 +42,5 @@
 		<item id="8299" countmax="1" chance="10000"/><!-- Glimmering Soil -->
 		<item id="21585" countmax="1" chance="10000"/><!-- Smoking Coal -->
 		<item id="9970" countmax="1" chance="10000"/><!-- Small Topaz -->
+	</loot>
 </monster>
