@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Robert" script="robert_quest.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="144" head="0" body="115" legs="97" feet="116" addons="1"/>
+	<parameters>
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Minha filha e eu estávamos caminhando pela floresta quando uma criatura a atacou. Assim que chegamos na cidade procurei por ajuda, mas ninguém conseguiu curá-la. Ouvi boatos de que apenas um {antídoto} misterioso teria tal poder."/>
+		<parameter key="message_sendtrade" value="Eu não possuo nada para negociar com você."/>
+		<parameter key="message_farewell" value="Tome cuidado pelo caminho!" />
+		<parameter key="message_walkaway" value="Espere! Eu preciso de ajuda!" />
+	</parameters>
+</npc>
