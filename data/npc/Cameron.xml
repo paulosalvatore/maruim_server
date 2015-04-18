@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Cameron" script="default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="144" head="0" body="115" legs="97" feet="116" addons="1"/>
+	<parameters>
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja."/>
+		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?"/> 
+		<parameter key="message_farewell" value="Adeus!" />
+		<parameter key="message_walkaway" value="Nos vemos depois!" />
+		<parameter key="module_shop" value="1"/>
+		<parameter key="shop_sellable" value="damaged helmet,2339,1;sword hilt,2350,1;rusty shield,9814,1;geomancer's robe,12414,1;geomancer's staff,12419,1;lost basher's spike,20106,1;bloody dwarven beard,20107,1;lost husher's staff,20128,1;broken throwing axe,20131,1;helmet of the lost,20132,1;lost bracers,20133,1;mad froth,20134,1;red hair dye,20135,1;"/>
+	</parameters>
+</npc>

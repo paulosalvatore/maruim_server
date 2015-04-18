@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Gren" script="default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="144" head="0" body="115" legs="97" feet="116" addons="1"/>
+	<parameters>
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja."/>
+		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?"/> 
+		<parameter key="message_farewell" value="Adeus!" />
+		<parameter key="message_walkaway" value="Nos vemos depois!" />
+		<parameter key="module_shop" value="1"/>
+		<parameter key="shop_sellable" value="egg,2328,1;meat,2666,1;fish,2667,1;ham,2671,1;dragon ham,2672,1;coconut,2678,1;cherry,2679,1;carrot,2684,1;cheese,2696,1;dark mushroom,2792,1;fire mushroom,2795,1;peanut,7910,1;raspberry,8840,1;jalapeño pepper,8844,1;haunch of boar,13297,1;soft cheese,20100,1;"/>
+	</parameters>
+</npc>

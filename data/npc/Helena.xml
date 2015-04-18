@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Helena" script="default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="144" head="0" body="115" legs="97" feet="116" addons="1"/>
+	<parameters>
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja."/>
+		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?"/> 
+		<parameter key="message_farewell" value="Adeus!" />
+		<parameter key="message_walkaway" value="Nos vemos depois!" />
+		<parameter key="module_shop" value="1"/>
+		<parameter key="shop_sellable" value="glob of mercury,9966,1;glob of acid slime,9967,1;glob of tar,9968,1;poisonous slime,10557,1;boggy dreads,10584,1;slime mould,13758,1;mucus plug,18396,1;humongous chunk,18433,1;hideous chunk,18434,1;"/>
+	</parameters>
+</npc>

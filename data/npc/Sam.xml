@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Sam" script="default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="144" head="0" body="115" legs="97" feet="116" addons="1"/>
+	<parameters>
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja."/>
+		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?"/> 
+		<parameter key="message_farewell" value="Adeus!" />
+		<parameter key="message_walkaway" value="Nos vemos depois!" />
+		<parameter key="module_shop" value="1"/>
+		<parameter key="shop_sellable" value="ape fur,5883,1;frost giant pelt,10575,1;snake skin,10611,1;piece of crocodile leather,11196,1;silky fur,11209,1;striped fur,11210,1;winter wolf fur,11212,1;badger fur,11216,1;thick fur,11224,1;werewolf fur,11234,1;warwolf fur,11235,1;wool,11236,1;black wool,12404,1;white deer skin,13534,1;"/>
+	</parameters>
+</npc>

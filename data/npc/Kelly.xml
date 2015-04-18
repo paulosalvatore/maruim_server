@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Kelly" script="default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="144" head="0" body="115" legs="97" feet="116" addons="1"/>
+	<parameters>
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja."/>
+		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?"/> 
+		<parameter key="message_farewell" value="Adeus!" />
+		<parameter key="message_walkaway" value="Nos vemos depois!" />
+		<parameter key="module_shop" value="1"/>
+		<parameter key="shop_sellable" value="lizard leather,5876,1;lizard scale,5881,1;wyvern talisman,10561,1;bunch of ripe rice,11245,1;weaver's wandtip,11314,1;bone shoulderplate,11321,1;warmaster's wristguards,11322,1;corrupted flag,11326,1;cursed shoulder spikes,11327,1;zaogun flag,11330,1;zaogun shoulderplates,11331,1;high guard flag,11332,1;high guard shoulderplates,11333,1;legionnaire flags,11334,1;dragon priest's wandtip,11361,1;draken sulphur,12614,1;draken wristbands,12615,1;broken draken mail,12616,1;eye of corruption,12627,1;scale of corruption,12629,1;lizard essence,12636,1;trashed draken boots,12660,1;draken doll,13030,1;harness,13294,1;draptor scales,13296,1;bamboo leaves,13538,1;"/>
+	</parameters>
+</npc>

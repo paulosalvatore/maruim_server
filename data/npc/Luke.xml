@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Luke" script="default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="144" head="0" body="115" legs="97" feet="116" addons="1"/>
+	<parameters>
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja."/>
+		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?"/> 
+		<parameter key="message_farewell" value="Adeus!" />
+		<parameter key="message_walkaway" value="Nos vemos depois!" />
+		<parameter key="module_shop" value="1"/>
+		<parameter key="shop_sellable" value="wedding ring,2121,1;crystal necklace,2125,1;emerald bangle,2127,1;wolf tooth chain,2129,1;silver brooch,2134,1;demonbone amulet,2136,1;silver amulet,2170,1;platinum amulet,2171,1;bronze amulet,2172,1;stone skin amulet,2197,1;protection amulet,2200,1;explorer brooch,4873,1;death ring,6300,1;magma amulet,7890,1;snake god's wristguard,12647,1;necklace of the deep,15403,1;prismatic ring,18528,1;wimp tooth chain,20127,1;vampire's cape chain,21244,1;vampire's signet ring,21252,1;"/>
+	</parameters>
+</npc>
