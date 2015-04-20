@@ -478,17 +478,36 @@ local items = {
 		["default"] = {
 			efeito = {68, {y = -1}}
 		}
+	},
+	[3421] = {
+		["default"] = {
+			actionId = 2902,
+			verificarPosicao = {{y = -1}, "item"},
+			teleportar = {{y = 1}, "item"},
+			direcionar = "sul"
+		}
+	},
+	["action"] = {
+	},
+	["unique"] = {
 	}
 }
 function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if items[item.itemid] then
-		local i = items[item.itemid]
-		local adicionar_evento = 0
+	if ((items[item.itemid]) or (items["action"][item.actionid]) or (items["unique"][item.uid])) then
+		local i
+		if (items[item.itemid]) then
+			i = items[item.itemid]
+		elseif (items["action"][item.actionid]) then
+			i = items["action"][item.actionid]
+		elseif (items["unique"][item.actionid]) then
+			i = items["unique"][item.uid]
+		end
+		local adicionarEvento = 0
 		if i["default"] then
 			i = i["default"]
 		elseif isInArray(sparkling, itemEx.itemid) and #Tile(toPosition):getItems() == 2 and i["sparkling"][Tile(toPosition):getTileTopTopItem()] then
 			i = i["sparkling"][Tile(toPosition):getTileTopTopItem()]
-			adicionar_evento = 1
+			adicionarEvento = 1
 		elseif (isInArray(fire_source, itemEx.itemid)) and (i["fire_source"]) then
 			i = i["fire_source"]
 		elseif (isInArray(fruits, itemEx.itemid)) and (i["fruits"]) then
@@ -503,8 +522,32 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			i = i["energy_shrine"]
 		elseif i[itemEx.itemid] then
 			i = i[itemEx.itemid]
+		elseif i["action"][item.actionid] then
+			i = i["action"][item.actionid]
+		elseif i["unique"][item.uid] then
+			i = i["unique"][item.uid]
 		else
 			return false
+		end
+		if (i.actionId ~= nil and ((item:getActionId() ~= i.actionId) or (itemEx:getActionId() ~= i.actionId))) then
+			return false
+		end
+		if i.verificarPosicao ~= nil then
+			local verificarPosicao
+			if(i.verificarPosicao[2] == "item") then
+				verificarPosicao = fromPosition
+			elseif(i.verificarPosicao[2] == "itemEx") then
+				verificarPosicao = toPosition
+			end
+			if i.verificarPosicao[1].x ~= nil and player:getPosition().x ~= verificarPosicao.x+i.verificarPosicao[1].x then
+				return false
+			end
+			if i.verificarPosicao[1].y ~= nil and player:getPosition().y ~= verificarPosicao.y+i.verificarPosicao[1].y then
+				return false
+			end
+			if i.verificarPosicao[1].z ~= nil and player:getPosition().z ~= verificarPosicao.z+i.verificarPosicao[1].z then
+				return false
+			end
 		end
 		local chanceSucesso = i.chanceSucesso
 		local chanceQuebrar = i.chanceQuebrar
@@ -608,17 +651,17 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			if i.transformar[3] ~= nil and i.transformar[3] == "item" then
 				transformar = item
 			end
-			local realizar_transformacao = 1
+			local realizarTransformacao = 1
 			if i.chanceNeutra ~= nil and i.chanceNeutra <= 10000 then
 				local chanceNeutra = i.chanceNeutra+chanceSucesso
 				if (not (chance <= chanceSucesso)) and (chance <= chanceNeutra) then
 					efeito = {"poff"}
-					realizar_transformacao = 0
+					realizarTransformacao = 0
 				elseif (not (chance <= chanceSucesso)) then
 					efeito = {"poff"}
 				end
 			end
-			if realizar_transformacao == 1 then
+			if realizarTransformacao == 1 then
 				transformar:transform(itemTransformar, quantidadeTransformar)
 				transformar:decay()
 			end
@@ -637,7 +680,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			if i.chanceNeutra ~= nil and i.chanceNeutra <= 10000 then
 				local chanceNeutra = i.chanceNeutra+chanceSucesso
 				if (not (chance <= chanceSucesso)) and (chance <= chanceNeutra) then
-					adicionar_evento = 0
+					adicionarEvento = 0
 					efeito = {"poff"}
 				elseif (not (chance <= chanceSucesso)) then
 					efeito = {"poff"}
@@ -656,7 +699,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			local posicao_efeito = nil
 			if efeito[2] and efeito[2] ~= "to" then
 				if type(efeito[2] == "table") then
-					-- posicao_efeito = 
 					posicao_efeito = fromPosition+efeito[2]
 				elseif efeito[2] == "from" then
 					posicao_efeito = fromPosition
@@ -682,7 +724,29 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 				Game.createMonster(i.criatura[1], toPosition)
 			end
 		end
-		if adicionar_evento == 1 then
+		if i.teleportar ~= nil then
+			local posicaoTeleportar
+			if(i.teleportar[2] == "item") then
+				posicaoTeleportar = fromPosition
+			elseif(i.teleportar[2] == "itemEx") then
+				posicaoTeleportar = toPosition
+			end
+			if i.teleportar[1].x ~= nil then
+				posicaoTeleportar.x = posicaoTeleportar.x+i.teleportar[1].x
+			end
+			if i.teleportar[1].y ~= nil then
+				posicaoTeleportar.y = posicaoTeleportar.y+i.teleportar[1].y
+			end
+			if i.teleportar[1].z ~= nil then
+				posicaoTeleportar.z = posicaoTeleportar.z+i.teleportar[1].z
+			end
+			player:teleportTo(posicaoTeleportar, true)
+			posicaoTeleportar:sendMagicEffect(CONST_ME_TELEPORT)
+		end
+		if i.direcionar ~= nil then
+			player:setDirection(direcoes[i.direcionar])
+		end
+		if adicionarEvento == 1 then
 			addEvent(function(posicao, item)
 			Game.createItem(item, 1, posicao)
 			end, i.tempo, toPosition, itemEx.itemid)
