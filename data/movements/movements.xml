@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <movements>
-	<!-- Aman -->
+	<movevent event="StepIn" actionid="2901" script="blockMovement.lua"/>
 	<movevent event="StepIn" actionid="2500" script="blockMovement.lua"/>
 	<movevent event="StepIn" actionid="60000" script="allowMovement.lua"/>
 	<movevent event="StepOut" actionid="60000" script="allowMovement.lua"/>
