@@ -1,4 +1,16 @@
-function destroyItem(cid, itemEx, toPosition)
+function destroyItem(player, itemEx, toPosition)
+	if itemEx.actionid == 2902 and itemEx.itemid == 3422 then
+		itemEx:transform(3421)
+		toPosition:sendMagicEffect(CONST_ME_POFF)
+		addEvent(function(posicao)
+			local tile = Tile(posicao)
+			local item = tile:getItems()[1]
+			if item:getActionId() == 2902 then
+				item:transform(3422)
+			end
+		end, 60000, toPosition)
+		return true
+	end
 	if itemEx.uid <= 65535 or itemEx.actionid > 0 then
 		return false
 	end
@@ -22,7 +34,7 @@ function destroyItem(cid, itemEx, toPosition)
 			elseif itemEx.itemid == 3805 or itemEx.itemid == 3806 then
 				Game.createItem(2259, 1, toPosition)
 			end
-			Item(itemEx.uid):remove(1)
+			itemEx:remove(1)
 		end
 		toPosition:sendMagicEffect(CONST_ME_POFF)
 		return true
@@ -31,11 +43,11 @@ function destroyItem(cid, itemEx, toPosition)
 	if itemEx.itemid == 7538 or itemEx.itemid == 7539 then 
 		if math.random(1, 7) == 1 then
 			if itemEx.itemid == 7538 then
-				Item(itemEx.uid):transform(7544)
+				itemEx:transform(7544)
 			elseif itemEx.itemid == 7539 then
-				Item(itemEx.uid):transform(7545)
+				itemEx:transform(7545)
 			end
-			Item(itemEx.uid):decay()
+			itemEx:decay()
 		end
 		toPosition:sendMagicEffect(CONST_ME_POFF)
 		return true
@@ -44,11 +56,11 @@ function destroyItem(cid, itemEx, toPosition)
 	if itemEx.itemid == 3798 or itemEx.itemid == 3799 then 
 		if math.random(1, 3) == 1 then
 			if itemEx.itemid == 3798 then
-				Item(itemEx.uid):transform(3959)
+				itemEx:transform(3959)
 			elseif itemEx.itemid == 3799 then
-				Item(itemEx.uid):transform(3958)
+				itemEx:transform(3958)
 			end
-			Item(itemEx.uid):decay()
+			itemEx:decay()
 		end
 		toPosition:sendMagicEffect(CONST_ME_POFF)
 		return true
