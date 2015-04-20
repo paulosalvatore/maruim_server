@@ -57,6 +57,12 @@ fluids = {
 	[35] = {name = "tea", message = "Gulp."},
 	[43] = {name = "mead", message = "Gulp."}
 }
+direcoes = {
+	["norte"] = DIRECTION_NORTH,
+	["sul"] = DIRECTION_SOUTH,
+	["leste"] = DIRECTION_WEST,
+	["oeste"] = DIRECTION_EAST
+}
 CONTAINER_POSITION = 0xFFFF
 ITEMCOUNT_MAX = 100
 efeitos = {
