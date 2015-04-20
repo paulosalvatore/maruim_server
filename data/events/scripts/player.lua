@@ -6,7 +6,12 @@ function Player:onLook(thing, position, distance)
 	local description = "You see " .. thing:getDescription(distance)
 	local actionId = thing:getActionId()
 	if(actionId == 2900) then
-		description = "You see Julia.\nSeems like she's sick."
+		description = "You see Julia.\n"
+		if(getPlayerStorageValue(cid, 2900) == 2) then
+			description = description.."She's resting now."
+		else
+			description = description.."Seems like she's sick."
+		end
 	end
 	if self:getGroup():getAccess() then
 		if thing:isItem() then

@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="white pearl,2143,1;black pearl,2144,1;small diamond,2145,1;small sapphire,2146,1;small ruby,2147,1;small emerald,2149,1;small amethyst,2150,1;talon,2151,1;gold nugget,2157,1;orichalcum pearl,5022,1;small topaz,9970,1;gold ingot,9971,1;"/>
+		
 	</parameters>
 </npc>
