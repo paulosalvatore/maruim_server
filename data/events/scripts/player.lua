@@ -4,8 +4,7 @@ end
 
 function Player:onLook(thing, position, distance)
 	local description = "You see " .. thing:getDescription(distance)
-	local actionId = thing:getActionId()
-	if(actionId == 2900) then
+	if thing:isItem() and thing:getActionId() == 2900 then
 		description = "You see Julia.\n"
 		if(getPlayerStorageValue(cid, 2900) == 2) then
 			description = description.."She's resting now."
