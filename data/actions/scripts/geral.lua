@@ -457,7 +457,7 @@ local items = {
 		["energy_shrine"] = {
 			itensPlayer = {{7762, 1}},
 			removerItensPlayer = {{21246, 1}},
-			efeito = {12},
+			efeito = {"choque"},
 			removerItem = 1
 		}
 	},
@@ -465,18 +465,18 @@ local items = {
 		[21430] = {
 			itensPlayer = {{21446, 1}},
 			transformar = {21431, 1},
-			efeito = {48},
+			efeito = {"choque_roxo"},
 			removerItem = 1
 		}
 	},
 	[2093] = {
 		["default"] = {
-			efeito = {68, {y = -1}}
+			efeito = {"smoke", {y = -1}}
 		}
 	},
 	[2099] = {
 		["default"] = {
-			efeito = {68, {y = -1}}
+			efeito = {"smoke", {y = -1}}
 		}
 	},
 	[3421] = {
@@ -484,6 +484,7 @@ local items = {
 			actionId = 2902,
 			verificarPosicao = {{y = -1}, "item"},
 			teleportar = {{y = 1}, "item"},
+			efeitoTeleport = "poff",
 			direcionar = "sul"
 		}
 	},
@@ -741,7 +742,11 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 				posicaoTeleportar.z = posicaoTeleportar.z+i.teleportar[1].z
 			end
 			player:teleportTo(posicaoTeleportar, true)
-			posicaoTeleportar:sendMagicEffect(CONST_ME_TELEPORT)
+			local exibirEfeito = "teleport"
+			if i.efeitoTeleport ~= nil then
+				exibirEfeito = i.efeitoTeleport
+			end
+			posicaoTeleportar:sendMagicEffect(efeitos[exibirEfeito])
 		end
 		if i.direcionar ~= nil then
 			player:setDirection(direcoes[i.direcionar])
