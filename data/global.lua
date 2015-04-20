@@ -60,8 +60,8 @@ fluids = {
 direcoes = {
 	["norte"] = DIRECTION_NORTH,
 	["sul"] = DIRECTION_SOUTH,
-	["leste"] = DIRECTION_WEST,
-	["oeste"] = DIRECTION_EAST
+	["leste"] = DIRECTION_EAST,
+	["oeste"] = DIRECTION_WEST
 }
 CONTAINER_POSITION = 0xFFFF
 ITEMCOUNT_MAX = 100
@@ -70,7 +70,11 @@ efeitos = {
 	["hit"] = CONST_ME_BLOCKHIT,
 	["poff"] = CONST_ME_POFF,
 	["rage_skies"] = CONST_ME_BIGCLOUDS,
-	["splash"] = CONST_ME_WATERSPLASH
+	["splash"] = CONST_ME_WATERSPLASH,
+	["smoke"] = CONST_ME_SMOKE,
+	["choque"] = CONST_ME_PURPLEHIT,
+	["choque_roxo"] = CONST_ME_PURPLEENERGY,
+	["teleport"] = CONST_ME_TELEPORT
 }
 function doCreatureSayWithRadius(cid, text, type, radiusx, radiusy, position)
 	if position == nil then
