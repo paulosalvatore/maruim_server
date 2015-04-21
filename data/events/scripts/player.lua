@@ -16,6 +16,7 @@ function Player:onLook(thing, position, distance)
 		if thing:isItem() then
 			description = string.format("%s\nItemID: [%d]", description, thing:getId())
 
+			local actionId = thing:getActionId()
 			if actionId ~= 0 then
 				description = string.format("%s, ActionID: [%d]", description, actionId)
 			end
