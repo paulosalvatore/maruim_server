@@ -95,8 +95,8 @@ function Player:onLookInShop(itemType, count)
 end
 
 function Player:onMoveItem(item, count, fromPosition, toPosition)
-	if item:getActionId() == 2500 then
-		self:sendCancelMessage("Você não pode mover esse item.")
+	if item:getActionId() == 2500 or item:getActionId() == 2503 then
+		self:sendTextMessage(MESSAGE_INFO_DESCR, "Você não pode mover esse item.")
 		return false
 	end
 	if getCreatureCondition(self, CONDITION_SPELLCOOLDOWN, 160) then
