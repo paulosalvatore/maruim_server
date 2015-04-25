@@ -98,7 +98,7 @@ local FOODS = {
 	[20101] = {12, "Smack."} -- rat cheese
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local food = FOODS[item.itemid]
 	if food == nil then
 		return false
@@ -110,7 +110,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	else
 		player:feed(food[1] * 12)
 		player:say(food[2], TALKTYPE_MONSTER_SAY)
-		Item(item.uid):remove(1)
+		item:remove(1)
 	end
 	return true
 end

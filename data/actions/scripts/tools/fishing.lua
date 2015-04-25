@@ -9,21 +9,20 @@ setConditionParam(conditionOutfit, CONDITION_PARAM_TICKS, 10000)
 addOutfitCondition(conditionOutfit, 0, 33, 0, 0, 0, 0, 0)
 local conditionEnergy = createConditionObject(CONDITION_ENERGY)
 addDamageCondition(conditionEnergy, 1, 1000, -35)
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	local targetId = itemEx.itemid
-	if not isInArray(waterIds, itemEx.itemid) then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	local targetId = target.itemid
+	if not isInArray(waterIds, targetId) then
 		return false
 	end
 	if item.itemid == 2580 then
 		if targetId == 10499 then
-			local targetItem = Item(itemEx.uid)
-			local owner = targetItem:getAttribute(ITEM_ATTRIBUTE_CORPSEOWNER)
+			local owner = target:getAttribute(ITEM_ATTRIBUTE_CORPSEOWNER)
 			if owner ~= 0 and owner ~= player:getId() then
 				player:sendTextMessage(MESSAGE_STATUS_SMALL, "You are not the owner.")
 				return true
 			end
 			toPosition:sendMagicEffect(CONST_ME_WATERSPLASH)
-			targetItem:remove()
+			target:remove()
 			local rareChance = math.random(1, 100)
 			if rareChance == 1 then
 				player:addItem(lootVeryRare[math.random(#lootVeryRare)], 1)
@@ -48,17 +47,17 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 				return true
 			end
 			if targetId == 15401 then
-				local targetItem = Item(itemEx.uid)
-				targetItem:transform(targetId + 1)
-				targetItem:decay()
+				local target = Item(target.uid)
+				target:transform(targetId + 1)
+				target:decay()
 				if math.random(1, 100) >= 97 then
 					player:addItem(15405, 1)
 					return true
 				end
 			elseif targetId == 7236 then
-				local targetItem = Item(itemEx.uid)
-				targetItem:transform(targetId + 1)
-				targetItem:decay()
+				local target = Item(target.uid)
+				target:transform(targetId + 1)
+				target:decay()
 				local rareChance = math.random(1, 100)
 				if rareChance == 1 then
 					player:addItem(7158, 1)

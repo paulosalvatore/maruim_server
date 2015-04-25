@@ -9,24 +9,24 @@ poison:setParameter(CONDITION_PARAM_STARTVALUE, -5)
 poison:setParameter(CONDITION_PARAM_TICKINTERVAL, 4000)
 poison:setParameter(CONDITION_PARAM_FORCEUPDATE, true)
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	local itemExType = ItemType(itemEx.itemid)
-	if itemExType and itemExType:isFluidContainer() then
-		if itemEx.type == 0 and item.type ~= 0 then
-			Item(itemEx.uid):transform(itemEx.itemid, item.type)
-			Item(item.uid):transform(item.itemid, 0)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	local targetItemType = ItemType(target.itemid)
+	if targetItemType and targetItemType:isFluidContainer() then
+		if target.type == 0 and item.type ~= 0 then
+			target:transform(target.itemid, item.type)
+			item:transform(item.itemid, 0)
 			return true
-		elseif itemEx.type ~= 0 and item.type == 0 then
-			Item(itemEx.uid):transform(itemEx.itemid, 0)
-			Item(item.uid):transform(item.itemid, itemEx.type)
+		elseif target.type ~= 0 and item.type == 0 then
+			target:transform(target.itemid, 0)
+			item:transform(item.itemid, target.type)
 			return true
 		end
 	end
 
-	if itemEx.itemid == 1 then
+	if target:isCreature() then
 		if item.type == 0 then
 			player:sendTextMessage(MESSAGE_STATUS_SMALL, "It is empty.")
-		elseif itemEx.uid == player:getId() then
+		elseif target.uid == player:getId() then
 			if item.type == 3 or item.type == 15 then
 				player:addCondition(drunk)
 			elseif item.type == 4 then
@@ -43,15 +43,15 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			else
 				player:say("Gulp.", TALKTYPE_MONSTER_SAY)
 			end
-			Item(item.uid):transform(item.itemid, 0)
+			item:transform(item.itemid, 0)
 		else
 			Game.createItem(2016, item.type, toPosition):decay()
-			Item(item.uid):transform(item.itemid, 0)
+			item:transform(item.itemid, 0)
 		end
 	else
-		local fluidSource = itemExType and itemExType:getFluidSource() or 0
+		local fluidSource = targetItemType and targetItemType:getFluidSource() or 0
 		if fluidSource ~= 0 then
-			Item(item.uid):transform(item.itemid, fluidSource)
+			item:transform(item.itemid, fluidSource)
 		elseif item.type == 0 then
 			player:sendTextMessage(MESSAGE_STATUS_SMALL, "It is empty.")
 		else
@@ -59,7 +59,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 				toPosition = player:getPosition()
 			end
 			Game.createItem(2016, item.type, toPosition):decay()
-			Item(item.uid):transform(item.itemid, 0)
+			item:transform(item.itemid, 0)
 		end
 	end
 	return true

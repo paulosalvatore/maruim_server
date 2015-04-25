@@ -22,7 +22,7 @@ local exhaust = Condition(CONDITION_EXHAUST_HEAL)
 exhaust:setParameter(CONDITION_PARAM_TICKS, (configManager.getNumber(configKeys.EX_ACTIONS_DELAY_INTERVAL) - 100))
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if target.itemid ~= 1 or target.type ~= THING_TYPE_PLAYER then
+	if target == nil or not target:isPlayer() then
 		return true
 	end
 
