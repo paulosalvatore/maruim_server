@@ -32,24 +32,17 @@ class DepotLocker;
 class ContainerIterator
 {
 	public:
-		ContainerIterator();
-		ContainerIterator(const ContainerIterator& rhs);
-		~ContainerIterator();
+		bool hasNext() const {
+			return !over.empty();
+		}
 
-		ContainerIterator& operator=(const ContainerIterator& rhs);
-		bool operator==(const ContainerIterator& rhs) const;
-		bool operator!=(const ContainerIterator& rhs) const;
-		ContainerIterator& operator++();
-		ContainerIterator operator++(int);
+		void advance();
 		Item* operator*();
-		Item* operator->();
 
 	protected:
-		ContainerIterator(Container* super);
-
 		Container* super;
-		std::queue<Container*> over;
-		ItemDeque::iterator cur;
+		std::list<const Container*> over;
+		ItemDeque::const_iterator cur;
 
 		friend class Container;
 };
@@ -57,8 +50,9 @@ class ContainerIterator
 class Container : public Item, public Cylinder
 {
 	public:
-		Container(uint16_t _type);
-		Container(Tile* tile);
+		explicit Container(uint16_t _type);
+		Container(uint16_t _type, uint16_t _size);
+		explicit Container(Tile* tile);
 		~Container();
 
 		// non-copyable
@@ -85,8 +79,8 @@ class Container : public Item, public Cylinder
 		bool unserializeItemNode(FileLoader& f, NODE node, PropStream& propStream) override;
 		std::string getContentDescription() const;
 
-		uint32_t size() const {
-			return static_cast<uint32_t>(itemlist.size());
+		size_t size() const {
+			return itemlist.size();
 		}
 		bool empty() const {
 			return itemlist.empty();
@@ -95,10 +89,7 @@ class Container : public Item, public Cylinder
 			return maxSize;
 		}
 
-		ContainerIterator begin();
-		ContainerIterator end();
-		ContainerIterator begin() const;
-		ContainerIterator end() const;
+		ContainerIterator iterator() const;
 
 		const ItemDeque& getItemList() const {
 			return itemlist;
@@ -113,7 +104,7 @@ class Container : public Item, public Cylinder
 
 		bool hasParent() const;
 		void addItem(Item* item);
-		Item* getItemByIndex(uint32_t index) const;
+		Item* getItemByIndex(size_t index) const;
 		bool isHoldingItem(const Item* item) const;
 
 		uint32_t getItemHoldingCount() const;
@@ -137,7 +128,7 @@ class Container : public Item, public Cylinder
 
 		void addThing(Thing* thing) final;
 		void addThing(int32_t index, Thing* thing) final;
-		void addThingBack(Thing* thing);
+		void addItemBack(Item* item);
 
 		void updateThing(Thing* thing, uint16_t itemId, uint32_t count) final;
 		void replaceThing(uint32_t index, Thing* thing) final;
@@ -145,14 +136,14 @@ class Container : public Item, public Cylinder
 		void removeThing(Thing* thing, uint32_t count) final;
 
 		int32_t getThingIndex(const Thing* thing) const final;
-		int32_t getFirstIndex() const final;
-		int32_t getLastIndex() const final;
+		size_t getFirstIndex() const final;
+		size_t getLastIndex() const final;
 		uint32_t getItemTypeCount(uint16_t itemId, int32_t subType = -1) const final;
 		std::map<uint32_t, uint32_t>& getAllItemTypeCount(std::map<uint32_t, uint32_t> &countMap) const final;
 		Thing*getThing(size_t index) const final;
 
 		void postAddNotification(Thing* thing, const Cylinder* oldParent, int32_t index, cylinderlink_t link = LINK_OWNER) override;
-		void postRemoveNotification(Thing* thing, const Cylinder* newParent, int32_t index, bool isCompleteRemoval, cylinderlink_t link = LINK_OWNER) override;
+		void postRemoveNotification(Thing* thing, const Cylinder* newParent, int32_t index, cylinderlink_t link = LINK_OWNER) override;
 
 		void internalAddThing(Thing* thing) final;
 		void internalAddThing(uint32_t index, Thing* thing) final;

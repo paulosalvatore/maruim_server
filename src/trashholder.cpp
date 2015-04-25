@@ -61,7 +61,8 @@ void TrashHolder::addThing(int32_t, Thing* thing)
 		return;
 	}
 
-	if (item->isHangable() && isGroundTile()) {
+	const ItemType& it = Item::items[id];
+	if (item->isHangable() && it.isGroundTile()) {
 		Tile* tile = dynamic_cast<Tile*>(getParent());
 		if (tile && tile->hasFlag(TILESTATE_SUPPORTS_HANGABLE)) {
 			return;
@@ -70,7 +71,6 @@ void TrashHolder::addThing(int32_t, Thing* thing)
 
 	g_game.internalRemoveItem(item);
 
-	const ItemType& it = Item::items[getID()];
 	if (it.magicEffect != CONST_ME_NONE) {
 		g_game.addMagicEffect(getPosition(), it.magicEffect);
 	}
@@ -96,7 +96,7 @@ void TrashHolder::postAddNotification(Thing* thing, const Cylinder* oldParent, i
 	getParent()->postAddNotification(thing, oldParent, index, LINK_PARENT);
 }
 
-void TrashHolder::postRemoveNotification(Thing* thing, const Cylinder* newParent, int32_t index, bool isCompleteRemoval, cylinderlink_t)
+void TrashHolder::postRemoveNotification(Thing* thing, const Cylinder* newParent, int32_t index, cylinderlink_t)
 {
-	getParent()->postRemoveNotification(thing, newParent, index, isCompleteRemoval, LINK_PARENT);
+	getParent()->postRemoveNotification(thing, newParent, index, LINK_PARENT);
 }

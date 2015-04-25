@@ -81,24 +81,22 @@ void Teleport::addThing(int32_t, Thing* thing)
 		return;
 	}
 
-	const ItemType& it = Item::items[getID()];
+	const MagicEffectClasses effect = Item::items[id].magicEffect;
 
 	if (Creature* creature = thing->getCreature()) {
 		Position origPos = creature->getPosition();
 		g_game.internalCreatureTurn(creature, origPos.x > destPos.x ? DIRECTION_WEST : DIRECTION_EAST);
 		g_game.map.moveCreature(*creature, *destTile);
-		if (it.magicEffect != CONST_ME_NONE) {
-			g_game.addMagicEffect(origPos, it.magicEffect);
-			g_game.addMagicEffect(destTile->getPosition(), it.magicEffect);
+		if (effect != CONST_ME_NONE) {
+			g_game.addMagicEffect(origPos, effect);
+			g_game.addMagicEffect(destTile->getPosition(), effect);
 		}
 	} else if (Item* item = thing->getItem()) {
-		if (it.magicEffect != CONST_ME_NONE) {
-			g_game.addMagicEffect(item->getPosition(), it.magicEffect);
+		if (effect != CONST_ME_NONE) {
+			g_game.addMagicEffect(destTile->getPosition(), effect);
+			g_game.addMagicEffect(item->getPosition(), effect);
 		}
 		g_game.internalMoveItem(getTile(), destTile, INDEX_WHEREEVER, item, item->getItemCount(), nullptr);
-		if (it.magicEffect != CONST_ME_NONE) {
-			g_game.addMagicEffect(destTile->getPosition(), it.magicEffect);
-		}
 	}
 }
 
@@ -122,7 +120,7 @@ void Teleport::postAddNotification(Thing* thing, const Cylinder* oldParent, int3
 	getParent()->postAddNotification(thing, oldParent, index, LINK_PARENT);
 }
 
-void Teleport::postRemoveNotification(Thing* thing, const Cylinder* newParent, int32_t index, bool isCompleteRemoval, cylinderlink_t)
+void Teleport::postRemoveNotification(Thing* thing, const Cylinder* newParent, int32_t index, cylinderlink_t)
 {
-	getParent()->postRemoveNotification(thing, newParent, index, isCompleteRemoval, LINK_PARENT);
+	getParent()->postRemoveNotification(thing, newParent, index, LINK_PARENT);
 }

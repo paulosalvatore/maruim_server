@@ -121,7 +121,7 @@ bool Spawns::loadFromXml(const std::string& _filename)
 					centerPos.y + pugi::cast<uint16_t>(childNode.attribute("y").value()),
 					centerPos.z
 				), radius);
-				npcList.push_back(npc);
+				npcList.push_front(npc);
 			}
 		}
 	}
@@ -180,14 +180,14 @@ Spawn::~Spawn()
 	for (const auto& it : spawnedMap) {
 		Monster* monster = it.second;
 		monster->setSpawn(nullptr);
-		monster->releaseThing2();
+		monster->decrementReferenceCounter();
 	}
 }
 
 bool Spawn::findPlayer(const Position& pos)
 {
 	SpectatorVec list;
-	g_game.getSpectators(list, pos, false, true);
+	g_game.map.getSpectators(list, pos, false, true);
 	for (Creature* spectator : list) {
 		if (!spectator->getPlayer()->hasFlag(PlayerFlag_IgnoredByMonsters)) {
 			return true;
@@ -218,8 +218,8 @@ bool Spawn::spawnMonster(uint32_t spawnId, MonsterType* mType, const Position& p
 	Monster* monster = monster_ptr.release();
 	monster->setDirection(dir);
 	monster->setSpawn(this);
-	monster->setMasterPos(pos, radius);
-	monster->useThing2();
+	monster->setMasterPos(pos);
+	monster->incrementReferenceCounter();
 
 	spawnedMap.insert(spawned_pair(spawnId, monster));
 	spawnMap[spawnId].lastSpawn = OTSYS_TIME();
@@ -270,7 +270,8 @@ void Spawn::checkSpawn()
 
 void Spawn::cleanup()
 {
-	for (SpawnedMap::iterator it = spawnedMap.begin(); it != spawnedMap.end();) {
+	auto it = spawnedMap.begin();
+	while (it != spawnedMap.end()) {
 		uint32_t spawnId = it->first;
 		Monster* monster = it->second;
 		if (monster->isRemoved()) {
@@ -278,11 +279,11 @@ void Spawn::cleanup()
 				spawnMap[spawnId].lastSpawn = OTSYS_TIME();
 			}
 
-			monster->releaseThing2();
-			spawnedMap.erase(it++);
+			monster->decrementReferenceCounter();
+			it = spawnedMap.erase(it);
 		} else if (!isInSpawnZone(monster->getPosition()) && spawnId != 0) {
 			spawnedMap.insert(spawned_pair(0, monster));
-			spawnedMap.erase(it++);
+			it = spawnedMap.erase(it);
 		} else {
 			++it;
 		}
@@ -315,9 +316,9 @@ bool Spawn::addMonster(const std::string& _name, const Position& _pos, Direction
 
 void Spawn::removeMonster(Monster* monster)
 {
-	for (auto it = spawnedMap.begin(); it != spawnedMap.end(); ++it) {
+	for (auto it = spawnedMap.begin(), end = spawnedMap.end(); it != end; ++it) {
 		if (it->second == monster) {
-			monster->releaseThing2();
+			monster->decrementReferenceCounter();
 			spawnedMap.erase(it);
 			break;
 		}

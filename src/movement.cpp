@@ -242,9 +242,8 @@ MoveEvent* MoveEvents::getEvent(Item* item, MoveEvent_t eventType)
 {
 	MoveListMap::iterator it;
 
-	uint16_t uniqueId = item->getUniqueId();
-	if (uniqueId != 0) {
-		it = m_uniqueIdMap.find(uniqueId);
+	if (item->hasAttribute(ITEM_ATTRIBUTE_UNIQUEID)) {
+		it = m_uniqueIdMap.find(item->getUniqueId());
 		if (it != m_uniqueIdMap.end()) {
 			std::list<MoveEvent*>& moveEventList = it->second.moveEvent[eventType];
 			if (!moveEventList.empty()) {
@@ -253,9 +252,8 @@ MoveEvent* MoveEvents::getEvent(Item* item, MoveEvent_t eventType)
 		}
 	}
 
-	uint16_t actionId = item->getActionId();
-	if (actionId != 0) {
-		it = m_actionIdMap.find(actionId);
+	if (item->hasAttribute(ITEM_ATTRIBUTE_ACTIONID)) {
+		it = m_actionIdMap.find(item->getActionId());
 		if (it != m_actionIdMap.end()) {
 			std::list<MoveEvent*>& moveEventList = it->second.moveEvent[eventType];
 			if (!moveEventList.empty()) {
@@ -314,40 +312,41 @@ uint32_t MoveEvents::onCreatureMove(Creature* creature, const Tile* tile, const 
 		ret &= moveEvent->fireStepEvent(creature, nullptr, pos, fromPos);
 	}
 
-	for (int32_t i = tile->getFirstIndex(), j = tile->getLastIndex(); i < j; ++i) {
+	for (size_t i = tile->getFirstIndex(), j = tile->getLastIndex(); i < j; ++i) {
 		Thing* thing = tile->getThing(i);
-		if (thing) {
-			Item* tileItem = thing->getItem();
-			if (tileItem) {
-				moveEvent = getEvent(tileItem, eventType);
-				if (moveEvent) {
-					ret &= moveEvent->fireStepEvent(creature, tileItem, pos, fromPos);
-				}
-			}
+		if (!thing) {
+			continue;
+		}
+
+		Item* tileItem = thing->getItem();
+		if (!tileItem) {
+			continue;
+		}
+
+		moveEvent = getEvent(tileItem, eventType);
+		if (moveEvent) {
+			ret &= moveEvent->fireStepEvent(creature, tileItem, pos, fromPos);
 		}
 	}
-
 	return ret;
 }
 
 uint32_t MoveEvents::onPlayerEquip(Player* player, Item* item, slots_t slot, bool isCheck)
 {
 	MoveEvent* moveEvent = getEvent(item, MOVE_EVENT_EQUIP, slot);
-	if (moveEvent) {
-		return moveEvent->fireEquip(player, item, slot, isCheck);
+	if (!moveEvent) {
+		return 1;
 	}
-
-	return 1;
+	return moveEvent->fireEquip(player, item, slot, isCheck);
 }
 
-uint32_t MoveEvents::onPlayerDeEquip(Player* player, Item* item, slots_t slot, bool isRemoval)
+uint32_t MoveEvents::onPlayerDeEquip(Player* player, Item* item, slots_t slot)
 {
 	MoveEvent* moveEvent = getEvent(item, MOVE_EVENT_DEEQUIP, slot);
-	if (moveEvent) {
-		return moveEvent->fireEquip(player, item, slot, isRemoval);
+	if (!moveEvent) {
+		return 1;
 	}
-
-	return 1;
+	return moveEvent->fireEquip(player, item, slot, true);
 }
 
 uint32_t MoveEvents::onItemMove(Item* item, Tile* tile, bool isAdd)
@@ -372,16 +371,20 @@ uint32_t MoveEvents::onItemMove(Item* item, Tile* tile, bool isAdd)
 		ret &= moveEvent->fireAddRemItem(item, nullptr, tile->getPosition());
 	}
 
-	for (int32_t i = tile->getFirstIndex(), j = tile->getLastIndex(); i < j; ++i) {
+	for (size_t i = tile->getFirstIndex(), j = tile->getLastIndex(); i < j; ++i) {
 		Thing* thing = tile->getThing(i);
-		if (thing) {
-			Item* tileItem = thing->getItem();
-			if (tileItem && tileItem != item) {
-				moveEvent = getEvent(tileItem, eventType2);
-				if (moveEvent) {
-					ret &= moveEvent->fireAddRemItem(item, tileItem, tile->getPosition());
-				}
-			}
+		if (!thing) {
+			continue;
+		}
+
+		Item* tileItem = thing->getItem();
+		if (!tileItem || tileItem == item) {
+			continue;
+		}
+
+		moveEvent = getEvent(tileItem, eventType2);
+		if (moveEvent) {
+			ret &= moveEvent->fireAddRemItem(item, tileItem, tile->getPosition());
 		}
 	}
 	return ret;
@@ -739,7 +742,7 @@ uint32_t MoveEvent::EquipItem(MoveEvent* moveEvent, Player* player, Item* item, 
 	return 1;
 }
 
-uint32_t MoveEvent::DeEquipItem(MoveEvent*, Player* player, Item* item, slots_t slot, bool isRemoval)
+uint32_t MoveEvent::DeEquipItem(MoveEvent*, Player* player, Item* item, slots_t slot, bool)
 {
 	if (!player->isItemAbilityEnabled(slot)) {
 		return 1;
@@ -748,8 +751,7 @@ uint32_t MoveEvent::DeEquipItem(MoveEvent*, Player* player, Item* item, slots_t 
 	player->setItemAbility(slot, false);
 
 	const ItemType& it = Item::items[item->getID()];
-
-	if (isRemoval && it.transformDeEquipTo != 0) {
+	if (it.transformDeEquipTo != 0) {
 		g_game.transformItem(item, it.transformDeEquipTo);
 		g_game.startDecay(item);
 	}
@@ -891,7 +893,7 @@ uint32_t MoveEvent::fireAddRemItem(Item* item, Item* tileItem, const Position& p
 
 bool MoveEvent::executeAddRemItem(Item* item, Item* tileItem, const Position& pos)
 {
-	//onAddItem(moveitem, tileitem, pos)
+	//onaddItem(moveitem, tileitem, pos)
 	//onRemoveItem(moveitem, tileitem, pos)
 	if (!m_scriptInterface->reserveScriptEnv()) {
 		std::cout << "[Error - MoveEvent::executeAddRemItem] Call stack overflow" << std::endl;

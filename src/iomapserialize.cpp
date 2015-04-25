@@ -37,7 +37,7 @@ void IOMapSerialize::loadHouseItems(Map* map)
 
 	do {
 		unsigned long attrSize;
-		const char* attr = result->getDataStream("data", attrSize);
+		const char* attr = result->getStream("data", attrSize);
 
 		PropStream propStream;
 		propStream.init(attr, attrSize);
@@ -245,8 +245,10 @@ void IOMapSerialize::saveTile(PropWriteStream& stream, const Tile* tile)
 	std::forward_list<Item*> items;
 	uint16_t count = 0;
 	for (Item* item : *tileItems) {
+		const ItemType& it = Item::items[item->getID()];
+
 		// Note that these are NEGATED, ie. these are the items that will be saved.
-		if (!(item->isMoveable() || item->getDoor() || (item->getContainer() && !item->getContainer()->empty()) || item->canWriteText() || item->getBed())) {
+		if (!(it.moveable || item->getDoor() || (item->getContainer() && !item->getContainer()->empty()) || it.canWriteText || item->getBed())) {
 			continue;
 		}
 
@@ -277,20 +279,20 @@ bool IOMapSerialize::loadHouseInfo()
 	}
 
 	do {
-		House* house = g_game.map.houses.getHouse(result->getDataInt("id"));
+		House* house = g_game.map.houses.getHouse(result->getNumber<uint32_t>("id"));
 		if (house) {
-			house->setOwner(result->getDataInt("owner"), false);
-			house->setPaidUntil(result->getDataInt("paid"));
-			house->setPayRentWarnings(result->getDataInt("warnings"));
+			house->setOwner(result->getNumber<uint32_t>("owner"), false);
+			house->setPaidUntil(result->getNumber<time_t>("paid"));
+			house->setPayRentWarnings(result->getNumber<uint32_t>("warnings"));
 		}
 	} while (result->next());
 
 	result = db->storeQuery("SELECT `house_id`, `listid`, `list` FROM `house_lists`");
 	if (result) {
 		do {
-			House* house = g_game.map.houses.getHouse(result->getDataInt("house_id"));
+			House* house = g_game.map.houses.getHouse(result->getNumber<uint32_t>("house_id"));
 			if (house) {
-				house->setAccessList(result->getDataInt("listid"), result->getDataString("list"));
+				house->setAccessList(result->getNumber<uint32_t>("listid"), result->getString("list"));
 			}
 		} while (result->next());
 	}
@@ -316,15 +318,15 @@ bool IOMapSerialize::saveHouseInfo()
 		query << "SELECT `id` FROM `houses` WHERE `id` = " << house->getId();
 		DBResult_ptr result = db->storeQuery(query.str());
 		if (result) {
-			query.str("");
+			query.str(std::string());
 			query << "UPDATE `houses` SET `owner` = " << house->getOwner() << ", `paid` = " << house->getPaidUntil() << ", `warnings` = " << house->getPayRentWarnings() << ", `name` = " << db->escapeString(house->getName()) << ", `town_id` = " << house->getTownId() << ", `rent` = " << house->getRent() << ", `size` = " << house->getTiles().size() << ", `beds` = " << house->getBedCount() << " WHERE `id` = " << house->getId();
 		} else {
-			query.str("");
+			query.str(std::string());
 			query << "INSERT INTO `houses` (`id`, `owner`, `paid`, `warnings`, `name`, `town_id`, `rent`, `size`, `beds`) VALUES (" << house->getId() << ',' << house->getOwner() << ',' << house->getPaidUntil() << ',' << house->getPayRentWarnings() << ',' << db->escapeString(house->getName()) << ',' << house->getTownId() << ',' << house->getRent() << ',' << house->getTiles().size() << ',' << house->getBedCount() << ')';
 		}
 
 		db->executeQuery(query.str());
-		query.str("");
+		query.str(std::string());
 	}
 
 	DBInsert stmt("INSERT INTO `house_lists` (`house_id` , `listid` , `list`) VALUES ");

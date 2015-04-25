@@ -79,7 +79,6 @@ bool IOMap::loadMap(Map* map, const std::string& identifier)
 	int64_t start = OTSYS_TIME();
 
 	FileLoader f;
-
 	if (!f.openFile(identifier.c_str(), "OTBM")) {
 		std::ostringstream ss;
 		ss << "Could not open the file " << identifier << '.';
@@ -136,11 +135,10 @@ bool IOMap::loadMap(Map* map, const std::string& identifier)
 	}
 
 	std::cout << "> Map size: " << root_header->width << "x" << root_header->height << '.' << std::endl;
-	map->mapWidth = root_header->width;
-	map->mapHeight = root_header->height;
+	map->width = root_header->width;
+	map->height = root_header->height;
 
 	NODE nodeMap = f.getChildNode(root, type);
-
 	if (type != OTBM_MAP_DATA) {
 		setLastErrorString("Could not read data node.");
 		return false;
@@ -326,7 +324,6 @@ bool IOMap::loadMap(Map* map, const std::string& identifier)
 									item->setLoadedFromMap(true);
 								}
 							}
-
 							break;
 						}
 

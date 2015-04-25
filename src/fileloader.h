@@ -103,15 +103,15 @@ class FileLoader
 		NODE getChildNode(const NODE parent, uint32_t& type);
 		NODE getNextNode(const NODE prev, uint32_t& type);
 
-		int32_t getError() const {
+		FILELOADER_ERRORS getError() const {
 			return m_lastError;
 		}
 
 	protected:
 		enum SPECIAL_BYTES {
+			ESCAPE_CHAR = 0xFD,
 			NODE_START = 0xFE,
 			NODE_END = 0xFF,
-			ESCAPE_CHAR = 0xFD,
 		};
 
 		bool parseNode(NODE node);
@@ -254,16 +254,21 @@ class PropWriteStream
 		template <typename T>
 		inline void write(T add) {
 			reserve(sizeof(T));
-			memcpy(&buffer[size], &add, sizeof(T));
+			memcpy(buffer + size, &add, sizeof(T));
 			size += sizeof(T);
 		}
 
 		inline void writeString(const std::string& str) {
-			size_t str_len = str.size();
-			write<uint16_t>(str_len);
-			reserve(str_len);
-			memcpy(&buffer[size], str.c_str(), str_len);
-			size += str_len;
+			size_t strLength = str.size();
+			if (strLength > std::numeric_limits<uint16_t>::max()) {
+				write<uint16_t>(0);
+				return;
+			}
+
+			write<uint16_t>(strLength);
+			reserve(strLength);
+			memcpy(buffer + size, str.c_str(), strLength);
+			size += strLength;
 		}
 
 	protected:

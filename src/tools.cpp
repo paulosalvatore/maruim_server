@@ -20,7 +20,6 @@
 #include "otpch.h"
 
 #include <cctype>
-#include <climits>
 
 #include "tools.h"
 #include "configmanager.h"
@@ -37,7 +36,7 @@ void printXMLError(const std::string& where, const std::string& fileName, const 
 	}
 
 	char buffer[32768];
-	int32_t currentLine = 1;
+	uint32_t currentLine = 1;
 	std::string line;
 
 	size_t offset = static_cast<size_t>(result.offset);
@@ -84,7 +83,7 @@ static void processSHA1MessageBlock(const uint8_t* messageBlock, uint32_t* H)
 {
 	uint32_t W[80];
 	for (int i = 0; i < 16; ++i) {
-		const size_t offset = i * 4;
+		const size_t offset = i << 2;
 		W[i] = messageBlock[offset] << 24 | messageBlock[offset + 1] << 16 | messageBlock[offset + 2] << 8 | messageBlock[offset + 3];
 	}
 
@@ -557,7 +556,11 @@ MagicEffectNames magicEffectNames[] = {
 	{"ferumbras",		CONST_ME_FERUMBRAS},
 	{"confettihorizontal",	CONST_ME_CONFETTI_HORIZONTAL},
 	{"confettivertical",	CONST_ME_CONFETTI_VERTICAL},
-	{"blacksmoke",		CONST_ME_BLACKSMOKE}
+	{"blacksmoke",		CONST_ME_BLACKSMOKE},
+	{"redsmoke",		CONST_ME_REDSMOKE},
+	{"yellowsmoke",		CONST_ME_YELLOWSMOKE},
+	{"greensmoke",		CONST_ME_GREENSMOKE},
+	{"purplesmoke",		CONST_ME_PURPLESMOKE},
 };
 
 ShootTypeNames shootTypeNames[] = {
@@ -608,7 +611,9 @@ ShootTypeNames shootTypeNames[] = {
 	{"prismaticbolt",	CONST_ANI_PRISMATICBOLT},
 	{"crystallinearrow",	CONST_ANI_CRYSTALLINEARROW},
 	{"drillbolt",		CONST_ANI_DRILLBOLT},
-	{"envenomedarrow",	CONST_ANI_ENVENOMEDARROW}
+	{"envenomedarrow",	CONST_ANI_ENVENOMEDARROW},
+	{"gloothspear",		CONST_ANI_GLOOTHSPEAR},
+	{"simplearrow",		CONST_ANI_SIMPLEARROW},
 };
 
 CombatTypeNames combatTypeNames[] = {
@@ -623,7 +628,7 @@ CombatTypeNames combatTypeNames[] = {
 	{"drown",		COMBAT_DROWNDAMAGE},
 	{"ice",			COMBAT_ICEDAMAGE},
 	{"holy",		COMBAT_HOLYDAMAGE},
-	{"death",		COMBAT_DEATHDAMAGE}
+	{"death",		COMBAT_DEATHDAMAGE},
 };
 
 AmmoTypeNames ammoTypeNames[] = {
@@ -649,13 +654,13 @@ AmmoTypeNames ammoTypeNames[] = {
 	{"flasharrow",		AMMO_ARROW},
 	{"flammingarrow",	AMMO_ARROW},
 	{"shiverarrow",		AMMO_ARROW},
-	{"eartharrow",		AMMO_ARROW}
+	{"eartharrow",		AMMO_ARROW},
 };
 
 WeaponActionNames weaponActionNames[] = {
 	{"move",		WEAPONACTION_MOVE},
 	{"removecharge",	WEAPONACTION_REMOVECHARGE},
-	{"removecount",		WEAPONACTION_REMOVECOUNT}
+	{"removecount",		WEAPONACTION_REMOVECOUNT},
 };
 
 SkullNames skullNames[] = {
@@ -850,46 +855,41 @@ std::string getWeaponName(WeaponType_t weaponType)
 	}
 }
 
-uint32_t combatTypeToIndex(CombatType_t combatType)
+size_t combatTypeToIndex(CombatType_t combatType)
 {
 	switch (combatType) {
-		case COMBAT_NONE:
-			return 0;
 		case COMBAT_PHYSICALDAMAGE:
-			return 1;
+			return 0;
 		case COMBAT_ENERGYDAMAGE:
-			return 2;
+			return 1;
 		case COMBAT_EARTHDAMAGE:
-			return 3;
+			return 2;
 		case COMBAT_FIREDAMAGE:
-			return 4;
+			return 3;
 		case COMBAT_UNDEFINEDDAMAGE:
-			return 5;
+			return 4;
 		case COMBAT_LIFEDRAIN:
-			return 6;
+			return 5;
 		case COMBAT_MANADRAIN:
-			return 7;
+			return 6;
 		case COMBAT_HEALING:
-			return 8;
+			return 7;
 		case COMBAT_DROWNDAMAGE:
-			return 9;
+			return 8;
 		case COMBAT_ICEDAMAGE:
-			return 10;
+			return 9;
 		case COMBAT_HOLYDAMAGE:
-			return 11;
+			return 10;
 		case COMBAT_DEATHDAMAGE:
-			return 12;
+			return 11;
 		default:
 			return 0;
 	}
 }
 
-CombatType_t indexToCombatType(uint32_t v)
+CombatType_t indexToCombatType(size_t v)
 {
-	if (v == 0) {
-		return COMBAT_FIRST;
-	}
-	return static_cast<CombatType_t>(1 << (v - 1));
+	return static_cast<CombatType_t>(1 << v);
 }
 
 uint8_t serverFluidToClient(uint8_t serverFluid)
