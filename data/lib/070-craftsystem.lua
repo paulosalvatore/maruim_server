@@ -881,19 +881,20 @@ function Player.iniciarReceitaQuantidade(self, profissaoId, receitaId, quantidad
 	else
 		delay = tempo+1
 	end
-	addEvent(function(self, profissaoId, receitaId, quantidadeTotal, quantidadeAtual, tempo)
+	addEvent(function(player, profissaoId, receitaId, quantidadeTotal, quantidadeAtual, tempo)
+		local player = Player(player)
 		local bloquearMovimento = 1
 		if quantidadeAtual == quantidadeTotal then
 			bloquearMovimento = 0
 		end
 		local iniciarReceita = self:iniciarReceita(profissaoId, receitaId, bloquearMovimento)
 		if iniciarReceita and quantidadeAtual < quantidadeTotal then
-			self:iniciarReceitaQuantidade(profissaoId, receitaId, quantidadeTotal, quantidadeAtual, tempo)
+			player:iniciarReceitaQuantidade(profissaoId, receitaId, quantidadeTotal, quantidadeAtual, tempo)
 		elseif not iniciarReceita then
-			self:resetProfissaoIngredienteMelhoria(profissaoId)
-			self:allowMovement(true)
+			player:resetProfissaoIngredienteMelhoria(profissaoId)
+			player:allowMovement(true)
 		end
-	end, delay*1000, self, profissaoId, receitaId, quantidadeTotal, quantidadeAtual+1, tempo)
+	end, delay*1000, self.uid, profissaoId, receitaId, quantidadeTotal, quantidadeAtual+1, tempo)
 end
 function Player.getIngredientesMelhoria(self, profissaoId)
 	local profissao = profissoes[profissaoId]
@@ -959,9 +960,10 @@ function Player.iniciarReceita(self, profissaoId, receitaId, bloquearMovimento)
 		end
 	end
 	enviarAnimacao(tempo, posicaoMesaTrabalho.efeito, efeitoTrabalhando)
-	addEvent(function(self, receitaId, profissaoId, mesaTrabalhando, bloquearMovimento)
-		self:fabricarItem(receitaId, profissaoId, mesaTrabalhando, bloquearMovimento) 
-	end, tempo*1000, self, receitaId, profissaoId, mesaTrabalhando, bloquearMovimento)
+	addEvent(function(player, receitaId, profissaoId, mesaTrabalhando, bloquearMovimento)
+		local player = Player(player)
+		player:fabricarItem(receitaId, profissaoId, mesaTrabalhando, bloquearMovimento) 
+	end, tempo*1000, self.uid, receitaId, profissaoId, mesaTrabalhando, bloquearMovimento)
 	return true
 end
 function Player.fabricarItem(self, receitaId, profissaoId, mesaTrabalhando, bloquearMovimento)
@@ -1006,7 +1008,7 @@ function Player.fabricarItem(self, receitaId, profissaoId, mesaTrabalhando, bloq
 				itemCriado:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, "Criado por "..self:getName()..".")
 			end
 		end
-		if receita.atributos ~= nil and type(receita.atributos) == "table" and table.getn(receita.atributos) > 0 then
+		if receita.atributos ~= nil and type(receita.atributos) == "table" then
 			local bonusAdicional = self:getProfissaoBonusAdicional(profissaoId)
 			if itemCriado:getType():getAttack() > 0 and receita.atributos.ataque ~= nil then
 				if type(receita.atributos.ataque) == "table" then
