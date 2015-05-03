@@ -3,11 +3,11 @@
 	<health now="100" max="100"/>
 	<look type="144" head="0" body="115" legs="97" feet="116" addons="1"/>
 	<parameters>
-		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja."/>
-		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?"/> 
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja de utilidades."/>
+		<parameter key="message_sendtrade" value="Está pensando em ir pra alguma aventura? Dê uma olhada aqui."/> 
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="red tome,1986,1;spellbook,2217,1;blank rune,2260,1;cultish mask,10555,1;cultish robe,10556,1;tattered piece of robe,10601,1;book of necromantic rituals,11237,1;luminous orb,12410,1;cultish symbol,12411,1;reins,13295,1;lancet,21242,1;horoscope,21243,1;blood tincture in a vial,21245,1;incantation notes,21246,1;pieces of magic chalk,21247,1;"/>
+		<parameter key="shop_buyable" value="backpack,1988,20;pick,2553,10;shovel,2554,20;rope,2120,50"/>
 	</parameters>
 </npc>
