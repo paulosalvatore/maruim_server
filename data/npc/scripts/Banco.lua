@@ -4,6 +4,60 @@ NpcSystem.parseParameters(npcHandler)
 
 local count = {}
 local transfer = {}
+local frases = {
+	["inicial"] = "Pois não? O que eu posso fazer por você, |PLAYERNAME|? Negócios no Banco, talvez?",
+	["final"] = "Tenha um bom dia.",
+	["think"] = "Não se esqueça de depositar seu dinheiro no banco antes de ir a alguma aventura.",
+	["dinheiro"] = "Eu posso {trocar} dinheiro para você. Você também pode acessar sua {conta bancária}.",
+	["troca"] = "Existem três tipos de moeda: '100 gold coins' é igual a '1 platinum coin', '100 platinum coins' é igual a '1 crystal coin'. Então se você quiser trocar '100 gold coins' em '1 platinum coin', simplesmente diga '{trocar gold}' e então '1 platinum'.",
+	["avançado"] = "Sua {conta bancária} será usada automaticamente quando você quiser {alugar} uma casa ou fazer uma oferta em um item no {mercado}. Me diga se você quiser saber sobre como algum desses funciona.",
+	["ajuda"] = "Você pode conferir o {balanço} de sua contá bancária, {depositar} ou {sacar} dinheiro. Você também pode {transferir} dinheiro para outra pessoa, contanto que ela tenha uma profissão.",
+	["profissão"] = "Eu trabalho nesse banco. Eu posso lhe informar como fazer o {câmbio} de seu dinheiro para trocar em moedas diferentes e ajudá-lo com sua {conta bancária}. Me informe caso precise de {ajuda}.",
+	["conta bancária"] = {
+		"Todo aventureiro possui uma. A grande vantagem é que você consegue acessar seu dinheiro em qualquer afilição de nosso banco! ...",
+		"Você gostaria de conhecer um pouco mais sobre as funções {básicas}, as funções {avançadas} ou já está entediado comigo, por acaso?"
+	},
+	["balanço"] = {
+		"Eu acho que você é um dos mais ricos habitantes desse mundo!",
+		"Você conseguiu 10 milhões e continua crescendo!",
+		"MEUS DEUS! Você conseguiu o número mágico de UM MILHÃO DE GP!!!",
+		"Você conseguiu uma boa grana.",
+		"O balanço da sua conta é |PLAYERBALANCE| gold."
+	},
+	["dinheiro insuficiente possui"] = "Você não possui dinheiro suficiente.",
+	["depositar tudo"] = "Você tem certeza que deseja depositar |PLAYERMONEY| gold?",
+	["depositar quantia"] = "Você tem certeza que deseja depositar |MONEYCOUNT| gold?",
+	["depositar informar quantia"] = "Por gentileza, me diga a quantia que você quer depositar.",
+	["quantia insuficiente"] = "Desculpe, mas você não pode depositar essa quantia.",
+	["quantidade depositada"] = "Pronto, nós adicionamos a quantia de |SHOWCOUNT| gold ao seu {balanço}. Você pode {sacar} seu dinheiro sempre que você quiser.",
+	["negar"] = "Como quiser. Existe algo mais que eu possa fazer por você?",
+	["negar saque"] = "O cliente é que manda! Volte a qualquer momento que você desejar {sacar} seu dinheiro.",
+	["sacar informar quantia"] = "Por gentileza me diga a quantia que você deseja sacar.",
+	["sacar quantia"] = "Você tem certeza que deseja sacar |MONEYCOUNT| gold de sua conta bancária?",
+	["dinheiro insuficiente saque"] = "Não existe dinheiro suficiente em sua conta bancária.",
+	["saque sucesso"] = "Aqui está, |SHOWCOUNT| gold. Por favor me diga se existe algo mais que eu possa fazer por você.",
+	["capacidade insuficiente"] = "Ei, espere! Você não possui espaço suficiente no seu inventário para carregar todas essas moedas. Eu não quero que eles caiam no chão, volte aqui com um carrinho!",
+	["transferencia informar quantidade"] = "Por gentileza me diga a quantia que você quer transferir.",
+	["transferencia informar pessoa"] = "Você gostaria de transferir |SHOWCOUNT| gold para quem?",
+	["transferencia informar pessoa diferente"] = "Me informe qual pessoa irá receber essa quantia!",
+	["transferencia confirmar"] = "Então você quer transferir |SHOWCOUNT| gold para quem?",
+	["pessoa inexistente"] = "Essa pessoa não existe!",
+	["transferencia erro"] = "Você não pode transferir dinheiro para essa conta bancária.",
+	["transferencia sucesso"] = "Muito bem. Você transferiu |SHOWCOUNT| gold para |SHOWTRANSFER|.",
+	["entregar sucesso"] = "Aqui está!",
+	["trocar gold"] = "Quantos 'platinum coins' você deseja receber?",
+	["trocar platinum"] = "Você gostaria de trocar 'platinum coins' em 'gold coins' ou 'crystal coins'?",
+	["trocar platinum gold"] = "Quantos 'platinum coins' você gostaria de trocar em 'gold coins'?",
+	["trocar platinum crystal"] = "Quantos 'crystal coins' você deseja receber?",
+	["trocar crystal"] = "Quantos 'crystal coins' você gostaria de trocar em 'platinum coins'?",
+	["gold insuficiente"] = "Desculpe, você não possui 'gold coins' suficientes.",
+	["platinum insuficiente"] = "Desculpe, você não possui 'platinum coins' suficientes.",
+	["crystal insuficiente"] = "Desculpe, você não possui 'crystal coins' suficientes.",
+	["trocar gold confirmar"] = "Então você quer que eu troque |MONEYCOUNT100| de seus 'gold coins' em |MONEYCOUNT| 'platinum coins'?",
+	["trocar platinum gold confirmar"] = "Então você quer que eu troque |MONEYCOUNT| de seus 'platinum coins' em |MONEYCOUNT100| 'gold coins'?",
+	["trocar platinum crystal confirmar"] = "Então você quer que eu troque |MONEYCOUNT100| de seus 'platinum coins' em |MONEYCOUNT| 'crystal coins'?",
+	["trocar crystal confirmar"] = "Então você quer que eu troque |MONEYCOUNT| de seus 'crystal coins' em |MONEYCOUNT100| 'platinum coins'?"
+}
 
 function onCreatureAppear(cid)       npcHandler:onCreatureAppear(cid)     end
 function onCreatureDisappear(cid)     npcHandler:onCreatureDisappear(cid)     end
@@ -11,9 +65,9 @@ function onCreatureSay(cid, type, msg)     npcHandler:onCreatureSay(cid, type, m
 local lastSound = 0
 function onThink()
 	if lastSound < os.time() then
-		lastSound = (os.time() + 5)
-		if math.random(100) < 25 then
-			Npc():say("Não se esqueça de depositar seu dinheiro no banco antes de ir a alguma aventura.", TALKTYPE_SAY)
+		lastSound = (os.time() + 10)
+		if math.random(100) < 10 then
+			Npc():say(frases["think"], TALKTYPE_SAY)
 		end
 	end
 	npcHandler:onThink()
@@ -23,7 +77,6 @@ local function greetCallback(cid)
 	count[cid], transfer[cid] = nil, nil
 	return true
 end
-
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
@@ -32,72 +85,73 @@ local function creatureSayCallback(cid, type, msg)
 ---------------------------- Ajuda ------------------------
 	if msgcontains(msg, 'bank account') or msgcontains(msg, 'conta bancaria') or msgcontains(msg, 'conta bancária') then
 		npcHandler:say({
-			'Todo aventureiro possui uma. A grande vantagem é que você consegue acessar seu dinheiro em qualquer afilição de nosso banco! ...',
-			'Você gostaria de conhecer um pouco mais sobre as funções {básicas}, as funções {avançadas} ou você já está entediado, por acaso?'
+			frases["conta bancária"][1],
+			frases["conta bancária"][2]
 		}, cid)
 		npcHandler.topic[cid] = 0
 		return true
 ---------------------------- Balanço ---------------------
 	elseif msgcontains(msg, 'balance') or msgcontains(msg, 'balanco') or msgcontains(msg, 'balanço') then
 		npcHandler.topic[cid] = 0
-		local mensagem
-		if player:getBankBalance() >= 100000000 then
-			mensagem = "Eu acho que você é um dos mais ricos habitantes desse mundo!"
-		elseif player:getBankBalance() >= 10000000 then
-			mensagem = "Você conseguiu 10 milhões e continua crescendo!"
-		elseif player:getBankBalance() >= 1000000 then
-			mensagem = "MEUS DEUS! Você conseguiu o número mágico de UM MILHÃO DE GP!!!"
-		elseif player:getBankBalance() >= 100000 then
-			mensagem = "Você conseguiu uma boa grana."
+		local mensagem = ""
+		local balanco = player:getBankBalance()
+		if balanco >= 100000000 then
+			mensagem = frases["balanço"][1]
+		elseif balanco >= 10000000 then
+			mensagem = frases["balanço"][2]
+		elseif balanco >= 1000000 then
+			mensagem = frases["balanço"][3]
+		elseif balanco >= 100000 then
+			mensagem = frases["balanço"][4]
 		end
-		if mensagem ~= nil then
+		if mensagem ~= "" then
 			mensagem = mensagem .. " "
 		end
-		npcHandler:say(mensagem .. 'O balanço da sua conta é ' .. player:getBankBalance() .. ' gold.', cid)
+		npcHandler:say(mensagem .. formatarFraseNpc(frases["balanço"][5], cid, msg), cid)
 		return true
 ---------------------------- Depósito ---------------------
 	elseif msgcontains(msg, 'deposit') or msgcontains(msg, 'depositar') or msgcontains(msg, 'depósito') or msgcontains(msg, 'deposito') then
 		count[cid] = player:getMoney()
 		if count[cid] < 1 then
-			npcHandler:say('Você não possui dinheiro suficiente.', cid)
+			npcHandler:say(frases["dinheiro insuficiente"], cid)
 			npcHandler.topic[cid] = 0
 			return false
 		end
 		if msgcontains(msg, 'all') or msgcontains(msg, 'tudo') then
 			count[cid] = player:getMoney()
-			npcHandler:say('Você tem certeza que deseja depositar ' .. count[cid] .. ' gold?', cid)
+			npcHandler:say(frases["depositar tudo"], cid)
 			npcHandler.topic[cid] = 2
 			return true
 		else
 			if string.match(msg,'%d+') then
 				count[cid] = getMoneyCount(msg)
 				if count[cid] < 1 then
-					npcHandler:say('Você não possui dinheiro suficiente.', cid)
+					npcHandler:say(frases["dinheiro insuficiente"], cid)
 					npcHandler.topic[cid] = 0
 					return false
 				end
-				npcHandler:say('Você tem certeza que deseja depositar ' .. count[cid] .. ' gold?', cid)
+				npcHandler:say(formatarFraseNpc(frases["depositar quantia"], cid, msg), cid)
 				npcHandler.topic[cid] = 2
 				return true
 			else
-				npcHandler:say('Por gentileza me diga a quantia que você quer depositar.', cid)
+				npcHandler:say(frases["depositar informar quantia"], cid)
 				npcHandler.topic[cid] = 1
 				return true
 			end
 		end
 		if not isValidMoney(count[cid]) then
-			npcHandler:say('Desculpe, mas você não pode depositar essa quantia.', cid)
+			npcHandler:say(frases["quantia insuficiente"], cid)
 			npcHandler.topic[cid] = 0
 			return false
 		end
 	elseif npcHandler.topic[cid] == 1 then
 		count[cid] = getMoneyCount(msg)
 		if isValidMoney(count[cid]) then
-			npcHandler:say('Você tem certeza que deseja depositar ' .. count[cid] .. ' gold?', cid)
+			npcHandler:say(formatarFraseNpc(frases["depositar quantia"], cid, msg), cid)
 			npcHandler.topic[cid] = 2
 			return true
 		else
-			npcHandler:say('Você não possui dinheiro suficiente.', cid)
+			npcHandler:say(frases["dinheiro insuficiente"], cid)
 			npcHandler.topic[cid] = 0
 			return true
 		end
@@ -105,12 +159,12 @@ local function creatureSayCallback(cid, type, msg)
 		if msgcontains(msg, 'yes') or msgcontains(msg, 'sim') then
 			if player:getMoney() >= tonumber(count[cid]) then
 				player:depositMoney(count[cid])
-				npcHandler:say('Pronto, nós adicionamos a quantia de ' .. count[cid] .. ' gold ao seu {balanço}. Você pode {sacar} seu dinheiro sempre que você quiser.', cid)
+				npcHandler:say(formatarFraseNpc(frases["quantidade depositada"], cid, msg, count[cid]), cid)
 			else
-				npcHandler:say('Você não possui dinheiro suficiente.', cid)
+				npcHandler:say(frases["dinheiro insuficiente"], cid)
 			end
 		elseif msgcontains(msg, 'no') or msgcontains(msg, 'nao') or msgcontains(msg, 'não') then
-			npcHandler:say('Como quiser. Existe algo mais que eu possa fazer por você?', cid)
+			npcHandler:say(frases["negar"], cid)
 		end
 		npcHandler.topic[cid] = 0
 		return true
@@ -119,25 +173,25 @@ local function creatureSayCallback(cid, type, msg)
 		if string.match(msg,'%d+') then
 			count[cid] = getMoneyCount(msg)
 			if isValidMoney(count[cid]) then
-				npcHandler:say('Você tem certeza que deseja sacar ' .. count[cid] .. ' gold de sua conta bancária?', cid)
+				npcHandler:say(formatarFraseNpc(frases["sacar quantia"], cid, msg), cid)
 				npcHandler.topic[cid] = 7
 			else
-				npcHandler:say('Não existe dinheiro suficiente em sua conta bancária.', cid)
+				npcHandler:say(frases["dinheiro insuficiente saque"], cid)
 				npcHandler.topic[cid] = 0
 			end
 			return true
 		else
-			npcHandler:say('Por gentileza me diga a quantia que você deseja sacar.', cid)
+			npcHandler:say(frases["sacar informar quantia"], cid)
 			npcHandler.topic[cid] = 6
 			return true
 		end
 	elseif npcHandler.topic[cid] == 6 then
 		count[cid] = getMoneyCount(msg)
 		if isValidMoney(count[cid]) then
-			npcHandler:say('Você tem certeza que deseja sacar ' .. count[cid] .. ' gold de sua conta bancária?', cid)
+			npcHandler:say(formatarFraseNpc(frases["sacar quantia"], cid, msg), cid)
 			npcHandler.topic[cid] = 7
 		else
-			npcHandler:say('Não existe dinheiro suficiente em sua conta bancária.', cid)
+			npcHandler:say(frases["dinheiro insuficiente saque"], cid)
 			npcHandler.topic[cid] = 0
 		end
 		return true
@@ -145,184 +199,181 @@ local function creatureSayCallback(cid, type, msg)
 		if msgcontains(msg, 'yes') or msgcontains(msg, 'sim') then
 			if player:getFreeCapacity() >= getMoneyWeight(count[cid]) then
 				if not player:withdrawMoney(count[cid]) then
-					npcHandler:say('Não existe dinheiro suficiente em sua conta bancária.', cid)
+					npcHandler:say(frases["dinheiro insuficiente saque"], cid)
 				else
-					npcHandler:say('Aqui está, ' .. count[cid] .. ' gold. Por favor me diga se existe algo mais que eu possa fazer por você.', cid)
+					npcHandler:say(formatarFraseNpc(frases["saque sucesso"], cid, msg, count[cid]), cid)
 				end
 			else
-				npcHandler:say('Ei, espere! Você não possui espaço suficiente no seu inventário para carregar todas essas moedas. Eu não quero que eles caiam no chão, volte aqui com um carrinho!', cid)
+				npcHandler:say(frases["capacidade insuficiente"], cid)
 			end
 			npcHandler.topic[cid] = 0
 		elseif msgcontains(msg, 'no') or msgcontains(msg, 'nao') or msgcontains(msg, 'não') then
-			npcHandler:say('O cliente é que manda! Volte a qualquer momento que você desejar {sacar} seu dinheiro.', cid)
+			npcHandler:say(frases["negar saque"], cid)
 			npcHandler.topic[cid] = 0
 		end
 		return true
 ---------------------------- Transferência --------------------
 	elseif msgcontains(msg, 'transfer') or msgcontains(msg, 'transferir') or msgcontains(msg, 'transferencia') or msgcontains(msg, 'transferência') then
-		npcHandler:say('Por gentileza me diga a quantia que você quer transferir.', cid)
+		npcHandler:say(frases["transferencia informar quantidade"], cid)
 		npcHandler.topic[cid] = 11
 	elseif npcHandler.topic[cid] == 11 then
 		count[cid] = getMoneyCount(msg)
 		if player:getBankBalance() < count[cid] then
-			npcHandler:say('Não existe dinheiro suficiente em sua conta bancária.', cid)
+			npcHandler:say(frases["dinheiro insuficiente saque"], cid)
 			npcHandler.topic[cid] = 0
 			return true
 		end
 		if isValidMoney(count[cid]) then
-			npcHandler:say('Você gostaria de transferir ' .. count[cid] .. ' gold para quem?', cid)
+			npcHandler:say(formatarFraseNpc(frases["transferencia confirmar"], cid, msg, count[cid]), cid)
 			npcHandler.topic[cid] = 12
 		else
-			npcHandler:say('Não existe dinheiro suficiente em sua conta bancária.', cid)
+			npcHandler:say(frases["dinheiro insuficiente saque"], cid)
 			npcHandler.topic[cid] = 0
 		end
 	elseif npcHandler.topic[cid] == 12 then
 		transfer[cid] = msg
 		if player:getName() == transfer[cid] then
-			npcHandler:say('Me informe qual pessoa irá receber essa quantia!', cid)
+			npcHandler:say(frases["transferencia informar pessoa diferente"], cid)
 			npcHandler.topic[cid] = 0
 			return true
 		end
 		if playerExists(transfer[cid]) then
-			npcHandler:say('Então você quer transferir ' .. count[cid] .. ' gold para ' .. transfer[cid] .. '?', cid)
+			npcHandler:say(formatarFraseNpc(frases["transferencia confirmar"], cid, msg, count[cid], transfer[cid]), cid)
 			npcHandler.topic[cid] = 13
 		else
-			npcHandler:say('Essa pessoa não existe!', cid)
+			npcHandler:say(frases["pessoa inexistente"], cid)
 			npcHandler.topic[cid] = 0
 		end
 	elseif npcHandler.topic[cid] == 13 then
 		if msgcontains(msg, 'yes') or msgcontains(msg, 'sim') then
 			if not player:transferMoneyTo(transfer[cid], count[cid]) then
-				npcHandler:say('Você não pode transferir dinheiro para essa conta bancária.', cid)
+				npcHandler:say(frases["transferencia erro"], cid)
 			else
-				npcHandler:say('Muito bem. Você transferiu ' .. count[cid] .. ' gold para ' .. transfer[cid] ..'.', cid)
+				npcHandler:say(formatarFraseNpc(frases["transferencia sucesso"], cid, msg, count[cid], transfer[cid]), cid)
 				transfer[cid] = nil
 			end
 		elseif msgcontains(msg, 'no') or msgcontains(msg, 'nao') or msgcontains(msg, 'não') then
-			npcHandler:say('Como quiser. Existe algo mais que eu possa fazer por você?', cid)
+			npcHandler:say(frases["negar"], cid)
 		end
 		npcHandler.topic[cid] = 0
 ---------------------------- Troca de Dinheiro --------------
 	elseif msgcontains(msg, 'change gold') or msgcontains(msg, 'trocar gold') then
-		npcHandler:say('Quantos \'platinum coins\' você deseja receber?', cid)
+		npcHandler:say(frases["trocar gold"], cid)
 		npcHandler.topic[cid] = 14
 	elseif npcHandler.topic[cid] == 14 then
 		if getMoneyCount(msg) < 1 then
-			npcHandler:say('Desculpe, você não possui \'gold coins\' suficientes.', cid)
+			npcHandler:say(frases["gold insuficiente"], cid)
 			npcHandler.topic[cid] = 0
 		else
 			count[cid] = getMoneyCount(msg)
-			npcHandler:say('Então você deseja que eu troque ' .. count[cid] * 100 .. ' de seus \'gold coins\' em ' .. count[cid] .. ' \'platinum coins\'?', cid)
+			npcHandler:say(formatarFraseNpc(frases["trocar gold confirmar"], cid, msg), cid)
 			npcHandler.topic[cid] = 15
 		end
 	elseif npcHandler.topic[cid] == 15 then
 		if msgcontains(msg, 'yes') or msgcontains(msg, 'sim') then
 			if player:removeItem(2148, count[cid] * 100) then
 				player:addItem(2152, count[cid])
-				npcHandler:say('Aqui está.', cid)
+				npcHandler:say(frases["entregar sucesso"], cid)
 			else
-				npcHandler:say('Desculpe, você não possui \'gold coins\' suficientes.', cid)
+				npcHandler:say(frases["gold insuficiente"], cid)
 			end
 		else
-			npcHandler:say('Como quiser. Existe algo mais que eu possa fazer por você?', cid)
+			npcHandler:say(frases["negar"], cid)
 		end
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, 'change platinum') or msgcontains(msg, 'trocar platinum') then
-		npcHandler:say('Você gostaria de trocar \'platinum coins\' em \'gold coins\' ou \'crystal coins\'?', cid)
+		npcHandler:say(frases["trocar platinum"], cid)
 		npcHandler.topic[cid] = 16
 	elseif npcHandler.topic[cid] == 16 then
 		if msgcontains(msg, 'gold') then
-			npcHandler:say('Quantos \'platinum coins\' você gostaria de trocar em \'gold coins\'?', cid)
+			npcHandler:say(frases["trocar platinum gold"], cid)
 			npcHandler.topic[cid] = 17
 		elseif msgcontains(msg, 'crystal') then
-			npcHandler:say('Quantos \'crystal coins\' você deseja receber?', cid)
+			npcHandler:say(frases["trocar platinum crystal"], cid)
 			npcHandler.topic[cid] = 19
 		else
-			npcHandler:say('Como quiser. Existe algo mais que eu possa fazer por você?', cid)
+			npcHandler:say(frases["negar"], cid)
 			npcHandler.topic[cid] = 0
 		end
 	elseif npcHandler.topic[cid] == 17 then
 		if getMoneyCount(msg) < 1 then
-			npcHandler:say('Desculpe, você não possui \'platinum coins\' suficientes.', cid)
+			npcHandler:say(frases["platinum insuficiente"], cid)
 			npcHandler.topic[cid] = 0
 		else
 			count[cid] = getMoneyCount(msg)
-			npcHandler:say('Então você deseja que eu troque ' .. count[cid] .. ' de seus \'platinum coins\' em ' .. count[cid] * 100 .. ' \'gold coins\'?', cid)
+			npcHandler:say(formatarFraseNpc(frases["trocar platinum gold confirmar"], cid, msg), cid)
 			npcHandler.topic[cid] = 18
 		end
 	elseif npcHandler.topic[cid] == 18 then
 		if msgcontains(msg, 'yes') or msgcontains(msg, 'sim') then
 			if player:removeItem(2152, count[cid]) then
 				player:addItem(2148, count[cid] * 100)
-				npcHandler:say('Aqui está.', cid)
+				npcHandler:say(frases["entregar sucesso"], cid)
 			else
-				npcHandler:say('Desculpe, você não possui \'platinum coins\' suficientes.', cid)
+				npcHandler:say(frases["platinum insuficiente"], cid)
 			end
 		else
-			npcHandler:say('Como quiser. Existe algo mais que eu possa fazer por você?', cid)
+			npcHandler:say(frases["negar"], cid)
 		end
 		npcHandler.topic[cid] = 0
 	elseif npcHandler.topic[cid] == 19 then
 		if getMoneyCount(msg) < 1 then
-			npcHandler:say('Desculpe, você não possui \'platinum coins\' suficientes.', cid)
+			npcHandler:say(frases["platinum insuficiente"], cid)
 			npcHandler.topic[cid] = 0
 		else
 			count[cid] = getMoneyCount(msg)
-			npcHandler:say('Então você deseja que eu troque ' .. count[cid] * 100 .. ' de seus \'platinum coins\' em ' .. count[cid] .. ' \'crystal coins\'?', cid)
+			npcHandler:say(formatarFraseNpc(frases["trocar platinum crystal confirmar"], cid, msg), cid)
 			npcHandler.topic[cid] = 20
 		end
 	elseif npcHandler.topic[cid] == 20 then
 		if msgcontains(msg, 'yes') or msgcontains(msg, 'sim') then
 			if player:removeItem(2152, count[cid] * 100) then
 				player:addItem(2160, count[cid])
-				npcHandler:say('Aqui está.', cid)
+				npcHandler:say(frases["entregar sucesso"], cid)
 			else
-				npcHandler:say('Desculpe, você não possui \'platinum coins\' suficientes.', cid)
+				npcHandler:say(frases["platinum insuficiente"], cid)
 			end
 		else
-			npcHandler:say('Como quiser. Existe algo mais que eu possa fazer por você?', cid)
+			npcHandler:say(frases["negar"], cid)
 		end
 		npcHandler.topic[cid] = 0
 	elseif msgcontains(msg, 'change crystal') then
-		npcHandler:say('Quantos \'crystal coins\' você gostaria de trocar em \'platinum coins\'?', cid)
+		npcHandler:say(frases["trocar crystal"], cid)
 		npcHandler.topic[cid] = 21
 	elseif npcHandler.topic[cid] == 21 then
 		if getMoneyCount(msg) < 1 then
-			npcHandler:say('Desculpe, você não possui \'crystal coins\' suficientes.', cid)
+			npcHandler:say(frases["crystal insuficiente"], cid)
 			npcHandler.topic[cid] = 0
 		else
 			count[cid] = getMoneyCount(msg)
-			npcHandler:say('Então você deseja que eu troque ' .. count[cid] .. ' de seus \'crystal coins\' em ' .. count[cid] * 100 .. ' \'platinum coins\'?', cid)
+			npcHandler:say(formatarFraseNpc(frases["trocar crystal confirmar"], cid, msg), cid)
 			npcHandler.topic[cid] = 22
 		end
 	elseif npcHandler.topic[cid] == 22 then
 		if msgcontains(msg, 'yes') or msgcontains(msg, 'sim') then
 			if player:removeItem(2160, count[cid])  then
 				player:addItem(2152, count[cid] * 100)
-				npcHandler:say('Aqui está.', cid)
+				npcHandler:say(frases["entregar sucesso"], cid)
 			else
-				npcHandler:say('Desculpe, você não possui \'crystal coins\' suficientes.', cid)
+				npcHandler:say(frases["crystal insuficiente"], cid)
 			end
 		else
-			npcHandler:say('Como quiser. Existe algo mais que eu possa fazer por você?', cid)
+			npcHandler:say(frases["negar"], cid)
 		end
 		npcHandler.topic[cid] = 0
 	end
 	return true
 end
 
-keywordHandler:addKeyword({'money'}, StdModule.say, {npcHandler = npcHandler, text = 'We can {change} money for you. You can also access your {bank account}.'})
-keywordHandler:addKeyword({'change'}, StdModule.say, {npcHandler = npcHandler, text = 'There are three different coin types in Tibia: 100 gold coins equal 1 platinum coin, 100 platinum coins equal 1 crystal coin. So if you\'d like to change 100 gold into 1 platinum, simply say \'{change gold}\' and then \'1 platinum\'.'})
-keywordHandler:addKeyword({'bank'}, StdModule.say, {npcHandler = npcHandler, text = 'We can {change} money for you. You can also access your {bank account}.'})
-keywordHandler:addKeyword({'advanced'}, StdModule.say, {npcHandler = npcHandler, text = 'Your bank account will be used automatically when you want to {rent} a house or place an offer on an item on the {market}. Let me know if you want to know about how either one works.'})
-keywordHandler:addKeyword({'help'}, StdModule.say, {npcHandler = npcHandler, text = 'You can check the {balance} of your bank account, {deposit} money or {withdraw} it. You can also {transfer} money to other characters, provided that they have a vocation.'})
-keywordHandler:addKeyword({'functions'}, StdModule.say, {npcHandler = npcHandler, text = 'You can check the {balance} of your bank account, {deposit} money or {withdraw} it. You can also {transfer} money to other characters, provided that they have a vocation.'})
-keywordHandler:addKeyword({'basic'}, StdModule.say, {npcHandler = npcHandler, text = 'You can check the {balance} of your bank account, {deposit} money or {withdraw} it. You can also {transfer} money to other characters, provided that they have a vocation.'})
-keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = 'I work in this bank. I can change money for you and help you with your bank account.'})
+keywordHandler:addKeywords({{'money'}, {'dinheiro'}, {'bank'}, {'banco'}}, StdModule.say, {npcHandler = npcHandler, text = frases["dinheiro"]})
+keywordHandler:addKeywords({{'exchange'}, {'câmbio'}, {'cambio'}}, StdModule.say, {npcHandler = npcHandler, text = frases["troca"]})
+keywordHandler:addKeywords({{'advanced'}, {'avançado'}, {'avancado'}}, StdModule.say, {npcHandler = npcHandler, text = frases["avançado"]})
+keywordHandler:addKeywords({{'help'}, {'ajuda'}, {'functions'}, {'funções'}, {'funcoes'}, {'basic'}, {'básico'}, {'basico'}}, StdModule.say, {npcHandler = npcHandler, text = frases["ajuda"]})
+keywordHandler:addKeywords({{'job'}, {'profissão'}, {'profissao'}}, StdModule.say, {npcHandler = npcHandler, text = frases["profissão"]})
 
-npcHandler:setMessage(MESSAGE_GREET, "Pois não? O que eu posso fazer por você, |PLAYERNAME|? Negócios no Banco, talvez?")
-npcHandler:setMessage(MESSAGE_FAREWELL, "Tenha um bom dia.")
-npcHandler:setMessage(MESSAGE_WALKAWAY, "Tenha um bom dia.")
+npcHandler:setMessage(MESSAGE_GREET, frases["inicial"])
+npcHandler:setMessage(MESSAGE_FAREWELL, frases["final"])
+npcHandler:setMessage(MESSAGE_WALKAWAY, frases["final"])
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())

@@ -156,6 +156,14 @@ if KeywordHandler == nil then
 	function KeywordHandler:addKeyword(keys, callback, parameters)
 		return self:getRoot():addChildKeyword(keys, callback, parameters)
 	end
+	
+	-- Adds multiples new keywords to the root keywordnode.
+	function KeywordHandler:addKeywords(keys, callback, parameters)
+		for a,b in pairs(keys) do
+			self:addKeyword(b, callback, parameters)
+		end
+		return true
+	end
 
 	-- Moves the current position in the keyword hierarchy steps upwards. Steps defalut value = 1.
 	function KeywordHandler:moveUp(cid, steps)
