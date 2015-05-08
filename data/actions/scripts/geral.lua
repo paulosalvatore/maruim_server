@@ -343,6 +343,7 @@ local items = {
 	[11339] = {
 		["default"] = {
 			transformarAleatorio = {{11340, 1, 4500}, {11341, 1, 4500}, {11342, 1, 1000}},
+			transformarAleatorioTipo = "item",
 			efeito = {"hit"}
 		}
 	},
@@ -355,7 +356,7 @@ local items = {
 	},
 	[10317] = {
 		["default"] = {
-			transformar = {10363, 1},
+			transformar = {10363, 1, "item"},
 			efeito = {"rage_skies", "player"}
 		}
 	},
@@ -675,7 +676,15 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			for c, v in pairs(i.transformarAleatorio) do
 				chanceTransformar = chanceTransformar+v[3]
 				if chance <= chanceTransformar then
-					target:transform(v[1], v[2])
+					if i.transformarAleatorioTipo == "item" then
+						item:transform(v[1], v[2])
+					else
+						if i.transformarAleatorioTipo == "target" or target then
+							target:transform(v[1], v[2])
+						else
+							item:transform(v[1], v[2])
+						end
+					end
 					break
 				end
 			end
@@ -707,7 +716,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				elseif efeito[2] == "from" then
 					posicao_efeito = fromPosition
 				elseif efeito[2] == "player" then
-					posicao_efeito = getPlayerPosition(player)
+					posicao_efeito = player:getPosition()
 				end
 			end
 			if posicao_efeito == nil then
