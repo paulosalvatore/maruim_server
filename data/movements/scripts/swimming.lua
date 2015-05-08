@@ -18,8 +18,8 @@ function onStepOut(player, item, position, fromPosition)
 	if not player then
 		return false
 	end
-	local ground_id = player:getPosition():getTile():getGround():getId()
-	if((ground_id < 4620) or (ground_id > 4625)) then
+	local groundId = Tile(player:getPosition()):getGround():getId()
+	if((groundId < 4620) or (groundId > 4625)) then
 		player:removeCondition(CONDITION_OUTFIT)
 	end
 end
