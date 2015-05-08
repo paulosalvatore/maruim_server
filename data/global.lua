@@ -42,7 +42,6 @@ efeitos = {
 	["rage_skies"] = CONST_ME_BIGCLOUDS,
 	["splash"] = CONST_ME_WATERSPLASH,
 	["smoke"] = CONST_ME_SMOKE,
-	["choque"] = CONST_ME_PURPLEHIT,
 	["choque_roxo"] = CONST_ME_PURPLEENERGY,
 	["teleport"] = CONST_ME_TELEPORT
 }
