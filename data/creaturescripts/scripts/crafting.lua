@@ -58,7 +58,9 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 									end
 								end
 								if validar == 1 then
-									modal:addChoice(receitaId, b[2])
+									if modal:getChoiceCount() < 255 then
+										modal:addChoice(receitaId, b[2])
+									end
 								end
 							end
 						end
@@ -92,7 +94,9 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 				receitaId = b[1]
 				receita = receitas[receitaId]
 				if(receita.aprender == 0) or (receita.aprender == 1 and player:getProfissaoReceitaAprendizado(profissaoId, receitaId) == 1) then
-					modal:addChoice(receitaId, b[2])
+					if modal:getChoiceCount() < 255 then
+						modal:addChoice(receitaId, b[2])
+					end
 				end
 			end
 			if modal:getChoiceCount() == 0 then
@@ -121,16 +125,28 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 			for a, b in pairs(exibirReceitas) do
 				local receita = receitas[b[1]]
 				if receita.ocultar == nil or (receita.ocultar ~= nil and receita.ocultar == 0) or (receita.ocultar ~= nil and receita.ocultar == 1 and player:getProfissaoReceitaAprendizado(profissaoId, receitaId) == 1) then
-					modal:addChoice(b[1], b[2])
+					if modal:getChoiceCount() < 255 then
+						modal:addChoice(b[1], b[2])
+					end
 				end
 			end
-			modal:addButton(4, "Materiais")
-			modal:setDefaultEnterButton(1)
-			modal:addButton(2, "Sair")
-			modal:addButton(1, "Criar")
-			modal:setDefaultEscapeButton(2)
-			modal:addButton(3, "Voltar")
-			modal:sendToPlayer(player)
+			if modal:getChoiceCount() == 0 then
+				local modal = ModalWindow(modalId, modalTituloListaVazia, modalMensagemListaVazia)
+				modal:addButton(3, "Voltar")
+				modal:addButton(2, "Sair")
+				modal:addButton(5, "Ok")
+				modal:setDefaultEnterButton(5)
+				modal:setDefaultEscapeButton(2)
+				modal:sendToPlayer(player)
+			else
+				modal:addButton(4, "Materiais")
+				modal:setDefaultEnterButton(1)
+				modal:addButton(2, "Sair")
+				modal:addButton(1, "Criar")
+				modal:setDefaultEscapeButton(2)
+				modal:addButton(3, "Voltar")
+				modal:sendToPlayer(player)
+			end
 		elseif choiceId == 5 then
 			local receitaId = player:getProfissaoUltimaReceita(profissaoId)
 			if receitaId > 0 then

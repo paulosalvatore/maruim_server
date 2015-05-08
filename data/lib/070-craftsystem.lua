@@ -18,8 +18,8 @@ configProfissoes = {
 	pocaoChanceStorage = 19900,
 	pocaoProfissaoStorage = 19901,
 	pocoes = {
-		[21309] = {duracao = 10},
-		[21426] = {duracao = 10}
+		[21309] = {duracao = 600},
+		[21426] = {duracao = 600}
 	},
 	maxQuantidadeFabricacao = 10
 }
@@ -29,7 +29,8 @@ profissoes = {
 		mesaTrabalho = {2555, 8671},
 		mesaTrabalhando = {},
 		receitas = {
-			{item = 2471, nivel = 50, nivelJogador = 1, ferramenta = 2444, materiais = {{8679, 1}, {15515, 3}, {5904, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 1, ocultar = 1, atributos = {armadura = {0, 3}}},
+			{item = 2471, nivel = 1, nivelJogador = 1, ferramenta = 2386, materiais = {{2148, 1}}, fabricarQuantidade = 1, tempo = 3, experiencia = 10, pontos = 10, chanceSucesso = 10000, maxChanceSucesso = 10000, aprender = 0, atributos = {armadura = {0, 3}}},
+			{item = 2471, nivel = 50, nivelJogador = 1, ferramenta = 2444, materiais = {{8679, 1}, {15515, 3}, {5904, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {armadura = {0, 3}}},
 			{item = 2466, nivel = 50, nivelJogador = 1, ferramenta = 2444, materiais = {{8682, 1}, {15515, 3}, {5904, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {armadura = {0, 3}}},
 			{item = 2470, nivel = 50, nivelJogador = 1, ferramenta = 2444, materiais = {{8678, 1}, {15515, 3}, {5904, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {armadura = {0, 3}}},
 			{item = 2646, nivel = 50, nivelJogador = 1, ferramenta = 2444, materiais = {{9817, 1}, {15515, 3}, {5904, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {armadura = {0, 3}}},
@@ -484,7 +485,8 @@ profissoes = {
 			{item = 6095, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {5909, 1}, {10123, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
 			{item = 5918, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {5912, 1}, {10123, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
 			{item = 5462, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {12404, 1}, {10123, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
-			{item = 10016, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {10570, 1}, {5894, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
+			{item = 10016, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, fabricarQuantidade = 1, atributos = {armadura = {5, 10}}},
+			-- {item = 10016, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {10570, 1}, {5894, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {armadura = {5, 10}}},
 			{item = 11368, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {2149, 1}, {21247, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
 			{item = 6132, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{12501, 1}, {13545, 1}, {13544, 1}, {13543, 1}, {21251, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
 			{item = 2195, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{11209, 1}, {13158, 1}, {2642, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
@@ -892,7 +894,7 @@ function Player.iniciarReceitaQuantidade(self, profissaoId, receitaId, quantidad
 			player:iniciarReceitaQuantidade(profissaoId, receitaId, quantidadeTotal, quantidadeAtual, tempo)
 		elseif not iniciarReceita then
 			player:resetProfissaoIngredienteMelhoria(profissaoId)
-			player:allowMovement(true)
+			self:allowMovement(true)
 		end
 	end, delay*1000, self.uid, profissaoId, receitaId, quantidadeTotal, quantidadeAtual+1, tempo)
 end
