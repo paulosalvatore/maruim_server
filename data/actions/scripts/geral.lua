@@ -7,13 +7,13 @@ local earth_shrine = {7516, 7517, 7518, 7519}
 local energy_shrine = {7512, 7513, 7514, 7515}
 local items = {
 	-- [item_id] = {
-		-- [itemEx_id ou "fire_source" ou "fruits" ou "sparkling" ou "default"] = {
+		-- [target_id ou "fire_source" ou "fruits" ou "sparkling" ou "default"] = {
 			-- itensPlayer = {{id, quantidade ou {min, max}}},
 			-- removerItensPlayer = {{id, quantidade}},
 			-- transformarAleatorio = {{id, quantidade, chance}},
 			-- itensGame = {{id, quantidade {min, max}, posicao}},
 			-- removerItem = 0 ou 1,
-			-- removerItemEx = 0 ou 1,
+			-- removerTarget = 0 ou 1,
 			-- transformar = {id, quantidade ou {min, max}},
 			-- efeito = {efeito, posicao},
 			-- criatura = {nome_criatura, chance}
@@ -55,7 +55,7 @@ local items = {
 		[9114] = {
 			itensPlayer = {{9113, 1}},
 			removerItem = 1,
-			removerItemEx = 1,
+			removerTarget = 1,
 			efeito = {"hit"}
 		}
 	},
@@ -80,13 +80,13 @@ local items = {
 		["sparkling"] = {
 			[4184] = {
 				itensPlayer = {{7251, 1}},
-				removerItemEx = 1,
+				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 5*60*1000
 			},
 			[8573] = {
 				itensPlayer = {{7247, 1}},
-				removerItemEx = 1,
+				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 5*60*1000
 			}
@@ -96,22 +96,22 @@ local items = {
 		[2674] = {
 			itensPlayer = {{6279, 1}},
 			removerItensPlayer = {{6278, 1}},
-			removerItemEx = 1,
+			removerTarget = 1,
 		},
 		[2677] = {
 			itensPlayer = {{6279, 1}},
 			removerItensPlayer = {{6278, 1}},
-			removerItemEx = 1,
+			removerTarget = 1,
 		},
 		[2679] = {
 			itensPlayer = {{6279, 1}},
 			removerItensPlayer = {{6278, 1}},
-			removerItemEx = 1,
+			removerTarget = 1,
 		},
 		[2680] = {
 			itensPlayer = {{6279, 1}},
 			removerItensPlayer = {{6278, 1}},
-			removerItemEx = 1,
+			removerTarget = 1,
 		},
 		[2683] = {
 			transformar = {2096, 1},
@@ -120,7 +120,7 @@ local items = {
 		["sparkling"] = {
 			[7261] = {
 				itensPlayer = {{7248, 1}},
-				removerItemEx = 1,
+				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 5*60*1000,
 				chanceSucesso = 2000,
@@ -129,7 +129,7 @@ local items = {
 			},
 			[4017] = {
 				itensPlayer = {{7249, 1}},
-				removerItemEx = 1,
+				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 5*60*1000,
 				chanceSucesso = 2000,
@@ -138,7 +138,7 @@ local items = {
 			},
 			[2733] = {
 				itensPlayer = {{7245, 1}},
-				removerItemEx = 1,
+				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 5*60*1000,
 				chanceSucesso = 2000,
@@ -147,7 +147,7 @@ local items = {
 			},
 			[2720] = {
 				itensPlayer = {{2798, 1}},
-				removerItemEx = 1,
+				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 5*60*1000,
 				chanceSucesso = 2000,
@@ -156,7 +156,7 @@ local items = {
 			},
 			[4018] = {
 				itensPlayer = {{2801, 1}},
-				removerItemEx = 1,
+				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 5*60*1000,
 				chanceSucesso = 2000,
@@ -205,17 +205,17 @@ local items = {
 		["fruits"] = {
 			itensPlayer = {{2006, 1, 21}},
 			removerItensPlayer = {{2006, 1, 0}},
-			removerItemEx = 1,
+			removerTarget = 1,
 		},
 		[2678] = {
 			itensPlayer = {{2006, 1, 14}},
 			removerItensPlayer = {{2006, 1, 0}},
-			removerItemEx = 1,
+			removerTarget = 1,
 		},
 		[8841] = {
 			itensPlayer = {{2006, 1, 5}},
 			removerItensPlayer = {{2006, 1, 0}},
-			removerItemEx = 1,
+			removerTarget = 1,
 		}
 	},
 	[18336] = {
@@ -277,7 +277,7 @@ local items = {
 		["sparkling"] = {
 			[10803] = {
 				itensPlayer = {{13219, 1}},
-				removerItemEx = 1,
+				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 5*60*1000,
 				chanceSucesso = 2000,
@@ -286,7 +286,7 @@ local items = {
 			},
 			[10917] = {
 				itensPlayer = {{13216, 1}},
-				removerItemEx = 1,
+				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 5*60*1000,
 				chanceSucesso = 2000,
@@ -295,7 +295,7 @@ local items = {
 			},
 			[11671] = {
 				itensPlayer = {{13222, 1}},
-				removerItemEx = 1,
+				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 5*60*1000,
 				chanceSucesso = 2000,
@@ -304,7 +304,7 @@ local items = {
 			},
 			[11672] = {
 				itensPlayer = {{13217, 1}},
-				removerItemEx = 1,
+				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 5*60*1000,
 				chanceSucesso = 2000,
@@ -313,7 +313,7 @@ local items = {
 			},
 			[11673] = {
 				itensPlayer = {{13220, 1}},
-				removerItemEx = 1,
+				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 5*60*1000,
 				chanceSucesso = 2000,
@@ -322,7 +322,7 @@ local items = {
 			},
 			[11675] = {
 				itensPlayer = {{13221, 1}},
-				removerItemEx = 1,
+				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 5*60*1000,
 				chanceSucesso = 2000,
@@ -331,7 +331,7 @@ local items = {
 			},
 			[11676] = {
 				itensPlayer = {{13218, 1}},
-				removerItemEx = 1,
+				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 5*60*1000,
 				chanceSucesso = 2000,
@@ -404,7 +404,7 @@ local items = {
 		["sparkling"] = {
 			[5868] = {
 				itensPlayerAleatorio = {{5880, 1, 4000}, {2225, 1, 6000}},
-				removerItemEx = 1,
+				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 3*60*1000,
 				tempo = 500,
@@ -414,7 +414,7 @@ local items = {
 			},
 			[8748] = {
 				itensPlayer = {{13757, 1}},
-				removerItemEx = 1,
+				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 5*60*1000,
 				chanceSucesso = 2000,
@@ -457,7 +457,7 @@ local items = {
 		["energy_shrine"] = {
 			itensPlayer = {{7762, 1}},
 			removerItensPlayer = {{21246, 1}},
-			efeito = {"choque"},
+			efeito = {"choque_roxo"},
 			removerItem = 1
 		}
 	},
@@ -482,10 +482,11 @@ local items = {
 	[3421] = {
 		["default"] = {
 			actionId = 2902,
-			verificarPosicao = {{y = -1}, "item"},
-			teleportar = {{y = 1}, "item"},
-			efeitoTeleport = "poff",
-			direcionar = "sul"
+			verificarPosicaoTeleportar = {
+				{{y = -1}, {y = 1}, "item", "sul"},
+				{{y = 1}, {y = -1}, "item", "norte"}
+			},
+			efeitoTeleport = "poff"
 		}
 	},
 	["action"] = {
@@ -493,7 +494,7 @@ local items = {
 	["unique"] = {
 	}
 }
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if ((items[item.itemid]) or (items["action"][item.actionid]) or (items["unique"][item.uid])) then
 		local i
 		if (items[item.itemid]) then
@@ -506,23 +507,23 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		local adicionarEvento = 0
 		if i["default"] then
 			i = i["default"]
-		elseif isInArray(sparkling, itemEx.itemid) and #Tile(toPosition):getItems() == 2 and i["sparkling"][Tile(toPosition):getTileTopTopItem()] then
+		elseif isInArray(sparkling, target.itemid) and #Tile(toPosition):getItems() == 2 and i["sparkling"][Tile(toPosition):getTileTopTopItem()] then
 			i = i["sparkling"][Tile(toPosition):getTileTopTopItem()]
 			adicionarEvento = 1
-		elseif (isInArray(fire_source, itemEx.itemid)) and (i["fire_source"]) then
+		elseif (isInArray(fire_source, target.itemid)) and (i["fire_source"]) then
 			i = i["fire_source"]
-		elseif (isInArray(fruits, itemEx.itemid)) and (i["fruits"]) then
+		elseif (isInArray(fruits, target.itemid)) and (i["fruits"]) then
 			i = i["fruits"]
-		elseif (isInArray(ice_shrine, itemEx.itemid)) and (i["ice_shrine"]) then
+		elseif (isInArray(ice_shrine, target.itemid)) and (i["ice_shrine"]) then
 			i = i["ice_shrine"]
-		elseif (isInArray(fire_shrine, itemEx.itemid)) and (i["fire_shrine"]) then
+		elseif (isInArray(fire_shrine, target.itemid)) and (i["fire_shrine"]) then
 			i = i["fire_shrine"]
-		elseif (isInArray(earth_shrine, itemEx.itemid)) and (i["earth_shrine"]) then
+		elseif (isInArray(earth_shrine, target.itemid)) and (i["earth_shrine"]) then
 			i = i["earth_shrine"]
-		elseif (isInArray(energy_shrine, itemEx.itemid)) and (i["energy_shrine"]) then
+		elseif (isInArray(energy_shrine, target.itemid)) and (i["energy_shrine"]) then
 			i = i["energy_shrine"]
-		elseif i[itemEx.itemid] then
-			i = i[itemEx.itemid]
+		elseif i[target.itemid] then
+			i = i[target.itemid]
 		elseif i["action"][item.actionid] then
 			i = i["action"][item.actionid]
 		elseif i["unique"][item.uid] then
@@ -530,14 +531,16 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		else
 			return false
 		end
-		if (i.actionId ~= nil and ((item:getActionId() ~= i.actionId) or (itemEx:getActionId() ~= i.actionId))) then
-			return false
+		if i.actionId ~= nil then
+			if item.actionid ~= i.actionId and target.actionid ~= i.actionId then
+				return false
+			end
 		end
 		if i.verificarPosicao ~= nil then
 			local verificarPosicao
 			if(i.verificarPosicao[2] == "item") then
 				verificarPosicao = fromPosition
-			elseif(i.verificarPosicao[2] == "itemEx") then
+			elseif(i.verificarPosicao[2] == "target") then
 				verificarPosicao = toPosition
 			end
 			if i.verificarPosicao[1].x ~= nil and player:getPosition().x ~= verificarPosicao.x+i.verificarPosicao[1].x then
@@ -648,7 +651,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			if type(quantidadeTransformar) == "table" then
 				quantidadeTransformar = math.random(quantidadeTransformar[1], quantidadeTransformar[2])
 			end
-			local transformar = itemEx
+			local transformar = target
 			if i.transformar[3] ~= nil and i.transformar[3] == "item" then
 				transformar = item
 			end
@@ -672,12 +675,12 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			for c, v in pairs(i.transformarAleatorio) do
 				chanceTransformar = chanceTransformar+v[3]
 				if chance <= chanceTransformar then
-					itemEx:transform(v[1], v[2])
+					target:transform(v[1], v[2])
 					break
 				end
 			end
 		end
-		if i.removerItemEx == 1 then
+		if i.removerTarget == 1 then
 			if i.chanceNeutra ~= nil and i.chanceNeutra <= 10000 then
 				local chanceNeutra = i.chanceNeutra+chanceSucesso
 				if (not (chance <= chanceSucesso)) and (chance <= chanceNeutra) then
@@ -685,16 +688,16 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 					efeito = {"poff"}
 				elseif (not (chance <= chanceSucesso)) then
 					efeito = {"poff"}
-					itemEx:remove(1)
+					target:remove(1)
 				else
-					itemEx:remove(1)
+					target:remove(1)
 				end
 			else
-				itemEx:remove(1)
+				target:remove(1)
 			end
 		end
 		if chanceQuebrar ~= nil and chanceQuebrar <= 10000 and chance <= chanceQuebrar then
-			itemEx:remove(1)
+			target:remove(1)
 		end
 		if efeito ~= nil and table.getn(efeito) > 0 then
 			local posicao_efeito = nil
@@ -729,7 +732,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			local posicaoTeleportar
 			if(i.teleportar[2] == "item") then
 				posicaoTeleportar = fromPosition
-			elseif(i.teleportar[2] == "itemEx") then
+			elseif(i.teleportar[2] == "target") then
 				posicaoTeleportar = toPosition
 			end
 			if i.teleportar[1].x ~= nil then
@@ -751,10 +754,43 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		if i.direcionar ~= nil then
 			player:setDirection(direcoes[i.direcionar])
 		end
+		if i.verificarPosicaoTeleportar ~= nil then
+			for a, b in pairs(i.verificarPosicaoTeleportar) do
+				local verificarPosicaoTeleportar
+				if(b[3] == "item") then
+					verificarPosicaoTeleportar = fromPosition
+				elseif(b[3] == "target") then
+					verificarPosicaoTeleportar = toPosition
+				end
+				local posicaoTeleportar = verificarPosicaoTeleportar
+				if 	((b[1].x ~= nil and player:getPosition().x == verificarPosicaoTeleportar.x+b[1].x) or
+					(b[1].y ~= nil and player:getPosition().y == verificarPosicaoTeleportar.y+b[1].y) or
+					(b[1].z ~= nil and player:getPosition().z == verificarPosicaoTeleportar.z+b[1].z)) then
+					if b[2].x ~= nil then
+						posicaoTeleportar.x = posicaoTeleportar.x+b[2].x
+					end
+					if b[2].y ~= nil then
+						posicaoTeleportar.y = posicaoTeleportar.y+b[2].y
+					end
+					if b[2].z ~= nil then
+						posicaoTeleportar.z = posicaoTeleportar.z+b[2].z
+					end
+					player:teleportTo(posicaoTeleportar, true)
+					local exibirEfeito = "teleport"
+					if i.efeitoTeleport ~= nil then
+						exibirEfeito = i.efeitoTeleport
+					end
+					posicaoTeleportar:sendMagicEffect(efeitos[exibirEfeito])
+					if b[4] ~= nil then
+						player:setDirection(direcoes[b[4]])
+					end
+				end
+			end
+		end
 		if adicionarEvento == 1 then
 			addEvent(function(posicao, item)
 			Game.createItem(item, 1, posicao)
-			end, i.tempo, toPosition, itemEx.itemid)
+			end, i.tempo, toPosition, target.itemid)
 		end
 		return true
 	end
