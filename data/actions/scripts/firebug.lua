@@ -1,44 +1,42 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	local failChance = 20
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	local chanceFalha = 20
 	local items = {
 		[5466] = {transformar = 5465},
-		[1485] = {transformar = 1484, duracao = 600, decairPara = {{1483, 2}, {1482, 2}, {1481, 2}}},
+		[1485] = {transformar = 1484, duracao = 600, decairPara = {{1483, 1}, {1482, 1}, {1481, 1}, {1485, 1}}},
 		[7538] = {transformar = 7544},
 		[7539] = {transformar = 7545},
 		[13757] = {transformar = 21585},
 		[5880] = {transformar = 18427}
 	}
-	local itemExId = itemEx.itemid
-	if(items[itemExId]) then
-		if(math.random(100) > failChance) then
-			doSendMagicEffect(itemEx:getPosition(), CONST_ME_HITBYFIRE)
-			itemEx:transform(items[itemExId].transformar)
-			itemEx:decay()
-			local duracao = items[itemExId].duracao
-			local decairPara = items[itemExId].decairPara
+	local targetId = target.itemid
+	if(items[targetId]) then
+		if(math.random(100) > chanceFalha) then
+			doSendMagicEffect(target:getPosition(), CONST_ME_HITBYFIRE)
+			target:transform(items[targetId].transformar)
+			target:decay()
+			local duracao = items[targetId].duracao
+			local decairPara = items[targetId].decairPara
 			if duracao ~= nil then
-				addEvent(function(itemEx, itemExId, decairPara)
-					if itemEx:getUniqueId() > 0 then
+				addEvent(function(targetId, toPosition, decairPara)
+					local target = Tile(toPosition):getItemById(targetId)
+					if target then
 						if decairPara ~= nil then
 							for a, b in pairs(decairPara) do
-								local transformar = 0
+								local transformar = b[1]
 								local tempo = a*b[2]*1000
-								if a < #decairPara then
-									transformar = b[1]
-								else
-									transformar = itemExId
-								end
-								addEvent(function(itemEx, transformar)
-									if itemEx:getUniqueId() > 0 then
-										itemEx:transform(transformar)
+								addEvent(function(targetId, toPosition, transformar)
+									local target = Tile(toPosition):getItemById(targetId)
+									if target then
+										target:transform(transformar)
 									end
-								end, tempo, itemEx, transformar)
+								end, tempo, targetId, toPosition, transformar)
+								targetId = transformar
 							end
 						else
-							itemEx:transform(itemExId)
+							target:transform(targetId)
 						end
 					end
-				end, duracao*1000, itemEx, itemExId, decairPara)
+				end, duracao*1000, items[targetId].transformar, toPosition, decairPara)
 			end
 		else
 			item:remove()
@@ -46,5 +44,5 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		end
 		return true
 	end
-	return destroyItem(player, itemEx, toPosition)
+	return destroyItem(player, target, toPosition)
 end
