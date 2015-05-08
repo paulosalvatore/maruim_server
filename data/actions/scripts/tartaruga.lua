@@ -38,23 +38,18 @@ function gerarIdAgua()
 		math.random(4608, 4625),
 		math.random(4664, 4666)
 	}
-	local numeroVetor = math.random(0, 10)
-	if numeroVetor <= 8 then
-		objeto = objetos[1]
+	if math.random(0, 10) <= 8 then
+		return objetos[1]
 	else
-		objeto = objetos[2]
+		return objetos[2]
 	end
-	return objeto
 end
 function reiniciarTartaruga(posicao)
 	local posicaoTartaruga = posicao + {y = passos + 4}
 	local posicaoJogador = posicao + {y = 3}
-	for chave, valor in pairs(posicoesReset) do
-		x = valor[1]
-		y = valor[2]-1
-		objeto = gerarIdAgua()
-		posicaoObjeto = posicaoJogador + {x = x, y = y}
-		Tile(posicaoObjeto):getGround():transform(objeto)
+	for a,b in pairs(posicoesReset) do
+		posicaoObjeto = posicaoJogador + {x = b[1], y = b[2]-1}
+		Tile(posicaoObjeto):getGround():transform(gerarIdAgua())
 		posicaoObjeto:sendMagicEffect(CONST_ME_WATERSPLASH)
 		posicaoObjeto:sendMagicEffect(CONST_ME_LOSEENERGY)
 	end
@@ -62,12 +57,9 @@ function reiniciarTartaruga(posicao)
 	return true
 end
 function criarTartaruga(posicao, passo)
-	for chave, valor in pairs(posicoesTartaruga) do
-		x = valor[1]
-		y = valor[2]-1
-		objeto = valor[3]
-		posicaoObjeto = posicao + {x = x, y = y - passo}
-		Tile(posicaoObjeto):getGround():transform(objeto)
+	for a,b in pairs(posicoesTartaruga) do
+		posicaoObjeto = posicao + {x = b[1], y = b[2]-1-passo}
+		Tile(posicaoObjeto):getGround():transform(b[3])
 		if passo == -1 then
 			posicaoObjeto:sendMagicEffect(efeitos["teleport"])
 		end
@@ -75,12 +67,9 @@ function criarTartaruga(posicao, passo)
 	return true
 end
 function criarAgua(posicao, passo)
-	for chave, valor in pairs(posicoesAgua) do
-		x = valor[1]
-		y = valor[2]-1
-		objeto = gerarIdAgua()
-		posicaoObjeto = posicao + {x = x, y = y - passo}
-		Tile(posicaoObjeto):getGround():transform(objeto)
+	for a,b in pairs(posicoesAgua) do
+		posicaoObjeto = posicao + {x = b[1], y = b[2]-1-passo}
+		Tile(posicaoObjeto):getGround():transform(gerarIdAgua())
 		posicaoObjeto:sendMagicEffect(CONST_ME_WATERSPLASH)
 		posicaoObjeto:sendMagicEffect(CONST_ME_LOSEENERGY)
 	end
@@ -90,8 +79,7 @@ function moverTartaruga(playerUid, direcaoY, posicao, passo)
 	local player = Player(playerUid)
 	if player then
 		if passo >= 0 then
-			local posicaoJogador = posicao + {y = direcaoY - passo}
-			player:teleportTo(posicaoJogador)
+			player:teleportTo(posicao + {y = direcaoY - passo})
 		end
 	end
 	criarTartaruga(posicao, passo)
