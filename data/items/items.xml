@@ -23151,7 +23151,11 @@
 	<item id="14581" article="a" name="moist wall" />
 	<item fromid="14583" toid="14619" article="a" name="moist wall" />
 	<item fromid="14620" toid="14622" article="a" name="stone pillar" />
-	<item fromid="14627" toid="14632" article="an" name="archway" />
+	<item fromid="14627" toid="14632" article="an" name="moist archway" />
+	<item fromid="14633" toid="14635" article="a" name="moist door" />
+	<item fromid="14636" toid="14639" article="a" name="moist archway" />
+	<item fromid="14640" toid="14641" article="a" name="moist door" />
+	<item fromid="14642" toid="14646" article="a" name="moist archway" />
 	<item fromid="14647" toid="14652" article="a" name="stone pillar" />
 	<item id="14653" article="a" name="large fossil volute" />
 	<item id="14654" article="a" name="small fossil volute" />
