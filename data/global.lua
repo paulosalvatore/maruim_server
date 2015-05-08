@@ -104,3 +104,24 @@ end
 if nextUseStaminaTime == nil then
 	nextUseStaminaTime = {}
 end
+
+local function allowMovementEvent(cid, allow, oldPosition)
+    local creature = Creature(cid)
+    if not creature then
+        return false
+    end
+
+    if allow then
+        return stopEvent(event)
+    else
+        stopEvent(event)
+    end
+
+    creature:teleportTo(oldPosition, true)
+   
+    event = addEvent(allowMovementEvent, 100, cid, allow, oldPosition)
+end
+
+function Player.allowMovement(self, allow)
+    allowMovementEvent(self:getId(), allow, self:getPosition())
+end

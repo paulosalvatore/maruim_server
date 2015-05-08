@@ -2,8 +2,6 @@
 <movements>
 	<movevent event="StepIn" actionid="2901" script="blockMovement.lua"/>
 	<movevent event="StepIn" actionid="2500" script="blockMovement.lua"/>
-	<movevent event="StepIn" actionid="60000" script="allowMovement.lua"/>
-	<movevent event="StepOut" actionid="60000" script="allowMovement.lua"/>
 	<movevent event="StepIn" itemid="5755" script="tartaruga.lua"/>
 	<movevent event="AddItem" tileitem="1" itemid="6279" script="add_item.lua"/>
 	<movevent event="AddItem" tileitem="1" itemid="1410" script="add_item.lua"/>
