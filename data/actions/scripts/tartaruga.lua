@@ -1,7 +1,7 @@
 local config = {
 	passos = 18,
 	tempo = 300,
-	posicoes_tartaruga = {
+	posicoesTartaruga = {
 		{0, 0, 5756},
 		{0, -1, 5757},
 		{-1, 0, 5758},
@@ -10,12 +10,12 @@ local config = {
 		{-1, 1, 5761},
 		{1, 1, 5760}
 	},
-	posicoes_agua = {
+	posicoesAgua = {
 		{0, 2},
 		{-1, 2},
 		{1, 2}
 	},
-	posicoes_reset = {
+	posicoesReset = {
 		{0, 0},
 		{-1, 1},
 		{0, 1},
@@ -30,16 +30,16 @@ local config = {
 }
 local passos = config.passos - 1
 local tempo = config.tempo
-local posicoes_tartaruga = config.posicoes_tartaruga
-local posicoes_agua = config.posicoes_agua
-local posicoes_reset = config.posicoes_reset
+local posicoesTartaruga = config.posicoesTartaruga
+local posicoesAgua = config.posicoesAgua
+local posicoesReset = config.posicoesReset
 function gerarIdAgua()
 	local objetos = {
 		math.random(4608, 4625),
 		math.random(4664, 4666)
 	}
-	local numero_vetor = math.random(0, 10)
-	if(numero_vetor <= 8) then
+	local numeroVetor = math.random(0, 10)
+	if(numeroVetor <= 8) then
 		objeto = objetos[1]
 	else
 		objeto = objetos[2]
@@ -47,50 +47,51 @@ function gerarIdAgua()
 	return objeto
 end
 function reiniciarTartaruga(posicao)
-	local posicao_tartaruga = posicao + {y = passos + 4}
-	local posicao_player = posicao + {y = 3}
-	for chave, valor in pairs(posicoes_reset) do
-		valor_x = valor[1]
-		valor_y = valor[2]-1
+	local posicaoTartaruga = posicao + {y = passos + 4}
+	local posicaoJogador = posicao + {y = 3}
+	for chave, valor in pairs(posicoesReset) do
+		x = valor[1]
+		y = valor[2]-1
 		objeto = gerarIdAgua()
-		posicao_objeto = posicao_player + {x = valor_x, y = valor_y}
-		posicao_objeto:getTile():getGround():transform(objeto)
-		posicao_objeto:sendMagicEffect(CONST_ME_WATERSPLASH)
-		posicao_objeto:sendMagicEffect(CONST_ME_LOSEENERGY)
+		posicaoObjeto = posicaoJogador + {x = x, y = y}
+		Tile(posicaoObjeto):getGround():transform(objeto)
+		posicaoObjeto:sendMagicEffect(CONST_ME_WATERSPLASH)
+		posicaoObjeto:sendMagicEffect(CONST_ME_LOSEENERGY)
 	end
-	criarTartaruga(posicao_tartaruga, -1)
+	criarTartaruga(posicaoTartaruga, -1)
 	return true
 end
 function criarTartaruga(posicao, passo)
-	for chave, valor in pairs(posicoes_tartaruga) do
-		valor_x = valor[1]
-		valor_y = valor[2]-1
+	for chave, valor in pairs(posicoesTartaruga) do
+		x = valor[1]
+		y = valor[2]-1
 		objeto = valor[3]
-		posicao_objeto = posicao + {x = valor_x, y = valor_y - passo}
-		posicao_objeto:getTile():getGround():transform(objeto)
+		posicaoObjeto = posicao + {x = x, y = y - passo}
+		Tile(posicaoObjeto):getGround():transform(objeto)
 		if(passo == -1) then
-			posicao_objeto:sendMagicEffect(CONST_ME_TELEPORT)
+			posicaoObjeto:sendMagicEffect(efeitos["teleport"])
 		end
 	end
 	return true
 end
 function criarAgua(posicao, passo)
-	for chave, valor in pairs(posicoes_agua) do
-		valor_x = valor[1]
-		valor_y = valor[2]-1
+	for chave, valor in pairs(posicoesAgua) do
+		x = valor[1]
+		y = valor[2]-1
 		objeto = gerarIdAgua()
-		posicao_objeto = posicao + {x = valor_x, y = valor_y - passo}
-		posicao_objeto:getTile():getGround():transform(objeto)
-		posicao_objeto:sendMagicEffect(CONST_ME_WATERSPLASH)
-		posicao_objeto:sendMagicEffect(CONST_ME_LOSEENERGY)
+		posicaoObjeto = posicao + {x = x, y = y - passo}
+		Tile(posicaoObjeto):getGround():transform(objeto)
+		posicaoObjeto:sendMagicEffect(CONST_ME_WATERSPLASH)
+		posicaoObjeto:sendMagicEffect(CONST_ME_LOSEENERGY)
 	end
 	return true
 end
-function moverTartaruga(player, direcao_y, posicao, passo)
-	if(isPlayer(player)) then
+function moverTartaruga(playerUid, direcaoY, posicao, passo)
+	local player = Player(playerUid)
+	if player then
 		if(passo >= 0) then
-			local posicao_player = posicao + {y = direcao_y - passo}
-			player:teleportTo(posicao_player, true)
+			local posicaoJogador = posicao + {y = direcaoY - passo}
+			player:teleportTo(posicaoJogador)
 		end
 	end
 	criarTartaruga(posicao, passo)
@@ -108,22 +109,22 @@ function moverTartaruga(player, direcao_y, posicao, passo)
 	return true
 end
 function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	local posicao_player = player:getPosition()
-	posicao_player:sendMagicEffect(CONST_ME_POFF)
-	local posicao_objeto = posicao_player + {y = -2}
-	local checar_tartaruga = posicao_objeto:getTile():getGround():getId()
+	local posicaoJogador = player:getPosition()
+	posicaoJogador:sendMagicEffect(CONST_ME_POFF)
+	local posicaoObjeto = posicaoJogador + {y = -2}
+	local checarTartaruga = Tile(posicaoObjeto):getGround():getId()
 	local inFight = getCreatureCondition(player, CONDITION_INFIGHT)
 	if(inFight == false) then
-		if(checar_tartaruga == 5755) then
+		if(checarTartaruga == 5755) then
 			if(item.itemid == 1945) then
 				Item(item.uid):transform(item.itemid + 1)
 			elseif(item.itemid == 1946) then
 				Item(item.uid):transform(item.itemid - 1)
 			end
-			local posicao_player = posicao_player + {y = -3}
-			player:teleportTo(posicao_player, true)
+			local posicaoJogador = posicaoJogador + {y = -3}
+			player:teleportTo(posicaoJogador, true)
 			for i = 0, passos, 1 do
-				addEvent(moverTartaruga, tempo*i, player, -1, posicao_player, i)
+				addEvent(moverTartaruga, tempo*i, player.uid, -1, posicaoJogador, i)
 			end
 		else
 			player:sendTextMessage(MESSAGE_STATUS_SMALL, "Aguarde o retorno da tartaruga.")

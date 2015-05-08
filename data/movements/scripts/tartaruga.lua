@@ -1,4 +1,4 @@
-function onStepIn(cid, item, position, fromPosition)
-	Player(cid):teleportTo(fromPosition)
+function onStepIn(player, item, position, fromPosition)
+	player:teleportTo(fromPosition)
 	return true
 end
