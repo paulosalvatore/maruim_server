@@ -42,7 +42,7 @@
 
 	<action itemid="2405" script="sickle.lua"/>
 
-	<action actionid="1000" script="tartaruga.lua"/>
+	<action actionid="5756" script="tartaruga.lua"/>
 
 	<action itemid="10153" script="golem_disassembler.lua"/>
 

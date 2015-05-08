@@ -39,7 +39,7 @@ function gerarIdAgua()
 		math.random(4664, 4666)
 	}
 	local numeroVetor = math.random(0, 10)
-	if(numeroVetor <= 8) then
+	if numeroVetor <= 8 then
 		objeto = objetos[1]
 	else
 		objeto = objetos[2]
@@ -68,7 +68,7 @@ function criarTartaruga(posicao, passo)
 		objeto = valor[3]
 		posicaoObjeto = posicao + {x = x, y = y - passo}
 		Tile(posicaoObjeto):getGround():transform(objeto)
-		if(passo == -1) then
+		if passo == -1 then
 			posicaoObjeto:sendMagicEffect(efeitos["teleport"])
 		end
 	end
@@ -89,18 +89,18 @@ end
 function moverTartaruga(playerUid, direcaoY, posicao, passo)
 	local player = Player(playerUid)
 	if player then
-		if(passo >= 0) then
+		if passo >= 0 then
 			local posicaoJogador = posicao + {y = direcaoY - passo}
 			player:teleportTo(posicaoJogador)
 		end
 	end
 	criarTartaruga(posicao, passo)
-	if(passo >= 0) then
+	if passo >= 0 then
 		criarAgua(posicao, passo)
 	end
-	if(passo == passos) then
+	if passo == passos then
 		posicao = posicao + {y = -4 - passos}
-		if(isPlayer(player)) then
+		if isPlayer(player) then
 			player:teleportTo(posicao, true)
 			posicao:sendMagicEffect(CONST_ME_TELEPORT)
 		end
@@ -114,11 +114,11 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local posicaoObjeto = posicaoJogador + {y = -2}
 	local checarTartaruga = Tile(posicaoObjeto):getGround():getId()
 	local inFight = getCreatureCondition(player, CONDITION_INFIGHT)
-	if(inFight == false) then
-		if(checarTartaruga == 5755) then
-			if(item.itemid == 1945) then
+	if inFight == false then
+		if checarTartaruga == 5755 then
+			if item.itemid == 9825 then
 				Item(item.uid):transform(item.itemid + 1)
-			elseif(item.itemid == 1946) then
+			elseif item.itemid == 9826 then
 				Item(item.uid):transform(item.itemid - 1)
 			end
 			local posicaoJogador = posicaoJogador + {y = -3}
