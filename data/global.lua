@@ -46,14 +46,6 @@ efeitos = {
 	["teleport"] = CONST_ME_TELEPORT
 }
 
-function Player.allowMovement(self, allow)
-	return self:setStorageValue(Storage.blockMovementStorage, allow and -1 or 1)
-end
-
-function Player.hasAllowMovement(self)
-	return self:getStorageValue(Storage.blockMovementStorage) ~= 1
-end
-
 function Tile.getTileTopTopItem(self)
 	local items = self:getItems()
 	return items[#items].itemid
