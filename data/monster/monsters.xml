@@ -316,6 +316,7 @@
 	<monster name="Thornfire Wolf" file="thornfire wolf.xml"/>
 	<monster name="Tiger" file="tiger.xml"/>
 	<monster name="Toad" file="toad.xml"/>
+	<monster name="Tomb Servant" file="tomb servant.xml"/>
 	<monster name="Tortoise" file="tortoise.xml"/>
 	<monster name="Troll Champion" file="troll champion.xml"/>
 	<monster name="Troll" file="troll.xml"/>
