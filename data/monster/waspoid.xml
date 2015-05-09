@@ -1,4 +1,4 @@
-	<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <monster name="Waspoid" nameDescription="a waspoid" race="venom" experience="830" speed="210" manacost="0">
 	<health now="1100" max="1100"/>
 	<look type="462" corpse="15396"/>
