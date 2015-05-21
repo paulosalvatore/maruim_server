@@ -230,9 +230,10 @@
 	<monster name="Nightmare Scion" file="nightmare scion.xml"/>
 	<monster name="Nightmare" file="nightmare.xml"/>
 	<monster name="Nightstalker" file="nightstalker.xml"/>
+	<monster name="Noble Lion" file="noble lion.xml"/>
 	<monster name="Nomad" file="nomad.xml"/>
-	<monster name="NomadBlue" file="nomadBlue.xml"/>
-	<monster name="NomadFemale" file="nomadFemale.xml"/>
+	<monster name="Nomad Blue" file="nomad blue.xml"/>
+	<monster name="Nomad Female" file="nomad female.xml"/>
 	<monster name="Novice Of The Cult" file="novice of the cult.xml"/>
 	<monster name="Orc Leader" file="orc leader.xml"/>
 	<monster name="Orc Marauder" file="orc marauder.xml"/>
@@ -266,6 +267,7 @@
 	<monster name="Rat" file="rat.xml"/>
 	<monster name="Retching Horror" file="retching horror.xml"/>
 	<monster name="Rift Brood" file="rift brood.xml"/>
+	<monster name="Roaring Lion" file="roaring lion.xml"/>
 	<monster name="Roaring Water Elemental" file="roaring water elemental.xml"/>
 	<monster name="Rorc" file="rorc.xml"/>
 	<monster name="Rot Elemental" file="rot elemental.xml"/>

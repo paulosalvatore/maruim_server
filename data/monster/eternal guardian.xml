@@ -37,7 +37,7 @@
 	</immunities>
 	<voices interval="5000" chance="10">
 		<voice sentence="Zzrkrrch!"/>
-		<voice sentence="&lt;crackle&gt;"/>
+		<voice sentence="<crackle>"/>
 	</voices>
 	<loot>
 		<item id="2149" countmax="1" chance="10000" /><!--  -->
