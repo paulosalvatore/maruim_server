@@ -4,4 +4,5 @@
 	<globalevent type="record" name="PlayerRecord" script="record.lua"/>
 	<globalevent name="Server Save" time="12:00:00" script="serversave.lua" />
 	<globalevent name="jefrey" interval="360000" script="jefrey.lua" />
+	<globalevent name="efeitosAleatorios" interval="200" script="efeitosAleatorios.lua"/>
 </globalevents>
