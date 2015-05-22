@@ -1059,8 +1059,17 @@ void ProtocolGame::parseRotateItem(NetworkMessage& msg)
 
 void ProtocolGame::parseBugReport(NetworkMessage& msg)
 {
-	std::string bug = msg.getString();
-	addGameTask(&Game::playerReportBug, player->getID(), bug);
+	uint8_t category = msg.getByte();
+	std::string message = msg.getString();
+
+	Position position;
+	if (category == BUG_CATEGORY_MAP) {
+		position = msg.getPosition();
+	}
+	else {
+		position = player->getPosition();
+	}
+	addGameTask(&Game::playerReportBug, player->getID(), message, position);
 }
 
 void ProtocolGame::parseDebugAssert(NetworkMessage& msg)
@@ -2428,13 +2437,7 @@ void ProtocolGame::sendAddCreature(const Creature* creature, const Position& pos
 	msg.addDouble(Creature::speedB, 3);
 	msg.addDouble(Creature::speedC, 3);
 
-	// can report bugs?
-	if (player->getAccountType() >= ACCOUNT_TYPE_TUTOR) {
-		msg.addByte(0x01);
-	} else {
-		msg.addByte(0x00);
-	}
-
+	msg.addByte(0x01); // can report bugs?
 	msg.addByte(0x00); // can change pvp framing option
 	msg.addByte(0x00); // expert mode button enabled
 

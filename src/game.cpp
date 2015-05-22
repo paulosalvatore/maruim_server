@@ -4841,22 +4841,17 @@ void Game::kickPlayer(uint32_t playerId, bool displayEffect)
 	player->kickPlayer(displayEffect);
 }
 
-void Game::playerReportBug(uint32_t playerId, const std::string& bug)
+void Game::playerReportBug(uint32_t playerId, const std::string& message, const Position position)
 {
 	Player* player = getPlayerByID(playerId);
 	if (!player) {
 		return;
 	}
 
-	if (player->getAccountType() == ACCOUNT_TYPE_NORMAL) {
-		return;
-	}
-
 	std::string fileName = "data/reports/" + player->getName() + " report.txt";
 	FILE* file = fopen(fileName.c_str(), "a");
 	if (file) {
-		const Position& position = player->getPosition();
-		fprintf(file, "------------------------------\nName: %s [Position X: %u Y: %u Z: %u]\nBug Report: %s\n", player->getName().c_str(), position.x, position.y, position.z, bug.c_str());
+		fprintf(file, "------------------------------\nName: %s [Position: %u, %u, %u]\nBug Report: %s\n", player->getName().c_str(), position.x, position.y, position.z, message.c_str());
 		fclose(file);
 	}
 
