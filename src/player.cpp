@@ -4288,6 +4288,11 @@ bool Player::toggleMount(bool mount)
 			return false;
 		}
 
+		const Outfit* playerOutfit = Outfits::getInstance()->getOutfitByLookType(getSex(), defaultOutfit.lookType);
+		if (!playerOutfit) {
+			return false;
+		}
+
 		uint8_t currentMountId = getCurrentMount();
 		if (currentMountId == 0) {
 			sendOutfitWindow();
