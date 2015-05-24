@@ -1061,15 +1061,31 @@ void ProtocolGame::parseBugReport(NetworkMessage& msg)
 {
 	uint8_t category = msg.getByte();
 	std::string message = msg.getString();
-
 	Position position;
+	std::string showCategory;
+
+	switch (category) {
+		case BUG_CATEGORY_MAP:
+			showCategory = "Mapa";
+			break;
+		case BUG_CATEGORY_TYPO:
+			showCategory = "Digitação";
+			break;
+		case BUG_CATEGORY_TECHNICAL:
+			showCategory = "Técnico";
+			break;
+		case BUG_CATEGORY_OTHER:
+			showCategory = "Outro";
+			break;
+	}
+
 	if (category == BUG_CATEGORY_MAP) {
 		position = msg.getPosition();
-	}
-	else {
+	} else {
 		position = player->getPosition();
 	}
-	addGameTask(&Game::playerReportBug, player->getID(), message, position);
+
+	addGameTask(&Game::playerReportBug, player->getID(), message, position, showCategory);
 }
 
 void ProtocolGame::parseDebugAssert(NetworkMessage& msg)
