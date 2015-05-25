@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Jefrey" script="jefrey.lua" walkinterval="0" floorchange="0">
+<npc name="Kasal Adwez" script="default.lua" walkinterval="0" floorchange="0">
 	<health now="100" max="100"/>
 	<look type="132" head="1" body="19" legs="132" feet="57" addons="2"/>
 	<parameters>
