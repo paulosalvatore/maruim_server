@@ -245,6 +245,7 @@
 	<monster name="Orewalker" file="orewalker.xml"/>
 	<monster name="Overcharged Energy Elemental" file="overcharged energy elemental.xml"/>
 	<monster name="Phantasm" file="phantasm.xml"/>
+	<monster name="Penguin" file="penguin.xml"/>
 	<monster name="Pig" file="pig.xml"/>
 	<monster name="Pirate Buccaneer" file="pirate buccaneer.xml"/>
 	<monster name="Pirate Corsair" file="pirate corsair.xml"/>
