@@ -3,6 +3,7 @@
 	<monster name="Acid Blob" file="acid blob.xml"/>
 	<monster name="Acolyte Of The Cult" file="acolyte of the cult.xml"/>
 	<monster name="Adept Of The Cult" file="adept of the cult.xml"/>
+	<monster name="Amazon" file="amazon.xml"/>
 	<monster name="Ancient Scarab" file="ancient scarab.xml"/>
 	<monster name="Armadile" file="armadile.xml"/>
 	<monster name="Askarak Demon" file="askarak demon.xml"/>
@@ -169,6 +170,7 @@
 	<monster name="Hideous Fungus" file="hideous fungus.xml"/>
 	<monster name="Humongous Fungus" file="humongous fungus.xml"/>
 	<monster name="Hunter" file="hunter.xml"/>
+	<monster name="Husky" file="husky.xml"/>
 	<monster name="Hydra" file="hydra.xml"/>
 	<monster name="Ice Golem" file="ice golem.xml"/>
 	<monster name="Ice Witch" file="ice witch.xml"/>
@@ -296,6 +298,7 @@
 	<monster name="Skunk" file="skunk.xml"/>
 	<monster name="Slime" file="slime.xml"/>
 	<monster name="Smuggler" file="smuggler.xml"/>
+	<monster name="Snake" file="snake.xml"/>
 	<monster name="Son Of Verminor" file="son of verminor.xml"/>
 	<monster name="Souleater" file="souleater.xml"/>
 	<monster name="Spectre" file="spectre.xml"/>
@@ -325,6 +328,7 @@
 	<monster name="Undead Cavebear" file="undead cavebear.xml"/>
 	<monster name="Undead Dragon" file="undead dragon.xml"/>
 	<monster name="Undead Gladiator" file="undead gladiator.xml"/>
+	<monster name="Valkyrie" file="valkyrie.xml"/>
 	<monster name="Vampire Bride" file="vampire bride.xml"/>
 	<monster name="Vampire Lord" file="vampire lord.xml"/>
 	<monster name="Vampire Viscount" file="vampire viscount.xml"/>
@@ -344,6 +348,8 @@
 	<monster name="Wiggler" file="wiggler.xml"/>
 	<monster name="Wild Warrior" file="wild warrior.xml"/>
 	<monster name="Wilting Leaf Golem" file="wilting leaf golem.xml"/>
+	<monster name="Winter Wolf" file="winter wolf.xml"/>
+	<monster name="Witch" file="witch.xml"/>
 	<monster name="Wolf" file="wolf.xml"/>
 	<monster name="Worker Golem" file="worker golem.xml"/>
 	<monster name="Wyrm" file="wyrm.xml"/>
