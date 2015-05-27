@@ -17905,7 +17905,7 @@
 	<item fromid="10039" toid="10040" article="a" name="bellow" />
 	<item fromid="10041" toid="10043" article="a" name="crucible" />
 	<item fromid="10044" toid="10045" article="a" name="lever" />
-	<item id="10046" article="a" name="hat for Eclesius">
+	<item id="10046" article="a" name="wizard's hat">
 		<attribute key="weight" value="110" />
 	</item>
 	<item id="10047" article="a" name="chef's hat">
