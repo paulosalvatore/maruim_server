@@ -20,7 +20,8 @@ local items = {
 			-- tempo = milissegundos,
 			-- chanceSucesso = 1% = 100,
 			-- chanceNeutra = 1% = 100,
-			-- profissao = "nome da profissão"
+			-- profissao = "nome da profissão",
+			-- sons = {"som"}
 		-- },
 	-- }
 	[6277] = {
@@ -490,6 +491,16 @@ local items = {
 			efeitoTeleport = "poff"
 		}
 	},
+	[11754] = {
+		["default"] = {
+			transformar = {11755, 1, "item"},
+			sons = {
+				"NO ONE WILL STOP ME THIS TIME!",
+				"THE POWER IS MINE!",
+				"Mwahaha!"
+			}
+		}
+	},
 	["action"] = {
 	},
 	["unique"] = {
@@ -647,26 +658,26 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			end
 		end
 		if i.transformar ~= nil and table.getn(i.transformar) >= 2 then
+			local transformar = target
 			local itemTransformar = i.transformar[1]
 			local quantidadeTransformar = i.transformar[2]
+			local realizarTransformacao = true
 			if type(quantidadeTransformar) == "table" then
 				quantidadeTransformar = math.random(quantidadeTransformar[1], quantidadeTransformar[2])
 			end
-			local transformar = target
 			if i.transformar[3] ~= nil and i.transformar[3] == "item" then
 				transformar = item
 			end
-			local realizarTransformacao = 1
 			if i.chanceNeutra ~= nil and i.chanceNeutra <= 10000 then
 				local chanceNeutra = i.chanceNeutra+chanceSucesso
 				if (not (chance <= chanceSucesso)) and (chance <= chanceNeutra) then
 					efeito = {"poff"}
-					realizarTransformacao = 0
+					realizarTransformacao = false
 				elseif (not (chance <= chanceSucesso)) then
 					efeito = {"poff"}
 				end
 			end
-			if realizarTransformacao == 1 then
+			if realizarTransformacao then
 				transformar:transform(itemTransformar, quantidadeTransformar)
 				transformar:decay()
 			end
@@ -795,6 +806,9 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 					end
 				end
 			end
+		end
+		if i.sons ~= nil and type(i.sons) == "table" and table.getn(i.sons) > 0 then
+			player:say(i.sons[math.random(1,table.getn(i.sons))], TALKTYPE_ORANGE_1, false, 0, toPosition)
 		end
 		if adicionarEvento == 1 then
 			addEvent(function(posicao, item)

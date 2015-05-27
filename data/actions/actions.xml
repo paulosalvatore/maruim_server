@@ -28,6 +28,7 @@
 	<action itemid="21247" script="geral.lua"/>
 	<action itemid="2093" script="geral.lua"/>
 	<action itemid="2099" script="geral.lua"/>
+	<action itemid="11754" script="geral.lua"/>
 
 	<action actionid="2902" script="geral.lua"/>
 
