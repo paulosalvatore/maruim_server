@@ -6,16 +6,20 @@ if KeywordHandler == nil then
 		callback = nil,
 		parameters = nil,
 		children = nil,
-		parent = nil
+		parent = nil,
+		condition = nil,
+		action = nil
 	}
 
 	-- Created a new keywordnode with the given keywords, callback function and parameters and without any childNodes.
-	function KeywordNode:new(keys, func, param)
+	function KeywordNode:new(keys, func, param, condition, action)
 		local obj = {}
 		obj.keywords = keys
 		obj.callback = func
 		obj.parameters = param
 		obj.children = {}
+		obj.condition = condition
+		obj.action = action
 		setmetatable(obj, self)
 		self.__index = self
 		return obj
@@ -27,20 +31,51 @@ if KeywordHandler == nil then
 	end
 
 	-- Returns true if message contains all patterns/strings found in keywords.
-	function KeywordNode:checkMessage(message)
+	function KeywordNode:checkMessage(cid, message)
 		if self.keywords.callback ~= nil then
-			return self.keywords.callback(self.keywords, message)
+			local ret, data = self.keywords.callback(self.keywords, message)
+			if not ret then
+				return false
+			end
+
+			if self.condition and not self.condition(Player(cid), data) then
+				return false
+			end
+			return true
 		end
 
+		local data = {}
+		local last = 0
 		for i,v in ipairs(self.keywords) do
 			if type(v) == 'string' then
 				local a, b = string.find(message, v)
-				if a == nil or b == nil then
+				if a == nil or b == nil or a < last then
 					return false
 				end
+				if v:sub(1, 1) == '%' then
+					data[#data + 1] = tonumber(message:sub(a, b)) or nil
+				end
+				last = a
 			end
 		end
+
+		if self.condition and not self.condition(Player(cid), data) then
+			return false
+		end
 		return true
+	end
+
+	function KeywordNode:processAction(cid)
+		if not self.action then
+			return
+		end
+
+		local player = Player(cid)
+		if not player then
+			return
+		end
+
+		self.action(player, self.parameters.npcHandler)
 	end
 
 	-- Returns the parent of this node or nil if no such node exists.
@@ -59,8 +94,8 @@ if KeywordHandler == nil then
 	end
 
 	-- Adds a childNode to this node. Creates the childNode based on the parameters (k = keywords, c = callback, p = parameters)
-	function KeywordNode:addChildKeyword(keywords, callback, parameters)
-		local new = KeywordNode:new(keywords, callback, parameters)
+	function KeywordNode:addChildKeyword(keywords, callback, parameters, condition, action)
+		local new = KeywordNode:new(keywords, callback, parameters, condition, action)
 		return self:addChildKeywordNode(new)
 	end
 
@@ -129,11 +164,12 @@ if KeywordHandler == nil then
 	function KeywordHandler:processNodeMessage(node, cid, message)
 		local messageLower = string.lower(message)
 		for i, childNode in pairs(node.children) do
-			if childNode:checkMessage(messageLower) then
+			if childNode:checkMessage(cid, messageLower) then
 				local oldLast = self.lastNode[cid]
 				self.lastNode[cid] = childNode
 				childNode.parent = node -- Make sure node is the parent of childNode (as one node can be parent to several nodes).
 				if childNode:processMessage(cid, message) then
+					childNode:processAction(cid)
 					return true
 				end
 				self.lastNode[cid] = oldLast
@@ -153,14 +189,14 @@ if KeywordHandler == nil then
 	end
 
 	-- Adds a new keyword to the root keywordnode. Returns the new node.
-	function KeywordHandler:addKeyword(keys, callback, parameters)
-		return self:getRoot():addChildKeyword(keys, callback, parameters)
+	function KeywordHandler:addKeyword(keys, callback, parameters, condition, action)
+		return self:getRoot():addChildKeyword(keys, callback, parameters, condition, action)
 	end
 	
 	-- Adds multiples new keywords to the root keywordnode.
-	function KeywordHandler:addKeywords(keys, callback, parameters)
+	function KeywordHandler:addKeywords(keys, callback, parameters, condition, action)
 		for a,b in pairs(keys) do
-			self:addKeyword(b, callback, parameters)
+			self:addKeyword(b, callback, parameters, condition, action)
 		end
 		return true
 	end
