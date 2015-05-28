@@ -1,4 +1,3 @@
-local conditions = {CONDITION_POISON, CONDITION_FIRE, CONDITION_ENERGY, CONDITION_PARALYZE, CONDITION_DRUNK, CONDITION_DROWN, CONDITION_FREEZING, CONDITION_DAZZLED, CONDITION_CURSED, CONDITION_BLEEDING}
 local outfit = {lookType = 267, lookHead = 0, lookBody = 0, lookLegs = 0, lookFeet = 0, lookTypeEx = 0, lookAddons = 0}
 function onStepIn(player, item, position, fromPosition)
 	if not player then
@@ -8,8 +7,8 @@ function onStepIn(player, item, position, fromPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_WATERSPLASH)
 		doSetCreatureOutfit(player, outfit, -1)
 	end
-	for i, v in ipairs(conditions) do
-		if(getCreatureCondition(player, v) == TRUE) then
+	for i, v in ipairs(conditionsHealing) do
+		if(getCreatureCondition(player, v) == true) then
 			doRemoveCondition(player, v)
 		end
 	end

@@ -46,6 +46,8 @@ efeitos = {
 	["teleport"] = CONST_ME_TELEPORT
 }
 
+conditionsHealing = {CONDITION_POISON, CONDITION_FIRE, CONDITION_ENERGY, CONDITION_PARALYZE, CONDITION_DRUNK, CONDITION_DROWN, CONDITION_FREEZING, CONDITION_DAZZLED, CONDITION_CURSED, CONDITION_BLEEDING}
+
 function Tile.getTileTopTopItem(self)
 	local items = self:getItems()
 	return items[#items].itemid
