@@ -1,5 +1,3 @@
--- Advanced NPC System by Jiddo
-
 if KeywordHandler == nil then
 	KeywordNode = {
 		keywords = nil,
@@ -97,6 +95,14 @@ if KeywordHandler == nil then
 	function KeywordNode:addChildKeyword(keywords, callback, parameters, condition, action)
 		local new = KeywordNode:new(keywords, callback, parameters, condition, action)
 		return self:addChildKeywordNode(new)
+	end
+
+	-- Adds multiples childNodes to this node.
+	function KeywordNode:addChildKeywords(keywords, callback, parameters, condition, action)
+		for a,b in pairs(keywords) do
+			self:addChildKeywordNode(KeywordNode:new(b, callback, parameters, condition, action))
+		end
+		return true
 	end
 
 	-- Adds a pre-created childNode to this node. Should be used for example if several nodes should have a common child.

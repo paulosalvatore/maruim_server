@@ -2,15 +2,18 @@
 
 if Modules == nil then
 	-- default words for greeting and ungreeting the npc. Should be a table containing all such words.
-	FOCUS_GREETWORDS = {"hi", "hello"}
-	FOCUS_FAREWELLWORDS = {"bye", "farewell"}
+	FOCUS_GREETWORDS = {"hi", "hello", "oi", "olá"}
+	FOCUS_FAREWELLWORDS = {"bye", "farewell", "adeus", "tchau"}
 
 	-- The words for requesting trade window.
-	SHOP_TRADEREQUEST = {"trade"}
+	SHOP_TRADEREQUEST = {"trade", "negociar"}
 
 	-- The word for accepting/declining an offer. CAN ONLY CONTAIN ONE FIELD! Should be a table with a single string value.
-	SHOP_YESWORD = {"yes"}
-	SHOP_NOWORD = {"no"}
+	SHOP_YESWORD = {'yes'}
+	SHOP_NOWORD = {'no'}
+
+	SHOP_YESWORDS = {"yes", "sim"}
+	SHOP_NOWORDS = {"no", "não", "nao"}
 
 	-- Pattern used to get the amount of an item a player wants to buy/sell.
 	PATTERN_COUNT = "%d+"
@@ -77,18 +80,18 @@ if Modules == nil then
 		if player:isPremium() or not parameters.premium then
 			local promotion = player:getVocation():getPromotion()
 			if player:getStorageValue(STORAGEVALUE_PROMOTION) == 1 then
-				npcHandler:say("You are already promoted!", cid)
+				npcHandler:say("Você já está promovido!", cid)
 			elseif player:getLevel() < parameters.level then
-				npcHandler:say("I am sorry, but I can only promote you once you have reached level " .. parameters.level .. ".", cid)
+				npcHandler:say("Desculpe, mas eu só posso promover aqueles que chegaram no nível " .. parameters.level .. ".", cid)
 			elseif not player:removeMoney(parameters.cost) then
-				npcHandler:say("You do not have enough money!", cid)
+				npcHandler:say("Você não possui dinheiro suficiente!", cid)
 			else
 				npcHandler:say(parameters.text, cid)
 				player:setVocation(promotion)
 				player:setStorageValue(STORAGEVALUE_PROMOTION, 1)
 			end
 		else
-			npcHandler:say("You need a premium account in order to get promoted.", cid)
+			npcHandler:say("Você precisa ter uma premium account em dia para ser promovido.", cid)
 		end
 		npcHandler:resetNpc(cid)
 		return true
@@ -107,17 +110,17 @@ if Modules == nil then
 		local player = Player(cid)
 		if player:isPremium() or not parameters.premium then
 			if player:hasLearnedSpell(parameters.spellName) then
-				npcHandler:say("You already know this spell.", cid)
+				npcHandler:say("Você já aprendeu esse feitiço.", cid)
 			elseif not player:canLearnSpell(parameters.spellName) then
-				npcHandler:say("You cannot learn this spell.", cid)
+				npcHandler:say("Você não pode aprender esse feitiço.", cid)
 			elseif not player:removeMoney(parameters.price) then
-				npcHandler:say("You do not have enough money, this spell costs " .. parameters.price .. " gold.", cid)
+				npcHandler:say("Você não possui dinheiro suficiente, esse feitiço custa " .. parameters.price .. " gold.", cid)
 			else
-				npcHandler:say("You have learned " .. parameters.spellName .. ".", cid)
+				npcHandler:say("Você aprendeu " .. parameters.spellName .. ".", cid)
 				player:learnSpell(parameters.spellName)
 			end
 		else
-			npcHandler:say("You need a premium account in order to buy " .. parameters.spellName .. ".", cid)
+			npcHandler:say("Você precisa de uma premium account em dia para comprar " .. parameters.spellName .. ".", cid)
 		end
 		npcHandler:resetNpc(cid)
 		return true
@@ -136,15 +139,15 @@ if Modules == nil then
 		local player = Player(cid)
 		if player:isPremium() or not parameters.premium then
 			if player:hasBlessing(parameters.bless) then
-				npcHandler:say("Gods have already blessed you with this blessing!", cid)
+				npcHandler:say("Os Deuses já te abençoaram com essa bênção!", cid)
 			elseif not player:removeMoney(parameters.cost) then
-				npcHandler:say("You don't have enough money for blessing.", cid)
+				npcHandler:say("Você não possui dinheiro suficiente para receber essa bênção.", cid)
 			else
 				player:addBlessing(parameters.bless)
-				npcHandler:say("You have been blessed by one of the five gods!", cid)
+				npcHandler:say("Você recebeu uma das cinco bênçãos dos Deuses!", cid)
 			end
 		else
-			npcHandler:say("You need a premium account in order to be blessed.", cid)
+			npcHandler:say("Você precisa de uma premium account em dia para ser abençoado.", cid)
 		end
 		npcHandler:resetNpc(cid)
 		return true
@@ -163,13 +166,13 @@ if Modules == nil then
 		local player = Player(cid)
 		if player:isPremium() or not parameters.premium then
 			if player:isPzLocked() then
-				npcHandler:say("First get rid of those blood stains! You are not going to ruin my vehicle!", cid)
+				npcHandler:say("Primeiro se livre dessas manchas de sangue! Você não vai estragar meu veículo!", cid)
 			elseif parameters.level and player:getLevel() < parameters.level then
-				npcHandler:say("You must reach level " .. parameters.level .. " before I can let you go there.", cid)
+				npcHandler:say("Você precisa chegar ao nível " .. parameters.level .. " antes de eu levar você para lá.", cid)
 			elseif not player:removeMoney(parameters.cost) then
-				npcHandler:say("You don't have enough money.", cid)
+				npcHandler:say("Você não possui dinheiro suficiente!", cid)
 			else
-				npcHandler:say(parameters.msg or "Set the sails!", cid)
+				npcHandler:say(parameters.msg or "Icem as velas!", cid)
 				npcHandler:releaseFocus(cid)
 
 				local destination = Position(parameters.destination)
@@ -180,7 +183,7 @@ if Modules == nil then
 				destination:sendMagicEffect(CONST_ME_TELEPORT)
 			end
 		else
-			npcHandler:say("I'm sorry, but you need a premium account in order to travel onboard our ships.", cid)
+			npcHandler:say("Você precisa de uma premium account em dia para viajar a bordo de nosso navio.", cid)
 		end
 		npcHandler:resetNpc(cid)
 		return true
@@ -390,7 +393,7 @@ if Modules == nil then
 		keywords[#keywords + 1] = name
 
 		local keywords2 = {}
-		keywords2[#keywords2 + 1] = "bring me to " .. name
+		keywords2[#keywords2 + 1] = "me leve para " .. name
 		local node = self.npcHandler.keywordHandler:addKeyword(keywords, TravelModule.travel, parameters)
 		self.npcHandler.keywordHandler:addKeyword(keywords2, TravelModule.bringMeTo, parameters)
 		node:addChildKeywordNode(self.yesNode)
@@ -398,8 +401,8 @@ if Modules == nil then
 
 		if npcs_loaded_travel[getNpcCid()] == nil then
 			npcs_loaded_travel[getNpcCid()] = getNpcCid()
-			self.npcHandler.keywordHandler:addKeyword({'yes'}, TravelModule.onConfirm, {module = self})
-			self.npcHandler.keywordHandler:addKeyword({'no'}, TravelModule.onDecline, {module = self})
+			self.npcHandler.keywordHandler:addKeywords({{"yes"}, {"sim"}}, TravelModule.onConfirm, {module = self})
+			self.npcHandler.keywordHandler:addKeywords({{"no"}, {"não"}, {"nao"}}, TravelModule.onDecline, {module = self})
 		end
 	end
 
@@ -420,7 +423,7 @@ if Modules == nil then
 		local destination = parameters.destination
 		local premium = parameters.premium
 
-		module.npcHandler:say("Do you want to travel to " .. keywords[1] .. " for " .. cost .. " gold coins?", cid)
+		module.npcHandler:say("Você deseja viajar para " .. keywords[1] .. " por " .. cost .. " gold coins?", cid)
 		return true
 	end
 
@@ -442,11 +445,11 @@ if Modules == nil then
 		local player = Player(cid)
 		if player:isPremium() or not shop_premium[cid] then
 			if not player:removeMoney(cost) then
-				npcHandler:say("You do not have enough money!", cid)
+				npcHandler:say("Você não possui dinheiro suficiente!", cid)
 			elseif player:isPzLocked(cid) then
-				npcHandler:say("Get out of there with this blood.", cid)
+				npcHandler:say("Saia já daqui com essas manchas de sangue.", cid)
 			else
-				npcHandler:say("It was a pleasure doing business with you.", cid)
+				npcHandler:say("Foi um prazer negociar com você.", cid)
 				npcHandler:releaseFocus(cid)
 
 				local position = player:getPosition()
@@ -456,7 +459,7 @@ if Modules == nil then
 				destination:sendMagicEffect(CONST_ME_TELEPORT)
 			end
 		else
-			npcHandler:say("I can only allow premium players to travel there.", cid)
+			npcHandler:say("Eu tenho permissão apenas para levar jogadores premium para lá.", cid)
 		end
 
 		npcHandler:resetNpc(cid)
@@ -505,13 +508,13 @@ if Modules == nil then
 			return false
 		end
 
-		local msg = "I can bring you to "
+		local msg = "Eu posso te levar para "
 		--local i = 1
 		local maxn = #module.destinations
 		for i, destination in pairs(module.destinations) do
 			msg = msg .. destination
 			if i == maxn - 1 then
-				msg = msg .. " and "
+				msg = msg .. " e "
 			elseif i == maxn then
 				msg = msg .. "."
 			else
@@ -716,8 +719,12 @@ if Modules == nil then
 	-- Initializes the module and associates handler to it.
 	function ShopModule:init(handler)
 		self.npcHandler = handler
-		self.yesNode = KeywordNode:new(SHOP_YESWORD, ShopModule.onConfirm, {module = self})
-		self.noNode = KeywordNode:new(SHOP_NOWORD, ShopModule.onDecline, {module = self})
+		for a, b in pairs(SHOP_YESWORDS) do
+			self.yesNode = KeywordNode:new({b}, ShopModule.onConfirm, {module = self})
+		end
+		for a, b in pairs(SHOP_NOWORDS) do
+			self.noNode = KeywordNode:new({b}, ShopModule.onDecline, {module = self})
+		end
 		self.noText = handler:getMessage(MESSAGE_DECLINE)
 
 		if SHOPMODULE_MODE ~= SHOPMODULE_MODE_TALK then
@@ -798,10 +805,10 @@ if Modules == nil then
 						subType = itemSubType or 1
 					}
 
-				keywords = {}
-				keywords[#keywords + 1] = "buy"
-				keywords[#keywords + 1] = name
-				local node = self.npcHandler.keywordHandler:addKeyword(keywords, ShopModule.tradeItem, parameters)
+				local node = self.npcHandler.keywordHandler:addKeyword({"buy", name}, ShopModule.tradeItem, parameters)
+				node:addChildKeywordNode(self.yesNode)
+				node:addChildKeywordNode(self.noNode)
+				local node = self.npcHandler.keywordHandler:addKeyword({"comprar", name}, ShopModule.tradeItem, parameters)
 				node:addChildKeywordNode(self.yesNode)
 				node:addChildKeywordNode(self.noNode)
 			end
@@ -809,8 +816,8 @@ if Modules == nil then
 
 		if npcs_loaded_shop[getNpcCid()] == nil then
 			npcs_loaded_shop[getNpcCid()] = getNpcCid()
-			self.npcHandler.keywordHandler:addKeyword({'yes'}, ShopModule.onConfirm, {module = self})
-			self.npcHandler.keywordHandler:addKeyword({'no'}, ShopModule.onDecline, {module = self})
+			self.npcHandler.keywordHandler:addKeywords({{"yes"}, {"sim"}}, ShopModule.onConfirm, {module = self})
+			self.npcHandler.keywordHandler:addKeywords({{"no"}, {"não"}, {"nao"}}, ShopModule.onDecline, {module = self})
 		end
 	end
 
@@ -853,10 +860,10 @@ if Modules == nil then
 						subType = subType or 1
 					}
 
-				keywords = {}
-				keywords[#keywords + 1] = "buy"
-				keywords[#keywords + 1] = name
-				local node = self.npcHandler.keywordHandler:addKeyword(keywords, ShopModule.tradeItem, parameters)
+				local node = self.npcHandler.keywordHandler:addKeyword({"buy", name}, ShopModule.tradeItem, parameters)
+				node:addChildKeywordNode(self.yesNode)
+				node:addChildKeywordNode(self.noNode)
+				local node = self.npcHandler.keywordHandler:addKeyword({"comprar", name}, ShopModule.tradeItem, parameters)
 				node:addChildKeywordNode(self.yesNode)
 				node:addChildKeywordNode(self.noNode)
 			end
@@ -892,10 +899,10 @@ if Modules == nil then
 						realName = realName or getItemName(itemid)
 					}
 
-				keywords = {}
-				table.insert(keywords, "sell")
-				table.insert(keywords, name)
-				local node = self.npcHandler.keywordHandler:addKeyword(keywords, ShopModule.tradeItem, parameters)
+				local node = self.npcHandler.keywordHandler:addKeyword({"sell", name}, ShopModule.tradeItem, parameters)
+				node:addChildKeywordNode(self.yesNode)
+				node:addChildKeywordNode(self.noNode)
+				local node = self.npcHandler.keywordHandler:addKeyword({"vender", name}, ShopModule.tradeItem, parameters)
 				node:addChildKeywordNode(self.yesNode)
 				node:addChildKeywordNode(self.noNode)
 			end

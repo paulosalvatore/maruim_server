@@ -23,15 +23,18 @@ if NpcSystem == nil then
 	-- Global npc constants:
 
 	-- Greeting and unGreeting keywords. For more information look at the top of modules.lua
-	FOCUS_GREETWORDS = {'hi', 'hello'}
-	FOCUS_FAREWELLWORDS = {'bye', 'farewell'}
+	FOCUS_GREETWORDS = {'hi', 'hello', 'oi', 'ola', 'olá'}
+	FOCUS_FAREWELLWORDS = {'bye', 'farewell', 'adeus', 'tchau'}
 
 	-- The word for requesting trade window. For more information look at the top of modules.lua
-	SHOP_TRADEREQUEST = {'trade'}
+	SHOP_TRADEREQUEST = {'trade', 'negociar'}
 
 	-- The word for accepting/declining an offer. CAN ONLY CONTAIN ONE FIELD! For more information look at the top of modules.lua
 	SHOP_YESWORD = {'yes'}
 	SHOP_NOWORD = {'no'}
+
+	SHOP_YESWORDS = {'yes', 'sim'}
+	SHOP_NOWORDS = {'no', 'não', 'nao'}
 
 	-- Pattern used to get the amount of an item a player wants to buy/sell.
 	PATTERN_COUNT = '%d+'
