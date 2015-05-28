@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Drorist Suhariux" script="reputation.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="146" head="120" body="120" legs="116" feet="116" addons="3"/>
+	<parameters>
+	</parameters>
+</npc>
