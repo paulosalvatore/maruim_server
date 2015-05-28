@@ -8,7 +8,7 @@ function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)
 function onThink()				npcHandler:onThink()					end
 
 
-keywordHandler:addKeyword({{'heal'}, {'curar'}}, StdModule.say, {npcHandler = npcHandler, text = 'Você está ferida, criança. Eu irei curá-la.'},
+keywordHandler:addKeywords({{'heal'}, {'curar'}}, StdModule.say, {npcHandler = npcHandler, text = 'Você está ferida, criança. Eu irei curá-la.'},
 	function(player) return player:getHealth() < math.max(40, math.floor(player:getMaxHealth()*0.1)) end,
 	function(player)
 		local playerHP = player:getHealth()
