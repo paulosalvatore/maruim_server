@@ -1,5 +1,5 @@
 function onSay(player, words, param)
-	if not player:getGroup():getAccess() then
+	if not player:getGroup():getAccess() or tonumber(param) == nil then
 		return true
 	end
 
