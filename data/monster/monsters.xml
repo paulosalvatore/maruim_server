@@ -39,6 +39,10 @@
 	<monster name="Braindeath" file="braindeath.xml"/>
 	<monster name="Brimstone Bug" file="brimstone bug.xml"/>
 	<monster name="Bug" file="bug.xml"/>
+	<monster name="Butterfly" file="butterfly.xml"/>
+	<monster name="Blue Butterfly" file="blue butterfly.xml"/>
+	<monster name="Red Butterfly" file="red butterfly.xml"/>
+	<monster name="Yellow Butterfly" file="yellow butterfly.xml"/>
 	<monster name="Carniphila" file="carniphila.xml"/>
 	<monster name="Carrion Worm" file="carrion worm.xml"/>
 	<monster name="Cave Rat" file="cave rat.xml"/>
@@ -308,6 +312,7 @@
 	<monster name="Spider" file="spider.xml"/>
 	<monster name="Spidris Elite" file="spidris elite.xml"/>
 	<monster name="Spidris" file="spidris.xml"/>
+	<monster name="Spit Nettle" file="spit nettle.xml"/>
 	<monster name="Spitter" file="spitter.xml"/>
 	<monster name="Stalker" file="stalker.xml"/>
 	<monster name="Stampor" file="stampor.xml"/>
