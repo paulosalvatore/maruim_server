@@ -2,6 +2,7 @@ dofile('data/lib/lib.lua')
 dofile('data/lib/050-functions.lua')
 dofile('data/lib/051-storages.lua')
 dofile('data/lib/070-craftsystem.lua')
+dofile('data/lib/080-npcs.lua')
 
 ropeSpots = {384, 418, 8278, 8592, 13189, 14435, 14436, 15635, 19518}
 
