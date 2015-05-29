@@ -4664,7 +4664,7 @@
 	<item id="2711" article="a" name="dwarf tree" />
 	<item id="2712" article="a" name="pine" />
 	<item fromid="2713" toid="2720" article="a" name="dead tree" />
-	<item id="2721" name="old rush wood" />
+	<item id="2721" name="rush wood" />
 	<item id="2722" article="an" name="old tree" />
 	<item fromid="2723" toid="2724" article="a" name="cactus" />
 	<item id="2725" article="a" name="palm" />
