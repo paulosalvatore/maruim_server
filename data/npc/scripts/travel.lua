@@ -11,6 +11,7 @@ local npc = Npc()
 local npcName = npc:getName()
 local configNpc = barqueiros[npcName]
 local destinosNpc = configNpc.destinos
+
 for a, b in pairs(destinosNpc) do
 	local destino = destinos[b]
 	local levelNecessario = 0
@@ -22,11 +23,5 @@ for a, b in pairs(destinosNpc) do
 		travelNode:addChildKeywords({{'yes'}, {'sim'}}, StdModule.travel, {npcHandler = npcHandler,  level = levelNecessario, cost = destino.custo, destination = destino.posicao})
 		travelNode:addChildKeywords({{'no'}, {'não'}, {'nao'}}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'Sem problemas! Nós iremos serví-lo algum dia.'})
 end
-
-
-
--- npcHandler:setMessage(MESSAGE_GREET, 'Seja bem-vindo, jovem |PLAYERNAME|! Se você está gravemente ferido ou envenenado, eu posso te {curar} sem cobrar nada.')
--- npcHandler:setMessage(MESSAGE_WALKAWAY, 'Lembre-se: Se você está gravemente ferido ou envenenado, eu posso te {curar} sem cobrar nada.')
--- npcHandler:setMessage(MESSAGE_FAREWELL, 'Que os Deuses estejam com você, |PLAYERNAME|!')
 
 npcHandler:addModule(FocusModule:new())
