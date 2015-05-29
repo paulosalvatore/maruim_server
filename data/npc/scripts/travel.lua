@@ -10,6 +10,9 @@ function onThink()				npcHandler:onThink()					end
 local npc = Npc()
 local npcName = npc:getName()
 local configNpc = barqueiros[npcName]
+if configNpc == nil then
+	return
+end
 local destinosNpc = configNpc.destinos
 
 for a, b in pairs(destinosNpc) do
