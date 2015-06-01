@@ -220,8 +220,8 @@
 		<monster name="Efreet" x="-1" y="0" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="1450" centery="1516" centerz="5" radius="2">
-		<monster name="Efreet" x="2" y="-2" z="5" spawntime="0" />
-		<monster name="Efreet" x="-2" y="2" z="5" spawntime="0" />
+		<monster name="Efreet" x="2" y="-2" z="5" spawntime="60" />
+		<monster name="Efreet" x="-2" y="2" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="1442" centery="1517" centerz="5" radius="2">
 		<monster name="Efreet" x="-1" y="-2" z="5" spawntime="60" />
@@ -2137,16 +2137,16 @@
 		<monster name="Bug" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="519" centery="987" centerz="7" radius="1">
-		<monster name="Bug" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Wasp" x="-1" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="546" centery="988" centerz="7" radius="1">
 		<monster name="Bug" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="515" centery="990" centerz="7" radius="1">
-		<monster name="Rabbit" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Wasp" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="520" centery="991" centerz="7" radius="1">
-		<monster name="Rabbit" x="0" y="0" z="7" spawntime="60" />
+	<spawn centerx="521" centery="991" centerz="7" radius="1">
+		<monster name="Wasp" x="1" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="534" centery="995" centerz="7" radius="1">
 		<monster name="Rabbit" x="-1" y="0" z="7" spawntime="60" />
@@ -8227,9 +8227,6 @@
 	<spawn centerx="526" centery="946" centerz="8" radius="1">
 		<monster name="Snake" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="399" centery="947" centerz="8" radius="1">
-		<monster name="Wolf" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
 	<spawn centerx="491" centery="947" centerz="8" radius="1">
 		<monster name="Rat" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -8238,6 +8235,9 @@
 	</spawn>
 	<spawn centerx="542" centery="947" centerz="8" radius="1">
 		<monster name="Snake" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="397" centery="948" centerz="8" radius="1">
+		<monster name="Wolf" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="425" centery="948" centerz="8" radius="1">
 		<monster name="Wolf" x="0" y="0" z="8" spawntime="60" />
@@ -8390,6 +8390,9 @@
 	</spawn>
 	<spawn centerx="635" centery="983" centerz="8" radius="1">
 		<npc name="Azervia Dykry" x="-1" y="0" z="8" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="519" centery="984" centerz="8" radius="1">
+		<monster name="Snake" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="533" centery="987" centerz="8" radius="1">
 		<monster name="Snake" x="-1" y="0" z="8" spawntime="60" />
