@@ -248,6 +248,7 @@
 	<monster name="Orc Rider" file="orc rider.xml"/>
 	<monster name="Orc Shaman" file="orc shaman.xml"/>
 	<monster name="Orc Warlord" file="orc warlord.xml"/>
+	<monster name="Orc" file="orc.xml"/>
 	<monster name="Orewalker" file="orewalker.xml"/>
 	<monster name="Overcharged Energy Elemental" file="overcharged energy elemental.xml"/>
 	<monster name="Phantasm" file="phantasm.xml"/>
