@@ -513,7 +513,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			i = config[item.itemid]
 		elseif config["action"][item.actionid] then
 			i = config["action"][item.actionid]
-		elseif config["unique"][item.actionid] then
+		elseif config["unique"][item.uid] then
 			i = config["unique"][item.uid]
 		end
 		local adicionarEvento = false
