@@ -5,7 +5,7 @@ local ice_shrine = {7508, 7509, 7510, 7511}
 local fire_shrine = {7504, 7505, 7506, 7507}
 local earth_shrine = {7516, 7517, 7518, 7519}
 local energy_shrine = {7512, 7513, 7514, 7515}
-local items = {
+local config = {
 	-- [item_id] = {
 		-- [target_id ou "fire_source" ou "fruits" ou "sparkling" ou "default"] = {
 			-- itensPlayer = {{id, quantidade ou {min, max}}},
@@ -507,32 +507,32 @@ local items = {
 	}
 }
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if ((items[item.itemid]) or (items["action"][item.actionid]) or (items["unique"][item.uid])) then
+	if config[item.itemid] or config["action"][item.actionid] or config["unique"][item.uid] then
 		local i
-		if (items[item.itemid]) then
-			i = items[item.itemid]
-		elseif (items["action"][item.actionid]) then
-			i = items["action"][item.actionid]
-		elseif (items["unique"][item.actionid]) then
-			i = items["unique"][item.uid]
+		if config[item.itemid] then
+			i = config[item.itemid]
+		elseif config["action"][item.actionid] then
+			i = config["action"][item.actionid]
+		elseif config["unique"][item.actionid] then
+			i = config["unique"][item.uid]
 		end
-		local adicionarEvento = 0
+		local adicionarEvento = false
 		if i["default"] then
 			i = i["default"]
 		elseif isInArray(sparkling, target.itemid) and #Tile(toPosition):getItems() == 2 and i["sparkling"][Tile(toPosition):getTileTopTopItem()] then
 			i = i["sparkling"][Tile(toPosition):getTileTopTopItem()]
-			adicionarEvento = 1
-		elseif (isInArray(fire_source, target.itemid)) and (i["fire_source"]) then
+			adicionarEvento = true
+		elseif isInArray(fire_source, target.itemid) and i["fire_source"] then
 			i = i["fire_source"]
-		elseif (isInArray(fruits, target.itemid)) and (i["fruits"]) then
+		elseif isInArray(fruits, target.itemid) and i["fruits"] then
 			i = i["fruits"]
-		elseif (isInArray(ice_shrine, target.itemid)) and (i["ice_shrine"]) then
+		elseif isInArray(ice_shrine, target.itemid) and i["ice_shrine"] then
 			i = i["ice_shrine"]
-		elseif (isInArray(fire_shrine, target.itemid)) and (i["fire_shrine"]) then
+		elseif isInArray(fire_shrine, target.itemid) and i["fire_shrine"] then
 			i = i["fire_shrine"]
-		elseif (isInArray(earth_shrine, target.itemid)) and (i["earth_shrine"]) then
+		elseif isInArray(earth_shrine, target.itemid) and i["earth_shrine"] then
 			i = i["earth_shrine"]
-		elseif (isInArray(energy_shrine, target.itemid)) and (i["energy_shrine"]) then
+		elseif isInArray(energy_shrine, target.itemid) and i["energy_shrine"] then
 			i = i["energy_shrine"]
 		elseif i[target.itemid] then
 			i = i[target.itemid]
@@ -704,7 +704,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			if i.chanceNeutra ~= nil and i.chanceNeutra <= 10000 then
 				local chanceNeutra = i.chanceNeutra+chanceSucesso
 				if (not (chance <= chanceSucesso)) and (chance <= chanceNeutra) then
-					adicionarEvento = 0
+					adicionarEvento = false
 					efeito = {"poff"}
 				elseif (not (chance <= chanceSucesso)) then
 					efeito = {"poff"}
@@ -810,7 +810,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		if i.sons ~= nil and type(i.sons) == "table" and table.getn(i.sons) > 0 then
 			player:say(i.sons[math.random(1,table.getn(i.sons))], TALKTYPE_ORANGE_1, false, 0, toPosition)
 		end
-		if adicionarEvento == 1 then
+		if adicionarEvento then
 			addEvent(function(posicao, item)
 			Game.createItem(item, 1, posicao)
 			end, i.tempo, toPosition, target.itemid)
