@@ -64,21 +64,44 @@ destinos = {
 		posicao = {x = 1513, y = 1753, z = 8},
 		custo = 100,
 		levelNecessario = 0
+	},
+	["dragon_mugulu"] = {
+		nome = "Mugulu",
+		posicao = {x = 744, y = 1688, z = 7},
+		custo = 100,
+		levelNecessario = 0
+	},
+	["mugulu_dragon"] = {
+		nome = "Ilha dos Dragões",
+		posicao = {x = 704, y = 1241, z = 7},
+		custo = 100,
+		levelNecessario = 0
+	},
+	["ilha_inicial_parte_alta_baixa"] = {
+		nome = "Parte Baixa da Ilha",
+		posicao = {x = 601, y = 1085, z = 7},
+		custo = 100,
+		levelNecessario = 0
+	},
+	["ilha_inicial_parte_baixa_alta"] = {
+		nome = "Parte Alta da Ilha",
+		posicao = {x = 587, y = 1018, z = 7},
+		custo = 100,
+		levelNecessario = 0
 	}
 }
+-- Tipos Aceitos: navio, tapete, barco
 barqueiros = {
-	["Barqueiro"] = {
+	["Rafter Demarm"] = {
 		destinos = {
-			"ilha_inicial",
-			"ilha_testes"
+			"ilha_inicial_parte_alta_baixa"
 		},
-		tipo_viagem = "navio"
+		tipo_viagem = "barco"
 	},
-	["Barqueiro2"] = {
+	["Rafter Bous"] = {
 		destinos = {
-			"ilha_inicial",
-			"ilha_testes"
+			"ilha_inicial_parte_baixa_alta"
 		},
-		tipo_viagem = "tapete"
+		tipo_viagem = "barco"
 	}
 }
