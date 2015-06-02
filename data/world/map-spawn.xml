@@ -2212,7 +2212,7 @@
 	<spawn centerx="595" centery="1005" centerz="7" radius="1">
 		<monster name="Poison Spider" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="587" centery="1018" centerz="7" radius="1">
+	<spawn centerx="593" centery="1018" centerz="7" radius="1">
 		<npc name="Rafter Demarm" x="0" y="1" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="612" centery="1058" centerz="7" radius="1">
