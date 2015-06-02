@@ -66,6 +66,15 @@
 	<action itemid="9898" script="crafting.lua"/>
 
 	<!-- Quests -->
+	<action itemid="1740" script="quests.lua"/>
+	<action fromid="1747" toid="1749" script="quests.lua"/>
+	<action fromid="7160" toid="7161" script="quests.lua"/>
+	<action fromid="12664" toid="12665" script="quests.lua"/>
+	<action fromid="12796" toid="12797" script="quests.lua"/>
+	<action fromid="13902" toid="13903" script="quests.lua"/>
+	<action fromid="15640" toid="15642" script="quests.lua"/>
+	<action fromid="18472" toid="18474" script="quests.lua"/>
+	<action itemid="18510" script="quests.lua"/>
 	<action uniqueid="2700" script="quests.lua"/>
 	<action uniqueid="2800" script="quests.lua"/>
 

@@ -24210,6 +24210,7 @@
 		<attribute key="description" value="A true Heart of the Sea, cut by Deeplings in depths of deepest black." />
 		<attribute key="weight" value="970" />
 	</item>
+	<item fromid="15640" toid="15642" article="a" name="chest" />
 	<item id="15643" article="a" name="hive bow">
 		<attribute key="weight" value="4600" />
 		<attribute key="slotType" value="two-handed" />
@@ -25795,6 +25796,7 @@
 		<attribute key="weight" value="45" />
 		<attribute key="description" value="Such crystals are used to charge the teleporters to the warzones." />
 	</item>
+	<item id="18510" article="a" name="chest" />
 	<item id="18511" article="a" name="music box">
 		<attribute key="weight" value="200" />
 		<attribute key="description" value="It may have some charming effects when played to certain creatures, but disappears in the process." />

@@ -24,7 +24,7 @@ local config = {
 }
 
 function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if config["action"][item.actionid] or config["unique"][item.uid] then
+	if config["action"][item.actionid] or config["unique"][item.uid] or item.uid ~= nil then
 		local i
 		local storage
 		if config["action"][item.actionid] then
@@ -32,6 +32,9 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			storage = item.actionid
 		elseif config["unique"][item.uid] then
 			i = config["unique"][item.uid]
+			storage = item.uid
+		elseif item.uid ~= nil then
+			i = {recompensa = {{item.uid, 1}}}
 			storage = item.uid
 		end
 		if i.storage then
@@ -57,7 +60,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 					adicionarItem = adicionarItem:addItem(container, 1)
 					exibirNome = ItemType(container):getName()
 				elseif table.getn(i.recompensa) == 1 then
-					exibirNome = ItemType(i.recompensa[1]):getName()
+					exibirNome = ItemType(i.recompensa[1][1]):getName()
 				end
 				for a, b in pairs(i.recompensa) do
 					adicionarItem:addItem(b[1], b[2])
@@ -74,6 +77,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		else
 			player:sendTextMessage(MESSAGE_INFO_DESCR, "Está vazio.")
 		end
+		return true
 	end
-	return true
 end
