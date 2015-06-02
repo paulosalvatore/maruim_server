@@ -3,7 +3,7 @@ local config = {
 		-- [action_id ou unique_id] = {
 			-- recompensa = {{id, quantidade}},
 			-- storage = valor do storage (informar apenas se for diferente da action_id ou unique_id),
-			-- chevarValor = valor (informar apenas se for diferente de -1),
+			-- checarValor = valor (informar apenas se for diferente de -1),
 			-- adicionarValor = valor (informar apenas se for diferente de 1),
 			-- container = item_id (informar apenas se tiver mais de uma recompensa e o container for diferente do valor informado no containerPadrao)
 		-- },
@@ -14,6 +14,10 @@ local config = {
 		[2700] = {
 			recompensa = {{2465, 1}, {2478, 1}},
 			container = 21475
+		},
+		[2800] = {
+			recompensa = {{2152, 5}, {8860, 1}},
+			checarValor = 1
 		}
 	},
 	containerPadrao = 1987
