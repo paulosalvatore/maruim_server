@@ -4,6 +4,22 @@ local vocationDoor = {
 	[907] = {3, 7},
 	[908] = {4, 8}
 }
+local config = {
+	-- ["action" ou "unique"] = {
+		-- [action_id ou unique_id] = {
+			-- storage = numero de storage (informar apenas se for diferente da action_id ou unique_id),
+			-- valor = valor do storage (informar apenas se for diferente de 1),
+		-- }
+	-- }
+	["action"] = {
+		[5500] = {
+			storage = 2900,
+			valor = 2
+		}
+	},
+	["unique"] = {
+	}
+}
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local itemId = item:getId()
 	if vocationDoor[item.actionid] ~= nil then
@@ -15,7 +31,23 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		return true
 	end
 	if isInArray(questDoors, itemId) then
-		if player:getStorageValue(item.actionid) ~= -1 then
+		local storage = item.actionid
+		local valor = 1
+		if config["action"][item.actionid] or config["unique"][item.uid] then
+			local i
+			if config["action"][item.actionid] then
+				i = config["action"][item.actionid]
+			elseif config["unique"][item.uid] then
+				i = config["unique"][item.uid]
+			end
+			if i.storage ~= nil then
+				storage = i.storage
+			end
+			if i.valor ~= nil then
+				valor = i.valor
+			end
+		end
+		if player:getStorageValue(storage) == valor then
 			item:transform(itemId + 1)
 			player:teleportTo(toPosition, true)
 		else
