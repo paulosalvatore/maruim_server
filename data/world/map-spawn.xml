@@ -845,7 +845,7 @@
 	<spawn centerx="495" centery="936" centerz="6" radius="1">
 		<npc name="Rainan Kimoruturi" x="-1" y="-1" z="6" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="645" centery="940" centerz="6" radius="1">
+	<spawn centerx="632" centery="938" centerz="6" radius="1">
 		<npc name="Palter Dilventan" x="1" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="476" centery="945" centerz="6" radius="1">
@@ -10303,9 +10303,6 @@
 	<spawn centerx="687" centery="1792" centerz="8" radius="1">
 		<monster name="Crystal Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1166" centery="1792" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
 	<spawn centerx="803" centery="1793" centerz="8" radius="1">
 		<monster name="Frost Giant" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -10315,12 +10312,16 @@
 	<spawn centerx="778" centery="1794" centerz="8" radius="1">
 		<monster name="Frost Giant" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1161" centery="1794" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
 	<spawn centerx="793" centery="1795" centerz="8" radius="2">
 		<monster name="Ice Golem" x="-2" y="-1" z="8" spawntime="60" />
 		<monster name="Ice Golem" x="2" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1163" centery="1795" centerz="8" radius="3">
+		<monster name="Tarantula" x="2" y="-3" z="8" spawntime="60" />
+		<monster name="Tarantula" x="-3" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1188" centery="1795" centerz="8" radius="1">
+		<monster name="Tarantula" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="561" centery="1796" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
@@ -10328,11 +10329,8 @@
 	<spawn centerx="750" centery="1796" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1186" centery="1796" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1200" centery="1796" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1194" centery="1796" centerz="8" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="516" centery="1797" centerz="8" radius="1">
 		<monster name="Frost Dragon Hatchling" x="0" y="0" z="8" spawntime="60" />
@@ -10342,8 +10340,8 @@
 		<monster name="Ice Golem" x="3" y="-1" z="8" spawntime="60" />
 		<monster name="Ice Golem" x="-1" y="3" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1157" centery="1797" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1200" centery="1798" centerz="8" radius="1">
+		<monster name="Tarantula" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="512" centery="1799" centerz="8" radius="1">
 		<monster name="Frost Dragon Hatchling" x="0" y="0" z="8" spawntime="60" />
@@ -10355,8 +10353,14 @@
 		<monster name="Frost Giant" x="0" y="0" z="8" spawntime="60" />
 		<monster name="Frost Giant" x="1" y="0" z="8" spawntime="1792" />
 	</spawn>
-	<spawn centerx="1166" centery="1799" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1171" centery="1799" centerz="8" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1183" centery="1799" centerz="8" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1205" centery="1800" centerz="8" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="722" centery="1801" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="0" y="0" z="8" spawntime="60" />
@@ -10364,9 +10368,6 @@
 	<spawn centerx="759" centery="1802" centerz="8" radius="2">
 		<monster name="Ice Golem" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Ice Golem" x="1" y="2" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1174" centery="1802" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="494" centery="1803" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
@@ -10383,6 +10384,9 @@
 	</spawn>
 	<spawn centerx="798" centery="1805" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1177" centery="1805" centerz="8" radius="1">
+		<monster name="Tarantula" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="505" centery="1806" centerz="8" radius="2">
 		<monster name="Crystal Spider" x="-1" y="-1" z="8" spawntime="60" />
@@ -10404,9 +10408,6 @@
 		<monster name="Frost Giant" x="0" y="0" z="8" spawntime="60" />
 		<monster name="Frost Giant" x="1" y="0" z="8" spawntime="1792" />
 	</spawn>
-	<spawn centerx="1210" centery="1806" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
 	<spawn centerx="1292" centery="1807" centerz="8" radius="1">
 		<monster name="Crab" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -10416,6 +10417,13 @@
 	</spawn>
 	<spawn centerx="814" centery="1808" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1204" centery="1808" centerz="8" radius="1">
+		<monster name="Tarantula" x="-1" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1210" centery="1808" centerz="8" radius="2">
+		<monster name="Poison Spider" x="1" y="-2" z="8" spawntime="60" />
+		<monster name="Poison Spider" x="-1" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="834" centery="1809" centerz="8" radius="3">
 		<monster name="Ice Golem" x="-3" y="-3" z="8" spawntime="60" />
@@ -10442,17 +10450,23 @@
 	<spawn centerx="562" centery="1813" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1171" centery="1813" centerz="8" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1292" centery="1813" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="518" centery="1814" centerz="8" radius="1">
 		<monster name="Crystal Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1165" centery="1814" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1208" centery="1814" centerz="8" radius="1">
+		<monster name="Tarantula" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="802" centery="1815" centerz="8" radius="1">
 		<monster name="Frost Giant" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1165" centery="1815" centerz="8" radius="1">
+		<monster name="Tarantula" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1300" centery="1815" centerz="8" radius="1">
 		<monster name="Crab" x="0" y="0" z="8" spawntime="60" />
@@ -10471,8 +10485,9 @@
 	<spawn centerx="776" centery="1817" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1136" centery="1817" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1131" centery="1817" centerz="8" radius="2">
+		<monster name="Tarantula" x="2" y="-2" z="8" spawntime="60" />
+		<monster name="Tarantula" x="-2" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1233" centery="1817" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
@@ -10491,11 +10506,11 @@
 		<monster name="Rotworm" x="1" y="-2" z="8" spawntime="60" />
 		<monster name="Rotworm" x="1" y="1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1210" centery="1818" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1211" centery="1818" centerz="8" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1129" centery="1819" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1170" centery="1819" centerz="8" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="593" centery="1820" centerz="8" radius="3">
 		<monster name="Crystal Spider" x="2" y="-2" z="8" spawntime="60" />
@@ -10508,15 +10523,20 @@
 		<monster name="Rotworm" x="-2" y="-1" z="8" spawntime="60" />
 		<monster name="Rotworm" x="2" y="2" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1173" centery="1820" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
 	<spawn centerx="1237" centery="1820" centerz="8" radius="1">
 		<monster name="Crab" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="941" centery="1821" centerz="8" radius="2">
 		<monster name="Rotworm" x="-2" y="-1" z="8" spawntime="60" />
 		<monster name="Rotworm" x="1" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1136" centery="1821" centerz="8" radius="2">
+		<monster name="Poison Spider" x="-2" y="-1" z="8" spawntime="60" />
+		<monster name="Poison Spider" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1177" centery="1821" centerz="8" radius="2">
+		<monster name="Poison Spider" x="-2" y="-2" z="8" spawntime="60" />
+		<monster name="Poison Spider" x="1" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1230" centery="1821" centerz="8" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="8" spawntime="60" />
@@ -10535,6 +10555,9 @@
 	<spawn centerx="983" centery="1822" centerz="8" radius="2">
 		<monster name="Rotworm" x="0" y="-2" z="8" spawntime="60" />
 		<monster name="Rotworm" x="2" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1215" centery="1822" centerz="8" radius="1">
+		<monster name="Tarantula" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1275" centery="1822" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
@@ -10564,6 +10587,9 @@
 		<monster name="Rotworm" x="-1" y="-2" z="8" spawntime="60" />
 		<monster name="Rotworm" x="2" y="2" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1165" centery="1824" centerz="8" radius="1">
+		<monster name="Tarantula" x="-1" y="-1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1234" centery="1824" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -10573,9 +10599,6 @@
 	<spawn centerx="1047" centery="1825" centerz="8" radius="2">
 		<monster name="Rotworm" x="-2" y="-2" z="8" spawntime="60" />
 		<monster name="Rotworm" x="2" y="2" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1193" centery="1825" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="761" centery="1826" centerz="8" radius="3">
 		<monster name="Frost Giant" x="-3" y="-3" z="8" spawntime="60" />
@@ -10594,6 +10617,9 @@
 	<spawn centerx="995" centery="1826" centerz="8" radius="2">
 		<monster name="Rotworm" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Rotworm" x="2" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1162" centery="1826" centerz="8" radius="1">
+		<monster name="Poison Spider" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="479" centery="1827" centerz="8" radius="3">
 		<monster name="Crystal Spider" x="0" y="-3" z="8" spawntime="60" />
@@ -10620,8 +10646,13 @@
 		<monster name="Rotworm" x="-1" y="-2" z="8" spawntime="60" />
 		<monster name="Rotworm" x="1" y="1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1132" centery="1827" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1192" centery="1827" centerz="8" radius="2">
+		<monster name="Poison Spider" x="-2" y="-2" z="8" spawntime="60" />
+		<monster name="Poison Spider" x="2" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1219" centery="1827" centerz="8" radius="2">
+		<monster name="Poison Spider" x="-1" y="-2" z="8" spawntime="60" />
+		<monster name="Poison Spider" x="1" y="2" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1306" centery="1827" centerz="8" radius="1">
 		<monster name="Crab" x="0" y="0" z="8" spawntime="60" />
@@ -10638,11 +10669,8 @@
 		<monster name="Rotworm" x="-1" y="-2" z="8" spawntime="60" />
 		<monster name="Rotworm" x="2" y="2" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1160" centery="1828" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1221" centery="1828" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1133" centery="1828" centerz="8" radius="1">
+		<monster name="Tarantula" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="518" centery="1829" centerz="8" radius="2">
 		<monster name="Crystal Spider" x="1" y="-1" z="8" spawntime="60" />
@@ -10681,6 +10709,9 @@
 		<monster name="Rotworm" x="1" y="-1" z="8" spawntime="60" />
 		<monster name="Rotworm" x="-2" y="2" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1158" centery="1831" centerz="8" radius="1">
+		<monster name="Tarantula" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1314" centery="1831" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -10717,6 +10748,13 @@
 		<monster name="Rotworm" x="1" y="-2" z="8" spawntime="60" />
 		<monster name="Rotworm" x="2" y="2" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1184" centery="1833" centerz="8" radius="1">
+		<monster name="Tarantula" x="-1" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1195" centery="1833" centerz="8" radius="2">
+		<monster name="Tarantula" x="2" y="-1" z="8" spawntime="60" />
+		<monster name="Tarantula" x="-1" y="2" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1237" centery="1833" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -10734,8 +10772,8 @@
 		<monster name="Rotworm" x="2" y="-1" z="8" spawntime="60" />
 		<monster name="Rotworm" x="-2" y="2" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1194" centery="1834" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1131" centery="1834" centerz="8" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1266" centery="1834" centerz="8" radius="1">
 		<monster name="Crab" x="0" y="0" z="8" spawntime="60" />
@@ -10764,7 +10802,7 @@
 		<monster name="Yeti" x="1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1178" centery="1836" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
+		<monster name="Poison Spider" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1236" centery="1836" centerz="8" radius="1">
 		<monster name="Crab" x="0" y="0" z="8" spawntime="60" />
@@ -10781,8 +10819,9 @@
 		<monster name="Massive Fire Elemental" x="0" y="0" z="8" spawntime="60" />
 		<monster name="Massive Fire Elemental" x="0" y="1" z="8" spawntime="1792" />
 	</spawn>
-	<spawn centerx="1151" centery="1837" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1152" centery="1837" centerz="8" radius="2">
+		<monster name="Poison Spider" x="2" y="-2" z="8" spawntime="60" />
+		<monster name="Poison Spider" x="-1" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1292" centery="1837" centerz="8" radius="1">
 		<monster name="Crab" x="0" y="0" z="8" spawntime="60" />
@@ -10797,8 +10836,14 @@
 		<monster name="Rotworm" x="-2" y="-1" z="8" spawntime="60" />
 		<monster name="Rotworm" x="2" y="1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1132" centery="1839" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1172" centery="1839" centerz="8" radius="1">
+		<monster name="Tarantula" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1199" centery="1839" centerz="8" radius="1">
+		<monster name="Poison Spider" x="1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1134" centery="1840" centerz="8" radius="1">
+		<monster name="Tarantula" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1334" centery="1840" centerz="8" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="8" spawntime="60" />
@@ -10806,12 +10851,12 @@
 	<spawn centerx="1267" centery="1841" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1309" centery="1841" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
 	<spawn centerx="1019" centery="1842" centerz="8" radius="2">
 		<monster name="Rotworm" x="2" y="-2" z="8" spawntime="60" />
 		<monster name="Rotworm" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1147" centery="1842" centerz="8" radius="1">
+		<monster name="Tarantula" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="885" centery="1843" centerz="8" radius="1">
 		<monster name="Massive Fire Elemental" x="0" y="0" z="8" spawntime="60" />
@@ -10829,19 +10874,16 @@
 		<monster name="Rotworm" x="-1" y="2" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1167" centery="1844" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
+		<monster name="Poison Spider" x="1" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1206" centery="1844" centerz="8" radius="1">
+		<monster name="Tarantula" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1074" centery="1845" centerz="8" radius="1">
 		<monster name="Rotworm" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1141" centery="1845" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1207" centery="1846" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1317" centery="1846" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1142" centery="1845" centerz="8" radius="1">
+		<monster name="Poison Spider" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="894" centery="1847" centerz="8" radius="1">
 		<monster name="Massive Fire Elemental" x="0" y="0" z="8" spawntime="60" />
@@ -10858,11 +10900,11 @@
 		<monster name="Massive Fire Elemental" x="0" y="0" z="8" spawntime="60" />
 		<monster name="Massive Fire Elemental" x="-1" y="1" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1162" centery="1848" centerz="8" radius="1">
+		<monster name="Tarantula" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1230" centery="1848" centerz="8" radius="1">
 		<monster name="Crab" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1292" centery="1848" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="912" centery="1849" centerz="8" radius="1">
 		<monster name="Massive Fire Elemental" x="0" y="0" z="8" spawntime="60" />
@@ -10879,11 +10921,18 @@
 		<monster name="Rotworm" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Rotworm" x="2" y="1" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1211" centery="1850" centerz="8" radius="1">
+		<monster name="Poison Spider" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="938" centery="1851" centerz="8" radius="1">
 		<monster name="Massive Fire Elemental" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="905" centery="1852" centerz="8" radius="1">
 		<monster name="Blazing Fire Elemental" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1183" centery="1852" centerz="8" radius="2">
+		<monster name="Poison Spider" x="-2" y="-2" z="8" spawntime="60" />
+		<monster name="Poison Spider" x="2" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1234" centery="1852" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
@@ -10895,6 +10944,9 @@
 	<spawn centerx="1077" centery="1853" centerz="8" radius="2">
 		<monster name="Rotworm" x="2" y="-1" z="8" spawntime="60" />
 		<monster name="Rotworm" x="-1" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1157" centery="1853" centerz="8" radius="1">
+		<monster name="Poison Spider" x="0" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="887" centery="1854" centerz="8" radius="1">
 		<monster name="Massive Fire Elemental" x="0" y="0" z="8" spawntime="60" />
@@ -10908,11 +10960,8 @@
 	<spawn centerx="1040" centery="1854" centerz="8" radius="1">
 		<monster name="Rotworm" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1157" centery="1854" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1181" centery="1854" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1194" centery="1854" centerz="8" radius="1">
+		<monster name="Tarantula" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="900" centery="1855" centerz="8" radius="1">
 		<monster name="Massive Fire Elemental" x="0" y="0" z="8" spawntime="60" />
@@ -10920,14 +10969,15 @@
 	<spawn centerx="920" centery="1855" centerz="8" radius="1">
 		<monster name="Massive Fire Elemental" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1199" centery="1855" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1149" centery="1856" centerz="8" radius="2">
+		<monster name="Tarantula" x="1" y="-2" z="8" spawntime="60" />
+		<monster name="Tarantula" x="-1" y="2" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1280" centery="1855" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1200" centery="1856" centerz="8" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1328" centery="1855" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1208" centery="1856" centerz="8" radius="1">
+		<monster name="Tarantula" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="895" centery="1857" centerz="8" radius="1">
 		<monster name="Blazing Fire Elemental" x="0" y="0" z="8" spawntime="60" />
@@ -10938,8 +10988,8 @@
 	<spawn centerx="970" centery="1857" centerz="8" radius="1">
 		<monster name="Massive Fire Elemental" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1311" centery="1857" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1178" centery="1857" centerz="8" radius="1">
+		<monster name="Tarantula" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="920" centery="1858" centerz="8" radius="1">
 		<monster name="Blazing Fire Elemental" x="0" y="0" z="8" spawntime="60" />
@@ -10961,11 +11011,8 @@
 		<monster name="Rotworm" x="2" y="-1" z="8" spawntime="60" />
 		<monster name="Rotworm" x="-1" y="1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1148" centery="1860" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1320" centery="1860" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1175" centery="1860" centerz="8" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1238" centery="1861" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
@@ -10979,8 +11026,9 @@
 	<spawn centerx="965" centery="1862" centerz="8" radius="1">
 		<monster name="Blazing Fire Elemental" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1276" centery="1863" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1151" centery="1862" centerz="8" radius="2">
+		<monster name="Poison Spider" x="1" y="-1" z="8" spawntime="60" />
+		<monster name="Poison Spider" x="-2" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="899" centery="1864" centerz="8" radius="1">
 		<monster name="Blazing Fire Elemental" x="0" y="0" z="8" spawntime="60" />
@@ -11001,41 +11049,32 @@
 	<spawn centerx="1250" centery="1865" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1173" centery="1866" centerz="8" radius="1">
+		<monster name="Tarantula" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="987" centery="1867" centerz="8" radius="1">
 		<monster name="Blazing Fire Elemental" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1173" centery="1867" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1289" centery="1867" centerz="8" radius="1">
 		<monster name="Smuggler" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1315" centery="1867" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
 	<spawn centerx="960" centery="1868" centerz="8" radius="1">
 		<monster name="Blazing Fire Elemental" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1325" centery="1868" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1231" centery="1869" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1177" centery="1870" centerz="8" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1255" centery="1870" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1307" centery="1870" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="942" centery="1871" centerz="8" radius="1">
 		<monster name="Blazing Fire Elemental" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="975" centery="1871" centerz="8" radius="1">
 		<monster name="Fire Elemental" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1272" centery="1871" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="883" centery="1872" centerz="8" radius="1">
 		<monster name="Massive Fire Elemental" x="0" y="0" z="8" spawntime="60" />
@@ -11052,14 +11091,14 @@
 	<spawn centerx="1227" centery="1872" centerz="8" radius="1">
 		<monster name="Crab" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1168" centery="1873" centerz="8" radius="1">
+		<monster name="Poison Spider" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="893" centery="1874" centerz="8" radius="1">
 		<monster name="Blazing Fire Elemental" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="952" centery="1874" centerz="8" radius="1">
 		<monster name="Blazing Fire Elemental" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1276" centery="1874" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="884" centery="1875" centerz="8" radius="1">
 		<monster name="Blazing Fire Elemental" x="0" y="0" z="8" spawntime="60" />
@@ -11067,8 +11106,8 @@
 	<spawn centerx="1001" centery="1875" centerz="8" radius="1">
 		<monster name="Fire Elemental" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1297" centery="1875" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1182" centery="1875" centerz="8" radius="1">
+		<monster name="Tarantula" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="956" centery="1876" centerz="8" radius="1">
 		<monster name="Blazing Fire Elemental" x="0" y="0" z="8" spawntime="60" />
@@ -11080,20 +11119,15 @@
 		<monster name="Fire Elemental" x="0" y="0" z="8" spawntime="60" />
 		<monster name="Fire Elemental" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1184" centery="1877" centerz="8" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1321" centery="1877" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1188" centery="1878" centerz="8" radius="2">
+		<monster name="Poison Spider" x="-2" y="0" z="8" spawntime="60" />
+		<monster name="Poison Spider" x="2" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1224" centery="1878" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1282" centery="1878" centerz="8" radius="1">
 		<monster name="Wolf" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1316" centery="1878" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1020" centery="1879" centerz="8" radius="1">
 		<monster name="Blazing Fire Elemental" x="0" y="0" z="8" spawntime="60" />
@@ -11142,9 +11176,6 @@
 	<spawn centerx="1263" centery="1887" centerz="8" radius="1">
 		<monster name="Smuggler" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1292" centery="1887" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
 	<spawn centerx="905" centery="1888" centerz="8" radius="1">
 		<monster name="Blazing Fire Elemental" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -11162,9 +11193,6 @@
 	</spawn>
 	<spawn centerx="940" centery="1890" centerz="8" radius="1">
 		<monster name="Blazing Fire Elemental" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1295" centery="1890" centerz="8" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1337" centery="1890" centerz="8" radius="1">
 		<monster name="Cave Rat" x="0" y="0" z="8" spawntime="60" />
@@ -13209,7 +13237,7 @@
 	<spawn centerx="747" centery="1694" centerz="9" radius="1">
 		<monster name="Bonebeast" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1531" centery="1697" centerz="9" radius="2">
+	<spawn centerx="1530" centery="1696" centerz="9" radius="2">
 		<npc name="Arwev Talluna" x="-1" y="0" z="9" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="724" centery="1698" centerz="9" radius="2">
@@ -13409,59 +13437,72 @@
 		<monster name="Chakoya Toolshaper" x="2" y="-2" z="9" spawntime="60" />
 		<monster name="Chakoya Toolshaper" x="-1" y="1" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1155" centery="1793" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
 	<spawn centerx="1166" centery="1793" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1159" centery="1794" centerz="9" radius="2">
+		<monster name="Tarantula" x="2" y="-1" z="9" spawntime="60" />
+		<monster name="Tarantula" x="-2" y="1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="829" centery="1795" centerz="9" radius="1">
 		<monster name="Chakoya Windcaller" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1161" centery="1797" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1166" centery="1798" centerz="9" radius="2">
+		<monster name="Tarantula" x="2" y="-1" z="9" spawntime="60" />
+		<monster name="Tarantula" x="-2" y="2" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1136" centery="1799" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1136" centery="1800" centerz="9" radius="1">
+		<monster name="Wailing Widow" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1130" centery="1800" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1161" centery="1800" centerz="9" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1144" centery="1800" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1131" centery="1801" centerz="9" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1125" centery="1805" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1145" centery="1801" centerz="9" radius="2">
+		<monster name="Tarantula" x="-2" y="-2" z="9" spawntime="60" />
+		<monster name="Tarantula" x="2" y="1" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1155" centery="1805" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1156" centery="1802" centerz="9" radius="1">
+		<monster name="Wailing Widow" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1121" centery="1807" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1125" centery="1803" centerz="9" radius="2">
+		<monster name="Tarantula" x="2" y="-2" z="9" spawntime="60" />
+		<monster name="Tarantula" x="-2" y="2" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1149" centery="1809" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1150" centery="1808" centerz="9" radius="1">
+		<monster name="Wailing Widow" x="-1" y="1" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1116" centery="1811" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1159" centery="1808" centerz="9" radius="2">
+		<monster name="Tarantula" x="-2" y="-2" z="9" spawntime="60" />
+		<monster name="Tarantula" x="2" y="2" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1143" centery="1814" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1116" centery="1810" centerz="9" radius="2">
+		<monster name="Wailing Widow" x="2" y="-2" z="9" spawntime="60" />
+		<monster name="Wailing Widow" x="-2" y="2" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1166" centery="1814" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1142" centery="1814" centerz="9" radius="2">
+		<monster name="Tarantula" x="-1" y="-2" z="9" spawntime="60" />
+		<monster name="Tarantula" x="2" y="2" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1191" centery="1814" centerz="9" radius="1">
 		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1111" centery="1815" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1166" centery="1815" centerz="9" radius="1">
+		<monster name="Poison Spider" x="0" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1112" centery="1816" centerz="9" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1187" centery="1816" centerz="9" radius="1">
 		<monster name="Toad" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1192" centery="1816" centerz="9" radius="1">
 		<monster name="Centipede" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1133" centery="1817" centerz="9" radius="1">
+		<monster name="Wailing Widow" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1184" centery="1817" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
@@ -13481,11 +13522,11 @@
 	<spawn centerx="1210" centery="1818" centerz="9" radius="1">
 		<monster name="Toad" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1106" centery="1819" centerz="9" radius="1">
+		<monster name="Tarantula" x="1" y="-1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1191" centery="1819" centerz="9" radius="1">
 		<monster name="Toad" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1105" centery="1820" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1184" centery="1820" centerz="9" radius="1">
 		<monster name="Centipede" x="0" y="0" z="9" spawntime="60" />
@@ -13493,9 +13534,6 @@
 	<spawn centerx="999" centery="1821" centerz="9" radius="2">
 		<monster name="Carrion Worm" x="1" y="-1" z="9" spawntime="60" />
 		<monster name="Carrion Worm" x="-2" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1131" centery="1821" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1174" centery="1821" centerz="9" radius="1">
 		<monster name="Centipede" x="0" y="0" z="9" spawntime="60" />
@@ -13513,11 +13551,19 @@
 		<monster name="Carrion Worm" x="-1" y="-1" z="9" spawntime="60" />
 		<monster name="Carrion Worm" x="2" y="1" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1131" centery="1822" centerz="9" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1136" centery="1824" centerz="9" radius="2">
+		<monster name="Tarantula" x="2" y="-2" z="9" spawntime="60" />
+		<monster name="Tarantula" x="0" y="2" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1172" centery="1824" centerz="9" radius="1">
 		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1103" centery="1825" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1102" centery="1825" centerz="9" radius="2">
+		<monster name="Wailing Widow" x="2" y="-2" z="9" spawntime="60" />
+		<monster name="Wailing Widow" x="-2" y="1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1179" centery="1826" centerz="9" radius="1">
 		<monster name="Centipede" x="0" y="0" z="9" spawntime="60" />
@@ -13533,9 +13579,6 @@
 		<monster name="Rotworm" x="1" y="0" z="9" spawntime="60" />
 		<monster name="Rotworm" x="-2" y="1" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1116" centery="1827" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
 	<spawn centerx="1176" centery="1827" centerz="9" radius="1">
 		<monster name="Toad" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
@@ -13546,8 +13589,8 @@
 		<monster name="Carrion Worm" x="1" y="-2" z="9" spawntime="60" />
 		<monster name="Carrion Worm" x="-1" y="2" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1100" centery="1828" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1116" centery="1828" centerz="9" radius="1">
+		<monster name="Tarantula" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1004" centery="1829" centerz="9" radius="2">
 		<monster name="Carrion Worm" x="1" y="-1" z="9" spawntime="60" />
@@ -13566,21 +13609,20 @@
 	<spawn centerx="977" centery="1831" centerz="9" radius="1">
 		<monster name="Carrion Worm" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1140" centery="1831" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1121" centery="1831" centerz="9" radius="3">
+		<monster name="Wailing Widow" x="2" y="-3" z="9" spawntime="60" />
+		<monster name="Giant Spider" x="-3" y="2" z="9" spawntime="100" />
+		<monster name="Giant Spider" x="2" y="3" z="9" spawntime="100" />
+	</spawn>
+	<spawn centerx="1141" centery="1831" centerz="9" radius="1">
+		<monster name="Wailing Widow" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="964" centery="1832" centerz="9" radius="2">
 		<monster name="Carrion Worm" x="2" y="-1" z="9" spawntime="60" />
 		<monster name="Carrion Worm" x="-2" y="1" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1100" centery="1832" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1116" centery="1832" centerz="9" radius="1">
-		<monster name="Giant Spider" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1122" centery="1832" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1101" centery="1832" centerz="9" radius="1">
+		<monster name="Tarantula" x="1" y="1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1175" centery="1832" centerz="9" radius="1">
 		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
@@ -13609,6 +13651,10 @@
 	<spawn centerx="1196" centery="1835" centerz="9" radius="1">
 		<monster name="Centipede" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1094" centery="1837" centerz="9" radius="2">
+		<monster name="Wailing Widow" x="2" y="-2" z="9" spawntime="60" />
+		<monster name="Wailing Widow" x="-1" y="2" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1168" centery="1837" centerz="9" radius="1">
 		<monster name="Toad" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
@@ -13622,8 +13668,8 @@
 		<monster name="Carrion Worm" x="-2" y="-2" z="9" spawntime="60" />
 		<monster name="Carrion Worm" x="2" y="2" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1100" centery="1838" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1101" centery="1838" centerz="9" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1197" centery="1838" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
@@ -13638,6 +13684,10 @@
 		<monster name="Carrion Worm" x="1" y="-2" z="9" spawntime="60" />
 		<monster name="Carrion Worm" x="-1" y="2" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1141" centery="1840" centerz="9" radius="2">
+		<monster name="Tarantula" x="1" y="-2" z="9" spawntime="60" />
+		<monster name="Tarantula" x="-1" y="2" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1183" centery="1840" centerz="9" radius="1">
 		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
@@ -13647,8 +13697,8 @@
 	<spawn centerx="1172" centery="1841" centerz="9" radius="1">
 		<monster name="Toad" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1079" centery="1842" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1102" centery="1842" centerz="9" radius="1">
+		<monster name="Tarantula" x="1" y="1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1201" centery="1842" centerz="9" radius="1">
 		<monster name="Centipede" x="0" y="0" z="9" spawntime="60" />
@@ -13665,17 +13715,16 @@
 	<spawn centerx="1196" centery="1843" centerz="9" radius="1">
 		<monster name="Toad" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1084" centery="1844" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1143" centery="1844" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1077" centery="1844" centerz="9" radius="3">
+		<monster name="Wailing Widow" x="1" y="-3" z="9" spawntime="60" />
+		<monster name="Wailing Widow" x="-2" y="2" z="9" spawntime="60" />
+		<monster name="Wailing Widow" x="2" y="2" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1236" centery="1844" centerz="9" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1103" centery="1845" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1143" centery="1845" centerz="9" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1198" centery="1845" centerz="9" radius="1">
 		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
@@ -13687,20 +13736,23 @@
 		<monster name="Carrion Worm" x="-2" y="-2" z="9" spawntime="60" />
 		<monster name="Carrion Worm" x="2" y="1" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1074" centery="1847" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1085" centery="1847" centerz="9" radius="3">
+		<monster name="Tarantula" x="1" y="-3" z="9" spawntime="60" />
+		<monster name="Tarantula" x="-3" y="2" z="9" spawntime="60" />
+		<monster name="Tarantula" x="1" y="2" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1168" centery="1847" centerz="9" radius="1">
 		<monster name="Centipede" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1080" centery="1848" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1146" centery="1848" centerz="9" radius="1">
+		<monster name="Wailing Widow" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1312" centery="1848" centerz="9" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1107" centery="1849" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1108" centery="1850" centerz="9" radius="2">
+		<monster name="Wailing Widow" x="-2" y="-2" z="9" spawntime="60" />
+		<monster name="Wailing Widow" x="2" y="2" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1238" centery="1850" centerz="9" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="9" spawntime="60" />
@@ -13708,8 +13760,8 @@
 	<spawn centerx="1356" centery="1850" centerz="9" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1146" centery="1851" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1079" centery="1851" centerz="9" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1319" centery="1851" centerz="9" radius="1">
 		<monster name="Blood Crab" x="0" y="0" z="9" spawntime="60" />
@@ -13721,12 +13773,6 @@
 		<monster name="Carrion Worm" x="1" y="-2" z="9" spawntime="60" />
 		<monster name="Carrion Worm" x="-1" y="2" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1110" centery="1853" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1130" centery="1853" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
 	<spawn centerx="1170" centery="1853" centerz="9" radius="1">
 		<monster name="Toad" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
@@ -13735,6 +13781,10 @@
 	</spawn>
 	<spawn centerx="1321" centery="1853" centerz="9" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1148" centery="1854" centerz="9" radius="2">
+		<monster name="Tarantula" x="-1" y="-2" z="9" spawntime="60" />
+		<monster name="Tarantula" x="2" y="2" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1208" centery="1854" centerz="9" radius="1">
 		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
@@ -13746,11 +13796,12 @@
 		<monster name="Rotworm" x="-2" y="1" z="9" spawntime="60" />
 		<monster name="Rotworm" x="2" y="1" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1128" centery="1855" centerz="9" radius="2">
+		<monster name="Wailing Widow" x="2" y="-1" z="9" spawntime="60" />
+		<monster name="Wailing Widow" x="-2" y="1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1344" centery="1855" centerz="9" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1128" centery="1856" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1179" centery="1856" centerz="9" radius="1">
 		<monster name="Centipede" x="0" y="0" z="9" spawntime="60" />
@@ -13758,14 +13809,14 @@
 	<spawn centerx="1207" centery="1856" centerz="9" radius="1">
 		<monster name="Toad" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1125" centery="1857" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1111" centery="1857" centerz="9" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1116" centery="1857" centerz="9" radius="1">
+		<monster name="Tarantula" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1354" centery="1857" centerz="9" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1151" centery="1858" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1171" centery="1858" centerz="9" radius="1">
 		<monster name="Centipede" x="0" y="0" z="9" spawntime="60" />
@@ -13773,23 +13824,26 @@
 	<spawn centerx="1244" centery="1858" centerz="9" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1125" centery="1859" centerz="9" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1150" centery="1859" centerz="9" radius="1">
+		<monster name="Wailing Widow" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1269" centery="1859" centerz="9" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1309" centery="1859" centerz="9" radius="1">
 		<monster name="Blood Crab" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1117" centery="1860" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1146" centery="1860" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
 	<spawn centerx="1176" centery="1860" centerz="9" radius="1">
 		<monster name="Toad" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1204" centery="1860" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1145" centery="1861" centerz="9" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1185" centery="1861" centerz="9" radius="1">
 		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
@@ -13799,6 +13853,10 @@
 	</spawn>
 	<spawn centerx="1333" centery="1861" centerz="9" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1119" centery="1862" centerz="9" radius="2">
+		<monster name="Wailing Widow" x="1" y="-2" z="9" spawntime="60" />
+		<monster name="Wailing Widow" x="-1" y="2" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1307" centery="1862" centerz="9" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="9" spawntime="60" />
@@ -13813,8 +13871,8 @@
 	<spawn centerx="1248" centery="1863" centerz="9" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1120" centery="1864" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1167" centery="1864" centerz="9" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1173" centery="1864" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
@@ -13834,14 +13892,21 @@
 	<spawn centerx="1261" centery="1865" centerz="9" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1278" centery="1865" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
 	<spawn centerx="1313" centery="1865" centerz="9" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1139" centery="1866" centerz="9" radius="2">
+		<monster name="Tarantula" x="-1" y="-1" z="9" spawntime="60" />
+		<monster name="Tarantula" x="2" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1124" centery="1867" centerz="9" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1186" centery="1867" centerz="9" radius="1">
 		<monster name="Toad" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1117" centery="1868" centerz="9" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1190" centery="1868" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
@@ -13852,23 +13917,26 @@
 	<spawn centerx="1304" centery="1868" centerz="9" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1164" centery="1869" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1128" centery="1869" centerz="9" radius="1">
+		<monster name="Tarantula" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1280" centery="1869" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1162" centery="1870" centerz="9" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1132" centery="1871" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1112" centery="1871" centerz="9" radius="1">
+		<monster name="Tarantula" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1134" centery="1871" centerz="9" radius="1">
+		<monster name="Wailing Widow" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1311" centery="1872" centerz="9" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1111" centery="1873" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1108" centery="1874" centerz="9" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1136" centery="1875" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1157" centery="1875" centerz="9" radius="1">
+		<monster name="Tarantula" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1274" centery="1875" centerz="9" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="9" spawntime="60" />
@@ -13879,11 +13947,8 @@
 	<spawn centerx="1367" centery="1875" centerz="9" radius="1">
 		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1156" centery="1876" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1112" centery="1877" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1110" centery="1877" centerz="9" radius="1">
+		<monster name="Tarantula" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1277" centery="1877" centerz="9" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="9" spawntime="60" />
@@ -13891,14 +13956,18 @@
 	<spawn centerx="1360" centery="1877" centerz="9" radius="1">
 		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1140" centery="1878" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1152" centery="1878" centerz="9" radius="1">
+		<monster name="Wailing Widow" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1148" centery="1879" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1140" centery="1879" centerz="9" radius="2">
+		<monster name="Tarantula" x="-1" y="-2" z="9" spawntime="60" />
+		<monster name="Tarantula" x="1" y="1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1365" centery="1879" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1147" centery="1880" centerz="9" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1285" centery="1880" centerz="9" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="9" spawntime="60" />
@@ -13906,14 +13975,19 @@
 	<spawn centerx="1313" centery="1880" centerz="9" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1117" centery="1881" centerz="9" radius="3">
+		<monster name="Wailing Widow" x="-1" y="-3" z="9" spawntime="60" />
+		<monster name="Wailing Widow" x="2" y="0" z="9" spawntime="60" />
+		<monster name="Wailing Widow" x="-2" y="3" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1384" centery="1881" centerz="9" radius="1">
 		<monster name="Skeleton" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1386" centery="1882" centerz="9" radius="1">
 		<monster name="Swamp Troll" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1119" centery="1883" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1123" centery="1884" centerz="9" radius="1">
+		<monster name="Tarantula" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1242" centery="1884" centerz="9" radius="1">
 		<monster name="Bandit" x="0" y="0" z="9" spawntime="60" />
@@ -13930,8 +14004,12 @@
 	<spawn centerx="1246" centery="1886" centerz="9" radius="1">
 		<monster name="Smuggler" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1131" centery="1887" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1118" centery="1887" centerz="9" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1129" centery="1887" centerz="9" radius="2">
+		<monster name="Wailing Widow" x="-1" y="-2" z="9" spawntime="60" />
+		<monster name="Wailing Widow" x="2" y="1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1185" centery="1887" centerz="9" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="9" spawntime="60" />
@@ -13952,11 +14030,8 @@
 	<spawn centerx="1367" centery="1889" centerz="9" radius="1">
 		<monster name="Swamp Troll" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1133" centery="1890" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1136" centery="1891" centerz="9" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="1135" centery="1890" centerz="9" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1194" centery="1891" centerz="9" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="9" spawntime="60" />
@@ -13984,6 +14059,11 @@
 	</spawn>
 	<spawn centerx="1270" centery="1898" centerz="9" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1113" centery="1899" centerz="9" radius="3">
+		<monster name="Giant Spider" x="3" y="-3" z="9" spawntime="100" />
+		<monster name="Giant Spider" x="-3" y="0" z="9" spawntime="100" />
+		<monster name="Giant Spider" x="1" y="3" z="9" spawntime="100" />
 	</spawn>
 	<spawn centerx="1241" centery="1899" centerz="9" radius="1">
 		<monster name="Wolf" x="0" y="0" z="9" spawntime="60" />
@@ -14862,35 +14942,44 @@
 		<monster name="Quara Constrictor" x="-1" y="-2" z="10" spawntime="60" />
 		<monster name="Quara Constrictor" x="2" y="1" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1119" centery="1825" centerz="10" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="1118" centery="1828" centerz="10" radius="2">
+		<monster name="Giant Spider" x="0" y="-2" z="10" spawntime="100" />
+		<monster name="Giant Spider" x="1" y="2" z="10" spawntime="100" />
 	</spawn>
-	<spawn centerx="1123" centery="1828" centerz="10" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="1124" centery="1832" centerz="10" radius="1">
+		<monster name="Wailing Widow" x="0" y="-1" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1117" centery="1830" centerz="10" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="1112" centery="1833" centerz="10" radius="1">
+		<monster name="Poison Spider" x="-1" y="-1" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1122" centery="1832" centerz="10" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="1118" centery="1833" centerz="10" radius="1">
+		<monster name="Tarantula" x="0" y="-1" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1108" centery="1834" centerz="10" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="1104" centery="1835" centerz="10" radius="2">
+		<monster name="Giant Spider" x="-1" y="-2" z="10" spawntime="100" />
+		<monster name="Giant Spider" x="2" y="2" z="10" spawntime="100" />
 	</spawn>
-	<spawn centerx="1097" centery="1839" centerz="10" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="1098" centery="1839" centerz="10" radius="1">
+		<monster name="Wailing Widow" x="0" y="-1" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1091" centery="1841" centerz="10" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="1095" centery="1840" centerz="10" radius="1">
+		<monster name="Giant Spider" x="-1" y="-1" z="10" spawntime="100" />
 	</spawn>
-	<spawn centerx="1081" centery="1842" centerz="10" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="10" spawntime="60" />
+	<spawn centerx="1079" centery="1842" centerz="10" radius="1">
+		<monster name="Giant Spider" x="-1" y="-1" z="10" spawntime="100" />
+	</spawn>
+	<spawn centerx="1088" centery="1842" centerz="10" radius="2">
+		<monster name="Tarantula" x="0" y="-2" z="10" spawntime="60" />
+		<monster name="Tarantula" x="-2" y="2" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1081" centery="1845" centerz="10" radius="1">
-		<monster name="Tarantula" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Wailing Widow" x="0" y="-1" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1151" centery="1845" centerz="10" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1077" centery="1846" centerz="10" radius="1">
+		<monster name="Tarantula" x="0" y="-1" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1155" centery="1848" centerz="10" radius="1">
 		<monster name="Blood Crab" x="0" y="0" z="10" spawntime="60" />
@@ -15030,6 +15119,9 @@
 	<spawn centerx="1213" centery="1888" centerz="10" radius="1">
 		<monster name="Smuggler" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1131" centery="1889" centerz="10" radius="1">
+		<monster name="Wailing Widow" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1188" centery="1889" centerz="10" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
@@ -15041,6 +15133,13 @@
 	</spawn>
 	<spawn centerx="1245" centery="1890" centerz="10" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1123" centery="1891" centerz="10" radius="2">
+		<monster name="Tarantula" x="-1" y="-1" z="10" spawntime="60" />
+		<monster name="Tarantula" x="2" y="1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1132" centery="1892" centerz="10" radius="1">
+		<monster name="Giant Spider" x="1" y="1" z="10" spawntime="100" />
 	</spawn>
 	<spawn centerx="1211" centery="1892" centerz="10" radius="1">
 		<monster name="Smuggler" x="0" y="0" z="10" spawntime="60" />
@@ -15054,8 +15153,15 @@
 	<spawn centerx="1207" centery="1893" centerz="10" radius="1">
 		<monster name="Wolf" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1120" centery="1895" centerz="10" radius="1">
+		<monster name="Wailing Widow" x="-1" y="1" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1158" centery="1895" centerz="10" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1115" centery="1896" centerz="10" radius="2">
+		<monster name="Giant Spider" x="-2" y="-2" z="10" spawntime="100" />
+		<monster name="Giant Spider" x="2" y="0" z="10" spawntime="100" />
 	</spawn>
 	<spawn centerx="1294" centery="1896" centerz="10" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="10" spawntime="60" />
