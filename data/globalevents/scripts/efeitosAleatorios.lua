@@ -65,7 +65,7 @@
 				end
 			end	
 			if(tabela_efeito ~= 0) then
-				efeitos = config[tabela_efeito]["efeitos"]
+				local efeitos = config[tabela_efeito]["efeitos"]
 				if(table.getn(efeitos) == 1) then
 					id_efeito = 1
 				else
