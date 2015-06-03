@@ -8112,7 +8112,7 @@
 	<item id="4861" article="a" name="cobra statue" />
 	<item id="4862" name="destroyed cobra statue">
 		<attribute key="decayTo" value="4861" />
-		<attribute key="duration" value="30" />
+		<attribute key="duration" value="60" />
 	</item>
 	<item id="4863" article="an" name="ectoplasm container">
 		<attribute key="description" value="It is empty." />
@@ -8515,6 +8515,7 @@
 		<attribute key="decayTo" value="5157" />
 		<attribute key="duration" value="300" />
 	</item>
+	<item id="5157" article="a" name="mango tree" />
 	<item fromid="5158" toid="5205" article="a" name="striped marquee" />
 	<item fromid="5206" toid="5253" article="a" name="marquee" />
 	<item fromid="5254" toid="5255" article="a" name="wooden railing" />
@@ -14954,7 +14955,7 @@
 	<item fromid="8009" toid="8010" article="a" name="bone" />
 	<item fromid="8011" toid="8014" name="plants" />
 	<item id="8015" name="earth" />
-	<item id="8016" article="a" name="bug tral" />
+	<item id="8016" article="a" name="bug trail" />
 	<item fromid="8017" toid="8019" name="earth" />
 	<item id="8020" name="jagged stones" />
 	<item fromid="8021" toid="8028" name="rifty earth" />
@@ -15499,7 +15500,10 @@
 	<item fromid="8625" toid="8626" article="a" name="dwarven statue" />
 	<item fromid="8627" toid="8630" article="a" name="bone" />
 	<item id="8631" article="a" name="burning wall" />
-	<item id="8632" article="a" name="water vortex" />
+	<item id="8632" article="a" name="water vortex">
+		<attribute key="type" value="teleport" />
+		<attribute key="effect" value="watersplash" />
+	</item>
 	<item fromid="8633" toid="8636" article="a" name="large crystal" />
 	<item fromid="8637" toid="8640" article="a" name="crystal" />
 	<item fromid="8641" toid="8642" article="a" name="crucible" />
@@ -15740,7 +15744,7 @@
 	<item id="8843" article="an" name="onion">
 		<attribute key="weight" value="140" />
 	</item>
-	<item id="8844" name="jalapeño pepper" article="a">
+	<item id="8844" article="a" name="jalapeño pepper">
 		<attribute key="weight" value="30" />
 	</item>
 	<item id="8845" article="a" name="beetroot">
@@ -16089,7 +16093,7 @@
 		<attribute key="weight" value="6900" />
 		<attribute key="defense" value="36" />
 		<attribute key="weaponType" value="shield" />
-		<attribute key="duration" value="1200" />
+		<attribute key="duration" value="900" />
 		<attribute key="decayTo" value="8905" />
 		<attribute key="skillShield" value="3" />
 	</item>
@@ -16098,7 +16102,7 @@
 		<attribute key="weight" value="6900" />
 		<attribute key="defense" value="39" />
 		<attribute key="weaponType" value="shield" />
-		<attribute key="duration" value="1200" />
+		<attribute key="duration" value="900" />
 		<attribute key="decayTo" value="8905" />
 	</item>
 	<item id="8908" article="a" name="sparking rainbow shield">
@@ -16106,7 +16110,7 @@
 		<attribute key="weight" value="6900" />
 		<attribute key="defense" value="36" />
 		<attribute key="weaponType" value="shield" />
-		<attribute key="duration" value="1200" />
+		<attribute key="duration" value="900" />
 		<attribute key="decayTo" value="8905" />
 		<attribute key="speed" value="20" />
 	</item>
@@ -16115,7 +16119,7 @@
 		<attribute key="weight" value="6900" />
 		<attribute key="defense" value="37" />
 		<attribute key="weaponType" value="shield" />
-		<attribute key="duration" value="1200" />
+		<attribute key="duration" value="900" />
 		<attribute key="decayTo" value="8905" />
 		<attribute key="healthGain" value="1" />
 		<attribute key="healthTicks" value="3000" />
@@ -20352,10 +20356,24 @@
 	<item fromid="11549" toid="11560" name="acid" />
 	<item id="11561" name="mud" />
 	<item fromid="11562" toid="11570" name="dead bamboo" />
+	<item fromid="11571" toid="11604" article="a" name="giant verminous" />
 	<item fromid="11631" toid="11637" article="a" name="small mudpit" />
 	<item fromid="11647" toid="11649" article="a" name="sulphur puddle" />
+	<item fromid="11650" toid="11661" article="a" name="giant verminous" />
 	<item fromid="11662" toid="11666" article="a" name="sulphur puddle" />
+	<item fromid="11667" toid="11668" article="a" name="bitter calyx" />
+	<item fromid="11669" toid="11670" article="a" name="doomato" />
+	<item id="11671" article="a" name="witherstem" />
+	<item id="11672" article="a" name="carnivortex" />
+	<item id="11673" article="a" name="toxic tulip" />
+	<item id="11674" article="a" name="sprocketwhip" />
+	<item id="11676" article="a" name="wraithtongue" />
+	<item fromid="11677" toid="11678" article="a" name="acid foxglove" />
+	<item id="11679" article="a" name="dark delight" />
 	<item id="11683" article="a" name="dreadcoil" />
+	<item fromid="11691" toid="11693" article="a" name="giant dreadcoil" />
+	<item fromid="11694" toid="11695" article="a" name="giant verminous" />
+	<item id="11696" article="a" name="giant dreadcoil" />
 	<item id="11700" article="a" name="stone wall" />
 	<item id="11702" article="a" name="stone wall" />
 	<item fromid="11729" toid="11752" name="ground" />
@@ -20611,6 +20629,7 @@
 		<attribute key="description" value="This chunk was cut from sacred wood in the temple complex and looks ideal for carving." />
 		<attribute key="weight" value="1000" />
 	</item>
+	<item id="12296" article="a" name="table" />
 	<item id="12297" name="sacred earth">
 		<attribute key="description" value="This clay has been dug from sacred ground." />
 		<attribute key="weight" value="1000" />
@@ -20620,6 +20639,7 @@
 		<attribute key="description" value="This clay has been mixed with sacred earth." />
 		<attribute key="weight" value="1000" />
 	</item>
+	<item id="12301" article="a" name="fire basin" />
 	<item id="12302" article="a" name="timber wall" />
 	<item id="12303" article="a" name="sacred bowl of purification">
 		<attribute key="description" value="This bowl was coated with sacred clay and can be used to purify small amounts of corrupted water." />
@@ -20644,6 +20664,7 @@
 	<item id="12321" article="a" name="ramp">
 		<attribute key="floorchange" value="north" />
 	</item>
+	<item id="12322" article="a" name="clay ground" />
 	<item id="12323" name="the tail of the Keeper">
 		<attribute key="weight" value="450" />
 	</item>
@@ -20980,6 +21001,22 @@
 	<item id="12544" article="a" name="sweet mangonaise elixir">
 		<attribute key="description" value="It's said to have incredible effects if you drink it while wearing a magical ring with time limit." />
 		<attribute key="weight" value="300" />
+	</item>
+	<item id="12545" name="the dead glitterscale">
+		<attribute key="decayTo" value="3105" />
+		<attribute key="duration" value="60" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="12546" name="the dead heoni">
+		<attribute key="decayTo" value="6304" />
+		<attribute key="duration" value="60" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="12547" article="a" name="spider victim">
+		<attribute key="description" value="This poor guy has been wrapped up in spider silk." />
+		<attribute key="containerSize" value="10" />
 	</item>
 	<item id="12559" article="a" name="silver rune emblem">
 		<attribute key="description" value="It's an adorned ultimate healing rune." />
@@ -22509,7 +22546,9 @@
 	<item fromid="13799" toid="13800" article="a" name="trunk">
 		<attribute key="containerSize" value="10" />
 	</item>
-	<item id="13801" article="a" name="back basket" />
+	<item id="13801" article="a" name="back basket">
+		<attribute key="containerSize" value="3" />
+	</item>
 	<item id="13802" article="a" name="leaf basket">
 		<attribute key="containerSize" value="3" />
 	</item>
@@ -25850,7 +25889,7 @@
 		<attribute key="showduration" value="1" />
 		<attribute key="showattributes" value="1" />
 	</item>
-	<item fromid="18531" toid="18534" name="stairs">
+	<item fromid="18530" toid="18535" name="stairs">
 		<attribute key="floorchange" value="down" />
 	</item>
 	<item id="18550" article="a" name="noble sword">
@@ -25992,6 +26031,7 @@
 	<item id="19519" article="a" name="hole">
 		<attribute key="floorchange" value="down" />
 	</item>
+	<item fromid="19598" toid="19599" article="a" name="magic door" />
 	<item id="19606" article="a" name="pillar railing" />
 	<item fromid="19610" toid="19615" article="an" name="ornament" />
 	<item fromid="19616" toid="19618" article="a" name="pencil tower" />
@@ -29620,10 +29660,6 @@
 		<attribute key="description" value="It is delicately carved out of the bone of some animal and bears strange inscriptions." />
 		<attribute key="weight" value="100" />
 	</item>
-	<item id="21585" article="a" name="smoking coal">
-		<attribute key="description" value="This coal is smoking and emmits quite a stench." />
-		<attribute key="weight" value="1000" />
-	</item>
 	<item id="21489" name="Omrabas' copper key">
 		<attribute key="weight" value="100" />
 		<attribute key="description" value="A very ornate key, made of solid copper." />
@@ -29665,6 +29701,20 @@
 		<attribute key="description" value="It contains the clothes of a dwarf." />
 		<attribute key="weight" value="800" />
 	</item>
+	<item id="21570" name="the world board">
+		<attribute key="description" value="This board will notify you of currently active mini world changes all over the world." />
+	</item>
+	<item id="21584" article="a" name="reward chest">
+		<attribute key="description" value="This chest contains your rewards earned in battles." />
+	</item>
+	<item id="21585" article="a" name="smoking coal">
+		<attribute key="description" value="This coal is smoking and emmits quite a stench." />
+		<attribute key="weight" value="1000" />
+	</item>
+	<item fromid="21605" toid="21636" name="grey sand" />
+	<item id="21644" article="a" name="large berg crystal" />
+	<item fromid="21645" toid="21646" name="large berg crystals" />
+	<item id="21647" article="a" name="berg crystal" />
 	<item id="21690" article="a" name="triple bolt crossbow">
 		<attribute key="weight" value="6200" />
 		<attribute key="slotType" value="two-handed" />
@@ -29741,6 +29791,10 @@
 	<item id="21708" name="vampire silk slippers">
 		<attribute key="weight" value="1150" />
 	</item>
+	<item id="21721" article="a" name="large crystal teleporter">
+		<attribute key="type" value="teleport" />
+		<attribute key="effect" value="teleport" />
+	</item>
 	<item id="21725" article="a" name="furious frock">
 		<attribute key="weight" value="3400" />
 		<attribute key="armor" value="12" />
@@ -29764,6 +29818,16 @@
 	<item id="21925" article="a" name="ruined stair">
 		<attribute key="floorchange" value="west" />
 	</item>
+	<item id="22009" article="a" name="dark cypress" />
+	<item fromid="22010" toid="22011" article="a" name="tall dark cypress" />
+	<item id="22024" article="a" name="dusky cypress" />
+	<item id="22026" article="a" name="tall dusky cypress" />
+	<item id="22063" article="a" name="gloomy cy press" />
+	<item id="22106" article="an" name="ichor thistle" />
+	<item fromid="22107" toid="22109" article="a" name="small ichor thistle" />
+	<item fromid="22110" toid="22111" article="a" name="small rock needle" />
+	<item fromid="22112" toid="22113" article="a" name="rock needle" />
+	<item fromid="22114" toid="22117" article="a" name="small rock needle" />
 	<item id="22363" name="broken dream">
 		<attribute key="description" value="The fragment of a dream. Strange pictures seem to flit through the shards." />
 		<attribute key="weight" value="10" />
@@ -30294,6 +30358,11 @@
 	<item id="22542" article="a" name="string of mending">
 		<attribute key="description" value="This extraordinary smooth string feels quite cool to the touch." />
 	</item>
+	<item id="22543" article="an" name="unstable ring of ending">
+		<attribute key="weight" value="60" />
+		<attribute key="description" value="Something is happening to this ring." />
+		<attribute key="slotType" value="ring" />
+	</item>
 	<item id="22546" article="a" name="dead demon outcast">
 		<attribute key="containerSize" value="20" />
 		<attribute key="decayTo" value="22547" />
@@ -30493,6 +30562,7 @@
 	<item id="22649" article="a" name="snowflake tapestry">
 		<attribute key="weight" value="1000" />
 	</item>
+	<item id="22657" article="a" name="flying carpet" />
 	<item fromid="22662" toid="22666" article="a" name="hole">
 		<attribute key="floorchange" value="down" />
 	</item>
@@ -30508,6 +30578,8 @@
 	<item id="22670" article="a" name="ramp">
 		<attribute key="floorchange" value="south" />
 	</item>
+	<item id="22671" name="muddy floor" />
+	<item id="22674" name="sand" />
 	<item id="22696" article="a" name="cake backpack">
 		<attribute key="weight" value="1800" />
 		<attribute key="containerSize" value="20" />
@@ -30515,6 +30587,230 @@
 	</item>
 	<item id="22699" article="a" name="cake tapestry">
 		<attribute key="weight" value="1000" />
+	</item>
+	<item id="23474" article="a" name="glooth injection tube">
+		<attribute key="weight" value="1400" />
+	</item>
+	<item id="23495" article="a" name="necrometer">
+		<attribute key="weight" value="800" />
+	</item>
+	<item id="23508" article="a" name="pint of glooth">
+		<attribute key="weight" value="200" />
+	</item>
+	<item id="23514" article="a" name="glooth sandwich">
+		<attribute key="weight" value="800" />
+	</item>
+	<item id="23515" article="a" name="bowl of glooth soup">
+		<attribute key="weight" value="100" />
+	</item>
+	<item id="23516" article="a" name="bottle of glooth wine">
+		<attribute key="weight" value="400" />
+	</item>
+	<item id="23517" article="a" name="glooth steak">
+		<attribute key="weight" value="1200" />
+	</item>
+	<item id="23529" article="a" name="glooth spear">
+		<attribute key="attack" value="55" />
+		<attribute key="weaponType" value="distance" />
+		<attribute key="shootType" value="gloothspear" />
+		<attribute key="range" value="4" />
+		<attribute key="weight" value="2600" />
+	</item>
+	<item id="23535" article="a" name="glooth cape">
+		<attribute key="armor" value="9" />
+		<attribute key="slotType" value="body" />
+		<attribute key="absorbPercentEarth" value="5" />
+		<attribute key="absorbPercentFire" value="-5" />
+		<attribute key="weight" value="2900" />
+	</item>
+	<item id="23536" article="a" name="rubber cap">
+		<attribute key="armor" value="5" />
+		<attribute key="slotType" value="head" />
+		<attribute key="absorbPercentEarth" value="3" />
+		<attribute key="absorbPercentFire" value="-3" />
+		<attribute key="magiclevelpoints" value="1" />
+		<attribute key="weight" value="800" />
+	</item>
+	<item id="23537" article="a" name="mooh'tah plate">
+		<attribute key="armor" value="12" />
+		<attribute key="slotType" value="body" />
+		<attribute key="weight" value="12500" />
+	</item>
+	<item id="23538" article="a" name="heat core">
+		<attribute key="armor" value="12" />
+		<attribute key="slotType" value="body" />
+		<attribute key="weight" value="5500" />
+	</item>
+	<item id="23539" article="a" name="alloy legs">
+		<attribute key="armor" value="6" />
+		<attribute key="slotType" value="legs" />
+		<attribute key="speed" value="20" />
+		<attribute key="weight" value="4500" />
+	</item>
+	<item id="23540" article="a" name="metal spats">
+		<attribute key="armor" value="1" />
+		<attribute key="slotType" value="feet" />
+		<attribute key="absorbPercentPhysical" value="1" />
+		<attribute key="weight" value="1800" />
+	</item>
+	<item id="23541" article="a" name="gearwheel chain">
+		<attribute key="armor" value="3" />
+		<attribute key="slotType" value="necklace" />
+		<attribute key="weight" value="1000" />
+	</item>
+	<item id="23542" article="a" name="metal bat">
+		<attribute key="defense" value="20" />
+		<attribute key="attack" value="44" />
+		<attribute key="weaponType" value="club" />
+		<attribute key="weight" value="5100" />
+	</item>
+	<item id="23543" article="a" name="glooth whip">
+		<attribute key="defense" value="19" />
+		<attribute key="attack" value="33" />
+		<attribute key="weaponType" value="club" />
+		<attribute key="weight" value="3200" />
+	</item>
+	<item id="23544" article="a" name="moohtant cudgel">
+		<attribute key="defense" value="20" />
+		<attribute key="extradef" value="1" />
+		<attribute key="attack" value="47" />
+		<attribute key="weaponType" value="club" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="weight" value="8500" />
+	</item>
+	<item id="23545" article="a" name="mino lance">
+		<attribute key="defense" value="23" />
+		<attribute key="attack" value="40" />
+		<attribute key="weaponType" value="axe" />
+		<attribute key="weight" value="6500" />
+	</item>
+	<item id="23546" article="a" name="mino shield">
+		<attribute key="defense" value="31" />
+		<attribute key="weaponType" value="shield" />
+		<attribute key="weight" value="6500" />
+	</item>
+	<item id="23547" article="an" name="execowtioner axe">
+		<attribute key="defense" value="18" />
+		<attribute key="attack" value="46" />
+		<attribute key="weaponType" value="axe" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="weight" value="8200" />
+	</item>
+	<item id="23548" article="a" name="cowtana">
+		<attribute key="defense" value="19" />
+		<attribute key="extradef" value="1" />
+		<attribute key="attack" value="34" />
+		<attribute key="weaponType" value="sword" />
+		<attribute key="weight" value="2800" />
+	</item>
+	<item id="23549" article="a" name="glooth club">
+		<attribute key="defense" value="1" />
+		<attribute key="attack" value="39" />
+		<attribute key="weaponType" value="club" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="elementEarth" value="26" />
+		<attribute key="charges" value="2" />
+		<attribute key="weight" value="1900" />
+	</item>
+	<item id="23550" article="a" name="glooth blade">
+		<attribute key="defense" value="1" />
+		<attribute key="attack" value="39" />
+		<attribute key="weaponType" value="sword" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="elementEarth" value="26" />
+		<attribute key="charges" value="2" />
+		<attribute key="weight" value="1900" />
+	</item>
+	<item id="23551" article="a" name="glooth axe">
+		<attribute key="defense" value="1" />
+		<attribute key="attack" value="39" />
+		<attribute key="weaponType" value="axe" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="elementEarth" value="26" />
+		<attribute key="charges" value="2" />
+		<attribute key="weight" value="1900" />
+	</item>
+	<item id="23553" article="a" name="glob of glooth">
+		<attribute key="weight" value="10" />
+	</item>
+	<item id="23554" article="a" name="glooth amulet">
+		<attribute key="slotType" value="necklace" />
+		<attribute key="charges" value="20" />
+		<attribute key="showcharges" value="1" />
+		<attribute key="absorbPercentPhysical" value="10" />
+		<attribute key="absorbPercentMagic" value="10" />
+		<attribute key="showattributes" value="1" />
+		<attribute key="weight" value="220" />
+	</item>
+	<item id="23557" article="a" name="control unit">
+		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
+		<attribute key="weight" value="200" />
+	</item>
+	<item id="23563" article="a" name="mono detector">
+		<attribute key="weight" value="800" />
+	</item>
+	<item id="23564" article="a" name="metal jaw">
+		<attribute key="weight" value="140" />
+	</item>
+	<item id="23565" article="a" name="slime heart">
+		<attribute key="weight" value="180" />
+	</item>
+	<item id="23566" article="a" name="poisoned fang">
+		<attribute key="weight" value="120" />
+	</item>
+	<item id="23567" article="a" name="necromantic rust">
+		<attribute key="weight" value="150" />
+	</item>
+	<item id="23568" article="a" name="slimy leaf tentacle">
+		<attribute key="weight" value="300" />
+	</item>
+	<item id="23569" article="a" name="metal toe">
+		<attribute key="weight" value="500" />
+	</item>
+	<item id="23570" article="a" name="giant pacifier">
+		<attribute key="weight" value="900" />
+	</item>
+	<item id="23571" article="a" name="moohtant horn">
+		<attribute key="weight" value="350" />
+	</item>
+	<item id="23572" article="an" name="execowtioner mask">
+		<attribute key="weight" value="320" />
+	</item>
+	<item id="23573" article="a" name="mooh'tah shell">
+		<attribute key="weight" value="500" />
+	</item>
+	<item id="23574" article="a" name="glooth bag">
+		<attribute key="weight" value="3000" />
+	</item>
+	<item id="23575" article="a" name="cowbell">
+		<attribute key="weight" value="400" />
+	</item>
+	<item id="23588" name="green light">
+		<attribute key="slotType" value="ammo" />
+		<attribute key="weight" value="20" />
+	</item>
+	<item id="23589" article="a" name="lisa's doll">
+		<attribute key="weight" value="650" />
+	</item>
+	<item id="23590" article="an" name="one hit wonder">
+		<attribute key="defense" value="22" />
+		<attribute key="attack" value="49" />
+		<attribute key="weaponType" value="club" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="weight" value="9600" />
+	</item>
+	<item id="23662" article="a" name="juicy roots">
+		<attribute key="weight" value="200" />
+	</item>
+	<item id="23663" article="a" name="feedbag">
+		<attribute key="containerSize" value="20" />
+		<attribute key="slotType" value="backpack" />
+		<attribute key="weight" value="1800" />
+	</item>
+	<item id="23666" article="a" name="glooth backpack">
+		<attribute key="containerSize" value="20" />
+		<attribute key="slotType" value="backpack" />
+		<attribute key="weight" value="1800" />
 	</item>
 	<item id="30001" name="water" />
 	<item id="30002" name="blood" />
