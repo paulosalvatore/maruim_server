@@ -247,6 +247,7 @@
 	<monster name="Orc Marauder" file="orc marauder.xml"/>
 	<monster name="Orc Rider" file="orc rider.xml"/>
 	<monster name="Orc Shaman" file="orc shaman.xml"/>
+	<monster name="Orc Spearman" file="orc spearman.xml"/>
 	<monster name="Orc Warlord" file="orc warlord.xml"/>
 	<monster name="Orc" file="orc.xml"/>
 	<monster name="Orewalker" file="orewalker.xml"/>
