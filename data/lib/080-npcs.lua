@@ -11,7 +11,13 @@ destinos = {
 		custo = 100,
 		levelNecessario = 0
 	},
-	["civitaten"] = {
+	["civitaten_tapete"] = {
+		nome = "Civitaten",
+		posicao = {x = 882, y = 1940, z = 6},
+		custo = 100,
+		levelNecessario = 0
+	},
+	["civitaten_barco"] = {
 		nome = "Civitaten",
 		posicao = {x = 928, y = 1900, z = 2},
 		custo = 100,
@@ -35,9 +41,15 @@ destinos = {
 		custo = 100,
 		levelNecessario = 0
 	},
-	["hyalakur"] = {
+	["hyalakur_tapete"] = {
 		nome = "Hyalakur",
 		posicao = {x = 1084, y = 1592, z = 7},
+		custo = 100,
+		levelNecessario = 0
+	},
+	["hyalakur_barco"] = {
+		nome = "Hyalakur",
+		posicao = {x = 1102, y = 1512, z = 6},
 		custo = 100,
 		levelNecessario = 0
 	},
@@ -92,16 +104,121 @@ destinos = {
 }
 -- Tipos Aceitos: navio, tapete, barco
 barqueiros = {
-	["Rafter Demarm"] = {
+	["Palter Dilventan"] = {
 		destinos = {
-			"ilha_inicial_parte_alta_baixa"
+			"civitaten_barco",
+			"hyalakur_barco",
+			"otto"
 		},
+		tipo_viagem = "navio"
+	},
+	["Eteringe Genon"] = {
+		destinos = {
+			"kyo",
+			"hyalakur_barco",
+			"civitaten_barco",
+			"mugulu"
+		},
+		tipo_viagem = "navio"
+	},
+	["Ghariva Titodimoon"] = {
+		destinos = {
+			"otto",
+			"algatar",
+			"civitaten_barco"
+		},
+		tipo_viagem = "navio"
+	},
+	["Zairda Soron"] = {
+		destinos = {
+			"algatar",
+			"hyalakur_barco",
+			"civitaten_barco"
+		},
+		tipo_viagem = "navio"
+	},
+	["Akheria Sudayth"] = {
+		destinos = {
+			"mugulu",
+			"hyalakur_barco",
+			"ilha_inicial"
+		},
+		tipo_viagem = "navio"
+	},
+	["Mado Arbells"] = {
+		destinos = {
+			"otto",
+			"algatar",
+			"kyo",
+			"ilha_inicial"
+		},
+		tipo_viagem = "navio"
+	},
+	["Pewarthor Daellits"] = {
+		destinos = {
+			"mugulu",
+			"algatar",
+			"kyo",
+			"ilha_inicial"
+		},
+		tipo_viagem = "navio"
+	},
+	["Zerillion Darica"] = {
+		destinos = {
+			"udecoat",
+			"civitaten_tapete",
+			"hyalakur_tapete"
+		},
+		tipo_viagem = "tapete"
+	},
+	["Haless Amonius"] = {
+		destinos = {
+			"pundera",
+			"civitaten_tapete",
+			"hyalakur_tapete",
+			"lorn"
+		},
+		tipo_viagem = "tapete"
+	},
+	["Vuwulo Retulon"] = {
+		destinos = {
+			"pundera",
+			"udecoat",
+			"lorn",
+			"khazad_dum"
+		},
+		tipo_viagem = "tapete"
+	},
+	["Airotear Greli"] = {
+		destinos = {
+			"lorn",
+			"hyalakur_tapete"
+		},
+		tipo_viagem = "tapete"
+	},
+	["Pheanak Livertin"] = {
+		destinos = {
+			"udecoat",
+			"lorn",
+			"pundera"
+		},
+		tipo_viagem = "tapete"
+	},
+	["Yendsos Anian"] = {
+		destinos = {
+			"civitaten_tapete",
+			"lorn",
+			"udecoat",
+			"hyalakur_tapete"
+		},
+		tipo_viagem = "tapete"
+	},
+	["Rafter Demarm"] = {
+		destinos = {"ilha_inicial_parte_alta_baixa"},
 		tipo_viagem = "barco"
 	},
 	["Rafter Bous"] = {
-		destinos = {
-			"ilha_inicial_parte_baixa_alta"
-		},
+		destinos = {"ilha_inicial_parte_baixa_alta"},
 		tipo_viagem = "barco"
 	}
 }
