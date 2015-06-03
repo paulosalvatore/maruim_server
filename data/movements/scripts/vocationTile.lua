@@ -11,7 +11,7 @@ function onStepIn(creature, item, position, fromPosition)
 	end
 	if config[item.actionid] ~= nil then
 		if not isInArray(config[item.actionid], player:getVocation():getId()) then
-			player:sendCancelMessage("Você precisa ser um " .. Vocation(config[item.actionid][1]):getName() .. " para entrar neste local.")
+			player:sendCancelMessage("Você precisa ser um " .. Vocation(config[item.actionid][1]):getName() .. " para passar.")
 		else
 			return
 		end

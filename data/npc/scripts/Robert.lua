@@ -11,7 +11,7 @@ function creatureSayCallback(cid, type, msg)
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 	local player = Player(cid)
 	if not npcHandler:isFocused(cid) then
-		if msg == "hi" or msg == "hello" then
+		if msg == "hi" or msg == "hello" or msg == "oi" or msg == "olá" or msg == "ola" then
 			if getPlayerStorageValue(cid, storage) == -1 then
 				npcHandler:say({"Olá "..player:getName()..". Minha filha e eu estávamos caminhando pela floresta quando uma criatura a atacou.",
 				"Assim que chegamos na cidade procurei por ajuda, mas ninguém conseguiu curá-la.",
