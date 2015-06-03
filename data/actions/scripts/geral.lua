@@ -20,8 +20,9 @@ local config = {
 			-- tempo = milissegundos,
 			-- chanceSucesso = 1% = 100,
 			-- chanceNeutra = 1% = 100,
-			-- profissao = "nome da profissÃ£o",
-			-- sons = {"som"}
+			-- profissao = "nome da profissão",
+			-- sons = {"som"},
+			-- checarPz = true
 		-- },
 	-- }
 	[6277] = {
@@ -488,7 +489,8 @@ local config = {
 				{{y = -1}, {y = 1}, "item", "sul"},
 				{{y = 1}, {y = -1}, "item", "norte"}
 			},
-			efeitoTeleport = "poff"
+			efeitoTeleport = "poff",
+			checarPz = true
 		}
 	},
 	[11754] = {
@@ -546,6 +548,11 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		if i.actionId ~= nil then
 			if item.actionid ~= i.actionId and target.actionid ~= i.actionId then
 				return false
+			end
+		end
+		if i.checarPz ~= nil then
+			if player:isPzLocked() then
+				return player:sendCancelMessage("Você não pode entrar nessa área depois de atacar outro jogador.")
 			end
 		end
 		if i.verificarPosicao ~= nil then
