@@ -1,7 +1,7 @@
 destinos = {
 	["ilha_inicial"] = {
 		nome = "Ilha Inicial",
-		posicao = {x = 644, y = 942, z = 6},
+		posicao = {x = 633, y = 939, z = 6},
 		custo = 100,
 		levelNecessario = 0
 	},
@@ -13,13 +13,13 @@ destinos = {
 	},
 	["civitaten_tapete"] = {
 		nome = "Civitaten",
-		posicao = {x = 882, y = 1940, z = 6},
+		posicao = {x = 928, y = 1900, z = 2},
 		custo = 100,
 		levelNecessario = 0
 	},
 	["civitaten_barco"] = {
 		nome = "Civitaten",
-		posicao = {x = 928, y = 1900, z = 2},
+		posicao = {x = 882, y = 1940, z = 6},
 		custo = 100,
 		levelNecessario = 0
 	},
@@ -30,7 +30,7 @@ destinos = {
 		levelNecessario = 0
 	},
 	["otto"] = {
-		nome = "Ã”ttÃ´",
+		nome = "Ôttô",
 		posicao = {x = 834, y = 1258, z = 6},
 		custo = 100,
 		levelNecessario = 0
@@ -72,7 +72,7 @@ destinos = {
 		levelNecessario = 0
 	},
 	["khazad_dum"] = {
-		nome = "Khazad-dÃ»m",
+		nome = "Khazad-dûm",
 		posicao = {x = 1513, y = 1753, z = 8},
 		custo = 100,
 		levelNecessario = 0
@@ -84,7 +84,7 @@ destinos = {
 		levelNecessario = 0
 	},
 	["mugulu_dragon"] = {
-		nome = "Ilha dos DragÃµes",
+		nome = "Ilha dos Dragões",
 		posicao = {x = 704, y = 1241, z = 7},
 		custo = 100,
 		levelNecessario = 0
@@ -110,7 +110,7 @@ barqueiros = {
 			"hyalakur_barco",
 			"otto"
 		},
-		tipo_viagem = "navio"
+		tipoViagem = "navio"
 	},
 	["Eteringe Genon"] = {
 		destinos = {
@@ -119,7 +119,7 @@ barqueiros = {
 			"civitaten_barco",
 			"mugulu"
 		},
-		tipo_viagem = "navio"
+		tipoViagem = "navio"
 	},
 	["Ghariva Titodimoon"] = {
 		destinos = {
@@ -127,7 +127,7 @@ barqueiros = {
 			"algatar",
 			"civitaten_barco"
 		},
-		tipo_viagem = "navio"
+		tipoViagem = "navio"
 	},
 	["Zairda Soron"] = {
 		destinos = {
@@ -135,7 +135,7 @@ barqueiros = {
 			"hyalakur_barco",
 			"civitaten_barco"
 		},
-		tipo_viagem = "navio"
+		tipoViagem = "navio"
 	},
 	["Akheria Sudayth"] = {
 		destinos = {
@@ -143,7 +143,7 @@ barqueiros = {
 			"hyalakur_barco",
 			"ilha_inicial"
 		},
-		tipo_viagem = "navio"
+		tipoViagem = "navio"
 	},
 	["Mado Arbells"] = {
 		destinos = {
@@ -152,7 +152,7 @@ barqueiros = {
 			"kyo",
 			"ilha_inicial"
 		},
-		tipo_viagem = "navio"
+		tipoViagem = "navio"
 	},
 	["Pewarthor Daellits"] = {
 		destinos = {
@@ -161,7 +161,7 @@ barqueiros = {
 			"kyo",
 			"ilha_inicial"
 		},
-		tipo_viagem = "navio"
+		tipoViagem = "navio"
 	},
 	["Zerillion Darica"] = {
 		destinos = {
@@ -169,7 +169,7 @@ barqueiros = {
 			"civitaten_tapete",
 			"hyalakur_tapete"
 		},
-		tipo_viagem = "tapete"
+		tipoViagem = "tapete"
 	},
 	["Haless Amonius"] = {
 		destinos = {
@@ -178,7 +178,7 @@ barqueiros = {
 			"hyalakur_tapete",
 			"lorn"
 		},
-		tipo_viagem = "tapete"
+		tipoViagem = "tapete"
 	},
 	["Vuwulo Retulon"] = {
 		destinos = {
@@ -187,14 +187,14 @@ barqueiros = {
 			"lorn",
 			"khazad_dum"
 		},
-		tipo_viagem = "tapete"
+		tipoViagem = "tapete"
 	},
 	["Airotear Greli"] = {
 		destinos = {
 			"lorn",
 			"hyalakur_tapete"
 		},
-		tipo_viagem = "tapete"
+		tipoViagem = "tapete"
 	},
 	["Pheanak Livertin"] = {
 		destinos = {
@@ -202,7 +202,7 @@ barqueiros = {
 			"lorn",
 			"pundera"
 		},
-		tipo_viagem = "tapete"
+		tipoViagem = "tapete"
 	},
 	["Yendsos Anian"] = {
 		destinos = {
@@ -211,14 +211,14 @@ barqueiros = {
 			"udecoat",
 			"hyalakur_tapete"
 		},
-		tipo_viagem = "tapete"
+		tipoViagem = "tapete"
 	},
 	["Rafter Demarm"] = {
 		destinos = {"ilha_inicial_parte_alta_baixa"},
-		tipo_viagem = "barco"
+		tipoViagem = "barco"
 	},
 	["Rafter Bous"] = {
 		destinos = {"ilha_inicial_parte_baixa_alta"},
-		tipo_viagem = "barco"
+		tipoViagem = "barco"
 	}
 }

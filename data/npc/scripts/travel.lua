@@ -14,17 +14,69 @@ if configNpc == nil then
 	return
 end
 local destinosNpc = configNpc.destinos
+local tipoViagem = configNpc.tipoViagem
+local palavrasChave
+local mensagemViagem
 
+if tipoViagem == "navio" then
+	mensagemViagem = "Icem as velas!"
+	palavrasChave = {{"travel"}, {"viagem"}, {"viajar"}, {"sail"}, {"navegar"}}
+	npcHandler:setMessage(MESSAGE_GREET, "Seja bem-vindo a bordo, |PLAYERNAME|! Para onde gostaria de {navegar} hoje?")
+	npcHandler:setMessage(MESSAGE_FAREWELL, "Adeus |PLAYERNAME|. Recomende nós se você estiver satisfeito com nossos serviços.!")
+elseif tipoViagem == "tapete" then
+	palavrasChave = {{"travel"}, {"fly"}, {"voar"}}
+	mensagemViagem = "Segure-se!"
+	npcHandler:setMessage(MESSAGE_GREET, "Saudações, viajante |PLAYERNAME|! Para onde gostaria de {voar} hoje?")
+	npcHandler:setMessage(MESSAGE_FAREWELL, "Foi um prazer ajudá-lo, |PLAYERNAME|.")
+elseif tipoViagem == "barco" then
+	palavrasChave = {{"travel"}, {"sail"}, {"velejar"}}
+	mensagemViagem = "Lá vamos nós!"
+	npcHandler:setMessage(MESSAGE_GREET, "Saudações, |PLAYERNAME|! Para onde gostaria de {velejar} hoje?")
+end
+
+local exibirDestinos = ""
 for a, b in pairs(destinosNpc) do
 	local destino = destinos[b]
+	local exibirDestino = "{".. destino.nome .. "}"
+	if a > 1 then
+		if a < table.getn(destinosNpc) then
+			exibirDestino = ", " .. exibirDestino
+		else
+			exibirDestino = " ou " .. exibirDestino
+		end
+	end
+	exibirDestinos = exibirDestinos .. exibirDestino
 	local levelNecessario = 0
-	local destinoNome = string.lower(destino.nome)
 	if destino.levelNecessario ~= nil and type(destino.levelNecessario) == "number" then
 		levelNecessario = destino.levelNecessario
 	end
-	local travelNode = keywordHandler:addKeyword({destinoNome}, StdModule.say, {npcHandler = npcHandler, text = 'Você procura por uma passagem para ' .. destinoNome .. ' por ' .. destino.custo .. ' gold coins?'})
-		travelNode:addChildKeywords({{'yes'}, {'sim'}}, StdModule.travel, {npcHandler = npcHandler,  level = levelNecessario, cost = destino.custo, destination = destino.posicao})
-		travelNode:addChildKeywords({{'no'}, {'não'}, {'nao'}}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'Sem problemas! Nós iremos serví-lo algum dia.'})
+	local travelNode = keywordHandler:addKeyword({string.lower(destino.nome)}, StdModule.say, {npcHandler = npcHandler, text = "Você procura por uma passagem para " .. destino.nome .. " por " .. destino.custo .. " gold coins?"})
+		travelNode:addChildKeywords({{"yes"}, {"sim"}}, StdModule.travel, {npcHandler = npcHandler,  level = levelNecessario, cost = destino.custo, destination = destino.posicao, msg = mensagemViagem})
+		travelNode:addChildKeywords({{"no"}, {"não"}, {"nao"}}, StdModule.say, {npcHandler = npcHandler, reset = true, text = "Sem problemas! Nós iremos serví-lo algum dia."})
 end
 
+local textoDestino
+if table.getn(destinosNpc) == 1 then
+	textoDestino = "Eu posso te levar para " .. exibirDestinos .. "."
+else
+	textoDestino = "Para onde você deseja ir? " .. exibirDestinos .. "?"
+end
+keywordHandler:addKeywords(palavrasChave, StdModule.say, {npcHandler = npcHandler, text = textoDestino})
+
 npcHandler:addModule(FocusModule:new())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
