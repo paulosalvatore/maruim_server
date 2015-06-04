@@ -1,0 +1,3 @@
+Reputacao = {
+	promocao = 5
+}
