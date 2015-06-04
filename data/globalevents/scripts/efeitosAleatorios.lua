@@ -9,11 +9,11 @@
 		},
 		["parede_horizontal"] = {
 			["efeitos"] = {CONST_ME_SKULLHORIZONTAL},
-			["ids"] = {9119, 9121, 9127, 9135, 9136, 9137, 9138, 9139, 9143}
+			["ids"] = {9119, 9121, 9127, 9135, 9136, 9137, 9138, 9139, 9143, 9295, 9296}
 		},
 		["parede_vertical"] = {
 			["efeitos"] = {CONST_ME_SKULLVERTICAL},
-			["ids"] = {9118, 9293, 9125, 9129, 9130, 9131, 9132, 9133, 9142}
+			["ids"] = {9118, 9293, 9125, 9129, 9130, 9131, 9132, 9133, 9142, 9298, 9299}
 		},
 		["espelho_horizontal"] = {
 			["efeitos"] = {CONST_ME_MIRRORHORIZONTAL},
