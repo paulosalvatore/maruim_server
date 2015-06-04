@@ -48,12 +48,15 @@
 	<action itemid="10153" script="golem_disassembler.lua"/>
 
 	<action itemid="10223" script="tools/fishing.lua" allowfaruse="1"/>
-	
+
 	<action itemid="9930" script="rusty_remover.lua"/>
 
 	<action itemid="21309" script="pocoes_profissao.lua"/>
 	<action itemid="21426" script="pocoes_profissao.lua"/>
-	
+
+	<action itemid="20220" script="elevador.lua"/>
+	<action itemid="20224" script="elevador.lua"/>
+
 	<!-- Crafting -->
 	<action itemid="2555" script="crafting.lua"/>
 	<action itemid="8671" script="crafting.lua"/>
