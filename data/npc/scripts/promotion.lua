@@ -7,8 +7,28 @@ function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(cid, type, msg)		npcHandler:onCreatureSay(cid, type, msg)		end
 function onThink()				npcHandler:onThink()					end
 
-local node1 = keywordHandler:addKeyword({'promot'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'I can promote you for 20000 gold coins. Do you want me to promote you?'})
-	node1:addChildKeyword({'yes'}, StdModule.promotePlayer, {npcHandler = npcHandler, cost = 20000, level = 20, text = 'Congratulations! You are now promoted.'})
-	node1:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Alright then, come back when you are ready.', reset = true})
+local player = Player(cid)
+if player:isPromoted() then
+	npcHandler:setMessage(MESSAGE_GREET, "Saudações |PLAYERNAME|. Está precisando de ajuda em algo?")
+else
+	npcHandler:setMessage(MESSAGE_GREET, "Olá jovem aprendiz. Se está preparado para melhorar suas habilidades, eu posso {promover} a sua vocação.")
+end
+local function creatureSayCallback(cid, type, msg)
+	if not npcHandler:isFocused(cid) then
+		return false
+	end
+
+	if isInArray({"promover", "promoção", "promocao", "promotion", "promot"}, msg) and player:isPromoted() == false then
+		local reputacaoNecessaria = 1
+		if player:getLevel() < 20 then
+			npcHandler:say("Você precisa ter pelo menos nível 20 para receber uma promoção.", cid)
+		elseif player:getReputacao() < reputacaoNecessaria then
+			npcHandler:say("Você não possui reputação suficiente. Volte quando tiver pelo menos reputação " .. reputacaoNecessaria .. " com a sua vocação.", cid)
+		else
+			npcHandler:say("Parabéns! Você foi promovido.", cid)
+			player:setVocation(Vocation(player:getVocation():getPromotion():getId()))
+		end
+	end
+end
 
 npcHandler:addModule(FocusModule:new())
