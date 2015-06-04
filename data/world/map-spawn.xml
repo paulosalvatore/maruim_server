@@ -3461,10 +3461,10 @@
 	<spawn centerx="1444" centery="1498" centerz="7" radius="1">
 		<monster name="Scarab" x="-1" y="1" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1211" centery="1499" centerz="7" radius="3">
-		<monster name="Nomad Female" x="-1" y="-3" z="7" spawntime="60" />
-		<monster name="Nomad Female" x="3" y="2" z="7" spawntime="60" />
-		<monster name="Nomad Female" x="0" y="3" z="7" spawntime="60" />
+	<spawn centerx="1210" centery="1499" centerz="7" radius="3">
+		<monster name="Nomad Female" x="0" y="-3" z="7" spawntime="60" />
+		<monster name="Nomad Female" x="3" y="1" z="7" spawntime="60" />
+		<monster name="Nomad Female" x="-2" y="2" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1405" centery="1499" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
@@ -10482,6 +10482,15 @@
 	<spawn centerx="968" centery="1780" centerz="8" radius="1">
 		<npc name="Jund Alder" x="1" y="1" z="8" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="1376" centery="1781" centerz="8" radius="1">
+		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1414" centery="1781" centerz="8" radius="1">
+		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1421" centery="1781" centerz="8" radius="1">
+		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="517" centery="1782" centerz="8" radius="1">
 		<monster name="Frost Dragon Hatchling" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -10515,11 +10524,47 @@
 		<monster name="Frost Giant" x="0" y="0" z="8" spawntime="60" />
 		<monster name="Frost Giant" x="1" y="0" z="8" spawntime="1536" />
 	</spawn>
+	<spawn centerx="1333" centery="1784" centerz="8" radius="2">
+		<monster name="Clay Guardian" x="-2" y="-1" z="8" spawntime="60" />
+		<monster name="Clay Guardian" x="2" y="-1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="565" centery="1785" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1347" centery="1785" centerz="8" radius="1">
+		<monster name="Clay Guardian" x="1" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1360" centery="1785" centerz="8" radius="1">
+		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1369" centery="1785" centerz="8" radius="2">
+		<monster name="Clay Guardian" x="-1" y="-2" z="8" spawntime="60" />
+		<monster name="Clay Guardian" x="0" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1382" centery="1785" centerz="8" radius="2">
+		<monster name="Clay Guardian" x="-1" y="-2" z="8" spawntime="60" />
+		<monster name="Clay Guardian" x="0" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1392" centery="1785" centerz="8" radius="1">
+		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="749" centery="1786" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1397" centery="1786" centerz="8" radius="1">
+		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1409" centery="1786" centerz="8" radius="1">
+		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1427" centery="1786" centerz="8" radius="1">
+		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1434" centery="1786" centerz="8" radius="1">
+		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1444" centery="1786" centerz="8" radius="1">
+		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="472" centery="1787" centerz="8" radius="2">
 		<monster name="Crystal Spider" x="-2" y="-1" z="8" spawntime="60" />
@@ -10540,8 +10585,14 @@
 	<spawn centerx="815" centery="1789" centerz="8" radius="1">
 		<monster name="Frost Giant" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1451" centery="1789" centerz="8" radius="1">
+		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="682" centery="1790" centerz="8" radius="1">
 		<monster name="Crystal Spider" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1376" centery="1791" centerz="8" radius="1">
+		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="687" centery="1792" centerz="8" radius="1">
 		<monster name="Crystal Spider" x="0" y="0" z="8" spawntime="60" />
@@ -10555,6 +10606,10 @@
 	<spawn centerx="778" centery="1794" centerz="8" radius="1">
 		<monster name="Frost Giant" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1417" centery="1794" centerz="8" radius="2">
+		<monster name="Eternal Guardian" x="-2" y="-2" z="8" spawntime="60" />
+		<monster name="Eternal Guardian" x="2" y="-2" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="793" centery="1795" centerz="8" radius="2">
 		<monster name="Ice Golem" x="-2" y="-1" z="8" spawntime="60" />
 		<monster name="Ice Golem" x="2" y="1" z="8" spawntime="60" />
@@ -10566,6 +10621,12 @@
 	<spawn centerx="1188" centery="1795" centerz="8" radius="1">
 		<monster name="Tarantula" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1333" centery="1795" centerz="8" radius="1">
+		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1397" centery="1795" centerz="8" radius="1">
+		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="561" centery="1796" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -10574,6 +10635,12 @@
 	</spawn>
 	<spawn centerx="1194" centery="1796" centerz="8" radius="1">
 		<monster name="Poison Spider" x="-1" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1417" centery="1796" centerz="8" radius="1">
+		<monster name="Clay Guardian" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1437" centery="1796" centerz="8" radius="1">
+		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="516" centery="1797" centerz="8" radius="1">
 		<monster name="Frost Dragon Hatchling" x="0" y="0" z="8" spawntime="60" />
@@ -10602,6 +10669,10 @@
 	<spawn centerx="1183" centery="1799" centerz="8" radius="1">
 		<monster name="Poison Spider" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1451" centery="1799" centerz="8" radius="2">
+		<monster name="Eternal Guardian" x="2" y="-1" z="8" spawntime="60" />
+		<monster name="Eternal Guardian" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1205" centery="1800" centerz="8" radius="1">
 		<monster name="Poison Spider" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
@@ -10611,6 +10682,18 @@
 	<spawn centerx="759" centery="1802" centerz="8" radius="2">
 		<monster name="Ice Golem" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Ice Golem" x="1" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1402" centery="1802" centerz="8" radius="1">
+		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1412" centery="1802" centerz="8" radius="1">
+		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1421" centery="1802" centerz="8" radius="1">
+		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1433" centery="1802" centerz="8" radius="1">
+		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="494" centery="1803" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
@@ -10650,6 +10733,14 @@
 	<spawn centerx="825" centery="1806" centerz="8" radius="1">
 		<monster name="Frost Giant" x="0" y="0" z="8" spawntime="60" />
 		<monster name="Frost Giant" x="1" y="0" z="8" spawntime="1792" />
+	</spawn>
+	<spawn centerx="1334" centery="1806" centerz="8" radius="2">
+		<monster name="Clay Guardian" x="-2" y="-1" z="8" spawntime="60" />
+		<monster name="Clay Guardian" x="1" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1451" centery="1806" centerz="8" radius="2">
+		<monster name="Eternal Guardian" x="-2" y="-1" z="8" spawntime="60" />
+		<monster name="Eternal Guardian" x="2" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1292" centery="1807" centerz="8" radius="1">
 		<monster name="Crab" x="0" y="0" z="8" spawntime="60" />
@@ -13846,6 +13937,20 @@
 		<monster name="Chakoya Toolshaper" x="2" y="-2" z="9" spawntime="60" />
 		<monster name="Chakoya Toolshaper" x="-2" y="2" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1477" centery="1740" centerz="9" radius="2">
+		<monster name="Hydra" x="2" y="-2" z="9" spawntime="60" />
+		<monster name="Hydra" x="-1" y="2" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1499" centery="1741" centerz="9" radius="1">
+		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1487" centery="1742" centerz="9" radius="2">
+		<monster name="Medusa" x="2" y="-2" z="9" spawntime="60" />
+		<monster name="Medusa" x="-2" y="2" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1509" centery="1742" centerz="9" radius="1">
+		<monster name="Medusa" x="0" y="-1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="847" centery="1743" centerz="9" radius="1">
 		<monster name="Chakoya Windcaller" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
@@ -13855,6 +13960,9 @@
 	</spawn>
 	<spawn centerx="826" centery="1744" centerz="9" radius="1">
 		<monster name="Chakoya Windcaller" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1482" centery="1747" centerz="9" radius="1">
+		<monster name="Eternal Guardian" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1599" centery="1747" centerz="9" radius="2">
 		<monster name="Dwarf" x="2" y="-1" z="9" spawntime="60" />
@@ -13866,6 +13974,9 @@
 	</spawn>
 	<spawn centerx="851" centery="1748" centerz="9" radius="1">
 		<monster name="Chakoya Tribewarden" x="0" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1508" centery="1750" centerz="9" radius="1">
+		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="804" centery="1751" centerz="9" radius="3">
 		<monster name="Chakoya Toolshaper" x="-1" y="-2" z="9" spawntime="60" />
@@ -13891,11 +14002,21 @@
 		<monster name="Dwarf" x="-2" y="1" z="9" spawntime="60" />
 		<monster name="Dwarf" x="1" y="2" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1481" centery="1755" centerz="9" radius="1">
+		<monster name="Hydra" x="-1" y="1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="815" centery="1756" centerz="9" radius="1">
 		<monster name="Chakoya Windcaller" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="839" centery="1756" centerz="9" radius="1">
 		<monster name="Chakoya Toolshaper" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1506" centery="1759" centerz="9" radius="2">
+		<monster name="Medusa" x="1" y="-2" z="9" spawntime="60" />
+		<monster name="Medusa" x="-2" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1481" centery="1760" centerz="9" radius="1">
+		<monster name="Medusa" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="841" centery="1761" centerz="9" radius="1">
 		<monster name="Chakoya Windcaller" x="-1" y="-1" z="9" spawntime="60" />
@@ -13905,16 +14026,37 @@
 		<monster name="Chakoya Tribewarden" x="3" y="-1" z="9" spawntime="60" />
 		<monster name="Chakoya Tribewarden" x="-1" y="2" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1511" centery="1765" centerz="9" radius="1">
+		<monster name="Eternal Guardian" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1500" centery="1767" centerz="9" radius="1">
+		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="854" centery="1769" centerz="9" radius="3">
 		<monster name="Chakoya Tribewarden" x="-2" y="-2" z="9" spawntime="60" />
 		<monster name="Chakoya Tribewarden" x="2" y="-1" z="9" spawntime="60" />
 		<monster name="Chakoya Tribewarden" x="0" y="2" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1481" centery="1771" centerz="9" radius="1">
+		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="819" centery="1773" centerz="9" radius="1">
 		<monster name="Chakoya Windcaller" x="0" y="1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="797" centery="1774" centerz="9" radius="1">
 		<monster name="Chakoya Windcaller" x="0" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1424" centery="1774" centerz="9" radius="2">
+		<monster name="Hydra" x="2" y="-2" z="9" spawntime="60" />
+		<monster name="Hydra" x="-2" y="1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1481" centery="1775" centerz="9" radius="1">
+		<monster name="Eternal Guardian" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1510" centery="1775" centerz="9" radius="4">
+		<monster name="Medusa" x="3" y="-3" z="9" spawntime="60" />
+		<monster name="Medusa" x="-3" y="-2" z="9" spawntime="60" />
+		<monster name="Medusa" x="1" y="3" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="811" centery="1776" centerz="9" radius="3">
 		<monster name="Chakoya Toolshaper" x="-2" y="-2" z="9" spawntime="60" />
@@ -13924,18 +14066,63 @@
 	<spawn centerx="830" centery="1777" centerz="9" radius="1">
 		<monster name="Chakoya Windcaller" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1421" centery="1780" centerz="9" radius="2">
+		<monster name="Medusa" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1519" centery="1781" centerz="9" radius="1">
+		<monster name="Eternal Guardian" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="801" centery="1783" centerz="9" radius="1">
 		<monster name="Chakoya Windcaller" x="0" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1458" centery="1784" centerz="9" radius="1">
+		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1467" centery="1785" centerz="9" radius="1">
+		<monster name="Eternal Guardian" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="819" centery="1786" centerz="9" radius="3">
 		<monster name="Chakoya Tribewarden" x="-2" y="-3" z="9" spawntime="60" />
 		<monster name="Chakoya Tribewarden" x="2" y="-1" z="9" spawntime="60" />
 		<monster name="Chakoya Tribewarden" x="-2" y="2" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1433" centery="1786" centerz="9" radius="1">
+		<monster name="Eternal Guardian" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1444" centery="1786" centerz="9" radius="1">
+		<monster name="Hydra" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1489" centery="1786" centerz="9" radius="1">
+		<monster name="Medusa" x="1" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1510" centery="1786" centerz="9" radius="1">
+		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="840" centery="1787" centerz="9" radius="3">
 		<monster name="Chakoya Toolshaper" x="-1" y="-2" z="9" spawntime="60" />
 		<monster name="Chakoya Toolshaper" x="2" y="-2" z="9" spawntime="60" />
 		<monster name="Chakoya Toolshaper" x="-1" y="1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1476" centery="1787" centerz="9" radius="1">
+		<monster name="Medusa" x="1" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1482" centery="1788" centerz="9" radius="2">
+		<monster name="Hydra" x="1" y="-2" z="9" spawntime="60" />
+		<monster name="Hydra" x="-1" y="2" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1516" centery="1788" centerz="9" radius="4">
+		<monster name="Medusa" x="-2" y="-3" z="9" spawntime="60" />
+		<monster name="Medusa" x="4" y="0" z="9" spawntime="60" />
+		<monster name="Medusa" x="-2" y="3" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1451" centery="1789" centerz="9" radius="2">
+		<monster name="Eternal Guardian" x="2" y="-1" z="9" spawntime="60" />
+		<monster name="Eternal Guardian" x="-2" y="2" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1422" centery="1790" centerz="9" radius="4">
+		<monster name="Eternal Guardian" x="0" y="-4" z="9" spawntime="60" />
+		<monster name="Eternal Guardian" x="4" y="0" z="9" spawntime="60" />
+		<monster name="Eternal Guardian" x="-2" y="3" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1166" centery="1793" centerz="9" radius="1">
 		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
@@ -13944,12 +14131,19 @@
 		<monster name="Tarantula" x="2" y="-1" z="9" spawntime="60" />
 		<monster name="Tarantula" x="-2" y="1" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1482" centery="1794" centerz="9" radius="1">
+		<monster name="Eternal Guardian" x="-1" y="1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="829" centery="1795" centerz="9" radius="1">
 		<monster name="Chakoya Windcaller" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1166" centery="1798" centerz="9" radius="2">
 		<monster name="Tarantula" x="2" y="-1" z="9" spawntime="60" />
 		<monster name="Tarantula" x="-2" y="2" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1510" centery="1799" centerz="9" radius="4">
+		<monster name="Medusa" x="-4" y="-2" z="9" spawntime="60" />
+		<monster name="Medusa" x="3" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1136" centery="1800" centerz="9" radius="1">
 		<monster name="Wailing Widow" x="0" y="-1" z="9" spawntime="60" />
@@ -13970,6 +14164,15 @@
 	<spawn centerx="1125" centery="1803" centerz="9" radius="2">
 		<monster name="Tarantula" x="2" y="-2" z="9" spawntime="60" />
 		<monster name="Tarantula" x="-2" y="2" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1516" centery="1803" centerz="9" radius="1">
+		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1454" centery="1804" centerz="9" radius="1">
+		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1448" centery="1805" centerz="9" radius="1">
+		<monster name="Medusa" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1150" centery="1808" centerz="9" radius="1">
 		<monster name="Wailing Widow" x="-1" y="1" z="9" spawntime="60" />
@@ -15415,17 +15618,44 @@
 		<monster name="Dwarf Soldier" x="-2" y="0" z="10" spawntime="60" />
 		<monster name="Dwarf Soldier" x="2" y="0" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="992" centery="1728" centerz="10" radius="1">
+		<monster name="Deepling Spellsinger" x="-1" y="-1" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1595" centery="1728" centerz="10" radius="2">
 		<monster name="Dwarf Soldier" x="1" y="-1" z="10" spawntime="60" />
 		<monster name="Dwarf Soldier" x="-2" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="928" centery="1729" centerz="10" radius="1">
+		<monster name="Deepling Scout" x="-1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="937" centery="1729" centerz="10" radius="1">
+		<monster name="Deepling Warrior" x="0" y="-1" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1615" centery="1730" centerz="10" radius="2">
 		<monster name="Dwarf Guard" x="-2" y="0" z="10" spawntime="60" />
 		<monster name="Dwarf Guard" x="2" y="0" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="898" centery="1731" centerz="10" radius="4">
+		<monster name="Deepling Spellsinger" x="-3" y="-3" z="10" spawntime="60" />
+		<monster name="Deepling Spellsinger" x="3" y="-1" z="10" spawntime="60" />
+		<monster name="Deepling Spellsinger" x="4" y="1" z="10" spawntime="60" />
+		<monster name="Deepling Spellsinger" x="-3" y="3" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="986" centery="1731" centerz="10" radius="1">
+		<monster name="Deepling Warrior" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1140" centery="1731" centerz="10" radius="2">
 		<monster name="Quara Mantassin" x="-2" y="-2" z="10" spawntime="60" />
 		<monster name="Quara Mantassin" x="2" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="885" centery="1732" centerz="10" radius="4">
+		<monster name="Deepling Warrior" x="2" y="-4" z="10" spawntime="60" />
+		<monster name="Deepling Warrior" x="4" y="0" z="10" spawntime="60" />
+		<monster name="Deepling Warrior" x="-4" y="1" z="10" spawntime="60" />
+		<monster name="Deepling Warrior" x="1" y="4" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1015" centery="1732" centerz="10" radius="1">
+		<monster name="Deepling Spellsinger" x="1" y="-1" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1157" centery="1732" centerz="10" radius="2">
 		<monster name="Quara Constrictor" x="-1" y="-1" z="10" spawntime="60" />
@@ -15435,6 +15665,9 @@
 		<monster name="Quara Pincher" x="-1" y="-1" z="10" spawntime="60" />
 		<monster name="Quara Pincher" x="1" y="2" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="926" centery="1733" centerz="10" radius="1">
+		<monster name="Deepling Spellsinger" x="-1" y="-1" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1196" centery="1734" centerz="10" radius="2">
 		<monster name="Quara Constrictor" x="-1" y="-2" z="10" spawntime="60" />
 		<monster name="Quara Constrictor" x="1" y="2" z="10" spawntime="60" />
@@ -15442,6 +15675,20 @@
 	<spawn centerx="1210" centery="1734" centerz="10" radius="2">
 		<monster name="Quara Predator" x="-1" y="-1" z="10" spawntime="60" />
 		<monster name="Quara Predator" x="2" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="930" centery="1735" centerz="10" radius="1">
+		<monster name="Deepling Brawler" x="-1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="936" centery="1735" centerz="10" radius="1">
+		<monster name="Deepling Scout" x="-1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="997" centery="1736" centerz="10" radius="2">
+		<monster name="Deepling Brawler" x="-1" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Brawler" x="1" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1019" centery="1736" centerz="10" radius="2">
+		<monster name="Deepling Warrior" x="-2" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Warrior" x="2" y="2" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1139" centery="1738" centerz="10" radius="2">
 		<monster name="Quara Pincher" x="-2" y="-1" z="10" spawntime="60" />
@@ -15451,9 +15698,29 @@
 		<monster name="Quara Predator" x="0" y="-2" z="10" spawntime="60" />
 		<monster name="Quara Predator" x="1" y="2" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1004" centery="1739" centerz="10" radius="1">
+		<monster name="Deepling Scout" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="896" centery="1740" centerz="10" radius="3">
+		<monster name="Deepling Worker" x="-2" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Worker" x="3" y="-1" z="10" spawntime="60" />
+		<monster name="Deepling Worker" x="-1" y="3" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1011" centery="1740" centerz="10" radius="2">
+		<monster name="Deepling Brawler" x="0" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Brawler" x="1" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="885" centery="1741" centerz="10" radius="3">
+		<monster name="Deepling Brawler" x="-2" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Brawler" x="3" y="0" z="10" spawntime="60" />
+		<monster name="Deepling Brawler" x="0" y="3" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1204" centery="1741" centerz="10" radius="2">
 		<monster name="Quara Mantassin" x="-1" y="-2" z="10" spawntime="60" />
 		<monster name="Quara Mantassin" x="2" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="932" centery="1742" centerz="10" radius="1">
+		<monster name="Deepling Warrior" x="0" y="-1" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1158" centery="1742" centerz="10" radius="2">
 		<monster name="Quara Mantassin" x="1" y="-1" z="10" spawntime="60" />
@@ -15463,9 +15730,207 @@
 		<monster name="Quara Constrictor" x="-2" y="-2" z="10" spawntime="60" />
 		<monster name="Quara Constrictor" x="2" y="-1" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="933" centery="1746" centerz="10" radius="1">
+		<monster name="Deepling Scout" x="1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="946" centery="1746" centerz="10" radius="2">
+		<monster name="Deepling Brawler" x="-2" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Brawler" x="2" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="967" centery="1747" centerz="10" radius="1">
+		<monster name="Deepling Warrior" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="979" centery="1747" centerz="10" radius="1">
+		<monster name="Deepling Spellsinger" x="-1" y="-1" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1147" centery="1747" centerz="10" radius="2">
 		<monster name="Quara Constrictor" x="-1" y="-2" z="10" spawntime="60" />
 		<monster name="Quara Constrictor" x="2" y="1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="900" centery="1749" centerz="10" radius="1">
+		<monster name="Deepling Spellsinger" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="884" centery="1750" centerz="10" radius="1">
+		<monster name="Deepling Warrior" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="890" centery="1752" centerz="10" radius="3">
+		<monster name="Deepling Scout" x="2" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Scout" x="-2" y="-1" z="10" spawntime="60" />
+		<monster name="Deepling Scout" x="0" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="938" centery="1753" centerz="10" radius="1">
+		<monster name="Deepling Brawler" x="1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="975" centery="1753" centerz="10" radius="3">
+		<monster name="Deepling Brawler" x="-3" y="-3" z="10" spawntime="60" />
+		<monster name="Deepling Brawler" x="2" y="-1" z="10" spawntime="60" />
+		<monster name="Deepling Brawler" x="-1" y="3" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="956" centery="1754" centerz="10" radius="1">
+		<monster name="Deepling Warrior" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="983" centery="1756" centerz="10" radius="1">
+		<monster name="Deepling Warrior" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="890" centery="1758" centerz="10" radius="1">
+		<monster name="Deepling Brawler" x="1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="965" centery="1758" centerz="10" radius="1">
+		<monster name="Deepling Worker" x="-1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="940" centery="1761" centerz="10" radius="1">
+		<monster name="Deepling Warrior" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="974" centery="1763" centerz="10" radius="1">
+		<monster name="Deepling Scout" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="939" centery="1767" centerz="10" radius="2">
+		<monster name="Deepling Brawler" x="-2" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Brawler" x="2" y="1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="889" centery="1768" centerz="10" radius="1">
+		<monster name="Deepling Warrior" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="953" centery="1768" centerz="10" radius="2">
+		<monster name="Deepling Scout" x="-2" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Scout" x="1" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1003" centery="1771" centerz="10" radius="2">
+		<monster name="Deepling Brawler" x="-1" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Brawler" x="2" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="887" centery="1773" centerz="10" radius="1">
+		<monster name="Deepling Brawler" x="1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="884" centery="1774" centerz="10" radius="1">
+		<monster name="Deepling Spellsinger" x="1" y="1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="957" centery="1774" centerz="10" radius="1">
+		<monster name="Deepling Brawler" x="1" y="1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="937" centery="1776" centerz="10" radius="1">
+		<monster name="Deepling Worker" x="1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="994" centery="1776" centerz="10" radius="2">
+		<monster name="Deepling Scout" x="2" y="-1" z="10" spawntime="60" />
+		<monster name="Deepling Scout" x="-2" y="1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="885" centery="1781" centerz="10" radius="1">
+		<monster name="Deepling Warrior" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="933" centery="1782" centerz="10" radius="1">
+		<monster name="Deepling Warrior" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="968" centery="1782" centerz="10" radius="3">
+		<monster name="Deepling Worker" x="-3" y="-3" z="10" spawntime="60" />
+		<monster name="Deepling Worker" x="3" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Worker" x="1" y="3" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="878" centery="1784" centerz="10" radius="1">
+		<monster name="Deepling Spellsinger" x="1" y="1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1000" centery="1784" centerz="10" radius="2">
+		<monster name="Deepling Worker" x="2" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Worker" x="-1" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="990" centery="1785" centerz="10" radius="1">
+		<monster name="Deepling Worker" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="898" centery="1787" centerz="10" radius="2">
+		<monster name="Deepling Warrior" x="1" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Warrior" x="-2" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="923" centery="1788" centerz="10" radius="2">
+		<monster name="Deepling Scout" x="1" y="-1" z="10" spawntime="60" />
+		<monster name="Deepling Scout" x="-2" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="931" centery="1788" centerz="10" radius="1">
+		<monster name="Deepling Worker" x="1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="952" centery="1788" centerz="10" radius="2">
+		<monster name="Deepling Scout" x="0" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Scout" x="-1" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="909" centery="1789" centerz="10" radius="2">
+		<monster name="Deepling Brawler" x="-1" y="-1" z="10" spawntime="60" />
+		<monster name="Deepling Brawler" x="1" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="915" centery="1790" centerz="10" radius="1">
+		<monster name="Deepling Worker" x="1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="879" centery="1791" centerz="10" radius="1">
+		<monster name="Deepling Brawler" x="1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="981" centery="1793" centerz="10" radius="2">
+		<monster name="Deepling Scout" x="0" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Scout" x="-1" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="965" centery="1794" centerz="10" radius="3">
+		<monster name="Deepling Brawler" x="1" y="-3" z="10" spawntime="60" />
+		<monster name="Deepling Brawler" x="-3" y="0" z="10" spawntime="60" />
+		<monster name="Deepling Brawler" x="2" y="3" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="990" centery="1795" centerz="10" radius="1">
+		<monster name="Deepling Worker" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1018" centery="1795" centerz="10" radius="1">
+		<monster name="Deepling Worker" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="933" centery="1796" centerz="10" radius="2">
+		<monster name="Deepling Brawler" x="1" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Brawler" x="-1" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="883" centery="1797" centerz="10" radius="1">
+		<monster name="Deepling Warrior" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="998" centery="1801" centerz="10" radius="2">
+		<monster name="Deepling Worker" x="1" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Worker" x="-2" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="889" centery="1802" centerz="10" radius="1">
+		<monster name="Deepling Brawler" x="1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1010" centery="1802" centerz="10" radius="1">
+		<monster name="Deepling Worker" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="907" centery="1803" centerz="10" radius="1">
+		<monster name="Deepling Warrior" x="-1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="911" centery="1803" centerz="10" radius="1">
+		<monster name="Deepling Brawler" x="1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="939" centery="1803" centerz="10" radius="1">
+		<monster name="Deepling Worker" x="1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="883" centery="1804" centerz="10" radius="3">
+		<monster name="Deepling Spellsinger" x="-3" y="-3" z="10" spawntime="60" />
+		<monster name="Deepling Spellsinger" x="2" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="898" centery="1804" centerz="10" radius="2">
+		<monster name="Deepling Scout" x="1" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Scout" x="-2" y="1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="918" centery="1804" centerz="10" radius="2">
+		<monster name="Deepling Brawler" x="2" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Brawler" x="-2" y="1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="966" centery="1805" centerz="10" radius="3">
+		<monster name="Deepling Worker" x="2" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Worker" x="-3" y="1" z="10" spawntime="60" />
+		<monster name="Deepling Worker" x="3" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1021" centery="1805" centerz="10" radius="1">
+		<monster name="Deepling Worker" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="925" centery="1806" centerz="10" radius="1">
+		<monster name="Deepling Worker" x="1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="934" centery="1806" centerz="10" radius="2">
+		<monster name="Deepling Warrior" x="1" y="-2" z="10" spawntime="60" />
+		<monster name="Deepling Warrior" x="-2" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="936" centery="1810" centerz="10" radius="1">
+		<monster name="Deepling Spellsinger" x="-1" y="-1" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1118" centery="1828" centerz="10" radius="2">
 		<monster name="Giant Spider" x="0" y="-2" z="10" spawntime="100" />
@@ -16003,6 +16468,372 @@
 	<spawn centerx="1250" centery="1957" centerz="10" radius="1">
 		<monster name="Blood Crab" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="899" centery="1724" centerz="11" radius="1">
+		<monster name="Deepling Elite" x="-1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="988" centery="1725" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="894" centery="1726" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="915" centery="1726" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="919" centery="1727" centerz="11" radius="1">
+		<monster name="Deepling Tyrant" x="-1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="880" centery="1729" centerz="11" radius="2">
+		<monster name="Deepling Guard" x="-2" y="-1" z="11" spawntime="60" />
+		<monster name="Deepling Guard" x="2" y="2" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="977" centery="1729" centerz="11" radius="1">
+		<monster name="Deepling Elite" x="-1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="998" centery="1729" centerz="11" radius="1">
+		<monster name="Deepling Tyrant" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1010" centery="1729" centerz="11" radius="2">
+		<monster name="Deepling Elite" x="2" y="-2" z="11" spawntime="60" />
+		<monster name="Deepling Elite" x="-2" y="2" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="905" centery="1735" centerz="11" radius="1">
+		<monster name="Deepling Elite" x="-1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1002" centery="1735" centerz="11" radius="2">
+		<monster name="Deepling Guard" x="2" y="-2" z="11" spawntime="60" />
+		<monster name="Deepling Guard" x="-1" y="2" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="890" centery="1736" centerz="11" radius="1">
+		<monster name="Deepling Elite" x="-1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="977" centery="1736" centerz="11" radius="1">
+		<monster name="Deepling Tyrant" x="-1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="914" centery="1737" centerz="11" radius="1">
+		<monster name="Deepling Tyrant" x="-1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="984" centery="1737" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="893" centery="1738" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="878" centery="1739" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="909" centery="1739" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1012" centery="1739" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="988" centery="1745" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="879" centery="1746" centerz="11" radius="1">
+		<monster name="Deepling Elite" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="888" centery="1746" centerz="11" radius="2">
+		<monster name="Deepling Guard" x="0" y="-2" z="11" spawntime="60" />
+		<monster name="Deepling Guard" x="-1" y="2" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="893" centery="1747" centerz="11" radius="2">
+		<monster name="Deepling Master Librarian" x="1" y="-2" z="11" spawntime="60" />
+		<monster name="Deepling Master Librarian" x="-1" y="2" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="917" centery="1748" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="926" centery="1748" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="966" centery="1748" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="982" centery="1748" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="996" centery="1748" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1009" centery="1748" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="947" centery="1751" centerz="11" radius="3">
+		<monster name="Deepling Master Librarian" x="1" y="-3" z="11" spawntime="60" />
+		<monster name="Deepling Master Librarian" x="-2" y="1" z="11" spawntime="60" />
+		<monster name="Deepling Master Librarian" x="2" y="3" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="907" centery="1754" centerz="11" radius="1">
+		<monster name="Deepling Tyrant" x="-1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="934" centery="1754" centerz="11" radius="3">
+		<monster name="Deepling Tyrant" x="-3" y="-2" z="11" spawntime="60" />
+		<monster name="Deepling Tyrant" x="3" y="0" z="11" spawntime="60" />
+		<monster name="Deepling Tyrant" x="-1" y="2" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="961" centery="1754" centerz="11" radius="3">
+		<monster name="Deepling Tyrant" x="-1" y="-2" z="11" spawntime="60" />
+		<monster name="Deepling Tyrant" x="3" y="-2" z="11" spawntime="60" />
+		<monster name="Deepling Tyrant" x="0" y="2" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="878" centery="1756" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1005" centery="1756" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="917" centery="1758" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="947" centery="1759" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="985" centery="1759" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="999" centery="1759" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1012" centery="1759" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="878" centery="1760" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="940" centery="1761" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="955" centery="1761" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="984" centery="1763" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="896" centery="1767" centerz="11" radius="2">
+		<monster name="Deepling Guard" x="2" y="-2" z="11" spawntime="60" />
+		<monster name="Deepling Guard" x="-2" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="934" centery="1767" centerz="11" radius="3">
+		<monster name="Deepling Master Librarian" x="1" y="-3" z="11" spawntime="60" />
+		<monster name="Deepling Master Librarian" x="-2" y="0" z="11" spawntime="60" />
+		<monster name="Deepling Master Librarian" x="2" y="3" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="964" centery="1767" centerz="11" radius="3">
+		<monster name="Deepling Master Librarian" x="-2" y="-1" z="11" spawntime="60" />
+		<monster name="Deepling Master Librarian" x="3" y="0" z="11" spawntime="60" />
+		<monster name="Deepling Master Librarian" x="0" y="3" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="907" centery="1768" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="947" centery="1768" centerz="11" radius="3">
+		<monster name="Deepling Elite" x="0" y="-2" z="11" spawntime="60" />
+		<monster name="Deepling Elite" x="-3" y="2" z="11" spawntime="60" />
+		<monster name="Deepling Elite" x="2" y="3" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="981" centery="1768" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="995" centery="1768" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1008" centery="1768" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="917" centery="1769" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="883" centery="1770" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="901" centery="1770" centerz="11" radius="1">
+		<monster name="Deepling Elite" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1012" centery="1770" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="880" centery="1771" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="889" centery="1771" centerz="11" radius="1">
+		<monster name="Deepling Elite" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="906" centery="1771" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="925" centery="1771" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="983" centery="1776" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="997" centery="1776" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1010" centery="1776" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="880" centery="1777" centerz="11" radius="2">
+		<monster name="Deepling Guard" x="-2" y="0" z="11" spawntime="60" />
+		<monster name="Deepling Guard" x="2" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="890" centery="1777" centerz="11" radius="1">
+		<monster name="Deepling Elite" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="901" centery="1777" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="990" centery="1780" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="885" centery="1781" centerz="11" radius="1">
+		<monster name="Deepling Tyrant" x="-1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="943" centery="1781" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="955" centery="1781" centerz="11" radius="1">
+		<monster name="Deepling Elite" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="972" centery="1781" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1009" centery="1781" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="939" centery="1782" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="968" centery="1782" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="986" centery="1782" centerz="11" radius="1">
+		<monster name="Deepling Elite" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="896" centery="1783" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="908" centery="1783" centerz="11" radius="1">
+		<monster name="Deepling Elite" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1005" centery="1783" centerz="11" radius="1">
+		<monster name="Deepling Elite" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="881" centery="1785" centerz="11" radius="1">
+		<monster name="Deepling Elite" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="921" centery="1785" centerz="11" radius="2">
+		<monster name="Deepling Elite" x="-2" y="-2" z="11" spawntime="60" />
+		<monster name="Deepling Elite" x="1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="891" centery="1786" centerz="11" radius="2">
+		<monster name="Deepling Master Librarian" x="-1" y="-1" z="11" spawntime="60" />
+		<monster name="Deepling Master Librarian" x="2" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="896" centery="1786" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="903" centery="1787" centerz="11" radius="1">
+		<monster name="Deepling Tyrant" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="913" centery="1787" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="986" centery="1787" centerz="11" radius="1">
+		<monster name="Deepling Elite" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="928" centery="1788" centerz="11" radius="2">
+		<monster name="Deepling Master Librarian" x="-2" y="-1" z="11" spawntime="60" />
+		<monster name="Deepling Master Librarian" x="2" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="961" centery="1789" centerz="11" radius="2">
+		<monster name="Deepling Master Librarian" x="1" y="-1" z="11" spawntime="60" />
+		<monster name="Deepling Master Librarian" x="-2" y="2" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="998" centery="1790" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="0" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="887" centery="1793" centerz="11" radius="2">
+		<monster name="Deepling Elite" x="2" y="-2" z="11" spawntime="60" />
+		<monster name="Deepling Elite" x="-1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="908" centery="1793" centerz="11" radius="1">
+		<monster name="Deepling Elite" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="969" centery="1794" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="976" centery="1794" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1006" centery="1794" centerz="11" radius="2">
+		<monster name="Deepling Guard" x="1" y="-2" z="11" spawntime="60" />
+		<monster name="Deepling Guard" x="0" y="2" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1011" centery="1794" centerz="11" radius="2">
+		<monster name="Deepling Tyrant" x="2" y="-2" z="11" spawntime="60" />
+		<monster name="Deepling Tyrant" x="0" y="2" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="878" centery="1795" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="924" centery="1795" centerz="11" radius="2">
+		<monster name="Deepling Guard" x="-1" y="-2" z="11" spawntime="60" />
+		<monster name="Deepling Guard" x="1" y="2" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="897" centery="1796" centerz="11" radius="2">
+		<monster name="Deepling Master Librarian" x="-1" y="-2" z="11" spawntime="60" />
+		<monster name="Deepling Master Librarian" x="2" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="910" centery="1797" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="938" centery="1797" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="943" centery="1797" centerz="11" radius="1">
+		<monster name="Deepling Elite" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="961" centery="1797" centerz="11" radius="2">
+		<monster name="Deepling Elite" x="2" y="-2" z="11" spawntime="60" />
+		<monster name="Deepling Elite" x="-2" y="2" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="907" centery="1798" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="952" centery="1798" centerz="11" radius="2">
+		<monster name="Deepling Guard" x="2" y="-1" z="11" spawntime="60" />
+		<monster name="Deepling Guard" x="-2" y="2" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="885" centery="1799" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="889" centery="1799" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="984" centery="1799" centerz="11" radius="1">
+		<monster name="Deepling Elite" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="935" centery="1800" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="996" centery="1800" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="-1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="900" centery="1801" centerz="11" radius="1">
+		<monster name="Deepling Master Librarian" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="918" centery="1801" centerz="11" radius="1">
+		<monster name="Deepling Elite" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="940" centery="1801" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="895" centery="1802" centerz="11" radius="1">
+		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
 	<spawn centerx="1207" centery="1851" centerz="11" radius="1">
 		<monster name="Blood Crab" x="0" y="0" z="11" spawntime="60" />
 	</spawn>
@@ -16155,207 +16986,25 @@
 		<monster name="Swamp Troll" x="0" y="0" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="1390" centery="1921" centerz="11" radius="1" />
-	<spawn centerx="1376" centery="1781" centerz="8" radius="1">
-		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
+	<spawn centerx="936" centery="1729" centerz="12" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="1" z="12" spawntime="60" />
 	</spawn>
-	<spawn centerx="1414" centery="1781" centerz="8" radius="1">
-		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
+	<spawn centerx="960" centery="1730" centerz="12" radius="1">
+		<monster name="Deepling Master Librarian" x="1" y="1" z="12" spawntime="60" />
 	</spawn>
-	<spawn centerx="1421" centery="1781" centerz="8" radius="1">
-		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
+	<spawn centerx="928" centery="1731" centerz="12" radius="1">
+		<monster name="Deepling Tyrant" x="0" y="-1" z="12" spawntime="60" />
 	</spawn>
-	<spawn centerx="1333" centery="1784" centerz="8" radius="2">
-		<monster name="Clay Guardian" x="-2" y="-1" z="8" spawntime="60" />
-		<monster name="Clay Guardian" x="2" y="-1" z="8" spawntime="60" />
+	<spawn centerx="944" centery="1731" centerz="12" radius="1">
+		<monster name="Deepling Elite" x="-1" y="-1" z="12" spawntime="60" />
 	</spawn>
-	<spawn centerx="1347" centery="1785" centerz="8" radius="1">
-		<monster name="Clay Guardian" x="1" y="-1" z="8" spawntime="60" />
+	<spawn centerx="948" centery="1731" centerz="12" radius="1">
+		<monster name="Deepling Tyrant" x="0" y="-1" z="12" spawntime="60" />
 	</spawn>
-	<spawn centerx="1360" centery="1785" centerz="8" radius="1">
-		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
+	<spawn centerx="969" centery="1731" centerz="12" radius="1">
+		<monster name="Deepling Tyrant" x="0" y="-1" z="12" spawntime="60" />
 	</spawn>
-	<spawn centerx="1369" centery="1785" centerz="8" radius="2">
-		<monster name="Clay Guardian" x="-1" y="-2" z="8" spawntime="60" />
-		<monster name="Clay Guardian" x="0" y="2" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1382" centery="1785" centerz="8" radius="2">
-		<monster name="Clay Guardian" x="-1" y="-2" z="8" spawntime="60" />
-		<monster name="Clay Guardian" x="0" y="2" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1392" centery="1785" centerz="8" radius="1">
-		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1397" centery="1786" centerz="8" radius="1">
-		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1409" centery="1786" centerz="8" radius="1">
-		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1427" centery="1786" centerz="8" radius="1">
-		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1434" centery="1786" centerz="8" radius="1">
-		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1444" centery="1786" centerz="8" radius="1">
-		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1451" centery="1789" centerz="8" radius="1">
-		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1376" centery="1791" centerz="8" radius="1">
-		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1417" centery="1794" centerz="8" radius="2">
-		<monster name="Eternal Guardian" x="-2" y="-2" z="8" spawntime="60" />
-		<monster name="Eternal Guardian" x="2" y="-2" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1333" centery="1795" centerz="8" radius="1">
-		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1397" centery="1795" centerz="8" radius="1">
-		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1417" centery="1796" centerz="8" radius="1">
-		<monster name="Clay Guardian" x="0" y="1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1437" centery="1796" centerz="8" radius="1">
-		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1451" centery="1799" centerz="8" radius="2">
-		<monster name="Eternal Guardian" x="2" y="-1" z="8" spawntime="60" />
-		<monster name="Eternal Guardian" x="-1" y="1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1402" centery="1802" centerz="8" radius="1">
-		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1412" centery="1802" centerz="8" radius="1">
-		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1421" centery="1802" centerz="8" radius="1">
-		<monster name="Clay Guardian" x="0" y="-1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1433" centery="1802" centerz="8" radius="1">
-		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1334" centery="1806" centerz="8" radius="2">
-		<monster name="Clay Guardian" x="-2" y="-1" z="8" spawntime="60" />
-		<monster name="Clay Guardian" x="1" y="-1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1451" centery="1806" centerz="8" radius="2">
-		<monster name="Eternal Guardian" x="-2" y="-1" z="8" spawntime="60" />
-		<monster name="Eternal Guardian" x="2" y="1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1477" centery="1740" centerz="9" radius="2">
-		<monster name="Hydra" x="2" y="-2" z="9" spawntime="60" />
-		<monster name="Hydra" x="-1" y="2" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1499" centery="1741" centerz="9" radius="1">
-		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1487" centery="1742" centerz="9" radius="2">
-		<monster name="Medusa" x="2" y="-2" z="9" spawntime="60" />
-		<monster name="Medusa" x="-2" y="2" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1509" centery="1742" centerz="9" radius="1">
-		<monster name="Medusa" x="0" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1482" centery="1747" centerz="9" radius="1">
-		<monster name="Eternal Guardian" x="-1" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1508" centery="1750" centerz="9" radius="1">
-		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1481" centery="1755" centerz="9" radius="1">
-		<monster name="Hydra" x="-1" y="1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1506" centery="1759" centerz="9" radius="2">
-		<monster name="Medusa" x="1" y="-2" z="9" spawntime="60" />
-		<monster name="Medusa" x="-2" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1481" centery="1760" centerz="9" radius="1">
-		<monster name="Medusa" x="-1" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1511" centery="1765" centerz="9" radius="1">
-		<monster name="Eternal Guardian" x="-1" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1500" centery="1767" centerz="9" radius="1">
-		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1481" centery="1771" centerz="9" radius="1">
-		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1424" centery="1774" centerz="9" radius="2">
-		<monster name="Hydra" x="2" y="-2" z="9" spawntime="60" />
-		<monster name="Hydra" x="-2" y="1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1481" centery="1775" centerz="9" radius="1">
-		<monster name="Eternal Guardian" x="-1" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1510" centery="1775" centerz="9" radius="4">
-		<monster name="Medusa" x="3" y="-3" z="9" spawntime="60" />
-		<monster name="Medusa" x="-3" y="-2" z="9" spawntime="60" />
-		<monster name="Medusa" x="1" y="3" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1421" centery="1780" centerz="9" radius="2">
-		<monster name="Medusa" x="-1" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1519" centery="1781" centerz="9" radius="1">
-		<monster name="Eternal Guardian" x="-1" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1458" centery="1784" centerz="9" radius="1">
-		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1467" centery="1785" centerz="9" radius="1">
-		<monster name="Eternal Guardian" x="-1" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1433" centery="1786" centerz="9" radius="1">
-		<monster name="Eternal Guardian" x="-1" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1444" centery="1786" centerz="9" radius="1">
-		<monster name="Hydra" x="-1" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1489" centery="1786" centerz="9" radius="1">
-		<monster name="Medusa" x="1" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1510" centery="1786" centerz="9" radius="1">
-		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1476" centery="1787" centerz="9" radius="1">
-		<monster name="Medusa" x="1" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1482" centery="1788" centerz="9" radius="2">
-		<monster name="Hydra" x="1" y="-2" z="9" spawntime="60" />
-		<monster name="Hydra" x="-1" y="2" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1516" centery="1788" centerz="9" radius="4">
-		<monster name="Medusa" x="-2" y="-3" z="9" spawntime="60" />
-		<monster name="Medusa" x="4" y="0" z="9" spawntime="60" />
-		<monster name="Medusa" x="-2" y="3" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1451" centery="1789" centerz="9" radius="2">
-		<monster name="Eternal Guardian" x="2" y="-1" z="9" spawntime="60" />
-		<monster name="Eternal Guardian" x="-2" y="2" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1422" centery="1790" centerz="9" radius="4">
-		<monster name="Eternal Guardian" x="0" y="-4" z="9" spawntime="60" />
-		<monster name="Eternal Guardian" x="4" y="0" z="9" spawntime="60" />
-		<monster name="Eternal Guardian" x="-2" y="3" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1482" centery="1794" centerz="9" radius="1">
-		<monster name="Eternal Guardian" x="-1" y="1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1510" centery="1799" centerz="9" radius="4">
-		<monster name="Medusa" x="-4" y="-2" z="9" spawntime="60" />
-		<monster name="Medusa" x="3" y="0" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1516" centery="1803" centerz="9" radius="1">
-		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1454" centery="1804" centerz="9" radius="1">
-		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
-	</spawn>
-	<spawn centerx="1448" centery="1805" centerz="9" radius="1">
-		<monster name="Medusa" x="0" y="-1" z="9" spawntime="60" />
+	<spawn centerx="957" centery="1732" centerz="12" radius="1">
+		<monster name="Deepling Elite" x="-1" y="-1" z="12" spawntime="60" />
 	</spawn>
 </spawns>
