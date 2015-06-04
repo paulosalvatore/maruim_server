@@ -727,24 +727,24 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			target:remove(1)
 		end
 		if efeito ~= nil and table.getn(efeito) > 0 then
-			local posicao_efeito = nil
+			local posicaoEfeito = nil
 			if efeito[2] and efeito[2] ~= "to" then
 				if type(efeito[2] == "table") then
-					posicao_efeito = fromPosition+efeito[2]
+					posicaoEfeito = fromPosition+efeito[2]
 				elseif efeito[2] == "from" then
-					posicao_efeito = fromPosition
+					posicaoEfeito = fromPosition
 				elseif efeito[2] == "player" then
-					posicao_efeito = player:getPosition()
+					posicaoEfeito = player:getPosition()
 				end
 			end
-			if posicao_efeito == nil then
-				posicao_efeito = toPosition
+			if posicaoEfeito == nil then
+				posicaoEfeito = toPosition
 			end
 			local exibirEfeito = efeito[1]
 			if type(efeito[1]) ~= "number" then
 				exibirEfeito = efeitos[efeito[1]]
 			end
-			posicao_efeito:sendMagicEffect(exibirEfeito)
+			posicaoEfeito:sendMagicEffect(exibirEfeito)
 		end
 		if i.criatura ~= nil and table.getn(i.criatura) > 0 then
 			local chance = 10000
