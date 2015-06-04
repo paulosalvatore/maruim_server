@@ -7,75 +7,75 @@
 			["efeitos"] = {CONST_ME_YALAHARIGHOST, CONST_ME_BATS},
 			["ids"] = {406, 407, 431, 457, 420}
 		},
-		["parede_horizontal"] = {
+		["paredeHorizontal"] = {
 			["efeitos"] = {CONST_ME_SKULLHORIZONTAL},
 			["ids"] = {9119, 9121, 9127, 9135, 9136, 9137, 9138, 9139, 9143, 9295, 9296}
 		},
-		["parede_vertical"] = {
+		["paredeVertical"] = {
 			["efeitos"] = {CONST_ME_SKULLVERTICAL},
 			["ids"] = {9118, 9293, 9125, 9129, 9130, 9131, 9132, 9133, 9142, 9298, 9299}
 		},
-		["espelho_horizontal"] = {
+		["espelhoHorizontal"] = {
 			["efeitos"] = {CONST_ME_MIRRORHORIZONTAL},
 			["ids"] = {9583}
 		},
-		["espelho_vertical"] = {
+		["espelhoVertical"] = {
 			["efeitos"] = {CONST_ME_MIRRORVERTICAL},
 			["ids"] = {9605}
 		}
 	}
-	local posicoes_geradas = {}
-	local posicoes_verificadas = {}
-	while(table.getn(posicoes_verificadas) < 1) do
-		tabela_efeito = 0
-		posicao_validada = 0
-		while(posicao_validada < 1) do
+	local posicoesGeradas = {}
+	local posicoesVerificadas = {}
+	while(table.getn(posicoesVerificadas) < 1) do
+		tabelaEfeito = 0
+		posicaoValidada = false
+		while(posicaoValidada == false) do
 			x = math.random(config["inicial"]["x"], config["final"]["x"])
 			y = math.random(config["inicial"]["y"], config["final"]["y"])
 			z = config["z"][math.random(1, table.getn(config["z"]))]
-			string_posicao = x.."-"..y.."-"..z
-			if not isInArray(posicoes_verificadas, string_posicao) then
-				posicao_validada = 1
+			stringPosicao = x .. "-" .. y .. "-" .. z
+			if not isInArray(posicoesVerificadas, stringPosicao) then
+				posicaoValidada = true
 			end
 		end
 		posicao = {x = x, y = y, z = z}
-		if not isInArray(posicoes_geradas, string_posicao) then
+		if not isInArray(posicoesGeradas, stringPosicao) then
 			tile = Tile(posicao)
 			local ground = tile:getGround()
 			if(ground ~= nil and isInArray(config["chao"]["ids"], ground:getId())) then
-				local items = tile:getItems()
-				if items then
+				local itens = tile:getItems()
+				if itens then
 					if(isWalkable(posicao)) then
-						tabela_efeito = "chao"
-					elseif(table.getn(items) == 1) then
-						if(isInArray(config["parede_horizontal"]["ids"], items[1]:getId())) then
-							tabela_efeito = "parede_horizontal"
-						elseif(isInArray(config["parede_vertical"]["ids"], items[1]:getId())) then
-							tabela_efeito = "parede_vertical"
+						tabelaEfeito = "chao"
+					elseif(table.getn(itens) == 1) then
+						if(isInArray(config["paredeHorizontal"]["ids"], itens[1]:getId())) then
+							tabelaEfeito = "paredeHorizontal"
+						elseif(isInArray(config["paredeVertical"]["ids"], itens[1]:getId())) then
+							tabelaEfeito = "paredeVertical"
 						end
-					elseif(table.getn(items) == 2) then
-						if(isInArray(config["espelho_horizontal"]["ids"], items[1]:getId()) or
-						isInArray(config["espelho_horizontal"]["ids"], items[2]:getId())) then
-							tabela_efeito = "espelho_horizontal"
-						elseif(isInArray(config["espelho_vertical"]["ids"], items[1]:getId()) or
-						isInArray(config["espelho_vertical"]["ids"], items[2]:getId())) then
-							tabela_efeito = "espelho_vertical"
+					elseif(table.getn(itens) == 2) then
+						if(isInArray(config["espelhoHorizontal"]["ids"], itens[1]:getId()) or
+						isInArray(config["espelhoHorizontal"]["ids"], itens[2]:getId())) then
+							tabelaEfeito = "espelhoHorizontal"
+						elseif(isInArray(config["espelhoVertical"]["ids"], itens[1]:getId()) or
+						isInArray(config["espelhoVertical"]["ids"], itens[2]:getId())) then
+							tabelaEfeito = "espelhoVertical"
 						end
 					end
 				end
 			end	
-			if(tabela_efeito ~= 0) then
-				local efeitos = config[tabela_efeito]["efeitos"]
+			if(tabelaEfeito ~= 0) then
+				local efeitos = config[tabelaEfeito]["efeitos"]
 				if(table.getn(efeitos) == 1) then
-					id_efeito = 1
+					idEfeito = 1
 				else
-					id_efeito = math.random(1, table.getn(efeitos))
+					idEfeito = math.random(1, table.getn(efeitos))
 				end
-				efeito = config[tabela_efeito]["efeitos"][id_efeito]
+				efeito = config[tabelaEfeito]["efeitos"][idEfeito]
 				doSendMagicEffect(posicao, efeito)
-				table.insert(posicoes_geradas, string_posicao)
+				table.insert(posicoesGeradas, stringPosicao)
 			end
-			table.insert(posicoes_verificadas, string_posicao)
+			table.insert(posicoesVerificadas, stringPosicao)
 		end
 	end
 	return true
