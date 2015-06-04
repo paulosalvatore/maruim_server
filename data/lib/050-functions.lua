@@ -175,10 +175,21 @@ function isWalkable(pos, creature, proj, pz)
 	return true
 end
 
-function Player.setReputacao(self, valor)
+function Player.adicionarReputacao(self, valor)
 	self:setStorageValue(Storage.reputacao, self:getReputacao()+valor)
 end
 
-function Player.getReputacao(self)
+function Player.verificarReputacao(self)
 	return math.max(0, self:getStorageValue(Storage.reputacao))
+end
+
+function Player.isPromoted(self)
+	local vocation = self:getVocation()
+	local promotedVocation = vocation:getPromotion()
+	promotedVocation = promotedVocation and promotedVocation:getId() or 0
+	return promotedVocation == 0 and vocation:getId() ~= promotedVocation
+end
+
+function Player.promote(self)
+	self:setVocation(Vocation(self:getVocation():getPromotion():getId()))
 end
