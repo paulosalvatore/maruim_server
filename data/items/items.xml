@@ -11285,7 +11285,7 @@
 	</item>
 	<item id="6491" article="a" name="firefly">
 		<attribute key="decayTo" value="6494" />
-		<attribute key="duration" value="8" />
+		<attribute key="duration" value="12" />
 	</item>
 	<item id="6492" article="a" name="bat decoration">
 		<attribute key="weight" value="200" />
@@ -11293,18 +11293,21 @@
 	<item id="6493" article="a" name="bat decoration" />
 	<item id="6494" article="a" name="firefly">
 		<attribute key="decayTo" value="6491" />
-		<attribute key="duration" value="8" />
+		<attribute key="duration" value="12" />
 	</item>
 	<item id="6495" article="a" name="firefly">
 		<attribute key="decayTo" value="6498" />
-		<attribute key="duration" value="8" />
+		<attribute key="duration" value="12" />
 	</item>
 	<item id="6496" article="a" name="bat decoration" />
 	<item id="6497" article="a" name="christmas present bag">
 		<attribute key="description" value="It contains presents which were stolen from Santa. Bring them back to Ruprecht on Vega." />
 		<attribute key="weight" value="8000" />
 	</item>
-	<item id="6498" article="a" name="firefly" />
+	<item id="6498" article="a" name="firefly">
+		<attribute key="decayTo" value="6495" />
+		<attribute key="duration" value="12" />
+	</item>
 	<item id="6499" article="a" name="certificate">
 		<attribute key="description" value="You have mastered the Dream Challenge and may apply for joining the order of the Nightmare Knights." />
 		<attribute key="weight" value="150" />
