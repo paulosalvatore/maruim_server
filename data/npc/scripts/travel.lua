@@ -20,16 +20,16 @@ local mensagemViagem
 
 if tipoViagem == "navio" then
 	mensagemViagem = "Icem as velas!"
-	palavrasChave = {{"travel"}, {"viagem"}, {"viajar"}, {"sail"}, {"navegar"}}
+	palavrasChave = {{"travel"}, {"viagem"}, {"viajar"}, {"destinos"}, {"sail"}, {"navegar"}}
 	npcHandler:setMessage(MESSAGE_GREET, "Seja bem-vindo a bordo, |PLAYERNAME|! Para onde gostaria de {navegar} hoje?")
-	npcHandler:setMessage(MESSAGE_FAREWELL, "Adeus |PLAYERNAME|. Recomende nós se você estiver satisfeito com nossos serviços.!")
+	npcHandler:setMessage(MESSAGE_FAREWELL, "Adeus |PLAYERNAME|. Recomende nós se você estiver satisfeito com nossos serviços!")
 elseif tipoViagem == "tapete" then
-	palavrasChave = {{"travel"}, {"fly"}, {"voar"}}
+	palavrasChave = {{"travel"}, {"destinos"}, {"fly"}, {"voar"}}
 	mensagemViagem = "Segure-se!"
 	npcHandler:setMessage(MESSAGE_GREET, "Saudações, viajante |PLAYERNAME|! Para onde gostaria de {voar} hoje?")
 	npcHandler:setMessage(MESSAGE_FAREWELL, "Foi um prazer ajudá-lo, |PLAYERNAME|.")
 elseif tipoViagem == "barco" then
-	palavrasChave = {{"travel"}, {"sail"}, {"velejar"}}
+	palavrasChave = {{"travel"}, {"destinos"}, {"sail"}, {"velejar"}}
 	mensagemViagem = "Lá vamos nós!"
 	npcHandler:setMessage(MESSAGE_GREET, "Saudações, |PLAYERNAME|! Para onde gostaria de {velejar} hoje?")
 end
@@ -64,19 +64,3 @@ end
 keywordHandler:addKeywords(palavrasChave, StdModule.say, {npcHandler = npcHandler, text = textoDestino})
 
 npcHandler:addModule(FocusModule:new())
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
