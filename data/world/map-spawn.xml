@@ -8119,6 +8119,20 @@
 	<spawn centerx="1281" centery="2083" centerz="7" radius="1">
 		<monster name="Crab" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="864" centery="2084" centerz="7" radius="5">
+		<monster name="Bug" x="-2" y="-4" z="7" spawntime="10" />
+		<monster name="Bug" x="3" y="-4" z="7" spawntime="10" />
+		<monster name="Rat" x="-2" y="-3" z="7" spawntime="10" />
+		<monster name="Rat" x="3" y="-3" z="7" spawntime="10" />
+		<monster name="Cave Rat" x="-2" y="-2" z="7" spawntime="10" />
+		<monster name="Cave Rat" x="3" y="-2" z="7" spawntime="10" />
+		<monster name="Bug" x="-2" y="-1" z="7" spawntime="10" />
+		<monster name="Bug" x="3" y="-1" z="7" spawntime="10" />
+		<monster name="Rat" x="-2" y="0" z="7" spawntime="10" />
+		<monster name="Rat" x="3" y="0" z="7" spawntime="10" />
+		<monster name="Cave Rat" x="-2" y="1" z="7" spawntime="10" />
+		<monster name="Cave Rat" x="3" y="1" z="7" spawntime="10" />
+	</spawn>
 	<spawn centerx="1247" centery="2086" centerz="7" radius="1">
 		<monster name="Crab" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
