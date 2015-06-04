@@ -174,3 +174,11 @@ function isWalkable(pos, creature, proj, pz)
 	end
 	return true
 end
+
+function Player.setReputacao(self, valor)
+	self:setStorageValue(Storage.reputacao, self:getReputacao()+valor)
+end
+
+function Player.getReputacao(self)
+	return math.max(0, self:getStorageValue(Storage.reputacao))
+end

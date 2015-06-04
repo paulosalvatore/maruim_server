@@ -1,3 +1,3 @@
 Storage = {
-	blockMovementStorage = 100000
+	reputacao = 7000
 }
