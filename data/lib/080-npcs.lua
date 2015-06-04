@@ -33,7 +33,8 @@ destinos = {
 		nome = "Ôttô",
 		posicao = {x = 834, y = 1258, z = 6},
 		custo = 100,
-		levelNecessario = 0
+		levelNecessario = 0,
+		palavrasChave = {"otto", "ôttô"}
 	},
 	["pundera"] = {
 		nome = "Pundera",
@@ -75,7 +76,8 @@ destinos = {
 		nome = "Khazad-dûm",
 		posicao = {x = 1513, y = 1753, z = 8},
 		custo = 100,
-		levelNecessario = 0
+		levelNecessario = 0,
+		palavrasChave = {"khazad dûm", "khazad dum"}
 	},
 	["dragon_mugulu"] = {
 		nome = "Mugulu",
@@ -108,7 +110,8 @@ barqueiros = {
 		destinos = {
 			"civitaten_barco",
 			"hyalakur_barco",
-			"otto"
+			"otto",
+			"khazad_dum"
 		},
 		tipoViagem = "navio"
 	},

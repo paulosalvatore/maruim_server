@@ -50,9 +50,15 @@ for a, b in pairs(destinosNpc) do
 	if destino.levelNecessario ~= nil and type(destino.levelNecessario) == "number" then
 		levelNecessario = destino.levelNecessario
 	end
-	local travelNode = keywordHandler:addKeyword({string.lower(destino.nome)}, StdModule.say, {npcHandler = npcHandler, text = "Você procura por uma passagem para " .. destino.nome .. " por " .. destino.custo .. " gold coins?"})
-		travelNode:addChildKeywords({{"yes"}, {"sim"}}, StdModule.travel, {npcHandler = npcHandler,  level = levelNecessario, cost = destino.custo, destination = destino.posicao, msg = mensagemViagem})
-		travelNode:addChildKeywords({{"no"}, {"não"}, {"nao"}}, StdModule.say, {npcHandler = npcHandler, reset = true, text = "Sem problemas! Nós iremos serví-lo algum dia."})
+	local palavrasChaveViagem = {string.lower(destino.nome)}
+	if destino.palavrasChave ~= nil then
+		for a, b in pairs(destino.palavrasChave) do palavrasChaveViagem[a] = b end
+	end
+	for a, b in pairs(palavrasChaveViagem) do
+		local travelNode = keywordHandler:addKeyword({b}, StdModule.say, {npcHandler = npcHandler, text = "Você procura por uma passagem para " .. destino.nome .. " por " .. destino.custo .. " gold coins?"})
+			travelNode:addChildKeywords({{"yes"}, {"sim"}}, StdModule.travel, {npcHandler = npcHandler,  level = levelNecessario, cost = destino.custo, destination = destino.posicao, msg = mensagemViagem})
+			travelNode:addChildKeywords({{"no"}, {"não"}, {"nao"}}, StdModule.say, {npcHandler = npcHandler, reset = true, text = "Sem problemas! Nós iremos serví-lo algum dia."})
+	end
 end
 
 local textoDestino
