@@ -18,12 +18,19 @@
 		<flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="20" attack="30"/>
-		<attack name="physical" interval="1000" chance="10" range="7" min="-5" max="-40">
+		<attack name="melee" interval="2000" skill="60" attack="50"/>
+		<attack name="physical" interval="1000" chance="15" range="7" min="-50" max="-200"> <!-- Throwing Knife -->
 			<attribute key="shootEffect" value="throwingknife"/>
 		</attack>
+		<attack name="lifedrain" interval="2000" chance="15" radius="1" target="1" range="1" min="-30" max="-55"> <!-- Life Drain -->
+			<attribute key="areaEffect" value="redshimmer"/>
+		</attack>
 	</attacks>
-	<defenses armor="11" defense="11"/>
+	<defenses armor="11" defense="11">
+		<defense name="healing" interval="1000" chance="10" min="20" max="95"> <!-- Self Healing -->
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
 	<elements>
 		<element physicalPercent="-5"/>
 		<element energyPercent="-5"/>
