@@ -3,13 +3,15 @@ configTasks = {
 	progresso = 2000,
 	valorIniciada = 1,
 	valorCompleta = 2,
+	valorFinalizada = 3,
 	modalInicio = 10,
 	modalTasksDisponiveis = 1,
 	modalTasksProgresso = 2,
 	modalTasksRealizadas = 3,
 	modalTasksDisponiveisInfo = 4,
 	modalTasksProgressoInfo = 5,
-	modalTasksRealizadasInfo = 6
+	modalTasksRealizadasInfo = 6,
+	modalTasksRecompensas = 7
 }
 -- Criaturas = {
 	-- ["rat"] = 1,
@@ -25,7 +27,6 @@ configTasks = {
 -- outfit = 5, -- valor_fixo
 -- addon = 5, -- valor_fixo
 -- montaria = 5 -- valor_fixo
--- Colocar para retirar as recompensas pelo modal
 Tasks = {
 	[1] = {
 		nivelMinimo = 0,
@@ -44,9 +45,13 @@ Tasks = {
 	[2] = {
 		nivelMinimo = 0,
 		nivelMaximo = 0,
-		quantidade = 10,
+		quantidade = 1,
 		criatura = "bug",
 		recompensa = {
+			dinheiro = {0, 100},
+			experiencia = {0, 100},
+			item = {2160, {1, 2}},
+			nivel = 2,
 			reputacao = 4
 		}
 	},
@@ -88,13 +93,67 @@ function Player.adicionarProgressoTask(self, taskId)
 	self:setStorageValue(configTasks.storageBase+configTasks.progresso+taskId, progressoTask)
 end
 function Player.completarTask(self, taskId)
+	local task = Tasks[taskId]
+	if task.recompensa ~= nil then
+		local recompensa = task.recompensa
+		if recompensa.dinheiro ~= nil then
+			local valorRecompensa = recompensa.dinheiro
+			if type(valorRecompensa) == "table" then
+				valorRecompensa = math.random(valorRecompensa[1], valorRecompensa[2])
+			end
+			self:addMoney(valorRecompensa)
+			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Recompensa de Tarefa: A quantia de " .. valorRecompensa .. " gp foi depositada em sua conta bancária.")
+		end
+		if recompensa.nivel ~= nil then
+			local valorRecompensa = recompensa.nivel
+			local exibirRecompensa = valorRecompensa .. " nív"
+			if valorRecompensa == 1 then
+				exibirRecompensa = exibirRecompensa .. "el"
+			else
+				exibirRecompensa = exibirRecompensa .. "eis"
+			end
+			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Recompensa de Tarefa: Você recebeu " .. exibirRecompensa .. ".")
+			for a = 1, valorRecompensa do
+				self:addLevel()
+			end
+		end
+		if recompensa.experiencia ~= nil then
+			local valorRecompensa = recompensa.experiencia
+			if type(valorRecompensa) == "table" then
+				valorRecompensa = math.random(valorRecompensa[1], valorRecompensa[2])
+			end
+			local exibirRecompensa = valorRecompensa .. " ponto"
+			if valorRecompensa > 1 then
+				exibirRecompensa = exibirRecompensa .. "s"
+			end
+			self:addExperience(valorRecompensa)
+			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Recompensa de Tarefa: Você recebeu " .. exibirRecompensa .. " de experiência.")
+		end
+		if recompensa.reputacao ~= nil then
+			local valorRecompensa = recompensa.reputacao
+			local exibirRecompensa = valorRecompensa .. " ponto"
+			if valorRecompensa > 1 then
+				exibirRecompensa = exibirRecompensa .. "s"
+			end
+			self:adicionarReputacao(valorRecompensa)
+			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Recompensa de Tarefa: Você recebeu " .. exibirRecompensa .. " de reputação.")
+		end
+		if recompensa.item ~= nil then
+			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Recompensa de Tarefa: Você recebeu " .. exibirTaskItemRecompensa(recompensa.item) .. ". Vá a algum NPC de Tarefas para retirá-lo.")
+		end
+	end
+	
 	self:setStorageValue(configTasks.storageBase+taskId, configTasks.valorCompleta)
 end
 function Player.checarTaskCompleta(self, taskId)
-	if self:verificarStatusTask(taskId) == configTasks.valorCompleta then
+	local statusTask = self:verificarStatusTask(taskId)
+	if statusTask == configTasks.valorCompleta or statusTask == configTasks.valorFinalizada then
 		return true
 	end
 	return false
+end
+function Player.finalizarTask(self, taskId)
+	self:setStorageValue(configTasks.storageBase+taskId, configTasks.valorFinalizada)
 end
 function Creature.checarTask(self)
 	for a, b in pairs(Tasks) do
@@ -121,7 +180,7 @@ function Player.pegarTasksProgresso(self)
 	local tasks = {}
 	for a, b in pairs(Tasks) do
 		local playerLevel = self:getLevel()
-		if self:verificarStatusTask(a) == 1 then
+		if self:verificarStatusTask(a) == configTasks.valorIniciada then
 			table.insert(tasks, a)
 		end
 	end
@@ -131,7 +190,29 @@ function Player.pegarTasksRealizadas(self)
 	local tasks = {}
 	for a, b in pairs(Tasks) do
 		local playerLevel = self:getLevel()
-		if self:verificarStatusTask(a) == 2 then
+		local statusTask = self:verificarStatusTask(a)
+		if statusTask == configTasks.valorCompleta or statusTask == configTasks.valorFinalizada then
+			table.insert(tasks, a)
+		end
+	end
+	return tasks
+end
+function Player.checarTasksRecompensa(self)
+	for a, b in pairs(Tasks) do
+		local playerLevel = self:getLevel()
+		if	self:verificarStatusTask(a) == 2 and
+			b.recompensa.item ~= nil then
+			return true
+		end
+	end
+	return false
+end
+function Player.pegarTasksRecompensa(self)
+	local tasks = {}
+	for a, b in pairs(Tasks) do
+		local playerLevel = self:getLevel()
+		if	self:verificarStatusTask(a) == 2 and
+			b.recompensa.item ~= nil then
 			table.insert(tasks, a)
 		end
 	end
@@ -141,6 +222,9 @@ function Player.enviarTasksModalPrincipal(self)
 	local modalTitulo = "Tarefas - Selecione uma opção"
 	local modalMensagem = "Você pode escolher uma das opções abaixo para verificar as tarefas correspondentes.\n\nO que você deseja fazer?\n"
 	local modal = ModalWindow(configTasks.storageBase, modalTitulo, modalMensagem)
+	if self:checarTasksRecompensa() then
+		modal:addChoice(4, "Pegar Recompensas Disponíveis")
+	end
 	modal:addChoice(1, "Lista de Tarefas - Disponíveis")
 	modal:addChoice(2, "Lista de Tarefas - Em Progresso")
 	modal:addChoice(3, "Lista de Tarefas - Realizadas")
@@ -211,14 +295,34 @@ function Player.enviarTasksModalRealizadas(self)
 		self:enviarTasksModalVazio(modalId)
 	end
 end
+function Player.enviarTasksModalRecompensas(self)
+	local modalTitulo = "Tarefas - Recompensas Disponíveis"
+	local modalMensagem = "Selecione uma recompensa na lista e clique no botão 'Retirar', tecle 'Enter' ou dê dois cliques para retirar a recompensa da tarefa selecionada.\n"
+	local modalId = configTasks.storageBase+configTasks.modalTasksRecompensas
+	local modal = ModalWindow(modalId, modalTitulo, modalMensagem)
+	local listaTasks = self:pegarTasksRecompensa()
+	if table.getn(listaTasks) > 0 then
+		for a, b in pairs(listaTasks) do
+			modal:addChoice(b, exibirTaskItemRecompensa(Tasks[b].recompensa.item) .. " - Tarefa: " .. pegarNomeTask(b))
+		end
+		modal:addButton(1, "Retirar")
+		modal:setDefaultEnterButton(1)
+		modal:addButton(2, "Sair")
+		modal:setDefaultEscapeButton(2)
+		modal:addButton(3, "Voltar")
+		modal:sendToPlayer(self)
+	else
+		self:enviarTasksModalVazio(modalId)
+	end
+end
 function Player.enviarTasksModalVazio(self, modalId)
 	local modalTitulo = "Aviso"
 	local modalMensagem = "Não há nenhuma tarefa para ser exibida.\nClique no botão 'Voltar' e selecione outra opção."
 	local modal = ModalWindow(modalId, modalTitulo, modalMensagem)
-	modal:addButton(3, "Voltar")
-	modal:addButton(2, "Sair")
 	modal:setDefaultEscapeButton(2)
 	modal:addButton(5, "Ok")
+	modal:addButton(2, "Sair")
+	modal:addButton(3, "Voltar")
 	modal:setDefaultEnterButton(5)
 	modal:sendToPlayer(self)
 end
@@ -237,7 +341,7 @@ function Player.enviarTasksModalInfo(self, taskId, modalId)
 	modalMensagem = modalMensagem .. "Objetivo\n"
 	modalMensagem = modalMensagem .. "Matar " .. task.quantidade .. " " .. capAll(task.criatura) .. "\n"
 	if statusTask == 1 then
-		modalMensagem = modalMensagem .. self:pegarTaskProgresso(taskId) .. " criaturas mortas até agora\n"
+		modalMensagem = modalMensagem .. "Criaturas Mortas até agora: " .. self:pegarTaskProgresso(taskId) .. "\n"
 	end
 	modalMensagem = modalMensagem .. "\nRequisito\n"
 	if	(task.nivelMinimo ~= nil and task.nivelMinimo > 0) or
@@ -272,13 +376,7 @@ function Player.enviarTasksModalInfo(self, taskId, modalId)
 		modalMensagem = modalMensagem .. "Experiência: " .. exibirTaskExperiencia .. "\n"
 	end
 	if recompensa.item ~= nil then
-		local exibirTaskItem = capAll(ItemType(recompensa.item[1]):getName())
-		if type(recompensa.item[2]) == "table" then
-			exibirTaskItem = exibirTaskItem .. " - entre " .. recompensa.item[2][1] .. " e " .. recompensa.item[2][2]
-		else
-			exibirTaskItem = exibirTaskItem .. " - " .. recompensa.item[2]
-		end
-		modalMensagem = modalMensagem .. "Item: " .. exibirTaskItem .. "\n"
+		modalMensagem = modalMensagem .. "Item: " .. exibirTaskItemRecompensa(recompensa.item) .. "\n"
 	end
 	if recompensa.nivel ~= nil then
 		modalMensagem = modalMensagem .. "Nível: " .. recompensa.nivel .. "\n"
@@ -299,9 +397,44 @@ function Player.enviarTasksModalInfo(self, taskId, modalId)
 	end
 	modal:sendToPlayer(self)
 end
-function Player.pegarTaskProgresso(self, task)
-	return math.max(0, self:getStorageValue(configTasks.storageBase+configTasks.progresso+task))
+function Player.pegarTaskProgresso(self, taskId)
+	return math.max(0, self:getStorageValue(configTasks.storageBase+configTasks.progresso+taskId))
 end
-function pegarNomeTask(task)
-	return Tasks[task].quantidade .. " " .. capAll(Tasks[task].criatura)
+function Player.retirarRecompensa(self, taskId)
+	local recompensa = Tasks[taskId].recompensa.item
+	local item = recompensa[1]
+	local quantidade = recompensa[2]
+	if type(quantidade) == "table" then
+		quantidade = math.random(quantidade[1], quantidade[2])
+	end
+	local peso = ItemType(item):getWeight()
+	if self:getFreeCapacity() >= peso then
+		self:finalizarTask(taskId)
+		self:addItem(item, quantidade)
+		self:sendTextMessage(MESSAGE_INFO_DESCR, "Você obteve " .. pegarNomeItem(item, quantidade) .. ".")
+	else
+		self:sendTextMessage(MESSAGE_INFO_DESCR, "Essa recompensa pesa " .. peso .. " oz. É muito pesada para você carregar.")
+	end
+	return true
+end
+function pegarNomeTask(taskId)
+	local task = Tasks[taskId]
+	return task.quantidade .. " " .. capAll(task.criatura)
+end
+function pegarNomeItem(item, quantidade)
+	local itemType = ItemType(item)
+	local nomeItem = itemType:getName()
+	if quantidade > 1 then
+		nomeItem = itemType:getPluralName()
+	end
+	return quantidade .. " '" .. nomeItem .. "'"
+end
+function exibirTaskItemRecompensa(item)
+	local exibirItem = capAll(ItemType(item[1]):getName())
+	if type(item[2]) == "table" then
+		exibirItem = exibirItem .. " - entre " .. item[2][1] .. " e " .. item[2][2]
+	else
+		exibirItem = exibirItem .. " - " .. item[2]
+	end
+	return exibirItem
 end

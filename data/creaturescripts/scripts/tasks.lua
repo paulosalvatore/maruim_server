@@ -15,6 +15,8 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 			player:enviarTasksModalProgresso()
 		elseif choiceId == 3 then
 			player:enviarTasksModalRealizadas()
+		elseif choiceId == 4 then
+			player:enviarTasksModalRecompensas()
 		end
 	elseif modalWindowId == configTasks.storageBase+configTasks.modalTasksDisponiveis then
 		if buttonId == 1 then
@@ -33,6 +35,12 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 	elseif modalWindowId == configTasks.storageBase+configTasks.modalTasksRealizadas then
 		if buttonId == 1 then
 			player:enviarTasksModalInfo(choiceId, configTasks.modalTasksRealizadasInfo)
+		elseif buttonId == 3 then
+			player:enviarTasksModalPrincipal()
+		end
+	elseif modalWindowId == configTasks.storageBase+configTasks.modalTasksRecompensas then
+		if buttonId == 1 then
+			player:retirarRecompensa(choiceId)
 		elseif buttonId == 3 then
 			player:enviarTasksModalPrincipal()
 		end
