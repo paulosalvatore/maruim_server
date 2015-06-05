@@ -16,18 +16,18 @@ function onLogin(player)
 	nextUseStaminaTime[player.uid] = 0
 	
 	-- Promotion
-	local vocation = player:getVocation()
-	local promotion = vocation:getPromotion()
-	if player:isPremium() then
-		local value = player:getStorageValue(STORAGEVALUE_PROMOTION)
-		if not promotion and value ~= 1 then
-			player:setStorageValue(STORAGEVALUE_PROMOTION, 1)
-		elseif value == 1 then
-			player:setVocation(promotion)
-		end
-	elseif not promotion then
-		player:setVocation(vocation:getDemotion())
-	end
+	-- local vocation = player:getVocation()
+	-- local promotion = vocation:getPromotion()
+	-- if player:isPremium() then
+		-- local value = player:getStorageValue(STORAGEVALUE_PROMOTION)
+		-- if not promotion and value ~= 1 then
+			-- player:setStorageValue(STORAGEVALUE_PROMOTION, 1)
+		-- elseif value == 1 then
+			-- player:setVocation(promotion)
+		-- end
+	-- elseif not promotion then
+		-- player:setVocation(vocation:getDemotion())
+	-- end
 
 	-- Events
 	player:registerEvent("PlayerDeath")
