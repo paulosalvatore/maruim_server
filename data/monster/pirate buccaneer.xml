@@ -43,8 +43,8 @@
 	</voices>
 	<loot>
 		<item id="5800" countmax="2" chance="80000"/><!-- grappling hook -->
-		<item id="5810" countmax="1" chance="1000"/><!-- pirate voodoo doll -->
+		<item id="5810" chance="1000"/><!-- pirate voodoo doll -->
 		<item id="10123" countmax="4" chance="90000"/><!-- pirate treasure map -->
-		<item id="6098" countmax="1" chance="10000"/><!-- eye patch -->
+		<item id="6098" chance="10000"/><!-- eye patch -->
 	</loot>
 </monster>

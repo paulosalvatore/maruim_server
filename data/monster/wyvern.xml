@@ -47,8 +47,8 @@
 		<voice sentence="Shriiiek" yell="1"/>
 	</voices>
 	<loot>
-		<item id="5876" countmax="1" chance="80000"/><!-- lizard leather -->
+		<item id="5876" chance="80000"/><!-- lizard leather -->
 		<item id="2146" countmax="2" chance="30000" /><!-- small sapphire -->
-		<item id="10561" countmax="1" chance="60000"/><!-- wyvern talisman -->
+		<item id="10561" chance="60000"/><!-- wyvern talisman -->
 	</loot>
 </monster>

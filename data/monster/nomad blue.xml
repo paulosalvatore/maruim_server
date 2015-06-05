@@ -31,7 +31,7 @@
 		<element deathPercent="-10"/>
 	</elements>
 	<loot>
-		<item id="12412" countmax="1" chance="80000"/><!-- dirty turban -->
-		<item id="5912" countmax="1" chance="20000"/><!-- blue piece of cloth -->
+		<item id="12412" chance="80000"/><!-- dirty turban -->
+		<item id="5912" chance="20000"/><!-- blue piece of cloth -->
 	</loot>
 </monster>

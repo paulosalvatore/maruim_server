@@ -47,10 +47,10 @@
 		<summon name="Dragon Hatchling" interval="2000" chance="20" max="2"/>
 	</summons>
 	<loot>
-		<item id="11245" countmax="1" chance="50000" /><!-- bunch of ripe rice -->
+		<item id="11245" chance="50000" /><!-- bunch of ripe rice -->
 		<item id="2150" countmax="2" chance="30000" /><!-- small amethyst -->
-		<item id="11361" countmax="1" chance="60000" /><!-- dragon priest's wandtip -->
-		<item id="5881" countmax="1" chance="80000" /><!-- lizard scale -->
-		<item id="11336" countmax="1" chance="1000" /><!-- lizard trophy -->
+		<item id="11361" chance="60000" /><!-- dragon priest's wandtip -->
+		<item id="5881" chance="80000" /><!-- lizard scale -->
+		<item id="11336" chance="1000" /><!-- lizard trophy -->
 	</loot>
 </monster>

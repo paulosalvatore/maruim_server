@@ -45,9 +45,9 @@
 		<voice sentence="You are on my deathlist!"/>
 	</voices>
 	<loot>
-		<item id="12382" countmax="1" chance="10000"/><!-- scribbled sheet of paper -->
-		<item id="1987" countmax="1" chance="10000"/><!-- bag -->
-		<item id="2148" countmax="1" chance="10000"/><!-- gold coin -->
-		<item id="7404" countmax="1" chance="10000"/><!-- Assassin Dagger -->
+		<item id="12382" chance="10000"/><!-- scribbled sheet of paper -->
+		<item id="1987" chance="10000"/><!-- bag -->
+		<item id="2148" chance="10000"/><!-- gold coin -->
+		<item id="7404" chance="10000"/><!-- Assassin Dagger -->
 	</loot>
 </monster>

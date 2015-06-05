@@ -49,7 +49,7 @@
 	</immunities>
 	<loot>
 		<item id="8302" countmax="3" chance="80000"/><!-- Iced Soil -->
-		<item id="7632" countmax="1" chance="20000"/><!-- giant shimmering pearl -->
+		<item id="7632" chance="20000"/><!-- giant shimmering pearl -->
 		<item id="2146" countmax="2" chance="20000"/><!-- small sapphire -->
 	</loot>
 </monster>

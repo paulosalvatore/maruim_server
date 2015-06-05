@@ -51,7 +51,7 @@
 	</voices>
 	<loot>
 		<item id="13299" chance="10000" /><!-- stampor horn -->
-		<item id="13300" countmax="1" chance="10000" /><!-- stampor talon -->
+		<item id="13300" chance="10000" /><!-- stampor talon -->
 		<item id="13301" chance="10000" /><!-- hollow stampor hoof -->
 	</loot>
 </monster>

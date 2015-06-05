@@ -39,8 +39,8 @@
 		<voice sentence="Show that you are a worthy opponent."/>
 	</voices>
 	<loot>
-		<item id="5913" countmax="1" chance="10000"/><!-- brown piece of cloth -->
-		<item id="5911" countmax="1" chance="10000"/><!-- red piece of cloth -->
+		<item id="5913" chance="10000"/><!-- brown piece of cloth -->
+		<item id="5911" chance="10000"/><!-- red piece of cloth -->
 		<item id="7290" chance="5000"/><!-- shard -->
 		<item id="7462" chance="2000"/><!-- ragnir helmet -->
 	</loot>

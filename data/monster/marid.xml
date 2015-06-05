@@ -66,10 +66,10 @@
 		<voice sentence="Djinns will soon again be the greatest!"/>
 	</voices>
 	<loot>
-		<item id="2062" countmax="1" chance="40000"/><!-- small oil lamp -->
-		<item id="12426" countmax="1" chance="80000"/><!-- jewelled belt -->
+		<item id="2062" chance="40000"/><!-- small oil lamp -->
+		<item id="12426" chance="80000"/><!-- jewelled belt -->
 		<item id="5912" countmax="2" chance="40000"/><!-- green piece of cloth -->
-		<item id="12442" countmax="1" chance="60000"/><!-- noble turban -->
-		<item id="2158" countmax="1" chance="10000"/><!-- blue gem -->
+		<item id="12442" chance="60000"/><!-- noble turban -->
+		<item id="2158" chance="10000"/><!-- blue gem -->
 	</loot>
 </monster>

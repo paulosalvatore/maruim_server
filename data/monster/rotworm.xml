@@ -21,7 +21,7 @@
 	</attacks>
 	<defenses armor="10" defense="10"/>
 	<loot>
-		<item id="8971" countmax="1" chance="80000"/><!-- gland -->
+		<item id="8971" chance="80000"/><!-- gland -->
 		<item id="2225" countmax="3" chance="30000"/><!-- piece of iron -->
 		<item id="10609" countmax="5" chance="70000"/><!-- lump of dirt -->
 	</loot>

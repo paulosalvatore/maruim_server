@@ -54,10 +54,10 @@
 		<voice sentence="DEATH TO THE ASKARAK!"/>
 	</voices>
 	<loot>
-		<item id="5904" countmax="1" chance="10000" /><!-- Magic Sulphur -->
-		<item id="2147" countmax="1" chance="10000" /><!-- Small Ruby -->
-		<item id="13530" countmax="1" chance="10000" /><!-- Demonic Finger -->
-		<item id="5954" countmax="1" chance="10000" /><!-- Demon Horn -->
-		<item id="6500" countmax="1" chance="10000" /><!-- Demonic Essence -->
+		<item id="5904" chance="10000" /><!-- Magic Sulphur -->
+		<item id="2147" chance="10000" /><!-- Small Ruby -->
+		<item id="13530" chance="10000" /><!-- Demonic Finger -->
+		<item id="5954" chance="10000" /><!-- Demon Horn -->
+		<item id="6500" chance="10000" /><!-- Demonic Essence -->
 	</loot>
 </monster>

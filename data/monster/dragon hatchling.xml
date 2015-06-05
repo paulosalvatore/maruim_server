@@ -47,8 +47,8 @@
 		<voice sentence="Rooawwrr"/>
 	</voices>
 	<loot>
-		<item id="21401" countmax="1" chance="10000"/><!-- small dragon tear -->
-		<item id="12413" countmax="1" chance="10000"/><!-- dragon's tail -->
-		<item id="5877" countmax="1" chance="10000"/><!-- green dragon leather -->
+		<item id="21401" chance="10000"/><!-- small dragon tear -->
+		<item id="12413" chance="10000"/><!-- dragon's tail -->
+		<item id="5877" chance="10000"/><!-- green dragon leather -->
 	</loot>
 </monster>

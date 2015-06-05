@@ -61,7 +61,7 @@
 		<item id="12616" chance="10000" /><!-- broken draken mail -->
 		<item id="5904" chance="10000" /><!-- magic sulphur -->
 		<item id="12647" chance="10000" /><!-- snake god's wristguard -->
-		<item id="12660" countmax="1" chance="10000"/><!-- trashed draken boots -->
-		<item id="13030" countmax="1" chance="10000"/><!-- draken doll -->
+		<item id="12660" chance="10000"/><!-- trashed draken boots -->
+		<item id="13030" chance="10000"/><!-- draken doll -->
 	</loot>
 </monster>

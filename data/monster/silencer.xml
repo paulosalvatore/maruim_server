@@ -53,8 +53,8 @@
 		<voice sentence="Hussssssh!!"/>
 	</voices>
 	<loot>
-		<item id="22534" countmax="1" chance="10000"/><!-- Silencer Claws -->
-		<item id="22535" countmax="1" chance="10000"/><!-- Silencer Resonating Chamber -->
-		<item id="22396" countmax="1" chance="10000"/><!-- Cluster of Solace -->
+		<item id="22534" chance="10000"/><!-- Silencer Claws -->
+		<item id="22535" chance="10000"/><!-- Silencer Resonating Chamber -->
+		<item id="22396" chance="10000"/><!-- Cluster of Solace -->
 	</loot>
 </monster>

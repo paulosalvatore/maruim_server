@@ -40,6 +40,6 @@
 		<voice sentence="An age of darkness is at hand!"/>
 	</voices>
 	<loot>
-		<item id="21243" countmax="1" chance="50000"/><!-- Horoscope -->
+		<item id="21243" chance="50000"/><!-- Horoscope -->
 	</loot>
 </monster>

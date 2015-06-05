@@ -52,8 +52,8 @@
 		<voice sentence="My instincts tell me about your cowardice."/>
 	</voices>
 	<loot>
-		<item id="5913" countmax="1" chance="20000"/><!-- brown piece of cloth -->
-		<item id="5911" countmax="1" chance="20000"/><!-- red piece of cloth -->
+		<item id="5913" chance="20000"/><!-- brown piece of cloth -->
+		<item id="5911" chance="20000"/><!-- red piece of cloth -->
 		<item id="7290" chance="5000"/><!-- shard -->
 		<item id="7379" chance="2000"/><!-- brutetamer's staff -->
 	</loot>

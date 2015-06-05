@@ -52,15 +52,15 @@
 		<voice sentence="Blood!"/>
 	</voices>
 	<loot>
-		<item id="5880" countmax="1" chance="10000"/><!-- iron ore -->
-		<item id="2350" countmax="1" chance="10000"/><!-- sword hilt -->
-		<item id="20134" countmax="1" chance="10000"/><!-- mad froth -->
-		<item id="20135" countmax="1" chance="10000"/><!-- red hair dye -->
-		<item id="2150" countmax="1" chance="10000"/><!-- small amethist -->
-		<item id="2149" countmax="1" chance="10000"/><!-- small emerald -->
-		<item id="18417" countmax="1" chance="10000"/><!-- Brown crystal splinter -->
-		<item id="18420" countmax="1" chance="10000"/><!-- red crystal fragment -->
-		<item id="18416" countmax="1" chance="10000"/><!-- green crystal splinter -->
-		<item id="11227" countmax="1" chance="10000"/><!-- shiny stone -->
+		<item id="5880" chance="10000"/><!-- iron ore -->
+		<item id="2350" chance="10000"/><!-- sword hilt -->
+		<item id="20134" chance="10000"/><!-- mad froth -->
+		<item id="20135" chance="10000"/><!-- red hair dye -->
+		<item id="2150" chance="10000"/><!-- small amethist -->
+		<item id="2149" chance="10000"/><!-- small emerald -->
+		<item id="18417" chance="10000"/><!-- Brown crystal splinter -->
+		<item id="18420" chance="10000"/><!-- red crystal fragment -->
+		<item id="18416" chance="10000"/><!-- green crystal splinter -->
+		<item id="11227" chance="10000"/><!-- shiny stone -->
 	</loot>
 </monster>

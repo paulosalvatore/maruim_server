@@ -41,7 +41,7 @@
 		<voice sentence="*tak tak tak*"/>
 	</voices>
 	<loot>
-		<item id="10568" countmax="1" chance="80000"/><!-- scorpion tail -->
+		<item id="10568" chance="80000"/><!-- scorpion tail -->
 		<item id="2149" countmax="2" chance="30000"/><!-- small emerald -->
 		<item id="13498" chance="1000"/><!-- scorpion sceptre -->
 		<item id="13535" chance="1000"/><!-- fist on a stick -->

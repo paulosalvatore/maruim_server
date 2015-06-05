@@ -54,16 +54,16 @@
 		<voice sentence="NOW YOU WILL SURRENDER!"/>
 	</voices>
 	<loot>
-		<item id="22518" countmax="1" chance="10000"/><!-- Broken Visor -->
-		<item id="22517" countmax="1" chance="10000"/><!-- Sight of Surrender's Eye -->
-		<item id="18418" countmax="1" chance="10000"/><!-- Blue Crystal Splinter -->
-		<item id="18413" countmax="1" chance="10000"/><!-- Blue Crystal Shard -->
-		<item id="18417" countmax="1" chance="10000"/><!-- Brown Crystal Splinter -->
-		<item id="18414" countmax="1" chance="10000"/><!-- Violet Crystal Shard -->
-		<item id="18416" countmax="1" chance="10000"/><!-- Green Cystal Splinter -->
-		<item id="18415" countmax="1" chance="10000"/><!-- Green Crystal Shard -->
-		<item id="2197" countmax="1" chance="10000"/><!-- Stone Skin Amulet -->
-		<item id="22396" countmax="1" chance="10000"/><!-- Cluster of Solace -->
-		<item id="22542" countmax="1" chance="10000"/><!--  -->
+		<item id="22518" chance="10000"/><!-- Broken Visor -->
+		<item id="22517" chance="10000"/><!-- Sight of Surrender's Eye -->
+		<item id="18418" chance="10000"/><!-- Blue Crystal Splinter -->
+		<item id="18413" chance="10000"/><!-- Blue Crystal Shard -->
+		<item id="18417" chance="10000"/><!-- Brown Crystal Splinter -->
+		<item id="18414" chance="10000"/><!-- Violet Crystal Shard -->
+		<item id="18416" chance="10000"/><!-- Green Cystal Splinter -->
+		<item id="18415" chance="10000"/><!-- Green Crystal Shard -->
+		<item id="2197" chance="10000"/><!-- Stone Skin Amulet -->
+		<item id="22396" chance="10000"/><!-- Cluster of Solace -->
+		<item id="22542" chance="10000"/><!--  -->
 	</loot>
 </monster>

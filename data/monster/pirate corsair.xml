@@ -42,10 +42,10 @@
 	</voices>
 	<loot>
 		<item id="5800" countmax="3" chance="90000"/><!-- grappling hook -->
-		<item id="5810" countmax="1" chance="2000"/><!-- pirate voodoo doll -->
+		<item id="5810" chance="2000"/><!-- pirate voodoo doll -->
 		<item id="10123" countmax="5" chance="90000"/><!-- pirate treasure map -->
-		<item id="6126" countmax="1" chance="50000"/><!-- peg leg -->
-		<item id="6097" countmax="1" chance="10000"/><!-- hook -->
-		<item id="6098" countmax="1" chance="30000"/><!-- eye patch -->
+		<item id="6126" chance="50000"/><!-- peg leg -->
+		<item id="6097" chance="10000"/><!-- hook -->
+		<item id="6098" chance="30000"/><!-- eye patch -->
 	</loot>
 </monster>

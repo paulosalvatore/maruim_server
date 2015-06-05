@@ -48,7 +48,7 @@
 		<voice sentence="Your curiosity will be punished!"/>
 	</voices>
 	<loot>
-		<item id="21243" countmax="1" chance="50000"/><!-- Horoscope -->
-		<item id="12411" countmax="1" chance="70000"/><!-- cultish symbol -->
+		<item id="21243" chance="50000"/><!-- Horoscope -->
+		<item id="12411" chance="70000"/><!-- cultish symbol -->
 	</loot>
 </monster>

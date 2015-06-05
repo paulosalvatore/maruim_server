@@ -54,9 +54,9 @@
 		<voice sentence="Thun... Thun... THUNDER!"/>
 	</voices>
 	<loot>
-		<item id="2146" countmax="1" chance="10000"/><!-- Small Sapphire -->	
-		<item id="22539" countmax="1" chance="10000"/><!-- Goosebump Leather -->	
-		<item id="22397" countmax="1" chance="10000"/><!-- Dream Matter -->	
-		<item id="22396" countmax="1" chance="10000"/><!-- Cluster of Solace -->	
+		<item id="2146" chance="10000"/><!-- Small Sapphire -->	
+		<item id="22539" chance="10000"/><!-- Goosebump Leather -->	
+		<item id="22397" chance="10000"/><!-- Dream Matter -->	
+		<item id="22396" chance="10000"/><!-- Cluster of Solace -->	
 	</loot>
 </monster>

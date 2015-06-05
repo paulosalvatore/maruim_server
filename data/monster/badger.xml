@@ -22,8 +22,8 @@
 	</attacks>
 	<defenses armor="5" defense="5"/>
 	<loot>
-		<item id="11216" countmax="1" chance="10000"/><!-- Badger Fur -->
-		<item id="2666" countmax="1" chance="10000"/><!-- Meat -->
-		<item id="11213" countmax="1" chance="10000"/><!-- Acorn -->
+		<item id="11216" chance="10000"/><!-- Badger Fur -->
+		<item id="2666" chance="10000"/><!-- Meat -->
+		<item id="11213" chance="10000"/><!-- Acorn -->
 	</loot>
 </monster>

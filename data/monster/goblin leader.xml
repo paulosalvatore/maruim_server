@@ -31,9 +31,9 @@
 		<voice sentence="Goblinkiller! Catch him !!"/>
 	</voices>
 	<loot>
-		<item id="2226" countmax="1" chance="10000"/><!-- Fishbone -->
-		<item id="1987" countmax="1" chance="10000"/><!-- Bag -->
+		<item id="2226" chance="10000"/><!-- Fishbone -->
+		<item id="1987" chance="10000"/><!-- Bag -->
 		<item id="2148" countmax="30" chance="10000"/><!-- gold coin -->
-		<item id="12495" countmax="1" chance="10000"/><!-- Goblin Ear -->
+		<item id="12495" chance="10000"/><!-- Goblin Ear -->
 	</loot>
 </monster>

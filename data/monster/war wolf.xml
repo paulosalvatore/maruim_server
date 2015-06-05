@@ -35,10 +35,10 @@
 		<voice sentence="Yoooohhuuuu!" yell="1"/>
 	</voices>
 	<loot>
-		<item id="2671" countmax="1" chance="10000"/><!-- Ham -->
-		<item id="11235" countmax="1" chance="10000"/><!-- Warwolf Fur -->
-		<item id="5897" countmax="1" chance="10000"/><!-- Wolf Paw -->
-		<item id="2666" countmax="1" chance="10000"/><!-- Meat -->
-		<item id="7394" countmax="1" chance="10000"/><!-- Wolf Trophy -->
+		<item id="2671" chance="10000"/><!-- Ham -->
+		<item id="11235" chance="10000"/><!-- Warwolf Fur -->
+		<item id="5897" chance="10000"/><!-- Wolf Paw -->
+		<item id="2666" chance="10000"/><!-- Meat -->
+		<item id="7394" chance="10000"/><!-- Wolf Trophy -->
 	</loot>
 </monster>

@@ -51,8 +51,8 @@
 		<summon name="Larva" interval="2000" chance="10" max="3"/>
 	</summons>
 	<loot>
-		<item id="8112" countmax="1" chance="40000"/><!-- scarab cheese -->
-		<item id="2159" countmax="1" chance="20000"/><!-- scarab coin -->
+		<item id="8112" chance="40000"/><!-- scarab cheese -->
+		<item id="2159" chance="20000"/><!-- scarab coin -->
 		<item id="2149" countmax="2" chance="20000"/><!-- small emerald -->
 		<item id="2150" countmax="2" chance="20000"/><!-- small amethyst -->
 		<item id="10548" chance="60000"/><!-- scarab pincers -->

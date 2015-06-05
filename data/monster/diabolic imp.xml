@@ -57,12 +57,12 @@
 		<voice sentence="He he he."/>
 	</voices>
 	<loot>
-		<item id="2548" countmax="1" chance="10000"/><!-- Pitchfork -->
-		<item id="2150" countmax="1" chance="10000"/><!-- Small Amethyst -->
-		<item id="6558" countmax="1" chance="10000"/><!-- Concentrated Demonic Blood -->
-		<item id="6500" countmax="1" chance="10000"/><!-- Demonic Essence -->
-		<item id="5944" countmax="1" chance="10000"/><!-- Soul Orb -->
-		<item id="6300" countmax="1" chance="10000"/><!-- Death Ring -->
-		<item id="7900" countmax="1" chance="10000"/><!-- Magma Monocle -->
+		<item id="2548" chance="10000"/><!-- Pitchfork -->
+		<item id="2150" chance="10000"/><!-- Small Amethyst -->
+		<item id="6558" chance="10000"/><!-- Concentrated Demonic Blood -->
+		<item id="6500" chance="10000"/><!-- Demonic Essence -->
+		<item id="5944" chance="10000"/><!-- Soul Orb -->
+		<item id="6300" chance="10000"/><!-- Death Ring -->
+		<item id="7900" chance="10000"/><!-- Magma Monocle -->
 	</loot>
 </monster>

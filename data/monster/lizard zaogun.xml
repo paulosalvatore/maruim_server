@@ -43,7 +43,7 @@
 	<loot>
 		<item id="11330" chance="10000" /><!-- zaogun flag -->
 		<item id="5881" chance="10000" /><!-- lizard scale -->
-		<item id="2149" countmax="1" chance="10000" /><!-- small emerald -->
+		<item id="2149" chance="10000" /><!-- small emerald -->
 		<item id="11331" chance="10000"/><!-- zaogun shoulderplates -->
 		<item id="11336" chance="10000" /><!-- lizard trophy -->
 	</loot>

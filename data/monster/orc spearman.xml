@@ -33,7 +33,7 @@
 		<voice sentence="Ugaar!"/>
 	</voices>
 	<loot>
-		<item id="12435" countmax="1" chance="60000"/><!-- Orc Leather -->
+		<item id="12435" chance="60000"/><!-- Orc Leather -->
 		<item id="11113" countmax="2" chance="80000"/><!-- Orc Tooth -->
 	</loot>
 </monster>

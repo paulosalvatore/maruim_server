@@ -43,10 +43,10 @@
 		<voice sentence="QJELL NETA NA!!"/>
 	</voices>
 	<loot>
-		<item id="15423" countmax="1" chance="10000"/> <!-- deepling guard belt buckle -->
-		<item id="15455" countmax="1" chance="10000"/> <!-- deepling claw -->
-		<item id="5895" countmax="1" chance="10000"/> <!-- Fish Fin -->
-		<item id="15403" countmax="1" chance="10000"/> <!-- Necklace of the Deep -->
-		<item id="2146" countmax="1" chance="10000"/> <!-- Small Sapphire -->
+		<item id="15423" chance="10000"/> <!-- deepling guard belt buckle -->
+		<item id="15455" chance="10000"/> <!-- deepling claw -->
+		<item id="5895" chance="10000"/> <!-- Fish Fin -->
+		<item id="15403" chance="10000"/> <!-- Necklace of the Deep -->
+		<item id="2146" chance="10000"/> <!-- Small Sapphire -->
 	</loot>
 </monster>

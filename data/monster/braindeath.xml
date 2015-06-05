@@ -69,9 +69,9 @@
 		<voice sentence="You will be punished!"/>
 	</voices>
 	<loot>
-		<item id="11193" countmax="1" chance="10000"/><!-- Elder Bonelord Tentacle -->
-		<item id="11197" countmax="1" chance="10000"/><!-- Giant Eye -->
-		<item id="10580" countmax="1" chance="10000"/><!-- Piece of Dead Brain -->
-		<item id="12468" countmax="1" chance="10000"/><!-- Small Flask of Eye Drops -->
+		<item id="11193" chance="10000"/><!-- Elder Bonelord Tentacle -->
+		<item id="11197" chance="10000"/><!-- Giant Eye -->
+		<item id="10580" chance="10000"/><!-- Piece of Dead Brain -->
+		<item id="12468" chance="10000"/><!-- Small Flask of Eye Drops -->
 	</loot>
 </monster>

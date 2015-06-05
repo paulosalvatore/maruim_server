@@ -71,15 +71,15 @@
 		<item id="2260" countmax="3" chance="70000"/><!-- Blank Rune -->
 		<item id="2143" countmax="2" chance="30000"/><!-- White Pearl -->
 		<item id="2144" countmax="2" chance="30000"/><!-- Black Pearl -->
-		<item id="6500" countmax="1" chance="5000"/><!-- Demonic Essence -->
+		<item id="6500" chance="5000"/><!-- Demonic Essence -->
 		<item id="2147" countmax="2" chance="10000"/><!-- Small Ruby -->
 		<item id="2149" countmax="2" chance="10000"/><!-- Small Emerald -->
 		<item id="9970" countmax="2" chance="10000"/><!-- Small Topaz -->
 		<item id="2150" countmax="2" chance="10000"/><!-- Small Amethyst -->
 		<item id="10607" countmax="3" chance="80000"/><!-- Ghostly Tissue -->
 		<item id="2804" countmax="2" chance="20000"/><!-- Shadow Herb -->
-		<item id="2136" countmax="1" chance="1000"/><!-- Demonbone Amulet -->
-		<item id="5944" countmax="1" chance="5000"/><!-- Soul Orb -->
-		<item id="11227" countmax="1" chance="5000"/><!-- Shiny Stone -->
+		<item id="2136" chance="1000"/><!-- Demonbone Amulet -->
+		<item id="5944" chance="5000"/><!-- Soul Orb -->
+		<item id="11227" chance="5000"/><!-- Shiny Stone -->
 	</loot>
 </monster>

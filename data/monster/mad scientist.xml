@@ -56,7 +56,7 @@
 		<voice sentence="I will study your corpse!"/>
 	</voices>
 	<loot>
-		<item id="5909" countmax="1" chance="10000"/><!-- white piece of cloth -->
+		<item id="5909" chance="10000"/><!-- white piece of cloth -->
 		<item id="2308" chance="10000"/><!-- powder herb -->
 		<item id="13295" chance="10000"/><!-- reins -->
 	</loot>

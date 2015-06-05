@@ -35,10 +35,10 @@
 		<voice sentence="Hmmm, dogs."/>
 	</voices>
 	<loot>
-		<item id="10606" countmax="1" chance="10000"/><!-- Bunch of Troll Hair -->
-		<item id="2666" countmax="1" chance="10000"/><!-- Meat -->
-		<item id="2805" countmax="1" chance="10000"/><!-- Troll Green -->
-		<item id="12471" countmax="1" chance="10000"/><!-- Trollroot -->
-		<item id="2448" countmax="1" chance="10000"/><!-- Studded Club -->
+		<item id="10606" chance="10000"/><!-- Bunch of Troll Hair -->
+		<item id="2666" chance="10000"/><!-- Meat -->
+		<item id="2805" chance="10000"/><!-- Troll Green -->
+		<item id="12471" chance="10000"/><!-- Trollroot -->
+		<item id="2448" chance="10000"/><!-- Studded Club -->
 	</loot>
 </monster>

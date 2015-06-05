@@ -37,9 +37,9 @@
 		<voice sentence="Groarrrr! Rwarrrr!" />
 	</voices>
 	<loot>
-		<item id="7400" countmax="1" chance="2000"/><!-- lion trophy -->
+		<item id="7400" chance="2000"/><!-- lion trophy -->
 		<item id="2666" countmax="4" chance="80000" /><!-- meat -->
 		<item id="2671" countmax="2" chance="60000" /><!-- ham -->
-		<item id="10608" countmax="1" chance="30000" /><!-- lion's mane -->
+		<item id="10608" chance="30000" /><!-- lion's mane -->
 	</loot>
 </monster>

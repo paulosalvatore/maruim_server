@@ -68,13 +68,13 @@
 		<voice sentence="Dieee!"/>
 	</voices>
 	<loot>
-		<item id="6558" countmax="1" chance="10000"/><!-- concentrated demonic blood -->
-		<item id="6500" countmax="1" chance="10000"/><!-- demonic essence -->
-		<item id="5944" countmax="1" chance="10000"/><!-- soul orb -->
-		<item id="5022" countmax="1" chance="10000"/><!-- orichalcum pearl -->
-		<item id="5911" countmax="1" chance="10000"/><!-- red piece of cloth -->
-		<item id="2147" countmax="1" chance="10000"/><!-- small ruby -->
-		<item id="2120" countmax="1" chance="10000"/><!-- small amethyst -->
-		<item id="8844" countmax="1" chance="10000"/><!-- jalapeno peppers-->
+		<item id="6558" chance="10000"/><!-- concentrated demonic blood -->
+		<item id="6500" chance="10000"/><!-- demonic essence -->
+		<item id="5944" chance="10000"/><!-- soul orb -->
+		<item id="5022" chance="10000"/><!-- orichalcum pearl -->
+		<item id="5911" chance="10000"/><!-- red piece of cloth -->
+		<item id="2147" chance="10000"/><!-- small ruby -->
+		<item id="2120" chance="10000"/><!-- small amethyst -->
+		<item id="8844" chance="10000"/><!-- jalapeno peppers-->
 	</loot>
 </monster>

@@ -52,7 +52,7 @@
 		<voice sentence="Stand Still!"/>
 	</voices>
 	<loot>
-		<item id="2178" countmax="1" chance="10000"/><!-- mind stone -->
+		<item id="2178" chance="10000"/><!-- mind stone -->
 		<item id="13295" chance="10000"/><!-- reins -->
 	</loot>
 </monster>

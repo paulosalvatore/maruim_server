@@ -45,11 +45,11 @@
 		<voice sentence="DEATH TO THE SHABRUAK!"/>
 	</voices>
 	<loot>
-		<item id="5904" countmax="1" chance="10000" /><!-- Magic Sulphur -->
-		<item id="2149" countmax="1" chance="10000" /><!-- Small Emerald -->
-		<item id="13530" countmax="1" chance="10000" /><!-- Demonic Finger -->
-		<item id="5954" countmax="1" chance="10000" /><!-- Demon Horn -->
-		<item id="6500" countmax="1" chance="10000" /><!-- Demonic Essence -->
-		<item id="6558" countmax="1" chance="10000" /><!-- Concentrated Demonic Blood -->
+		<item id="5904" chance="10000" /><!-- Magic Sulphur -->
+		<item id="2149" chance="10000" /><!-- Small Emerald -->
+		<item id="13530" chance="10000" /><!-- Demonic Finger -->
+		<item id="5954" chance="10000" /><!-- Demon Horn -->
+		<item id="6500" chance="10000" /><!-- Demonic Essence -->
+		<item id="6558" chance="10000" /><!-- Concentrated Demonic Blood -->
 	</loot>
 </monster>

@@ -52,7 +52,7 @@
 		<item id="11325" chance="10000" /><!-- spiked iron ball -->
 		<item id="12629" chance="10000" /><!-- scale of corruption -->
 		<item id="11327" chance="10000" /><!-- cursed shoulder spikes -->
-		<item id="2145" countmax="1" chance="10000" /><!-- small diamond -->
+		<item id="2145" chance="10000" /><!-- small diamond -->
 		<item id="11326" chance="10000" /><!-- corrupted flag -->
 		<item id="11336" chance="10000" /><!-- lizard trophy -->
 	</loot>

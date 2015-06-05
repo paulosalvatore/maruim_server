@@ -47,12 +47,12 @@
 		<voice sentence="It's a good day to destroy!"/>
 	</voices>
 	<loot>
-		<item id="2150" countmax="1" chance="10000"/><!-- Small Amethyst -->
-		<item id="11215" countmax="1" chance="10000"/><!-- Metal Spike -->
-		<item id="6500" countmax="1" chance="10000"/><!-- Demonic Essence -->
-		<item id="5944" countmax="1" chance="10000"/><!-- Soul Orb -->
-		<item id="2178" countmax="1" chance="10000"/><!-- Mind Orb -->
-		<item id="6300" countmax="1" chance="10000"/><!-- Death Ring -->
-		<item id="5741" countmax="1" chance="10000"/><!-- Skull Helmet -->
+		<item id="2150" chance="10000"/><!-- Small Amethyst -->
+		<item id="11215" chance="10000"/><!-- Metal Spike -->
+		<item id="6500" chance="10000"/><!-- Demonic Essence -->
+		<item id="5944" chance="10000"/><!-- Soul Orb -->
+		<item id="2178" chance="10000"/><!-- Mind Orb -->
+		<item id="6300" chance="10000"/><!-- Death Ring -->
+		<item id="5741" chance="10000"/><!-- Skull Helmet -->
 	</loot>
 </monster>

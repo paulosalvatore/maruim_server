@@ -34,9 +34,9 @@
 		<immunity paralyze="1"/>
 	</immunities>
 	<loot>
-		<item id="15455" countmax="1" chance="10000"/> <!-- Deepling Claw -->
-		<item id="15424" countmax="1" chance="10000"/> <!-- Deepling Breaktime Snack -->
-		<item id="2149" countmax="1" chance="10000"/> <!-- small emerald -->
+		<item id="15455" chance="10000"/> <!-- Deepling Claw -->
+		<item id="15424" chance="10000"/> <!-- Deepling Breaktime Snack -->
+		<item id="2149" chance="10000"/> <!-- small emerald -->
 		<item id="5895" chance="10000"/><!-- fish fin -->
 	</loot>
 </monster>

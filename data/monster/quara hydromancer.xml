@@ -65,6 +65,6 @@
 		<item id="2144" countmax="2" chance="10000" /><!-- black pearl -->
 		<item id="2143" countmax="2" chance="10000" /><!-- white pearl -->
 		<item id="2149" countmax="2" chance="10000" /><!-- small emerald -->
-		<item id="5895" countmax="1" chance="10000" /><!-- fish fin -->
+		<item id="5895" chance="10000" /><!-- fish fin -->
 	</loot>
 </monster>

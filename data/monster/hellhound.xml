@@ -67,15 +67,15 @@
 		<voice sentence="GRRRRR!"/>
 	</voices>
 	<loot>
-		<item id="9970" countmax="1" chance="10000"/><!-- Small Topaz -->
-		<item id="2144" countmax="1" chance="10000"/><!-- Black Pearl -->
-		<item id="6558" countmax="1" chance="10000"/><!-- Concentrated Demonic Blood -->
-		<item id="6500" countmax="1" chance="10000"/><!-- Demonic Essence -->
-		<item id="5944" countmax="1" chance="10000"/><!-- Soul Orb -->
-		<item id="10554" countmax="1" chance="10000"/><!-- Hellhound Slobber -->
-		<item id="4873" countmax="1" chance="10000"/><!-- Explorer Brooch -->
-		<item id="5910" countmax="1" chance="10000"/><!-- Green Piece of Cloth -->
-		<item id="5911" countmax="1" chance="10000"/><!-- Red Piece of Cloth -->
-		<item id="5914" countmax="1" chance="10000"/><!-- Yellow Piece of Cloth -->
+		<item id="9970" chance="10000"/><!-- Small Topaz -->
+		<item id="2144" chance="10000"/><!-- Black Pearl -->
+		<item id="6558" chance="10000"/><!-- Concentrated Demonic Blood -->
+		<item id="6500" chance="10000"/><!-- Demonic Essence -->
+		<item id="5944" chance="10000"/><!-- Soul Orb -->
+		<item id="10554" chance="10000"/><!-- Hellhound Slobber -->
+		<item id="4873" chance="10000"/><!-- Explorer Brooch -->
+		<item id="5910" chance="10000"/><!-- Green Piece of Cloth -->
+		<item id="5911" chance="10000"/><!-- Red Piece of Cloth -->
+		<item id="5914" chance="10000"/><!-- Yellow Piece of Cloth -->
 	</loot>
 </monster>

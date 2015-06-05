@@ -22,7 +22,7 @@
 		<voice sentence="Maeh"/>
 	</voices>
 	<loot>
-		<item id="2666" countmax="1" chance="10000"/><!-- Meat -->
-		<item id="12404" countmax="1" chance="10000"/><!-- Black Wool -->
+		<item id="2666" chance="10000"/><!-- Meat -->
+		<item id="12404" chance="10000"/><!-- Black Wool -->
 	</loot>
 </monster>

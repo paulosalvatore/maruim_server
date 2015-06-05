@@ -37,10 +37,10 @@
 		<voice sentence="Take this!"/>
 	</voices>
 	<loot>
-		<item id="12382" countmax="1" chance="10000"/><!-- scribbled sheet of paper -->
-		<item id="1987" countmax="1" chance="10000"/><!-- bag -->
-		<item id="2148" countmax="1" chance="10000"/><!-- gold coin -->
-		<item id="10573" countmax="1" chance="10000"/><!-- broken gladiator shield -->
-		<item id="5914" countmax="1" chance="10000"/><!-- yellow piece of cloth -->
+		<item id="12382" chance="10000"/><!-- scribbled sheet of paper -->
+		<item id="1987" chance="10000"/><!-- bag -->
+		<item id="2148" chance="10000"/><!-- gold coin -->
+		<item id="10573" chance="10000"/><!-- broken gladiator shield -->
+		<item id="5914" chance="10000"/><!-- yellow piece of cloth -->
 	</loot>
 </monster>

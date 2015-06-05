@@ -30,6 +30,6 @@
 		<voice sentence="Chhh!"/>
 	</voices>
 	<loot>
-		<item id="19736" countmax="1" chance="10000"/><!-- Insectoid Eggs -->
+		<item id="19736" chance="10000"/><!-- Insectoid Eggs -->
 	</loot>
 </monster>

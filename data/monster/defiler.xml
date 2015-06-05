@@ -55,11 +55,11 @@
 		<voice sentence="Blubb Blubb"/>
 	</voices>
 	<loot>
-		<item id="2149" countmax="1" chance="10000"/><!--  -->
-		<item id="10557" countmax="1" chance="10000"/><!--  -->
-		<item id="13758" countmax="1" chance="10000"/><!--  -->
-		<item id="6500" countmax="1" chance="10000"/><!--  -->
-		<item id="5944" countmax="1" chance="10000"/><!--  -->
-		<item id="2155" countmax="1" chance="10000"/><!--  -->
+		<item id="2149" chance="10000"/><!--  -->
+		<item id="10557" chance="10000"/><!--  -->
+		<item id="13758" chance="10000"/><!--  -->
+		<item id="6500" chance="10000"/><!--  -->
+		<item id="5944" chance="10000"/><!--  -->
+		<item id="2155" chance="10000"/><!--  -->
 	</loot>
 </monster>

@@ -44,9 +44,9 @@
 		<voice sentence="Remain. Obedient."/>
 	</voices>
 	<loot>
-		<item id="2225" countmax="1" chance="10000"/><!--  -->
-		<item id="5880" countmax="1" chance="10000"/><!--  -->
-		<item id="13758" countmax="1" chance="10000"/><!--  -->
-		<item id="9690" countmax="1" chance="10000"/><!--  -->
+		<item id="2225" chance="10000"/><!--  -->
+		<item id="5880" chance="10000"/><!--  -->
+		<item id="13758" chance="10000"/><!--  -->
+		<item id="9690" chance="10000"/><!--  -->
 	</loot>
 </monster>

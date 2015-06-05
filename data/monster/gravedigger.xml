@@ -58,14 +58,14 @@
 		<voice sentence="Put it there!"/>
 	</voices>
 	<loot>
-		<item id="6300" countmax="1" chance="10000"/><!-- Death Ring -->
-		<item id="5925" countmax="1" chance="10000"/><!-- Hardened Bone -->
-		<item id="10609" countmax="1" chance="10000"/><!-- Lump of Dirt -->
-		<item id="5669" countmax="1" chance="10000"/><!-- Mysterious Voodoo Skull -->
-		<item id="12440" countmax="1" chance="10000"/><!-- Pile of Grave Earth -->
-		<item id="12449" countmax="1" chance="10000"/><!-- Safety Pin -->
-		<item id="11233" countmax="1" chance="10000"/><!-- Unholy Bone -->
-		<item id="2154" countmax="1" chance="10000"/><!-- Yellow Gem -->
-		<item id="22396" countmax="1" chance="10000"/><!-- Cluster of Solace -->
+		<item id="6300" chance="10000"/><!-- Death Ring -->
+		<item id="5925" chance="10000"/><!-- Hardened Bone -->
+		<item id="10609" chance="10000"/><!-- Lump of Dirt -->
+		<item id="5669" chance="10000"/><!-- Mysterious Voodoo Skull -->
+		<item id="12440" chance="10000"/><!-- Pile of Grave Earth -->
+		<item id="12449" chance="10000"/><!-- Safety Pin -->
+		<item id="11233" chance="10000"/><!-- Unholy Bone -->
+		<item id="2154" chance="10000"/><!-- Yellow Gem -->
+		<item id="22396" chance="10000"/><!-- Cluster of Solace -->
 	</loot>
 </monster>

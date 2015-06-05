@@ -54,7 +54,7 @@
 		<voice sentence="Crackle"/>
 	</voices>
 	<loot>
-		<item id="10557" countmax="1" chance="80000"/><!-- Poisonous Slime -->
+		<item id="10557" chance="80000"/><!-- Poisonous Slime -->
 		<item id="2145" countmax="2" chance="10000"/><!-- Small Diamond -->
 		<item id="9966" countmax="2" chance="60000"/><!-- Glob of Mercury -->
 	</loot>

@@ -61,8 +61,8 @@
 		<voice sentence="I bring your deathhh, mortalssss"/>
 	</voices>
 	<loot>
-		<item id="10611" countmax="1" chance="10000"/><!-- Snake Skin -->
-		<item id="11230" countmax="1" chance="10000"/><!-- Winged Tail -->
-		<item id="10551" countmax="1" chance="10000"/><!-- Cobra Tongue -->
+		<item id="10611" chance="10000"/><!-- Snake Skin -->
+		<item id="11230" chance="10000"/><!-- Winged Tail -->
+		<item id="10551" chance="10000"/><!-- Cobra Tongue -->
 	</loot>
 </monster>

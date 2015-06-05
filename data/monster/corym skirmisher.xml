@@ -39,14 +39,14 @@
 		<voice sentence="<sniff><sniff><sniff>"/>
 	</voices>
 	<loot>
-		<item id="20089" countmax="1" chance="20000"/><!-- Bola -->
+		<item id="20089" chance="20000"/><!-- Bola -->
 		<item id="2696" countmax="2" chance="70000"/><!-- Cheese -->
-		<item id="20097" countmax="1" chance="40000"/><!-- Cheese Cutter -->
-		<item id="20098" countmax="1" chance="40000"/><!-- Cheesy Figurine -->
+		<item id="20097" chance="40000"/><!-- Cheese Cutter -->
+		<item id="20098" chance="40000"/><!-- Cheesy Figurine -->
 		<item id="20101" countmax="2" chance="40000"/><!-- Rat Cheese -->
-		<item id="20100" countmax="1" chance="10000"/><!-- Soft Cheese -->
-		<item id="20126" countmax="1" chance="5000"/><!-- Leather Harness -->
-		<item id="20105" countmax="1" chance="5000"/><!-- Rat God Doll -->
-		<item id="21475" countmax="1" chance="1000"/><!-- Pannier Backpack -->
+		<item id="20100" chance="10000"/><!-- Soft Cheese -->
+		<item id="20126" chance="5000"/><!-- Leather Harness -->
+		<item id="20105" chance="5000"/><!-- Rat God Doll -->
+		<item id="21475" chance="1000"/><!-- Pannier Backpack -->
 	</loot>
 </monster>

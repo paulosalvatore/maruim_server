@@ -41,7 +41,7 @@
 	<loot>
 		<item id="15480" chance="10000"/><!-- kollos shell -->
 		<item id="15486" chance="10000"/><!-- compound eye -->
-		<item id="2147" countmax="1" chance="10000"/><!-- small ruby -->
+		<item id="2147" chance="10000"/><!-- small ruby -->
 		<item id="7632" chance="10000"/><!-- giant shimmering pearl -->
 	</loot>
 </monster>

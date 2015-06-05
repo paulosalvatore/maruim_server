@@ -56,18 +56,18 @@
 		<voice sentence="Cough Cough"/>
 	</voices>
 	<loot>
-		<item id="2237" countmax="1" chance="10000"/><!-- Dirty Cape -->
-		<item id="2150" countmax="1" chance="10000"/><!-- Small Amethyst -->
-		<item id="2134" countmax="1" chance="10000"/><!-- Silver Brooch -->
-		<item id="2225" countmax="1" chance="10000"/><!-- Piece of Iron -->
-		<item id="6500" countmax="1" chance="10000"/><!-- Demonic Essence -->
-		<item id="5944" countmax="1" chance="10000"/><!-- Soul Orb -->
-		<item id="5889" countmax="1" chance="10000"/><!-- Piece of Draconian Steel -->
-		<item id="5888" countmax="1" chance="10000"/><!-- Piece of Hell Steel -->
-		<item id="5887" countmax="1" chance="10000"/><!-- Piece of Royal Steel -->
-		<item id="2127" countmax="1" chance="10000"/><!-- Emerald Bangle -->
-		<item id="2079" countmax="1" chance="10000"/><!-- War Horn -->
-		<item id="2645" countmax="1" chance="10000"/><!-- Steel Boots -->
-		<item id="2444" countmax="1" chance="10000"/><!-- Hammer of Wrath -->
+		<item id="2237" chance="10000"/><!-- Dirty Cape -->
+		<item id="2150" chance="10000"/><!-- Small Amethyst -->
+		<item id="2134" chance="10000"/><!-- Silver Brooch -->
+		<item id="2225" chance="10000"/><!-- Piece of Iron -->
+		<item id="6500" chance="10000"/><!-- Demonic Essence -->
+		<item id="5944" chance="10000"/><!-- Soul Orb -->
+		<item id="5889" chance="10000"/><!-- Piece of Draconian Steel -->
+		<item id="5888" chance="10000"/><!-- Piece of Hell Steel -->
+		<item id="5887" chance="10000"/><!-- Piece of Royal Steel -->
+		<item id="2127" chance="10000"/><!-- Emerald Bangle -->
+		<item id="2079" chance="10000"/><!-- War Horn -->
+		<item id="2645" chance="10000"/><!-- Steel Boots -->
+		<item id="2444" chance="10000"/><!-- Hammer of Wrath -->
 	</loot>
 </monster>

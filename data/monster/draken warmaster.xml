@@ -45,11 +45,11 @@
 		<voice sentence="Hizzzzz!"/>
 	</voices>
 	<loot>
-		<item id="12614" countmax="1" chance="10000" /><!-- draken sulphur -->
-		<item id="2147" countmax="1" chance="10000" /><!-- small ruby -->
-		<item id="11321" countmax="1" chance="10000"/><!-- bone shoulderplate -->
-		<item id="11322" countmax="1" chance="10000"/><!-- warmaster's wristguards -->
-		<item id="12660" countmax="1" chance="10000"/><!-- trashed draken boots -->
-		<item id="13030" countmax="1" chance="10000"/><!-- draken doll -->
+		<item id="12614" chance="10000" /><!-- draken sulphur -->
+		<item id="2147" chance="10000" /><!-- small ruby -->
+		<item id="11321" chance="10000"/><!-- bone shoulderplate -->
+		<item id="11322" chance="10000"/><!-- warmaster's wristguards -->
+		<item id="12660" chance="10000"/><!-- trashed draken boots -->
+		<item id="13030" chance="10000"/><!-- draken doll -->
 	</loot>
 </monster>

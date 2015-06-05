@@ -32,7 +32,7 @@
 		<voice sentence="Prek tars, dekklep zurk."/>
 	</voices>
 	<loot>
-		<item id="12435" countmax="1" chance="50000"/><!-- Orc Leather -->
+		<item id="12435" chance="50000"/><!-- Orc Leather -->
 		<item id="11113" countmax="2" chance="70000"/><!-- Orc Tooth -->
 	</loot>
 </monster>

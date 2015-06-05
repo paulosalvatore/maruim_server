@@ -34,15 +34,15 @@
 		<voice sentence="Crrrrk! Chhhhr!"/>
 	</voices>
 	<loot>
-		<item id="18418" countmax="1" chance="10000"/><!-- Blue Crystal Splinter -->
-		<item id="18413" countmax="1" chance="10000"/><!-- Blue Crystal Shard -->
-		<item id="18416" countmax="1" chance="10000"/><!-- Green Crystal Splinter -->
-		<item id="18415" countmax="1" chance="10000"/><!-- Green Crystal Shard -->
-		<item id="18419" countmax="1" chance="10000"/><!-- Cyan Crystal Fragment -->
-		<item id="18432" countmax="1" chance="10000"/><!-- Crystalline Spikes -->
-		<item id="2225" countmax="1" chance="10000"/><!-- Piece of Iron -->
-		<item id="5880" countmax="1" chance="10000"/><!-- Iron Ore -->
-		<item id="18422" countmax="1" chance="10000"/><!-- Minor Crystalline Token -->
-		<item id="18394" countmax="1" chance="10000"/><!-- Crystal Backpack -->
+		<item id="18418" chance="10000"/><!-- Blue Crystal Splinter -->
+		<item id="18413" chance="10000"/><!-- Blue Crystal Shard -->
+		<item id="18416" chance="10000"/><!-- Green Crystal Splinter -->
+		<item id="18415" chance="10000"/><!-- Green Crystal Shard -->
+		<item id="18419" chance="10000"/><!-- Cyan Crystal Fragment -->
+		<item id="18432" chance="10000"/><!-- Crystalline Spikes -->
+		<item id="2225" chance="10000"/><!-- Piece of Iron -->
+		<item id="5880" chance="10000"/><!-- Iron Ore -->
+		<item id="18422" chance="10000"/><!-- Minor Crystalline Token -->
+		<item id="18394" chance="10000"/><!-- Crystal Backpack -->
 	</loot>
 </monster>

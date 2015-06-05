@@ -44,10 +44,10 @@
 		<item id="9970" countmax="2" chance="30000" /><!-- Small Topaz -->
 		<item id="1294" countmax="3" chance="50000" /><!-- Small Stone -->
 		<item id="11339" countmax="2" chance="80000" /><!-- Clay Lump -->
-		<item id="11325" countmax="1" chance="10000" /><!-- Spiked Iron Ball -->
-		<item id="11227" countmax="1" chance="5000" /><!-- Shiny Stone -->
-		<item id="10549" countmax="1" chance="10000" /><!-- Ancient Stone -->
-		<item id="2348" countmax="1" chance="5000" /><!-- Ancient Rune -->
-		<item id="5880" countmax="1" chance="30000" /><!-- Iron Ore -->
+		<item id="11325" chance="10000" /><!-- Spiked Iron Ball -->
+		<item id="11227" chance="5000" /><!-- Shiny Stone -->
+		<item id="10549" chance="10000" /><!-- Ancient Stone -->
+		<item id="2348" chance="5000" /><!-- Ancient Rune -->
+		<item id="5880" chance="30000" /><!-- Iron Ore -->
 	</loot>
 </monster>

@@ -44,6 +44,6 @@
 		<item id="11333" chance="10000" /><!-- high guard shoulderplates -->
 		<item id="5881" chance="10000" /><!-- lizard scale -->
 		<item id="11336" chance="10000" /><!-- lizard trophy -->
-		<item id="2149" countmax="1" chance="10000" /><!-- small emerald -->
+		<item id="2149" chance="10000" /><!-- small emerald -->
 	</loot>
 </monster>

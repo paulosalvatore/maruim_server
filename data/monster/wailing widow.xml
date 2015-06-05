@@ -50,8 +50,8 @@
 		<immunity drunk="1"/>
 	</immunities>
 	<loot>
-		<item id="11328" countmax="1" chance="80000" /><!-- widow's mandibles -->
+		<item id="11328" chance="80000" /><!-- widow's mandibles -->
 		<item id="8860" countmax="2" chance="30000"/><!-- spiderwebs -->
-		<item id="5879" countmax="1" chance="10000"/><!-- spider silk -->
+		<item id="5879" chance="10000"/><!-- spider silk -->
 	</loot>
 </monster>

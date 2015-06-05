@@ -44,7 +44,7 @@
 		<voice sentence="Ahhuuaaa!"/>
 	</voices>
 	<loot>
-		<item id="5883" countmax="1" chance="60000"/><!-- ape fur -->
+		<item id="5883" chance="60000"/><!-- ape fur -->
 		<item id="2678" countmax="3" chance="80000"/><!-- coconut -->
 	</loot>
 </monster>

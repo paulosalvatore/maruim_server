@@ -55,9 +55,9 @@
 		<voice sentence="My little beetles, go forth, eat, feast!"/>
 	</voices>
 	<loot>
-		<item id="22363" countmax="1" chance="10000"/><!--  -->
-		<item id="22539" countmax="1" chance="10000"/><!-- Goosebump Leather -->
-		<item id="22541" countmax="1" chance="10000"/><!-- Pool of Chitinous Glue -->
-		<item id="22396" countmax="1" chance="10000"/><!-- Cluster of Solace -->
+		<item id="22363" chance="10000"/><!--  -->
+		<item id="22539" chance="10000"/><!-- Goosebump Leather -->
+		<item id="22541" chance="10000"/><!-- Pool of Chitinous Glue -->
+		<item id="22396" chance="10000"/><!-- Cluster of Solace -->
 	</loot>
 </monster>

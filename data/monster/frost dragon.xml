@@ -68,9 +68,9 @@
 		<voice sentence="Chill out!."/>
 	</voices>
 	<loot>
-		<item id="13028" countmax="1" chance="10000"/><!-- frozen heart -->
-		<item id="7289" countmax="1" chance="10000"/><!-- frost charm -->
-		<item id="8300" countmax="1" chance="10000"/><!-- flawless ice crystal -->
-		<item id="7314" countmax="1" chance="10000"/><!-- scale from a frozen dragon -->
+		<item id="13028" chance="10000"/><!-- frozen heart -->
+		<item id="7289" chance="10000"/><!-- frost charm -->
+		<item id="8300" chance="10000"/><!-- flawless ice crystal -->
+		<item id="7314" chance="10000"/><!-- scale from a frozen dragon -->
 	</loot>
 </monster>

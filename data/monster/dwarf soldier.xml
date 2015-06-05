@@ -32,8 +32,8 @@
 		<voice sentence="Hail Durin!"/>
 	</voices>
 	<loot>
-		<item id="20107" countmax="1" chance="40000"/><!-- Bloody Dwarven Beard -->
-		<item id="5880" countmax="1" chance="30000"/><!-- Iron Ore -->
-		<item id="2455" countmax="1" chance="40000"/><!-- Crossbow -->
+		<item id="20107" chance="40000"/><!-- Bloody Dwarven Beard -->
+		<item id="5880" chance="30000"/><!-- Iron Ore -->
+		<item id="2455" chance="40000"/><!-- Crossbow -->
 	</loot>
 </monster>

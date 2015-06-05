@@ -44,10 +44,10 @@
 		<voice sentence="Yag! Yag! Yag!"/>
 	</voices>
 	<loot>
-		<item id="10553" countmax="1" chance="10000"/><!-- Fiery Heart -->
-		<item id="8299" countmax="1" chance="10000"/><!-- Glimmering Soil -->
-		<item id="21585" countmax="1" chance="10000"/><!-- Smoking Coal -->
-		<item id="9970" countmax="1" chance="10000"/><!-- Small Topaz -->
-		<item id="18425" countmax="1" chance="10000"/><!-- Blazing Bone -->
+		<item id="10553" chance="10000"/><!-- Fiery Heart -->
+		<item id="8299" chance="10000"/><!-- Glimmering Soil -->
+		<item id="21585" chance="10000"/><!-- Smoking Coal -->
+		<item id="9970" chance="10000"/><!-- Small Topaz -->
+		<item id="18425" chance="10000"/><!-- Blazing Bone -->
 	</loot>
 </monster>

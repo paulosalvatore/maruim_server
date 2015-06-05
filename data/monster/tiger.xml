@@ -30,8 +30,8 @@
 		<element icePercent="-1"/>
 	</elements>
 	<loot>
-		<item id="2666" countmax="1" chance="10000"/><!-- Meat -->
-		<item id="11210" countmax="1" chance="10000"/><!-- Striped Fur -->
-		<item id="11228" countmax="1" chance="10000"/><!-- Sabretooth -->
+		<item id="2666" chance="10000"/><!-- Meat -->
+		<item id="11210" chance="10000"/><!-- Striped Fur -->
+		<item id="11228" chance="10000"/><!-- Sabretooth -->
 	</loot>
 </monster>

@@ -56,14 +56,14 @@
 	</voices>
 	<loot>
 		<item id="21245" countmax="3" chance="80000"/><!-- Blood Tincture in a Vial -->
-		<item id="11237" countmax="1" chance="30000"/><!-- Book of Necromantic Rituals -->
-		<item id="21243" countmax="1" chance="40000"/><!-- Horoscope -->
-		<item id="21247" countmax="1" chance="10000"/><!-- Pieces of Magic Chalk -->
-		<item id="21242" countmax="1" chance="10000"/><!-- Lancet -->
+		<item id="11237" chance="30000"/><!-- Book of Necromantic Rituals -->
+		<item id="21243" chance="40000"/><!-- Horoscope -->
+		<item id="21247" chance="10000"/><!-- Pieces of Magic Chalk -->
+		<item id="21242" chance="10000"/><!-- Lancet -->
 		<item id="5909" countmax="2" chance="50000"/><!-- White Piece of Cloth -->
 		<item id="5911" countmax="2" chance="50000"/><!-- Red Piece of Cloth -->
-		<item id="2217" countmax="1" chance="10000"/><!-- Spellbook -->
-		<item id="21246" countmax="1" chance="5000"/><!-- Incantation Notes -->
-		<item id="2156" countmax="1" chance="5000"/><!-- Red Gem -->
+		<item id="2217" chance="10000"/><!-- Spellbook -->
+		<item id="21246" chance="5000"/><!-- Incantation Notes -->
+		<item id="2156" chance="5000"/><!-- Red Gem -->
 	</loot>
 </monster>

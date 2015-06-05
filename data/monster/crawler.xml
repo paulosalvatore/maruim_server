@@ -43,7 +43,7 @@
 	<loot>
 		<item id="15482" chance="10000"/><!-- crawler head plating -->
 		<item id="15486" chance="10000"/><!-- compound eye -->
-		<item id="9970" countmax="1" chance="10000"/><!-- small topaz -->
+		<item id="9970" chance="10000"/><!-- small topaz -->
 		<item id="2154" chance="10000"/><!-- yellow gem -->
 	</loot>
 </monster>

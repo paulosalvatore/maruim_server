@@ -41,7 +41,7 @@
 		<voice sentence="Boohaa!"/>
 	</voices>
 	<loot>
-		<item id="12443" countmax="1" chance="30000" /><!-- quara tentacle -->
-		<item id="2150" countmax="1" chance="10000" /><!-- small amethyst -->
+		<item id="12443" chance="30000" /><!-- quara tentacle -->
+		<item id="2150" chance="10000" /><!-- small amethyst -->
 	</loot>
 </monster>

@@ -46,7 +46,7 @@
 	<loot>
 		<item id="15485" chance="10000"/><!-- spidris mandible -->
 		<item id="15486" chance="10000"/><!-- compound eye -->
-		<item id="2147" countmax="1" chance="10000"/><!-- small ruby -->
+		<item id="2147" chance="10000"/><!-- small ruby -->
 		<item id="2153" chance="10000"/><!-- violet gem -->
 	</loot>
 </monster>

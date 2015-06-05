@@ -46,8 +46,8 @@
 		<summon name="Poison Spider" interval="2000" chance="10" max="2"/>
 	</summons>
 	<loot>
-		<item id="8859" countmax="1" chance="90000"/><!-- spider fangs -->
+		<item id="8859" chance="90000"/><!-- spider fangs -->
 		<item id="8860" countmax="2" chance="50000"/><!-- spiderwebs -->
-		<item id="5879" countmax="1" chance="30000/"/><!-- spider silk -->
+		<item id="5879" chance="30000/"/><!-- spider silk -->
 	</loot>
 </monster>

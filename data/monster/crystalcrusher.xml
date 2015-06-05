@@ -47,12 +47,12 @@
 		<voice sentence="Crunch!"/>
 	</voices>
 	<loot>
-		<item id="18418" countmax="1" chance="10000"/><!-- Blue Crystal Splinter -->
-		<item id="18413" countmax="1" chance="10000"/><!-- Blue Crystal Shard -->
-		<item id="18417" countmax="1" chance="10000"/><!-- Brown Crystal Splinter -->
-		<item id="2158" countmax="1" chance="10000"/><!-- Blue Gem -->
-		<item id="18432" countmax="1" chance="10000"/><!-- Crystalline Spikes -->
-		<item id="2225" countmax="1" chance="10000"/><!-- Piece of Iron -->
-		<item id="18422" countmax="1" chance="10000"/><!-- Minor Crystalline Token -->
+		<item id="18418" chance="10000"/><!-- Blue Crystal Splinter -->
+		<item id="18413" chance="10000"/><!-- Blue Crystal Shard -->
+		<item id="18417" chance="10000"/><!-- Brown Crystal Splinter -->
+		<item id="2158" chance="10000"/><!-- Blue Gem -->
+		<item id="18432" chance="10000"/><!-- Crystalline Spikes -->
+		<item id="2225" chance="10000"/><!-- Piece of Iron -->
+		<item id="18422" chance="10000"/><!-- Minor Crystalline Token -->
 	</loot>
 </monster>

@@ -39,10 +39,10 @@
 	</voices>
 	<loot>
 		<item id="12400" countmax="3" chance="70000"/><!-- Protective Charm -->
-		<item id="12399" countmax="1" chance="10000"/><!-- Girlish Hair Decoration -->
+		<item id="12399" chance="10000"/><!-- Girlish Hair Decoration -->
 		<item id="2148" countmax="40" chance="90000"/><!-- Gold Coin -->
-		<item id="1987" countmax="1" chance="80000"/><!-- Bag -->
-		<item id="1987" countmax="1" chance="5000"/><!-- Plate Armor -->
-		<item id="1987" countmax="1" chance="5000"/><!-- Purple Kiss Blossom -->
+		<item id="1987" chance="80000"/><!-- Bag -->
+		<item id="1987" chance="5000"/><!-- Plate Armor -->
+		<item id="1987" chance="5000"/><!-- Purple Kiss Blossom -->
 	</loot>
 </monster>

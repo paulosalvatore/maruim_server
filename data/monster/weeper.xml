@@ -51,13 +51,13 @@
 		<voice sentence="Moooaaan!"/>
 	</voices>
 	<loot>
-		<item id="10553" countmax="1" chance="10000"/><!-- Fiery Heart -->
-		<item id="8299" countmax="1" chance="10000"/><!-- Glimmering Soil -->
-		<item id="21585" countmax="1" chance="10000"/><!-- Smoking Coal -->
-		<item id="2156" countmax="1" chance="10000"/><!-- Red Gem -->
-		<item id="18425" countmax="1" chance="10000"/><!-- Blazing Bone -->
-		<item id="2145" countmax="1" chance="10000"/><!-- Small Diamond -->
-		<item id="2147" countmax="1" chance="10000"/><!-- Small Ruby -->
-		<item id="9970" countmax="1" chance="10000"/><!-- Small Topaz -->
+		<item id="10553" chance="10000"/><!-- Fiery Heart -->
+		<item id="8299" chance="10000"/><!-- Glimmering Soil -->
+		<item id="21585" chance="10000"/><!-- Smoking Coal -->
+		<item id="2156" chance="10000"/><!-- Red Gem -->
+		<item id="18425" chance="10000"/><!-- Blazing Bone -->
+		<item id="2145" chance="10000"/><!-- Small Diamond -->
+		<item id="2147" chance="10000"/><!-- Small Ruby -->
+		<item id="9970" chance="10000"/><!-- Small Topaz -->
 	</loot>
 </monster>

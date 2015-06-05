@@ -37,10 +37,10 @@
 		<voice sentence="Make it stop!"/>
 	</voices>
 	<loot>
-		<item id="12382" countmax="1" chance="10000"/><!-- scribbled sheet of paper -->
-		<item id="1987" countmax="1" chance="10000"/><!-- bag -->
-		<item id="2148" countmax="1" chance="10000"/><!-- gold coin -->
-		<item id="5909" countmax="1" chance="10000"/><!-- white piece of cloth -->
+		<item id="12382" chance="10000"/><!-- scribbled sheet of paper -->
+		<item id="1987" chance="10000"/><!-- bag -->
+		<item id="2148" chance="10000"/><!-- gold coin -->
+		<item id="5909" chance="10000"/><!-- white piece of cloth -->
 		<item id="6092" chance="10000"/><!-- very noble-looking watch -->
 	</loot>
 </monster>

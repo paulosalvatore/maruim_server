@@ -44,8 +44,8 @@
 		<voice sentence="Stomp STOMP"/>
 	</voices>
 	<loot>
-		<item id="8298" countmax="1" chance="10000" /><!-- Natural Soil -->
-		<item id="8305" countmax="1" chance="10000" /><!-- Mother Soil -->
+		<item id="8298" chance="10000" /><!-- Natural Soil -->
+		<item id="8305" chance="10000" /><!-- Mother Soil -->
 		<item id="11222" chance="10000" /><!-- lump of earth -->
 		<item id="9970" chance="10000" /><!-- small topaz -->
 	</loot>

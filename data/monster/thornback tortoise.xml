@@ -28,7 +28,7 @@
 		<element firePercent="-10"/>
 	</elements>
 	<loot>
-		<item id="5678" countmax="1" chance="10000"/><!-- tortoise egg -->
+		<item id="5678" chance="10000"/><!-- tortoise egg -->
 		<item id="2391" chance="10000"/><!-- thorn -->
 		<item id="2143" chance="10000"/><!-- white pearl -->
 		<item id="5899" chance="10000"/><!-- turtle shell -->

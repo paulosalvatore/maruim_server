@@ -44,7 +44,7 @@
 	<loot>
 		<item id="12446" countmax="2" chance="50000" /><!-- quara pincers -->
 		<item id="2147" countmax="2" chance="10000" /><!-- small ruby -->
-		<item id="5895" countmax="1" chance="15000" /><!-- fish fin -->
-		<item id="13305" countmax="1" chance="2000" /><!-- giant shrimp -->
+		<item id="5895" chance="15000" /><!-- fish fin -->
+		<item id="13305" chance="2000" /><!-- giant shrimp -->
 	</loot>
 </monster>

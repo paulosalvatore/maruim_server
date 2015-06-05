@@ -72,6 +72,6 @@
 		<item id="2151" chance="10000"/><!-- talon -->
 		<item id="1986" chance="10000"/><!-- red tome -->
 		<item id="12410" chance="10000"/><!-- luminous orb -->
-		<item id="10601" countmax="1" chance="10000"/><!-- tattered piece of robe -->
+		<item id="10601" chance="10000"/><!-- tattered piece of robe -->
 	</loot>
 </monster>

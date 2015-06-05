@@ -23,7 +23,7 @@
 		<voice sentence="Cluck Cluck"/>
 	</voices>
 	<loot>
-		<item id="5890" countmax="1" chance="10000"/><!-- chicken feather -->
+		<item id="5890" chance="10000"/><!-- chicken feather -->
 		<item id="2695" chance="10000"/><!-- egg -->
 	</loot>
 </monster>

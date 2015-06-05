@@ -26,6 +26,6 @@
 		<voice sentence="Grunt"/>
 	</voices>
 	<loot>
-		<item id="13297" countmax="1" chance="10000"/><!-- Haunch of Boar -->
+		<item id="13297" chance="10000"/><!-- Haunch of Boar -->
 	</loot>
 </monster>

@@ -54,24 +54,24 @@
 		<voice sentence="CLONK!"/>
 	</voices>
 	<loot>
-		<item id="9970" countmax="1" chance="10000"/><!-- Small Topaz -->
-		<item id="18418" countmax="1" chance="10000"/><!-- Blue Crystal Splinter -->
-		<item id="18413" countmax="1" chance="10000"/><!-- Blue Crystal Shard -->
-		<item id="18416" countmax="1" chance="10000"/><!-- Green Crystal Splinter -->
-		<item id="18415" countmax="1" chance="10000"/><!-- Green Crystal Shard -->
-		<item id="18419" countmax="1" chance="10000"/><!-- Cyan Crystal Fragment -->
-		<item id="2156" countmax="1" chance="10000"/><!-- Red Gem -->
-		<item id="2154" countmax="1" chance="10000"/><!-- Yellow Gem -->
-		<item id="13757" countmax="1" chance="10000"/><!-- Coal -->
-		<item id="18427" countmax="1" chance="10000"/><!-- Pulverized Ore -->
-		<item id="18429" countmax="1" chance="10000"/><!-- Vein of Ore -->
-		<item id="11227" countmax="1" chance="10000"/><!-- Shiny Stone -->
-		<item id="11232" countmax="1" chance="10000"/><!-- Sulphurous Stone -->
-		<item id="5904" countmax="1" chance="10000"/><!-- Magic Sulphur -->
-		<item id="2225" countmax="1" chance="10000"/><!-- Piece of Ore -->
-		<item id="5880" countmax="1" chance="10000"/><!-- Iron Ore -->
-		<item id="18423" countmax="1" chance="10000"/><!-- Major Crystalline Token -->
-		<item id="18528" countmax="1" chance="10000"/><!-- Prismatic Ring -->
-		<item id="18394" countmax="1" chance="10000"/><!-- Crystal Backpack -->
+		<item id="9970" chance="10000"/><!-- Small Topaz -->
+		<item id="18418" chance="10000"/><!-- Blue Crystal Splinter -->
+		<item id="18413" chance="10000"/><!-- Blue Crystal Shard -->
+		<item id="18416" chance="10000"/><!-- Green Crystal Splinter -->
+		<item id="18415" chance="10000"/><!-- Green Crystal Shard -->
+		<item id="18419" chance="10000"/><!-- Cyan Crystal Fragment -->
+		<item id="2156" chance="10000"/><!-- Red Gem -->
+		<item id="2154" chance="10000"/><!-- Yellow Gem -->
+		<item id="13757" chance="10000"/><!-- Coal -->
+		<item id="18427" chance="10000"/><!-- Pulverized Ore -->
+		<item id="18429" chance="10000"/><!-- Vein of Ore -->
+		<item id="11227" chance="10000"/><!-- Shiny Stone -->
+		<item id="11232" chance="10000"/><!-- Sulphurous Stone -->
+		<item id="5904" chance="10000"/><!-- Magic Sulphur -->
+		<item id="2225" chance="10000"/><!-- Piece of Ore -->
+		<item id="5880" chance="10000"/><!-- Iron Ore -->
+		<item id="18423" chance="10000"/><!-- Major Crystalline Token -->
+		<item id="18528" chance="10000"/><!-- Prismatic Ring -->
+		<item id="18394" chance="10000"/><!-- Crystal Backpack -->
 	</loot>
 </monster>

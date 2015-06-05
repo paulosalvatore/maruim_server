@@ -35,7 +35,7 @@
 		<voice sentence="Let da mashing begin!"/>
 	</voices>
 	<loot>
-		<item id="7398" countmax="1" chance="2000"/><!-- cyclops trophy -->
+		<item id="7398" chance="2000"/><!-- cyclops trophy -->
 		<item id="10574" countmax="5" chance="50000"/><!-- cyclops toe -->
 	</loot>
 </monster>

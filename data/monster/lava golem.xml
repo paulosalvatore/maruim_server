@@ -53,12 +53,12 @@
 		<voice sentence="Grrrrunt"/>
 	</voices>
 	<loot>
-		<item id="10553" countmax="1" chance="10000"/><!-- Fiery Heart -->
-		<item id="8299" countmax="1" chance="10000"/><!-- Glimmering Soil -->
-		<item id="21585" countmax="1" chance="10000"/><!-- Smoking Coal -->
-		<item id="2156" countmax="1" chance="10000"/><!-- Red Gem -->
-		<item id="18425" countmax="1" chance="10000"/><!-- Blazing Bone -->
-		<item id="5880" countmax="1" chance="10000"/><!-- Iron Ore -->
-		<item id="2154" countmax="1" chance="10000"/><!-- Yellow Gem -->
+		<item id="10553" chance="10000"/><!-- Fiery Heart -->
+		<item id="8299" chance="10000"/><!-- Glimmering Soil -->
+		<item id="21585" chance="10000"/><!-- Smoking Coal -->
+		<item id="2156" chance="10000"/><!-- Red Gem -->
+		<item id="18425" chance="10000"/><!-- Blazing Bone -->
+		<item id="5880" chance="10000"/><!-- Iron Ore -->
+		<item id="2154" chance="10000"/><!-- Yellow Gem -->
 	</loot>
 </monster>

@@ -56,6 +56,6 @@
 	<loot>
 		<item id="21243" countmax="2" chance="60000"/><!-- Horoscope -->
 		<item id="12411" countmax="2" chance="70000"/><!-- cultish symbol -->
-		<item id="10556" countmax="1" chance="50000"/><!-- cultish robe -->
+		<item id="10556" chance="50000"/><!-- cultish robe -->
 	</loot>
 </monster>

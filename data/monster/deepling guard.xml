@@ -48,10 +48,10 @@
 		<voice sentence="QJELL NETA NA!!"/>
 	</voices>
 	<loot>
-		<item id="15424" countmax="1" chance="10000"/> <!-- deepling breaktime snack -->
-		<item id="15452" countmax="1" chance="10000"/><!-- deepling ridge -->
-		<item id="5895" countmax="1" chance="10000"/><!-- fish fin -->
-		<item id="15403" countmax="1" chance="10000"/><!-- necklace of the deep -->
-		<item id="2146" countmax="1" chance="10000"/><!-- small sapphire -->
+		<item id="15424" chance="10000"/> <!-- deepling breaktime snack -->
+		<item id="15452" chance="10000"/><!-- deepling ridge -->
+		<item id="5895" chance="10000"/><!-- fish fin -->
+		<item id="15403" chance="10000"/><!-- necklace of the deep -->
+		<item id="2146" chance="10000"/><!-- small sapphire -->
 	</loot>
 </monster>

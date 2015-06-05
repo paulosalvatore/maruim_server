@@ -33,7 +33,7 @@
 		<voice sentence="Gruntz!"/>
 	</voices>
 	<loot>
-		<item id="10606" countmax="1" chance="100000"/><!-- Bunch of Troll Hair -->
+		<item id="10606" chance="100000"/><!-- Bunch of Troll Hair -->
 		<item id="10606" countmax="2" chance="50000"/><!-- Bunch of Troll Hair -->
 		<item id="12471" countmax="2" chance="50000"/><!-- Trollroot -->
 		<item id="2666" countmax="3" chance="10000"/><!-- Meat -->

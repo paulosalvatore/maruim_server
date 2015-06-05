@@ -22,7 +22,7 @@
 		<voice sentence="Oink"/>
 	</voices>
 	<loot>
-		<item id="10610" countmax="1" chance="10000"/><!-- Pig Foot -->
-		<item id="2666" countmax="1" chance="10000"/><!-- Meat -->
+		<item id="10610" chance="10000"/><!-- Pig Foot -->
+		<item id="2666" chance="10000"/><!-- Meat -->
 	</loot>
 </monster>

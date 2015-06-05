@@ -53,9 +53,9 @@
 		<voice sentence="HISSSS"/>
 	</voices>
 	<loot>
-		<item id="10611" countmax="1" chance="10000"/><!-- Snake Skin -->
-		<item id="2671" countmax="1" chance="10000"/><!-- Ham -->
-		<item id="11199" countmax="1" chance="10000"/><!-- Hydra Head -->
-		<item id="4850" countmax="1" chance="10000"/><!-- Hydra Egg -->
+		<item id="10611" chance="10000"/><!-- Snake Skin -->
+		<item id="2671" chance="10000"/><!-- Ham -->
+		<item id="11199" chance="10000"/><!-- Hydra Head -->
+		<item id="4850" chance="10000"/><!-- Hydra Egg -->
 	</loot>
 </monster>

@@ -49,9 +49,9 @@
 	<loot>
 		<item id="12405" countmax="3" chance="70000"/><!-- Blood Preservation -->
 		<item id="10602" countmax="2" chance="50000"/><!-- Vampire Teeth -->
-		<item id="21241" countmax="1" chance="5000"/><!-- Tooth File -->
+		<item id="21241" chance="5000"/><!-- Tooth File -->
 		<item id="2147" countmax="2" chance="20000"/><!-- Small Ruby -->
-		<item id="2156" countmax="1" chance="5000"/><!-- Red Gem -->
+		<item id="2156" chance="5000"/><!-- Red Gem -->
 	
 	</loot>
 </monster>

@@ -64,13 +64,13 @@
 		<voice sentence="Zzzzzooom!!"/>
 	</voices>
 	<loot>
-		<item id="12614" countmax="1" chance="10000" /><!-- draken sulphur -->
-		<item id="13294" countmax="1" chance="10000" /><!-- harness -->
-		<item id="11314" countmax="1" chance="10000" /><!-- weaver's wandtip -->
-		<item id="13538" countmax="1" chance="10000" /><!-- bamboo leaves -->
-		<item id="11315" countmax="1" chance="10000" /><!-- draken trophy -->
-		<item id="2155" countmax="1" chance="10000" /><!-- green gem -->
-		<item id="12660" countmax="1" chance="10000"/><!-- trashed draken boots -->
-		<item id="13030" countmax="1" chance="10000"/><!-- draken doll -->
+		<item id="12614" chance="10000" /><!-- draken sulphur -->
+		<item id="13294" chance="10000" /><!-- harness -->
+		<item id="11314" chance="10000" /><!-- weaver's wandtip -->
+		<item id="13538" chance="10000" /><!-- bamboo leaves -->
+		<item id="11315" chance="10000" /><!-- draken trophy -->
+		<item id="2155" chance="10000" /><!-- green gem -->
+		<item id="12660" chance="10000"/><!-- trashed draken boots -->
+		<item id="13030" chance="10000"/><!-- draken doll -->
 	</loot>
 </monster>

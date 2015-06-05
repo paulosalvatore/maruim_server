@@ -53,8 +53,8 @@
 		<voice sentence="GROOOOAAAAAAAAR!"/>
 	</voices>
 	<loot>
-		<item id="2150" countmax="1" chance="10000"/><!-- small amethyst-->
-		<item id="10582" countmax="1" chance="10000"/><!--wyrm scale -->
-		<item id="5944" countmax="1" chance="10000"/><!-- soul orb -->
+		<item id="2150" chance="10000"/><!-- small amethyst-->
+		<item id="10582" chance="10000"/><!--wyrm scale -->
+		<item id="5944" chance="10000"/><!-- soul orb -->
 	</loot>
 </monster>

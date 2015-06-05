@@ -51,8 +51,8 @@
 		<voice sentence="Peak a boo, I killed you!"/>
 	</voices>
 	<loot>
-		<item id="11223" countmax="1" chance="10000"/><!-- essence of a bad dream -->
-		<item id="11229" countmax="1" chance="10000"/><!-- scythe leg -->
-		<item id="6558" countmax="1" chance="10000"/><!-- concentrated demonic blood -->
+		<item id="11223" chance="10000"/><!-- essence of a bad dream -->
+		<item id="11229" chance="10000"/><!-- scythe leg -->
+		<item id="6558" chance="10000"/><!-- concentrated demonic blood -->
 	</loot>
 </monster>

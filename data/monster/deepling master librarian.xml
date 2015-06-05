@@ -47,9 +47,9 @@
 		<voice sentence="Mmmmmoooaaaaaahaaa!!!"/>
 	</voices>
 	<loot>
-		<item id="15452" countmax="1" chance="10000"/> <!-- deepling ridge -->
-		<item id="15426" countmax="1" chance="10000"/> <!-- Deeptags -->
-		<item id="2149" countmax="1" chance="10000"/><!-- small emerald -->
+		<item id="15452" chance="10000"/> <!-- deepling ridge -->
+		<item id="15426" chance="10000"/> <!-- Deeptags -->
+		<item id="2149" chance="10000"/><!-- small emerald -->
 		<item id="5895" chance="10000"/><!-- fish fin -->
 		<item id="15403" chance="10000"/> <!-- necklace of the deep -->
 	</loot>

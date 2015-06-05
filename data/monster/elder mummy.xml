@@ -39,7 +39,7 @@
 	</immunities>
 	<loot>
 		<item id="10566" countmax="5" chance="90000"/><!-- gauze bandages -->
-		<item id="12422" countmax="1" chance="30000"/><!-- flasks of embalming fluid -->
+		<item id="12422" chance="30000"/><!-- flasks of embalming fluid -->
 		<item id="2144" countmax="2" chance="20000"/><!-- black pearl -->
 		<item id="11207" chance="1000"/><!-- mini mummy -->
 		<item id="5914" countmax="2" chance="40000"/><!-- yellow piece of cloth -->

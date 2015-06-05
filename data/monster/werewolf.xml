@@ -63,7 +63,7 @@
 		<voice sentence="HRAAAAAAAAAARRRRRR!" yell="1"/>
 	</voices>
 	<loot>
-		<item id="11234" countmax="1" chance="10000"/><!-- Werewolf Fur -->
-		<item id="5897" countmax="1" chance="10000"/><!-- Wolf Paw -->
+		<item id="11234" chance="10000"/><!-- Werewolf Fur -->
+		<item id="5897" chance="10000"/><!-- Wolf Paw -->
 	</loot>
 </monster>

@@ -33,9 +33,9 @@
 		<voice sentence="Tooooot."/>
 	</voices>
 	<loot>
-		<item id="11224" countmax="1" chance="10000"/><!-- Thick Fur -->
-		<item id="11238" countmax="1" chance="10000"/><!-- Mammoth Tusk -->
-		<item id="2671" countmax="1" chance="10000"/><!-- Ham -->
-		<item id="2666" countmax="1" chance="10000"/><!-- Meat -->
+		<item id="11224" chance="10000"/><!-- Thick Fur -->
+		<item id="11238" chance="10000"/><!-- Mammoth Tusk -->
+		<item id="2671" chance="10000"/><!-- Ham -->
+		<item id="2666" chance="10000"/><!-- Meat -->
 	</loot>
 </monster>

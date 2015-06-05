@@ -40,9 +40,9 @@
 		<immunity drunk="1"/>
 	</immunities>
 	<loot>
-		<item id="8859" countmax="1" chance="80000"/><!-- spider fangs -->
+		<item id="8859" chance="80000"/><!-- spider fangs -->
 		<item id="8860" countmax="2" chance="20000"/><!-- spiderwebs -->
-		<item id="13933" countmax="1" chance="10000"/><!-- tarantula trap -->
+		<item id="13933" chance="10000"/><!-- tarantula trap -->
 		<item id="11198" countmax="4" chance="70000"/><!-- tarantula egg -->
 	</loot>
 </monster>

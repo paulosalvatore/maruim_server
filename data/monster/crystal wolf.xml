@@ -43,15 +43,15 @@
 		<voice sentence="Aaaauuuuuooooooo!"/>
 	</voices>
 	<loot>
-		<item id="2666" countmax="1" chance="10000"/><!-- Meat -->
-		<item id="5897" countmax="1" chance="10000"/><!-- Wolf Paw -->
-		<item id="7394" countmax="1" chance="10000"/><!-- Wolf Trophy -->
-		<item id="2129" countmax="1" chance="10000"/><!-- Wolf Tooth Chain -->
-		<item id="2146" countmax="1" chance="10000"/><!-- Small Sapphire -->
-		<item id="18413" countmax="1" chance="10000"/><!-- Blue Crystal Shard -->
-		<item id="18418" countmax="1" chance="10000"/><!-- Blue Crystal Splinter -->
-		<item id="2158" countmax="1" chance="10000"/><!-- Blue Gem -->
-		<item id="2225" countmax="1" chance="10000"/><!-- Piece of Iron -->
-		<item id="18422" countmax="1" chance="10000"/><!-- Minor Crystalline Token -->
+		<item id="2666" chance="10000"/><!-- Meat -->
+		<item id="5897" chance="10000"/><!-- Wolf Paw -->
+		<item id="7394" chance="10000"/><!-- Wolf Trophy -->
+		<item id="2129" chance="10000"/><!-- Wolf Tooth Chain -->
+		<item id="2146" chance="10000"/><!-- Small Sapphire -->
+		<item id="18413" chance="10000"/><!-- Blue Crystal Shard -->
+		<item id="18418" chance="10000"/><!-- Blue Crystal Splinter -->
+		<item id="2158" chance="10000"/><!-- Blue Gem -->
+		<item id="2225" chance="10000"/><!-- Piece of Iron -->
+		<item id="18422" chance="10000"/><!-- Minor Crystalline Token -->
 	</loot>
 </monster>

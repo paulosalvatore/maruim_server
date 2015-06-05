@@ -57,8 +57,8 @@
 		<voice sentence="Oh by the gods! What is this... aaaaaargh!"/>
 	</voices>
 	<loot>
-		<item id="11225" countmax="1" chance="70000"/><!-- Mutated Flesh -->
-		<item id="7910" countmax="1" chance="20000"/><!-- Peanut -->
-		<item id="2801" countmax="1" chance="10000"/><!-- Fern -->
+		<item id="11225" chance="70000"/><!-- Mutated Flesh -->
+		<item id="7910" chance="20000"/><!-- Peanut -->
+		<item id="2801" chance="10000"/><!-- Fern -->
 	</loot>
 </monster>

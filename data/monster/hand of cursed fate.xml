@@ -51,14 +51,14 @@
 		<immunity invisible="1"/>
 	</immunities>
 	<loot>
-		<item id="2146" countmax="1" chance="10000"/><!-- Small Sapphire -->
-		<item id="6558" countmax="1" chance="10000"/><!-- Concentrated Demonic Blood -->
-		<item id="6500" countmax="1" chance="10000"/><!-- Demonic Essence -->
-		<item id="5944" countmax="1" chance="10000"/><!-- Soul Orb -->
-		<item id="2178" countmax="1" chance="10000"/><!-- Mind Stone -->
-		<item id="2158" countmax="1" chance="10000"/><!-- Blue Gem -->
-		<item id="2154" countmax="1" chance="10000"/><!-- Yellow Gem -->
-		<item id="2127" countmax="1" chance="10000"/><!-- Emerald Bangle -->
-		<item id="6300" countmax="1" chance="10000"/><!-- Death Ring -->
+		<item id="2146" chance="10000"/><!-- Small Sapphire -->
+		<item id="6558" chance="10000"/><!-- Concentrated Demonic Blood -->
+		<item id="6500" chance="10000"/><!-- Demonic Essence -->
+		<item id="5944" chance="10000"/><!-- Soul Orb -->
+		<item id="2178" chance="10000"/><!-- Mind Stone -->
+		<item id="2158" chance="10000"/><!-- Blue Gem -->
+		<item id="2154" chance="10000"/><!-- Yellow Gem -->
+		<item id="2127" chance="10000"/><!-- Emerald Bangle -->
+		<item id="6300" chance="10000"/><!-- Death Ring -->
 	</loot>
 </monster>

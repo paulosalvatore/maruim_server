@@ -34,7 +34,7 @@
 	</voices>
 	<loot>
 		<item id="5876" countmax="3" chance="70000"/><!-- lizard leather -->
-		<item id="2154" countmax="1" chance="5000"/><!-- yellow gem -->
-		<item id="2150" countmax="1" chance="10000"/><!-- small emerald -->
+		<item id="2154" chance="5000"/><!-- yellow gem -->
+		<item id="2150" chance="10000"/><!-- small emerald -->
 	</loot>
 </monster>

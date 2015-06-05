@@ -51,7 +51,7 @@
 	</voices>
 	<loot>
 		<item id="10557" countmax="5" chance="90000"/><!-- Poisonous Slime -->
-		<item id="23474" countmax="1" chance="10000"/><!-- Glooth Injection Tube -->
-		<item id="23515" countmax="1" chance="50000"/><!-- Bowl of Glooth Soup -->
+		<item id="23474" chance="10000"/><!-- Glooth Injection Tube -->
+		<item id="23515" chance="50000"/><!-- Bowl of Glooth Soup -->
 	</loot>
 </monster>

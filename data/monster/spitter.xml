@@ -44,7 +44,7 @@
 	<loot>
 		<item id="15481" chance="10000"/><!-- spitter nose -->
 		<item id="15486" chance="10000"/><!-- compound eye -->
-		<item id="2150" countmax="1" chance="10000"/><!-- small amethyst -->
+		<item id="2150" chance="10000"/><!-- small amethyst -->
 		<item id="2155" chance="10000"/><!-- green gem -->
 	</loot>
 </monster>

@@ -39,7 +39,7 @@
 	<loot>
 		<item id="2149" chance="10000"/><!-- small emerald -->
 		<item id="11371" chance="10000" /><!-- terramite legs -->
-		<item id="11370" countmax="1" chance="10000" /><!-- terramite eggs -->
+		<item id="11370" chance="10000" /><!-- terramite eggs -->
 		<item id="11369" chance="10000" /><!-- terramite shell -->
 	</loot>
 </monster>

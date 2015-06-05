@@ -51,11 +51,11 @@
 		<voice sentence="I'm taking you down with me!" />
 	</voices>
 	<loot>
-		<item id="9970" countmax="1" chance="10000"/><!-- Small Topaz -->
-		<item id="6558" countmax="1" chance="10000"/><!-- Concentrated Demonic Blood -->
-		<item id="6500" countmax="1" chance="10000"/><!-- Demonic Essence -->
-		<item id="11221" countmax="1" chance="10000"/><!-- Hellspawn Tail -->
-		<item id="9969" countmax="1" chance="10000"/><!-- Black Skull -->
-		<item id="9948" countmax="1" chance="10000"/><!-- Dracoyle Statue -->
+		<item id="9970" chance="10000"/><!-- Small Topaz -->
+		<item id="6558" chance="10000"/><!-- Concentrated Demonic Blood -->
+		<item id="6500" chance="10000"/><!-- Demonic Essence -->
+		<item id="11221" chance="10000"/><!-- Hellspawn Tail -->
+		<item id="9969" chance="10000"/><!-- Black Skull -->
+		<item id="9948" chance="10000"/><!-- Dracoyle Statue -->
 	</loot>
 </monster>

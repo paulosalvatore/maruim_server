@@ -69,11 +69,11 @@
 		<voice sentence="I SENSE LIFE" yell="1"/>
 	</voices>
 	<loot>
-		<item id="6500" countmax="1" chance="10000"/><!-- demonic essence -->
-		<item id="5925" countmax="1" chance="10000"/><!-- hardened bone -->
-		<item id="2146" countmax="1" chance="10000"/><!-- small sapphire -->
-		<item id="2144" countmax="1" chance="10000"/><!-- black pearl -->
-		<item id="5944" countmax="1" chance="10000" /><!-- soul orb -->
-		<item id="11367" countmax="1" chance="10000" /><!-- undead heart -->
+		<item id="6500" chance="10000"/><!-- demonic essence -->
+		<item id="5925" chance="10000"/><!-- hardened bone -->
+		<item id="2146" chance="10000"/><!-- small sapphire -->
+		<item id="2144" chance="10000"/><!-- black pearl -->
+		<item id="5944" chance="10000" /><!-- soul orb -->
+		<item id="11367" chance="10000" /><!-- undead heart -->
 	</loot>
 </monster>

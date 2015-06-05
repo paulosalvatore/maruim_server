@@ -45,12 +45,12 @@
 		<voice sentence="Knarrrk!"/>
 	</voices>
 	<loot>
-		<item id="8971" countmax="1" chance="10000"/><!-- gland -->
-		<item id="18420" countmax="1" chance="10000"/><!-- red crystal fragment -->
-		<item id="18417" countmax="1" chance="10000"/><!-- brown crystal splinter -->
-		<item id="18418" countmax="1" chance="10000"/><!-- blue crystal splinter -->
-		<item id="10609" countmax="1" chance="10000"/><!-- lump of dirt -->
-		<item id="11192" countmax="1" chance="10000"/><!-- Carrion Worm Fang -->
-		<item id="18429" countmax="1" chance="10000"/><!-- vein of ore -->
+		<item id="8971" chance="10000"/><!-- gland -->
+		<item id="18420" chance="10000"/><!-- red crystal fragment -->
+		<item id="18417" chance="10000"/><!-- brown crystal splinter -->
+		<item id="18418" chance="10000"/><!-- blue crystal splinter -->
+		<item id="10609" chance="10000"/><!-- lump of dirt -->
+		<item id="11192" chance="10000"/><!-- Carrion Worm Fang -->
+		<item id="18429" chance="10000"/><!-- vein of ore -->
 	</loot>
 </monster>

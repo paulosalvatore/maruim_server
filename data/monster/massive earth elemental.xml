@@ -58,7 +58,7 @@
 		<immunity energy="1"/>
 	</immunities>
 	<loot>
-		<item id="8305" countmax="1" chance="10000" /><!-- Mother Soil -->
+		<item id="8305" chance="10000" /><!-- Mother Soil -->
 		<item id="11222" chance="10000" /><!-- lump of earth -->
 		<item id="9970" chance="10000" /><!-- small topaz -->
 	</loot>

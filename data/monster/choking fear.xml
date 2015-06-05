@@ -61,13 +61,13 @@
 		<voice sentence="kchh"/>
 	</voices>
 	<loot>
-		<item id="18417" countmax="1" chance="10000"/><!-- Brown Crystal Splinter -->
-		<item id="22536" countmax="1" chance="10000"/><!-- Dead Weight -->
-		<item id="22540" countmax="1" chance="10000"/><!-- Hemp Rope -->
-		<item id="5913" countmax="1" chance="10000"/><!-- Brown Piece of Cloth -->
-		<item id="5914" countmax="1" chance="10000"/><!-- Yellow Piece of Cloth -->
-		<item id="18415" countmax="1" chance="10000"/><!-- Green Crystal Shard -->
-		<item id="5911" countmax="1" chance="10000"/><!-- Red Piece of Cloth -->
-		<item id="22396" countmax="1" chance="10000"/><!-- Cluster of Solace -->
+		<item id="18417" chance="10000"/><!-- Brown Crystal Splinter -->
+		<item id="22536" chance="10000"/><!-- Dead Weight -->
+		<item id="22540" chance="10000"/><!-- Hemp Rope -->
+		<item id="5913" chance="10000"/><!-- Brown Piece of Cloth -->
+		<item id="5914" chance="10000"/><!-- Yellow Piece of Cloth -->
+		<item id="18415" chance="10000"/><!-- Green Crystal Shard -->
+		<item id="5911" chance="10000"/><!-- Red Piece of Cloth -->
+		<item id="22396" chance="10000"/><!-- Cluster of Solace -->
 	</loot>
 </monster>

@@ -54,16 +54,16 @@
 		<voice sentence="Your lifeforce is waning!"/>
 	</voices>
 	<loot>
-		<item id="2694" countmax="1" chance="10000"/><!-- Bunch of Wheat -->
-		<item id="6500" countmax="1" chance="10000"/><!-- Demonic Essence -->
-		<item id="5944" countmax="1" chance="10000"/><!-- Soul Orb -->
-		<item id="10605" countmax="1" chance="10000"/><!-- Bundle of Cursed Straw -->
-		<item id="7632" countmax="1" chance="10000"/><!-- Giant Shimmering Pearl -->
-		<item id="7732" countmax="1" chance="10000"/><!-- Seeds -->
-		<item id="2550" countmax="1" chance="10000"/><!-- Scythe -->
-		<item id="2418" countmax="1" chance="10000"/><!-- Golden Sickle -->
-		<item id="7885" countmax="1" chance="10000"/><!-- Terra Legs -->
-		<item id="7884" countmax="1" chance="10000"/><!-- Terra Mantle -->
-		<item id="6300" countmax="1" chance="10000"/><!-- Death Ring -->
+		<item id="2694" chance="10000"/><!-- Bunch of Wheat -->
+		<item id="6500" chance="10000"/><!-- Demonic Essence -->
+		<item id="5944" chance="10000"/><!-- Soul Orb -->
+		<item id="10605" chance="10000"/><!-- Bundle of Cursed Straw -->
+		<item id="7632" chance="10000"/><!-- Giant Shimmering Pearl -->
+		<item id="7732" chance="10000"/><!-- Seeds -->
+		<item id="2550" chance="10000"/><!-- Scythe -->
+		<item id="2418" chance="10000"/><!-- Golden Sickle -->
+		<item id="7885" chance="10000"/><!-- Terra Legs -->
+		<item id="7884" chance="10000"/><!-- Terra Mantle -->
+		<item id="6300" chance="10000"/><!-- Death Ring -->
 	</loot>
 </monster>

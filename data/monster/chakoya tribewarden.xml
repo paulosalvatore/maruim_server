@@ -38,6 +38,6 @@
 		<voice sentence="Si ji jusipa!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="1" chance="40000"/><!-- frosty heart -->
+		<item id="2148" chance="40000"/><!-- frosty heart -->
 	</loot>
 </monster>

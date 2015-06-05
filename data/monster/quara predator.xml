@@ -44,9 +44,9 @@
 		<voice sentence="Rraaar!"/>
 	</voices>
 	<loot>
-		<item id="12447" countmax="1" chance="70000" /><!-- quara bone -->
+		<item id="12447" chance="70000" /><!-- quara bone -->
 		<item id="2145" countmax="2" chance="10000" /><!-- small diamond -->
-		<item id="5895" countmax="1" chance="15000" /><!-- fish fin -->
-		<item id="13305" countmax="1" chance="3000" /><!-- Giant Shrimp -->
+		<item id="5895" chance="15000" /><!-- fish fin -->
+		<item id="13305" chance="3000" /><!-- Giant Shrimp -->
 	</loot>
 </monster>

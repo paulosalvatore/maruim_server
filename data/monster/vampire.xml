@@ -57,10 +57,10 @@
 	</voices>
 	<loot>
 		<item id="12405" countmax="2" chance="80000"/><!-- Blood Preservation -->
-		<item id="10602" countmax="1" chance="50000"/><!-- Vampire Teeth -->
-		<item id="2144" countmax="1" chance="10000"/><!-- Black Pearl -->
-		<item id="2747" countmax="1" chance="10000"/><!-- Grave Flower -->
-		<item id="2172" countmax="1" chance="5000"/><!-- Bronze Amulet -->
-		<item id="2127" countmax="1" chance="1000"/><!-- Emerald Bangle -->
+		<item id="10602" chance="50000"/><!-- Vampire Teeth -->
+		<item id="2144" chance="10000"/><!-- Black Pearl -->
+		<item id="2747" chance="10000"/><!-- Grave Flower -->
+		<item id="2172" chance="5000"/><!-- Bronze Amulet -->
+		<item id="2127" chance="1000"/><!-- Emerald Bangle -->
 	</loot>
 </monster>

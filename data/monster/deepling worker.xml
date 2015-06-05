@@ -37,6 +37,6 @@
 	<loot>
 		<item id="5895" chance="10000"/><!-- fish fin -->
 		<item id="13870" chance="10000"/><!-- eye of a deepling -->
-		<item id="2146" countmax="1" chance="10000"/> <!-- small emerald -->
+		<item id="2146" chance="10000"/> <!-- small emerald -->
 	</loot>
 </monster>

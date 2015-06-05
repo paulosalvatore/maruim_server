@@ -20,8 +20,8 @@
 	</flags>
 	<defenses armor="5" defense="5"/>
 	<loot>
-		<item id="11209" countmax="1" chance="10000"/><!-- Silky Fur -->
-		<item id="2362" countmax="1" chance="10000"/><!-- The Carrot of Doom -->
-		<item id="2666" countmax="1" chance="10000"/><!-- Meat -->
+		<item id="11209" chance="10000"/><!-- Silky Fur -->
+		<item id="2362" chance="10000"/><!-- The Carrot of Doom -->
+		<item id="2666" chance="10000"/><!-- Meat -->
 	</loot>
 </monster>

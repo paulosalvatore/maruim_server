@@ -58,10 +58,10 @@
 		<voice sentence="Weeeheeheeeheee!"/>
 	</voices>
 	<loot>
-		<item id="11223" countmax="1" chance="10000"/><!-- essence of a bad dream -->
-		<item id="11229" countmax="1" chance="10000"/><!-- scythe leg -->
-		<item id="6558" countmax="1" chance="10000"/><!-- concentrated demonic blood -->
-		<item id="5944" countmax="1" chance="10000"/><!-- soul orb -->
-		<item id="6500" countmax="1" chance="10000"/><!-- demonic essence -->
+		<item id="11223" chance="10000"/><!-- essence of a bad dream -->
+		<item id="11229" chance="10000"/><!-- scythe leg -->
+		<item id="6558" chance="10000"/><!-- concentrated demonic blood -->
+		<item id="5944" chance="10000"/><!-- soul orb -->
+		<item id="6500" chance="10000"/><!-- demonic essence -->
 	</loot>
 </monster>
