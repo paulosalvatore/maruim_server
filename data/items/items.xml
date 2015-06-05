@@ -26869,6 +26869,7 @@
 		<attribute key="allowpickupable" value="1" />
 	</item>
 	<item fromid="20243" toid="20246" article="a" name="cord" />
+	<item id="20250" article="an" name="elevator" />
 	<item id="20252" article="a" name="canopy bed kit">
 		<attribute key="weight" value="4000" />
 		<attribute key="description" value="Use it on your bed to change the bed to a canopy bed." />
