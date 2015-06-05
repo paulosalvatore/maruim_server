@@ -181,11 +181,33 @@ function isWalkable(pos, creature, proj, pz)
 end
 
 function Player.adicionarReputacao(self, valor)
-	self:setStorageValue(Storage.reputacao, self:verificarReputacao()+valor)
+	self:setStorageValue(Storage.reputacao, self:pegarReputacao()+valor)
 end
 
-function Player.verificarReputacao(self)
+function Player.pegarReputacao(self)
 	return math.max(0, self:getStorageValue(Storage.reputacao))
+end
+
+function Player.pegarRankReputacao(self)
+	local reputacao = self:pegarReputacao()
+	local rankId
+	for a, b in pairs(Reputacao.ranks) do
+		if b.pontos < reputacao then
+			rankId = a
+		else
+			return rankId
+		end
+	end
+	return rankId
+end
+
+function pegarNomeRank(rankId)
+	return Reputacao.ranks[rankId].nome
+end
+
+
+function pegarReputacaoProximoRank(rankId)
+	return Reputacao.ranks[rankId+1].pontos
 end
 
 function Player.isPromoted(self)

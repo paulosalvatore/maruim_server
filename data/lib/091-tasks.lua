@@ -170,7 +170,7 @@ function Player.pegarTasksDisponiveis(self)
 		if	self:verificarStatusTask(a) == 0 and
 			playerLevel >= b.nivelMinimo and
 			((b.nivelMaximo == nil) or (b.nivelMaximo == 0) or (b.nivelMaximo > 0 and playerLevel <= b.nivelMaximo)) and
-			((b.reputacao == nil) or (b.reputacao == 0) or (b.reputacao > 0 and self:verificarReputacao() >= b.reputacao)) then
+			((b.reputacao == nil) or (b.reputacao == 0) or (b.reputacao > 0 and self:pegarReputacao() >= b.reputacao)) then
 			table.insert(tasks, a)
 		end
 	end
@@ -219,7 +219,8 @@ function Player.pegarTasksRecompensa(self)
 	return tasks
 end
 function Player.enviarTasksModalPrincipal(self)
-	local modalTitulo = "Tarefas - Selecione uma opção"
+	local reputacaoRankId = self:pegarRankReputacao()
+	local modalTitulo = "Tarefas - " .. pegarNomeRank(reputacaoRankId) .. " - " .. self:pegarReputacao() .. "/" .. pegarReputacaoProximoRank(reputacaoRankId)
 	local modalMensagem = "Você pode escolher uma das opções abaixo para verificar as tarefas correspondentes.\n\nO que você deseja fazer?\n"
 	local modal = ModalWindow(configTasks.storageBase, modalTitulo, modalMensagem)
 	if self:checarTasksRecompensa() then
