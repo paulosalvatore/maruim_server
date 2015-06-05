@@ -46,10 +46,10 @@
 		<voice sentence="Another foolish adventurer who tries to beat me."/>
 	</voices>
 	<loot>
-		<item id="2143" countmax="1" chance="10000"/><!-- White Pearl -->
+		<item id="2143" countmax="1" chance="20000"/><!-- White Pearl -->
 		<item id="9970" countmax="1" chance="10000"/><!-- Small Topaz -->
-		<item id="10573" countmax="1" chance="10000"/><!-- Broken Gladiator Shield -->
-		<item id="5885" countmax="1" chance="10000"/><!-- Flask of Warrior's Sweat -->
+		<item id="10573" countmax="1" chance="80000"/><!-- Broken Gladiator Shield -->
+		<item id="5885" countmax="2" chance="50000"/><!-- Flask of Warrior's Sweat -->
 		<item id="2200" countmax="1" chance="10000"/><!-- Protection Amulet -->
 	</loot>
 </monster>

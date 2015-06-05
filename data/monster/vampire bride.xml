@@ -59,11 +59,13 @@
 		<voice sentence="Enjoy the pain - I know you love it."/>
 	</voices>
 	<loot>
-		<item id="12405" countmax="1" chance="10000"/><!-- Blood Preservation -->
-		<item id="10602" countmax="1" chance="10000"/><!-- Vampire Teeth -->
-		<item id="2144" countmax="1" chance="10000"/><!-- Black Pearl -->
+		<item id="12405" countmax="3" chance="80000"/><!-- Blood Preservation -->
+		<item id="10602" countmax="1" chance="60000"/><!-- Vampire Teeth -->
+		<item id="2144" countmax="1" chance="20000"/><!-- Black Pearl -->
 		<item id="2747" countmax="1" chance="10000"/><!-- Grave Flower -->
 		<item id="2229" countmax="1" chance="10000"/><!-- Skull -->
 		<item id="21244" countmax="1" chance="10000"/><!-- Vampire's Cape Chain -->
+		<item id="21708" countmax="1" chance="1000"/><!-- Vampire Silk Slippers -->
+		<item id="9019" countmax="1" chance="1000"/><!-- Vampire Doll -->
 	</loot>
 </monster>

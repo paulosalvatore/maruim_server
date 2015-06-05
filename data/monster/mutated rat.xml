@@ -59,8 +59,8 @@
 		<voice sentence="Fcccccchhhhhh"/>
 	</voices>
 	<loot>
-		<item id="11225" countmax="1" chance="10000"/><!-- Mutated Flesh -->
-		<item id="10585" countmax="1" chance="10000"/><!-- Mutated Rat Tail -->
+		<item id="11225" countmax="1" chance="80000"/><!-- Mutated Flesh -->
+		<item id="10585" countmax="1" chance="20000"/><!-- Mutated Rat Tail -->
 		<item id="2799" countmax="1" chance="10000"/><!-- Stone Herb -->
 	</loot>
 </monster>

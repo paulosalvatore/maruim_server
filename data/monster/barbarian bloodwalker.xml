@@ -41,8 +41,8 @@
 		<voice sentence="You can run but you can't hide"/>
 	</voices>
 	<loot>
-		<item id="5911" chance="10000"/><!-- red piece of cloth -->
+		<item id="5911" countmax="2" chance="30000"/><!-- red piece of cloth -->
 		<item id="7290" chance="10000"/><!-- shard -->
-		<item id="3962" chance="10000"/><!-- beastslayer axe -->
+		<item id="3962" chance="2000"/><!-- beastslayer axe -->
 	</loot>
 </monster>

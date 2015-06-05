@@ -48,10 +48,10 @@
 		<voice sentence="Shriiiiiek"/>
 	</voices>
 	<loot>
-		<item id="2150" countmax="1" chance="10000"/><!--  -->
-		<item id="11225" countmax="1" chance="10000"/><!--  -->
-		<item id="10579" countmax="1" chance="10000"/><!--  -->
-		<item id="5894" countmax="1" chance="10000"/><!--  -->
-		<item id="2802" countmax="1" chance="10000"/><!--  -->
+		<item id="2150" countmax="2" chance="20000"/><!-- Small Amethyst -->
+		<item id="11225" countmax="2" chance="70000"/><!-- Mutated Flesh -->
+		<item id="10579" countmax="2" chance="20000"/><!-- Mutated Bat Ear -->
+		<item id="5894" countmax="2" chance="10000"/><!-- Bat Wing -->
+		<item id="2802" countmax="1" chance="5000"/><!-- Sling Herb -->
 	</loot>
 </monster>

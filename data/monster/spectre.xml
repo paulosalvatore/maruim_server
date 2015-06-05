@@ -59,14 +59,13 @@
 		<voice sentence="Life...force! Feed me your... lifeforce!"/>
 	</voices>
 	<loot>
-		<item id="2260" countmax="1" chance="10000"/><!-- Blank Rune -->
-		<item id="2144" countmax="1" chance="10000"/><!-- Black Pearl -->
-		<item id="6500" countmax="1" chance="10000"/><!-- Demonic Essence -->
-		<item id="10607" countmax="1" chance="10000"/><!-- Ghostly Tissue -->
-		<item id="2804" countmax="1" chance="10000"/><!-- Shadow Herb -->
-		<item id="2136" countmax="1" chance="10000"/><!-- Demonbone Amulet -->
-		<item id="5944" countmax="1" chance="10000"/><!-- Soul Orb -->
-		<item id="11227" countmax="1" chance="10000"/><!-- Shiny Stone -->
-		<item id="5909" countmax="1" chance="10000"/><!-- White Piece of Cloth -->
+		<item id="2260" countmax="2" chance="70000"/><!-- Blank Rune -->
+		<item id="2144" countmax="2" chance="30000"/><!-- Black Pearl -->
+		<item id="6500" countmax="1" chance="1000"/><!-- Demonic Essence -->
+		<item id="10607" countmax="2" chance="80000"/><!-- Ghostly Tissue -->
+		<item id="2804" countmax="1" chance="20000"/><!-- Shadow Herb -->
+		<item id="5944" countmax="1" chance="1000"/><!-- Soul Orb -->
+		<item id="11227" countmax="1" chance="1000"/><!-- Shiny Stone -->
+		<item id="5909" countmax="2" chance="50000"/><!-- White Piece of Cloth -->
 	</loot>
 </monster>

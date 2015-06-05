@@ -37,7 +37,7 @@
 		<voice sentence="Tssss!"/>
 	</voices>
 	<loot>
-		<item id="5876" chance="10000"/><!-- lizard leather -->
-		<item id="2145" chance="10000"/><!-- small diamond -->
+		<item id="5876" countmax="2" chance="50000"/><!-- lizard leather -->
+		<item id="2145" countmax="1" chance="10000"/><!-- small diamond -->
 	</loot>
 </monster>

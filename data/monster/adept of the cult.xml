@@ -56,7 +56,8 @@
 		<voice sentence="Feel the power of the cult!"/>
 	</voices>
 	<loot>
-		<item id="12411" countmax="1" chance="10000"/><!-- cultish symbol -->
-		<item id="10556" countmax="1" chance="10000"/><!-- cultish robe -->
+		<item id="2175" countmax="1" chance="30000"/><!-- Spellbook -->
+		<item id="12411" countmax="2" chance="80000"/><!-- cultish symbol -->
+		<item id="10556" countmax="1" chance="60000"/><!-- cultish robe -->
 	</loot>
 </monster>

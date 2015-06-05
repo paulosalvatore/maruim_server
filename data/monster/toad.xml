@@ -39,7 +39,7 @@
 		<voice sentence="Ribbit!"/>
 	</voices>
 	<loot>
-		<item id="10557" chance="10000"/><!-- poisonous slime -->
-		<item id="2328" chance="10000"/><!-- egg -->
+		<item id="10557" countmax="3" chance="60000"/><!-- poisonous slime -->
+		<item id="2328" countmax="5" chance="80000"/><!-- egg -->
 	</loot>
 </monster>

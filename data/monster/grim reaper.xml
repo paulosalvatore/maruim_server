@@ -61,11 +61,11 @@
 		<voice sentence="The end is near!"/>
 	</voices>
 	<loot>
-		<item id="5022" countmax="1" chance="10000"/><!-- Orichalcum Pearl -->
-		<item id="2550" countmax="1" chance="10000"/><!-- Scythe -->
+		<item id="5022" countmax="3" chance="50000"/><!-- Orichalcum Pearl -->
+		<item id="2550" countmax="1" chance="30000"/><!-- Scythe -->
 		<item id="10577" countmax="1" chance="10000"/><!-- Mystical Hourglass -->
-		<item id="6500" countmax="1" chance="10000"/><!-- Demonic Essence -->
+		<item id="6500" countmax="1" chance="5000"/><!-- Demonic Essence -->
 		<item id="2162" countmax="1" chance="10000"/><!-- Magic Light Wand -->
-		<item id="6300" countmax="1" chance="10000"/><!-- Death Ring -->
+		<item id="6300" countmax="1" chance="5000"/><!-- Death Ring -->
 	</loot>
 </monster>

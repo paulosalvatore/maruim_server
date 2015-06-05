@@ -35,8 +35,8 @@
 		<immunity invisible="1"/>
 	</immunities>
 	<loot>
-		<item id="11196" countmax="1" chance="10000" /><!-- piece of crocodile leather -->
-		<item id="2149" countmax="1" chance="10000" /><!-- small emerald -->
-		<item id="13538" countmax="1" chance="10000" /><!-- bamboo leaves -->
+		<item id="11196" countmax="1" chance="70000" /><!-- piece of crocodile leather -->
+		<item id="2149" countmax="2" chance="30000" /><!-- small emerald -->
+		<item id="13538" countmax="1" chance="1000" /><!-- bamboo leaves -->
 	</loot>
 </monster>

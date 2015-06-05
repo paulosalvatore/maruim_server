@@ -32,7 +32,7 @@
 	</voices>
 	<loot>
 		<item id="5902" chance="10000"/><!-- sample of sand wasp honey -->
-		<item id="5902" chance="10000"/><!-- honeycomb -->
-		<item id="2328" countmax="1" chance="10000"/><!-- egg -->
+		<item id="5902" countmax="2" chance="30000"/><!-- honeycomb -->
+		<item id="2328" countmax="5" chance="60000"/><!-- egg -->
 	</loot>
 </monster>

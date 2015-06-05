@@ -37,7 +37,7 @@
 		<voice sentence="Chrrrrr" yell="1"/>
 	</voices>
 	<loot>
-		<item id="13304" chance="5000"/><!-- giant crab pincer -->
-		<item id="2146" chance="10000"/><!-- Small Sapphire -->
+		<item id="13304" countmax="2" chance="60000"/><!-- giant crab pincer -->
+		<item id="2146" countmax="2" chance="20000"/><!-- Small Sapphire -->
 	</loot>
 </monster>

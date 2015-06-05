@@ -59,10 +59,9 @@
 		<voice sentence="Blup."/>
 	</voices>
 	<loot>
-		<item id="12444" chance="10000" /><!-- quara eye -->
-		<item id="2144" chance="10000" /><!-- black pearl -->
-		<item id="2143" chance="10000" /><!-- white pearl -->
+		<item id="12444" countmax="1" chance="30000" /><!-- quara eye -->
+		<item id="2144" countmax="1" chance="10000" /><!-- black pearl -->
+		<item id="2143" countmax="1" chance="10000" /><!-- white pearl -->
 		<item id="2149" countmax="1" chance="10000" /><!-- small emerald -->
-		<item id="5895" chance="10000" /><!-- fish fin -->
 	</loot>
 </monster>

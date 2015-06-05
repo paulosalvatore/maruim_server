@@ -59,8 +59,8 @@
 		<voice sentence="Freeze!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="1" chance="10000"/><!-- frosty heart -->
-		<item id="7441" countmax="1" chance="10000"/><!-- ice cube -->
-		<item id="7289" countmax="1" chance="10000"/><!-- frost charm -->
+		<item id="2148" countmax="1" chance="60000"/><!-- frosty heart -->
+		<item id="7441" chance="30000"/><!-- ice cube -->
+		<item id="7289" chance="5000"/><!-- frost charm -->
 	</loot>
 </monster>

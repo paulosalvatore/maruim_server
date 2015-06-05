@@ -50,9 +50,7 @@
 		<voice sentence="When I'm finished with you, you'll be a shadow of your former self."/>
 	</voices>
 	<loot>
-		<item id="11237" countmax="1" chance="10000"/><!-- Book of Necromantic Rituals -->
+		<item id="21245" countmax="2" chance="70000"/><!-- Blood Tincture in a Vial -->
 		<item id="21243" countmax="1" chance="10000"/><!-- Horoscope -->
-		<item id="21246" countmax="1" chance="10000"/><!-- Incantation Notes -->
-		<item id="21247" countmax="1" chance="10000"/><!-- Pieces of Magic Chalk -->
 	</loot>
 </monster>

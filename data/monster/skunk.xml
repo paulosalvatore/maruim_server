@@ -23,6 +23,7 @@
 	</attacks>
 	<defenses armor="5" defense="5"/>
 	<loot>
-		<item id="11191" chance="10000"/><!-- skunk tail -->
+		<item id="11191" chance="80000"/><!-- skunk tail -->
+		<item id="2666" chance="30000"/><!-- Meat -->
 	</loot>
 </monster>

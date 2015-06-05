@@ -47,11 +47,11 @@
 		<voice sentence="CHHHHHHHHHHH"/>
 	</voices>
 	<loot>
-		<item id="2144" countmax="1" chance="10000"/><!--  -->
-		<item id="2150" countmax="1" chance="10000"/><!--  -->
-		<item id="11225" countmax="1" chance="10000"/><!--  -->
-		<item id="11228" countmax="1" chance="10000"/><!-- Sabretooth -->
-		<item id="11224" countmax="1" chance="10000"/><!--  -->
-		<item id="2800" countmax="1" chance="10000"/><!--  -->
+		<item id="2144" countmax="2" chance="20000"/><!-- Black Pearl -->
+		<item id="2150" countmax="2" chance="20000"/><!-- Small Amethyst -->
+		<item id="11225" countmax="2" chance="80000"/><!-- Mutated Flesh -->
+		<item id="11228" countmax="2" chance="30000"/><!-- Sabretooth -->
+		<item id="11224" countmax="1" chance="20000"/><!-- Thick Fur -->
+		<item id="2800" countmax="1" chance="5000"/><!-- Star Herb -->
 	</loot>
 </monster>

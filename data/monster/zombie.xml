@@ -48,9 +48,9 @@
 		<voice sentence="Httt.... hmnnsss..."/>
 	</voices>
 	<loot>
-		<item id="11367" countmax="1" chance="10000"/><!-- Undead Heart -->
-		<item id="2657" countmax="1" chance="10000"/><!-- Simple Dress -->
-		<item id="10576" countmax="1" chance="10000"/><!-- Half-eaten Brain -->
-		<item id="11200" countmax="1" chance="10000"/><!-- Half-digested Piece of Meat -->
+		<item id="11367" countmax="1" chance="60000"/><!-- Undead Heart -->
+		<item id="11208" countmax="2" chance="70000"/><!-- Rotten Piece of Cloth -->
+		<item id="10576" countmax="1" chance="30000"/><!-- Half-eaten Brain -->
+		<item id="11200" countmax="3" chance="40000"/><!-- Half-digested Piece of Meat -->
 	</loot>
 </monster>

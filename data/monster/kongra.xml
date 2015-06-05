@@ -37,9 +37,9 @@
 		<voice sentence="Huaauaauaauaa!"/>
 	</voices>
 	<loot>
-		<item id="12467" countmax="1" chance="10000"/><!-- banana sash -->
-		<item id="5883" countmax="1" chance="10000"/><!-- ape fur -->
-		<item id="2678" countmax="1" chance="10000"/><!-- coconut -->
-		<item id="12427" countmax="1" chance="10000"/><!-- kongra shoulderpad -->
+		<item id="12467" countmax="1" chance="50000"/><!-- banana sash -->
+		<item id="5883" countmax="2" chance="80000"/><!-- ape fur -->
+		<item id="2678" countmax="3" chance="80000"/><!-- coconut -->
+		<item id="12427" countmax="2" chance="50000"/><!-- kongra shoulderpad -->
 	</loot>
 </monster>

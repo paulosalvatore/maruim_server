@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Enraged Soul" nameDescription="a enraged soul" race="undead" experience="120" speed="180" manacost="0">
 	<health now="150" max="150"/>
-	<look type="568" corpse="21366"/>
+	<look type="568" corpse="21372"/>
 	<targetchange interval="4000" chance="10"/>
+	<strategy attack="100" defense="0"/>
 	<flags>
 		<flag summonable="0"/>
 		<flag attackable="1"/>
@@ -32,7 +33,13 @@
 	</immunities>
 	<voices interval="5000" chance="10">
 		<voice sentence="Huh!"/>
+		<voice sentence="Shhhhhh"/>
+		<voice sentence="Buuuuuh"/>
 	</voices>
 	<loot>
+		<item id="10607" countmax="2" chance="80000"/><!-- Ghostly Tissue -->
+		<item id="2804" countmax="1" chance="30000"/><!-- Shadow Herb -->
+		<item id="9662" countmax="1" chance="10000"/><!-- Ghost's Tear -->
+		<item id="5911" countmax="1" chance="50000"/><!-- Blue Piece of Cloth -->
 	</loot>
 </monster>

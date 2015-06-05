@@ -54,12 +54,12 @@
 		<voice sentence="Slurp!"/>
 	</voices>
 	<loot>
-		<item id="2149" countmax="1" chance="10000" /><!--  -->
-		<item id="10557" countmax="1" chance="10000" /><!--  -->
-		<item id="10584" countmax="1" chance="10000" /><!--  -->
-		<item id="2802" countmax="1" chance="10000" /><!--  -->
-		<item id="2800" countmax="1" chance="10000" /><!--  -->
-		<item id="2155" countmax="1" chance="10000" /><!--  -->
-		<item id="18396" countmax="1" chance="10000" /><!--  -->
+		<item id="2149" countmax="3" chance="20000" /><!-- Small Emerald -->
+		<item id="10557" countmax="3" chance="80000" /><!-- Poisonous Slime -->
+		<item id="10584" countmax="2" chance="20000" /><!-- Boggy Dreads -->
+		<item id="2802" countmax="1" chance="10000" /><!-- Sling Herb -->
+		<item id="2800" countmax="1" chance="10000" /><!-- Star Herb -->
+		<item id="2155" countmax="1" chance="5000" /><!-- Green Gem -->
+		<item id="18396" countmax="1" chance="10000" /><!-- Mucus Plug -->
 	</loot>
 </monster>

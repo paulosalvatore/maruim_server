@@ -33,5 +33,10 @@
 		<voice sentence="Your head will be mine!"/>
 	</voices>
 	<loot>
+		<item id="12400" countmax="2" chance="50000"/><!-- Protective Charm -->
+		<item id="12399" countmax="1" chance="5000"/><!-- Girlish Hair Decoration -->
+		<item id="2125" countmax="1" chance="1000"/><!-- Crystal Necklace  -->
+		<item id="2148" countmax="30" chance="90000"/><!-- Gold Coin -->
+		<item id="1987" countmax="1" chance="80000"/><!-- Bag -->
 	</loot>
 </monster>

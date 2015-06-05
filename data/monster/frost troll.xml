@@ -33,8 +33,8 @@
 		<voice sentence="Broar!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="1" chance="10000"/><!-- frosty heart -->
-		<item id="7290" countmax="1" chance="10000"/><!-- shard -->
-		<item id="10565" countmax="1" chance="2000"/><!-- Frosty Ear of a Troll -->
+		<item id="10565" countmax="2" chance="80000"/><!-- Frosty Ear of a Troll -->
+		<item id="2148" countmax="1" chance="20000"/><!-- frosty heart -->
+		<item id="7290" chance="5000"/><!-- shard -->
 	</loot>
 </monster>

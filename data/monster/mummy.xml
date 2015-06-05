@@ -48,8 +48,8 @@
 		<voice sentence="Yohag Sssetham!"/>
 	</voices>
 	<loot>
-		<item id="2144" chance="10000"/><!-- black pearl -->
-		<item id="5914" chance="10000"/><!-- yellow piece of cloth -->
-		<item id="10566" chance="10000"/><!-- gauze bandage -->	
+		<item id="2144" countmax="2" chance="20000"/><!-- black pearl -->
+		<item id="5914" countmax="1" chance="20000"/><!-- yellow piece of cloth -->
+		<item id="10566" countmax="3" chance="80000"/><!-- gauze bandage -->	
 	</loot>
 </monster>

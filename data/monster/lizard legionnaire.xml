@@ -36,10 +36,10 @@
 		<voice sentence="Tssss!"/>
 	</voices>
 	<loot>
-		<item id="11334" countmax="1" chance="10000" /><!-- legionnaire flags -->
-		<item id="5881" countmax="1" chance="10000" /><!-- lizard scale -->
-		<item id="11245" countmax="1" chance="10000" /><!-- bunch of ripe rice -->
-		<item id="2145" countmax="1" chance="10000" /><!-- small diamond -->
-		<item id="11336" countmax="1" chance="10000" /><!-- lizard trophy -->
+		<item id="11334" countmax="1" chance="60000" /><!-- legionnaire flags -->
+		<item id="5881" countmax="1" chance="80000" /><!-- lizard scale -->
+		<item id="11245" countmax="1" chance="50000" /><!-- bunch of ripe rice -->
+		<item id="2145" countmax="2" chance="30000" /><!-- small diamond -->
+		<item id="11336" countmax="1" chance="1000" /><!-- lizard trophy -->
 	</loot>
 </monster>

@@ -52,8 +52,8 @@
 		<voice sentence="Screeech!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="1" chance="10000"/><!-- frosty heart -->
-		<item id="7289" countmax="1" chance="10000"/><!-- frost charm -->
-		<item id="8300" countmax="1" chance="10000"/><!-- flawless ice crystal -->
+		<item id="2148" countmax="1" chance="80000"/><!-- frosty heart -->
+		<item id="7289" chance="30000"/><!-- frost charm -->
+		<item id="8300" chance="10000"/><!-- flawless ice crystal -->
 	</loot>
 </monster>

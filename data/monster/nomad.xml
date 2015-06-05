@@ -37,7 +37,7 @@
 		<voice sentence="Your riches will be mine!"/>
 	</voices>
 	<loot>
-		<item id="8267" chance="10000"/><!-- nomad parchment -->
-		<item id="5913" chance="10000"/><!-- brown piece of cloth -->
+		<item id="8267" countmax="1" chance="80000"/><!-- nomad parchment -->
+		<item id="5913" countmax="1" chance="20000"/><!-- brown piece of cloth -->
 	</loot>
 </monster>

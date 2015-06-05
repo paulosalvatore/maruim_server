@@ -46,8 +46,8 @@
 		<voice sentence="I'll bite you! Nyehehehehe!"/>
 	</voices>
 	<loot>
-		<item id="11367" countmax="1" chance="10000"/><!-- Undead Heart -->
-		<item id="2146" countmax="1" chance="10000"/><!-- Small Sapphire -->
-		<item id="11200" countmax="1" chance="10000"/><!-- Half-digested Piece of Meat -->
+		<item id="11367" countmax="1" chance="30000"/><!-- Undead Heart -->
+		<item id="2146" countmax="2" chance="10000"/><!-- Small Sapphire -->
+		<item id="11200" countmax="2" chance="10000"/><!-- Half-digested Piece of Meat -->
 	</loot>
 </monster>

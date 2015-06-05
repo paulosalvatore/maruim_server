@@ -56,16 +56,16 @@
 		<voice sentence="Feel my gentle kiss of death."/>
 	</voices>
 	<loot>
-		<item id="2657" countmax="1" chance="10000"/><!-- Simple Dress -->
-		<item id="2170" countmax="1" chance="10000"/><!-- Silver Amulet -->
-		<item id="11337" countmax="1" chance="10000"/><!-- Petrified Scream -->
-		<item id="2144" countmax="1" chance="10000"/><!-- Black Pearl -->
-		<item id="2143" countmax="1" chance="10000"/><!-- White Pearl -->
-		<item id="12402" countmax="1" chance="10000"/><!-- Hair of a Banshee -->
+		<item id="12402" countmax="2" chance="80000"/><!-- Hair of a Banshee -->
+		<item id="11337" countmax="1" chance="50000"/><!-- Petrified Scream -->
+		<item id="2657" countmax="1" chance="50000"/><!-- Simple Dress -->
+		<item id="2170" countmax="1" chance="20000"/><!-- Silver Amulet -->
+		<item id="2144" countmax="2" chance="10000"/><!-- Black Pearl -->
+		<item id="2143" countmax="2" chance="10000"/><!-- White Pearl -->
 		<item id="2217" countmax="1" chance="10000"/><!-- Spellbook -->
-		<item id="2134" countmax="1" chance="10000"/><!-- Silver Brooch -->
-		<item id="2656" countmax="1" chance="10000"/><!-- Blue Robe -->
-		<item id="2121" countmax="1" chance="10000"/><!-- Wedding Ring -->
-		<item id="13307" countmax="1" chance="10000"/><!-- Sweet Smelling Bait -->
+		<item id="2134" countmax="1" chance="20000"/><!-- Silver Brooch -->
+		<item id="5912" countmax="2" chance="50000"/><!-- Blue Piece of Cloth -->
+		<item id="2121" countmax="1" chance="5000"/><!-- Wedding Ring -->
+		<item id="13307" countmax="1" chance="1000"/><!-- Sweet Smelling Bait -->
 	</loot>
 </monster>

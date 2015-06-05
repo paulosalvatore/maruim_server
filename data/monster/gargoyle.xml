@@ -42,9 +42,9 @@
 		<voice sentence="There is a stone in your shoe!"/>
 	</voices>
 	<loot>
-		<item id="2149" countmax="1" chance="10000"/><!--  -->
-		<item id="1294" countmax="1" chance="10000"/><!--  -->
-		<item id="11195" countmax="1" chance="10000"/><!--  -->
-		<item id="2225" countmax="1" chance="10000"/><!--  -->
+		<item id="2149" countmax="2" chance="10000"/><!-- Small Emerald -->
+		<item id="1294" countmax="3" chance="40000"/><!-- Small Stone -->
+		<item id="11195" countmax="2" chance="20000"/><!-- Stone Wing -->
+		<item id="2225" countmax="2" chance="50000"/><!-- Piece of Iron -->
 	</loot>
 </monster>

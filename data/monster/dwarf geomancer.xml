@@ -45,9 +45,9 @@
 		<voice sentence="Dust to dust."/>
 	</voices>
 	<loot>
-		<item id="5880" countmax="1" chance="10000"/><!-- iron ore -->
-		<item id="9814" countmax="1" chance="10000"/><!-- rusty shield -->
-		<item id="12414" countmax="1" chance="10000"/><!-- geomancer's robe -->
-		<item id="12419" countmax="1" chance="10000"/><!-- geomancer's staff -->
+		<item id="20107" countmax="1" chance="50000"/><!-- Bloody Dwarven Beard -->
+		<item id="5880" countmax="1" chance="30000"/><!-- Iron Ore -->
+		<item id="12414" countmax="1" chance="30000"/><!-- Geomancer's Robe -->
+		<item id="12419" countmax="1" chance="30000"/><!-- Geomancer's Staff -->
 	</loot>
 </monster>

@@ -53,7 +53,7 @@
 		<voice sentence="Shhhhhhhh"/>
 	</voices>
 	<loot>
-		<item id="5876" chance="10000"/><!-- lizard leather -->
-		<item id="2149" chance="10000"/><!-- small emerald -->
+		<item id="5876" countmax="3" chance="80000"/><!-- lizard leather -->
+		<item id="2149" countmax="1" chance="10000"/><!-- small emerald -->
 	</loot>
 </monster>

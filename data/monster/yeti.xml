@@ -38,8 +38,8 @@
 		<voice sentence="Yooodelaaaheeeheee!"/>
 	</voices>
 	<loot>
-		<item id="2148" countmax="1" chance="10000"/><!-- frosty heart -->
-		<item id="7441" countmax="1" chance="10000"/><!-- ice cube -->
-		<item id="7290" countmax="1" chance="10000"/><!-- shard -->
+		<item id="2148" countmax="1" chance="70000"/><!-- frosty heart -->
+		<item id="7441" chance="50000"/><!-- ice cube -->
+		<item id="7290" chance="40000"/><!-- shard -->
 	</loot>
 </monster>

@@ -31,6 +31,6 @@
 		<voice sentence="Meep!"/>
 	</voices>
 	<loot>
-		<item id="2696" chance="10000"/><!-- cheese -->
+		<item id="2696" chance="30000"/><!-- cheese -->
 	</loot>
 </monster>

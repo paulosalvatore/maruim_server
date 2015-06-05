@@ -56,8 +56,8 @@
 	</voices>
 	<loot>
 		<item id="11237" countmax="1" chance="10000"/><!-- Book of Necromantic Rituals -->
-		<item id="21243" countmax="1" chance="10000"/><!-- Horoscope -->
-		<item id="21246" countmax="1" chance="10000"/><!-- Incantation Notes -->
-		<item id="21247" countmax="1" chance="10000"/><!-- Pieces of Magic Chalk -->
+		<item id="21243" countmax="1" chance="20000"/><!-- Horoscope -->
+		<item id="5909" countmax="1" chance="50000"/><!-- White Piece of Cloth -->
+		<item id="2229" countmax="1" chance="5000"/><!-- Skull -->
 	</loot>
 </monster>
