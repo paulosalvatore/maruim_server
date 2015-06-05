@@ -138,6 +138,11 @@ function Player.depositMoney(self, amount)
 	return true
 end
 
+function Player.addMoney(self, amount)
+	self:setBankBalance(self:getBankBalance() + amount)
+	return true
+end
+
 function Player.transferMoneyTo(self, target, amount)
 	local balance = self:getBankBalance()
 	if amount > balance then
@@ -176,7 +181,7 @@ function isWalkable(pos, creature, proj, pz)
 end
 
 function Player.adicionarReputacao(self, valor)
-	self:setStorageValue(Storage.reputacao, self:getReputacao()+valor)
+	self:setStorageValue(Storage.reputacao, self:verificarReputacao()+valor)
 end
 
 function Player.verificarReputacao(self)
@@ -192,4 +197,13 @@ end
 
 function Player.promote(self)
 	self:setVocation(Vocation(self:getVocation():getPromotion():getId()))
+end
+
+function getExpForLevel(level)
+	level = level - 1
+	return ((50 * level * level * level) - (150 * level * level) + (400 * level)) / 3
+end
+
+function Player.addLevel(self)
+	self:addExperience(getExpForLevel(self:getLevel() + 1) - self:getExperience())
 end
