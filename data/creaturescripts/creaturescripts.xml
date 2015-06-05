@@ -8,5 +8,6 @@
 	<event type="death" name="DropLoot" script="droploot.lua"/>
 	<event type="extendedopcode" name="ExtendedOpcode" script="extendedopcode.lua"/>
 	<event type="modalwindow" name="Crafting" script="crafting.lua"/>
-	<event type="kill" name="matarCriatura" script="matarCriatura.lua"/>
+	<event type="kill" name="MatarCriatura" script="matarCriatura.lua"/>
+	<event type="modalwindow" name="Tasks" script="tasks.lua"/>
 </creaturescripts>
