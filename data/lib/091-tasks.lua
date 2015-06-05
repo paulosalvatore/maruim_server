@@ -61,7 +61,8 @@ Tasks = {
 		quantidade = 10,
 		criatura = "cave rat",
 		recompensa = {
-			reputacao = 3
+			reputacao = 3,
+			item = {2160, {10, 20}}
 		}
 	}
 }
@@ -331,17 +332,17 @@ function Player.enviarTasksModalInfo(self, taskId, modalId)
 	local task = Tasks[taskId]
 	local statusTask = self:verificarStatusTask(taskId)
 	local modalTitulo = "Tarefa - " .. task.quantidade .. " " .. capAll(task.criatura) .. " - Informações"
-	local modalMensagem
+	local modalMensagem = ""
 	if statusTask == 0 then
 		modalMensagem = "Clique no botão 'Iniciar' ou tecle 'Enter' para iniciar a tarefa.\n\n"
-	elseif statusTask == 1 then
+	elseif statusTask == configTasks.valorIniciada then
 		modalMensagem = "Confira abaixo as informações da tarefa selecionada que está em progresso.\n\n"
-	elseif statusTask == 2 then
+	elseif statusTask == configTasks.valorCompleta or statusTask == configTasks.valorFinalizada then
 		modalMensagem = "Confira abaixo as informações da tarefa selecionada que foi realizada com sucesso.\n\n"
 	end
 	modalMensagem = modalMensagem .. "Objetivo\n"
 	modalMensagem = modalMensagem .. "Matar " .. task.quantidade .. " " .. capAll(task.criatura) .. "\n"
-	if statusTask == 1 then
+	if statusTask == configTasks.valorIniciada then
 		modalMensagem = modalMensagem .. "Criaturas Mortas até agora: " .. self:pegarTaskProgresso(taskId) .. "\n"
 	end
 	modalMensagem = modalMensagem .. "\nRequisito\n"
@@ -390,12 +391,12 @@ function Player.enviarTasksModalInfo(self, taskId, modalId)
 		modal:addButton(1, "Iniciar")
 		modal:setDefaultEnterButton(1)
 	end
-	modal:addButton(2, "Sair")
 	modal:setDefaultEscapeButton(2)
 	modal:addButton(3, "Voltar")
 	if statusTask > 0 then
 		modal:setDefaultEnterButton(3)
 	end
+	modal:addButton(2, "Sair")
 	modal:sendToPlayer(self)
 end
 function Player.pegarTaskProgresso(self, taskId)
@@ -410,9 +411,12 @@ function Player.retirarRecompensa(self, taskId)
 	end
 	local peso = ItemType(item):getWeight()
 	if self:getFreeCapacity() >= peso then
-		self:finalizarTask(taskId)
-		self:addItem(item, quantidade)
-		self:sendTextMessage(MESSAGE_INFO_DESCR, "Você obteve " .. pegarNomeItem(item, quantidade) .. ".")
+		if table.getn(self:addItem(item, quantidade, false)) ~= 0 then
+			self:finalizarTask(taskId)
+			self:sendTextMessage(MESSAGE_INFO_DESCR, "Você obteve " .. pegarNomeItem(item, quantidade) .. ".")
+		else
+			self:sendTextMessage(MESSAGE_INFO_DESCR, "Você não possui espaço para receber o item.")
+		end
 	else
 		self:sendTextMessage(MESSAGE_INFO_DESCR, "Essa recompensa pesa " .. peso .. " oz. É muito pesada para você carregar.")
 	end
