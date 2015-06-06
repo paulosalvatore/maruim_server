@@ -525,7 +525,7 @@ local config = {
 					mensagemPlayer = '"Algo estava preso no golem."'
 				},
 				[5500] = {
-					transformar = {9802, 1},
+					transformar = {9803, 1},
 					dano = {"energia", 8, 8000, -35},
 					mensagemPlayer = '"Que experiência eletrificante!"',
 					efeito = {"hit"}
