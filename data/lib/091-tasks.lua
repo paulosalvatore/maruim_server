@@ -221,7 +221,12 @@ function Player.pegarTasksRecompensa(self)
 end
 function Player.enviarTasksModalPrincipal(self)
 	local reputacaoRankId = self:pegarRankReputacao()
-	local modalTitulo = "Tarefas - " .. pegarNomeRank(reputacaoRankId) .. " - " .. self:pegarReputacao() .. "/" .. pegarReputacaoProximoRank(reputacaoRankId)
+	local reputacaoProximoRank = pegarReputacaoRank(reputacaoRankId+1)
+	local exibirReputacao = "Pontos de Reputação: " .. self:pegarReputacao()
+	if not reputacaoProximoRank == false then
+		exibirReputacao = exibirReputacao .. "/" .. reputacaoProximoRank
+	end
+	local modalTitulo = "Tarefas - " .. pegarNomeRank(reputacaoRankId) .. " - " .. exibirReputacao
 	local modalMensagem = "Você pode escolher uma das opções abaixo para verificar as tarefas correspondentes.\n\nO que você deseja fazer?\n"
 	local modal = ModalWindow(configTasks.storageBase, modalTitulo, modalMensagem)
 	if self:checarTasksRecompensa() then
