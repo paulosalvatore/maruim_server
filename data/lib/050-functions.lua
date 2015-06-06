@@ -192,7 +192,9 @@ function Player.pegarRankReputacao(self)
 	local reputacao = self:pegarReputacao()
 	local rankId
 	for a, b in pairs(Reputacao.ranks) do
-		if b.pontos < reputacao then
+		if b.pontos == 0 then
+			rankId = a
+		elseif b.pontos < reputacao then
 			rankId = a
 		else
 			return rankId

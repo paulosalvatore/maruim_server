@@ -411,7 +411,7 @@ function Player.retirarRecompensa(self, taskId)
 	end
 	local peso = ItemType(item):getWeight()
 	if self:getFreeCapacity() >= peso then
-		if table.getn(self:addItem(item, quantidade, false)) ~= 0 then
+		if self:addItemEx(Game.createItem(item, quantidade)) == 0 then
 			self:finalizarTask(taskId)
 			self:sendTextMessage(MESSAGE_INFO_DESCR, "Você obteve " .. pegarNomeItem(item, quantidade) .. ".")
 		else
