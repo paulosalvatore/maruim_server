@@ -30,6 +30,7 @@
 	<action itemid="2099" script="geral.lua"/>
 	<action itemid="11754" script="geral.lua"/>
 	<action itemid="7552" script="geral.lua"/>
+	<action itemid="10153" script="geral.lua"/>
 
 	<action actionid="2902" script="geral.lua"/>
 
@@ -45,8 +46,6 @@
 	<action itemid="2405" script="sickle.lua"/>
 
 	<action actionid="5756" script="tartaruga.lua"/>
-
-	<action itemid="10153" script="golem_disassembler.lua"/>
 
 	<action itemid="10223" script="tools/fishing.lua" allowfaruse="1"/>
 

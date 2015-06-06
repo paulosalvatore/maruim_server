@@ -510,47 +510,133 @@ local config = {
 			efeito = {"hit"}
 		}
 	},
+	[10153] = {
+		[9802] = {
+			chances = {
+				[1500] = {
+					transformar = {9803, 1},
+					itensPlayer = {{10151, 1}},
+					mensagemPlayer = '"Você salvou uma parte do golem."',
+					efeito = {"hit"}
+				},
+				[3500] = {
+					transformar = {9803, 1},
+					criatura = "Rat",
+					mensagemPlayer = '"Algo estava preso no golem."'
+				},
+				[5500] = {
+					transformar = {9802, 1},
+					dano = {"energia", 8, 8000, -35},
+					mensagemPlayer = '"Que experiência eletrificante!"',
+					efeito = {"hit"}
+				},
+				[7500] = {
+					transformar = {9803, 1},
+					itensPlayer = {{8309, {1, 8}}},
+					mensagemPlayer = '"Você recuperou algumas sucatas!"',
+					efeito = {"hit"}
+				},
+				[10000] = {
+					transformar = {9803, 1},
+					mensagemPlayer = '"Você arruinou o que sobrou do golem."',
+					efeito = {"poff"}
+				}
+			}
+		}
+	},
 	["action"] = {
 	},
 	["unique"] = {
 	}
 }
+local condition = {}
+for a, b in pairs(config) do
+	if condition[a] == nil then
+		local adicionarCondition = 0
+		local dano
+		for c, d in pairs(b) do
+			if c == "dano" then
+				adicionarCondition = a
+				dano = d
+			elseif type(d) == "table" then
+				for e, f in pairs(d) do
+					if e == "dano" then
+						adicionarCondition = a
+						dano = f
+					elseif type(f) == "table" then
+						for g, h in pairs(f) do
+							if g == "dano" then
+								adicionarCondition = a
+								dano = h
+							elseif type(h) == "table" then
+								for i, j in pairs(h) do
+									if i == "dano" then
+										adicionarCondition = a
+										dano = j
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+		if adicionarCondition > 0 then
+			condition[adicionarCondition] = createConditionObject(conditionsDamage[dano[1]])
+			addDamageCondition(condition[adicionarCondition], dano[2], dano[3], dano[4])
+		end
+	end
+end
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if config[item.itemid] or config["action"][item.actionid] or config["unique"][item.uid] then
+	if config[item.itemid] ~= nil or config["action"][item.actionid] ~= nil or config["unique"][item.uid] ~= nil then
 		local i
-		if config[item.itemid] then
+		if config[item.itemid] ~= nil then
 			i = config[item.itemid]
-		elseif config["action"][item.actionid] then
+		elseif config["action"][item.actionid] ~= nil then
 			i = config["action"][item.actionid]
-		elseif config["unique"][item.uid] then
+		elseif config["unique"][item.uid] ~= nil then
 			i = config["unique"][item.uid]
 		end
 		local adicionarEvento = false
-		if i["default"] then
+		if i["default"] ~= nil then
 			i = i["default"]
-		elseif isInArray(sparkling, target.itemid) and #Tile(toPosition):getItems() == 2 and i["sparkling"][Tile(toPosition):getTileTopTopItem()] then
+		elseif isInArray(sparkling, target.itemid) and #Tile(toPosition):getItems() == 2 and i["sparkling"][Tile(toPosition):getTileTopTopItem()] ~= nil then
 			i = i["sparkling"][Tile(toPosition):getTileTopTopItem()]
 			adicionarEvento = true
-		elseif isInArray(fire_source, target.itemid) and i["fire_source"] then
+		elseif isInArray(fire_source, target.itemid) and i["fire_source"] ~= nil then
 			i = i["fire_source"]
-		elseif isInArray(fruits, target.itemid) and i["fruits"] then
+		elseif isInArray(fruits, target.itemid) and i["fruits"] ~= nil then
 			i = i["fruits"]
-		elseif isInArray(ice_shrine, target.itemid) and i["ice_shrine"] then
+		elseif isInArray(ice_shrine, target.itemid) and i["ice_shrine"] ~= nil then
 			i = i["ice_shrine"]
-		elseif isInArray(fire_shrine, target.itemid) and i["fire_shrine"] then
+		elseif isInArray(fire_shrine, target.itemid) and i["fire_shrine"] ~= nil then
 			i = i["fire_shrine"]
-		elseif isInArray(earth_shrine, target.itemid) and i["earth_shrine"] then
+		elseif isInArray(earth_shrine, target.itemid) and i["earth_shrine"] ~= nil then
 			i = i["earth_shrine"]
-		elseif isInArray(energy_shrine, target.itemid) and i["energy_shrine"] then
+		elseif isInArray(energy_shrine, target.itemid) and i["energy_shrine"] ~= nil then
 			i = i["energy_shrine"]
-		elseif i[target.itemid] then
+		elseif i[target.itemid] ~= nil then
 			i = i[target.itemid]
-		elseif i["action"][item.actionid] then
+		elseif i["action"] ~= nil and i["action"][item.actionid] ~= nil then
 			i = i["action"][item.actionid]
-		elseif i["unique"][item.uid] then
+		elseif i["unique"] ~= nil and i["unique"][item.uid] ~= nil then
 			i = i["unique"][item.uid]
 		else
 			return false
+		end
+		if i.chances ~= nil then
+			local chance = math.random(1, 10000)
+			local keys = {}
+			for key in pairs(i.chances) do
+				table.insert(keys, key)
+			end
+			table.sort(keys)
+			for a, b in pairs(keys) do
+				if chance <= b then
+					i = i.chances[b]
+					break
+				end
+			end
 		end
 		if i.actionId ~= nil then
 			if item.actionid ~= i.actionId and target.actionid ~= i.actionId then
@@ -753,13 +839,17 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			end
 			posicaoEfeito:sendMagicEffect(exibirEfeito)
 		end
-		if i.criatura ~= nil and table.getn(i.criatura) > 0 then
+		if i.criatura ~= nil then
 			local chance = 10000
-			if (i.criatura[2]) and (type(i.criatura[2]) == "number") and (i.criatura[2] >= 1) and (i.criatura[2] <= 10000) then
-				chance = i.criatura[2]
+			local criatura = i.criatura
+			if type(criatura) == "table" then
+				if criatura[2] and type(criatura[2]) == "number" and criatura[2] >= 1 and criatura[2] <= 10000 then
+					chance = criatura[2]
+				end
+				criatura = criatura[1]
 			end
 			if math.random(10000) <= chance then
-				Game.createMonster(i.criatura[1], toPosition)
+				Game.createMonster(criatura, toPosition)
 			end
 		end
 		if i.teleportar ~= nil then
@@ -823,6 +913,12 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		end
 		if i.sons ~= nil and type(i.sons) == "table" and table.getn(i.sons) > 0 then
 			player:say(i.sons[math.random(1,table.getn(i.sons))], TALKTYPE_ORANGE_1, false, 0, toPosition)
+		end
+		if i.mensagemPlayer ~= nil then
+			player:sendTextMessage(MESSAGE_INFO_DESCR, i.mensagemPlayer)
+		end
+		if i.dano ~= nil then
+			player:addCondition(condition[item.itemid])
 		end
 		if adicionarEvento then
 			addEvent(function(posicao, item)
