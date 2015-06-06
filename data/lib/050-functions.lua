@@ -67,6 +67,9 @@ end
 
 function formatarFraseNpc(frase, cid, msg, count, transfer)
 	local player = Player(cid)
+	if frase:find("|PLAYERNAME|") then
+		frase = frase:gsub("|PLAYERBALANCE|", player:getName())
+	end
 	if frase:find("|PLAYERBALANCE|") then
 		frase = frase:gsub("|PLAYERBALANCE|", player:getBankBalance())
 	end
@@ -194,7 +197,7 @@ function Player.pegarRankReputacao(self)
 	for a, b in pairs(Reputacao.ranks) do
 		if b.pontos == 0 then
 			rankId = a
-		elseif b.pontos < reputacao then
+		elseif b.pontos <= reputacao then
 			rankId = a
 		else
 			return rankId
