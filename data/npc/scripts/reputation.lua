@@ -2,33 +2,45 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
+local shopModule = ShopModule:new()
+npcHandler:addModule(shopModule)
+
 function onCreatureAppear(player)       npcHandler:onCreatureAppear(player)       end
 function onCreatureDisappear(player)     npcHandler:onCreatureDisappear(player)       end
 function onCreatureSay(player, type, msg)
+	local reputacao = player:pegarReputacao()
+	for a, b in pairs(Reputacao.loja) do
+		if reputacao >= b.reputacao then
+			local nomeItem = ItemType(a):getName()
+			shopModule:addBuyableItem({nomeItem}, a, b.preco, 1, nomeItem)
+		end
+	end
 	local rankReputacao = player:pegarRankReputacao()
-	local reputacao = Reputacao.ranks[rankReputacao]
-	local fraseNpc = reputacao.fraseNpc
-	if player:isPromoted() then
-		fraseNpc = reputacao.fraseNpcPromovido
+	local reputacaoInfo = Reputacao.ranks[rankReputacao]
+	local fraseNpc = reputacaoInfo.fraseNpc
+	if player:isPromoted() and reputacaoInfo.fraseNpcPromovido ~= nil then
+		fraseNpc = reputacaoInfo.fraseNpcPromovido
 	end
 	npcHandler:setMessage(MESSAGE_GREET, formatarFraseNpc(fraseNpc, player))
 	npcHandler:setMessage(MESSAGE_FAREWELL, "Até logo!")
 	npcHandler:onCreatureSay(player, type, msg)
 end
 function onThink()         npcHandler:onThink()           end
+function onPlayerEndTrade(cid)				npcHandler:onPlayerEndTrade(cid)			end
+function onPlayerCloseChannel(cid)			npcHandler:onPlayerCloseChannel(cid)		end
+
 local function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
 
 	local player = Player(cid)
-	local rankReputacao = player:pegarRankReputacao()
 	if isInArray({"task", "tasks", "tarefa", "tarefas"}, msg) then
 		player:enviarTasksModalPrincipal()
 		player:registerEvent("Tasks")
 		npcHandler:setMessage(MESSAGE_FAREWELL, "Veja as tarefas disponíveis, caso precise de mais alguma coisa, volte a falar comigo!")
 		npcHandler:unGreet(cid)
-	elseif rankReputacao > 1 and isInArray({"promotion", "promot", "promote", "promover", "promoção", "promocao"}, msg) then
+	elseif player:pegarRankReputacao() > 1 and isInArray({"promotion", "promot", "promote", "promover", "promoção", "promocao"}, msg) then
 		if player:isPromoted() then
 			npcHandler:say("Você já está promovido.", cid)
 		elseif player:getLevel() < 20 then
