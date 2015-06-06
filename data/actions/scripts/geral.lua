@@ -503,6 +503,13 @@ local config = {
 			}
 		}
 	},
+	[7552] = {
+		["default"] = {
+			transformar = {7553, 1, "item"},
+			itensPlayerAleatorio = {{7632, 1, 1000}, {7633, 1, 1000}},
+			efeito = {"hit"}
+		}
+	},
 	["action"] = {
 	},
 	["unique"] = {
