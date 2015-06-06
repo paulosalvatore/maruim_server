@@ -6,7 +6,13 @@ function onCreatureAppear(player)       npcHandler:onCreatureAppear(player)     
 function onCreatureDisappear(player)     npcHandler:onCreatureDisappear(player)       end
 function onCreatureSay(player, type, msg)
 	local rankReputacao = player:pegarRankReputacao()
-	npcHandler:setMessage(MESSAGE_GREET, formatarFraseNpc(Reputacao.ranks[rankReputacao].fraseNpc, player))
+	local reputacao = Reputacao.ranks[rankReputacao]
+	local fraseNpc = reputacao.fraseNpc
+	if player:isPromoted() then
+		fraseNpc = reputacao.fraseNpcPromovido
+	end
+	npcHandler:setMessage(MESSAGE_GREET, formatarFraseNpc(fraseNpc, player))
+	npcHandler:setMessage(MESSAGE_FAREWELL, "Até logo!")
 	npcHandler:onCreatureSay(player, type, msg)
 end
 function onThink()         npcHandler:onThink()           end

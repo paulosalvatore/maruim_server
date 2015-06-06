@@ -88,6 +88,23 @@ function formatarFraseNpc(frase, cid, msg, count, transfer)
 	if frase:find("|SHOWTRANSFER|") then
 		frase = frase:gsub("|SHOWTRANSFER|", transfer)
 	end
+	if frase:find("|SENHOR|") then
+		local exibir = "Senhor"
+		if player:getSex() == 0 then
+			exibir = "Senhora"
+		end
+		frase = frase:gsub("|SENHOR|", exibir)
+	end
+	if frase:find("|MESTRE|") then
+		local exibir = "Mestre"
+		if player:getSex() == 0 then
+			exibir = "Mestra"
+		end
+		frase = frase:gsub("|MESTRE|", exibir)
+	end
+	if frase:find("|VOCATIONNAME|") then
+		frase = frase:gsub("|VOCATIONNAME|", player:getVocation():getName())
+	end
 	return frase
 end
 
