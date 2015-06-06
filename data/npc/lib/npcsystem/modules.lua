@@ -6,7 +6,7 @@ if Modules == nil then
 	FOCUS_FAREWELLWORDS = {"bye", "farewell", "adeus", "tchau"}
 
 	-- The words for requesting trade window.
-	SHOP_TRADEREQUEST = {"trade", "negociar"}
+	SHOP_TRADEREQUEST = {"trade", "negociar", "negociação", "negociacao"}
 
 	-- The word for accepting/declining an offer. CAN ONLY CONTAIN ONE FIELD! Should be a table with a single string value.
 	SHOP_YESWORD = {'yes'}
