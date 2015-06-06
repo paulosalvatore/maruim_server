@@ -227,9 +227,11 @@ function pegarNomeRank(rankId)
 	return Reputacao.ranks[rankId].nome
 end
 
-
-function pegarReputacaoProximoRank(rankId)
-	return Reputacao.ranks[rankId+1].pontos
+function pegarReputacaoRank(rankId)
+	if Reputacao.ranks[rankId] ~= nil then
+		return Reputacao.ranks[rankId].pontos
+	end
+	return false
 end
 
 function Player.isPromoted(self)
