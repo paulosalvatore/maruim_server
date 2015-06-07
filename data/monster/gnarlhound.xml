@@ -26,8 +26,8 @@
 		<voice sentence="Grrrrrr!"/>
 	</voices>
 	<loot>
-		<item id="11324" chance="10000"/><!-- shaggy tail -->
-		<item id="11224" chance="10000"/><!-- Thick Fur -->
-		<item id="11210" chance="10000"/><!-- Striped Fur -->
+		<item id="11324" chance="80000"/><!-- shaggy tail -->
+		<item id="11224" chance="50000"/><!-- Thick Fur -->
+		<item id="11210" chance="50000"/><!-- Striped Fur -->
 	</loot>
 </monster>
