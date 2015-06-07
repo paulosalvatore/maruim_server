@@ -29,7 +29,7 @@
 		<voice sentence="Hail Durin!"/>
 	</voices>
 	<loot>
-		<item id="20107" chance="30000"/><!-- Bloody Dwarven Beard -->
+		<item id="5900" chance="60000"/><!-- Dwarven Beard -->
 		<item id="5880" chance="20000"/><!-- Iron Ore -->
 	</loot>
 </monster>

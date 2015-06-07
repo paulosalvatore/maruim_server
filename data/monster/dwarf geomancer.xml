@@ -45,7 +45,7 @@
 		<voice sentence="Dust to dust."/>
 	</voices>
 	<loot>
-		<item id="20107" chance="50000"/><!-- Bloody Dwarven Beard -->
+		<item id="5900" chance="60000"/><!-- Dwarven Beard -->
 		<item id="5880" chance="30000"/><!-- Iron Ore -->
 		<item id="12414" chance="30000"/><!-- Geomancer's Robe -->
 		<item id="12419" chance="30000"/><!-- Geomancer's Staff -->
