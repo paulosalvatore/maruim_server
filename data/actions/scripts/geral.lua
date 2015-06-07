@@ -505,9 +505,31 @@ local config = {
 	},
 	[7552] = {
 		["default"] = {
-			transformar = {7553, 1, "item"},
-			itensPlayerAleatorio = {{7632, 1, 1000}, {7633, 1, 1000}},
-			efeito = {"hit"}
+			chances = {
+				[1000] = {
+					transformar = {7553, 1, "item"},
+					itensPlayer = {{7632, 1}},
+					mensagemPlayer = '"Você encontrou uma bela perola!"',
+					efeito = {"hit"}
+				},
+				[2000] = {
+					transformar = {7553, 1, "item"},
+					itensPlayer = {{7633, 1}},
+					mensagemPlayer = '"Você encontrou uma bela perola!"',
+					efeito = {"hit"}
+				},
+				[6000] = {
+					transformar = {7553, 1, "item"},
+					dano = {"físico", "fixo", -200},
+					mensagemPlayer = '"Você esmagou seus dedos!"',
+					efeito = {"hit"}
+				},
+				[10000] = {
+					transformar = {7553, 1, "item"},
+					mensagemPlayer = '"Parece estar vazia."',
+					efeito = {"hit"}
+				},
+			}
 		}
 	},
 	[10153] = {
@@ -526,7 +548,7 @@ local config = {
 				},
 				[5500] = {
 					transformar = {9803, 1},
-					dano = {"energia", 8, 8000, -35},
+					dano = {"energia", "cargas", 8, 8000, -35},
 					mensagemPlayer = '"Que experiência eletrificante!"',
 					efeito = {"hit"}
 				},
@@ -582,8 +604,10 @@ for a, b in pairs(config) do
 			end
 		end
 		if adicionarCondition > 0 then
-			condition[adicionarCondition] = createConditionObject(conditionsDamage[dano[1]])
-			addDamageCondition(condition[adicionarCondition], dano[2], dano[3], dano[4])
+			if dano[2] == "cargas" then
+				condition[adicionarCondition] = createConditionObject(conditionsDamage[dano[1]][1])
+				addDamageCondition(condition[adicionarCondition], dano[3], dano[4], dano[5])
+			end
 		end
 	end
 end
@@ -918,7 +942,16 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			player:sendTextMessage(MESSAGE_INFO_DESCR, i.mensagemPlayer)
 		end
 		if i.dano ~= nil then
-			player:addCondition(condition[item.itemid])
+			if i.dano[2] == "fixo" then
+				local danoMin = i.dano[3]
+				local danoMax = danoMin
+				if i.dano[4] ~= nil then
+					danoMax = i.dano[4]
+				end
+				doTargetCombatHealth(0, player, conditionsDamage[i.dano[1]][2], danoMin, danoMax, CONST_ME_NONE)
+			elseif i.dano[2] == "cargas" then
+				player:addCondition(condition[item.itemid])
+			end
 		end
 		if adicionarEvento then
 			addEvent(function(posicao, item)
