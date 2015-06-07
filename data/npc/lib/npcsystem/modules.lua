@@ -928,10 +928,11 @@ if Modules == nil then
 			return false
 		end
 
-		local backpack = 1988
+		local backpack = 23782
+		local backpackCost = 20
 		local totalCost = amount * shopItem.buy
 		if(inBackpacks) then
-			totalCost = isItemStackable(itemid) == TRUE and totalCost + 20 or totalCost + (math.max(1, math.floor(amount / getContainerCapById(backpack))) * 20)
+			totalCost = isItemStackable(itemid) == TRUE and totalCost + backpackCost or totalCost + (math.max(1, math.floor(amount / getContainerCapById(backpack))) * backpackCost)
 		end
 
 		local parseInfo = {

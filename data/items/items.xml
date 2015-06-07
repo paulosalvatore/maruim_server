@@ -30839,6 +30839,11 @@
 		<attribute key="slotType" value="backpack" />
 		<attribute key="weight" value="1800" />
 	</item>
+	<item id="23782" article="a" name="shopping bag">
+		<attribute key="containerSize" value="20" />
+		<attribute key="slotType" value="backpack" />
+		<attribute key="weight" value="1800" />
+	</item>
 	<item id="23816" article="a" name="war backpack">
 		<attribute key="containerSize" value="20" />
 		<attribute key="slotType" value="backpack" />
