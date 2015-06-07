@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="mysterious fetish,2194,12;flask of warrior's sweat,5885,80;demonic skeletal hand,10564,40;gauze bandage,10566,30;broken gladiator shield,10573,60;half-eaten brain,10576,50;mystical hourglass,10577,200;piece of dead brain,10580,1;half-digested piece of meat,11200,30;mini mummy,11207,1000;rotten piece of cloth,11208,20;petrified scream,11337,50;undead heart,11367,12;hair of a banshee,12402,40;flask of embalming fluid,12422,70;ghoul snack,12423,15;pile of grave earth,12440,10;sweet smelling bait,13307,10000;shadow ashes,21446,100;"/>
+		<parameter key="shop_sellable" value="mysterious fetish,2194,12;flask of warrior's sweat,5885,80;demonic skeletal hand,10564,40;gauze bandage,10566,30;broken gladiator shield,10573,60;half-eaten brain,10576,50;mystical hourglass,10577,200;piece of dead brain,10580,1;half-digested piece of meat,11200,30;mini mummy,11207,1000;rotten piece of cloth,11208,20;petrified scream,11337,50;undead heart,11367,12;hair of a banshee,12402,40;flask of embalming fluid,12422,70;ghoul snack,12423,15;pile of grave earth,12440,10;sweet smelling bait,13307,10000;shadow ashes,21446,800;"/>
 	</parameters>
 </npc>
