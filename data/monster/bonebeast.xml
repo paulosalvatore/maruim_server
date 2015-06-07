@@ -62,6 +62,5 @@
 		<item id="5925" countmax="2" chance="30000"/><!-- Hardened Bone -->
 		<item id="11161" chance="1000"/><!-- Bonebeast Trophy -->
 		<item id="2178" chance="20000"/><!-- Mind Stone -->
-		<item id="21446" chance="5000"/><!-- Shadow Ashes -->
 	</loot>
 </monster>

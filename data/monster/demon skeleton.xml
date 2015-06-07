@@ -42,6 +42,5 @@
 		<item id="2144" countmax="2" chance="10000"/><!-- Black Pearl -->
 		<item id="2147" countmax="2" chance="10000"/><!-- Ruby -->
 		<item id="2178" chance="20000"/><!-- Mind Stone -->
-		<item id="21446" chance="5000"/><!-- Shadow Ashes -->
 	</loot>
 </monster>
