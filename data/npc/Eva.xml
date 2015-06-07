@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="small oil lamp,2063,1;nomad parchment,8267,1;dirty turban,12412,1;jewelled belt,12426,1;noble turban,12442,1;rope belt,12448,1;"/>
+		<parameter key="shop_sellable" value="small oil lamp,2063,70;nomad parchment,8267,5;dirty turban,12412,5;jewelled belt,12426,20;noble turban,12442,60;rope belt,12448,5;"/>
 	</parameters>
 </npc>

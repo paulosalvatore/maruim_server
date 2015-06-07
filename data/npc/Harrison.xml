@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="spirit container,5884,1;magic sulphur,5904,1;ghost's tear,9662,1;ghostly tissue,10607,1;essence of a bad dream,11223,1;scythe leg,11229,1;broken dream,22363,1;dream matter,22397,1;trapped bad dream monster,22537,1;bowl of terror sweat,22538,1;"/>
+		<parameter key="shop_sellable" value="spirit container,5884,1;magic sulphur,5904,300;ghost's tear,9662,50;ghostly tissue,10607,10;essence of a bad dream,11223,1;scythe leg,11229,1;broken dream,22363,1;dream matter,22397,1;trapped bad dream monster,22537,1;bowl of terror sweat,22538,1;"/>
 	</parameters>
 </npc>

@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="vampire doll,9019,1;vampire lord token,9020,1;vampire teeth,10602,1;blood preservation,12405,1;tooth file,21241,1;vampire silk slippers,21708,1;"/>
+		<parameter key="shop_sellable" value="blood preservation,12405,20;vampire teeth,10602,30;vampire doll,9019,1000;vampire lord token,9020,250;tooth file,21241,130;vampire silk slippers,21708,1000;"/>
 	</parameters>
 </npc>

@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="fish fin,5895,1;sea serpent scale,10583,1;quara tentacle,12443,1;quara eye,12444,1;mantassin tail,12445,1;quara pincers,12446,1;quara bone,12447,1;giant shrimp,13305,1;eye of a deepling,13870,1;deepling guard belt buckle,15423,1;deepling breaktime snack,15424,1;deepling warts,15425,1;deeptags,15426,1;deepling scales,15430,1;deepling ridge,15452,1;deepling claw,15455,1;deepling filet,15488,1;"/>
+		<parameter key="shop_sellable" value="fish fin,5895,300;quara tentacle,12443,70;quara eye,12444,80;mantassin tail,12445,100;quara pincers,12446,110;quara bone,12447,120;giant shrimp,13305,10000;eye of a deepling,13870,30;deepling warts,15425,50;deepling scales,15430,70;deepling filet,15488,100;deeptags,15426,110;deepling ridge,15452,140;deepling breaktime snack,15424,150;deepling claw,15455,200;deepling guard belt buckle,15423,300;sea serpent scale,10583,1;"/>
 	</parameters>
 </npc>

@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="frost charm,7289,1;shard,7290,1;scale from a frozen dragon,7314,1;ice cube,7441,1;flawless ice crystal,8300,1;frosty ear of a troll,10565,1;frosty heart,10578,1;mammoth tusk,11238,1;frozen heart,13028,1;"/>
+		<parameter key="shop_sellable" value="frosty ear of a troll,10565,5;frosty heart,10578,7;ice cube,7441,25;shard,7290,15;frost charm,7289,50;flawless ice crystal,8300,80;scale from a frozen dragon,7314,1;mammoth tusk,11238,25;frozen heart,13028,1;"/>
 	</parameters>
 </npc>

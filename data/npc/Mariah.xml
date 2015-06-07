@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="hydra egg,4850,1;cobra tongue,10551,1;scorpion tail,10568,1;hydra head,11199,1;winged tail,11230,1;"/>
+		<parameter key="shop_sellable" value="hydra egg,4850,140;cobra tongue,10551,20;scorpion tail,10568,10;hydra head,11199,75;winged tail,11230,90;"/>
 	</parameters>
 </npc>

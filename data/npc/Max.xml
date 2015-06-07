@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="green dragon leather,5877,1;red dragon scale,5882,1;dragon claw,5919,1;green dragon scale,5920,1;red dragon leather,5948,1;dragon claw,10020,1;wyrm scale,10582,1;ghastly dragon head,11366,1;dragon's tail,12413,1;small dragon tear,21401,1;"/>
+		<parameter key="shop_sellable" value="green dragon leather,5877,100;red dragon scale,5882,400;dragon claw,5919,300;green dragon scale,5920,150;red dragon leather,5948,200;dragon claw,10020,120;wyrm scale,10582,1;ghastly dragon head,11366,1;dragon's tail,12413,80;small dragon tear,21401,50;"/>
 	</parameters>
 </npc>

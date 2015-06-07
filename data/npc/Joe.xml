@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="grave flower,2747,1;stone herb,2799,1;star herb,2800,1;sling herb,2802,1;powder herb,2803,1;shadow herb,2804,1;troll green,2805,1;miraculum,12430,1;"/>
+		<parameter key="shop_sellable" value="troll green,2805,5;grave flower,2747,20;stone herb,2799,20;sling herb,2802,20;powder herb,2803,20;shadow herb,2804,20;miraculum,12430,40;star herb,2800,40;"/>
 	</parameters>
 </npc>

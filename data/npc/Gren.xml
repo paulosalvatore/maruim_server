@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="egg,2328,1;meat,2666,1;fish,2667,1;ham,2671,1;dragon ham,2672,1;coconut,2678,1;cherry,2679,1;carrot,2684,1;cheese,2696,1;dark mushroom,2792,1;fire mushroom,2795,1;peanut,7910,1;raspberry,8840,1;jalapeño pepper,8844,1;haunch of boar,13297,1;soft cheese,20100,1;"/>
+		<parameter key="shop_sellable" value="egg,2328,2;meat,2666,3;fish,2667,3;ham,2671,5;dragon ham,2672,1;coconut,2678,3;cherry,2679,1;carrot,2684,2;cheese,2696,2;dark mushroom,2792,1;fire mushroom,2795,1;peanut,7910,2;raspberry,8840,2;jalapeño pepper,8844,1;haunch of boar,13297,1;soft cheese,20100,10;"/>
 	</parameters>
 </npc>

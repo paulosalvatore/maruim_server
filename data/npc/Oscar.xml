@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="plate armor,2463,1;knight armor,2476,1;knight legs,2477,1;studded armor,2484,1;dark helmet,2490,1;steel boots,2645,1;blue robe,2656,1;simple dress,2657,1;skull helmet,5741,1;krimhorn helmet,7461,1;ragnir helmet,7462,1;terra mantle,7884,1;terra legs,7885,1;magma monocle,7900,1;buckle,20109,1;"/>
+		<parameter key="shop_sellable" value="plate armor,2463,20;knight armor,2476,1;knight legs,2477,1;studded armor,2484,10;dark helmet,2490,1;steel boots,2645,1;simple dress,2657,35;skull helmet,5741,1;krimhorn helmet,7461,40;ragnir helmet,7462,40;terra mantle,7884,1;terra legs,7885,1;magma monocle,7900,1;buckle,20109,160;helmet of the lost,20109,160;"/>
 	</parameters>
 </npc>

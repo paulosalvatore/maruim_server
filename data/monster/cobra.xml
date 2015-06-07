@@ -36,7 +36,7 @@
 		<voice sentence="Fsssss"/>
 	</voices>
 	<loot>
-		<item id="10611" chance="10000"/><!-- Snake Skin -->
-		<item id="10551" chance="10000"/><!-- Snake Tongue -->
+		<item id="10611" chance="60000"/><!-- Snake Skin -->
+		<item id="10551" chance="30000"/><!-- Snake Tongue -->
 	</loot>
 </monster>

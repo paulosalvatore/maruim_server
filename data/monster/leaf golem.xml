@@ -35,10 +35,8 @@
 		<voice sentence="*swwwwishhhh*"/>
 	</voices>
 	<loot>
-		<item id="2245" chance="10000"/><!-- Twigs -->
-		<item id="21427" chance="10000"/><!-- dowser -->
-		<item id="21428" chance="10000"/><!-- fir cone -->
-		<item id="7736" chance="10000"/><!-- rotten heart of a tree -->
-		<item id="2149" chance="10000"/><!-- small emerald -->
+		<item id="2245" countmax="3" chance="80000"/><!-- Twigs -->
+		<item id="21427" countmax="1" chance="60000"/><!-- dowser -->
+		<item id="2149" countmax="1" chance="10000"/><!-- small emerald -->
 	</loot>
 </monster>

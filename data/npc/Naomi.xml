@@ -8,5 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
+		<parameter key="shop_sellable" value="pirate treasure map,10123,20;grappling hook,5800,45;peg leg,6126,60;pirate voodoo doll,5810,100;eye patch,6098,75;hook,6097,105;"/>
 	</parameters>
 </npc>

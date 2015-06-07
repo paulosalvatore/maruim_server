@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="violet gem,2153,1;yellow gem,2154,1;green gem,2155,1;red gem,2156,1;blue gem,2158,1;giant shimmering pearl,7632,1;giant shimmering pearl,7633,1;"/>
+		<parameter key="shop_sellable" value="violet gem,2153,150;yellow gem,2154,150;green gem,2155,150;red gem,2156,150;blue gem,2158,150;giant shimmering pearl,7632,100;giant shimmering pearl,7633,100;"/>
 	</parameters>
 </npc>

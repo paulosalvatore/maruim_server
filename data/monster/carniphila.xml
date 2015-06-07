@@ -42,10 +42,10 @@
 		<immunity invisible="1"/>
 	</immunities>
 	<loot>
-		<item id="11217" chance="10000"/><!-- Carniphila Seeds -->
+		<item id="11217" countmax="3" chance="70000"/><!-- Carniphila Seeds -->
 		<item id="2804" chance="10000"/><!-- Shadow Herb -->
 		<item id="2802" chance="10000"/><!-- Sling Herb -->
-		<item id="7732" chance="10000"/><!-- Seeds -->
+		<item id="7732" countmax="2" chance="40000"/><!-- Seeds -->
 		<item id="2803" chance="10000"/><!-- Powder Herb -->
 	</loot>
 </monster>

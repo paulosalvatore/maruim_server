@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="wedding ring,2121,1;crystal necklace,2125,1;emerald bangle,2127,1;wolf tooth chain,2129,1;silver brooch,2134,1;demonbone amulet,2136,1;silver amulet,2170,1;platinum amulet,2171,1;bronze amulet,2172,1;stone skin amulet,2197,1;protection amulet,2200,1;explorer brooch,4873,1;death ring,6300,1;magma amulet,7890,1;snake god's wristguard,12647,1;necklace of the deep,15403,1;prismatic ring,18528,1;wimp tooth chain,20127,1;vampire's cape chain,21244,1;vampire's signet ring,21252,1;"/>
+		<parameter key="shop_sellable" value="wedding ring,2121,50;crystal necklace,2125,15;emerald bangle,2127,100;wolf tooth chain,2129,1;silver brooch,2134,40;demonbone amulet,2136,250;silver amulet,2170,30;platinum amulet,2171,150;bronze amulet,2172,30;stone skin amulet,2197,200;protection amulet,2200,25;explorer brooch,4873,70;death ring,6300,60;magma amulet,7890,400;snake god's wristguard,12647,500;necklace of the deep,15403,160;prismatic ring,18528,600;wimp tooth chain,20127,35;vampire's cape chain,21244,65;vampire's signet ring,21252,220;"/>
 	</parameters>
 </npc>

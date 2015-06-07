@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="fishbone,2226,1;rotten meat,2227,1;shaggy tail,11324,1;broken shamanic staff,12408,1;shamanic hood,12434,1;skull belt,12436,1"/>
+		<parameter key="shop_sellable" value="fishbone,2226,5;rotten meat,2227,5;shaggy tail,11324,1;broken shamanic staff,12408,1;shamanic hood,12434,1;skull belt,12436,1"/>
 	</parameters>
 </npc>

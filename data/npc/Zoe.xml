@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="golden sickle,2418,1;obsidian lance,2425,1;knight axe,2430,1;skull staff,2436,1;hammer of wrath,2444,1;studded club,2448,1;scythe,2550,1;beastslayer axe,3962,1;brutetamer's staff,7379,1;vile axe,7388,1;assassin dagger,7404,1;butcher's axe,7412,1;scorpion sceptre,13498,1;pair of iron fists,20108,1;"/>
+		<parameter key="shop_sellable" value="golden sickle,2418,1;obsidian lance,2425,1;knight axe,2430,1;skull staff,2436,1;hammer of wrath,2444,1;studded club,2448,15;scythe,2550,20;beastslayer axe,3962,500;brutetamer's staff,7379,500;vile axe,7388,1;assassin dagger,7404,1;butcher's axe,7412,1;pair of iron fists,20108,1;"/>
 	</parameters>
 </npc>

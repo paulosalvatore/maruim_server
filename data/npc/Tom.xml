@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="elven brooch,2122,1;elven poetry book,4855,1;minotaur leather,5878,1;elvenhair rope,7731,1;elvish talisman,10552,1;bunch of troll hair,10606,1;elven scouting glass,12420,1;elven astral observer,12421,1;minotaur horn,12428,1;piece of warrior armor,12438,1;trollroot,12471,1;"/>
+		<parameter key="shop_sellable" value="bunch of troll hair,10606,2;trollroot,12471,5;elven brooch,2122,1;elven poetry book,4855,1;minotaur leather,5878,1;elvenhair rope,7731,1;elvish talisman,10552,1;elven scouting glass,12420,1;elven astral observer,12421,1;minotaur horn,12428,1;piece of warrior armor,12438,1;"/>
 	</parameters>
 </npc>

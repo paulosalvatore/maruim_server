@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="piece of royal steel,5887,1;piece of hell steel,5888,1;piece of draconian steel,5889,1;white piece of cloth,5909,1;green piece of cloth,5910,1;red piece of cloth,5911,1;blue piece of cloth,5912,1;brown piece of cloth,5913,1;yellow piece of cloth,5914,1;piece of royal satin,9678,1;"/>
+		<parameter key="shop_sellable" value="piece of royal steel,5887,1;piece of hell steel,5888,1;piece of draconian steel,5889,1;white piece of cloth,5909,30;green piece of cloth,5910,30;red piece of cloth,5911,30;blue piece of cloth,5912,30;brown piece of cloth,5913,30;yellow piece of cloth,5914,30;piece of royal satin,9678,1;"/>
 	</parameters>
 </npc>

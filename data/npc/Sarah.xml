@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="bola,20089,1;cheese cutter,20097,1;cheesy figurine,20098,1;earflap,20099,1;rat cheese,20101,1;rat god doll,20105,1;leather harness,20126,1;"/>
+		<parameter key="shop_sellable" value="bola,20089,50;cheese cutter,20097,40;cheesy figurine,20098,40;earflap,20099,500;rat cheese,20101,30;rat god doll,20105,10000;leather harness,20126,300;"/>
 	</parameters>
 </npc>
