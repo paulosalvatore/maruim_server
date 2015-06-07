@@ -85,13 +85,13 @@ end
 function Player.adicionarProgressoTask(self, taskId)
 	local task = Tasks[taskId]
 	local progressoTask = self:verificarProgressoTask(taskId)+1
+	self:setStorageValue(configTasks.storageBase+configTasks.progresso+taskId, progressoTask)
 	local mensagem = "Atualização de Tarefa: " .. progressoTask .. "/" .. task.quantidade .. " - " .. capAll(task.criatura)
 	if progressoTask == task.quantidade then
 		mensagem = mensagem .. " - Completa"
 		self:completarTask(taskId)
 	end
 	self:sendTextMessage(MESSAGE_EVENT_ADVANCE, mensagem)
-	self:setStorageValue(configTasks.storageBase+configTasks.progresso+taskId, progressoTask)
 end
 function Player.completarTask(self, taskId)
 	local task = Tasks[taskId]
@@ -141,9 +141,12 @@ function Player.completarTask(self, taskId)
 		end
 		if recompensa.item ~= nil then
 			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Recompensa de Tarefa: Você recebeu " .. exibirTaskItemRecompensa(recompensa.item) .. ". Vá a algum NPC de Tarefas para retirá-lo.")
+		else
+			self:finalizarTask(taskId)
+			return true
 		end
 	end
-	
+
 	self:setStorageValue(configTasks.storageBase+taskId, configTasks.valorCompleta)
 end
 function Player.checarTaskCompleta(self, taskId)
@@ -154,6 +157,7 @@ function Player.checarTaskCompleta(self, taskId)
 	return false
 end
 function Player.finalizarTask(self, taskId)
+	self:setStorageValue(configTasks.storageBase+configTasks.progresso+taskId, 0)
 	self:setStorageValue(configTasks.storageBase+taskId, configTasks.valorFinalizada)
 end
 function Creature.checarTask(self)
@@ -168,7 +172,9 @@ function Player.pegarTasksDisponiveis(self)
 	local tasks = {}
 	for a, b in pairs(Tasks) do
 		local playerLevel = self:getLevel()
-		if	self:verificarStatusTask(a) == 0 and
+		local statusTask = self:verificarStatusTask(a)
+		if	(statusTask == 0 or
+			statusTask == configTasks.valorFinalizada) and
 			playerLevel >= b.nivelMinimo and
 			((b.nivelMaximo == nil) or (b.nivelMaximo == 0) or (b.nivelMaximo > 0 and playerLevel <= b.nivelMaximo)) and
 			((b.reputacao == nil) or (b.reputacao == 0) or (b.reputacao > 0 and self:pegarReputacao() >= b.reputacao)) then
@@ -348,7 +354,7 @@ function Player.enviarTasksModalInfo(self, taskId, modalId)
 	modalMensagem = modalMensagem .. "Objetivo\n"
 	modalMensagem = modalMensagem .. "Matar " .. task.quantidade .. " " .. capAll(task.criatura) .. "\n"
 	if statusTask == configTasks.valorIniciada then
-		modalMensagem = modalMensagem .. "Criaturas Mortas até agora: " .. self:pegarTaskProgresso(taskId) .. "\n"
+		modalMensagem = modalMensagem .. "Criaturas Mortas até agora: " .. self:verificarProgressoTask(taskId) .. "\n"
 	end
 	modalMensagem = modalMensagem .. "\nRequisito\n"
 	if	(task.nivelMinimo ~= nil and task.nivelMinimo > 0) or
@@ -403,9 +409,6 @@ function Player.enviarTasksModalInfo(self, taskId, modalId)
 	end
 	modal:addButton(2, "Sair")
 	modal:sendToPlayer(self)
-end
-function Player.pegarTaskProgresso(self, taskId)
-	return math.max(0, self:getStorageValue(configTasks.storageBase+configTasks.progresso+taskId))
 end
 function Player.retirarRecompensa(self, taskId)
 	local recompensa = Tasks[taskId].recompensa.item
