@@ -68,7 +68,7 @@ end
 function formatarFraseNpc(frase, cid, msg, count, transfer)
 	local player = Player(cid)
 	if frase:find("|PLAYERNAME|") then
-		frase = frase:gsub("|PLAYERBALANCE|", player:getName())
+		frase = frase:gsub("|PLAYERNAME|", player:getName())
 	end
 	if frase:find("|PLAYERBALANCE|") then
 		frase = frase:gsub("|PLAYERBALANCE|", player:getBankBalance())
