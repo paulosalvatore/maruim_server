@@ -31,11 +31,8 @@ Reputacao = {
 		}
 	},
 	loja = {
-		[2195] = {preco = 100, reputacao = 1},
-		[2196] = {preco = 200, reputacao = 2},
-		[2197] = {preco = 300, reputacao = 3},
-		[2198] = {preco = 400, reputacao = 4},
-		[2199] = {preco = 500, reputacao = 5},
-		[2200] = {preco = 600, reputacao = 6}
+		[9942] = {preco = 100, reputacao = 1},
+		[9941] = {preco = 100, reputacao = 1},
+		[9980] = {preco = 100, reputacao = 1},
 	}
 }
