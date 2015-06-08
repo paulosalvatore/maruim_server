@@ -406,7 +406,7 @@ local config = {
 	[4856] = {
 		["sparkling"] = {
 			[5868] = {
-				itensPlayerAleatorio = {{5880, 1, 4000}, {2225, 1, 6000}},
+				itensPlayerAleatorio = {{5892, 1, 100}, {5880, 1, 3900}, {2225, {1, 2}, 6000}},
 				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 3*60*1000,
@@ -750,6 +750,9 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 					if chanceItemAleatorio <= chanceItem then
 						local itemAleatorioAdicionar = v[1]
 						local quantidadeItemAleatorioAdicionar = v[2]
+						if type(quantidadeItemAleatorioAdicionar) == "table" then
+							quantidadeItemAleatorioAdicionar = math.random(v[2][1], v[2][2])
+						end
 						local typeItemAleatorioAdicionar = v[4] or 1
 						player:addItem(itemAleatorioAdicionar, quantidadeItemAleatorioAdicionar, true, typeItemAleatorioAdicionar)
 						chanceItemAleatorio = 100000
