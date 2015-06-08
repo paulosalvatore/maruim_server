@@ -566,6 +566,36 @@ local config = {
 			}
 		}
 	},
+	[23587] = {
+		[5880] = {
+			itensGamePlayer = {{12505, 1}},
+			removerItem = 1,
+			removerTarget = 1,
+			efeito = {"green", "player_item"}
+		},
+		[5901] = {
+			itensGamePlayer = {{12503, 1}},
+			removerItem = 1,
+			removerTarget = 1,
+			efeito = {"green", "player_item"}
+		},
+		[5920] = {
+			itensGamePlayer = {{12506, 1}},
+			removerItem = 1,
+			removerTarget = 1,
+			efeito = {"green", "player_item"}
+		},
+		[7242] = {
+			transformar = {12508, 1},
+			removerItem = 1,
+			efeito = {"green", "player_item"}
+		},
+		[8860] = {
+			transformar = {12501, 1},
+			removerItem = 1,
+			efeito = {"green", "player_item"}
+		}
+	},
 	["action"] = {
 	},
 	["unique"] = {
@@ -689,9 +719,18 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				return false
 			end
 		end
-		local chanceSucesso = i.chanceSucesso
-		local chanceQuebrar = i.chanceQuebrar
-		local efeito = i.efeito
+		local chanceSucesso = 10000
+		local chanceQuebrar = 0
+		if i.chanceSucesso ~= nil then
+			chanceSucesso = i.chanceSucesso
+		end
+		if i.chanceQuebrar ~= nil then
+			chanceQuebrar = i.chanceQuebrar
+		end
+		local efeito
+		if i.efeito ~= nil then
+			efeito = i.efeito
+		end
 		if i.profissao ~= nil and verificiarProfissaoPorNome(i.profissao) and chanceSucesso ~= nil and chanceSucesso <= 10000 then
 			local profissaoId = verificiarProfissaoPorNome(i.profissao)
 			local profissaoSkill = player:getProfissaoSkill(profissaoId)
@@ -725,6 +764,21 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		end
 		if i.removerItem ~= nil and i.removerItem == 1 and not item:remove(1) then
 			return false
+		end
+		if i.itensGamePlayer ~= nil then
+			for c, v in pairs(i.itensGamePlayer) do
+				local itemGamePlayerAdicionar = v[1]
+				local quantidadeItemGamePlayerAdicionar = v[2]
+				local typeItemGamePlayerAdicionar = v[3] or 1
+				if type(quantidadeItemGamePlayerAdicionar) == "table" then
+					quantidadeItemGamePlayerAdicionar = math.random(quantidadeItemGamePlayerAdicionar[1], quantidadeItemGamePlayerAdicionar[2])
+				end
+				if toPosition.x == 65535 then
+					player:addItem(itemGamePlayerAdicionar, quantidadeItemGamePlayerAdicionar, true, typeItemGamePlayerAdicionar)
+				else
+					Game.createItem(itemGamePlayerAdicionar, quantidadeItemGamePlayerAdicionar, toPosition)
+				end
+			end
 		end
 		if i.itensPlayer ~= nil then
 			if chance <= chanceSucesso then
@@ -849,12 +903,17 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		if efeito ~= nil and table.getn(efeito) > 0 then
 			local posicaoEfeito = nil
 			if efeito[2] and efeito[2] ~= "to" then
-				if type(efeito[2] == "table") then
+				if type(efeito[2]) == "table" then
 					posicaoEfeito = fromPosition+efeito[2]
 				elseif efeito[2] == "from" then
 					posicaoEfeito = fromPosition
 				elseif efeito[2] == "player" then
 					posicaoEfeito = player:getPosition()
+				elseif efeito[2] == "player_item" then
+					posicaoEfeito = toPosition
+					if toPosition.x == 65535 then
+						posicaoEfeito = player:getPosition()
+					end
 				end
 			end
 			if posicaoEfeito == nil then
