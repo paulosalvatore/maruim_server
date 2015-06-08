@@ -46,7 +46,10 @@ efeitos = {
 	["splash"] = CONST_ME_WATERSPLASH,
 	["smoke"] = CONST_ME_SMOKE,
 	["choque_roxo"] = CONST_ME_PURPLEENERGY,
-	["teleport"] = CONST_ME_TELEPORT
+	["teleport"] = CONST_ME_TELEPORT,
+	["blue"] = CONST_ME_MAGIC_BLUE,
+	["red"] = CONST_ME_MAGIC_RED,
+	["green"] = CONST_ME_MAGIC_GREEN
 }
 
 conditionsDamage = {
@@ -78,6 +81,8 @@ Vocacoes = {
 	["paladin"] = {3, 7},
 	["knight"] = {4, 8}
 }
+
+itemDesativado = 2500
 
 function Tile.getTileTopTopItem(self)
 	local items = self:getItems()
