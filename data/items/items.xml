@@ -22337,6 +22337,7 @@
 		<attribute key="weight" value="999" />
 	</item>
 	<item fromid="13547" toid="13552" name="dirty water" />
+	<item fromid="13553" toid="13558" name="shallow water" />
 	<item id="13559" name="dread doll">
 		<attribute key="description" value="It is shining with positive energy and was awarded by the gods." />
 		<attribute key="weight" value="1100" />
@@ -22488,6 +22489,7 @@
 	<item id="13739" article="a" name="hieroglyph banner">
 		<attribute key="weight" value="1000" />
 	</item>
+	<item fromid="13740" toid="13551" name="dirty water" />
 	<item id="13752" article="a" name="dead yielothax">
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="13753" />
