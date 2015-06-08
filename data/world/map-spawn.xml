@@ -2025,7 +2025,7 @@
 	<spawn centerx="1347" centery="2068" centerz="6" radius="1">
 		<monster name="Pirate Cutthroat" x="0" y="-1" z="6" spawntime="60" />
 	</spawn>
-	<spawn centerx="918" centery="2130" centerz="6" radius="3" />
+	<spawn centerx="751" centery="2330" centerz="6" radius="3" />
 	<spawn centerx="498" centery="838" centerz="7" radius="1">
 		<monster name="Deer" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
