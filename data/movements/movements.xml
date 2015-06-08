@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <movements>
+	<movevent event="StepIn" itemid="20227" script="elevador.lua"/>
+	<movevent event="StepIn" itemid="23425" script="elevador.lua"/>
+
 	<movevent event="StepIn" fromaid="901" toaid="904" script="vocationTile.lua"/>
 
 	<movevent event="StepIn" actionid="2700" script="labirintoMinotauro.lua"/>
