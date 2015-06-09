@@ -613,6 +613,20 @@ local config = {
 			}
 		}
 	},
+	[13030] = {
+		["default"] = {
+			transformar = {13031, 1, "item"},
+			sons = {
+				"For zze emperor!",
+				"Hail |PLAYERNAME|!!"
+			}
+		}
+	},
+	[13032] = {
+		["default"] = {
+			transformar = {13033, 1, "item"}
+		}
+	},
 	["action"] = {
 	},
 	["unique"] = {

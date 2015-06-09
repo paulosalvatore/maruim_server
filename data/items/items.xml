@@ -21626,13 +21626,25 @@
 		<attribute key="description" value="The eternal love is awarded by the gods." />
 		<attribute key="weight" value="2000" />
 	</item>
-	<item fromid="13030" toid="13031" name="draken doll">
+	<item id="13030" name="draken doll">
 		<attribute key="description" value="This doll seems to be the favourite doll of the emperor. It was awarded by the gods." />
 		<attribute key="weight" value="1500" />
 	</item>
-	<item fromid="13032" toid="13033" name="music box">
+	<item id="13031" name="draken doll">
+		<attribute key="description" value="This doll seems to be the favourite doll of the emperor. It was awarded by the gods." />
+		<attribute key="weight" value="1500" />
+		<attribute key="decayTo" value="13030" />
+		<attribute key="duration" value="2" />
+	</item>
+	<item id="13032" name="music box">
 		<attribute key="description" value="The song inside is made of love. It was rewarded by the gods." />
 		<attribute key="weight" value="2700" />
+	</item>
+	<item id="13033" name="music box">
+		<attribute key="description" value="The song inside is made of love. It was rewarded by the gods." />
+		<attribute key="weight" value="2700" />
+		<attribute key="decayTo" value="13032" />
+		<attribute key="duration" value="2" />
 	</item>
 	<item id="13044" name="reward box">
 		<attribute key="weight" value="1800" />
