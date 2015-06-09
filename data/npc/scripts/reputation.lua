@@ -21,7 +21,7 @@ function onCreatureSay(player, type, msg)
 	if player:isPromoted() and reputacaoInfo.fraseNpcPromovido ~= nil then
 		fraseNpc = reputacaoInfo.fraseNpcPromovido
 	end
-	npcHandler:setMessage(MESSAGE_GREET, formatarFraseNpc(fraseNpc, player))
+	npcHandler:setMessage(MESSAGE_GREET, formatarFrase(fraseNpc, player))
 	npcHandler:setMessage(MESSAGE_FAREWELL, "Até logo!")
 	npcHandler:onCreatureSay(player, type, msg)
 end

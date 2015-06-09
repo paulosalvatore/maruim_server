@@ -107,7 +107,7 @@ local function creatureSayCallback(cid, type, msg)
 		if mensagem ~= "" then
 			mensagem = mensagem .. " "
 		end
-		npcHandler:say(mensagem .. formatarFraseNpc(frases["balanço"][5], cid, msg), cid)
+		npcHandler:say(mensagem .. formatarFrase(frases["balanço"][5], cid, msg), cid)
 		return true
 ---------------------------- Depósito ---------------------
 	elseif msgcontains(msg, 'deposit') or msgcontains(msg, 'depositar') or msgcontains(msg, 'depósito') or msgcontains(msg, 'deposito') then
@@ -130,7 +130,7 @@ local function creatureSayCallback(cid, type, msg)
 					npcHandler.topic[cid] = 0
 					return false
 				end
-				npcHandler:say(formatarFraseNpc(frases["depositar quantia"], cid, msg), cid)
+				npcHandler:say(formatarFrase(frases["depositar quantia"], cid, msg), cid)
 				npcHandler.topic[cid] = 2
 				return true
 			else
@@ -147,7 +147,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif npcHandler.topic[cid] == 1 then
 		count[cid] = getMoneyCount(msg)
 		if isValidMoney(count[cid]) then
-			npcHandler:say(formatarFraseNpc(frases["depositar quantia"], cid, msg), cid)
+			npcHandler:say(formatarFrase(frases["depositar quantia"], cid, msg), cid)
 			npcHandler.topic[cid] = 2
 			return true
 		else
@@ -159,7 +159,7 @@ local function creatureSayCallback(cid, type, msg)
 		if msgcontains(msg, 'yes') or msgcontains(msg, 'sim') then
 			if player:getMoney() >= tonumber(count[cid]) then
 				player:depositMoney(count[cid])
-				npcHandler:say(formatarFraseNpc(frases["quantidade depositada"], cid, msg, count[cid]), cid)
+				npcHandler:say(formatarFrase(frases["quantidade depositada"], cid, msg, count[cid]), cid)
 			else
 				npcHandler:say(frases["dinheiro insuficiente"], cid)
 			end
@@ -173,7 +173,7 @@ local function creatureSayCallback(cid, type, msg)
 		if string.match(msg,'%d+') then
 			count[cid] = getMoneyCount(msg)
 			if isValidMoney(count[cid]) then
-				npcHandler:say(formatarFraseNpc(frases["sacar quantia"], cid, msg), cid)
+				npcHandler:say(formatarFrase(frases["sacar quantia"], cid, msg), cid)
 				npcHandler.topic[cid] = 7
 			else
 				npcHandler:say(frases["dinheiro insuficiente saque"], cid)
@@ -188,7 +188,7 @@ local function creatureSayCallback(cid, type, msg)
 	elseif npcHandler.topic[cid] == 6 then
 		count[cid] = getMoneyCount(msg)
 		if isValidMoney(count[cid]) then
-			npcHandler:say(formatarFraseNpc(frases["sacar quantia"], cid, msg), cid)
+			npcHandler:say(formatarFrase(frases["sacar quantia"], cid, msg), cid)
 			npcHandler.topic[cid] = 7
 		else
 			npcHandler:say(frases["dinheiro insuficiente saque"], cid)
@@ -201,7 +201,7 @@ local function creatureSayCallback(cid, type, msg)
 				if not player:withdrawMoney(count[cid]) then
 					npcHandler:say(frases["dinheiro insuficiente saque"], cid)
 				else
-					npcHandler:say(formatarFraseNpc(frases["saque sucesso"], cid, msg, count[cid]), cid)
+					npcHandler:say(formatarFrase(frases["saque sucesso"], cid, msg, count[cid]), cid)
 				end
 			else
 				npcHandler:say(frases["capacidade insuficiente"], cid)
@@ -224,7 +224,7 @@ local function creatureSayCallback(cid, type, msg)
 			return true
 		end
 		if isValidMoney(count[cid]) then
-			npcHandler:say(formatarFraseNpc(frases["transferencia confirmar"], cid, msg, count[cid]), cid)
+			npcHandler:say(formatarFrase(frases["transferencia confirmar"], cid, msg, count[cid]), cid)
 			npcHandler.topic[cid] = 12
 		else
 			npcHandler:say(frases["dinheiro insuficiente saque"], cid)
@@ -238,7 +238,7 @@ local function creatureSayCallback(cid, type, msg)
 			return true
 		end
 		if playerExists(transfer[cid]) then
-			npcHandler:say(formatarFraseNpc(frases["transferencia confirmar"], cid, msg, count[cid], transfer[cid]), cid)
+			npcHandler:say(formatarFrase(frases["transferencia confirmar"], cid, msg, count[cid], transfer[cid]), cid)
 			npcHandler.topic[cid] = 13
 		else
 			npcHandler:say(frases["pessoa inexistente"], cid)
@@ -249,7 +249,7 @@ local function creatureSayCallback(cid, type, msg)
 			if not player:transferMoneyTo(transfer[cid], count[cid]) then
 				npcHandler:say(frases["transferencia erro"], cid)
 			else
-				npcHandler:say(formatarFraseNpc(frases["transferencia sucesso"], cid, msg, count[cid], transfer[cid]), cid)
+				npcHandler:say(formatarFrase(frases["transferencia sucesso"], cid, msg, count[cid], transfer[cid]), cid)
 				transfer[cid] = nil
 			end
 		elseif msgcontains(msg, 'no') or msgcontains(msg, 'nao') or msgcontains(msg, 'não') then
@@ -266,7 +266,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		else
 			count[cid] = getMoneyCount(msg)
-			npcHandler:say(formatarFraseNpc(frases["trocar gold confirmar"], cid, msg), cid)
+			npcHandler:say(formatarFrase(frases["trocar gold confirmar"], cid, msg), cid)
 			npcHandler.topic[cid] = 15
 		end
 	elseif npcHandler.topic[cid] == 15 then
@@ -301,7 +301,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		else
 			count[cid] = getMoneyCount(msg)
-			npcHandler:say(formatarFraseNpc(frases["trocar platinum gold confirmar"], cid, msg), cid)
+			npcHandler:say(formatarFrase(frases["trocar platinum gold confirmar"], cid, msg), cid)
 			npcHandler.topic[cid] = 18
 		end
 	elseif npcHandler.topic[cid] == 18 then
@@ -322,7 +322,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		else
 			count[cid] = getMoneyCount(msg)
-			npcHandler:say(formatarFraseNpc(frases["trocar platinum crystal confirmar"], cid, msg), cid)
+			npcHandler:say(formatarFrase(frases["trocar platinum crystal confirmar"], cid, msg), cid)
 			npcHandler.topic[cid] = 20
 		end
 	elseif npcHandler.topic[cid] == 20 then
@@ -346,7 +346,7 @@ local function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		else
 			count[cid] = getMoneyCount(msg)
-			npcHandler:say(formatarFraseNpc(frases["trocar crystal confirmar"], cid, msg), cid)
+			npcHandler:say(formatarFrase(frases["trocar crystal confirmar"], cid, msg), cid)
 			npcHandler.topic[cid] = 22
 		end
 	elseif npcHandler.topic[cid] == 22 then

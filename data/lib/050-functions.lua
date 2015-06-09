@@ -65,7 +65,7 @@ function getFluidNameByType(type)
 	return nil
 end
 
-function formatarFraseNpc(frase, cid, msg, count, transfer)
+function formatarFrase(frase, cid, msg, count, transfer)
 	local player = Player(cid)
 	if frase:find("|PLAYERNAME|") then
 		frase = frase:gsub("|PLAYERNAME|", player:getName())
