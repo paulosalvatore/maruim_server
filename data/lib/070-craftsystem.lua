@@ -596,7 +596,7 @@ profissoes = {
 		efeitoFalha = CONST_ME_BLACKSMOKE,
 		ingredientesMelhoria = {
 			{item = 10047, chance = 1000}
-		}
+		},
 		extraData = {}
 	}
 }
