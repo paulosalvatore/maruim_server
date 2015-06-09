@@ -84,6 +84,19 @@ Vocacoes = {
 
 itemDesativado = 2500
 
+posicoesDepot = {
+	[2] = {x = 800, y = 1807, z = 7},
+	[3] = {x = 975, y = 1907, z = 4},
+	-- [4] = {x = 964, y = 1770, z = 8}, -- Udecoat
+	[5] = {x = 830, y = 1305, z = 7},
+	[6] = {x = 882, y = 1496, z = 8},
+	[9] = {x = 1079, y = 1605, z = 7},
+	[10] = {x = 1243, y = 1656, z = 5},
+	[11] = {x = 1326, y = 1912, z = 7},
+	[12] = {x = 1124, y = 2015, z = 7},
+	[13] = {x = 1530, y = 1702, z = 7}
+}
+
 function Tile.getTileTopTopItem(self)
 	local items = self:getItems()
 	return items[#items].itemid

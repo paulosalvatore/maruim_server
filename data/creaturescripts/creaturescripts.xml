@@ -10,4 +10,5 @@
 	<event type="modalwindow" name="Crafting" script="crafting.lua"/>
 	<event type="kill" name="MatarCriatura" script="matarCriatura.lua"/>
 	<event type="modalwindow" name="Tasks" script="tasks.lua"/>
+	<event type="modalwindow" name="TeleportCrystal" script="teleportCrystal.lua"/>
 </creaturescripts>

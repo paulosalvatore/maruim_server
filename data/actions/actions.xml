@@ -67,6 +67,9 @@
 	<action itemid="23422" script="elevador.lua"/>
 	<action itemid="23429" script="elevador.lua"/>
 
+	<action itemid="18457" script="teleport_crystals.lua"/>
+	<action itemid="18509" script="teleport_crystals.lua"/>
+
 	<!-- Crafting -->
 	<action itemid="2555" script="crafting.lua"/>
 	<action itemid="8671" script="crafting.lua"/>
