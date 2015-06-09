@@ -613,6 +613,17 @@ local config = {
 			}
 		}
 	},
+	[13028] = {
+		["default"] = {
+			transformar = {13029, 1, "item"},
+			sons = {
+				"The world was born from the love",
+				"Look after the frozen heart. I've left it with you",
+				"Could a dead, frozen heart beat again? It felt like mine was about to.",
+				"Hail |PLAYERNAME|!"
+			}
+		}
+	},
 	[13030] = {
 		["default"] = {
 			transformar = {13031, 1, "item"},
