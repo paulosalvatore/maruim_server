@@ -24485,9 +24485,15 @@
 		<attribute key="defense" value="0" />
 		<attribute key="weaponType" value="shield" />
 	</item>
-	<item fromid="16105" toid="16106" article="a" name="medusa skull">
+	<item id="16105" article="a" name="medusa skull">
 		<attribute key="description" value="Her hair's snakes are still alive." />
 		<attribute key="weight" value="1000" />
+	</item>
+	<item id="16106" article="a" name="medusa skull">
+		<attribute key="description" value="Her hair's snakes are still alive." />
+		<attribute key="weight" value="1000" />
+		<attribute key="decayTo" value="16105" />
+		<attribute key="duration" value="2" />
 	</item>
 	<item fromid="16107" toid="16108" article="a" name="doll of Durin The Almighty">
 		<attribute key="weight" value="4000" />
@@ -29683,6 +29689,7 @@
 	<item fromid="21514" toid="21515" article="a" name="strange shrine" />
 	<item id="21516" article="a" name="lift" />
 	<item id="21517" article="an" name="ornate door with a keyhole" />
+	<item id="21518" article="a" name="reward container" />
 	<item id="21536" article="a" name="hole">
 		<attribute key="floorchange" value="down" />
 	</item>

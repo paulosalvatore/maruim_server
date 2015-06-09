@@ -638,6 +638,16 @@ local config = {
 			transformar = {13033, 1, "item"}
 		}
 	},
+	[16105] = {
+		["default"] = {
+			transformar = {16106, 1, "item"},
+			sons = {
+				"Where isss my body !? I'll kill you!!!",
+				"Hail mighty |PLAYERNAME|",
+				"I will petrify thiss moment! Ssstones are forever!"
+			}
+		}
+	},
 	[23496] = {
 		["default"] = {
 			transformar = {23500, 1, "item"}
