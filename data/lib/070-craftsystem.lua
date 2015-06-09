@@ -13,7 +13,6 @@ configProfissoes = {
 	modalLista1 = 2,
 	modalLista2 = 3,
 	modalLista3 = 4,
-	actionItemDesativado = 2500,
 	pocaoCD = 700,
 	pocaoChanceStorage = 19900,
 	pocaoProfissaoStorage = 19901,
@@ -947,8 +946,8 @@ function Player.getIngredientesMelhoria(self, profissaoId)
 end
 function Player.iniciarReceita(self, profissaoId, receitaId, bloquearMovimento)
 	local mesaTrabalho = profissoes[profissaoId].extraData[self:getId()].mesaTrabalho
-	local actionItemDesativado = configProfissoes.actionItemDesativado
-	if mesaTrabalho:getActionId() == actionItemDesativado then
+	local itemDesativado = configProfissoes.itemDesativado
+	if mesaTrabalho:getActionId() == itemDesativado then
 		return false
 	end
 	local profissao = profissoes[profissaoId]
@@ -973,7 +972,7 @@ function Player.iniciarReceita(self, profissaoId, receitaId, bloquearMovimento)
 		end
 		self:removeItem(b[1], b[2], b[3])
 	end
-	mesaTrabalho:setActionId(actionItemDesativado)
+	mesaTrabalho:setActionId(itemDesativado)
 	if mesaTrabalhando ~= nil then
 		mesaTrabalho:transform(mesaTrabalhando)
 		mesaTrabalhando = profissao.mesaTrabalho[mesaTrabalhoKey]
