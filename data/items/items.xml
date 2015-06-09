@@ -30635,6 +30635,7 @@
 	<item id="23495" article="a" name="necrometer">
 		<attribute key="weight" value="800" />
 	</item>
+	<item fromid="23496" toid="23503" article="a" name="lever" />
 	<item id="23508" article="a" name="pint of glooth">
 		<attribute key="weight" value="200" />
 	</item>

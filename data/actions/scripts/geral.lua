@@ -638,6 +638,46 @@ local config = {
 			transformar = {13033, 1, "item"}
 		}
 	},
+	[23496] = {
+		["default"] = {
+			transformar = {23500, 1, "item"}
+		}
+	},
+	[23497] = {
+		["default"] = {
+			transformar = {23501, 1, "item"}
+		}
+	},
+	[23498] = {
+		["default"] = {
+			transformar = {23502, 1, "item"}
+		}
+	},
+	[23499] = {
+		["default"] = {
+			transformar = {23503, 1, "item"}
+		}
+	},
+	[23500] = {
+		["default"] = {
+			transformar = {23496, 1, "item"}
+		}
+	},
+	[23501] = {
+		["default"] = {
+			transformar = {23497, 1, "item"}
+		}
+	},
+	[23502] = {
+		["default"] = {
+			transformar = {23498, 1, "item"}
+		}
+	},
+	[23503] = {
+		["default"] = {
+			transformar = {23499, 1, "item"}
+		}
+	},
 	["action"] = {
 	},
 	["unique"] = {
