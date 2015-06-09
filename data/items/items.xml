@@ -3017,44 +3017,30 @@
 	<item id="2348" article="an" name="ancient rune">
 		<attribute key="description" value="This rune vibrates with ancient powers. It seems to be rotting rapidly." />
 		<attribute key="weight" value="300" />
-		<attribute key="decayTo" value="0" />
-		<attribute key="duration" value="86400" />
 	</item>
 	<item id="2349" article="a" name="blue note">
 		<attribute key="description" value="The blue crystal is softly humming a ghostly melody. It seems to be rotting rapidly." />
 		<attribute key="weight" value="250" />
-		<attribute key="decayTo" value="0" />
-		<attribute key="duration" value="86400" />
 	</item>
 	<item id="2350" article="a" name="sword hilt">
 		<attribute key="description" value="It was once part of a formidable two handed weapon. It seems to be rotting rapidly." />
 		<attribute key="weight" value="900" />
-		<attribute key="decayTo" value="0" />
-		<attribute key="duration" value="86400" />
 	</item>
 	<item id="2351" article="a" name="cobrafang dagger">
 		<attribute key="description" value="This ritual weapon was forged from the sharp fang of a giant cobra. It seems to be rotting rapidly." />
 		<attribute key="weight" value="600" />
-		<attribute key="decayTo" value="0" />
-		<attribute key="duration" value="86400" />
 	</item>
 	<item id="2352" article="a" name="crystal arrow">
 		<attribute key="description" value="This arrow seems not suitable for the use with ordinary bows. It seems to be rotting rapidly." />
 		<attribute key="weight" value="100" />
-		<attribute key="decayTo" value="0" />
-		<attribute key="duration" value="86400" />
 	</item>
 	<item id="2353" article="a" name="burning heart">
 		<attribute key="description" value="It is still beating with unholy life. It seems to be rotting rapidly." />
 		<attribute key="weight" value="400" />
-		<attribute key="decayTo" value="0" />
-		<attribute key="duration" value="86400" />
 	</item>
 	<item id="2354" article="an" name="ornamented ankh">
 		<attribute key="description" value="This ancient relic shows signs of untold age. It seems to be rotting rapidly." />
 		<attribute key="weight" value="200" />
-		<attribute key="decayTo" value="0" />
-		<attribute key="duration" value="86400" />
 	</item>
 	<item id="2355" article="a" name="stuffed bunny">
 		<attribute key="weight" value="350" />
