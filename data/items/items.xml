@@ -12002,7 +12002,7 @@
 	<item id="7185" article="a" name="small crack in the ice">
 		<attribute key="description" value="This would be a good place to destroy the ice." />
 	</item>
-	<item id="7186" article="a" name="big crack in the ice"/>
+	<item id="7186" article="a" name="big crack in the ice" />
 	<item fromid="7187" toid="7188" article="a" name="raft" />
 	<item id="7189" article="a" name="stone shelf">
 		<attribute key="containerSize" value="6" />
@@ -21633,9 +21633,6 @@
 	<item fromid="13032" toid="13033" name="music box">
 		<attribute key="description" value="The song inside is made of love. It was rewarded by the gods." />
 		<attribute key="weight" value="2700" />
-	</item>
-	<item id="13034" name="reward box">
-		<attribute key="weight" value="100" />
 	</item>
 	<item id="13044" name="reward box">
 		<attribute key="weight" value="1800" />
