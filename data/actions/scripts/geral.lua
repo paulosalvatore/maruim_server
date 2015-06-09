@@ -571,28 +571,35 @@ local config = {
 			itensGamePlayer = {{12505, 1}},
 			removerItem = 1,
 			removerTarget = 1,
-			efeito = {"green", "player_item"}
+			efeito = {"green", "player_target"}
 		},
 		[5901] = {
 			itensGamePlayer = {{12503, 1}},
 			removerItem = 1,
 			removerTarget = 1,
-			efeito = {"green", "player_item"}
+			efeito = {"green", "player_target"}
 		},
 		[5920] = {
 			itensGamePlayer = {{12506, 1}},
 			removerItem = 1,
 			removerTarget = 1,
-			efeito = {"green", "player_item"}
+			efeito = {"green", "player_target"}
 		},
 		[7242] = {
 			transformar = {12508, 1},
 			removerItem = 1,
-			efeito = {"green", "player_item"}
+			efeito = {"green", "player_target"}
 		},
 		[8860] = {
 			transformar = {12501, 1},
 			removerItem = 1,
+			efeito = {"green", "player_target"}
+		}
+	},
+	[2327] = {
+		[6104] = {
+			transformar = {2354, 1, "item"},
+			removerTarget = 1,
 			efeito = {"green", "player_item"}
 		}
 	},
@@ -909,8 +916,12 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 					posicaoEfeito = fromPosition
 				elseif efeito[2] == "player" then
 					posicaoEfeito = player:getPosition()
-				elseif efeito[2] == "player_item" then
-					posicaoEfeito = toPosition
+				elseif efeito[2] == "player_item" or efeito[2] == "player_target" then
+					if efeito[2] == "player_item" then
+						posicaoEfeito = fromPosition
+					elseif efeito[2] == "player_target" then
+						posicaoEfeito = toPosition
+					end
 					if toPosition.x == 65535 then
 						posicaoEfeito = player:getPosition()
 					end
