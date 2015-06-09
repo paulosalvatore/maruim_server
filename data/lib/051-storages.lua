@@ -1,3 +1,4 @@
 Storage = {
-	reputacao = 7000
+	reputacao = 7000,
+	blessWoodenStake = 8000
 }
