@@ -65,7 +65,7 @@ function onCreatureSay(cid, type, msg)     npcHandler:onCreatureSay(cid, type, m
 local lastSound = 0
 function onThink()
 	if lastSound < os.time() then
-		lastSound = (os.time() + 10)
+		lastSound = (os.time() + 60)
 		if math.random(100) < 10 then
 			Npc():say(frases["think"], TALKTYPE_SAY)
 		end
