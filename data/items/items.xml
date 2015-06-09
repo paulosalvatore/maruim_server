@@ -20369,11 +20369,11 @@
 	<item id="11702" article="a" name="stone wall" />
 	<item fromid="11729" toid="11752" name="ground" />
 	<item id="11753" article="a" name="large black crystal" />
-	<item id="11754" article="a" name="ferumbras doll">
+	<item id="11754" article="a" name="ferumbras' doll">
 		<attribute key="description" value="It was awarded by the gods." />
 		<attribute key="weight" value="1700" />
 	</item>
-	<item id="11755" article="a" name="ferumbras doll">
+	<item id="11755" article="a" name="ferumbras' doll">
 		<attribute key="description" value="It was awarded by the gods." />
 		<attribute key="weight" value="1700" />
 		<attribute key="decayTo" value="11754" />
@@ -22364,6 +22364,8 @@
 	<item id="13581" name="dread doll">
 		<attribute key="description" value="It is shining with positive energy and was awarded by the gods." />
 		<attribute key="weight" value="1100" />
+		<attribute key="decayTo" value="13559" />
+		<attribute key="duration" value="2" />
 	</item>
 	<item id="13582" name="Impward">
 		<attribute key="weight" value="600" />

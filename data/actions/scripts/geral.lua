@@ -603,6 +603,16 @@ local config = {
 			efeito = {"green", "player_item"}
 		}
 	},
+	[13559] = {
+		["default"] = {
+			transformar = {13581, 1, "item"},
+			sons = {
+				"Mhausheausheu! What a FAIL! Mwahaha!",
+				"Hail |PLAYERNAME|! You are wearing old socks!",
+				"You are so unpopular even your own shadow refuses to follow you."
+			}
+		}
+	},
 	["action"] = {
 	},
 	["unique"] = {
@@ -1009,7 +1019,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			end
 		end
 		if i.sons ~= nil and type(i.sons) == "table" and table.getn(i.sons) > 0 then
-			player:say(i.sons[math.random(1,table.getn(i.sons))], TALKTYPE_ORANGE_1, false, 0, toPosition)
+			player:say(formatarFrase(i.sons[math.random(1,table.getn(i.sons))], player.uid), TALKTYPE_ORANGE_1, false, 0, toPosition)
 		end
 		if i.mensagemPlayer ~= nil then
 			player:sendTextMessage(MESSAGE_INFO_DESCR, i.mensagemPlayer)
