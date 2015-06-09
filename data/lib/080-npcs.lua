@@ -104,7 +104,6 @@ destinos = {
 		levelNecessario = 0
 	}
 }
--- Tipos Aceitos: navio, tapete, barco
 barqueiros = {
 	["Palter Dilventan"] = {
 		destinos = {
@@ -225,3 +224,4 @@ barqueiros = {
 		tipoViagem = "barco"
 	}
 }
+tempoBlessWoodenStake = 24*60*60
