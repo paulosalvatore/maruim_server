@@ -38,7 +38,7 @@
 		<item id="9814" chance="30000"/><!-- Rusty Shield -->
 		<item id="2350" chance="30000"/><!-- Sword Hilt -->
 		<item id="2339" chance="30000"/><!-- Damaged Helmet -->
-		<item id="13757" chance="10000"/><!-- Coal -->
+		<item id="13757" chance="50000"/><!-- Coal -->
 		<item id="2150" countmax="2" chance="10000"/><!-- Small Amethyst -->
 	</loot>
 </monster>

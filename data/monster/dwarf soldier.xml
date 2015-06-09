@@ -35,5 +35,6 @@
 		<item id="5900" chance="60000"/><!-- Dwarven Beard -->
 		<item id="5880" chance="30000"/><!-- Iron Ore -->
 		<item id="2455" chance="40000"/><!-- Crossbow -->
+		<item id="13757" chance="30000"/><!-- Coal -->
 	</loot>
 </monster>
