@@ -30805,7 +30805,6 @@
 	<item id="23575" article="a" name="cowbell">
 		<attribute key="weight" value="400" />
 	</item>
-	<item id="23587" article="a" name="special liquid" />
 	<item id="23588" name="green light">
 		<attribute key="slotType" value="ammo" />
 		<attribute key="weight" value="20" />
@@ -30843,6 +30842,7 @@
 		<attribute key="slotType" value="backpack" />
 		<attribute key="weight" value="1800" />
 	</item>
+	<item id="23875" article="a" name="special liquid" />
 	<item id="30001" name="water" />
 	<item id="30002" name="blood" />
 	<item id="30003" name="beer" />

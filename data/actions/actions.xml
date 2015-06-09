@@ -31,7 +31,7 @@
 	<action itemid="11754" script="geral.lua"/>
 	<action itemid="7552" script="geral.lua"/>
 	<action itemid="10153" script="geral.lua"/>
-	<action itemid="23587" script="geral.lua"/>
+	<action itemid="23875" script="geral.lua"/>
 	<action itemid="2327" script="geral.lua"/>
 
 	<action actionid="2902" script="geral.lua"/>

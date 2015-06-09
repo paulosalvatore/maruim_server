@@ -566,7 +566,7 @@ local config = {
 			}
 		}
 	},
-	[23587] = {
+	[23875] = {
 		[5880] = {
 			itensGamePlayer = {{12505, 1}},
 			removerItem = 1,
