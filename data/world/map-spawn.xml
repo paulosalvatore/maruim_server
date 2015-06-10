@@ -775,8 +775,8 @@
 	<spawn centerx="1113" centery="1910" centerz="5" radius="1">
 		<monster name="Kongra" x="0" y="0" z="5" spawntime="60" />
 	</spawn>
-	<spawn centerx="966" centery="1911" centerz="5" radius="1">
-		<npc name="Quimela Sedit" x="-1" y="0" z="5" spawntime="60" direction="2" />
+	<spawn centerx="965" centery="1911" centerz="5" radius="1">
+		<npc name="Quimela Sedit" x="0" y="0" z="5" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1123" centery="1921" centerz="5" radius="2">
 		<monster name="Kongra" x="-1" y="-2" z="5" spawntime="60" />
