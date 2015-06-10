@@ -14,8 +14,12 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			return player:sendCancelMessage("Você deve aguardar " .. mensagemTempoTeleportCrystal .. " antes de usar o '" .. itemNome .. "' novamente.")
 		end
 		player:setStorageValue(storageTeleportCrystal, os.time())
-		item:remove(1)
-		player:teleportarJogador(player:getTown():getTemplePosition())
+		if player:getAccountType() == ACCOUNT_TYPE_GOD or item:remove(1) then
+			player:setStorageValue(Storage.redTeleportCrystal, os.time())
+			player:teleportarJogador(player:getTown():getTemplePosition())
+		else
+			player:sendCancelMessage("Você precisa ter o item '" .. itemNome .. "' para teleportar.")
+		end
 	elseif item.itemid == 18509 then
 		local storageRedTeleportCrystal = Storage.redTeleportCrystal
 		if player:getAccountType() < ACCOUNT_TYPE_GOD and player:getStorageValue(storageRedTeleportCrystal)+tempoTeleportCrystal > os.time() then
