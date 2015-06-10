@@ -253,3 +253,9 @@ end
 function Player.addLevel(self)
 	self:addExperience(getExpForLevel(self:getLevel() + 1) - self:getExperience())
 end
+
+function Player.teleportarJogador(self, posicao)
+	self:teleportTo(posicao)
+	self:setDirection(direcoes["sul"])
+	Position(posicao):sendMagicEffect(efeitos["teleport"])
+end
