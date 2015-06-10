@@ -1983,6 +1983,7 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("ModalWindow", "setPriority", LuaScriptInterface::luaModalWindowSetPriority);
 
 	registerMethod("ModalWindow", "sendToPlayer", LuaScriptInterface::luaModalWindowSendToPlayer);
+	registerMethod("ModalWindow", "closeToPlayer", LuaScriptInterface::luaModalWindowCloseToPlayer);
 
 	// Item
 	registerClass("Item", "", LuaScriptInterface::luaItemCreate);
@@ -6152,6 +6153,27 @@ int LuaScriptInterface::luaModalWindowSendToPlayer(lua_State* L)
 	if (window) {
 		if (!player->hasModalWindowOpen(window->id)) {
 			player->sendModalWindow(*window);
+		}
+		pushBoolean(L, true);
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaModalWindowCloseToPlayer(lua_State* L)
+{
+	// modalWindow:closeToPlayer(player)
+	Player* player = getPlayer(L, 2);
+	if (!player) {
+		lua_pushnil(L);
+		return 1;
+	}
+
+	ModalWindow* window = getUserdata<ModalWindow>(L, 1);
+	if (window) {
+		if (player->hasModalWindowOpen(window->id)) {
+			player->onModalWindowHandled(window->id);
 		}
 		pushBoolean(L, true);
 	} else {
