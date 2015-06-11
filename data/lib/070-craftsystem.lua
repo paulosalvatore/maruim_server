@@ -1023,7 +1023,7 @@ function Player.iniciarReceita(self, profissaoId, receitaId, bloquearMovimento)
 	enviarAnimacao(tempo, posicaoMesaTrabalho.efeito, efeitoTrabalhando)
 	addEvent(function(player, receitaId, profissaoId, mesaTrabalhando, bloquearMovimento)
 		local player = Player(player)
-		player:fabricarItem(receitaId, profissaoId, mesaTrabalhando, bloquearMovimento) 
+		player:fabricarItem(receitaId, profissaoId, mesaTrabalhando, bloquearMovimento)
 	end, tempo*1000, self.uid, receitaId, profissaoId, mesaTrabalhando, bloquearMovimento)
 	return true
 end

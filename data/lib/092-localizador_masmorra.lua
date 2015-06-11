@@ -63,7 +63,7 @@ function Player.pegarMasmorrasDisponiveis(self)
 			-- playerLevel >= b.nivelMinimo and
 			-- ((b.nivelMaximo == nil) or (b.nivelMaximo == 0) or (b.nivelMaximo > 0 and playerLevel <= b.nivelMaximo)) and
 			-- ((b.reputacao == nil) or (b.reputacao == 0) or (b.reputacao > 0 and self:pegarReputacao() >= b.reputacao)) then
-			
+
 		-- end
 	end
 	table.sort(masmorras)

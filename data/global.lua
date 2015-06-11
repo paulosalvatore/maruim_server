@@ -164,7 +164,7 @@ local function allowMovementEvent(cid, allow, oldPosition)
     end
 
     creature:teleportTo(oldPosition, true)
-   
+
     event = addEvent(allowMovementEvent, 100, cid, allow, oldPosition)
 end
 
