@@ -693,7 +693,6 @@ class LuaScriptInterface
 		static int luaModalWindowSetPriority(lua_State* L);
 
 		static int luaModalWindowSendToPlayer(lua_State* L);
-		static int luaModalWindowCloseToPlayer(lua_State* L);
 
 		// Item
 		static int luaItemCreate(lua_State* L);
