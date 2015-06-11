@@ -30,6 +30,7 @@ function onLogin(player)
 	-- end
 
 	-- Events
+	player:registerEvent("PrepareDeath")
 	player:registerEvent("PlayerDeath")
 	player:registerEvent("DropLoot")
 	player:registerEvent("MatarCriatura")

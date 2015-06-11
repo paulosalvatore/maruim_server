@@ -39,7 +39,7 @@ function formatarValor(valor)
 end
 
 function searchArrayKey(t, value)
-	for k,v in pairs(t) do
+	for k, v in pairs(t) do
 		if v == value then
 			return k
 		end
@@ -254,10 +254,12 @@ function Player.addLevel(self)
 	self:addExperience(getExpForLevel(self:getLevel() + 1) - self:getExperience())
 end
 
-function Player.teleportarJogador(self, posicao)
-	posicaoLivre = self:getClosestFreePosition(posicao)
-	if posicaoLivre.x > 0 and posicaoLivre.y > 0 then
-		posicao = posicaoLivre
+function Player.teleportarJogador(self, posicao, forcar)
+	if not forcar then
+		local posicaoLivre = self:getClosestFreePosition(posicao, true)
+		if posicaoLivre.x > 0 and posicaoLivre.y > 0 then
+			posicao = posicaoLivre
+		end
 	end
 	self:teleportTo(posicao)
 	self:setDirection(direcoes["sul"])

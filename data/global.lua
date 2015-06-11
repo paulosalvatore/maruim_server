@@ -5,6 +5,7 @@ dofile('data/lib/070-craftsystem.lua')
 dofile('data/lib/080-npcs.lua')
 dofile('data/lib/090-reputacao.lua')
 dofile('data/lib/091-tasks.lua')
+dofile('data/lib/092-localizador_masmorra.lua')
 
 ropeSpots = {384, 418, 8278, 8592, 13189, 14435, 14436, 15635, 19518}
 
@@ -83,6 +84,8 @@ Vocacoes = {
 }
 
 itemDesativado = 2500
+
+modalTeleportCrystal = 9001
 
 posicoesDepot = {
 	[2] = {x = 800, y = 1806, z = 7}, -- Mugulu

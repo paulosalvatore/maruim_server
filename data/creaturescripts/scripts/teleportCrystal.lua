@@ -1,7 +1,8 @@
 function onModalWindow(player, modalWindowId, buttonId, choiceId)
-	if buttonId == 2 then
+	if	not modalWindowId == modalTeleportCrystal or
+		buttonId == 2 then
 		return false
-	else
+	elseif modalWindowId == modalTeleportCrystal then
 		local redTeleportCrystal = 18509
 		local item = player:getItemById(redTeleportCrystal, -1)
 		if player:getAccountType() == ACCOUNT_TYPE_GOD or (item ~= nil and item:remove(1)) then

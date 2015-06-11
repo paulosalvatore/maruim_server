@@ -161,8 +161,8 @@
 	<spawn centerx="959" centery="1895" centerz="4" radius="1">
 		<npc name="Meldo Shairine" x="1" y="0" z="4" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="976" centery="1908" centerz="4" radius="1">
-		<npc name="Mood Neva" x="0" y="-1" z="4" spawntime="60" direction="2" />
+	<spawn centerx="974" centery="1905" centerz="4" radius="1">
+		<npc name="Mood Neva" x="0" y="0" z="4" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1406" centery="2018" centerz="4" radius="1">
 		<monster name="Pirate Buccaneer" x="-1" y="0" z="4" spawntime="60" />
@@ -4024,9 +4024,6 @@
 	</spawn>
 	<spawn centerx="1338" centery="1553" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1706" centery="1553" centerz="7" radius="1">
-		<monster name="Demon" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="767" centery="1554" centerz="7" radius="1">
 		<monster name="Necromancer" x="-1" y="-1" z="7" spawntime="60" />

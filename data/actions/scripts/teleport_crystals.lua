@@ -1,10 +1,15 @@
-local modalTeleportCrystal = 9001
 local tempoTeleportCrystal = 60
 local tempoRedTeleportCrystal = 10*60
 local mensagemTempoTeleportCrystal = "1 minuto"
 local mensagemTempoRedTeleportCrystal = "10 minutos"
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local itemNome = capAll(item:getName())
+	if player:verificarFila() > 0 then
+		return player:sendCancelMessage("Você não pode usar o '" .. itemNome .. "' enquanto está no localizador de masmorras.")
+	end
+	if player:verificarMasmorra() > 0 then
+		return player:sendCancelMessage("Você não pode usar o '" .. itemNome .. "' enquanto está em uma masmorra.")
+	end
 	if player:getAccountType() < ACCOUNT_TYPE_GOD and not Tile(player:getPosition()):hasFlag(TILESTATE_PROTECTIONZONE) then
 		return player:sendCancelMessage("Você precisa estar em uma 'protection zone' para que o '" .. itemNome .. "' funcione.")
 	end
