@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <npc name="Gabriele" script="default.lua" walkinterval="2000" floorchange="0">
-	<health now="100" max="100"/>
-	<look type="252" head="115" body="125" legs="116" feet="116" addons="3"/>
+	<health now="100" max="100" />
+	<look type="252" head="115" body="125" legs="116" feet="116" addons="3" />
 	<parameters>
-		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja."/>
-		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?"/> 
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja." />
+		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?" /> 
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
-		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="frosty ear of a troll,10565,5;frosty heart,10578,7;ice cube,7441,25;shard,7290,15;frost charm,7289,50;flawless ice crystal,8300,80;scale from a frozen dragon,7314,1;mammoth tusk,11238,25;frozen heart,13028,1;"/>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="frosty ear of a troll,10565,5;frosty heart,10578,7;ice cube,7441,25;shard,7290,15;frost charm,7289,50;flawless ice crystal,8300,80;scale from a frozen dragon,7314,1;mammoth tusk,11238,25;frozen heart,13028,1;" />
 	</parameters>
 </npc>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <npc name="Rimi" script="default.lua" walkinterval="2000" floorchange="0">
-	<health now="100" max="100"/>
-	<look type="146" head="120" body="120" legs="116" feet="116" addons="3"/>
+	<health now="100" max="100" />
+	<look type="146" head="120" body="120" legs="116" feet="116" addons="3" />
 	<parameters>
-		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja."/>
-		<parameter key="message_sendtrade" value="Essa é a lista de armas que eu negocio, deseja algo?"/> 
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja." />
+		<parameter key="message_sendtrade" value="Essa é a lista de armas que eu negocio, deseja algo?" /> 
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
-		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_buyable" value="broken sword,2234,30;sword hilt,2350,30;small axe,2559,30;axe,2386,30;broken halberd,11335,30;staff,6107,30;wooden hammer,2556,30;plate armor,2463,30;plate legs,2467,30;rusty helmet,9820,30;rusty shield,9814,30;rusty boots,9817,30;"/>
-		<parameter key="shop_sellable" value="broken sword,2234,20;sword hilt,2350,20;small axe,2559,20;axe,2386,20;broken halberd,11335,20;staff,6107,20;wooden hammer,2556,20;plate armor,2463,20;plate legs,2467,20;rusty helmet,9820,20;rusty shield,9814,20;rusty boots,9817,20;"/>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="broken sword,2234,30;sword hilt,2350,30;small axe,2559,30;axe,2386,30;broken halberd,11335,30;staff,6107,30;wooden hammer,2556,30;plate armor,2463,30;plate legs,2467,30;rusty helmet,9820,30;rusty shield,9814,30;rusty boots,9817,30;" />
+		<parameter key="shop_sellable" value="broken sword,2234,20;sword hilt,2350,20;small axe,2559,20;axe,2386,20;broken halberd,11335,20;staff,6107,20;wooden hammer,2556,20;plate armor,2463,20;plate legs,2467,20;rusty helmet,9820,20;rusty shield,9814,20;rusty boots,9817,20;" />
 	</parameters>
 </npc>

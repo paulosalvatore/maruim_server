@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <npc name="Tom" script="default.lua" walkinterval="2000" floorchange="0">
-	<health now="100" max="100"/>
-	<look type="153" head="0" body="118" legs="115" feet="116" addons="3"/>
+	<health now="100" max="100" />
+	<look type="153" head="0" body="118" legs="115" feet="116" addons="3" />
 	<parameters>
-		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja."/>
-		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?"/>
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja." />
+		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?" />
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
-		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="bunch of troll hair,10606,2;trollroot,12471,5;elven brooch,2122,1;elven poetry book,4855,1;minotaur leather,5878,1;elvenhair rope,7731,1;elvish talisman,10552,1;elven scouting glass,12420,1;elven astral observer,12421,1;minotaur horn,12428,1;piece of warrior armor,12438,1;"/>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="bunch of troll hair,10606,2;trollroot,12471,5;elven brooch,2122,1;elven poetry book,4855,1;minotaur leather,5878,1;elvenhair rope,7731,1;elvish talisman,10552,1;elven scouting glass,12420,1;elven astral observer,12421,1;minotaur horn,12428,1;piece of warrior armor,12438,1;" />
 	</parameters>
 </npc>

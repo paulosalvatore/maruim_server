@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <npc name="Carl" script="default.lua" walkinterval="2000" floorchange="0">
-	<health now="100" max="100"/>
-	<look type="432" head="0" body="132" legs="125" feet="20" addons="3"/>
+	<health now="100" max="100" />
+	<look type="432" head="0" body="132" legs="125" feet="20" addons="3" />
 	<parameters>
-		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja."/>
-		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?"/> 
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja." />
+		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?" /> 
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
-		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="twigs,2245,10;dowser,21427,13;fir cone,21428,20;rotten heart of a tree,7736,30;glimmering soil,8299,30;iced soil,8302,60;natural soil,8298,1;energy soil,8303,1;eternal flames,8304,1;mother soil,8305,1;pure energy,8306,1;neutral matter,8310,1;fiery heart,10553,1;lump of earth,11222,1;bowl with sacred water,12289,1;smoking coal,21585,60;"/>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="twigs,2245,10;dowser,21427,13;fir cone,21428,20;rotten heart of a tree,7736,30;glimmering soil,8299,30;iced soil,8302,60;natural soil,8298,1;energy soil,8303,1;eternal flames,8304,1;mother soil,8305,1;pure energy,8306,1;neutral matter,8310,1;fiery heart,10553,1;lump of earth,11222,1;bowl with sacred water,12289,1;smoking coal,21585,60;" />
 	</parameters>
 </npc>

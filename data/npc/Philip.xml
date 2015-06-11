@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <npc name="Philip" script="default.lua" walkinterval="2000" floorchange="0">
-	<health now="100" max="100"/>
-	<look type="289" head="114" body="115" legs="113" feet="95" addons="3"/>
+	<health now="100" max="100" />
+	<look type="289" head="114" body="115" legs="113" feet="95" addons="3" />
 	<parameters>
-		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja."/>
-		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?"/> 
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja." />
+		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?" /> 
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
-		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="safety pin,12449,1;cluster of solace,22396,1;sight of surrender's eye,22517,1;broken visor,22518,1;frazzle tongue,22532,1;frazzle skin,22533,1;silencer claws,22534,1;silencer resonating chamber,22535,1;dead weight,22536,1;goosebump leather,22539,1;hemp rope,22540,1;pool of chitinous glue,22541,1;string of mending,22542,1;"/>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="safety pin,12449,1;cluster of solace,22396,1;sight of surrender's eye,22517,1;broken visor,22518,1;frazzle tongue,22532,1;frazzle skin,22533,1;silencer claws,22534,1;silencer resonating chamber,22535,1;dead weight,22536,1;goosebump leather,22539,1;hemp rope,22540,1;pool of chitinous glue,22541,1;string of mending,22542,1;" />
 	</parameters>
 </npc>

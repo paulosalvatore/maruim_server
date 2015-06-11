@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <npc name="Steve" script="default.lua" walkinterval="2000" floorchange="0">
-	<health now="100" max="100"/>
-	<look type="268" head="0" body="47" legs="47" feet="47" addons="3"/>
+	<health now="100" max="100" />
+	<look type="268" head="0" body="47" legs="47" feet="47" addons="3" />
 	<parameters>
-		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja."/>
-		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?"/> 
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja." />
+		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?" /> 
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
-		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="piece of iron,2225,20;ancient rune,2348,250;iron ore,5880,50;ancient stone,10549,60;stone wing,11195,30;strand of medusa hair,11226,35;shiny stone,11227,45;zaoan halberd,11323,1;spiked iron ball,11325,85;clay lump,11339,20;battle stone,12403,1;coal,13757,25;medusa skull,16105,500;pulverized ore,18427,35;cliff strider claw,18428,1;vein of ore,18429,1;stone nose,18431,1;"/>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="piece of iron,2225,20;ancient rune,2348,250;iron ore,5880,50;ancient stone,10549,60;stone wing,11195,30;strand of medusa hair,11226,35;shiny stone,11227,45;zaoan halberd,11323,1;spiked iron ball,11325,85;clay lump,11339,20;battle stone,12403,1;coal,13757,25;medusa skull,16105,500;pulverized ore,18427,35;cliff strider claw,18428,1;vein of ore,18429,1;stone nose,18431,1;" />
 	</parameters>
 </npc>

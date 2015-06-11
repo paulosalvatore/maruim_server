@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <npc name="Rukarian Miru" script="default.lua" walkinterval="2000" floorchange="0">
-	<health now="100" max="100"/>
-	<look type="144" head="0" body="115" legs="97" feet="116" addons="1"/>
+	<health now="100" max="100" />
+	<look type="144" head="0" body="115" legs="97" feet="116" addons="1" />
 	<parameters>
-		<parameter key="message_greet" value="Olá |PLAYERNAME|. Olá, vamos caçar algo?"/>
-		<parameter key="message_sendtrade" value="Veja as ferramentas que possuo para uma boa caçada!"/> 
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Olá, vamos caçar algo?" />
+		<parameter key="message_sendtrade" value="Veja as ferramentas que possuo para uma boa caçada!" /> 
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
-		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_buyable" value="crossbow,2455,360;bow,2456,200;spear,2389,20;bolt,2543,3;arrow,2544,2"/>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="crossbow,2455,360;bow,2456,200;spear,2389,20;bolt,2543,3;arrow,2544,2" />
 	</parameters>
 </npc>

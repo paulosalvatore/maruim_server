@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <npc name="Daisy" script="default.lua" walkinterval="2000" floorchange="0">
-	<health now="100" max="100"/>
-	<look type="137" head="115" body="120" legs="116" feet="116" addons="3"/>
+	<health now="100" max="100" />
+	<look type="137" head="115" body="120" legs="116" feet="116" addons="3" />
 	<parameters>
-		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja."/>
-		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?"/> 
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja." />
+		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?" /> 
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
-		<parameter key="module_shop" value="1"/>
-		<parameter key="shop_sellable" value="scribbled sheet of paper,12382,15;protective charm,12400,15;girlish hair decoration,12399,20;purple kiss blossom,7249,50;doll,2110,1;closed trap,2578,1;sniper gloves,5875,1;slingshot,5907,1;very noble-looking watch,6091,1;hunter's quiver,12425,1;scroll of heroic deeds,12466,1;"/>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="scribbled sheet of paper,12382,15;protective charm,12400,15;girlish hair decoration,12399,20;purple kiss blossom,7249,50;doll,2110,1;closed trap,2578,1;sniper gloves,5875,1;slingshot,5907,1;very noble-looking watch,6091,1;hunter's quiver,12425,1;scroll of heroic deeds,12466,1;" />
 	</parameters>
 </npc>
