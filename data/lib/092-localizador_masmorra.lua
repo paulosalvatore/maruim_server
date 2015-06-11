@@ -246,7 +246,7 @@ function iniciarMasmorra(masmorraId, jogadores)
 			party:addMember(player)
 		end
 		player:sendTextMessage(MESSAGE_INFO_DESCR, "A masmorra será iniciada em " .. tempoEspera .. " segundos. Após isso, seu grupo terá " .. tempo .. " segundos para finalizá-la.")
-		table.insert(Masmorras[masmorraId].data.posicaoJogadores, player:getPosition())
+		table.insert(Masmorras[masmorraId].data.posicaoJogadores, b, player:getPosition())
 		player:teleportarJogador(posicaoSala)
 		posicaoSala = posicaoSala + {x = 1}
 		addEvent(function(cid, posicao)
@@ -272,7 +272,7 @@ function finalizarMasmorra(masmorraId)
 	local party = Player(jogadores[1]):getParty()
 	for a, b in pairs(jogadores) do
 		local player = Player(b)
-		player:teleportarJogador(posicaoJogadores[a])
+		player:teleportarJogador(posicaoJogadores[b])
 	end
 	removerJogadoresMasmorra(masmorraId)
 	party:disband()
@@ -283,4 +283,5 @@ function finalizarMasmorra(masmorraId)
 		end
 	end
 	Masmorras[masmorraId].emUso = false
+	processarFilaLocalizadorMasmorra(masmorraId)
 end
