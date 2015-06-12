@@ -2271,6 +2271,8 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Player", "getContainerById", LuaScriptInterface::luaPlayerGetContainerById);
 	registerMethod("Player", "getContainerIndex", LuaScriptInterface::luaPlayerGetContainerIndex);
 
+	registerMethod("Player", "closeModalId", LuaScriptInterface::luaPlayerCloseModalId);
+
 	// Monster
 	registerClass("Monster", "Creature", LuaScriptInterface::luaMonsterCreate);
 	registerMetaMethod("Monster", "__eq", LuaScriptInterface::luaUserdataCompare);
@@ -9637,6 +9639,27 @@ int LuaScriptInterface::luaPlayerGetContainerIndex(lua_State* L)
 	Player* player = getUserdata<Player>(L, 1);
 	if (player) {
 		lua_pushnumber(L, player->getContainerIndex(getNumber<uint8_t>(L, 2)));
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaPlayerCloseModalId(lua_State* L)
+{
+	// player:closeModalId(window)
+	Player* player = getUserdata<Player>(L, 1);
+	if (!player) {
+		lua_pushnil(L);
+		return 1;
+	}
+
+	uint32_t windowId = getNumber<uint32_t>(L, 2);
+	if (windowId) {
+		if (player->hasModalWindowOpen(windowId)) {
+			player->onModalWindowHandled(windowId);
+		}
+		pushBoolean(L, true);
 	} else {
 		lua_pushnil(L);
 	}
