@@ -40,7 +40,7 @@ Masmorras = {
 		reputacao = 0,
 		jogadoresNecessarios = 2,
 		tempo = 1,
-		delay = 1,
+		delay = 10,
 		posicaoSala = {x = 1703, y = 1552, z = 6},
 		posicao = {x = 1703, y = 1550, z = 7},
 		criaturas = {
@@ -218,22 +218,24 @@ end
 function Player.aceitarConviteMasmorra(self)
 	local playerId = self:getId()
 	local masmorraId = self:verificarFila()
-	local masmorra = Masmorras[masmorraId]
-	table.insert(Masmorras[masmorraId].data.jogadores, playerId)
-	local jogadores = masmorra.data.jogadores
-	if table.getn(jogadores) == masmorra.jogadoresNecessarios then
-		verificarInicioMasmorra(masmorraId, jogadores)
-	else
-		local modalId = configMasmorras.storageBase+configMasmorras.modalMasmorraAceitada
-		local modalTitulo = "Convite para Masmorra Aceito!"
-		local modalMensagem = "O convite para a masmorra foi aceito!\n\nAguardando os outros jogadores aceitarem.\n"
-		local modal = ModalWindow(modalId, modalTitulo, modalMensagem)
-		modal:addButton(2, "Fechar")
-		modal:setDefaultEnterButton(2)
-		modal:setDefaultEscapeButton(2)
-		addEvent(function(playerId, modal)
-			modal:sendToPlayer(Player(playerId))
-		end, 100, playerId, modal)
+	if masmorraId > 0 then
+		local masmorra = Masmorras[masmorraId]
+		table.insert(Masmorras[masmorraId].data.jogadores, playerId)
+		local jogadores = masmorra.data.jogadores
+		if table.getn(jogadores) == masmorra.jogadoresNecessarios then
+			verificarInicioMasmorra(masmorraId, jogadores)
+		else
+			local modalId = configMasmorras.storageBase+configMasmorras.modalMasmorraAceitada
+			local modalTitulo = "Convite para Masmorra Aceito!"
+			local modalMensagem = "O convite para a masmorra foi aceito!\n\nAguardando os outros jogadores aceitarem.\n"
+			local modal = ModalWindow(modalId, modalTitulo, modalMensagem)
+			modal:addButton(2, "Fechar")
+			modal:setDefaultEnterButton(2)
+			modal:setDefaultEscapeButton(2)
+			addEvent(function(playerId, modal)
+				modal:sendToPlayer(Player(playerId))
+			end, 100, playerId, modal)
+		end
 	end
 end
 
