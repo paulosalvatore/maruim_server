@@ -263,16 +263,23 @@ function Player.addLevel(self)
 end
 
 function Player.teleportarJogador(self, posicao, extended, forcar)
+	if not self then
+		return
+	end
+
 	if not extended then
 		extended = false
 	end
+
 	if not forcar then
 		local posicaoLivre = self:getClosestFreePosition(posicao, extended)
 		if posicaoLivre.x > 0 and posicaoLivre.y > 0 then
 			posicao = posicaoLivre
 		end
 	end
+
 	self:teleportTo(posicao)
 	self:setDirection(direcoes["sul"])
 	Position(posicao):sendMagicEffect(efeitos["teleport"])
+	return true
 end
