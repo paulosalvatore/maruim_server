@@ -10,7 +10,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if player:verificarMasmorra() > 0 then
 		return player:sendCancelMessage("Você não pode usar o '" .. itemNome .. "' enquanto está em uma masmorra.")
 	end
-	if player:getAccountType() < ACCOUNT_TYPE_GOD and not Tile(player:getPosition()):hasFlag(TILESTATE_PROTECTIONZONE) then
+	if not player:getGroup():getAccess() and not Tile(player:getPosition()):hasFlag(TILESTATE_PROTECTIONZONE) then
 		return player:sendCancelMessage("Você precisa estar em uma 'protection zone' para que o '" .. itemNome .. "' funcione.")
 	end
 	if item.itemid == 18457 then
