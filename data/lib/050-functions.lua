@@ -38,6 +38,14 @@ function formatarValor(valor)
 	return math.floor(valor/100)..decimal
 end
 
+function formatarTempo(tempo)
+	local exibirTempo = " segundo"
+	if tempo > 1 then
+		exibirTempo = exibirTempo .. "s"
+	end
+	return tempo .. exibirTempo
+end
+
 function searchArrayKey(t, value)
 	for k, v in pairs(t) do
 		if v == value then
@@ -254,9 +262,12 @@ function Player.addLevel(self)
 	self:addExperience(getExpForLevel(self:getLevel() + 1) - self:getExperience())
 end
 
-function Player.teleportarJogador(self, posicao, forcar)
+function Player.teleportarJogador(self, posicao, extended, forcar)
+	if not extended then
+		extended = false
+	end
 	if not forcar then
-		local posicaoLivre = self:getClosestFreePosition(posicao, true)
+		local posicaoLivre = self:getClosestFreePosition(posicao, extended)
 		if posicaoLivre.x > 0 and posicaoLivre.y > 0 then
 			posicao = posicaoLivre
 		end

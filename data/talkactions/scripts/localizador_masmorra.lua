@@ -1,5 +1,7 @@
 function onSay(player, words, param)
-	if player:getParty() then
+	if player:verificarMasmorra() > 0 then
+		player:sendCancelMessage(configMasmorras.mensagens.comandoBloqueado)
+	elseif player:getParty() then
 		player:sendCancelMessage(configMasmorras.mensagens.possuiParty)
 	elseif not Tile(player:getPosition()):hasFlag(TILESTATE_PROTECTIONZONE) then
 		player:sendCancelMessage(configMasmorras.mensagens.pz)
