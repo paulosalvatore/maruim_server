@@ -42,11 +42,7 @@ keywordHandler:addKeywords({{"heal"}, {"curar"}}, StdModule.say, {npcHandler = n
 		local playerChecarHP = math.max(40, math.floor(player:getMaxHealth()*0.1))
 		local playerRecuperarHP = playerChecarHP-playerHP
 		if playerHP < playerChecarHP then player:addHealth(playerRecuperarHP) end
-		for i, v in ipairs(conditionsHealing) do
-			if(getCreatureCondition(player, v) == true) then
-				doRemoveCondition(player, v)
-			end
-		end
+		player:removerDebuffs()
 		player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
 	end
 )

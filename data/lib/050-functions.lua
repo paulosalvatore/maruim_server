@@ -283,3 +283,15 @@ function Player.teleportarJogador(self, posicao, extended, forcar)
 	Position(posicao):sendMagicEffect(efeitos["teleport"])
 	return true
 end
+
+function Player.curarJogador(self)
+	self:addHealth(self:getMaxHealth()-self:getHealth())
+end
+
+function Player.removerDebuffs(self)
+	for i, v in ipairs(conditionsHealing) do
+		if getCreatureCondition(self, v) == true then
+			doRemoveCondition(self, v)
+		end
+	end
+end

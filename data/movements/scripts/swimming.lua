@@ -7,11 +7,7 @@ function onStepIn(player, item, position, fromPosition)
 		player:getPosition():sendMagicEffect(CONST_ME_WATERSPLASH)
 		doSetCreatureOutfit(player, outfit, -1)
 	end
-	for i, v in ipairs(conditionsHealing) do
-		if(getCreatureCondition(player, v) == true) then
-			doRemoveCondition(player, v)
-		end
-	end
+	player:removerDebuffs()
 end
 function onStepOut(player, item, position, fromPosition)
 	if not player then
