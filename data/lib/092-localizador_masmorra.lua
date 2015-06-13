@@ -13,9 +13,9 @@ configMasmorras = {
 	storageBase = 40000,
 	storageMasmorras = 2000,
 	tempoLocalizador = 1,
-	tempoAceitar = 2,
-	tempoRecusar = 3,
-	tempoEspera = 1,
+	tempoAceitar = 30,
+	tempoRecusar = 5,
+	tempoEspera = 15,
 	tempoRetorno = 1,
 	tempoFinalizar = 5,
 	-- tempoLocalizador = 15,
@@ -42,7 +42,7 @@ Masmorras = {
 		nivelMaximo = 0,
 		reputacao = 0,
 		jogadoresNecessarios = 2,
-		tempo = 20,
+		tempo = 30,
 		delay = 1,
 		posicaoSala = {x = 1703, y = 1552, z = 6},
 		posicao = {x = 1703, y = 1550, z = 7},
@@ -60,7 +60,8 @@ Masmorras = {
 		data = {
 			fila = {},
 			jogadores = {},
-			posicaoJogadores = {},
+			informacaoJogadores = {},
+			-- posicaoJogadores = {},
 			criaturas = {}
 		}
 	}
@@ -318,12 +319,14 @@ function iniciarMasmorra(masmorraId, jogadores)
 			player:removerFila()
 			party:addMember(player)
 		end
-		table.insert(Masmorras[masmorraId].data.posicaoJogadores, b, player:getPosition())
+		local informacaoJogador = {posicao = player:getPosition(), localizacao = "sala"}
+		table.insert(Masmorras[masmorraId].data.informacaoJogadores, b, informacaoJogador)
 		player:teleportarJogador(posicaoSala)
 		posicaoSala = posicaoSala + {x = 1}
 		addEvent(enviarModal, 100, b, modal)
 		addEvent(function(playerId, posicao)
 			player:teleportarJogador(posicao)
+			Masmorras[masmorraId].data.informacaoJogadores[playerId].localizacao = "masmorra"
 		end, tempoEspera*1000, player:getId(), posicao)
 	end
 	for a, b in pairs(criaturas) do
@@ -361,13 +364,15 @@ function finalizarMasmorra(masmorraId, checarMasmorraAtual, evento)
 	Masmorras[masmorraId].masmorraAtual = masmorraAtual+1
 	local delay = masmorra.delay
 	local jogadores = masmorra.data.jogadores
-	local posicaoJogadores = masmorra.data.posicaoJogadores
 	local criaturas = masmorra.data.criaturas
 	local party = Player(jogadores[1]):getParty()
 	for a, b in pairs(jogadores) do
+		local informacaoJogador = masmorra.data.informacaoJogadores[b]
 		local player = Player(b)
+		player:curarJogador()
+		player:removerDebuffs()
 		player:setStorageValue(configMasmorras.storageBase+configMasmorras.storageMasmorras+masmorraId, os.time()+delay)
-		player:teleportarJogador(posicaoJogadores[b])
+		player:teleportarJogador(informacaoJogador.posicao)
 	end
 	party:disband()
 	for a, b in pairs(criaturas) do
@@ -380,4 +385,20 @@ function finalizarMasmorra(masmorraId, checarMasmorraAtual, evento)
 	Masmorras[masmorraId].iniciada = false
 	processarFilaLocalizadorMasmorra(masmorraId)
 	return true
+end
+
+function Player.teleportarJogadorSalaMasmorra(self, masmorraId)
+	local masmorra = Masmorras[masmorraId]
+	local posicaoSala = Position(masmorra.posicaoSala) + {x = searchArrayKey(masmorra.jogadores, player:getId())}
+	player:teleportarJogador(posicaoSala)
+	Masmorras[masmorraId].data.informacaoJogadores[b].localizacao = "sala"
+end
+
+function ressuscitarJogadoresMasmorra(masmorraId)
+	-- Verificar se todos os jogadores estão na Sala de Espera
+	-- Caso estejam, ressuscitar imediatamente
+	-- Caso não estejam, verificar se existem jogadores em batalha - Apenas permitir o comando se todos estiverem fora de batalha
+	-- /\ Verificar se a mensagem "em batalha" será enviada para quem solicitou o comando ou para todos
+	-- Se for para quem solicitou, ela deverá ser executada no script da talkaction
+	-- A verificação deverá ser feita em ambos scripts, porém, na função, apenas retornará falso.
 end
