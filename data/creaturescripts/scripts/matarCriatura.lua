@@ -23,6 +23,7 @@ function onKill(player, target)
 		local tempoFinalizar = configMasmorras.tempoFinalizar
 		if table.getn(criaturas) == 0 then
 			Masmorras[masmorraId].finalizada = true
+			enviarMensagemMasmorraFinalizada(masmorraId)
 			addEvent(finalizarMasmorra, tempoFinalizar*1000, masmorraId, masmorra.masmorraAtual)
 		else
 			enviarProgressoMasmorra(masmorraId)

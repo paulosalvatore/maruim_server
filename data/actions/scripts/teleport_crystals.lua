@@ -21,7 +21,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		player:setStorageValue(storageTeleportCrystal, os.time())
 		if player:getAccountType() == ACCOUNT_TYPE_GOD or item:remove(1) then
 			player:setStorageValue(Storage.redTeleportCrystal, os.time())
-			player:teleportarJogador(player:getTown():getTemplePosition())
+			player:teleportarJogador(player:getTown():getTemplePosition(), false, true)
 		else
 			player:sendCancelMessage("Você precisa ter o item '" .. itemNome .. "' para teleportar.")
 		end

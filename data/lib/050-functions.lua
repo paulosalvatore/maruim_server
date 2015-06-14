@@ -262,7 +262,7 @@ function Player.addLevel(self)
 	self:addExperience(getExpForLevel(self:getLevel() + 1) - self:getExperience())
 end
 
-function Player.teleportarJogador(self, posicao, extended, forcar)
+function Player.teleportarJogador(self, posicao, forcar, extended)
 	if not self then
 		return
 	end

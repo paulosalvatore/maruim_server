@@ -3,7 +3,7 @@ function onSay(player, words, param)
 	if masmorraId > 0 then
 		local checar = player:checarReviverJogadoresMasmorra(masmorraId)
 		if checar == true then
-			reviverJogadoresMasmorra(masmorraId, self:getName())
+			reviverJogadoresMasmorra(masmorraId, player:getName())
 		else
 			player:sendCancelMessage(checar)
 		end

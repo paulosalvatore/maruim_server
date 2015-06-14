@@ -12,7 +12,9 @@ configMasmorras = {
 		comandoBloqueado = "Você não pode utilizar esse comando enquanto está em uma masmorra.",
 		reviverBloqueadoTodosVivos = "Não há jogadores para reviver nessa masmorra.",
 		reviverBloqueadoBatalha = "Seu grupo precisa estar fora de batalha para reviver os jogadores que foram mortos.",
-		reviverBloqueadoSala = "Apenas jogadores na masmorra podem reviver o grupo."
+		reviverBloqueadoSala = "Apenas jogadores na masmorra podem reviver o grupo.",
+		reviverBloqueadoTempo = "Você deve esperar um tempo para utilizar esse comando novamente.",
+		masmorraConcluida = "A masmorra foi concluída, em alguns instantes você será teleportado para fora dela."
 	},
 	storageBase = 40000,
 	storageMasmorras = 2000,
@@ -22,12 +24,14 @@ configMasmorras = {
 	tempoEspera = 1,
 	tempoRetorno = 5,
 	tempoFinalizar = 5,
+	tempoComandoReviver = 5,
 	-- tempoLocalizador = 15,
 	-- tempoAceitar = 10,
 	-- tempoRecusar = 20,
 	-- tempoEspera = 30,
 	-- tempoRetorno = 60,
 	-- tempoFinalizar = 20,
+	-- tempoComandoReviver = 60,
 	janelasModal = {
 		modalPrincipal = 1,
 		modalMasmorraVazia = 2,
@@ -54,8 +58,7 @@ Masmorras = {
 			-- {"Demon", {x = 1695, y = 1562, z = 7}},
 			-- {"Demon", {x = 1714, y = 1560, z = 7}},
 			-- {"Demon", {x = 1722, y = 1555, z = 7}}
-			{"Rat", {x = 1703, y = 1551, z = 7}},
-			-- {"Rat", {x = 1704, y = 1551, z = 7}}
+			{"Rat", {x = 1703, y = 1551, z = 7}}
 		},
 		recompensa = {
 			dinheiro = {0, 100},
@@ -64,6 +67,7 @@ Masmorras = {
 			reputacao = 4
 		},
 		emUso = false,
+		inicioVerificado = false,
 		iniciada = false,
 		masmorraAtual = 0,
 		finalizada = false,
@@ -71,7 +75,8 @@ Masmorras = {
 			fila = {},
 			jogadores = {},
 			informacaoJogadores = {},
-			criaturas = {}
+			criaturas = {},
+			ultimoReviver = 0
 		}
 	}
 }
@@ -265,8 +270,12 @@ end
 
 function verificarInicioMasmorra(masmorraId, jogadores)
 	local masmorra = Masmorras[masmorraId]
+	if masmorra.inicioVerificado then
+		return
+	end
+	Masmorras[masmorraId].inicioVerificado = true
 	if masmorra.iniciada then
-		return false
+		return
 	end
 	local jogadoresAceitaram = masmorra.data.jogadores
 	if table.getn(jogadores) == table.getn(jogadoresAceitaram) then
@@ -307,6 +316,7 @@ end
 
 function iniciarMasmorra(masmorraId, jogadores)
 	Masmorras[masmorraId].iniciada = true
+	Masmorras[masmorraId].inicioVerificado = false
 	Masmorras[masmorraId].finalizada = false
 	local masmorra = Masmorras[masmorraId]
 	local tempo = masmorra.tempo
@@ -389,9 +399,9 @@ function finalizarMasmorra(masmorraId, checarMasmorraAtual, evento)
 		modalMensagem = "A masmorra foi finalizada.\n\nInfelizmente seu grupo não conseguiu matar todas as criaturas.\n\nVocê poderá entrar na fila dessa masmorra novamente após " .. formatarTempo(delay) .. ".\n"
 	else
 		modalMensagem = "Parabéns!\nSeu grupo conseguiu concluir a masmorra.\n\nSua recompensa é:\n\n"
-	end
-	for a, b in pairs(recompensa) do
-		modalMensagem = modalMensagem .. a .. "\n"
+		for a, b in pairs(recompensa) do
+			modalMensagem = modalMensagem .. a .. "\n"
+		end
 	end
 	local modal = ModalWindow(modalId, modalTitulo, modalMensagem)
 	modal:addButton(1, "Ok")
@@ -425,8 +435,8 @@ function Player.teleportarJogadorSalaMasmorra(self, masmorraId)
 	local masmorra = Masmorras[masmorraId]
 	local localizacao = masmorra.data.informacaoJogadores[playerId].localizacao
 	if localizacao == "masmorra" then
-		local posicaoSala = Position(masmorra.posicaoSala) + {x = searchArrayKey(masmorra.data.jogadores, playerId)}
-		self:teleportarJogador(posicaoSala)
+		local posicaoSala = Position(masmorra.posicaoSala) + {x = searchArrayKey(masmorra.data.jogadores, playerId)-1}
+		self:teleportarJogador(posicaoSala, true)
 		Masmorras[masmorraId].data.informacaoJogadores[playerId].localizacao = "sala"
 	elseif localizacao == "sala" then
 		local posicao = Position(masmorra.posicao)
@@ -457,6 +467,8 @@ function Player.checarReviverJogadoresMasmorra(self, masmorraId)
 		local player = Player(b)
 		if player:getCondition(CONDITION_INFIGHT, CONDITIONID_DEFAULT) then
 			return configMasmorras.mensagens.reviverBloqueadoBatalha
+		elseif masmorra.data.tempoComandoReviver > os.time() then
+			return configMasmorras.mensagens.reviverBloqueadoTempo
 		end
 		if masmorra.data.informacaoJogadores[b].localizacao == "sala" then
 			localizacao = "sala"
@@ -488,6 +500,7 @@ function reviverJogadoresMasmorra(masmorraId, jogador)
 			end, tempoRetorno*1000, b, masmorraId, masmorraAtual)
 		end
 	else
+		Masmorras[masmorraId].data.tempoComandoReviver = os.time()+configMasmorras.tempoComandoReviver
 		for a, b in pairs(jogadores) do
 			if masmorra.data.informacaoJogadores[b].localizacao == "sala" then
 				local player = Player(b)
@@ -495,5 +508,13 @@ function reviverJogadoresMasmorra(masmorraId, jogador)
 				player:sendTextMessage(MESSAGE_INFO_DESCR, "'" .. jogador .. "' reviveu os jogadores mortos.")
 			end
 		end
+	end
+end
+
+function enviarMensagemMasmorraFinalizada(masmorraId)
+	local masmorra = Masmorras[masmorraId]
+	local jogadores = masmorra.data.jogadores
+	for a, b in pairs(jogadores) do
+		Player(b):sendTextMessage(MESSAGE_INFO_DESCR, configMasmorras.mensagens.masmorraConcluida)
 	end
 end
