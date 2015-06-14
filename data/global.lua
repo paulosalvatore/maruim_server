@@ -151,23 +151,40 @@ if nextUseStaminaTime == nil then
 	nextUseStaminaTime = {}
 end
 
-local function allowMovementEvent(cid, allow, oldPosition)
-    local creature = Creature(cid)
-    if not creature then
+function allowMovementEvent(playerId, allow, oldPosition, pz)
+    local player = Player(playerId)
+    if not player then
         return false
     end
+	
+	local position = player:getPosition()
+	if pz then
+		if not Tile(position):hasFlag(TILESTATE_PROTECTIONZONE) then
+			if player:verificarFila() > 0 then
+				player:sendCancelMessage(configMasmorras.mensagens.saidaBloqueadaPZ)
+			else
+				player:sendCancelMessage("Você não pode sair de uma zona protegida.")
+			end
+		else
+			oldPosition = position
+		end
+	end
 
-    if allow then
-        return stopEvent(event)
-    else
-        stopEvent(event)
-    end
+	if allow then
+		return stopEvent(event)
+	end
 
-    creature:teleportTo(oldPosition, true)
+	stopEvent(event)
 
-    event = addEvent(allowMovementEvent, 100, cid, allow, oldPosition)
+	player:teleportTo(oldPosition, true)
+
+    event = addEvent(allowMovementEvent, 100, playerId, allow, oldPosition, pz)
 end
 
 function Player.allowMovement(self, allow)
-    allowMovementEvent(self:getId(), allow, self:getPosition())
+    allowMovementEvent(self:getId(), allow, self:getPosition(), false)
+end
+
+function Player.allowLeavePz(self, allow)
+    allowMovementEvent(self:getId(), allow, self:getPosition(), true)
 end

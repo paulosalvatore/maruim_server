@@ -2,27 +2,31 @@ configMasmorras = {
 	mensagens = {
 		possuiParty = "Você deve estar fora de qualquer 'party' para abrir o localizador de masmorras.",
 		pz = "Você precisa estar em uma 'protection zone' para abrir o localizador de masmorras.",
+		saidaBloqueadaPZ = "Você não pode sair de uma 'protection zone' enquanto está no localizador de masmorras.",
 		adicionadoFila = "Você foi adicionado à fila. Assim que uma masmorra for localizada você será notificado.",
 		removidoFila = "Você foi removido da fila com sucesso.",
 		aguarde = "Você deve aguardar alguns segundos para acessar o localizador de masmorras novamente.",
 		logoutBloqueado = "Você deve aguardar o término da masmorra para desconectar-se.",
 		entrarPartyBloqueado = "Você não pode entrar em uma 'party' enquanto está no localizador de masmorras.",
 		sairPartyBloqueado = "Você deve aguardar o término da masmorra para sair da 'party'.",
-		comandoBloqueado = "Você não pode utilizar esse comando enquanto está em uma masmorra."
+		comandoBloqueado = "Você não pode utilizar esse comando enquanto está em uma masmorra.",
+		reviverBloqueadoTodosVivos = "Não há jogadores para reviver nessa masmorra.",
+		reviverBloqueadoBatalha = "Seu grupo precisa estar fora de batalha para reviver os jogadores que foram mortos.",
+		reviverBloqueadoSala = "Apenas jogadores na masmorra podem reviver o grupo."
 	},
 	storageBase = 40000,
 	storageMasmorras = 2000,
 	tempoLocalizador = 1,
-	tempoAceitar = 30,
+	tempoAceitar = 5,
 	tempoRecusar = 5,
-	tempoEspera = 15,
-	tempoRetorno = 1,
+	tempoEspera = 1,
+	tempoRetorno = 5,
 	tempoFinalizar = 5,
 	-- tempoLocalizador = 15,
 	-- tempoAceitar = 10,
 	-- tempoRecusar = 20,
 	-- tempoEspera = 30,
-	-- tempoRetorno = 20,
+	-- tempoRetorno = 60,
 	-- tempoFinalizar = 20,
 	janelasModal = {
 		modalPrincipal = 1,
@@ -42,7 +46,7 @@ Masmorras = {
 		nivelMaximo = 0,
 		reputacao = 0,
 		jogadoresNecessarios = 2,
-		tempo = 30,
+		tempo = 20,
 		delay = 1,
 		posicaoSala = {x = 1703, y = 1552, z = 6},
 		posicao = {x = 1703, y = 1550, z = 7},
@@ -51,7 +55,13 @@ Masmorras = {
 			-- {"Demon", {x = 1714, y = 1560, z = 7}},
 			-- {"Demon", {x = 1722, y = 1555, z = 7}}
 			{"Rat", {x = 1703, y = 1551, z = 7}},
-			{"Rat", {x = 1704, y = 1551, z = 7}}
+			-- {"Rat", {x = 1704, y = 1551, z = 7}}
+		},
+		recompensa = {
+			dinheiro = {0, 100},
+			experiencia = {0, 100},
+			nivel = 2,
+			reputacao = 4
 		},
 		emUso = false,
 		iniciada = false,
@@ -61,7 +71,6 @@ Masmorras = {
 			fila = {},
 			jogadores = {},
 			informacaoJogadores = {},
-			-- posicaoJogadores = {},
 			criaturas = {}
 		}
 	}
@@ -131,7 +140,7 @@ function Player.verificarInicializacaoLocalizadorMasmorra(self, masmorraId)
 	if self:getParty() then
 		return configMasmorras.mensagens.possuiParty
 	elseif self:pegarDelayMasmorra(masmorraId) > os.time() then
-		return "Você deve aguardar mais " .. formatarTempo(self:pegarDelayMasmorra(masmorraId) - os.time()) .. " segundos para entrar novamente nessa masmorra."
+		return "Você deve aguardar mais " .. formatarTempo(self:pegarDelayMasmorra(masmorraId) - os.time()) .. " para entrar novamente nessa masmorra."
 	end
 	return true
 end
@@ -139,6 +148,7 @@ end
 function Player.iniciarLocalizadorMasmorra(self, masmorraId)
 	local verificarInicializacaoLocalizadorMasmorra = self:verificarInicializacaoLocalizadorMasmorra(masmorraId)
 	if verificarInicializacaoLocalizadorMasmorra == true then
+		self:allowLeavePz(false)
 		table.insert(Masmorras[masmorraId].data.fila, self:getId())
 		processarFilaLocalizadorMasmorra(masmorraId)
 		self:sendTextMessage(MESSAGE_INFO_DESCR, configMasmorras.mensagens.adicionadoFila)
@@ -157,6 +167,7 @@ function Player.removerFila(self)
 	local masmorraId = self:verificarFila()
 	local fila = Masmorras[masmorraId].data.fila
 	table.remove(Masmorras[masmorraId].data.fila, searchArrayKey(fila, self:getId()))
+	self:allowLeavePz(true)
 end
 
 function removerJogadoresMasmorra(masmorraId)
@@ -208,6 +219,9 @@ end
 
 function enviarModal(playerId, modal)
 	local player = Player(playerId)
+	if not player then
+		return
+	end
 	player:fecharJanelasModalMasmorra()
 	modal:sendToPlayer(player)
 end
@@ -217,7 +231,7 @@ function masmorraEncontrada(masmorraId, jogadores)
 	local modalTitulo = "Masmorra Encontrada!"
 	local tempoAceitar = configMasmorras.tempoAceitar
 	local tempoRecusar = configMasmorras.tempoRecusar
-	local modalMensagem = "Um grupo para a masmorra que você solicitou foi encontrado!\n\nPara entrar na masmorra clique em 'Aceitar' ou tecle 'Enter'.\n\nOBS.: Caso você não aceite em " .. tempoAceitar .. " segundos você será removido da fila e terá que esperar " .. tempoRecusar .. " segundos para entrar novamente.\n"
+	local modalMensagem = "Um grupo para a masmorra que você solicitou foi encontrado!\n\nPara entrar na masmorra clique em 'Aceitar' ou tecle 'Enter'.\n\nOBS.: Caso você não aceite em " .. formatarTempo(tempoAceitar) .. " você será removido da fila e terá que esperar " .. formatarTempo(tempoRecusar) .. " para entrar novamente.\n"
 	local modal = ModalWindow(modalId, modalTitulo, modalMensagem)
 	modal:addButton(1, "Aceitar")
 	modal:addButton(2, "Fechar")
@@ -262,11 +276,12 @@ function verificarInicioMasmorra(masmorraId, jogadores)
 			local player = Player(b)
 			if player then
 				if not isInArray(jogadoresAceitaram, b) then
-					player:setStorageValue(configMasmorras.storageBase, os.time()+configMasmorras.tempoRecusar)
+					local tempoRecusar = configMasmorras.tempoRecusar
+					player:setStorageValue(configMasmorras.storageBase, os.time()+tempoRecusar)
 					player:removerFila()
 					local modalId = configMasmorras.storageBase+configMasmorras.janelasModal.modalMasmorraRecusada
 					local modalTitulo = "Masmorra Recusada!"
-					local modalMensagem = "Você não aceitou o convite para a masmorra.\n\nPara entrar no localizador de masmorras novamente você deverá esperar " .. configMasmorras.tempoRecusar .. " segundos.\n"
+					local modalMensagem = "Você não aceitou o convite para a masmorra.\n\nPara entrar no localizador de masmorras novamente você deverá esperar " .. formatarTempo(tempoRecusar) .. ".\n"
 					local modal = ModalWindow(modalId, modalTitulo, modalMensagem)
 					modal:addButton(1, "Ok")
 					modal:addButton(2, "Fechar")
@@ -308,7 +323,7 @@ function iniciarMasmorra(masmorraId, jogadores)
 	local tempoMasmorra = tempo+tempoEspera
 	local modalId = configMasmorras.storageBase+configMasmorras.janelasModal.modalMasmorraAceitada
 	local modalTitulo = "A Masmorra será Iniciada!"
-	local modalMensagem = "A masmorra será iniciada em " .. tempoEspera .. " segundos. Após isso, seu grupo terá " .. tempo .. " segundos para finalizá-la.\n"
+	local modalMensagem = "A masmorra será iniciada em " .. formatarTempo(tempoEspera) .. ". Após isso, seu grupo terá " .. formatarTempo(tempo) .. " para finalizá-la.\n"
 	local modal = ModalWindow(modalId, modalTitulo, modalMensagem)
 	modal:addButton(2, "Fechar")
 	modal:setDefaultEnterButton(2)
@@ -325,7 +340,7 @@ function iniciarMasmorra(masmorraId, jogadores)
 		posicaoSala = posicaoSala + {x = 1}
 		addEvent(enviarModal, 100, b, modal)
 		addEvent(function(playerId, posicao)
-			player:teleportarJogador(posicao)
+			player:teleportarJogador(posicao, true)
 			Masmorras[masmorraId].data.informacaoJogadores[playerId].localizacao = "masmorra"
 		end, tempoEspera*1000, player:getId(), posicao)
 	end
@@ -363,9 +378,26 @@ function finalizarMasmorra(masmorraId, checarMasmorraAtual, evento)
 	end
 	Masmorras[masmorraId].masmorraAtual = masmorraAtual+1
 	local delay = masmorra.delay
+	local recompensa = masmorra.recompensa
 	local jogadores = masmorra.data.jogadores
 	local criaturas = masmorra.data.criaturas
 	local party = Player(jogadores[1]):getParty()
+	local modalId = configMasmorras.storageBase+configMasmorras.janelasModal.modalMasmorraFinalizada
+	local modalTitulo = "Masmorra Finalizada!"
+	local modalMensagem
+	if evento then
+		modalMensagem = "A masmorra foi finalizada.\n\nInfelizmente seu grupo não conseguiu matar todas as criaturas.\n\nVocê poderá entrar na fila dessa masmorra novamente após " .. formatarTempo(delay) .. ".\n"
+	else
+		modalMensagem = "Parabéns!\nSeu grupo conseguiu concluir a masmorra.\n\nSua recompensa é:\n\n"
+	end
+	for a, b in pairs(recompensa) do
+		modalMensagem = modalMensagem .. a .. "\n"
+	end
+	local modal = ModalWindow(modalId, modalTitulo, modalMensagem)
+	modal:addButton(1, "Ok")
+	modal:addButton(2, "Fechar")
+	modal:setDefaultEnterButton(1)
+	modal:setDefaultEscapeButton(2)
 	for a, b in pairs(jogadores) do
 		local informacaoJogador = masmorra.data.informacaoJogadores[b]
 		local player = Player(b)
@@ -373,6 +405,7 @@ function finalizarMasmorra(masmorraId, checarMasmorraAtual, evento)
 		player:removerDebuffs()
 		player:setStorageValue(configMasmorras.storageBase+configMasmorras.storageMasmorras+masmorraId, os.time()+delay)
 		player:teleportarJogador(informacaoJogador.posicao)
+		addEvent(enviarModal, 100, b, modal)
 	end
 	party:disband()
 	for a, b in pairs(criaturas) do
@@ -388,17 +421,79 @@ function finalizarMasmorra(masmorraId, checarMasmorraAtual, evento)
 end
 
 function Player.teleportarJogadorSalaMasmorra(self, masmorraId)
+	local playerId = self:getId()
 	local masmorra = Masmorras[masmorraId]
-	local posicaoSala = Position(masmorra.posicaoSala) + {x = searchArrayKey(masmorra.jogadores, player:getId())}
-	player:teleportarJogador(posicaoSala)
-	Masmorras[masmorraId].data.informacaoJogadores[b].localizacao = "sala"
+	local localizacao = masmorra.data.informacaoJogadores[playerId].localizacao
+	if localizacao == "masmorra" then
+		local posicaoSala = Position(masmorra.posicaoSala) + {x = searchArrayKey(masmorra.data.jogadores, playerId)}
+		self:teleportarJogador(posicaoSala)
+		Masmorras[masmorraId].data.informacaoJogadores[playerId].localizacao = "sala"
+	elseif localizacao == "sala" then
+		local posicao = Position(masmorra.posicao)
+		self:teleportarJogador(posicao, true)
+		Masmorras[masmorraId].data.informacaoJogadores[playerId].localizacao = "masmorra"
+	end
 end
 
-function ressuscitarJogadoresMasmorra(masmorraId)
-	-- Verificar se todos os jogadores estão na Sala de Espera
-	-- Caso estejam, ressuscitar imediatamente
-	-- Caso não estejam, verificar se existem jogadores em batalha - Apenas permitir o comando se todos estiverem fora de batalha
-	-- /\ Verificar se a mensagem "em batalha" será enviada para quem solicitou o comando ou para todos
-	-- Se for para quem solicitou, ela deverá ser executada no script da talkaction
-	-- A verificação deverá ser feita em ambos scripts, porém, na função, apenas retornará falso.
+function checarLocalizacaoJogadoresMasmorra(masmorraId)
+	local masmorra = Masmorras[masmorraId]
+	local jogadores = masmorra.data.jogadores
+	for a, b in pairs(jogadores) do
+		if masmorra.data.informacaoJogadores[b].localizacao ~= "sala" then
+			return "masmorra"
+		end
+	end
+	return "sala"
+end
+
+function Player.checarReviverJogadoresMasmorra(self, masmorraId)
+	local masmorra = Masmorras[masmorraId]
+	local jogadores = masmorra.data.jogadores
+	if masmorra.data.informacaoJogadores[self:getId()].localizacao == "sala" then
+		return configMasmorras.mensagens.reviverBloqueadoSala
+	end
+	local localizacao = "masmorra"
+	for a, b in pairs(jogadores) do
+		local player = Player(b)
+		if player:getCondition(CONDITION_INFIGHT, CONDITIONID_DEFAULT) then
+			return configMasmorras.mensagens.reviverBloqueadoBatalha
+		end
+		if masmorra.data.informacaoJogadores[b].localizacao == "sala" then
+			localizacao = "sala"
+		end
+	end
+	if localizacao == "masmorra" then
+		return configMasmorras.mensagens.reviverBloqueadoTodosVivos
+	end
+	return true
+end
+
+function Player.teleportarJogadorMasmorra(masmorraId, masmorraAtual)
+	local masmorra = Masmorras[masmorraId]
+	if masmorra.masmorraAtual == masmorraAtual then
+		local posicao = masmorra.posicao
+		player:teleportarJogador(posicao)
+	end
+end
+
+function reviverJogadoresMasmorra(masmorraId, jogador)
+	local masmorra = Masmorras[masmorraId]
+	local jogadores = masmorra.data.jogadores
+	local masmorraAtual = masmorra.masmorraAtual
+	if checarLocalizacaoJogadoresMasmorra(masmorraId) == "sala" then
+		local tempoRetorno = configMasmorras.tempoRetorno
+		for a, b in pairs(jogadores) do
+			addEvent(function(playerId, masmorraId)
+				Player(playerId):teleportarJogadorSalaMasmorra(masmorraId, masmorraAtual)
+			end, tempoRetorno*1000, b, masmorraId, masmorraAtual)
+		end
+	else
+		for a, b in pairs(jogadores) do
+			if masmorra.data.informacaoJogadores[b].localizacao == "sala" then
+				local player = Player(b)
+				player:teleportarJogadorSalaMasmorra(masmorraId, masmorraAtual)
+				player:sendTextMessage(MESSAGE_INFO_DESCR, "'" .. jogador .. "' reviveu os jogadores mortos.")
+			end
+		end
+	end
 end
