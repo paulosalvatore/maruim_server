@@ -53,7 +53,7 @@
 		<voice sentence="Grrrrunt" />
 	</voices>
 	<loot>
-		<item id="10553" chance="10000" /><!-- Fiery Heart -->
+		<item id="2353" chance="10000" /><!-- Burning Heart -->
 		<item id="8299" chance="10000" /><!-- Glimmering Soil -->
 		<item id="21585" chance="10000" /><!-- Smoking Coal -->
 		<item id="2156" chance="10000" /><!-- Red Gem -->

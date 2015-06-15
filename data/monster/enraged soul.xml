@@ -40,6 +40,6 @@
 		<item id="10607" countmax="2" chance="80000" /><!-- Ghostly Tissue -->
 		<item id="2804" chance="30000" /><!-- Shadow Herb -->
 		<item id="9662" chance="10000" /><!-- Ghost's Tear -->
-		<item id="5911" chance="50000" /><!-- Blue Piece of Cloth -->
+		<item id="5911" chance="50000" /><!-- Red Piece of Cloth -->
 	</loot>
 </monster>
