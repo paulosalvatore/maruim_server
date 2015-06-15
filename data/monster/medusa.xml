@@ -52,7 +52,7 @@
 		<voice sentence="You will make ssuch a fine ssstatue!" />
 		<voice sentence="There isss no chhhanccce of esscape" />
 		<voice sentence="Jusssst look at me!" />
-		<voice sentence="Are you tired or why are you moving thhat sslow<chuckle>" />
+		<voice sentence="Are you tired or why are you moving thhat sslow&lt;chuckle&gt;" />
 	</voices>
 	<loot>
 		<item id="2145" countmax="3" chance="30000" /><!-- small diamond -->
