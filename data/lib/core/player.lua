@@ -22,7 +22,7 @@ function Player.feed(self, food)
 end
 
 function Player.getClosestFreePosition(self, position, extended)
-	if not self:getGroup():getAccess() then
+	if self:getGroup():getAccess() then
 		return position
 	end
 	return Creature.getClosestFreePosition(self, position, extended)
