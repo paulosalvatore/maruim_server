@@ -1168,8 +1168,8 @@ function atualizarReceitasBanco()
 	db.query("TRUNCATE TABLE `z_receitas`")
 	for a, b in pairs(profissoes) do
 		for c, d in pairs(b.receitas) do
-			local colunas = {}
-			local valores = {}
+			local colunas = {"profissao"}
+			local valores = {b.nome}
 			for e, f in pairs(d) do
 				table.insert(colunas, e)
 				table.insert(valores, f)
