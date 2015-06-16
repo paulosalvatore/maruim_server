@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_buyable" value="crossbow,2455,360;bow,2456,200;spear,2389,20;bolt,2543,3;arrow,2544,2" />
+		<parameter key="shop_buyable" value="crossbow,2455,360;bow,2456,200;spear,2389,20;bolt,2543,3;arrow,2544,2;" />
 	</parameters>
 </npc>

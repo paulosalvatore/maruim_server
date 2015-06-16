@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_sellable" value="crab pincers,11189,5;bloody pincers,10550,30;giant crab pincer,13304,200;turtle shell,5899,15;tortoise egg,5678,3" />
+		<parameter key="shop_sellable" value="crab pincers,11189,5;bloody pincers,10550,30;giant crab pincer,13304,200;turtle shell,5899,15;tortoise egg,5678,3;" />
 	</parameters>
 </npc>
