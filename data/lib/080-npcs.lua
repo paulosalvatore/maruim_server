@@ -225,3 +225,49 @@ barqueiros = {
 	}
 }
 tempoBlessWoodenStake = 24*60*60
+atualizarNpcs = false
+local limparNpcs = false
+if limparNpcs then
+	db.query("TRUNCATE TABLE `z_npcs`")
+	db.query("TRUNCATE TABLE `z_npcs_itens`")
+end
+function atualizarNpcBanco(informacoes)
+	local npc = informacoes[1]
+	local itemId = informacoes[2]
+	local itemValor = informacoes[3]
+	local itemSubTipo = informacoes[4]
+	local acao = informacoes[5]
+	local npcNome = npc:getName()
+	local npcId
+	local resultId = db.storeQuery("SELECT `id` FROM `z_npcs` WHERE `nome` = " .. db.escapeString(npcNome) .. "")
+	if resultId == false then
+		db.query("INSERT INTO `z_npcs` (`nome`) VALUES (" .. db.escapeString(npcNome) .. ")")
+		npcId = db.lastInsertId()
+	else
+		npcId = result.getDataInt(resultId, "id")
+	end
+	local resultItemId = db.storeQuery("SELECT `id` FROM `z_npcs_itens` WHERE (`npc` = " .. db.escapeString(npcId) .. " and `item` = " .. db.escapeString(itemId) .. ")")
+	if resultItemId == false then
+		db.query("INSERT INTO `z_npcs_itens` (`npc`, `item`, `valor`, `subtipo`, `acao`) VALUES (" .. db.escapeString(npcId) .. ", " .. db.escapeString(itemId) .. ", " .. db.escapeString(itemValor) .. ", " .. db.escapeString(itemSubTipo) .. ", " .. db.escapeString(acao) .. ")")
+	else
+		local dbItemId = result.getDataInt(resultId, "id")
+		db.query("UPDATE `z_npcs_itens` SET `item` = " .. db.escapeString(itemId) .. ", `valor` = " .. db.escapeString(itemValor) .. ", `subtipo` = " .. db.escapeString(itemSubTipo) .. ", `acao` = " .. db.escapeString(acao) .. " WHERE `id` = " .. db.escapeString(dbItemId) .. "")
+	end
+	result.free(resultId)
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

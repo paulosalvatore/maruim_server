@@ -616,6 +616,9 @@ if Modules == nil then
 					else
 						local names = {}
 						names[#names + 1] = name
+						if atualizarNpcs then
+							atualizarNpcBanco({Npc(), itemid, cost, itemSubType, "c"})
+						end
 						self:addBuyableItem(names, itemid, cost, subType, realName)
 					end
 				else
@@ -663,6 +666,9 @@ if Modules == nil then
 				if name ~= nil and itemid ~= nil and cost ~= nil then
 					local names = {}
 					names[#names + 1] = name
+					if atualizarNpcs then
+						atualizarNpcBanco({Npc(), itemid, cost, itemSubType, "v"})
+					end
 					self:addSellableItem(names, itemid, cost, realName, subType)
 				else
 					print("[Warning : " .. Npc():getName() .. "] NpcSystem:", "Parameter(s) missing for item:", name, itemid, cost)
