@@ -422,7 +422,7 @@ profissoes = {
 			-- {item = 21426, nivel = 1, nivelJogador = 1, ferramenta = 1965, materiais = {{2148, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0, atributos = {chance = {8, 13}}},
 
 			-- Armaduras
-			-- {item = 12431, nivel = 1, nivelJogador = 1, ferramenta = 11237, materiais = {{2657, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0}},
+			-- {item = 12431, nivel = 1, nivelJogador = 1, ferramenta = 11237, materiais = {{2657, 1}}, tempo = 0, experiencia = 100, pontos = 10, chanceSucesso = 10000, aprender = 0},
 
 			-- Spellbooks
 			{item = 8900, nivel = 3, nivelJogador = 1, ferramenta = 6533, materiais = {{2175, 1}, {6107, 1}, {12411, 20}}, fabricarQuantidade = 1, tempo = 3, experiencia = 40, pontos = 2, chanceSucesso = 5000, aprender = 0, atributos = {defesa = {0, 2}}}, -- 460
@@ -539,7 +539,7 @@ profissoes = {
 			{item = 7464, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {11224, 3}}, tempo = 2, experiencia = 30, pontos = 2, chanceSucesso = 9000, aprender = 0, atributos = {defesa = {0, 2}}},
 			{item = 5918, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {5912, 1}, {10123, 1}}, tempo = 2, experiencia = 30, pontos = 2, chanceSucesso = 9000, aprender = 0, atributos = {defesa = {0, 2}}},
 			-- {item = 18400, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{11236, 1}, {11209, 1}, {5912, 1}, {5910, 1}, {5911, 1}, {5914, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
-			{item = 7730, nivel = 5, nivelJogador = 1, ferramenta = 13828, materiais = {{8860, 1}, {13545, 3}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 70, atributos = {defesa = {1, 2}}},
+			{item = 7730, nivel = 5, nivelJogador = 1, ferramenta = 13828, materiais = {{8860, 1}, {13545, 3}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {1, 2}}},
 			-- {item = 21700, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {7290, 1}, {8300, 1}, {13545, 1}, {8302, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
 			-- {item = 7896, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {8302, 1}, {12289, 1}, {13545, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
 			-- {item = 7894, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {21585, 1}, {8304, 1}, {13543, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
@@ -1162,4 +1162,62 @@ function Player.fabricarItem(self, receitaId, profissaoId, mesaTrabalhando, bloq
 		self:allowMovement(true)
 	end
 	return true
+end
+
+function atualizarReceitasBanco()
+	db.query("TRUNCATE TABLE `z_receitas`")
+	for a, b in pairs(profissoes) do
+		for c, d in pairs(b.receitas) do
+			local colunas = {}
+			local valores = {}
+			for e, f in pairs(d) do
+				table.insert(colunas, e)
+				table.insert(valores, f)
+			end
+			local query = "INSERT INTO `z_receitas` ("
+			for e, f in pairs(colunas) do
+				if f ~= "atributos" then
+					if e > 1 then
+						query = query .. ", "
+					end
+					query = query .. "`" .. f .. "`"
+				end
+			end
+			query = query .. ") VALUES ("
+			for e, f in pairs(valores) do
+				if colunas[e] == "materiais" then
+					if e > 1 then
+						query = query .. ", "
+					end
+					local queryMateriais = ""
+					for g, h in pairs(f) do
+						queryMateriais = queryMateriais .. h[1] .. "," .. h[2] .. ";"
+					end
+					query = query .. db.escapeString(queryMateriais)
+				elseif colunas[e] == "ingredienteSecreto" then
+					if e > 1 then
+						query = query .. ", "
+					end
+					query = query .. db.escapeString(f[1] .. "," .. f[2] .. "," .. f[3])
+				elseif colunas[e] ~= "atributos" then
+					if e > 1 then
+						query = query .. ", "
+					end
+					query = query .. db.escapeString(f)
+				end
+			end
+			query = query .. ")"
+			db.query(query)
+			local receitaId = db.lastInsertId()
+			if d.atributos ~= nil then
+				for e, f in pairs(d.atributos) do
+					local exibirValor = f
+					if type(exibirValor) == "table" then
+						exibirValor = f[1] .. "," .. f[2]
+					end
+					db.query("INSERT INTO `z_receitas_atributos` (`receita`, `atributo`, `valor`) VALUES (" .. db.escapeString(receitaId) .. ", " .. db.escapeString(e) .. ", " .. db.escapeString(exibirValor) .. ")")
+				end
+			end
+		end
+	end
 end
