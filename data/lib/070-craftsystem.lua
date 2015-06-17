@@ -29,9 +29,9 @@ profissoes = {
 		mesaTrabalhando = {},
 		receitas = {
 			-- Materiais
-			-- {item = 5889, nivel = 50, nivelJogador = 1, ferramenta = 2321, materiais = {{5580, 1}, {13757, 1}, {12614, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {armadura = {0, 3}}},
-			-- {item = 5887, nivel = 50, nivelJogador = 1, ferramenta = 2321, materiais = {{5580, 1}, {13757, 1}, {9678, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {armadura = {0, 3}}},
-			-- {item = 5888, nivel = 50, nivelJogador = 1, ferramenta = 2321, materiais = {{5580, 1}, {21585, 1}, {10581, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {armadura = {0, 3}}},
+			-- {item = 5889, nivel = 50, nivelJogador = 1, ferramenta = 2321, materiais = {{5880, 1}, {13757, 1}, {12614, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {armadura = {0, 3}}},
+			-- {item = 5887, nivel = 50, nivelJogador = 1, ferramenta = 2321, materiais = {{5880, 1}, {13757, 1}, {9678, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {armadura = {0, 3}}},
+			-- {item = 5888, nivel = 50, nivelJogador = 1, ferramenta = 2321, materiais = {{5880, 1}, {21585, 1}, {10581, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {armadura = {0, 3}}},
 
 			-- Capacetes
 			{item = 2502, nivel = 1, nivelJogador = 10, ferramenta = 2422, materiais = {{9820, 1}, {5880, 2}, {5900, 1}}, fabricarQuantidade = 1, tempo = 3, experiencia = 15, pontos = 2, chanceSucesso = 9000, aprender = 0, atributos = {armadura = {1, 3}}},
@@ -105,7 +105,7 @@ profissoes = {
 			-- {item = 12646, nivel = 65, nivelJogador = 1, ferramenta = 2434, materiais = {{12660, 1}, {5881, 10}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {armadura = {0, 3}}},
 			-- {item = 2645, nivel = 20, nivelJogador = 1, ferramenta = 2422, materiais = {{9817, 1}, {5892, 10}, {13757, 10}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {armadura = {0, 3}}},
 			-- {item = 15410, nivel = 85, nivelJogador = 1, ferramenta = 2321, materiais = {{9817, 1}, {15425, 5}, {15430, 5}, {5880, 5}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {armadura = {0, 3}}},
-			-- {item = 5889, nivel = 50, nivelJogador = 1, ferramenta = 2321, materiais = {{5580, 1}, {13757, 1}, {12614, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {armadura = {0, 3}}},
+			-- {item = 5889, nivel = 50, nivelJogador = 1, ferramenta = 2321, materiais = {{5880, 1}, {13757, 1}, {12614, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {armadura = {0, 3}}},
 
 			-- Escudos
 			{item = 2540, nivel = 1, nivelJogador = 10, ferramenta = 2321, materiais = {{9814, 1}, {10558, 20}}, fabricarQuantidade = 1, tempo = 3, experiencia = 20, pontos = 2, chanceSucesso = 7000, aprender = 0, atributos = {defesa = {1, 3}}},
@@ -304,7 +304,7 @@ profissoes = {
 			-- {item = 7427, nivel = 20, nivelJogador = 1, ferramenta = 7450, materiais = {{7432, 1}, {13942, 2}, {5880, 5}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {ataque = {0, 3}}},
 			{item = 20108, nivel = 16, nivelJogador = 60, ferramenta = 2422, materiais = {{10564, 5}, {11224, 5}, {5880, 5}}, fabricarQuantidade = 1, tempo = 20, experiencia = 425, pontos = 81, chanceSucesso = 3000, maxChanceSucesso = 6000, aprender = 0, atributos = {ataque = {0, 5}}},
 			-- {item = 2391, nivel = 20, nivelJogador = 1, ferramenta = 2422, materiais = {{6107, 1}, {12403, 2}, {5880, 5}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {ataque = {0, 3}}},
-			{item = 11308, nivel = 17, nivelJogador = 65, ferramenta = 2422, materiais = {{6107, 1}, {5580, 10}, {13757, 10}}, fabricarQuantidade = 1, tempo = 20, experiencia = 465, pontos = 97, chanceSucesso = 3000, maxChanceSucesso = 6000, aprender = 0, atributos = {ataque = {0, 5}}},
+			{item = 11308, nivel = 17, nivelJogador = 65, ferramenta = 2422, materiais = {{6107, 1}, {5880, 10}, {13757, 10}}, fabricarQuantidade = 1, tempo = 20, experiencia = 465, pontos = 97, chanceSucesso = 3000, maxChanceSucesso = 6000, aprender = 0, atributos = {ataque = {0, 5}}},
 			{item = 7428, nivel = 17, nivelJogador = 65, ferramenta = 2421, materiais = {{2394, 1}, {5925, 5}, {2146, 20}}, fabricarQuantidade = 1, tempo = 20, experiencia = 465, pontos = 97, chanceSucesso = 3000, maxChanceSucesso = 6000, aprender = 0, atributos = {ataque = {0, 5}}},
 			-- {item = 7414, nivel = 20, nivelJogador = 1, ferramenta = 2421, materiais = {{6107, 1}, {6103, 2}, {13758, 5}, {9942, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {ataque = {0, 3}}},
 			-- {item = 2444, nivel = 20, nivelJogador = 1, ferramenta = 2421, materiais = {{2556, 1}, {5809, 2}, {5944, 5}, {9942, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {ataque = {0, 3}}},
