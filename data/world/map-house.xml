@@ -1,2 +1,373 @@
 <?xml version="1.0"?>
-<houses />
+<houses>
+	<house name="Hyalakur I" houseid="1" entryx="1063" entryy="1539" entryz="7" rent="0" townid="9" size="22" />
+	<house name="Hyalakur II" houseid="2" entryx="1061" entryy="1533" entryz="7" rent="0" townid="9" size="32" />
+	<house name="Hyalakur III" houseid="3" entryx="1063" entryy="1531" entryz="7" rent="0" townid="9" size="22" />
+	<house name="Hyalakur IV" houseid="4" entryx="1066" entryy="1533" entryz="7" rent="0" townid="9" size="32" />
+	<house name="Hyalakur V" houseid="5" entryx="1064" entryy="1539" entryz="7" rent="0" townid="9" size="22" />
+	<house name="Hyalakur VI" houseid="6" entryx="1081" entryy="1535" entryz="7" rent="0" townid="9" size="22" />
+	<house name="Hyalakur VII" houseid="7" entryx="1087" entryy="1533" entryz="7" rent="0" townid="9" size="22" />
+	<house name="Hyalakur VIII" houseid="8" entryx="1089" entryy="1536" entryz="7" rent="0" townid="9" size="48" />
+	<house name="Hyalakur XI" houseid="9" entryx="1087" entryy="1538" entryz="7" rent="0" townid="9" size="22" />
+	<house name="Hyalakur X" houseid="10" entryx="1081" entryy="1536" entryz="7" rent="0" townid="9" size="20" />
+	<house name="Hyalakur XI" houseid="11" entryx="1114" entryy="1537" entryz="7" rent="0" townid="9" size="22" />
+	<house name="Hyalakur XII" houseid="12" entryx="1110" entryy="1539" entryz="7" rent="0" townid="9" size="10" />
+	<house name="Hyalakur XIII" houseid="13" entryx="1107" entryy="1539" entryz="7" rent="0" townid="9" size="24" />
+	<house name="Hyalakur XIV" houseid="14" entryx="1106" entryy="1538" entryz="7" rent="0" townid="9" size="10" />
+	<house name="Hyalakur XV" houseid="15" entryx="1106" entryy="1535" entryz="7" rent="0" townid="9" size="26" />
+	<house name="Hyalakur XVI" houseid="16" entryx="1109" entryy="1534" entryz="7" rent="0" townid="9" size="22" />
+	<house name="Hyalakur XVII" houseid="17" entryx="1114" entryy="1536" entryz="7" rent="0" townid="9" size="22" />
+	<house name="Hyalakur XVIII" houseid="18" entryx="1050" entryy="1544" entryz="7" rent="0" townid="9" size="35" />
+	<house name="Hyalakur XIX" houseid="19" entryx="1063" entryy="1559" entryz="7" rent="0" townid="9" size="32" />
+	<house name="Hyalakur XX" houseid="20" entryx="1058" entryy="1560" entryz="7" rent="0" townid="9" size="59" />
+	<house name="Hyalakur XXI" houseid="21" entryx="1056" entryy="1558" entryz="7" rent="0" townid="9" size="86" />
+	<house name="Hyalakur XXII" houseid="22" entryx="1058" entryy="1555" entryz="7" rent="0" townid="9" size="59" />
+	<house name="Hyalakur XXIII" houseid="23" entryx="1076" entryy="1548" entryz="7" rent="0" townid="9" size="76" />
+	<house name="Hyalakur XXIV" houseid="24" entryx="1084" entryy="1548" entryz="7" rent="0" townid="9" size="76" />
+	<house name="Hyalakur XXV" houseid="25" entryx="1090" entryy="1548" entryz="7" rent="0" townid="9" size="79" />
+	<house name="Hyalakur XXVI" houseid="26" entryx="1101" entryy="1552" entryz="7" rent="0" townid="9" size="77" />
+	<house name="Hyalakur XXVII" houseid="27" entryx="1107" entryy="1552" entryz="7" rent="0" townid="9" size="34" />
+	<house name="Hyalakur XXVIII" houseid="28" entryx="1116" entryy="1552" entryz="7" rent="0" townid="9" size="73" />
+	<house name="Hyalakur XXIX" houseid="29" entryx="1126" entryy="1552" entryz="7" rent="0" townid="9" size="64" />
+	<house name="Hyalakur XXX" houseid="30" entryx="1091" entryy="1570" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur XXXI" houseid="31" entryx="1099" entryy="1570" entryz="7" rent="0" townid="9" size="69" />
+	<house name="Hyalakur XXXII" houseid="32" entryx="1067" entryy="1574" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur XXXIII" houseid="33" entryx="1067" entryy="1584" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur XXXIV" houseid="34" entryx="1067" entryy="1592" entryz="7" rent="0" townid="9" size="155" />
+	<house name="Hyalakur XXXV" houseid="35" entryx="1076" entryy="1587" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur XXXVI" houseid="36" entryx="1100" entryy="1587" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur XXXVII" houseid="37" entryx="1087" entryy="1578" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur XXXVIII" houseid="38" entryx="1100" entryy="1583" entryz="7" rent="0" townid="9" size="173" />
+	<house name="Hyalakur XXXIX" houseid="39" entryx="1029" entryy="1612" entryz="7" rent="0" townid="9" size="27" />
+	<house name="Hyalakur XL" houseid="40" entryx="1037" entryy="1612" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur XLI" houseid="41" entryx="1013" entryy="1616" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur XLII" houseid="42" entryx="1021" entryy="1616" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur XLIII" houseid="43" entryx="1034" entryy="1621" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur XLIV" houseid="44" entryx="1047" entryy="1619" entryz="7" rent="0" townid="9" size="79" />
+	<house name="Hyalakur XLV" houseid="45" entryx="1057" entryy="1626" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur XLVI" houseid="46" entryx="1065" entryy="1616" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur XLVII" houseid="47" entryx="1075" entryy="1626" entryz="7" rent="0" townid="9" size="52" />
+	<house name="Hyalakur XLVIII" houseid="48" entryx="1084" entryy="1616" entryz="7" rent="0" townid="9" size="148" />
+	<house name="Hyalakur XLVIX" houseid="49" entryx="1008" entryy="1634" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur L" houseid="50" entryx="1021" entryy="1633" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur LI" houseid="51" entryx="1039" entryy="1634" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur LII" houseid="52" entryx="1043" entryy="1634" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur LIII" houseid="53" entryx="1073" entryy="1629" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur LIV" houseid="54" entryx="1081" entryy="1639" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur LV" houseid="55" entryx="1018" entryy="1644" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur LVI" houseid="56" entryx="1034" entryy="1650" entryz="7" rent="0" townid="9" size="45" />
+	<house name="Hyalakur LVII" houseid="57" entryx="1048" entryy="1645" entryz="7" rent="0" townid="9" size="52" />
+	<house name="Hyalakur LVIII" houseid="58" entryx="1109" entryy="1562" entryz="7" rent="0" townid="9" size="37" />
+	<house name="Civitaten I" houseid="59" entryx="916" entryy="1910" entryz="6" rent="0" townid="3" size="21" />
+	<house name="Civitaten II" houseid="60" entryx="917" entryy="1916" entryz="6" rent="0" townid="3" size="21" />
+	<house name="Civitaten III" houseid="61" entryx="929" entryy="1928" entryz="6" rent="0" townid="3" size="35" />
+	<house name="Civitaten IV" houseid="62" entryx="945" entryy="1932" entryz="6" rent="0" townid="3" size="20" />
+	<house name="Civitaten V" houseid="63" entryx="962" entryy="1932" entryz="6" rent="0" townid="3" size="30" />
+	<house name="Civitaten VI" houseid="64" entryx="973" entryy="1926" entryz="6" rent="0" townid="3" size="21" />
+	<house name="Civitaten VII" houseid="65" entryx="981" entryy="1912" entryz="6" rent="0" townid="3" size="15" />
+	<house name="Civitaten VIII" houseid="66" entryx="977" entryy="1903" entryz="6" rent="0" townid="3" size="22" />
+	<house name="Civitaten IX" houseid="67" entryx="964" entryy="1893" entryz="6" rent="0" townid="3" size="21" />
+	<house name="Civitaten X" houseid="68" entryx="956" entryy="1890" entryz="6" rent="0" townid="3" size="18" />
+	<house name="Civitaten XI" houseid="69" entryx="943" entryy="1890" entryz="6" rent="0" townid="3" size="15" />
+	<house name="Civitaten XII" houseid="70" entryx="922" entryy="1900" entryz="6" rent="0" townid="3" size="42" />
+	<house name="Civitaten XIII" houseid="71" entryx="955" entryy="1932" entryz="5" rent="0" townid="3" size="20" />
+	<house name="Civitaten XIV" houseid="72" entryx="975" entryy="1925" entryz="5" rent="0" townid="3" size="59" />
+	<house name="Civitaten XV" houseid="73" entryx="971" entryy="1897" entryz="5" rent="0" townid="3" size="46" />
+	<house name="Civitaten XVI" houseid="74" entryx="955" entryy="1891" entryz="5" rent="0" townid="3" size="41" />
+	<house name="Civitaten XVII" houseid="75" entryx="941" entryy="1893" entryz="5" rent="0" townid="3" size="51" />
+	<house name="Civitaten XVIII" houseid="76" entryx="918" entryy="1907" entryz="5" rent="0" townid="3" size="44" />
+	<house name="Civitaten XIX" houseid="77" entryx="917" entryy="1913" entryz="5" rent="0" townid="3" size="37" />
+	<house name="Civitaten XX" houseid="78" entryx="926" entryy="1926" entryz="5" rent="0" townid="3" size="35" />
+	<house name="Civitaten XXI" houseid="79" entryx="938" entryy="1890" entryz="4" rent="0" townid="3" size="92" />
+	<house name="Civitaten XXII" houseid="80" entryx="919" entryy="1905" entryz="4" rent="0" townid="3" size="49" />
+	<house name="Civitaten XXIII" houseid="81" entryx="919" entryy="1914" entryz="4" rent="0" townid="3" size="27" />
+	<house name="Civitaten XXIV" houseid="82" entryx="922" entryy="1925" entryz="4" rent="0" townid="3" size="70" />
+	<house name="Civitaten XXV" houseid="83" entryx="943" entryy="1933" entryz="4" rent="0" townid="3" size="45" />
+	<house name="Civitaten XXVI" houseid="84" entryx="956" entryy="1928" entryz="4" rent="0" townid="3" size="36" />
+	<house name="Civitaten XXVII" houseid="85" entryx="970" entryy="1931" entryz="4" rent="0" townid="3" size="91" />
+	<house name="Civitaten XXVIII" houseid="86" entryx="940" entryy="1895" entryz="3" rent="0" townid="3" size="14" />
+	<house name="Civitaten XXIX" houseid="87" entryx="926" entryy="1907" entryz="3" rent="0" townid="3" size="93" />
+	<house name="Civitaten XXX" houseid="88" entryx="925" entryy="1908" entryz="3" rent="0" townid="3" size="63" />
+	<house name="Civitaten XXXI" houseid="89" entryx="946" entryy="1928" entryz="3" rent="0" townid="3" size="41" />
+	<house name="Civitaten XXXII" houseid="90" entryx="975" entryy="1919" entryz="3" rent="0" townid="3" size="75" />
+	<house name="Civitaten XXXIII" houseid="91" entryx="970" entryy="1899" entryz="3" rent="0" townid="3" size="73" />
+	<house name="Civitaten XXXIV" houseid="92" entryx="966" entryy="1900" entryz="3" rent="0" townid="3" size="36" />
+	<house name="Civitaten XXXV" houseid="93" entryx="948" entryy="1897" entryz="3" rent="0" townid="3" size="49" />
+	<house name="Otto I" houseid="94" entryx="812" entryy="1336" entryz="6" rent="0" townid="5" size="63" />
+	<house name="Otto II" houseid="95" entryx="822" entryy="1336" entryz="6" rent="0" townid="5" size="62" />
+	<house name="Otto III" houseid="96" entryx="832" entryy="1336" entryz="6" rent="0" townid="5" size="63" />
+	<house name="Otto IV" houseid="97" entryx="849" entryy="1336" entryz="6" rent="0" townid="5" size="64" />
+	<house name="Otto V" houseid="98" entryx="859" entryy="1336" entryz="6" rent="0" townid="5" size="64" />
+	<house name="Otto VI" houseid="99" entryx="869" entryy="1336" entryz="6" rent="0" townid="5" size="64" />
+	<house name="Otto VII" houseid="100" entryx="812" entryy="1314" entryz="6" rent="0" townid="5" size="62" />
+	<house name="Otto VIII" houseid="101" entryx="822" entryy="1314" entryz="6" rent="0" townid="5" size="63" />
+	<house name="Otto IX" houseid="102" entryx="832" entryy="1314" entryz="6" rent="0" townid="5" size="62" />
+	<house name="Otto X" houseid="103" entryx="849" entryy="1314" entryz="6" rent="0" townid="5" size="64" />
+	<house name="Otto XI" houseid="104" entryx="859" entryy="1314" entryz="6" rent="0" townid="5" size="64" />
+	<house name="Otto XII" houseid="105" entryx="869" entryy="1314" entryz="6" rent="0" townid="5" size="64" />
+	<house name="Otto XIII" houseid="106" entryx="812" entryy="1296" entryz="6" rent="0" townid="5" size="64" />
+	<house name="Otto XIV" houseid="107" entryx="822" entryy="1296" entryz="6" rent="0" townid="5" size="64" />
+	<house name="Otto XV" houseid="108" entryx="832" entryy="1296" entryz="6" rent="0" townid="5" size="64" />
+	<house name="Otto XVI" houseid="109" entryx="849" entryy="1296" entryz="6" rent="0" townid="5" size="62" />
+	<house name="Otto XVII" houseid="110" entryx="859" entryy="1296" entryz="6" rent="0" townid="5" size="63" />
+	<house name="Otto XVIII" houseid="111" entryx="869" entryy="1296" entryz="6" rent="0" townid="5" size="62" />
+	<house name="Otto XIX" houseid="112" entryx="812" entryy="1274" entryz="6" rent="0" townid="5" size="64" />
+	<house name="Otto XX" houseid="113" entryx="822" entryy="1274" entryz="6" rent="0" townid="5" size="64" />
+	<house name="Otto XXI" houseid="114" entryx="832" entryy="1274" entryz="6" rent="0" townid="5" size="64" />
+	<house name="Otto XXII" houseid="115" entryx="849" entryy="1274" entryz="6" rent="0" townid="5" size="63" />
+	<house name="Otto XXIII" houseid="116" entryx="859" entryy="1274" entryz="6" rent="0" townid="5" size="62" />
+	<house name="Otto XXIV" houseid="117" entryx="869" entryy="1274" entryz="6" rent="0" townid="5" size="63" />
+	<house name="Low Mugulu I" houseid="118" entryx="799" entryy="1732" entryz="7" rent="0" townid="2" size="23" />
+	<house name="Low Mugulu II" houseid="119" entryx="805" entryy="1734" entryz="7" rent="0" townid="2" size="20" />
+	<house name="Low Mugulu III" houseid="120" entryx="811" entryy="1734" entryz="7" rent="0" townid="2" size="15" />
+	<house name="Low Mugulu IV" houseid="121" entryx="808" entryy="1740" entryz="7" rent="0" townid="2" size="24" />
+	<house name="Low Mugulu V" houseid="122" entryx="818" entryy="1737" entryz="7" rent="0" townid="2" size="19" />
+	<house name="Low Mugulu VI" houseid="123" entryx="793" entryy="1740" entryz="7" rent="0" townid="2" size="26" />
+	<house name="Low Mugulu VII" houseid="124" entryx="793" entryy="1748" entryz="7" rent="0" townid="2" size="28" />
+	<house name="Low Mugulu VIII" houseid="125" entryx="810" entryy="1749" entryz="7" rent="0" townid="2" size="33" />
+	<house name="Low Mugulu IX" houseid="126" entryx="825" entryy="1745" entryz="7" rent="0" townid="2" size="8" />
+	<house name="Low Mugulu X" houseid="127" entryx="827" entryy="1738" entryz="7" rent="0" townid="2" size="31" />
+	<house name="Low Mugulu XI" houseid="128" entryx="828" entryy="1743" entryz="7" rent="0" townid="2" size="28" />
+	<house name="Low Mugulu XII" houseid="129" entryx="826" entryy="1751" entryz="7" rent="0" townid="2" size="43" />
+	<house name="Low Mugulu XIII" houseid="130" entryx="844" entryy="1738" entryz="7" rent="0" townid="2" size="15" />
+	<house name="Low Mugulu XIV" houseid="131" entryx="797" entryy="1753" entryz="7" rent="0" townid="2" size="32" />
+	<house name="Low Mugulu XV" houseid="132" entryx="803" entryy="1753" entryz="7" rent="0" townid="2" size="43" />
+	<house name="Low Mugulu XVI" houseid="133" entryx="809" entryy="1753" entryz="7" rent="0" townid="2" size="30" />
+	<house name="Low Mugulu XVII" houseid="134" entryx="817" entryy="1757" entryz="7" rent="0" townid="2" size="29" />
+	<house name="Mugulu I" houseid="135" entryx="834" entryy="1759" entryz="7" rent="0" townid="2" size="34" />
+	<house name="Mugulu II" houseid="136" entryx="841" entryy="1769" entryz="7" rent="0" townid="2" size="60" />
+	<house name="Mugulu III" houseid="137" entryx="832" entryy="1770" entryz="7" rent="0" townid="2" size="89" />
+	<house name="Mugulu IV" houseid="138" entryx="830" entryy="1787" entryz="7" rent="0" townid="2" size="23" />
+	<house name="Mugulu V" houseid="139" entryx="836" entryy="1787" entryz="7" rent="0" townid="2" size="23" />
+	<house name="Mugulu VI" houseid="140" entryx="830" entryy="1788" entryz="7" rent="0" townid="2" size="28" />
+	<house name="Mugulu VII" houseid="141" entryx="836" entryy="1788" entryz="7" rent="0" townid="2" size="28" />
+	<house name="Mugulu VIII" houseid="142" entryx="833" entryy="1786" entryz="6" rent="0" townid="2" size="32" />
+	<house name="Mugulu IX" houseid="143" entryx="833" entryy="1790" entryz="6" rent="0" townid="2" size="32" />
+	<house name="Mugulu X" houseid="144" entryx="833" entryy="1786" entryz="5" rent="0" townid="2" size="40" />
+	<house name="Mugulu XI" houseid="145" entryx="833" entryy="1790" entryz="5" rent="0" townid="2" size="40" />
+	<house name="Mugulu XII" houseid="146" entryx="816" entryy="1763" entryz="7" rent="0" townid="2" size="30" />
+	<house name="Mugulu XIII" houseid="147" entryx="818" entryy="1767" entryz="6" rent="0" townid="2" size="30" />
+	<house name="Mugulu XIV" houseid="148" entryx="814" entryy="1767" entryz="5" rent="0" townid="2" size="94" />
+	<house name="Mugulu XV" houseid="149" entryx="812" entryy="1778" entryz="7" rent="0" townid="2" size="54" />
+	<house name="Mugulu XVI" houseid="150" entryx="799" entryy="1780" entryz="7" rent="0" townid="2" size="90" />
+	<house name="Mugulu XVII" houseid="151" entryx="788" entryy="1777" entryz="7" rent="0" townid="2" size="113" />
+	<house name="Mugulu XVIII" houseid="152" entryx="794" entryy="1777" entryz="6" rent="0" townid="2" size="76" />
+	<house name="Mugulu XIX" houseid="153" entryx="780" entryy="1766" entryz="7" rent="0" townid="2" size="208" />
+	<house name="Mugulu XX" houseid="154" entryx="791" entryy="1781" entryz="7" rent="0" townid="2" size="28" />
+	<house name="Mugulu XXI" houseid="155" entryx="788" entryy="1795" entryz="7" rent="0" townid="2" size="56" />
+	<house name="Mugulu XXII" houseid="156" entryx="784" entryy="1785" entryz="6" rent="0" townid="2" size="22" />
+	<house name="Mugulu XXIII" houseid="157" entryx="784" entryy="1785" entryz="5" rent="0" townid="2" size="50" />
+	<house name="Mugulu XXIV" houseid="158" entryx="799" entryy="1797" entryz="7" rent="0" townid="2" size="116" />
+	<house name="Mugulu XXV" houseid="159" entryx="791" entryy="1800" entryz="7" rent="0" townid="2" size="44" />
+	<house name="Mugulu XXVI" houseid="160" entryx="782" entryy="1812" entryz="7" rent="0" townid="2" size="78" />
+	<house name="Mugulu XXVII" houseid="161" entryx="797" entryy="1818" entryz="7" rent="0" townid="2" size="22" />
+	<house name="Mugulu XXVIII" houseid="162" entryx="814" entryy="1819" entryz="7" rent="0" townid="2" size="74" />
+	<house name="Mugulu XXIX" houseid="163" entryx="827" entryy="1815" entryz="7" rent="0" townid="2" size="101" />
+	<house name="Mugulu XXX" houseid="164" entryx="828" entryy="1811" entryz="7" rent="0" townid="2" size="33" />
+	<house name="Mugulu XXXI" houseid="165" entryx="830" entryy="1802" entryz="7" rent="0" townid="2" size="56" />
+	<house name="Mugulu XXXII" houseid="166" entryx="811" entryy="1811" entryz="7" rent="0" townid="2" size="52" />
+	<house name="Mugulu XXXIII" houseid="167" entryx="811" entryy="1804" entryz="7" rent="0" townid="2" size="54" />
+	<house name="Mugulu XXXIV" houseid="168" entryx="821" entryy="1798" entryz="7" rent="0" townid="2" size="52" />
+	<house name="High Mugulu I" houseid="170" entryx="771" entryy="1769" entryz="7" rent="0" townid="2" size="79" />
+	<house name="High Mugulu II" houseid="171" entryx="761" entryy="1763" entryz="7" rent="0" townid="2" size="45" />
+	<house name="High Mugulu III" houseid="172" entryx="751" entryy="1760" entryz="7" rent="0" townid="2" size="45" />
+	<house name="High Mugulu IV" houseid="173" entryx="739" entryy="1763" entryz="7" rent="0" townid="2" size="94" />
+	<house name="High Mugulu V" houseid="174" entryx="738" entryy="1772" entryz="7" rent="0" townid="2" size="88" />
+	<house name="High Mugulu VI" houseid="175" entryx="738" entryy="1779" entryz="7" rent="0" townid="2" size="45" />
+	<house name="High Mugulu VII" houseid="176" entryx="749" entryy="1778" entryz="7" rent="0" townid="2" size="45" />
+	<house name="High Mugulu VIII" houseid="177" entryx="759" entryy="1774" entryz="7" rent="0" townid="2" size="153" />
+	<house name="High Mugulu IX" houseid="178" entryx="753" entryy="1768" entryz="7" rent="0" townid="2" size="51" />
+	<house name="Udecoat I" houseid="179" entryx="911" entryy="1739" entryz="9" rent="0" townid="4" size="34" />
+	<house name="Udecoat II" houseid="180" entryx="921" entryy="1738" entryz="9" rent="0" townid="4" size="12" />
+	<house name="Udecoat III" houseid="181" entryx="927" entryy="1738" entryz="9" rent="0" townid="4" size="21" />
+	<house name="Udecoat IV" houseid="182" entryx="937" entryy="1739" entryz="9" rent="0" townid="4" size="20" />
+	<house name="Udecoat V" houseid="183" entryx="946" entryy="1739" entryz="9" rent="0" townid="4" size="42" />
+	<house name="Udecoat VI" houseid="184" entryx="960" entryy="1741" entryz="9" rent="0" townid="4" size="47" />
+	<house name="Udecoat VII" houseid="185" entryx="916" entryy="1742" entryz="9" rent="0" townid="4" size="40" />
+	<house name="Udecoat VIII" houseid="186" entryx="928" entryy="1742" entryz="9" rent="0" townid="4" size="44" />
+	<house name="Udecoat IX" houseid="187" entryx="914" entryy="1757" entryz="9" rent="0" townid="4" size="52" />
+	<house name="Udecoat X" houseid="188" entryx="932" entryy="1758" entryz="9" rent="0" townid="4" size="35" />
+	<house name="Udecoat XI" houseid="189" entryx="915" entryy="1767" entryz="9" rent="0" townid="4" size="41" />
+	<house name="Udecoat XII" houseid="190" entryx="924" entryy="1768" entryz="9" rent="0" townid="4" size="19" />
+	<house name="Udecoat XIII" houseid="191" entryx="928" entryy="1768" entryz="9" rent="0" townid="4" size="19" />
+	<house name="Udecoat XIV" houseid="192" entryx="941" entryy="1752" entryz="9" rent="0" townid="4" size="38" />
+	<house name="Udecoat XV" houseid="193" entryx="940" entryy="1754" entryz="9" rent="0" townid="4" size="17" />
+	<house name="Udecoat XVI" houseid="194" entryx="954" entryy="1754" entryz="9" rent="0" townid="4" size="44" />
+	<house name="Udecoat XVII" houseid="195" entryx="963" entryy="1753" entryz="9" rent="0" townid="4" size="28" />
+	<house name="Udecoat XVIII" houseid="196" entryx="971" entryy="1753" entryz="9" rent="0" townid="4" size="33" />
+	<house name="Udecoat XIX" houseid="197" entryx="977" entryy="1753" entryz="9" rent="0" townid="4" size="33" />
+	<house name="Udecoat XX" houseid="198" entryx="952" entryy="1757" entryz="9" rent="0" townid="4" size="58" />
+	<house name="Udecoat XXI" houseid="199" entryx="962" entryy="1757" entryz="9" rent="0" townid="4" size="22" />
+	<house name="Udecoat XXII" houseid="200" entryx="962" entryy="1769" entryz="9" rent="0" townid="4" size="14" />
+	<house name="Udecoat XXIII" houseid="201" entryx="974" entryy="1756" entryz="9" rent="0" townid="4" size="28" />
+	<house name="Udecoat XXIV" houseid="202" entryx="975" entryy="1769" entryz="9" rent="0" townid="4" size="15" />
+	<house name="Udecoat XXV" houseid="203" entryx="914" entryy="1777" entryz="9" rent="0" townid="4" size="13" />
+	<house name="Udecoat XXVI" houseid="204" entryx="910" entryy="1777" entryz="9" rent="0" townid="4" size="15" />
+	<house name="Udecoat XXVII" houseid="205" entryx="910" entryy="1777" entryz="9" rent="0" townid="4" size="15" />
+	<house name="Udecoat XXVIII" houseid="206" entryx="914" entryy="1777" entryz="9" rent="0" townid="4" size="13" />
+	<house name="Udecoat XXIX" houseid="207" entryx="908" entryy="1787" entryz="9" rent="0" townid="4" size="32" />
+	<house name="Udecoat XXX" houseid="208" entryx="912" entryy="1790" entryz="9" rent="0" townid="4" size="19" />
+	<house name="Udecoat XXXI" houseid="209" entryx="916" entryy="1786" entryz="9" rent="0" townid="4" size="29" />
+	<house name="Udecoat XXXII" houseid="210" entryx="923" entryy="1787" entryz="9" rent="0" townid="4" size="50" />
+	<house name="Udecoat XXXIII" houseid="211" entryx="927" entryy="1784" entryz="9" rent="0" townid="4" size="26" />
+	<house name="Udecoat XXXIV" houseid="212" entryx="928" entryy="1771" entryz="9" rent="0" townid="4" size="25" />
+	<house name="Udecoat XXXV" houseid="213" entryx="936" entryy="1787" entryz="9" rent="0" townid="4" size="36" />
+	<house name="Udecoat XXXVI" houseid="214" entryx="942" entryy="1781" entryz="9" rent="0" townid="4" size="57" />
+	<house name="Udecoat XXXVII" houseid="215" entryx="952" entryy="1771" entryz="9" rent="0" townid="4" size="28" />
+	<house name="Udecoat XXXVIII" houseid="216" entryx="963" entryy="1772" entryz="9" rent="0" townid="4" size="34" />
+	<house name="Udecoat XXXIX" houseid="217" entryx="962" entryy="1786" entryz="9" rent="0" townid="4" size="26" />
+	<house name="Udecoat XL" houseid="218" entryx="936" entryy="1791" entryz="9" rent="0" townid="4" size="23" />
+	<house name="Udecoat XLI" houseid="219" entryx="951" entryy="1782" entryz="9" rent="0" townid="4" size="43" />
+	<house name="Udecoat XLII" houseid="220" entryx="947" entryy="1797" entryz="9" rent="0" townid="4" size="36" />
+	<house name="Udecoat XLIII" houseid="221" entryx="958" entryy="1797" entryz="9" rent="0" townid="4" size="26" />
+	<house name="Udecoat XLIV" houseid="222" entryx="965" entryy="1796" entryz="9" rent="0" townid="4" size="26" />
+	<house name="Udecoat XLV" houseid="223" entryx="973" entryy="1796" entryz="9" rent="0" townid="4" size="31" />
+	<house name="Udecoat XLVI" houseid="224" entryx="973" entryy="1783" entryz="9" rent="0" townid="4" size="47" />
+	<house name="Udecoat " houseid="225" entryx="976" entryy="1772" entryz="9" rent="0" townid="4" size="51" />
+	<house name="Lorn I" houseid="226" entryx="1231" entryy="1668" entryz="6" rent="0" townid="10" size="34" />
+	<house name="Lorn II" houseid="227" entryx="1243" entryy="1675" entryz="6" rent="0" townid="10" size="44" />
+	<house name="Lorn III" houseid="228" entryx="1247" entryy="1676" entryz="6" rent="0" townid="10" size="37" />
+	<house name="Lorn IV" houseid="229" entryx="1259" entryy="1685" entryz="6" rent="0" townid="10" size="42" />
+	<house name="Lorn V" houseid="230" entryx="1264" entryy="1698" entryz="6" rent="0" townid="10" size="41" />
+	<house name="Lorn VI" houseid="231" entryx="1265" entryy="1704" entryz="6" rent="0" townid="10" size="44" />
+	<house name="Lorn VII" houseid="232" entryx="1264" entryy="1725" entryz="6" rent="0" townid="10" size="43" />
+	<house name="Lorn VIII" houseid="233" entryx="1260" entryy="1727" entryz="6" rent="0" townid="10" size="33" />
+	<house name="Lorn IX" houseid="234" entryx="1270" entryy="1734" entryz="6" rent="0" townid="10" size="38" />
+	<house name="Lorn X" houseid="235" entryx="1271" entryy="1737" entryz="6" rent="0" townid="10" size="29" />
+	<house name="Lorn XI" houseid="237" entryx="1280" entryy="1741" entryz="6" rent="0" townid="10" size="30" />
+	<house name="Lorn XII" houseid="238" entryx="1290" entryy="1744" entryz="6" rent="0" townid="10" size="24" />
+	<house name="Lorn XIII" houseid="239" entryx="1299" entryy="1747" entryz="6" rent="0" townid="10" size="30" />
+	<house name="Lorn XIV" houseid="240" entryx="1307" entryy="1747" entryz="6" rent="0" townid="10" size="43" />
+	<house name="Lorn XV" houseid="241" entryx="1312" entryy="1742" entryz="6" rent="0" townid="10" size="41" />
+	<house name="Lorn XVI" houseid="242" entryx="1313" entryy="1733" entryz="6" rent="0" townid="10" size="53" />
+	<house name="Lorn XVII" houseid="243" entryx="1312" entryy="1728" entryz="6" rent="0" townid="10" size="36" />
+	<house name="Lorn XVIII" houseid="244" entryx="1303" entryy="1724" entryz="6" rent="0" townid="10" size="53" />
+	<house name="Lorn XIX" houseid="245" entryx="1292" entryy="1723" entryz="6" rent="0" townid="10" size="40" />
+	<house name="Lorn XX" houseid="246" entryx="1293" entryy="1694" entryz="6" rent="0" townid="10" size="57" />
+	<house name="Lorn XXI" houseid="247" entryx="1304" entryy="1694" entryz="6" rent="0" townid="10" size="22" />
+	<house name="Lorn XXII" houseid="248" entryx="1313" entryy="1695" entryz="6" rent="0" townid="10" size="22" />
+	<house name="Lorn XXIII" houseid="249" entryx="1320" entryy="1704" entryz="6" rent="0" townid="10" size="40" />
+	<house name="Lorn XXIV" houseid="250" entryx="1287" entryy="1684" entryz="6" rent="0" townid="10" size="22" />
+	<house name="Lorn XXV" houseid="251" entryx="1283" entryy="1679" entryz="6" rent="0" townid="10" size="28" />
+	<house name="Lorn XXVI" houseid="252" entryx="1280" entryy="1671" entryz="6" rent="0" townid="10" size="28" />
+	<house name="Lorn XXVII" houseid="253" entryx="1272" entryy="1665" entryz="6" rent="0" townid="10" size="45" />
+	<house name="Lorn XXVIII" houseid="254" entryx="1258" entryy="1665" entryz="6" rent="0" townid="10" size="70" />
+	<house name="Lorn XXIX" houseid="255" entryx="1266" entryy="1666" entryz="6" rent="0" townid="10" size="53" />
+	<house name="Lorn XXX" houseid="256" entryx="1262" entryy="1687" entryz="6" rent="0" townid="10" size="44" />
+	<house name="Lorn XXXI" houseid="257" entryx="1278" entryy="1676" entryz="6" rent="0" townid="10" size="37" />
+	<house name="Lorn XXXII" houseid="258" entryx="1267" entryy="1698" entryz="6" rent="0" townid="10" size="66" />
+	<house name="Lorn XXXIII" houseid="259" entryx="1282" entryy="1698" entryz="6" rent="0" townid="10" size="41" />
+	<house name="Lorn XXXIV" houseid="260" entryx="1271" entryy="1727" entryz="6" rent="0" townid="10" size="18" />
+	<house name="Lorn XXXV" houseid="261" entryx="1279" entryy="1738" entryz="6" rent="0" townid="10" size="20" />
+	<house name="Lorn XXXVI" houseid="262" entryx="1285" entryy="1736" entryz="6" rent="0" townid="10" size="38" />
+	<house name="Lorn XXXVII" houseid="263" entryx="1296" entryy="1727" entryz="6" rent="0" townid="10" size="25" />
+	<house name="Lorn XXXVIII" houseid="264" entryx="1308" entryy="1742" entryz="6" rent="0" townid="10" size="26" />
+	<house name="Lorn XXXIX" houseid="265" entryx="1311" entryy="1733" entryz="6" rent="0" townid="10" size="20" />
+	<house name="Lower Kyo I" houseid="266" entryx="1282" entryy="1926" entryz="7" rent="0" townid="11" size="21" />
+	<house name="Lower Kyo II" houseid="267" entryx="1301" entryy="1909" entryz="7" rent="0" townid="11" size="34" />
+	<house name="Lower Kyo III" houseid="268" entryx="1298" entryy="1900" entryz="7" rent="0" townid="11" size="34" />
+	<house name="Lower Kyo IV" houseid="269" entryx="1290" entryy="1893" entryz="7" rent="0" townid="11" size="138" />
+	<house name="Lower Kyo V" houseid="270" entryx="1295" entryy="1886" entryz="7" rent="0" townid="11" size="23" />
+	<house name="Lower Kyo VI" houseid="271" entryx="1302" entryy="1874" entryz="7" rent="0" townid="11" size="32" />
+	<house name="Lower Kyo VII" houseid="272" entryx="1308" entryy="1890" entryz="7" rent="0" townid="11" size="150" />
+	<house name="Lower Kyo VIII" houseid="273" entryx="1326" entryy="1892" entryz="7" rent="0" townid="11" size="34" />
+	<house name="Lower Kyo IX" houseid="274" entryx="1326" entryy="1885" entryz="7" rent="0" townid="11" size="81" />
+	<house name="Lower Kyo X" houseid="275" entryx="1326" entryy="1878" entryz="7" rent="0" townid="11" size="34" />
+	<house name="Lower Kyo XI" houseid="276" entryx="1332" entryy="1878" entryz="7" rent="0" townid="11" size="18" />
+	<house name="Lower Kyo XII" houseid="277" entryx="1344" entryy="1879" entryz="7" rent="0" townid="11" size="18" />
+	<house name="Lower Kyo XIII" houseid="278" entryx="1346" entryy="1885" entryz="7" rent="0" townid="11" size="59" />
+	<house name="Lower Kyo XIV" houseid="279" entryx="1330" entryy="1854" entryz="6" rent="0" townid="11" size="352" />
+	<house name="High Kyo I" houseid="280" entryx="1362" entryy="1908" entryz="6" rent="0" townid="11" size="34" />
+	<house name="High Kyo II" houseid="281" entryx="1376" entryy="1908" entryz="6" rent="0" townid="11" size="23" />
+	<house name="High Kyo III" houseid="283" entryx="1366" entryy="1896" entryz="6" rent="0" townid="11" size="122" />
+	<house name="High Kyo IV" houseid="284" entryx="1380" entryy="1900" entryz="6" rent="0" townid="11" size="136" />
+	<house name="High Kyo V" houseid="285" entryx="1369" entryy="1873" entryz="6" rent="0" townid="11" size="68" />
+	<house name="High Kyo VI" houseid="286" entryx="1374" entryy="1879" entryz="6" rent="0" townid="11" size="51" />
+	<house name="High Kyo VII" houseid="287" entryx="1379" entryy="1869" entryz="6" rent="0" townid="11" size="68" />
+	<house name="High Kyo VIII" houseid="288" entryx="1372" entryy="1859" entryz="6" rent="0" townid="11" size="70" />
+	<house name="High Kyo IX" houseid="289" entryx="1391" entryy="1852" entryz="6" rent="0" townid="11" size="141" />
+	<house name="High Kyo X" houseid="290" entryx="1408" entryy="1858" entryz="6" rent="0" townid="11" size="28" />
+	<house name="High Kyo XI" houseid="291" entryx="1412" entryy="1862" entryz="6" rent="0" townid="11" size="34" />
+	<house name="High Kyo XII" houseid="292" entryx="1423" entryy="1860" entryz="6" rent="0" townid="11" size="160" />
+	<house name="High Kyo XIII" houseid="293" entryx="1420" entryy="1872" entryz="6" rent="0" townid="11" size="214" />
+	<house name="High Kyo XIV" houseid="294" entryx="1440" entryy="1868" entryz="6" rent="0" townid="11" size="10" />
+	<house name="High Kyo XV" houseid="295" entryx="1444" entryy="1870" entryz="6" rent="0" townid="11" size="32" />
+	<house name="High Kyo XVI" houseid="296" entryx="1400" entryy="1901" entryz="6" rent="0" townid="11" size="174" />
+	<house name="High Kyo XVII" houseid="297" entryx="1416" entryy="1922" entryz="6" rent="0" townid="11" size="32" />
+	<house name="High Kyo XVIII" houseid="298" entryx="1422" entryy="1908" entryz="6" rent="0" townid="11" size="34" />
+	<house name="High Kyo XIX" houseid="299" entryx="1444" entryy="1898" entryz="6" rent="0" townid="11" size="32" />
+	<house name="High Kyo XX" houseid="300" entryx="1437" entryy="1890" entryz="6" rent="0" townid="11" size="34" />
+	<house name="High Kyo XXI" houseid="301" entryx="1430" entryy="1892" entryz="6" rent="0" townid="11" size="28" />
+	<house name="High Algatar I" houseid="302" entryx="1133" entryy="2010" entryz="6" rent="0" townid="12" size="38" />
+	<house name="High Algatar II" houseid="303" entryx="1138" entryy="2030" entryz="6" rent="0" townid="12" size="38" />
+	<house name="High Algatar III" houseid="304" entryx="1140" entryy="2041" entryz="6" rent="0" townid="12" size="43" />
+	<house name="High Algatar IV" houseid="305" entryx="1139" entryy="2046" entryz="6" rent="0" townid="12" size="32" />
+	<house name="High Algatar V" houseid="306" entryx="1126" entryy="2046" entryz="6" rent="0" townid="12" size="162" />
+	<house name="High Algatar VI" houseid="307" entryx="1119" entryy="2034" entryz="6" rent="0" townid="12" size="45" />
+	<house name="High Algatar VII" houseid="308" entryx="1109" entryy="2026" entryz="6" rent="0" townid="12" size="37" />
+	<house name="High Algatar VIII" houseid="309" entryx="1098" entryy="2020" entryz="6" rent="0" townid="12" size="47" />
+	<house name="High Algatar IX" houseid="310" entryx="1095" entryy="2025" entryz="6" rent="0" townid="12" size="60" />
+	<house name="High Algatar X" houseid="311" entryx="1093" entryy="2047" entryz="6" rent="0" townid="12" size="54" />
+	<house name="High Algatar XI" houseid="312" entryx="1095" entryy="2059" entryz="6" rent="0" townid="12" size="23" />
+	<house name="High Algatar XII" houseid="313" entryx="1077" entryy="2059" entryz="6" rent="0" townid="12" size="112" />
+	<house name="High Algatar XIII" houseid="314" entryx="1078" entryy="2038" entryz="6" rent="0" townid="12" size="70" />
+	<house name="High Algatar XIV" houseid="315" entryx="1068" entryy="2044" entryz="6" rent="0" townid="12" size="92" />
+	<house name="Low Algatar I" houseid="316" entryx="1133" entryy="2010" entryz="7" rent="0" townid="12" size="38" />
+	<house name="High Algatar XV" houseid="317" entryx="1063" entryy="2033" entryz="6" rent="0" townid="12" size="33" />
+	<house name="High Algatar XVI" houseid="318" entryx="1088" entryy="2005" entryz="6" rent="0" townid="12" size="42" />
+	<house name="High Algatar XVII" houseid="319" entryx="1074" entryy="2003" entryz="6" rent="0" townid="12" size="46" />
+	<house name="High Algatar XVIII" houseid="320" entryx="1062" entryy="2005" entryz="6" rent="0" townid="12" size="37" />
+	<house name="High Algatar XIX" houseid="321" entryx="1053" entryy="2016" entryz="6" rent="0" townid="12" size="32" />
+	<house name="High Algatar XX" houseid="322" entryx="1055" entryy="2030" entryz="6" rent="0" townid="12" size="47" />
+	<house name="High Algatar XXI" houseid="323" entryx="1037" entryy="2031" entryz="6" rent="0" townid="12" size="36" />
+	<house name="High Algatar XXII" houseid="324" entryx="1023" entryy="2038" entryz="6" rent="0" townid="12" size="48" />
+	<house name="High Algatar XXIII" houseid="325" entryx="1020" entryy="2030" entryz="6" rent="0" townid="12" size="26" />
+	<house name="High Algatar XXIV" houseid="326" entryx="1020" entryy="2011" entryz="6" rent="0" townid="12" size="100" />
+	<house name="High Algatar XXV" houseid="327" entryx="1079" entryy="1978" entryz="6" rent="0" townid="12" size="37" />
+	<house name="High Algatar XXVI" houseid="328" entryx="1081" entryy="1972" entryz="6" rent="0" townid="12" size="38" />
+	<house name="Low Algatar II" houseid="329" entryx="1138" entryy="2030" entryz="7" rent="0" townid="12" size="38" />
+	<house name="Low Algatar III" houseid="330" entryx="1140" entryy="2041" entryz="7" rent="0" townid="12" size="43" />
+	<house name="Low Algatar IV" houseid="331" entryx="1136" entryy="2040" entryz="7" rent="0" townid="12" size="32" />
+	<house name="Low Algatar V" houseid="332" entryx="1120" entryy="2039" entryz="7" rent="0" townid="12" size="80" />
+	<house name="Low Algatar VI" houseid="333" entryx="1124" entryy="2029" entryz="7" rent="0" townid="12" size="45" />
+	<house name="Low Algatar VII" houseid="334" entryx="1114" entryy="2021" entryz="7" rent="0" townid="12" size="37" />
+	<house name="Low Algatar VIII" houseid="335" entryx="1098" entryy="2009" entryz="7" rent="0" townid="12" size="47" />
+	<house name="Low Algatar IX" houseid="336" entryx="1089" entryy="2019" entryz="7" rent="0" townid="12" size="60" />
+	<house name="Low Algatar X" houseid="337" entryx="1105" entryy="2046" entryz="7" rent="0" townid="12" size="54" />
+	<house name="Low Algatar XI" houseid="338" entryx="1095" entryy="2059" entryz="7" rent="0" townid="12" size="23" />
+	<house name="Low Algatar XII" houseid="339" entryx="1077" entryy="2059" entryz="7" rent="0" townid="12" size="54" />
+	<house name="Low Algatar XIII" houseid="340" entryx="1078" entryy="2038" entryz="7" rent="0" townid="12" size="70" />
+	<house name="Low Algatar XIV" houseid="341" entryx="1061" entryy="2038" entryz="7" rent="0" townid="12" size="44" />
+	<house name="Low Algatar XV" houseid="342" entryx="1062" entryy="2033" entryz="7" rent="0" townid="12" size="33" />
+	<house name="Low Algatar XVI" houseid="343" entryx="1091" entryy="1999" entryz="7" rent="0" townid="12" size="42" />
+	<house name="Low Algatar XVII" houseid="344" entryx="1068" entryy="1998" entryz="7" rent="0" townid="12" size="46" />
+	<house name="Low Algatar XVIII" houseid="345" entryx="1050" entryy="2006" entryz="7" rent="0" townid="12" size="44" />
+	<house name="Low Algatar XIX" houseid="346" entryx="1048" entryy="2011" entryz="7" rent="0" townid="12" size="32" />
+	<house name="Low Algatar XX" houseid="347" entryx="1050" entryy="2035" entryz="7" rent="0" townid="12" size="47" />
+	<house name="Low Algatar XXI" houseid="348" entryx="1038" entryy="2021" entryz="7" rent="0" townid="12" size="36" />
+	<house name="Low Algatar XXII" houseid="349" entryx="1023" entryy="2038" entryz="7" rent="0" townid="12" size="48" />
+	<house name="Low Algatar XXIII" houseid="350" entryx="1015" entryy="2025" entryz="7" rent="0" townid="12" size="26" />
+	<house name="Low Algatar XXIV" houseid="351" entryx="1014" entryy="2016" entryz="7" rent="0" townid="12" size="49" />
+	<house name="Low Algatar XXV" houseid="352" entryx="1074" entryy="1972" entryz="7" rent="0" townid="12" size="37" />
+	<house name="Low Algatar XXVI" houseid="353" entryx="1081" entryy="1972" entryz="7" rent="0" townid="12" size="38" />
+	<house name="Khazad-dum I" houseid="354" entryx="1474" entryy="1729" entryz="8" rent="0" townid="13" size="14" />
+	<house name="Khazad-dum II" houseid="355" entryx="1474" entryy="1723" entryz="8" rent="0" townid="13" size="14" />
+	<house name="Khazad-dum III" houseid="356" entryx="1474" entryy="1717" entryz="8" rent="0" townid="13" size="14" />
+	<house name="Khazad-dum IV" houseid="357" entryx="1487" entryy="1717" entryz="8" rent="0" townid="13" size="14" />
+	<house name="Khazad-dum V" houseid="358" entryx="1487" entryy="1723" entryz="8" rent="0" townid="13" size="14" />
+	<house name="Khazad-dum VI" houseid="359" entryx="1487" entryy="1729" entryz="8" rent="0" townid="13" size="14" />
+	<house name="Khazad-dum VII" houseid="360" entryx="1490" entryy="1729" entryz="8" rent="0" townid="13" size="10" />
+	<house name="Khazad-dum VIII" houseid="361" entryx="1490" entryy="1724" entryz="8" rent="0" townid="13" size="10" />
+	<house name="Khazad-dum IX" houseid="362" entryx="1490" entryy="1719" entryz="8" rent="0" townid="13" size="10" />
+	<house name="Khazad-dum X" houseid="363" entryx="1490" entryy="1714" entryz="8" rent="0" townid="13" size="10" />
+	<house name="Khazad-dum XI" houseid="364" entryx="1503" entryy="1714" entryz="8" rent="0" townid="13" size="10" />
+	<house name="Khazad-dum XII" houseid="365" entryx="1503" entryy="1719" entryz="8" rent="0" townid="13" size="10" />
+	<house name="Khazad-dum XIII" houseid="366" entryx="1503" entryy="1724" entryz="8" rent="0" townid="13" size="10" />
+	<house name="Khazad-dum XIV" houseid="367" entryx="1503" entryy="1729" entryz="8" rent="0" townid="13" size="10" />
+	<house name="Khazad-dum XV" houseid="368" entryx="1535" entryy="1729" entryz="8" rent="0" townid="13" size="50" />
+	<house name="Khazad-dum XVI" houseid="369" entryx="1522" entryy="1723" entryz="8" rent="0" townid="13" size="12" />
+	<house name="Khazad-dum XVII" houseid="370" entryx="1522" entryy="1717" entryz="8" rent="0" townid="13" size="50" />
+	<house name="Khazad-dum XVIII" houseid="371" entryx="1535" entryy="1723" entryz="8" rent="0" townid="13" size="12" />
+	<house name="Khazad-dum XIX" houseid="372" entryx="1551" entryy="1730" entryz="8" rent="0" townid="13" size="71" />
+	<house name="Khazad-dum XX" houseid="373" entryx="1538" entryy="1716" entryz="8" rent="0" townid="13" size="71" />
+</houses>
