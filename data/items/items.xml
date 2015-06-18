@@ -26007,6 +26007,14 @@
 	<item fromid="19332" toid="19342" article="a" name="brown stone wall" />
 	<item fromid="19354" toid="19375" article="an" name="ornate wall" />
 	<item fromid="19376" toid="19388" article="a" name="stone wall" />
+	<item id="19390" article="a" name="spire spear">
+		<attribute key="weight" value="500" />
+		<attribute key="attack" value="9" />
+		<attribute key="weaponType" value="distance" />
+		<attribute key="shootType" value="spear" />
+		<attribute key="range" value="3" />
+		<attribute key="hitChance" value="60" />
+	</item>
 	<item fromid="19395" toid="19420" article="a" name="stone wall" />
 	<item id="19431" name="freshly cut venorean spice">
 		<attribute key="description" value="It has just been cut." />
