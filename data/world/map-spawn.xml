@@ -1954,8 +1954,8 @@
 	<spawn centerx="1340" centery="2014" centerz="6" radius="1">
 		<monster name="Pirate Marauder" x="0" y="1" z="6" spawntime="60" />
 	</spawn>
-	<spawn centerx="1076" centery="2016" centerz="6" radius="1">
-		<npc name="Jachim Melliel" x="0" y="-1" z="6" spawntime="60" direction="2" />
+	<spawn centerx="1078" centery="2016" centerz="6" radius="1">
+		<npc name="Jachim Melliel" x="-1" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="463" centery="2017" centerz="6" radius="1">
 		<monster name="Ice Witch" x="1" y="1" z="6" spawntime="60" />
