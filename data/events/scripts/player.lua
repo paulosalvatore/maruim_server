@@ -96,6 +96,26 @@ function Player:onLookInShop(itemType, count)
 end
 
 function Player:onMoveItem(item, count, fromPosition, toPosition)
+	local tile = Tile(toPosition)
+	if tile and tile:getHouse() ~= nil then
+		if tile:getItemCount() == 9 then
+			self:sendCancelMessage("Não é possível adicionar mais itens a esse local.")
+			return false
+		else
+			local peso = item:getWeight()
+			local pesoMaximo = 1500000
+			local itens = tile:getItems()
+			if itens then
+				for i = 1, #itens do
+					peso = peso + itens[i]:getWeight()
+				end
+			end
+			if peso > pesoMaximo then
+				self:sendCancelMessage("Não é possível adicionar mais itens a esse local.")
+				return false
+			end
+		end
+	end
 	if item:getActionId() == 2500 or item:getActionId() == 2503 then
 		self:sendCancelMessage("Você não pode mover esse item.")
 		return false
