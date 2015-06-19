@@ -16,15 +16,17 @@ local config = {
 			container = 21475
 		},
 		[2800] = {
-			recompensa = {{2152, 5}, {8860, 1}},
-			checarValor = 1
+			recompensa = {{2152, 5}, {8860, 1}}
+		},
+		[7000] = {
+			recompensa = {{2464, 1}, {2648, 1}}
 		}
 	},
 	containerPadrao = 1987
 }
 
 function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if config["action"][item.actionid] or config["unique"][item.uid] or item.uid ~= nil then
+	if (item.actionid ~= nil and config["action"][item.actionid]) or (item.uid ~= nil and config["unique"][item.uid]) then
 		local i
 		local storage
 		if config["action"][item.actionid] then

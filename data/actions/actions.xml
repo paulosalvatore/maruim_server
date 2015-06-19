@@ -87,12 +87,10 @@
 	<action fromid="7160" toid="7161" script="quests.lua" />
 	<action fromid="12664" toid="12665" script="quests.lua" />
 	<action fromid="12796" toid="12797" script="quests.lua" />
-	<action fromid="13902" toid="13903" script="quests.lua" />
+	<action fromid="13799" toid="13800" script="quests.lua" />
 	<action fromid="15640" toid="15642" script="quests.lua" />
 	<action fromid="18472" toid="18474" script="quests.lua" />
 	<action itemid="18510" script="quests.lua" />
-	<action uniqueid="2700" script="quests.lua" />
-	<action uniqueid="2800" script="quests.lua" />
 
 	<!-- Tools -->
 	<action itemid="2420" script="tools/machete.lua" />
