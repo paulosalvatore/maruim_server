@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <weapons>
 	<!-- Rods -->
+	<wand id="23721" level="1" mana="0" script="druid rod.lua"> <!-- Druid Rod -->
+		<vocation name="Druid" />
+	</wand>
 	<wand id="2182" level="7" mana="2" min="8" max="18" type="earth"> <!-- Snakebit Rod -->
 		<vocation name="Druid" />
 	</wand>
@@ -36,6 +39,9 @@
 	</wand>
 
 	<!-- Wands -->
+	<wand id="23719" level="1" mana="0" script="sorcerer wand.lua"> <!-- Sorcerer Wand -->
+		<vocation name="Sorcerer" />
+	</wand>
 	<wand id="2190" level="7" mana="2" min="8" max="18" type="energy"> <!-- Wand of Vortex -->
 		<vocation name="Sorcerer" />
 	</wand>
@@ -654,7 +660,7 @@
 	<distance id="1294" breakchance="3" /> <!-- Small Stone -->
 	<distance id="2111" action="removecount" /> <!-- Snowball -->
 	<distance id="2389" breakchance="3" /> <!-- Spear -->
-	<distance id="19390" breakchance="3" /> <!-- Spire Spear -->
+	<distance id="19390" breakchance="1" /> <!-- Spire Spear -->
 	<distance id="2399" breakchance="10" /> <!-- Throwing Star -->
 	<distance id="2410" breakchance="7" /> <!-- Throwing Knife -->
 	<distance id="2543" action="removecount" /> <!-- Bolt -->

@@ -86,6 +86,9 @@ Vocacoes = {
 itemDesativado = 2500
 
 modalTeleportCrystal = 9001
+modalItensKnight = 5000
+
+itensKnight = {2406, 2448, 2380}
 
 posicoesDepot = {
 	[2] = {x = 800, y = 1806, z = 7}, -- Mugulu
