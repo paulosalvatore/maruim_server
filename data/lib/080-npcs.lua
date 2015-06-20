@@ -109,8 +109,7 @@ barqueiros = {
 		destinos = {
 			"civitaten_barco",
 			"hyalakur_barco",
-			"otto",
-			"khazad_dum"
+			"otto"
 		},
 		tipoViagem = "navio"
 	},
