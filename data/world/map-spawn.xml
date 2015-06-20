@@ -952,11 +952,12 @@
 		<npc name="Mumpladio Zewuxis" x="-1" y="-1" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="658" centery="949" centerz="6" radius="1">
-		<npc name="Kasal Adwez" x="-1" y="0" z="6" spawntime="60" direction="2" />
+		<npc name="Rimi" x="-1" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="650" centery="956" centerz="6" radius="1">
-		<npc name="Frezeb Ango" x="-1" y="0" z="6" spawntime="60" direction="2" />
+	<spawn centerx="580" centery="954" centerz="6" radius="2">
+		<npc name="Arcus Arataron" x="-1" y="-1" z="6" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="650" centery="956" centerz="6" radius="1" />
 	<spawn centerx="638" centery="1255" centerz="6" radius="4">
 		<monster name="Dragon" x="2" y="-3" z="6" spawntime="60" />
 		<monster name="Dragon" x="-1" y="3" z="6" spawntime="60" />
@@ -2219,8 +2220,8 @@
 	<spawn centerx="511" centery="924" centerz="7" radius="1">
 		<npc name="Valiandriu Nitherac" x="-1" y="-1" z="7" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="586" centery="925" centerz="7" radius="1">
-		<npc name="Darvia Swor" x="0" y="0" z="7" spawntime="60" direction="2" />
+	<spawn centerx="586" centery="926" centerz="7" radius="1">
+		<npc name="Darvia Swor" x="0" y="-1" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="542" centery="933" centerz="7" radius="1">
 		<monster name="Rabbit" x="-1" y="0" z="7" spawntime="60" />
@@ -2246,7 +2247,7 @@
 	<spawn centerx="598" centery="949" centerz="7" radius="1">
 		<npc name="Phaos Thourasa" x="-1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="650" centery="952" centerz="7" radius="1">
+	<spawn centerx="652" centery="951" centerz="7" radius="1">
 		<npc name="Gori Asmus" x="-1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="592" centery="954" centerz="7" radius="1">
@@ -2257,6 +2258,9 @@
 	</spawn>
 	<spawn centerx="515" centery="956" centerz="7" radius="1">
 		<monster name="Deer" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="575" centery="957" centerz="7" radius="2">
+		<npc name="Sirk Skana" x="0" y="-1" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="502" centery="959" centerz="7" radius="1">
 		<npc name="Tren Xafis" x="1" y="1" z="7" spawntime="60" direction="2" />
@@ -2675,9 +2679,6 @@
 	</spawn>
 	<spawn centerx="852" centery="1323" centerz="7" radius="1">
 		<npc name="Toliashaen Leart" x="-1" y="-1" z="7" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="823" centery="1324" centerz="7" radius="1">
-		<npc name="Thalca Cafael" x="0" y="-1" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="893" centery="1324" centerz="7" radius="1">
 		<monster name="Wisp" x="0" y="-1" z="7" spawntime="60" />
@@ -8582,6 +8583,9 @@
 	<spawn centerx="532" centery="976" centerz="8" radius="1">
 		<monster name="Snake" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="589" centery="976" centerz="8" radius="1">
+		<npc name="Fron" x="-1" y="0" z="8" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="439" centery="977" centerz="8" radius="1">
 		<monster name="Wolf" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -8610,9 +8614,6 @@
 	<spawn centerx="535" centery="990" centerz="8" radius="1">
 		<monster name="Snake" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="642" centery="1003" centerz="8" radius="1">
-		<npc name="Arcus Arataron" x="-1" y="0" z="8" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="608" centery="1035" centerz="8" radius="1">
 		<monster name="Skeleton" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -8633,6 +8634,63 @@
 	</spawn>
 	<spawn centerx="623" centery="1052" centerz="8" radius="1">
 		<monster name="Skeleton" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="659" centery="1054" centerz="8" radius="1">
+		<monster name="Cave Rat" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="665" centery="1054" centerz="8" radius="1">
+		<monster name="Minotaur" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="676" centery="1054" centerz="8" radius="1">
+		<monster name="Cave Rat" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="675" centery="1060" centerz="8" radius="1">
+		<monster name="Minotaur" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="650" centery="1061" centerz="8" radius="1">
+		<monster name="Minotaur" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="634" centery="1063" centerz="8" radius="1">
+		<monster name="Minotaur" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="646" centery="1065" centerz="8" radius="1">
+		<monster name="Cave Rat" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="637" centery="1067" centerz="8" radius="1">
+		<monster name="Cave Rat" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="682" centery="1074" centerz="8" radius="1">
+		<monster name="Minotaur" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="641" centery="1076" centerz="8" radius="1">
+		<monster name="Cave Rat" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="645" centery="1081" centerz="8" radius="1">
+		<monster name="Minotaur" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="681" centery="1081" centerz="8" radius="1">
+		<monster name="Cave Rat" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="651" centery="1087" centerz="8" radius="1">
+		<monster name="Cave Rat" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="678" centery="1090" centerz="8" radius="1">
+		<monster name="Cave Rat" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="659" centery="1091" centerz="8" radius="1">
+		<monster name="Minotaur" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="642" centery="1093" centerz="8" radius="1">
+		<monster name="Cave Rat" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="674" centery="1095" centerz="8" radius="1">
+		<monster name="Minotaur" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="633" centery="1096" centerz="8" radius="1">
+		<monster name="Minotaur" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="666" centery="1096" centerz="8" radius="1">
+		<monster name="Cave Rat" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="909" centery="1233" centerz="8" radius="2">
 		<monster name="Goblin" x="-2" y="-1" z="8" spawntime="60" />
@@ -8816,6 +8874,9 @@
 		<monster name="Goblin" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Goblin" x="-1" y="2" z="8" spawntime="60" />
 		<monster name="Goblin" x="1" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="829" centery="1315" centerz="8" radius="1">
+		<npc name="Thalca Cafael" x="0" y="-1" z="8" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="909" centery="1321" centerz="8" radius="2">
 		<monster name="Goblin" x="0" y="-2" z="8" spawntime="60" />
@@ -12614,8 +12675,8 @@
 	<spawn centerx="653" centery="899" centerz="9" radius="1">
 		<monster name="Rotworm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="599" centery="900" centerz="9" radius="1">
-		<monster name="Rotworm" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="600" centery="900" centerz="9" radius="1">
+		<monster name="Rotworm" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="638" centery="901" centerz="9" radius="1">
 		<monster name="Rotworm" x="0" y="0" z="9" spawntime="60" />
@@ -12629,8 +12690,8 @@
 	<spawn centerx="691" centery="904" centerz="9" radius="1">
 		<monster name="Rotworm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="598" centery="905" centerz="9" radius="1">
-		<monster name="Rotworm" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="598" centery="906" centerz="9" radius="1">
+		<monster name="Rotworm" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="667" centery="908" centerz="9" radius="1">
 		<monster name="Rotworm" x="0" y="0" z="9" spawntime="60" />
@@ -12638,24 +12699,24 @@
 	<spawn centerx="644" centery="909" centerz="9" radius="1">
 		<monster name="Rotworm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="629" centery="911" centerz="9" radius="1">
-		<monster name="Rotworm" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="628" centery="911" centerz="9" radius="1">
+		<monster name="Rotworm" x="1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="607" centery="914" centerz="9" radius="1">
 		<monster name="Rotworm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="645" centery="918" centerz="9" radius="1">
-		<monster name="Rotworm" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="646" centery="918" centerz="9" radius="1">
+		<monster name="Rotworm" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="623" centery="922" centerz="9" radius="1">
-		<monster name="Rotworm" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="623" centery="923" centerz="9" radius="1">
+		<monster name="Rotworm" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="702" centery="926" centerz="9" radius="2">
 		<monster name="Troll" x="-2" y="-2" z="9" spawntime="60" />
 		<monster name="Troll" x="2" y="2" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="651" centery="928" centerz="9" radius="1">
-		<monster name="Rotworm" x="0" y="0" z="9" spawntime="60" />
+	<spawn centerx="650" centery="928" centerz="9" radius="1">
+		<monster name="Rotworm" x="1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="710" centery="934" centerz="9" radius="1">
 		<monster name="Troll" x="-1" y="-1" z="9" spawntime="60" />

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Sirk Skana" script="default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="146" head="120" body="120" legs="116" feet="116" addons="3" />
+	<parameters>
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja." />
+		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?" /> 
+		<parameter key="message_farewell" value="Adeus!" />
+		<parameter key="message_walkaway" value="Nos vemos depois!" />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="leather armor,2467,10;leather helmet,2461,5;leather legs,2649,7;leather boots,2643,9;wooden shield,2512,15;studded armor,2484,35;studded helmet,2482,20;studded legs,2468,30;studded shield,2526,50;" />
+		<parameter key="shop_sellable" value="" />
+	</parameters>
+</npc>
