@@ -17,6 +17,13 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		target:transform(target.itemid+1)
 		target:decay()
 		toPosition:sendMagicEffect(CONST_ME_BLOCKHIT)
+	elseif target.actionid == 3000 and target.itemid == 6283 then
+		target:remove()
+		toPosition:sendMagicEffect(CONST_ME_POFF)
+		addEvent(function(posicao)
+			Game.createItem(6283, 1, posicao):setActionId(3000)
+		end, 300000, toPosition)
+		return true
 	else
 		return false
 	end
