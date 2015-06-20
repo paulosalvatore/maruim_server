@@ -954,10 +954,12 @@
 	<spawn centerx="658" centery="949" centerz="6" radius="1">
 		<npc name="Rimi" x="-1" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="580" centery="954" centerz="6" radius="2">
-		<npc name="Arcus Arataron" x="-1" y="-1" z="6" spawntime="60" direction="2" />
+	<spawn centerx="580" centery="954" centerz="6" radius="1">
+		<npc name="Arcus Arataron" x="0" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="650" centery="956" centerz="6" radius="1" />
+	<spawn centerx="650" centery="956" centerz="6" radius="1">
+		<npc name="Mylo" x="-1" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="638" centery="1255" centerz="6" radius="4">
 		<monster name="Dragon" x="2" y="-3" z="6" spawntime="60" />
 		<monster name="Dragon" x="-1" y="3" z="6" spawntime="60" />
@@ -2248,7 +2250,7 @@
 		<npc name="Phaos Thourasa" x="-1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="652" centery="951" centerz="7" radius="1">
-		<npc name="Gori Asmus" x="-1" y="0" z="7" spawntime="60" direction="2" />
+		<npc name="Barna, Barba de Cascalho" x="-1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="592" centery="954" centerz="7" radius="1">
 		<monster name="Rabbit" x="-1" y="0" z="7" spawntime="60" />
@@ -2259,8 +2261,8 @@
 	<spawn centerx="515" centery="956" centerz="7" radius="1">
 		<monster name="Deer" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="575" centery="957" centerz="7" radius="2">
-		<npc name="Sirk Skana" x="0" y="-1" z="7" spawntime="60" direction="2" />
+	<spawn centerx="575" centery="956" centerz="7" radius="1">
+		<npc name="Sirk Skana" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="502" centery="959" centerz="7" radius="1">
 		<npc name="Tren Xafis" x="1" y="1" z="7" spawntime="60" direction="2" />
