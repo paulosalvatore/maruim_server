@@ -438,8 +438,8 @@ profissoes = {
 			-- {item = 22424, nivel = 20, nivelJogador = 1, ferramenta = 22474, materiais = {{22423, 1}, {22396, 1}, {21246, 1}, {9980, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {defesa = {0, 3}}},
 
 			-- Wands
-			-- {item = 2190, nivel = 1, nivelJogador = 1, ferramenta = 6533, materiais = {{7735, 1}, {8303, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {}},
-			{item = 2191, nivel = 2, nivelJogador = 1, ferramenta = 6533, materiais = {{7735, 1}, {5920, 2}}, fabricarQuantidade = 1, tempo = 3, experiencia = 50, pontos = 2, chanceSucesso = 8000, aprender = 0}, -- 330
+			-- {item = 2190, nivel = 1, nivelJogador = 1, ferramenta = 6533, materiais = {{7735, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {}},
+			{item = 2191, nivel = 2, nivelJogador = 1, ferramenta = 6533, materiais = {{7735, 1}}, fabricarQuantidade = 1, tempo = 3, experiencia = 50, pontos = 2, chanceSucesso = 8000, aprender = 0}, -- 330
 			-- {item = 2188, nivel = 3, nivelJogador = 1, ferramenta = 11237, materiais = {{7735, 1}, {3955, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {}},
 			{item = 8921, nivel = 4, nivelJogador = 1, ferramenta = 6533, materiais = {{2191, 1}, {5882, 2}}, fabricarQuantidade = 1, tempo = 6, experiencia = 100, pontos = 3, chanceSucesso = 5000, aprender = 0}, -- 830
 			-- {item = 2189, nivel = 6, nivelJogador = 1, ferramenta = 1976, materiais = {{2190, 1}, {10582, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {}},
@@ -452,8 +452,8 @@ profissoes = {
 			-- {item = 13760, nivel = 20, nivelJogador = 1, ferramenta = 22474, materiais = {{7735, 1}, {18457, 10}, {18509, 5}, {6547, 1}, {21395, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0, atributos = {}},
 
 			-- Rods
-			-- {item = 2182, nivel = 20, nivelJogador = 1, ferramenta = 6533, materiais = {{7735, 1}, {11222, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0},
-			{item = 2186, nivel = 2, nivelJogador = 1, ferramenta = 6533, materiais = {{7735, 1}, {8302, 5}}, fabricarQuantidade = 1, tempo = 3, experiencia = 50, pontos = 2, chanceSucesso = 8000, aprender = 0}, -- 330
+			-- {item = 2182, nivel = 20, nivelJogador = 1, ferramenta = 6533, materiais = {{7735, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0},
+			{item = 2186, nivel = 2, nivelJogador = 1, ferramenta = 6533, materiais = {{7735, 1}}, fabricarQuantidade = 1, tempo = 3, experiencia = 50, pontos = 2, chanceSucesso = 8000, aprender = 0}, -- 330
 			-- {item = 2185, nivel = 20, nivelJogador = 1, ferramenta = 11237, materiais = {{7735, 1}, {6300, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0},
 			{item = 8911, nivel = 4, nivelJogador = 1, ferramenta = 6533, materiais = {{2186, 1}, {7289, 5}}, fabricarQuantidade = 1, tempo = 6, experiencia = 100, pontos = 3, chanceSucesso = 7000, aprender = 0}, -- 330
 			-- {item = 2181, nivel = 20, nivelJogador = 1, ferramenta = 1976, materiais = {{2182, 1}, {21310, 1}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0},
