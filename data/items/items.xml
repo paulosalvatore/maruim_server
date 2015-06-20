@@ -30869,6 +30869,16 @@
 		<attribute key="slotType" value="backpack" />
 		<attribute key="weight" value="1800" />
 	</item>
+	<item id="23719" article="a" name="sorcerer wand">
+		<attribute key="weight" value="2500" />
+		<attribute key="weaponType" value="wand" />
+		<attribute key="range" value="3" />
+	</item>
+	<item id="23721" article="a" name="druid rod">
+		<attribute key="weight" value="2500" />
+		<attribute key="weaponType" value="wand" />
+		<attribute key="range" value="3" />
+	</item>
 	<item id="23782" article="a" name="shopping bag">
 		<attribute key="containerSize" value="20" />
 		<attribute key="slotType" value="backpack" />
