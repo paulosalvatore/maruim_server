@@ -1922,11 +1922,11 @@
 	<spawn centerx="1341" centery="1996" centerz="6" radius="1">
 		<monster name="Pirate Marauder" x="0" y="1" z="6" spawntime="60" />
 	</spawn>
+	<spawn centerx="1016" centery="1997" centerz="6" radius="1">
+		<npc name="Volouk Alithraudo" x="-1" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="1325" centery="1998" centerz="6" radius="1">
 		<monster name="Pirate Buccaneer" x="0" y="0" z="6" spawntime="60" />
-	</spawn>
-	<spawn centerx="1022" centery="1999" centerz="6" radius="1">
-		<npc name="Volouk Alithraudo" x="-1" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1036" centery="2000" centerz="6" radius="1">
 		<npc name="Tom" x="0" y="-1" z="6" spawntime="60" direction="2" />
