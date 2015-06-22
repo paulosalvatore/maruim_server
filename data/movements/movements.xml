@@ -17,6 +17,8 @@
 	<movevent event="AddItem" tileitem="1" itemid="2229" script="add_item.lua" />
 	<movevent event="AddItem" tileitem="1" itemid="21430" script="add_item.lua" />
 
+	<movevent event="StepIn" fromaid="4002" toaid="4013" script="cidadao.lua" />
+
 	<!-- Decaying tiles -->
 	<movevent event="StepIn" itemid="293" script="decay.lua" />
 	<movevent event="StepIn" itemid="461" script="decay.lua" />

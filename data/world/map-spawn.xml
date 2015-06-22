@@ -2265,7 +2265,7 @@
 		<npc name="Phaos Thourasa" x="-1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="652" centery="951" centerz="7" radius="1">
-		<npc name="Barna, Barba de Cascalho" x="-1" y="0" z="7" spawntime="60" direction="2" />
+		<npc name="Barna, Barba de Cascalho" x="-1" y="0" z="7" spawntime="60" direction="3" />
 	</spawn>
 	<spawn centerx="592" centery="954" centerz="7" radius="1">
 		<monster name="Rabbit" x="-1" y="0" z="7" spawntime="60" />

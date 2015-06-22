@@ -116,6 +116,15 @@ function formatarFrase(frase, cid, msg, count, transfer)
 	return frase
 end
 
+function formatarNomeCidade(nomeCidade)
+	if nomeCidade == "Otto" then
+		nomeCidade = "Ôttô"
+	elseif nomeCidade == "Khazad-dum" then
+		nomeCidade = "Khazad-dûm"
+	end
+	return nomeCidade
+end
+
 function playerExists(name)
 	local resultId = db.storeQuery('SELECT `name` FROM `players` WHERE `name` = ' .. db.escapeString(name))
 	if resultId then
