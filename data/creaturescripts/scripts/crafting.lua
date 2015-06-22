@@ -12,7 +12,7 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 		local profissao = profissoes[profissaoId]
 		local modalTitulo = player:getProfissaoModalTitulo(profissaoId)
 		local modalTituloListaVazia = "Aviso"
-		local modalMensagemLista = "Selecione um item na lista e realize uma das ações citadas abaixo:\n\nClique no botão 'Criar', tecle 'Enter' ou dê dois cliques para iniciar o processo de fabricação.\nClique no botão 'Materiais' para verificar os requisitos necessários para criação do item selecionado.\n"
+		local modalMensagemLista = "Selecione um item na lista e realize uma das ações citadas abaixo:\n\nClique no botão 'Criar', tecle 'Enter' ou dê dois cliques para iniciar o processo de fabricação.\nClique no botão 'Info' para verificar os requisitos necessários para criação do item selecionado.\n"
 		local modalMensagemListaVazia = "Não há nenhuma receita disponível para ser exibida.\nClique no botão 'Voltar' e selecione outra opção."
 		local profissaoNivel = player:getProfissaoSkill(profissaoId)
 		local profissaoExpPorcentagem = player:getProfissaoSkillPorcentagem(profissaoId)
@@ -76,7 +76,7 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 				modal:setDefaultEscapeButton(2)
 				modal:sendToPlayer(player)
 			else
-				modal:addButton(4, "Materiais")
+				modal:addButton(4, "Info")
 				modal:setDefaultEnterButton(1)
 				modal:addButton(2, "Sair")
 				modal:addButton(1, "Criar")
@@ -108,7 +108,7 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 				modal:setDefaultEscapeButton(2)
 				modal:sendToPlayer(player)
 			else
-				modal:addButton(4, "Materiais")
+				modal:addButton(4, "Info")
 				modal:setDefaultEnterButton(1)
 				modal:addButton(2, "Sair")
 				modal:addButton(1, "Criar")
@@ -139,7 +139,7 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 				modal:setDefaultEscapeButton(2)
 				modal:sendToPlayer(player)
 			else
-				modal:addButton(4, "Materiais")
+				modal:addButton(4, "Info")
 				modal:setDefaultEnterButton(1)
 				modal:addButton(2, "Sair")
 				modal:addButton(1, "Criar")
