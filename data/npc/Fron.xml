@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_buyable" value="spellwand,7735,30;spellbook,2175,30;" />
+		<parameter key="shop_buyable" value="spellwand,7735,30;spellbook,2175,30;mage hat,8820,30;magician's robe,8819,30;worn leather boots,2238,30;" />
 	</parameters>
 </npc>

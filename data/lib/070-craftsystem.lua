@@ -480,24 +480,24 @@ profissoes = {
 		mesaTrabalhando = {9896, 9899},
 		receitas = {
 			-- Materiais
-			{item = 13540, nivel = 5, nivelJogador = 1, ferramenta = 13828, materiais = {{23875, 1}, {9970, 10}, {5914, 5}}, tempo = 3, experiencia = 10, pontos = 10, chanceSucesso = 8000, aprender = 0},
-			{item = 13541, nivel = 5, nivelJogador = 1, ferramenta = 13828, materiais = {{23875, 1}, {2149, 10}, {5910, 5}}, tempo = 3, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0},
-			{item = 13542, nivel = 5, nivelJogador = 1, ferramenta = 13828, materiais = {{23875, 1}, {2145, 10}, {5913, 5}}, tempo = 3, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0},
-			{item = 13543, nivel = 5, nivelJogador = 1, ferramenta = 13828, materiais = {{23875, 1}, {2147, 10}, {5911, 5}}, tempo = 3, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0},
-			{item = 13544, nivel = 5, nivelJogador = 1, ferramenta = 13828, materiais = {{23875, 1}, {2150, 10}, {5911, 5}}, tempo = 3, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0},
-			{item = 13545, nivel = 5, nivelJogador = 1, ferramenta = 13828, materiais = {{23875, 1}, {2146, 10}, {5912, 5}}, tempo = 3, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0},
+			{item = 13540, nivel = 5, nivelJogador = 1, ferramenta = 13828, materiais = {{23875, 1}, {9970, 10}, {5914, 5}}, tempo = 3, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0},--750
+			{item = 13541, nivel = 5, nivelJogador = 1, ferramenta = 13828, materiais = {{23875, 1}, {2149, 10}, {5910, 5}}, tempo = 3, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0},--750
+			{item = 13542, nivel = 5, nivelJogador = 1, ferramenta = 13828, materiais = {{23875, 1}, {2145, 10}, {5913, 5}}, tempo = 3, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0},--750
+			{item = 13543, nivel = 5, nivelJogador = 1, ferramenta = 13828, materiais = {{23875, 1}, {2147, 10}, {5911, 5}}, tempo = 3, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0},--750
+			{item = 13544, nivel = 5, nivelJogador = 1, ferramenta = 13828, materiais = {{23875, 1}, {2150, 10}, {5911, 5}}, tempo = 3, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0},--750
+			{item = 13545, nivel = 5, nivelJogador = 1, ferramenta = 13828, materiais = {{23875, 1}, {2146, 10}, {5912, 5}}, tempo = 3, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0},--750
 
 			-- Capacetes
-			{item = 5917, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {10606, 5}}, tempo = 2, experiencia = 30, pontos = 2, chanceSucesso = 9000, aprender = 0, atributos = {defesa = {0, 2}}},
-			{item = 2663, nivel = 1, nivelJogador = 1, ferramenta = 13828, materiais = {{8860, 1}, {12412, 3}, {5912, 5}}, tempo = 2, experiencia = 30, pontos = 2, chanceSucesso = 9000, aprender = 0, atributos = {defesa = {0, 2}}},
-			{item = 7458, nivel = 2, nivelJogador = 10, ferramenta = 5908, materiais = {{6980, 1}, {11224, 5}, {11212, 5}}, tempo = 3, experiencia = 45, pontos = 3, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 2}}},
-			{item = 6096, nivel = 2, nivelJogador = 10, ferramenta = 5908, materiais = {{8860, 1}, {12442, 3}, {10123, 5}}, tempo = 3, experiencia = 45, pontos = 3, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 2}}},
+			{item = 5917, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {10606, 5}}, tempo = 2, experiencia = 30, pontos = 2, chanceSucesso = 9000, aprender = 0, atributos = {defesa = {0, 2}}},--40
+			{item = 2663, nivel = 1, nivelJogador = 1, ferramenta = 13828, materiais = {{8860, 1}, {12412, 3}, {5912, 5}}, tempo = 2, experiencia = 30, pontos = 2, chanceSucesso = 9000, aprender = 0, atributos = {defesa = {0, 2}}},--195
+			{item = 7458, nivel = 2, nivelJogador = 10, ferramenta = 5908, materiais = {{8860, 1}, {11224, 5}, {11212, 5}}, tempo = 3, experiencia = 45, pontos = 3, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 2}}},--255
+			{item = 6096, nivel = 2, nivelJogador = 10, ferramenta = 5908, materiais = {{8860, 1}, {12442, 3}, {10123, 5}}, tempo = 3, experiencia = 45, pontos = 3, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 2}}},--310
 			-- {item = 7459, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {7290, 1}, {11209, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
-			{item = 13756, nivel = 3, nivelJogador = 15, ferramenta = 5908, materiais = {{8820, 1}, {5911, 10}, {5914, 5}}, tempo = 3, experiencia = 65, pontos = 5, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 2}}},
-			{item = 2323, nivel = 5, nivelJogador = 20, ferramenta = 5908, materiais = {{8820, 1}, {13544, 3}, {21243, 5}}, tempo = 5, experiencia = 120, pontos = 10, chanceSucesso = 7000, aprender = 0, atributos = {defesa = {1, 2}}},
+			{item = 13756, nivel = 3, nivelJogador = 15, ferramenta = 5908, materiais = {{8820, 1}, {5911, 10}, {5914, 5}}, tempo = 3, experiencia = 65, pontos = 5, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 2}}},--480
+			{item = 2323, nivel = 5, nivelJogador = 20, ferramenta = 5908, materiais = {{8820, 1}, {13544, 1}, {21243, 5}}, tempo = 5, experiencia = 120, pontos = 10, chanceSucesso = 7000, aprender = 0, atributos = {defesa = {1, 2}}},--900
 			-- {item = 10570, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8820, 1}, {12404, 1}, {10569, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {armadura = {5, 10}}},
 			-- {item = 10016, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{10570, 1}, {5894, 1}, {13545, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {armadura = {5, 10}}},
-			{item = 11368, nivel = 8, nivelJogador = 30, ferramenta = 5908, materiais = {{8860, 1}, {2149, 10}, {21247, 3}}, tempo = 5, experiencia = 185, pontos = 20, chanceSucesso = 6000, aprender = 0, atributos = {defesa = {1, 2}}},
+			{item = 11368, nivel = 8, nivelJogador = 30, ferramenta = 5908, materiais = {{8860, 1}, {2149, 10}, {21247, 5}}, tempo = 5, experiencia = 185, pontos = 20, chanceSucesso = 6000, aprender = 0, atributos = {defesa = {1, 2}}},--930
 			-- {item = 7900, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {21585, 1}, {8304, 1}, {13543, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
 			-- {item = 7902, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {8302, 1}, {12289, 1}, {13545, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
 			-- {item = 7901, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {8303, 1}, {8306, 1}, {13545, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
@@ -509,13 +509,13 @@ profissoes = {
 			-- {item = 2474, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{11236, 1}, {11209, 1}, {5912, 1}, {5910, 1}, {5911, 1}, {5914, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
 
 			-- Armaduras
-			{item = 6095, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {5909, 1}, {10123, 1}}, tempo = 2, experiencia = 30, pontos = 2, chanceSucesso = 9000, aprender = 0, atributos = {defesa = {0, 3}}},
-			{item = 8892, nivel = 1, nivelJogador = 5, ferramenta = 5908, materiais = {{8860, 1}, {11224, 1}, {5911, 2}}, tempo = 2, experiencia = 30, pontos = 3, chanceSucesso = 9000, aprender = 0, atributos = {defesa = {0, 3}}},
-			{item = 8870, nivel = 2, nivelJogador = 10, ferramenta = 5908, materiais = {{8860, 1}, {8819, 1}, {5912, 3}}, tempo = 3, experiencia = 45, pontos = 3, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
+			{item = 6095, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {5909, 1}, {10123, 1}}, tempo = 2, experiencia = 30, pontos = 2, chanceSucesso = 9000, aprender = 0, atributos = {defesa = {0, 3}}},--80
+			{item = 8892, nivel = 1, nivelJogador = 5, ferramenta = 5908, materiais = {{8860, 1}, {11224, 1}, {5911, 2}}, tempo = 2, experiencia = 30, pontos = 3, chanceSucesso = 9000, aprender = 0, atributos = {defesa = {0, 3}}},--120
+			{item = 8870, nivel = 2, nivelJogador = 10, ferramenta = 5908, materiais = {{8860, 1}, {8819, 1}, {5912, 3}}, tempo = 3, experiencia = 45, pontos = 3, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},--150
 			-- {item = 8871, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {8819, 1}, {11236, 10}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
-			{item = 7463, nivel = 3, nivelJogador = 15, ferramenta = 5908, materiais = {{6980, 1}, {11224, 8}}, tempo = 3, experiencia = 65, pontos = 5, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
-			{item = 8872, nivel = 4, nivelJogador = 20, ferramenta = 5908, materiais = {{6980, 1}, {11224, 10}, {12448, 5}}, tempo = 90, experiencia = 100, pontos = 7, chanceSucesso = 7000, aprender = 0, atributos = {defesa = {0, 3}}},
-			{item = 2656, nivel = 5, nivelJogador = 25, ferramenta = 5908, materiais = {{8860, 1}, {12414, 1}, {13545, 3}}, tempo = 120, experiencia = 100, pontos = 10, chanceSucesso = 7000, aprender = 0, atributos = {defesa = {1, 3}}},
+			{item = 7463, nivel = 3, nivelJogador = 15, ferramenta = 5908, materiais = {{8860, 1}, {11224, 8}}, tempo = 3, experiencia = 65, pontos = 5, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},--270
+			{item = 8872, nivel = 4, nivelJogador = 20, ferramenta = 5908, materiais = {{8860, 1}, {11224, 10}, {12448, 5}}, tempo = 90, experiencia = 100, pontos = 7, chanceSucesso = 7000, aprender = 0, atributos = {defesa = {0, 3}}},--355
+			{item = 2656, nivel = 5, nivelJogador = 25, ferramenta = 5908, materiais = {{8860, 1}, {12414, 1}, {13545, 2}}, tempo = 120, experiencia = 100, pontos = 10, chanceSucesso = 7000, aprender = 0, atributos = {defesa = {1, 3}}},--1600
 			-- {item = 8865, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {12431, 1}, {21406, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
 			-- {item = 7897, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {8302, 1}, {12289, 1}, {13545, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
 			-- {item = 7898, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {8303, 1}, {8306, 1}, {13545, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
@@ -536,10 +536,10 @@ profissoes = {
 			-- {item = 9776, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{11236, 1}, {5909, 1}, {13540, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
 
 			-- Calças
-			{item = 7464, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {11224, 3}}, tempo = 2, experiencia = 30, pontos = 2, chanceSucesso = 9000, aprender = 0, atributos = {defesa = {0, 2}}},
-			{item = 5918, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {5912, 1}, {10123, 1}}, tempo = 2, experiencia = 30, pontos = 2, chanceSucesso = 9000, aprender = 0, atributos = {defesa = {0, 2}}},
+			{item = 7464, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {11224, 2}}, tempo = 2, experiencia = 30, pontos = 2, chanceSucesso = 9000, aprender = 0, atributos = {defesa = {0, 2}}},--90
+			{item = 5918, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {5912, 1}, {10123, 1}}, tempo = 2, experiencia = 30, pontos = 2, chanceSucesso = 9000, aprender = 0, atributos = {defesa = {0, 2}}},--110
 			-- {item = 18400, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{11236, 1}, {11209, 1}, {5912, 1}, {5910, 1}, {5911, 1}, {5914, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
-			{item = 7730, nivel = 5, nivelJogador = 1, ferramenta = 13828, materiais = {{8860, 1}, {13545, 3}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {1, 2}}},
+			{item = 7730, nivel = 5, nivelJogador = 1, ferramenta = 13828, materiais = {{8860, 1}, {13545, 1}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {1, 2}}},--800
 			-- {item = 21700, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {7290, 1}, {8300, 1}, {13545, 1}, {8302, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
 			-- {item = 7896, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {8302, 1}, {12289, 1}, {13545, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
 			-- {item = 7894, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {21585, 1}, {8304, 1}, {13543, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
@@ -549,11 +549,11 @@ profissoes = {
 
 			-- Calçados
 			-- {item = 21708, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{11209, 1}, {10602, 1}, {2642, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
-			{item = 7457, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{6980, 1}, {11224, 1}, {13542, 1}}, tempo = 2, experiencia = 30, pontos = 2, chanceSucesso = 9000, aprender = 0, atributos = {defesa = {0, 1}}},
+			{item = 7457, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{6980, 1}, {11224, 1}, {13542, 1}}, tempo = 2, experiencia = 30, pontos = 2, chanceSucesso = 9000, aprender = 0, atributos = {defesa = {0, 1}}},--90
 			-- {item = 5462, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {12404, 1}, {10123, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
-			{item = 7892, nivel = 5, nivelJogador = 30, ferramenta = 5908, materiais = {{8860, 1}, {8302, 1}, {13545, 1}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 6000, aprender = 0, atributos = {defesa = {0, 1}}},
+			{item = 7892, nivel = 5, nivelJogador = 30, ferramenta = 5908, materiais = {{8860, 1}, {8302, 5}, {13545, 1}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 6000, aprender = 0, atributos = {defesa = {0, 1}}},--1000
 			-- {item = 7893, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {8303, 1}, {8306, 1}, {13545, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
-			{item = 7891, nivel = 5, nivelJogador = 30, ferramenta = 5908, materiais = {{8860, 1}, {21585, 1}, {8304, 1}, {13543, 1}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 6000, aprender = 0, atributos = {defesa = {0, 1}}},
+			{item = 7891, nivel = 5, nivelJogador = 30, ferramenta = 5908, materiais = {{8860, 1}, {8299, 10}, {13543, 1}}, tempo = 5, experiencia = 100, pontos = 10, chanceSucesso = 6000, aprender = 0, atributos = {defesa = {0, 1}}},--1000
 			-- {item = 7886, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{8860, 1}, {8310, 1}, {11222, 1}, {13541, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
 			-- {item = 2195, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{11209, 1}, {13158, 1}, {2642, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
 			-- {item = 6132, nivel = 1, nivelJogador = 1, ferramenta = 5908, materiais = {{12501, 1}, {13545, 1}, {13544, 1}, {13543, 1}, {21251, 1}}, tempo = 2, experiencia = 100, pontos = 10, chanceSucesso = 8000, aprender = 0, atributos = {defesa = {0, 3}}},
