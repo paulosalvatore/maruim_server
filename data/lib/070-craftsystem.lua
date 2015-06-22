@@ -836,10 +836,10 @@ function Player.getProfissaoChanceSucessoReceita(self, profissaoId, receitaId)
 			chanceSucessoReceita = chanceSucessoReceita+ingredienteMelhoria.chance
 		end
 	end
-	if maxChanceSucesso ~= nil then
-		chanceSucessoReceita = math.max(chanceSucessoReceita, maxChanceSucesso)
+	if maxChanceSucesso == nil then
+		maxChanceSucesso = 10000
 	end
-	chanceSucessoReceita = math.min(10000, chanceSucessoReceita)
+	chanceSucessoReceita = math.min(maxChanceSucesso, chanceSucessoReceita)
 	return chanceSucessoReceita
 end
 function Player.getProfissaoReceitaAprendizado(self, profissaoId, receitaId)
