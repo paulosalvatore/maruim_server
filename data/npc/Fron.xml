@@ -9,5 +9,6 @@
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="spellwand,7735,30;spellbook,2175,30;mage hat,8820,30;magician's robe,8819,30;worn leather boots,2238,30;" />
+		<parameter key="shop_sellable" value="snakebite rod,2182,40;moonlight rod,2186,40;wand of vortex,2190,40;wand of dragonbreath,2191,40;northwind rod,8911,400;wand of draconia,8921,400;spellbook of enlightenment,8900,1000"/>
 	</parameters>
 </npc>
