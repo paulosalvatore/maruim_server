@@ -306,3 +306,17 @@ function Player.removerDebuffs(self)
 		end
 	end
 end
+
+function removerAtributosItem(item)
+	local item = Item(item)
+	if item:getAttribute(ITEM_ATTRIBUTE_ATTACK) then
+		item:setAttribute(ITEM_ATTRIBUTE_ATTACK, 0)
+	end
+	if item:getAttribute(ITEM_ATTRIBUTE_DEFENSE) then
+		item:setAttribute(ITEM_ATTRIBUTE_DEFENSE, 0)
+	end
+	if item:getAttribute(ITEM_ATTRIBUTE_EXTRADEFENSE) then
+		item:setAttribute(ITEM_ATTRIBUTE_EXTRADEFENSE, 0)
+	end
+	return true
+end

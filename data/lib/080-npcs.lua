@@ -254,3 +254,89 @@ function atualizarNpcBanco(informacoes)
 	end
 	result.free(resultId)
 end
+
+function customCallbackOnBuy(cid, itemid, subType, amount, ignoreCap, inBackpacks, shopWindow, attributes)
+	local shopItem, npcHandler = nil, NpcHandler
+	for _, item in ipairs(shopWindow) do
+		if not item.subType then
+			item.subType = ItemType(item.id):hasSubType() or 0
+		end
+		if item.id == itemid and item.subType == subType then
+			shopItem = item
+			break
+		end
+	end
+
+	if shopItem == nil then
+		print("[ShopModule.onBuy]", "Item not found on shopItems list")
+		return false
+	end
+
+	if shopItem.buy < 0 then
+		print("[ShopModule.onSell]", "Attempt to purchase an item which is only sellable")
+		return false
+	end
+
+	local backpack, totalCost = 23782, amount * shopItem.buy
+	if inBackpacks then
+		totalCost = isItemStackable(itemid) == true and totalCost + 20 or totalCost + (math.max(1, math.floor(amount / getContainerCapById(backpack))) * 20)
+	end
+
+	if(getPlayerMoney(cid) < totalCost) then
+		doPlayerSendCancel(cid, npcHandler:parseMessage(npcHandler:getMessage(MESSAGE_NEEDMONEY), {[TAG_PLAYERNAME] = getPlayerName(cid), [TAG_ITEMCOUNT] = amount, [TAG_TOTALCOST] = totalCost, [TAG_ITEMNAME] = shopItem.name}))
+		return false
+	end
+
+	local subType = shopItem.subType or isItemFluidContainer(itemid) == true and 0 or 1
+	local a, b = doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, backpack, attributes)
+	if(a < amount) then
+		local msgId = MESSAGE_NEEDMORESPACE
+		if(a == 0) then
+			msgId = MESSAGE_NEEDSPACE
+		end
+
+		doPlayerSendCancel(cid, npcHandler:parseMessage(npcHandler:getMessage(msgId), {[TAG_PLAYERNAME] = getPlayerName(cid), [TAG_ITEMCOUNT] = amount, [TAG_TOTALCOST] = totalCost, [TAG_ITEMNAME] = shopItem.name, [TAG_ITEMCOUNT] = a}))
+
+		if(a > 0) then
+			doPlayerRemoveMoney(cid, ((a * shopItem.buy) + (b * 20)))
+			return true
+		end
+
+		return false
+	end
+	doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, npcHandler:parseMessage(npcHandler:getMessage(MESSAGE_BOUGHT), {[TAG_PLAYERNAME] = getPlayerName(cid), [TAG_ITEMCOUNT] = amount, [TAG_TOTALCOST] = totalCost, [TAG_ITEMNAME] = shopItem.name}))
+	doPlayerRemoveMoney(cid, totalCost)
+
+	return true
+end
+
+function customCallbackOnSell(cid, itemid, subType, amount, ignoreCap, inBackpacks, shopWindow)
+	local shopItem, npcHandler, subType = nil, NpcHandler, subType or 0
+	for _, item in ipairs(shopWindow) do
+		item.subType = ItemType(item.id):hasSubType() or 0
+		if(item.id == itemid and (isItemFluidContainer(itemid) == false or isItemFluidContainer(itemid) == true and item.subType == subType)) then
+			shopItem = item
+			break
+		end
+	end
+
+	if(shopItem == nil) then
+		print("[ShopModule.onBuy]", "Item not found on shopItems list")
+		return false
+	end
+
+	if(shopItem.sell < 0) then
+		print("[ShopModule.onSell]", "Attempt to sell an item which is only buyable")
+		return false
+	end
+
+	if(doPlayerRemoveItem(cid, itemid, amount, isItemFluidContainer(itemid) == true and subType or isItemStackable(itemid) == true and amount or 1) == true) then
+		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, npcHandler:parseMessage(npcHandler:getMessage(MESSAGE_SOLD), {[TAG_PLAYERNAME] = getPlayerName(cid), [TAG_ITEMCOUNT] = amount, [TAG_TOTALCOST] = amount * shopItem.sell, [TAG_ITEMNAME] = shopItem.name}))
+		doPlayerAddMoney(cid, amount * shopItem.sell)
+
+		return true
+	end
+	doPlayerSendCancel(cid, npcHandler:parseMessage(npcHandler:getMessage(MESSAGE_NEEDITEM), {[TAG_PLAYERNAME] = getPlayerName(cid), [TAG_ITEMCOUNT] = amount, [TAG_TOTALCOST] = amount * shopItem.sell, [TAG_ITEMNAME] = shopItem.name}))
+
+	return false
+end

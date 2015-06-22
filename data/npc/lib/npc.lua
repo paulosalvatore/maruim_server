@@ -10,7 +10,10 @@ function msgcontains(message, keyword)
 	return message:find(keyword) and not message:find('(%w+)' .. keyword)
 end
 
-function doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, backpack)
+function doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, backpack, attributes)
+	if attributes == nil then
+		attributes = true
+	end
 	local amount = amount or 1
 	local subType = subType or 0
 	local item = 0
@@ -40,6 +43,10 @@ function doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, bac
 					container = doCreateItemEx(backpack, 1)
 					b = b + 1
 				end
+
+				if not attributes then
+					removerAtributosItem(item)
+				end
 			end
 		end
 		return a, b
@@ -49,6 +56,9 @@ function doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, bac
 		local item = doCreateItemEx(itemid, subType)
 		if doPlayerAddItemEx(cid, item, ignoreCap) ~= RETURNVALUE_NOERROR then
 			break
+		end
+		if not attributes then
+			removerAtributosItem(item)
 		end
 		a = i
 	end
