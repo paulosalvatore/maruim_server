@@ -14,7 +14,7 @@ keywordHandler:addKeywords({{'dificuldade'}, {'dificuldades'}}, StdModule.say, {
 keywordHandler:addKeywords({{'evolucao'}, {'evolução'}}, StdModule.say, {npcHandler = npcHandler, text = "Para evoluir na sua profissão, você deve produzir receitas, mesmo que você não obtenha sucesso, isso lhe garantirá pontos de experiência."})
 
 npcHandler:setMessage(MESSAGE_GREET, "Olá aventureiro, seja bem-vindo à minha {forja}, em que posso lhe ajudar?")
-npcHandler:setMessage(MESSAGE_FAREWELL, "")
-npcHandler:setMessage(MESSAGE_WALKAWAY, "")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Boa viagem aventureiro!")
+npcHandler:setMessage(MESSAGE_WALKAWAY, "De nada!!!")
 
 npcHandler:addModule(FocusModule:new())
