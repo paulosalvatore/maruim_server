@@ -287,10 +287,12 @@ function Player.teleportarJogador(self, posicao, forcar, extended)
 		end
 	end
 
-	self:teleportTo(posicao)
-	self:setDirection(direcoes["sul"])
-	Position(posicao):sendMagicEffect(efeitos["teleport"])
-	return true
+	if self:teleportTo(posicao) then
+		self:setDirection(direcoes["sul"])
+		Position(posicao):sendMagicEffect(efeitos["teleport"])
+		return true
+	end
+	return false
 end
 
 function Player.curarJogador(self)
