@@ -3,7 +3,8 @@ function Player:onBrowseField(position)
 end
 
 function Player:onLook(thing, position, distance)
-	local description = "You see " .. thing:getDescription(distance)
+	local utf8 = require("data/lib/utf8")
+	local description = utf8.convert("You see " .. thing:getDescription(distance))
 	if thing:isItem() and thing:getActionId() == 2900 then
 		description = "You see Julia.\n"
 		if(self:getStorageValue(2900) == 2) then
