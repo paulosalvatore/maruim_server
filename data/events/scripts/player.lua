@@ -133,7 +133,13 @@ function Player:onMoveCreature(creature, fromPosition, toPosition)
 end
 
 function Player:onTurn(direction)
-	return true
+    if self:getDirection() == direction and self:getGroup():getAccess() then
+        local nextPosition = self:getPosition()
+        nextPosition:getNextPosition(direction)
+
+        self:teleportTo(nextPosition, true)
+    end
+    return true
 end
 
 function Player:onTradeRequest(target, item)
