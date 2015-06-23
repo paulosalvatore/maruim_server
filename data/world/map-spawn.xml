@@ -2390,7 +2390,7 @@
 	<spawn centerx="661" centery="1099" centerz="7" radius="1">
 		<monster name="Snake" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="598" centery="1101" centerz="7" radius="4">
+	<spawn centerx="598" centery="1101" centerz="7" radius="3">
 		<npc name="Oriko Crionk" x="2" y="1" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="643" centery="1104" centerz="7" radius="1">
