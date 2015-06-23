@@ -93,7 +93,14 @@ function Player:onLookInTrade(partner, item, distance)
 end
 
 function Player:onLookInShop(itemType, count)
-	return true
+	local description = "You see " .. itemType:getArticle() .. " " .. itemType:getName() .. "."
+
+	if itemType:getWeight() > 0 then
+		description = description .. "\nIt weighs " .. formatarPeso(itemType:getWeight()) .. "."
+	end
+
+	self:sendTextMessage(MESSAGE_INFO_DESCR, description)
+	return false
 end
 
 function Player:onMoveItem(item, count, fromPosition, toPosition)
