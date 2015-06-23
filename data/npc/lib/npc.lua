@@ -10,9 +10,11 @@ function msgcontains(message, keyword)
 	return message:find(keyword) and not message:find('(%w+)' .. keyword)
 end
 
-function doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, backpack, attributes)
-	if attributes == nil then
+function doNpcSellItem(cid, itemid, amount, subType, attributes, ignoreCap, inBackpacks, backpack)
+	if attributes == nil or attributes == 1 then
 		attributes = true
+	else
+		attributes = false
 	end
 	local amount = amount or 1
 	local subType = subType or 0

@@ -576,6 +576,7 @@ if Modules == nil then
 			local cost = nil
 			local subType = nil
 			local realName = nil
+			local attributes = nil
 
 			for temp in string.gmatch(item, "[^,]+") do
 				if i == 1 then
@@ -587,6 +588,8 @@ if Modules == nil then
 				elseif i == 4 then
 					subType = tonumber(temp)
 				elseif i == 5 then
+					attributes = tonumber(temp)
+				elseif i == 6 then
 					realName = temp
 				else
 					print("[Warning : " .. Npc():getName() .. "] NpcSystem:", "Unknown parameter found in buyable items parameter.", temp, item)
@@ -604,7 +607,7 @@ if Modules == nil then
 					if subType == nil and it:isFluidContainer() then
 						print("[Warning : " .. Npc():getName() .. "] NpcSystem:", "SubType missing for parameter item:", item)
 					else
-						self:addBuyableItem(nil, itemid, cost, subType, realName)
+						self:addBuyableItem(nil, itemid, cost, subType, attributes, realName)
 					end
 				else
 					print("[Warning : " .. Npc():getName() .. "] NpcSystem:", "Parameter(s) missing for item:", itemid, cost)
@@ -619,7 +622,7 @@ if Modules == nil then
 						if atualizarNpcs then
 							atualizarNpcBanco({Npc(), itemid, cost, itemSubType, "c"})
 						end
-						self:addBuyableItem(names, itemid, cost, subType, realName)
+						self:addBuyableItem(names, itemid, cost, subType, attributes, realName)
 					end
 				else
 					print("[Warning : " .. Npc():getName() .. "] NpcSystem:", "Parameter(s) missing for item:", name, itemid, cost)
@@ -687,6 +690,7 @@ if Modules == nil then
 			local itemid = nil
 			local cost = nil
 			local subType = nil
+			local attributes = nil
 			local realName = nil
 
 			for temp in string.gmatch(item, "[^,]+") do
@@ -701,6 +705,8 @@ if Modules == nil then
 				elseif i == 5 then
 					subType = tonumber(temp)
 				elseif i == 6 then
+					attributes = tonumber(temp)
+				elseif i == 7 then
 					realName = temp
 				else
 					print("[Warning : " .. Npc():getName() .. "] NpcSystem:", "Unknown parameter found in buyable items parameter.", temp, item)
@@ -714,7 +720,7 @@ if Modules == nil then
 				else
 					local names = {}
 					names[#names + 1] = name
-					self:addBuyableItemContainer(names, container, itemid, cost, subType, realName)
+					self:addBuyableItemContainer(names, container, itemid, cost, subType, attributes, realName)
 				end
 			else
 				print("[Warning : " .. Npc():getName() .. "] NpcSystem:", "Parameter(s) missing for item:", name, container, itemid, cost)
@@ -785,8 +791,9 @@ if Modules == nil then
 	--	itemid = The itemid of the buyable item
 	--	cost = The price of one single item
 	--	subType - The subType of each rune or fluidcontainer item. Can be left out if it is not a rune/fluidcontainer. Default value is 1.
+	--	attributes - If the new item will have default attributes or not
 	--	realName - The real, full name for the item. Will be used as ITEMNAME in MESSAGE_ONBUY and MESSAGE_ONSELL if defined. Default value is nil (getItemName will be used)
-	function ShopModule:addBuyableItem(names, itemid, cost, itemSubType, realName)
+	function ShopModule:addBuyableItem(names, itemid, cost, itemSubType, attributes, realName)
 		if SHOPMODULE_MODE ~= SHOPMODULE_MODE_TALK then
 			if itemSubType == nil then
 				itemSubType = 1
@@ -794,7 +801,7 @@ if Modules == nil then
 
 			local shopItem = self:getShopItem(itemid, itemSubType)
 			if shopItem == nil then
-				self.npcHandler.shopItems[#self.npcHandler.shopItems + 1] = {id = itemid, buy = cost, sell = -1, subType = itemSubType, name = realName or ItemType(itemid):getName()}
+				self.npcHandler.shopItems[#self.npcHandler.shopItems + 1] = {id = itemid, buy = cost, sell = -1, subType = itemSubType, name = realName or ItemType(itemid):getName(), attributes = attributes}
 			else
 				shopItem.buy = cost
 			end
@@ -808,7 +815,8 @@ if Modules == nil then
 						eventType = SHOPMODULE_BUY_ITEM,
 						module = self,
 						realName = realName or ItemType(itemid):getName(),
-						subType = itemSubType or 1
+						subType = itemSubType or 1,
+						attributes = attributes or 1
 					}
 
 				local node = self.npcHandler.keywordHandler:addKeyword({"buy", name}, ShopModule.tradeItem, parameters)
@@ -853,7 +861,7 @@ if Modules == nil then
 	--	cost = The price of one single item
 	--	subType - The subType of each rune or fluidcontainer item. Can be left out if it is not a rune/fluidcontainer. Default value is 1.
 	--	realName - The real, full name for the item. Will be used as ITEMNAME in MESSAGE_ONBUY and MESSAGE_ONSELL if defined. Default value is nil (getItemName will be used)
-	function ShopModule:addBuyableItemContainer(names, container, itemid, cost, subType, realName)
+	function ShopModule:addBuyableItemContainer(names, container, itemid, cost, subType, attributes, realName)
 		if names ~= nil then
 			for i, name in pairs(names) do
 				local parameters = {
@@ -863,6 +871,7 @@ if Modules == nil then
 						eventType = SHOPMODULE_BUY_ITEM_CONTAINER,
 						module = self,
 						realName = realName or ItemType(itemid):getName(),
+						attributes = attributes or 1,
 						subType = subType or 1
 					}
 
@@ -938,7 +947,7 @@ if Modules == nil then
 		local backpackCost = 20
 		local totalCost = amount * shopItem.buy
 		if(inBackpacks) then
-			totalCost = isItemStackable(itemid) == TRUE and totalCost + backpackCost or totalCost + (math.max(1, math.floor(amount / getContainerCapById(backpack))) * backpackCost)
+			totalCost = isItemStackable(itemid) == true and totalCost + backpackCost or totalCost + (math.max(1, math.floor(amount / getContainerCapById(backpack))) * backpackCost)
 		end
 
 		local parseInfo = {
@@ -956,7 +965,8 @@ if Modules == nil then
 		end
 
 		local subType = shopItem.subType or 1
-		local a, b = doNpcSellItem(cid, itemid, amount, subType, ignoreCap, inBackpacks, backpack)
+		local attributes = shopItem.attributes or 1
+		local a, b = doNpcSellItem(cid, itemid, amount, subType, attributes, ignoreCap, inBackpacks, backpack)
 		if(a < amount) then
 			local msgId = MESSAGE_NEEDMORESPACE
 			if(a == 0) then
@@ -1093,7 +1103,7 @@ if Modules == nil then
 				return false
 			end
 
-			local a, b = doNpcSellItem(cid, shop_itemid[cid], shop_amount[cid], shop_subtype[cid], false, false, 1988)
+			local a, b = doNpcSellItem(cid, shop_itemid[cid], shop_amount[cid], shop_subtype[cid], shop_attributes[cid], false, false, 23782)
 			if(a < shop_amount[cid]) then
 				local msgId = MESSAGE_NEEDMORESPACE
 				if(a == 0) then
@@ -1106,7 +1116,7 @@ if Modules == nil then
 				if(a > 0) then
 					doPlayerRemoveMoney(cid, a * shop_cost[cid])
 					if shop_itemid[cid] == ITEM_PARCEL then
-						doNpcSellItem(cid, ITEM_LABEL, shop_amount[cid], shop_subtype[cid], true, false, 1988)
+						doNpcSellItem(cid, ITEM_LABEL, shop_amount[cid], shop_subtype[cid], shop_attributes[cid], true, false, 23782)
 					end
 					return true
 				end
@@ -1117,12 +1127,12 @@ if Modules == nil then
 				module.npcHandler:say(msg, cid)
 				doPlayerRemoveMoney(cid, cost)
 				if shop_itemid[cid] == ITEM_PARCEL then
-					doNpcSellItem(cid, ITEM_LABEL, shop_amount[cid], shop_subtype[cid], true, false, 1988)
+					doNpcSellItem(cid, ITEM_LABEL, shop_amount[cid], shop_subtype[cid], shop_attributes[cid], true, false, 23782)
 				end
 				return true
 			end
 		elseif(shop_eventtype[cid] == SHOPMODULE_BUY_ITEM_CONTAINER) then
-			local ret = doPlayerBuyItemContainer(cid, shop_container[cid], shop_itemid[cid], shop_amount[cid], shop_cost[cid] * shop_amount[cid], shop_subtype[cid])
+			local ret = doPlayerBuyItemContainer(cid, shop_container[cid], shop_itemid[cid], shop_amount[cid], shop_cost[cid] * shop_amount[cid], shop_subtype[cid], shop_attributes[cid])
 			if(ret == true) then
 				local msg = module.npcHandler:getMessage(MESSAGE_ONBUY)
 				msg = module.npcHandler:parseMessage(msg, parseInfo)
@@ -1182,6 +1192,7 @@ if Modules == nil then
 		shop_npcuid[cid] = getNpcCid()
 		shop_eventtype[cid] = parameters.eventType
 		shop_subtype[cid] = parameters.subType
+		shop_attributes[cid] = parameters.attributes
 
 		local parseInfo = {
 			[TAG_PLAYERNAME] = getPlayerName(cid),
