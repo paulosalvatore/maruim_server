@@ -27,15 +27,26 @@ function capAll(str)
 	return novaStr
 end
 
-function formatarValor(valor)
+function formatarValor(valor, exibirDecimal)
+	if exibirDecimal == nil then
+		exibirDecimal = false
+	end
 	local decimal = string.sub(tostring(valor),-2)
-	while string.sub(tostring(decimal),-1) == "0" do
-		decimal = string.sub(tostring(decimal),-2,string.len(tostring(decimal))-1)
+	if not exibirDecimal then
+		while string.sub(tostring(decimal),-1) == "0" do
+			decimal = string.sub(tostring(decimal),-2,string.len(tostring(decimal))-1)
+		end
+		if decimal ~= "" then
+			decimal = "." .. decimal
+		end
+	else
+		decimal = "." .. decimal
 	end
-	if decimal ~= "" then
-		decimal = "."..decimal
-	end
-	return math.floor(valor/100)..decimal
+	return math.floor(valor/100) .. decimal
+end
+
+function formatarPeso(valor)
+	return formatarValor(valor, true) .. " oz"
 end
 
 function formatarTempo(tempo)
