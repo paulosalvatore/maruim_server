@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <npc name="Astantic Wunan" script="default.lua" walkinterval="2000" floorchange="0">
     <health now="100" max="100" />
-    <look type="128" head="97" body="58" legs="105" feet="120" addons="0" />
+    <look type="251" head="86" body="66" legs="85" feet="114" addons="3"/>
     <parameters>
         <parameter key="message_greet" value="Prazer em conhecê-lo, Senhor |PLAYERNAME|! Procurando por móveis? Você veio ao lugar certo!" />
         <parameter key="message_farewell" value="Você voltará. Todos voltam." />

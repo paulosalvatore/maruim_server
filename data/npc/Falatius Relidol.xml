@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <npc name="Falatius Relidol" script="default.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
-	<look type="144" head="0" body="115" legs="97" feet="116" addons="1" />
+	<look type="128" head="116" body="84" legs="11" feet="127" addons="3"/>
 	<parameters>
 		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo aos correios." />
 		<parameter key="message_sendtrade" value="Deseja mandar algum presente?" /> 
