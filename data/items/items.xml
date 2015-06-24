@@ -18961,7 +18961,7 @@
 	<item id="10564" article="a" name="demonic skeletal hand">
 		<attribute key="weight" value="132" />
 	</item>
-	<item id="10565" article="a" name="frosty ear of a troll">
+	<item id="10565" article="a" name="frosty ear of a troll" plural="frosty ears of troll">
 		<attribute key="weight" value="180" />
 	</item>
 	<item id="10566" article="a" name="gauze bandage">
