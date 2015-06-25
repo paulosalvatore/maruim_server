@@ -571,29 +571,38 @@ local config = {
 			itensGamePlayer = {{12505, 1}},
 			removerItem = 1,
 			removerTarget = 1,
-			efeito = {"green", "player_target"}
+			efeito = {"green", "player_target"},
+			chanceSucesso = 1000
 		},
 		[5901] = {
 			itensGamePlayer = {{12503, 1}},
 			removerItem = 1,
 			removerTarget = 1,
-			efeito = {"green", "player_target"}
+			efeito = {"green", "player_target"},
+			chanceSucesso = 1000
 		},
 		[5920] = {
 			itensGamePlayer = {{12506, 1}},
 			removerItem = 1,
 			removerTarget = 1,
-			efeito = {"green", "player_target"}
+			efeito = {"green", "player_target"},
+			chanceSucesso = 1000
 		},
 		[7242] = {
-			transformar = {12508, 1},
+			itensGamePlayer = {{12508, 1}},
 			removerItem = 1,
-			efeito = {"green", "player_target"}
+			removerTarget = 1,
+			removerItem = 1,
+			efeito = {"green", "player_target"},
+			chanceSucesso = 1000
 		},
 		[8860] = {
-			transformar = {12501, 1},
+			itensGamePlayer = {{12501, 1}},
 			removerItem = 1,
-			efeito = {"green", "player_target"}
+			removerTarget = 1,
+			removerItem = 1,
+			efeito = {"green", "player_target"},
+			chanceSucesso = 1000
 		}
 	},
 	[2327] = {
@@ -858,18 +867,22 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			return false
 		end
 		if i.itensGamePlayer ~= nil then
-			for c, v in pairs(i.itensGamePlayer) do
-				local itemGamePlayerAdicionar = v[1]
-				local quantidadeItemGamePlayerAdicionar = v[2]
-				local typeItemGamePlayerAdicionar = v[3] or 1
-				if type(quantidadeItemGamePlayerAdicionar) == "table" then
-					quantidadeItemGamePlayerAdicionar = math.random(quantidadeItemGamePlayerAdicionar[1], quantidadeItemGamePlayerAdicionar[2])
+			if chance <= chanceSucesso then
+				for c, v in pairs(i.itensGamePlayer) do
+					local itemGamePlayerAdicionar = v[1]
+					local quantidadeItemGamePlayerAdicionar = v[2]
+					local typeItemGamePlayerAdicionar = v[3] or 1
+					if type(quantidadeItemGamePlayerAdicionar) == "table" then
+						quantidadeItemGamePlayerAdicionar = math.random(quantidadeItemGamePlayerAdicionar[1], quantidadeItemGamePlayerAdicionar[2])
+					end
+					if toPosition.x == 65535 then
+						player:addItem(itemGamePlayerAdicionar, quantidadeItemGamePlayerAdicionar, true, typeItemGamePlayerAdicionar)
+					else
+						Game.createItem(itemGamePlayerAdicionar, quantidadeItemGamePlayerAdicionar, toPosition)
+					end
 				end
-				if toPosition.x == 65535 then
-					player:addItem(itemGamePlayerAdicionar, quantidadeItemGamePlayerAdicionar, true, typeItemGamePlayerAdicionar)
-				else
-					Game.createItem(itemGamePlayerAdicionar, quantidadeItemGamePlayerAdicionar, toPosition)
-				end
+			else
+				efeito = {"poff"}
 			end
 		end
 		if i.itensPlayer ~= nil then
