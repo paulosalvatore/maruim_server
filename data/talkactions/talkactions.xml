@@ -32,6 +32,7 @@
 	<talkaction words="/ghost" script="ghost.lua" />
 	<talkaction words="/clean" script="clean.lua" />
 	<talkaction words="/hide" script="hide.lua" />
+	<talkaction words="/testLoot" separator=" " script="testLoot.lua" />
 
 	<!-- player talkactions -->
 	<!-- 
