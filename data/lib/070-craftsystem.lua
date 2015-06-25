@@ -1175,8 +1175,8 @@ function atualizarProfissoesBanco()
 		for c, d in pairs(b.ingredientesMelhoria) do
 			exibirIngredientesMelhoria = exibirIngredientesMelhoria .. d.item .. "," .. d.chance .. ";"
 		end
-		local colunas = {"nome", "mesaTrabalho", "mensagem", "ingredientesMelhoria"}
-		local valores = {b.nome, exibirMesaTrabalho, b.mensagem, exibirIngredientesMelhoria}
+		local colunas = {"nome", "storage", "mesaTrabalho", "mensagem", "ingredientesMelhoria"}
+		local valores = {b.nome, a, exibirMesaTrabalho, b.mensagem, exibirIngredientesMelhoria}
 		local query = "INSERT INTO `z_profissoes` ("
 		for c, d in pairs(colunas) do
 			if c > 1 then
