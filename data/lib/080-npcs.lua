@@ -223,13 +223,16 @@ barqueiros = {
 		tipoViagem = "barco"
 	}
 }
+
 tempoBlessWoodenStake = 24*60*60
+
 local limparNpcs = false
 atualizarNpcs = false
 if limparNpcs then
 	db.query("TRUNCATE TABLE `z_npcs`")
 	db.query("TRUNCATE TABLE `z_npcs_itens`")
 end
+
 function atualizarNpcBanco(informacoes)
 	local npc = informacoes[1]
 	local itemId = informacoes[2]
@@ -245,7 +248,7 @@ function atualizarNpcBanco(informacoes)
 	else
 		npcId = result.getDataInt(resultId, "id")
 	end
-	local resultItemId = db.storeQuery("SELECT `id` FROM `z_npcs_itens` WHERE (`npc` = " .. db.escapeString(npcId) .. " and `item` = " .. db.escapeString(itemId) .. ")")
+	local resultItemId = db.storeQuery("SELECT `id` FROM `z_npcs_itens` WHERE (`npc` = " .. db.escapeString(npcId) .. " and `item` = " .. db.escapeString(itemId) .. " and `acao` = " .. db.escapeString(acao) .. ")")
 	if resultItemId == false then
 		db.query("INSERT INTO `z_npcs_itens` (`npc`, `item`, `valor`, `subtipo`, `acao`) VALUES (" .. db.escapeString(npcId) .. ", " .. db.escapeString(itemId) .. ", " .. db.escapeString(itemValor) .. ", " .. db.escapeString(itemSubTipo) .. ", " .. db.escapeString(acao) .. ")")
 	else
@@ -253,4 +256,21 @@ function atualizarNpcBanco(informacoes)
 		db.query("UPDATE `z_npcs_itens` SET `item` = " .. db.escapeString(itemId) .. ", `valor` = " .. db.escapeString(itemValor) .. ", `subtipo` = " .. db.escapeString(itemSubTipo) .. ", `acao` = " .. db.escapeString(acao) .. " WHERE `id` = " .. db.escapeString(dbItemId) .. "")
 	end
 	result.free(resultId)
+end
+
+function atualizarNpcs()
+	local resultId = db.storeQuery("SELECT `id`, `nome` FROM `z_npcs`")
+	if resultId ~= false then
+		repeat
+		local npcId = result.getDataInt(resultId, "id")
+		local npcNome = result.getDataString(resultId, "nome")
+		local npc = Npc(npcNome)
+		if npc ~= nil then
+			local posicaoNpc = npc:getPosition()
+			local npcOutfit = npc:getOutfit()
+			db.query("UPDATE `z_npcs` SET `posx` = " .. db.escapeString(posicaoNpc.x) .. ", `posy` = " .. db.escapeString(posicaoNpc.y) .. ", `posz` = " .. db.escapeString(posicaoNpc.z) .. ", `lookBody` = " .. db.escapeString(npcOutfit.lookBody) .. ", `lookFeet` = " .. db.escapeString(npcOutfit.lookFeet) .. ", `lookHead` = " .. db.escapeString(npcOutfit.lookHead) .. ", `lookLegs` = " .. db.escapeString(npcOutfit.lookLegs) .. ", `lookType` = " .. db.escapeString(npcOutfit.lookType) .. ", `lookAddons` = " .. db.escapeString(npcOutfit.lookAddons) .. ", `lookMount` = " .. db.escapeString(npcOutfit.lookMount) .. "  WHERE `id` = " .. db.escapeString(npcId) .. "")
+		end
+		until not result.next(resultId)
+		result.free(resultId)
+	end
 end

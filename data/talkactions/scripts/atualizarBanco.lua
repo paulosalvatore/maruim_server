@@ -7,6 +7,9 @@ function onSay(player, words, param)
 	elseif param == "receitas" then
 		atualizarReceitasBanco()
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Receitas atualizadas.")
+	elseif param == "npcs" then
+		atualizarNpcs()
+		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "NPCs atualizados.")
 	end
 	return false
 end
