@@ -1164,12 +1164,46 @@ function Player.fabricarItem(self, receitaId, profissaoId, mesaTrabalhando, bloq
 	return true
 end
 
+function atualizarProfissoesBanco()
+	db.query("TRUNCATE TABLE `z_profissoes`")
+	for a, b in pairs(profissoes) do
+		local exibirMesaTrabalho = ""
+		local exibirIngredientesMelhoria = ""
+		for c, d in pairs(b.mesaTrabalho) do
+			exibirMesaTrabalho = exibirMesaTrabalho .. d .. ";"
+		end
+		for c, d in pairs(b.ingredientesMelhoria) do
+			exibirIngredientesMelhoria = exibirIngredientesMelhoria .. d.item .. "," .. d.chance .. ";"
+		end
+		local colunas = {"nome", "mesaTrabalho", "mensagem", "ingredientesMelhoria"}
+		local valores = {b.nome, exibirMesaTrabalho, b.mensagem, exibirIngredientesMelhoria}
+		local query = "INSERT INTO `z_profissoes` ("
+		for c, d in pairs(colunas) do
+			if c > 1 then
+				query = query .. ", "
+			end
+			query = query .. "`" .. d .. "`"
+		end
+		query = query .. ") VALUES ("
+		for c, d in pairs(valores) do
+			if c > 1 then
+				query = query .. ", "
+			end
+			query = query .. db.escapeString(d)
+		end
+		query = query .. ")"
+		db.query(query)
+	end
+end
+
 function atualizarReceitasBanco()
 	db.query("TRUNCATE TABLE `z_receitas`")
 	for a, b in pairs(profissoes) do
 		for c, d in pairs(b.receitas) do
 			local colunas = {"profissao"}
-			local valores = {b.nome}
+			local resultId = db.storeQuery("SELECT `id` FROM `z_profissoes` WHERE `nome` = " .. db.escapeString(b.nome) .. "")
+			local profissaoId = result.getDataInt(resultId, "id")
+			local valores = {profissaoId}
 			for e, f in pairs(d) do
 				table.insert(colunas, e)
 				table.insert(valores, f)

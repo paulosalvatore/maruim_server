@@ -33,6 +33,7 @@
 	<talkaction words="/clean" script="clean.lua" />
 	<talkaction words="/hide" script="hide.lua" />
 	<talkaction words="/testLoot" separator=" " script="testLoot.lua" />
+	<talkaction words="/atualizarBanco" separator=" " script="atualizarBanco.lua" />
 
 	<!-- player talkactions -->
 	<!-- 
