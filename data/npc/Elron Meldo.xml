@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <npc name="Elron Meldo" script="default.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
-	<look type="159" head="38" body="59" legs="15" feet="97" addons="3"/>
+	<look type="159" head="38" body="59" legs="15" feet="97"/>
 	<parameters>
 		<parameter key="message_greet" value="Olá |PLAYERNAME|. Olá, vamos caçar algo?" />
 		<parameter key="message_sendtrade" value="Veja as ferramentas que possuo para uma boa caçada!" /> 
