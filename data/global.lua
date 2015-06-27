@@ -191,3 +191,11 @@ end
 function Player.allowLeavePz(self, allow)
     allowMovementEvent(self:getId(), allow, self:getPosition(), true)
 end
+
+function atualizarCidades()
+	db.query("TRUNCATE TABLE `z_cidades`")
+	for a, b in pairs(Game.getTowns()) do
+		local posicaoCidade = b:getTemplePosition()
+		db.query("INSERT INTO `z_cidades` (`id`, `nome`, `posx`, `posy`, `posz`) VALUES ('" .. a .. "', " .. db.escapeString(formatarNomeCidade(b:getName())) .. ", " .. db.escapeString(posicaoCidade.x) .. ", " .. db.escapeString(posicaoCidade.y) .. ", " .. db.escapeString(posicaoCidade.z) .. ")")
+	end
+end

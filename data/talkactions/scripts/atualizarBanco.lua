@@ -10,6 +10,9 @@ function onSay(player, words, param)
 	elseif param == "npcs" then
 		atualizarNpcs()
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "NPCs atualizados.")
+	elseif param == "cidades" then
+		atualizarCidades()
+		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Cidades atualizadas.")
 	end
 	return false
 end
