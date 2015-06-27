@@ -35,7 +35,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		local modal = ModalWindow(modalTeleportCrystal, modalTitulo, modalMensagem)
 		for a, b in pairs(Game.getTowns()) do
 			if posicoesDepot[a] ~= nil then
-				modal:addChoice(b:getId(), b:getName())
+				modal:addChoice(b:getId(), formatarNomeCidade(b:getName()))
 			end
 		end
 		modal:addButton(1, "Escolher")
