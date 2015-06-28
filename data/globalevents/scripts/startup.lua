@@ -34,4 +34,7 @@ function onStartup()
 		until not result.next(resultId)
 		result.free(resultId)
 	end
+
+	gerarPontosColetaMadeira()
+
 end
