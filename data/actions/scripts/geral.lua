@@ -1,10 +1,11 @@
 local fire_source = {1786, 1788, 1790, 1792, 1481, 1482, 1483, 1484, 6356, 6358, 6360, 6362}
 local fruits = {2673, 2674, 2675, 2677, 2679, 2680, 2681, 2682, 5097, 8840, 12415}
-local sparkling = {8046, 8047}
 local ice_shrine = {7508, 7509, 7510, 7511}
 local fire_shrine = {7504, 7505, 7506, 7507}
 local earth_shrine = {7516, 7517, 7518, 7519}
 local energy_shrine = {7512, 7513, 7514, 7515}
+local ferro = {5866, 5868}
+local carvao = {8748, 8749, 8750, 8751}
 local config = {
 	-- [item_id ou "action" ou "unique"] = {
 		-- [target_id ou "fire_source" ou "fruits" ou "sparkling" ou "default"] = {
@@ -335,7 +336,7 @@ local config = {
 				itensPlayer = {{13218, 1}},
 				removerTarget = 1,
 				efeito = {"hit"},
-				tempo = 5*60*1000,
+				tempo = {5*60*1000, 10*60*1000},
 				chanceSucesso = 2000,
 				chanceNeutra = 4000,
 				profissao = "alquimista"
@@ -405,23 +406,35 @@ local config = {
 	},
 	[4856] = {
 		["sparkling"] = {
-			[5868] = {
+			["ferro"] = {
 				itensPlayerAleatorio = {{5892, 1, 100}, {5880, 1, 3900}, {2225, {1, 2}, 6000}},
 				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 3*60*1000,
-				tempo = 500,
-				chanceSucesso = 6000,
-				chanceNeutra = 8000,
+				chanceSucesso = 2000,
+				chanceNeutra = 4000,
 				profissao = "ferreiro"
 			},
-			[8748] = {
+			["carvao"] = {
 				itensPlayer = {{13757, 1}},
 				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 5*60*1000,
 				chanceSucesso = 2000,
 				chanceNeutra = 4000,
+				profissao = "ferreiro"
+			}
+		}
+	},
+	[2559] = {
+		["sparkling"] = {
+			["arvores"] = {
+				itensPlayerAleatorio = {{5901, 1, 10000}},
+				removerTarget = 1,
+				efeito = {"hit"},
+				tempo = 3*60*1000,
+				chanceSucesso = 1000,
+				chanceNeutra = 9000,
 				profissao = "ferreiro"
 			}
 		}
@@ -755,8 +768,23 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		local adicionarEvento = false
 		if i["default"] ~= nil then
 			i = i["default"]
-		elseif isInArray(sparkling, target.itemid) and #Tile(toPosition):getItems() == 2 and i["sparkling"][Tile(toPosition):getTileTopTopItem()] ~= nil then
-			i = i["sparkling"][Tile(toPosition):getTileTopTopItem()]
+		elseif	isInArray(sparkling, target.itemid) and #Tile(toPosition):getItems() == 2 and
+				(i["sparkling"][Tile(toPosition):getTileTopTopItem()] ~= nil or
+				i["sparkling"]["ferro"] ~= nil or
+				i["sparkling"]["carvao"] ~= nil or
+				i["sparkling"]["arvores"] ~= nil) then
+			local topItem = Tile(toPosition):getTileTopTopItem()
+			if i["sparkling"]["ferro"] ~= nil and isInArray(ferro, topItem) then
+				i = i["sparkling"]["ferro"]
+			elseif i["sparkling"]["carvao"] ~= nil and isInArray(carvao, topItem) then
+				i = i["sparkling"]["carvao"]
+			elseif i["sparkling"]["arvores"] ~= nil and isInArray(arvores, topItem) then
+				i = i["sparkling"]["arvores"]
+				verificarNovoPontoColetaMadeira = true
+				gerarNovoPontoColetaMadeira = true
+			else
+				i = i["sparkling"][topItem]
+			end
 			adicionarEvento = true
 		elseif isInArray(fire_source, target.itemid) and i["fire_source"] ~= nil then
 			i = i["fire_source"]
@@ -991,6 +1019,9 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				local chanceNeutra = i.chanceNeutra+chanceSucesso
 				if (not (chance <= chanceSucesso)) and (chance <= chanceNeutra) then
 					adicionarEvento = false
+					if verificarNovoPontoColetaMadeira then
+						gerarNovoPontoColetaMadeira = false
+					end
 					efeito = {"poff"}
 				elseif (not (chance <= chanceSucesso)) then
 					efeito = {"poff"}
@@ -1124,7 +1155,9 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				player:addCondition(condition[item.itemid])
 			end
 		end
-		if adicionarEvento then
+		if gerarNovoPontoColetaMadeira then
+			gerarPontoColetaMadeira(toPosition.x .. "," .. toPosition.y .. "," .. toPosition.z)
+		elseif adicionarEvento then
 			addEvent(function(posicao, item)
 			Game.createItem(item, 1, posicao)
 			end, i.tempo, toPosition, target.itemid)

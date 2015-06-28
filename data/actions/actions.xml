@@ -22,6 +22,7 @@
 	<action itemid="7286" script="geral.lua" />
 	<action fromid="13193" toid="13195" script="geral.lua" />
 	<action itemid="4856" script="geral.lua" />
+	<action itemid="2559" script="geral.lua" />
 	<action itemid="13757" script="geral.lua" />
 	<action fromid="2146" toid="2147" script="geral.lua" />
 	<action fromid="2149" toid="2150" script="geral.lua" />
