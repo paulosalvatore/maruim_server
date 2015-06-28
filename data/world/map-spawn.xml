@@ -14410,12 +14410,12 @@
 	<spawn centerx="1116" centery="1828" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1004" centery="1829" centerz="9" radius="2">
-		<monster name="Carrion Worm" x="1" y="-1" z="9" spawntime="60" />
-		<monster name="Carrion Worm" x="-2" y="0" z="9" spawntime="60" />
-	</spawn>
 	<spawn centerx="973" centery="1830" centerz="9" radius="1">
 		<monster name="Rotworm" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1004" centery="1830" centerz="9" radius="2">
+		<monster name="Carrion Worm" x="1" y="-2" z="9" spawntime="60" />
+		<monster name="Carrion Worm" x="-2" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1027" centery="1830" centerz="9" radius="2">
 		<monster name="Carrion Worm" x="1" y="-2" z="9" spawntime="60" />
@@ -15021,16 +15021,15 @@
 	<spawn centerx="1243" centery="1945" centerz="9" radius="1">
 		<monster name="Smuggler" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1349" centery="1945" centerz="9" radius="1">
-		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
-	</spawn>
 	<spawn centerx="1353" centery="1945" centerz="9" radius="1">
 		<monster name="Swamp Troll" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1349" centery="1946" centerz="9" radius="1">
+		<monster name="Poison Spider" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1185" centery="1947" centerz="9" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1343" centery="1947" centerz="9" radius="1" />
 	<spawn centerx="1395" centery="1948" centerz="9" radius="1" />
 	<spawn centerx="1390" centery="1949" centerz="9" radius="1">
 		<monster name="Swamp Troll" x="0" y="0" z="9" spawntime="60" />
@@ -16051,6 +16050,10 @@
 		<monster name="Giant Spider" x="0" y="-2" z="10" spawntime="100" />
 		<monster name="Giant Spider" x="1" y="2" z="10" spawntime="100" />
 	</spawn>
+	<spawn centerx="1005" centery="1830" centerz="10" radius="2">
+		<monster name="Carrion Worm" x="2" y="-1" z="10" spawntime="60" />
+		<monster name="Carrion Worm" x="-2" y="2" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1124" centery="1832" centerz="10" radius="1">
 		<monster name="Wailing Widow" x="0" y="-1" z="10" spawntime="60" />
 	</spawn>
@@ -16060,9 +16063,37 @@
 	<spawn centerx="1118" centery="1833" centerz="10" radius="1">
 		<monster name="Tarantula" x="0" y="-1" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="966" centery="1834" centerz="10" radius="2">
+		<monster name="Carrion Worm" x="2" y="-1" z="10" spawntime="60" />
+		<monster name="Carrion Worm" x="-2" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="974" centery="1834" centerz="10" radius="1">
+		<monster name="Carrion Worm" x="1" y="-1" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1104" centery="1835" centerz="10" radius="2">
 		<monster name="Giant Spider" x="-1" y="-2" z="10" spawntime="100" />
 		<monster name="Giant Spider" x="2" y="2" z="10" spawntime="100" />
+	</spawn>
+	<spawn centerx="995" centery="1836" centerz="10" radius="2">
+		<monster name="Carrion Worm" x="2" y="-1" z="10" spawntime="60" />
+		<monster name="Carrion Worm" x="-2" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1025" centery="1836" centerz="10" radius="2">
+		<monster name="Carrion Worm" x="2" y="-1" z="10" spawntime="60" />
+		<monster name="Carrion Worm" x="-2" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1034" centery="1836" centerz="10" radius="3">
+		<monster name="Carrion Worm" x="1" y="-2" z="10" spawntime="60" />
+		<monster name="Carrion Worm" x="-3" y="1" z="10" spawntime="60" />
+		<monster name="Carrion Worm" x="3" y="3" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="985" centery="1837" centerz="10" radius="2">
+		<monster name="Carrion Worm" x="2" y="-1" z="10" spawntime="60" />
+		<monster name="Carrion Worm" x="-2" y="2" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1013" centery="1839" centerz="10" radius="2">
+		<monster name="Carrion Worm" x="2" y="-1" z="10" spawntime="60" />
+		<monster name="Carrion Worm" x="-2" y="2" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1098" centery="1839" centerz="10" radius="1">
 		<monster name="Wailing Widow" x="0" y="-1" z="10" spawntime="60" />
@@ -16083,17 +16114,32 @@
 	<spawn centerx="1151" centery="1845" centerz="10" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="993" centery="1846" centerz="10" radius="1">
+		<monster name="Carrion Worm" x="-1" y="-1" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1077" centery="1846" centerz="10" radius="1">
 		<monster name="Tarantula" x="0" y="-1" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="975" centery="1847" centerz="10" radius="2">
+		<monster name="Carrion Worm" x="2" y="-1" z="10" spawntime="60" />
+		<monster name="Carrion Worm" x="-2" y="2" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1155" centery="1848" centerz="10" radius="1">
 		<monster name="Blood Crab" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1005" centery="1849" centerz="10" radius="2">
+		<monster name="Carrion Worm" x="2" y="-1" z="10" spawntime="60" />
+		<monster name="Carrion Worm" x="-2" y="2" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1160" centery="1851" centerz="10" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1324" centery="1853" centerz="10" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="989" centery="1854" centerz="10" radius="2">
+		<monster name="Carrion Worm" x="2" y="-1" z="10" spawntime="60" />
+		<monster name="Carrion Worm" x="-2" y="2" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1145" centery="1854" centerz="10" radius="1">
 		<monster name="Blood Crab" x="0" y="0" z="10" spawntime="60" />
@@ -16948,6 +16994,16 @@
 	</spawn>
 	<spawn centerx="895" centery="1802" centerz="11" radius="1">
 		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="961" centery="1830" centerz="11" radius="2">
+		<monster name="Rotworm" x="1" y="-1" z="11" spawntime="60" />
+		<monster name="Rotworm" x="-1" y="2" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="966" centery="1836" centerz="11" radius="4">
+		<monster name="Carrion Worm" x="2" y="-3" z="11" spawntime="60" />
+		<monster name="Carrion Worm" x="-3" y="0" z="11" spawntime="60" />
+		<monster name="Carrion Worm" x="3" y="0" z="11" spawntime="60" />
+		<monster name="Carrion Worm" x="0" y="3" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="1207" centery="1851" centerz="11" radius="1">
 		<monster name="Blood Crab" x="0" y="0" z="11" spawntime="60" />
