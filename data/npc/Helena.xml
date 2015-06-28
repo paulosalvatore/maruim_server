@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_sellable" value="poisonous slime,10557,12;mucus plug,18396,30;glob of mercury,9966,20;glob of acid slime,9967,25;glob of tar,9968,30;boggy dreads,10584,35;slime mould,13758,100;humongous chunk,18433,1;hideous chunk,18434,1;" />
+		<parameter key="shop_sellable" value="swampling moss,10557,5;piece of swampling wood,10557,3;poisonous slime,10557,12;mucus plug,18396,30;glob of mercury,9966,20;glob of acid slime,9967,25;glob of tar,9968,30;boggy dreads,10584,35;slime mould,13758,100;humongous chunk,18433,1;hideous chunk,18434,1;" />
 	</parameters>
 </npc>
