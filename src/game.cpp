@@ -4850,10 +4850,10 @@ void Game::playerReportBug(uint32_t playerId, const std::string& message, const 
 	Database* db = Database::getInstance();
 	std::ostringstream query;
 	uint64_t currentTime = OTSYS_TIME();
-	query << "INSERT INTO `reports` (`jogador_id`, `posicao_x`, `posicao_y`, `posicao_z`, `mensagem`, `categoria`, `data`) VALUES (" << player->getGUID() << ',' << position.getX() << ',' << position.getY() << ',' << position.getZ() << ',' << db->escapeString(message.c_str()) << ',' << db->escapeString(showCategory.c_str()) << ',' << currentTime << ')';
+	query << "INSERT INTO `reports` (`conta`, `posicao_x`, `posicao_y`, `posicao_z`, `mensagem`, `categoria`, `data`) VALUES (" << player->getAccount() << ',' << position.getX() << ',' << position.getY() << ',' << position.getZ() << ',' << db->escapeString(message.c_str()) << ',' << db->escapeString(showCategory.c_str()) << ',' << currentTime << ')';
 	db->executeQuery(query.str());
 
-	player->sendTextMessage(MESSAGE_EVENT_DEFAULT, "Seu relato foi registrado com sucesso.");
+	player->sendTextMessage(MESSAGE_EVENT_DEFAULT, "Sua reportação foi registrada com sucesso.");
 }
 
 void Game::playerDebugAssert(uint32_t playerId, const std::string& assertLine, const std::string& date, const std::string& description, const std::string& comment)
