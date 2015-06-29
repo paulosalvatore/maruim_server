@@ -21,10 +21,10 @@ loginProtocolPort = 7171
 gameProtocolPort = 7172
 statusProtocolPort = 7171
 maxPlayers = 0
-motd = "Welcome to The Forgotten Server!"
+motd = "Seja bem-vindo ao MaruimOT!"
 onePlayerOnlinePerAccount = true
 allowClones = false
-serverName = "Forgotten"
+serverName = "MaruimOT"
 statusTimeout = 5000
 replaceKickOnLogin = true
 maxPacketsPerSecond = 25
@@ -74,9 +74,9 @@ classicEquipmentSlots = false
 -- Rates
 -- NOTE: rateExp is not used if you have enabled stages in data/XML/stages.xml
 rateExp = 1
-rateSkill = 1
+rateSkill = 15
 rateLoot = 1
-rateMagic = 1
+rateMagic = 5
 rateSpawn = 1
 
 -- Monsters
