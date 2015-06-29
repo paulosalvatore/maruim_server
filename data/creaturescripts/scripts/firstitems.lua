@@ -2,6 +2,9 @@ local firstItems = {2461, 2467, 2649}
 
 function onLogin(player)
 	if player:getLastLoginSaved() == 0 then
+		for i = 1, 80 do
+			player:addMount(i)
+		end
 		for i = 1, #firstItems do
 			player:addItem(firstItems[i], 1)
 		end
