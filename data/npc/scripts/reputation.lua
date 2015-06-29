@@ -40,11 +40,14 @@ local function creatureSayCallback(cid, type, msg)
 		player:registerEvent("Tasks")
 		npcHandler:setMessage(MESSAGE_FAREWELL, "Veja as tarefas disponíveis, caso precise de mais alguma coisa, volte a falar comigo!")
 		npcHandler:unGreet(cid)
-	elseif player:pegarRankReputacao() > 1 and isInArray({"promotion", "promot", "promote", "promover", "promoção", "promocao"}, msg) then
+	elseif isInArray({"promotion", "promot", "promote", "promover", "promoção", "promocao"}, msg) then
 		if player:isPromoted() then
 			npcHandler:say("Você já está promovido.", cid)
 		elseif player:getLevel() < 20 then
 			npcHandler:say("Você precisa ter pelo menos nível 20 para receber uma promoção.", cid)
+		elseif player:pegarRankReputacao() > Reputacao.promocao then
+			npcHandler:say("Você precisa ter pelo menos " .. Reputacao.promocao .. " pontos de reputação para receber uma promoção.", cid)
+		end
 		else
 			npcHandler:say("Parabéns! Você foi promovido.", cid)
 			player:promote()
