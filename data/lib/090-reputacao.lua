@@ -37,3 +37,14 @@ Reputacao = {
 	},
 	promocao = 500
 }
+function pegarNpcReputacao(vocacaoId)
+	if vocacaoId == 1 or vocacaoId == 5 then
+		return "Etevi Drayn"
+	elseif vocacaoId == 2 or vocacaoId == 6 then
+		return "Drorist Suhariux"
+	elseif vocacaoId == 3 or vocacaoId == 7 then
+		return "Arti Earth"
+	elseif vocacaoId == 4 or vocacaoId == 8 then
+		return "Gras Fravotroth"
+	end
+end
