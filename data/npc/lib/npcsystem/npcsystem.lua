@@ -63,6 +63,9 @@ if NpcSystem == nil then
 
 	-- Parses all known parameters for the npc. Also parses parseable modules.
 	function NpcSystem.parseParameters(npcHandler)
+		if atualizarNpcsBanco then
+			atualizarNpcBanco(Npc())
+		end
 		local ret = NpcSystem.getParameter('idletime')
 		if ret ~= nil then
 			npcHandler.idleTime = tonumber(ret)

@@ -620,7 +620,7 @@ if Modules == nil then
 						local names = {}
 						names[#names + 1] = name
 						if atualizarNpcsBanco then
-							atualizarNpcBanco({Npc(), itemid, cost, itemSubType, "c"})
+							atualizarNpcBanco(Npc(), "comerciante", {itemid, cost, itemSubType, "c"})
 						end
 						self:addBuyableItem(names, itemid, cost, subType, attributes, realName)
 					end
@@ -670,7 +670,7 @@ if Modules == nil then
 					local names = {}
 					names[#names + 1] = name
 					if atualizarNpcsBanco then
-						atualizarNpcBanco({Npc(), itemid, cost, itemSubType, "v"})
+						atualizarNpcBanco(Npc(), "comerciante", {itemid, cost, itemSubType, "v"})
 					end
 					self:addSellableItem(names, itemid, cost, realName, subType)
 				else
