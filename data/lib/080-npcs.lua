@@ -227,7 +227,7 @@ barqueiros = {
 tempoBlessWoodenStake = 24*60*60
 
 local limparNpcs = false
-atualizarNpcs = false
+atualizarNpcsBanco = false
 if limparNpcs then
 	db.query("TRUNCATE TABLE `z_npcs`")
 	db.query("TRUNCATE TABLE `z_npcs_itens`")
