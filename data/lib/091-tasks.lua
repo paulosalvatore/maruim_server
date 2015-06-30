@@ -13,56 +13,40 @@ configTasks = {
 	modalTasksRealizadasInfo = 6,
 	modalTasksRecompensas = 7
 }
--- Criaturas = {
-	-- ["rat"] = 1,
-	-- ["cave rat"] = 2,
-	-- ["bug"] = 3
+-- Exemplo de Configuração:
+-- [idTarefa] = {
+	-- nivelMinimo = int - Opcional,
+	-- nivelMaximo = int - Opcional,
+	-- reputacao = int - Opcional,
+	-- criatura = var - Obrigatório,
+	-- recompensa = {
+		-- dinheiro = array ou int - Opcional,
+		-- experiencia = array ou int - Opcional,
+		-- item = array(int, array ou int) - Opcional,
+		-- nivel = int,
+		-- reputacao = int,
+		-- outfit = int,
+		-- addon = int,
+		-- montaria = int
+	-- }
 -- }
--- Tipos de Recompensas
--- dinheiro = {0, 100}, -- ou 100
--- experiencia = {0, 100}, -- ou 100
--- item = {2160, {1, 2}}, -- ou {2160, 1}
--- nivel = 1, -- valor_fixo
--- reputacao = 5, -- valor_fixo
--- outfit = 5, -- valor_fixo
--- addon = 5, -- valor_fixo
--- montaria = 5 -- valor_fixo
 Tasks = {
 	[1] = {
 		nivelMinimo = 0,
 		nivelMaximo = 0,
-		reputacao = 1,
-		quantidade = 10,
-		criatura = "rat",
+		quantidade = 50,
+		criatura = "vampire",
 		recompensa = {
-			dinheiro = {0, 100},
-			experiencia = {0, 100},
-			item = {2160, {1, 2}},
-			nivel = 1,
-			reputacao = 5
+			reputacao = 100
 		}
 	},
 	[2] = {
 		nivelMinimo = 0,
 		nivelMaximo = 0,
-		quantidade = 1,
-		criatura = "bug",
+		quantidade = 50,
+		criatura = "fire elemental",
 		recompensa = {
-			dinheiro = {0, 100},
-			experiencia = {0, 100},
-			item = {2160, {1, 2}},
-			nivel = 2,
-			reputacao = 4
-		}
-	},
-	[3] = {
-		nivelMinimo = 0,
-		nivelMaximo = 0,
-		quantidade = 10,
-		criatura = "cave rat",
-		recompensa = {
-			reputacao = 3,
-			item = {2160, {10, 20}}
+			reputacao = 100
 		}
 	}
 }
@@ -175,7 +159,7 @@ function Player.pegarTasksDisponiveis(self)
 		local statusTask = self:verificarStatusTask(a)
 		if	(statusTask == 0 or
 			statusTask == configTasks.valorFinalizada) and
-			playerLevel >= b.nivelMinimo and
+			((b.nivelMinimo == nil) or (b.nivelMinimo == 0) or (b.nivelMinimo > 0 and playerLevel >= b.nivelMinimo)) and
 			((b.nivelMaximo == nil) or (b.nivelMaximo == 0) or (b.nivelMaximo > 0 and playerLevel <= b.nivelMaximo)) and
 			((b.reputacao == nil) or (b.reputacao == 0) or (b.reputacao > 0 and self:pegarReputacao() >= b.reputacao)) then
 			table.insert(tasks, a)
