@@ -152,7 +152,7 @@
 	<house name="Mugulu XVI" houseid="150" entryx="799" entryy="1780" entryz="7" rent="0" townid="2" size="90" />
 	<house name="Mugulu XVII" houseid="151" entryx="788" entryy="1777" entryz="7" rent="0" townid="2" size="113" />
 	<house name="Mugulu XVIII" houseid="152" entryx="794" entryy="1777" entryz="6" rent="0" townid="2" size="76" />
-	<house name="Mugulu XIX" houseid="153" entryx="780" entryy="1766" entryz="7" rent="0" townid="2" size="208" />
+	<house name="Mugulu XIX" houseid="153" entryx="780" entryy="1766" entryz="7" rent="0" townid="2" size="209" />
 	<house name="Mugulu XX" houseid="154" entryx="791" entryy="1781" entryz="7" rent="0" townid="2" size="28" />
 	<house name="Mugulu XXI" houseid="155" entryx="788" entryy="1795" entryz="7" rent="0" townid="2" size="56" />
 	<house name="Mugulu XXII" houseid="156" entryx="784" entryy="1785" entryz="6" rent="0" townid="2" size="22" />
@@ -300,56 +300,56 @@
 	<house name="High Kyo XXI" houseid="301" entryx="1430" entryy="1892" entryz="6" rent="0" townid="11" size="28" />
 	<house name="High Algatar I" houseid="302" entryx="1133" entryy="2010" entryz="6" rent="0" townid="12" size="39" />
 	<house name="High Algatar II" houseid="303" entryx="1138" entryy="2030" entryz="6" rent="0" townid="12" size="39" />
-	<house name="High Algatar III" houseid="304" entryx="1140" entryy="2041" entryz="6" rent="0" townid="12" size="43" />
-	<house name="High Algatar IV" houseid="305" entryx="1139" entryy="2046" entryz="6" rent="0" townid="12" size="32" />
-	<house name="High Algatar V" houseid="306" entryx="1126" entryy="2046" entryz="6" rent="0" townid="12" size="159" />
+	<house name="High Algatar III" houseid="304" entryx="1140" entryy="2041" entryz="6" rent="0" townid="12" size="45" />
+	<house name="High Algatar IV" houseid="305" entryx="1139" entryy="2046" entryz="6" rent="0" townid="12" size="35" />
+	<house name="High Algatar V" houseid="306" entryx="1126" entryy="2046" entryz="6" rent="0" townid="12" size="161" />
 	<house name="High Algatar VI" houseid="307" entryx="1119" entryy="2034" entryz="6" rent="0" townid="12" size="46" />
-	<house name="High Algatar VII" houseid="308" entryx="1109" entryy="2026" entryz="6" rent="0" townid="12" size="37" />
-	<house name="High Algatar VIII" houseid="309" entryx="1098" entryy="2020" entryz="6" rent="0" townid="12" size="47" />
-	<house name="High Algatar IX" houseid="310" entryx="1095" entryy="2025" entryz="6" rent="0" townid="12" size="60" />
+	<house name="High Algatar VII" houseid="308" entryx="1109" entryy="2026" entryz="6" rent="0" townid="12" size="38" />
+	<house name="High Algatar VIII" houseid="309" entryx="1098" entryy="2020" entryz="6" rent="0" townid="12" size="49" />
+	<house name="High Algatar IX" houseid="310" entryx="1095" entryy="2025" entryz="6" rent="0" townid="12" size="62" />
 	<house name="High Algatar X" houseid="311" entryx="1093" entryy="2047" entryz="6" rent="0" townid="12" size="56" />
-	<house name="High Algatar XI" houseid="312" entryx="1095" entryy="2059" entryz="6" rent="0" townid="12" size="23" />
-	<house name="High Algatar XII" houseid="313" entryx="1077" entryy="2059" entryz="6" rent="0" townid="12" size="112" />
+	<house name="High Algatar XI" houseid="312" entryx="1095" entryy="2059" entryz="6" rent="0" townid="12" size="25" />
+	<house name="High Algatar XII" houseid="313" entryx="1077" entryy="2059" entryz="6" rent="0" townid="12" size="114" />
 	<house name="High Algatar XIII" houseid="314" entryx="1078" entryy="2038" entryz="6" rent="0" townid="12" size="73" />
 	<house name="High Algatar XIV" houseid="315" entryx="1068" entryy="2044" entryz="6" rent="0" townid="12" size="94" />
-	<house name="Low Algatar I" houseid="316" entryx="1133" entryy="2010" entryz="7" rent="0" townid="12" size="38" />
+	<house name="Low Algatar I" houseid="316" entryx="1133" entryy="2010" entryz="7" rent="0" townid="12" size="39" />
 	<house name="High Algatar XV" houseid="317" entryx="1063" entryy="2033" entryz="6" rent="0" townid="12" size="33" />
 	<house name="High Algatar XVI" houseid="318" entryx="1088" entryy="2005" entryz="6" rent="0" townid="12" size="44" />
 	<house name="High Algatar XVII" houseid="319" entryx="1074" entryy="2003" entryz="6" rent="0" townid="12" size="48" />
-	<house name="High Algatar XVIII" houseid="320" entryx="1062" entryy="2005" entryz="6" rent="0" townid="12" size="37" />
-	<house name="High Algatar XIX" houseid="321" entryx="1053" entryy="2016" entryz="6" rent="0" townid="12" size="32" />
+	<house name="High Algatar XVIII" houseid="320" entryx="1062" entryy="2005" entryz="6" rent="0" townid="12" size="38" />
+	<house name="High Algatar XIX" houseid="321" entryx="1053" entryy="2016" entryz="6" rent="0" townid="12" size="34" />
 	<house name="High Algatar XX" houseid="322" entryx="1055" entryy="2030" entryz="6" rent="0" townid="12" size="47" />
 	<house name="High Algatar XXI" houseid="323" entryx="1037" entryy="2031" entryz="6" rent="0" townid="12" size="38" />
 	<house name="High Algatar XXII" houseid="324" entryx="1023" entryy="2038" entryz="6" rent="0" townid="12" size="49" />
 	<house name="High Algatar XXIII" houseid="325" entryx="1020" entryy="2030" entryz="6" rent="0" townid="12" size="28" />
-	<house name="High Algatar XXIV" houseid="326" entryx="1020" entryy="2011" entryz="6" rent="0" townid="12" size="100" />
-	<house name="High Algatar XXV" houseid="327" entryx="1079" entryy="1978" entryz="6" rent="0" townid="12" size="37" />
-	<house name="High Algatar XXVI" houseid="328" entryx="1081" entryy="1972" entryz="6" rent="0" townid="12" size="38" />
+	<house name="High Algatar XXIV" houseid="326" entryx="1020" entryy="2011" entryz="6" rent="0" townid="12" size="102" />
+	<house name="High Algatar XXV" houseid="327" entryx="1079" entryy="1978" entryz="6" rent="0" townid="12" size="39" />
+	<house name="High Algatar XXVI" houseid="328" entryx="1081" entryy="1972" entryz="6" rent="0" townid="12" size="40" />
 	<house name="Low Algatar II" houseid="329" entryx="1138" entryy="2030" entryz="7" rent="0" townid="12" size="37" />
-	<house name="Low Algatar III" houseid="330" entryx="1140" entryy="2041" entryz="7" rent="0" townid="12" size="43" />
-	<house name="Low Algatar IV" houseid="331" entryx="1136" entryy="2040" entryz="7" rent="0" townid="12" size="32" />
-	<house name="Low Algatar V" houseid="332" entryx="1120" entryy="2039" entryz="7" rent="0" townid="12" size="80" />
-	<house name="Low Algatar VI" houseid="333" entryx="1124" entryy="2029" entryz="7" rent="0" townid="12" size="45" />
-	<house name="Low Algatar VII" houseid="334" entryx="1114" entryy="2021" entryz="7" rent="0" townid="12" size="37" />
-	<house name="Low Algatar VIII" houseid="335" entryx="1098" entryy="2009" entryz="7" rent="0" townid="12" size="47" />
-	<house name="Low Algatar IX" houseid="336" entryx="1089" entryy="2019" entryz="7" rent="0" townid="12" size="60" />
-	<house name="Low Algatar X" houseid="337" entryx="1105" entryy="2046" entryz="7" rent="0" townid="12" size="54" />
-	<house name="Low Algatar XI" houseid="338" entryx="1095" entryy="2059" entryz="7" rent="0" townid="12" size="23" />
-	<house name="Low Algatar XII" houseid="339" entryx="1077" entryy="2059" entryz="7" rent="0" townid="12" size="54" />
-	<house name="Low Algatar XIII" houseid="340" entryx="1078" entryy="2038" entryz="7" rent="0" townid="12" size="70" />
-	<house name="Low Algatar XIV" houseid="341" entryx="1061" entryy="2038" entryz="7" rent="0" townid="12" size="44" />
+	<house name="Low Algatar III" houseid="330" entryx="1140" entryy="2041" entryz="7" rent="0" townid="12" size="45" />
+	<house name="Low Algatar IV" houseid="331" entryx="1136" entryy="2040" entryz="7" rent="0" townid="12" size="35" />
+	<house name="Low Algatar V" houseid="332" entryx="1120" entryy="2039" entryz="7" rent="0" townid="12" size="83" />
+	<house name="Low Algatar VI" houseid="333" entryx="1124" entryy="2029" entryz="7" rent="0" townid="12" size="46" />
+	<house name="Low Algatar VII" houseid="334" entryx="1114" entryy="2021" entryz="7" rent="0" townid="12" size="38" />
+	<house name="Low Algatar VIII" houseid="335" entryx="1098" entryy="2009" entryz="7" rent="0" townid="12" size="49" />
+	<house name="Low Algatar IX" houseid="336" entryx="1089" entryy="2019" entryz="7" rent="0" townid="12" size="62" />
+	<house name="Low Algatar X" houseid="337" entryx="1105" entryy="2046" entryz="7" rent="0" townid="12" size="56" />
+	<house name="Low Algatar XI" houseid="338" entryx="1095" entryy="2059" entryz="7" rent="0" townid="12" size="25" />
+	<house name="Low Algatar XII" houseid="339" entryx="1077" entryy="2059" entryz="7" rent="0" townid="12" size="56" />
+	<house name="Low Algatar XIII" houseid="340" entryx="1078" entryy="2038" entryz="7" rent="0" townid="12" size="73" />
+	<house name="Low Algatar XIV" houseid="341" entryx="1061" entryy="2038" entryz="7" rent="0" townid="12" size="46" />
 	<house name="Low Algatar XV" houseid="342" entryx="1062" entryy="2033" entryz="7" rent="0" townid="12" size="33" />
-	<house name="Low Algatar XVI" houseid="343" entryx="1091" entryy="1999" entryz="7" rent="0" townid="12" size="42" />
-	<house name="Low Algatar XVII" houseid="344" entryx="1068" entryy="1998" entryz="7" rent="0" townid="12" size="46" />
-	<house name="Low Algatar XVIII" houseid="345" entryx="1050" entryy="2006" entryz="7" rent="0" townid="12" size="44" />
-	<house name="Low Algatar XIX" houseid="346" entryx="1048" entryy="2011" entryz="7" rent="0" townid="12" size="32" />
+	<house name="Low Algatar XVI" houseid="343" entryx="1091" entryy="1999" entryz="7" rent="0" townid="12" size="44" />
+	<house name="Low Algatar XVII" houseid="344" entryx="1068" entryy="1998" entryz="7" rent="0" townid="12" size="48" />
+	<house name="Low Algatar XVIII" houseid="345" entryx="1050" entryy="2006" entryz="7" rent="0" townid="12" size="46" />
+	<house name="Low Algatar XIX" houseid="346" entryx="1048" entryy="2011" entryz="7" rent="0" townid="12" size="34" />
 	<house name="Low Algatar XX" houseid="347" entryx="1050" entryy="2035" entryz="7" rent="0" townid="12" size="47" />
-	<house name="Low Algatar XXI" houseid="348" entryx="1038" entryy="2021" entryz="7" rent="0" townid="12" size="36" />
-	<house name="Low Algatar XXII" houseid="349" entryx="1023" entryy="2038" entryz="7" rent="0" townid="12" size="48" />
-	<house name="Low Algatar XXIII" houseid="350" entryx="1015" entryy="2025" entryz="7" rent="0" townid="12" size="26" />
+	<house name="Low Algatar XXI" houseid="348" entryx="1038" entryy="2021" entryz="7" rent="0" townid="12" size="38" />
+	<house name="Low Algatar XXII" houseid="349" entryx="1023" entryy="2038" entryz="7" rent="0" townid="12" size="49" />
+	<house name="Low Algatar XXIII" houseid="350" entryx="1015" entryy="2025" entryz="7" rent="0" townid="12" size="28" />
 	<house name="Low Algatar XXIV" houseid="351" entryx="1014" entryy="2016" entryz="7" rent="0" townid="12" size="49" />
-	<house name="Low Algatar XXV" houseid="352" entryx="1074" entryy="1972" entryz="7" rent="0" townid="12" size="37" />
-	<house name="Low Algatar XXVI" houseid="353" entryx="1081" entryy="1972" entryz="7" rent="0" townid="12" size="38" />
+	<house name="Low Algatar XXV" houseid="352" entryx="1074" entryy="1972" entryz="7" rent="0" townid="12" size="39" />
+	<house name="Low Algatar XXVI" houseid="353" entryx="1081" entryy="1972" entryz="7" rent="0" townid="12" size="40" />
 	<house name="Khazad-dum I" houseid="354" entryx="1474" entryy="1729" entryz="8" rent="0" townid="13" size="14" />
 	<house name="Khazad-dum II" houseid="355" entryx="1474" entryy="1723" entryz="8" rent="0" townid="13" size="14" />
 	<house name="Khazad-dum III" houseid="356" entryx="1474" entryy="1717" entryz="8" rent="0" townid="13" size="14" />
