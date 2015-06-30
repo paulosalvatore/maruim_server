@@ -20,5 +20,6 @@ function onLogin(player)
 	player:registerEvent("PlayerDeath")
 	player:registerEvent("DropLoot")
 	player:registerEvent("MatarCriatura")
+	player:registerEvent("LevelUp")
 	return true
 end

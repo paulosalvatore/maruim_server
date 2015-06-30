@@ -14,4 +14,5 @@
 	<event type="modalwindow" name="LocalizadorMasmorra" script="localizadorMasmorra.lua" />
 	<event type="preparedeath" name="PrepareDeath" script="prepareDeath.lua" />
 	<event type="modalwindow" name="ItensKnight" script="itensKnight.lua" />
+	<event type="advance" name="LevelUp" script="LevelUp.lua" />
 </creaturescripts>
