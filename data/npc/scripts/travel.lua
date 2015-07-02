@@ -39,7 +39,7 @@ for a, b in pairs(destinosNpc) do
 	local destino = destinos[b]
 	local exibirDestino = "{".. destino.nome .. "}"
 	if a > 1 then
-		if a < table.getn(destinosNpc) then
+		if a < #destinosNpc then
 			exibirDestino = ", " .. exibirDestino
 		else
 			exibirDestino = " ou " .. exibirDestino
@@ -62,7 +62,7 @@ for a, b in pairs(destinosNpc) do
 end
 
 local textoDestino
-if table.getn(destinosNpc) == 1 then
+if #destinosNpc == 1 then
 	textoDestino = "Eu posso te levar para " .. exibirDestinos .. "."
 else
 	textoDestino = "Para onde você deseja ir? " .. exibirDestinos .. "?"

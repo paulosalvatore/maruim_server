@@ -26,13 +26,13 @@
 	}
 	local posicoesGeradas = {}
 	local posicoesVerificadas = {}
-	while(table.getn(posicoesVerificadas) < 1) do
+	while(#posicoesVerificadas < 1) do
 		tabelaEfeito = 0
 		posicaoValidada = false
 		while(posicaoValidada == false) do
 			x = math.random(config["inicial"]["x"], config["final"]["x"])
 			y = math.random(config["inicial"]["y"], config["final"]["y"])
-			z = config["z"][math.random(1, table.getn(config["z"]))]
+			z = config["z"][math.random(1, #config["z"])]
 			stringPosicao = x .. "-" .. y .. "-" .. z
 			if not isInArray(posicoesVerificadas, stringPosicao) then
 				posicaoValidada = true
@@ -47,13 +47,13 @@
 				if itens then
 					if(isWalkable(posicao)) then
 						tabelaEfeito = "chao"
-					elseif(table.getn(itens) == 1) then
+					elseif(#itens == 1) then
 						if(isInArray(config["paredeHorizontal"]["ids"], itens[1]:getId())) then
 							tabelaEfeito = "paredeHorizontal"
 						elseif(isInArray(config["paredeVertical"]["ids"], itens[1]:getId())) then
 							tabelaEfeito = "paredeVertical"
 						end
-					elseif(table.getn(itens) == 2) then
+					elseif(#itens == 2) then
 						if(isInArray(config["espelhoHorizontal"]["ids"], itens[1]:getId()) or
 						isInArray(config["espelhoHorizontal"]["ids"], itens[2]:getId())) then
 							tabelaEfeito = "espelhoHorizontal"
@@ -66,10 +66,10 @@
 			end	
 			if(tabelaEfeito ~= 0) then
 				local efeitos = config[tabelaEfeito]["efeitos"]
-				if(table.getn(efeitos) == 1) then
+				if(#efeitos == 1) then
 					idEfeito = 1
 				else
-					idEfeito = math.random(1, table.getn(efeitos))
+					idEfeito = math.random(1, #efeitos)
 				end
 				efeito = config[tabelaEfeito]["efeitos"][idEfeito]
 				doSendMagicEffect(posicao, efeito)
