@@ -58,10 +58,10 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 				if i.container then
 					container = i.container
 				end
-				if table.getn(i.recompensa) > 1 then
+				if #i.recompensa > 1 then
 					adicionarItem = adicionarItem:addItem(container, 1)
 					exibirNome = ItemType(container):getName()
-				elseif table.getn(i.recompensa) == 1 then
+				elseif #i.recompensa == 1 then
 					exibirNome = ItemType(i.recompensa[1][1]):getName()
 				end
 				for a, b in pairs(i.recompensa) do

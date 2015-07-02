@@ -237,7 +237,7 @@ function Player.enviarTasksModalDisponiveis(self)
 	local modalId = configTasks.storageBase+configTasks.modalTasksDisponiveis
 	local modal = ModalWindow(modalId, modalTitulo, modalMensagem)
 	local listaTasks = self:pegarTasksDisponiveis()
-	if table.getn(listaTasks) > 0 then
+	if #listaTasks > 0 then
 		for a, b in pairs(listaTasks) do
 			modal:addChoice(b, pegarNomeTask(b))
 		end
@@ -258,7 +258,7 @@ function Player.enviarTasksModalProgresso(self)
 	local modalId = configTasks.storageBase+configTasks.modalTasksProgresso
 	local modal = ModalWindow(modalId, modalTitulo, modalMensagem)
 	local listaTasks = self:pegarTasksProgresso()
-	if table.getn(listaTasks) > 0 then
+	if #listaTasks > 0 then
 		for a, b in pairs(listaTasks) do
 			modal:addChoice(b, pegarNomeTask(b))
 		end
@@ -278,7 +278,7 @@ function Player.enviarTasksModalRealizadas(self)
 	local modalId = configTasks.storageBase+configTasks.modalTasksRealizadas
 	local modal = ModalWindow(modalId, modalTitulo, modalMensagem)
 	local listaTasks = self:pegarTasksRealizadas()
-	if table.getn(listaTasks) > 0 then
+	if #listaTasks > 0 then
 		for a, b in pairs(listaTasks) do
 			modal:addChoice(b, pegarNomeTask(b))
 		end
@@ -298,7 +298,7 @@ function Player.enviarTasksModalRecompensas(self)
 	local modalId = configTasks.storageBase+configTasks.modalTasksRecompensas
 	local modal = ModalWindow(modalId, modalTitulo, modalMensagem)
 	local listaTasks = self:pegarTasksRecompensa()
-	if table.getn(listaTasks) > 0 then
+	if #listaTasks > 0 then
 		for a, b in pairs(listaTasks) do
 			modal:addChoice(b, exibirTaskItemRecompensa(Tasks[b].recompensa.item) .. " - Tarefa: " .. pegarNomeTask(b))
 		end

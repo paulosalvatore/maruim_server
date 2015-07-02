@@ -175,7 +175,7 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 			if choiceId > 0 and buttonId == 1 then
 				local ingredientesMelhoria = profissao.ingredientesMelhoria
 				local ingredientesMelhoriaDisponiveis = player:getIngredientesMelhoria(profissaoId)
-				if ingredientesMelhoria ~= nil and table.getn(ingredientesMelhoriaDisponiveis) > 0 then
+				if ingredientesMelhoria ~= nil and #ingredientesMelhoriaDisponiveis > 0 then
 					local modalId = profissaoId+configProfissoes.receitasInicio+receitaId
 					local modalTitulo = player:getProfissaoModalTitulo(profissaoId).." - Selecione o Ingrediente de Melhoria"
 					local modalMensagem = "Selecione o ingrediente de melhoria para aumentar a sua chance de sucesso na produção dessa receita.\n\nClique no botão 'Criar', tecle 'Enter' ou dê dois cliques para iniciar o processo de fabricação.\n\n"

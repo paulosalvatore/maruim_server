@@ -111,7 +111,7 @@ function Player.enviarModalMasmorra(self)
 		modal:setDefaultEnterButton(1)
 	else
 		local listaMasmorras = self:pegarMasmorrasDisponiveis()
-		if table.getn(listaMasmorras) > 0 then
+		if #listaMasmorras > 0 then
 			modalTitulo = "Escolha uma Masmorra para entrar"
 			modalMensagem = "Escolha uma masmorra na lista abaixo e clique em 'Escolher', dê um clique duplo ou tecle 'Enter' para entrar na fila do localizador de masmorras.\n\n"
 			modal = ModalWindow(modalId, modalTitulo, modalMensagem)
@@ -204,7 +204,7 @@ function processarFilaLocalizadorMasmorra(masmorraId)
 	if not emUso then
 		local jogadoresNecessarios = masmorra.jogadoresNecessarios
 		local fila = masmorra.data.fila
-		if table.getn(fila) >= jogadoresNecessarios then
+		if #fila >= jogadoresNecessarios then
 			Masmorras[masmorraId].emUso = true
 			local jogadores = {}
 			for i = 1, jogadoresNecessarios do
@@ -254,7 +254,7 @@ function Player.aceitarConviteMasmorra(self)
 	local masmorra = Masmorras[masmorraId]
 	table.insert(Masmorras[masmorraId].data.jogadores, playerId)
 	local jogadores = masmorra.data.jogadores
-	if table.getn(jogadores) == masmorra.jogadoresNecessarios then
+	if #jogadores == masmorra.jogadoresNecessarios then
 		verificarInicioMasmorra(masmorraId, jogadores)
 	else
 		local modalId = configMasmorras.storageBase+configMasmorras.janelasModal.modalMasmorraAceitada
@@ -278,7 +278,7 @@ function verificarInicioMasmorra(masmorraId, jogadores)
 		return
 	end
 	local jogadoresAceitaram = masmorra.data.jogadores
-	if table.getn(jogadores) == table.getn(jogadoresAceitaram) then
+	if #jogadores == #jogadoresAceitaram then
 		iniciarMasmorra(masmorraId, jogadores)
 	else
 		for a, b in pairs(jogadores) do
@@ -363,7 +363,7 @@ end
 function enviarProgressoMasmorra(masmorraId)
 	local jogadores = Masmorras[masmorraId].data.jogadores
 	local criaturas = Masmorras[masmorraId].data.criaturas
-	local quantidadeCriaturas = table.getn(criaturas)
+	local quantidadeCriaturas = #criaturas
 	local mensagem
 	if quantidadeCriaturas == 1 then
 		mensagem = "Resta " .. quantidadeCriaturas .. " monstro na masmorra."

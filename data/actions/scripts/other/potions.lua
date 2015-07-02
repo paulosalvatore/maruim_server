@@ -38,13 +38,13 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			end
 		else
 			local msg = ""
-			if (table.getn(potion.vocations) > 0) and not isInArray(potion.vocations, target:getVocation():getId()) then
+			if (#potion.vocations > 0) and not isInArray(potion.vocations, target:getVocation():getId()) then
 				local vocacoes = ""
-				for i = 1, table.getn(potion.vocations)/2 do
+				for i = 1, #potion.vocations/2 do
 					local vocationName = string.lower(tostring(Vocation(potion.vocations[i]):getName())).."s"
 					if i == 1 then
 						vocacoes = vocationName
-					elseif i < table.getn(potion.vocations)/2 then
+					elseif i < #potion.vocations/2 then
 						vocacoes = vocacoes..", "..vocationName
 					else
 						vocacoes = vocacoes.." e "..vocationName

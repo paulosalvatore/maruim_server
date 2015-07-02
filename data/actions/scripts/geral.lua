@@ -868,7 +868,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		local chance = 10000
 		if	(chanceSucesso ~= nil and chanceSucesso <= 10000) or
 			(chanceQuebrar ~= nil and chanceQuebrar <= 10000) or
-			(i.transformarAleatorio ~= nil and table.getn(i.transformarAleatorio) >= 2) then
+			(i.transformarAleatorio ~= nil and #i.transformarAleatorio >= 2) then
 			chance = math.random(10000)
 		else
 			chanceSucesso = 10000
@@ -971,7 +971,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				itemGame:decay()
 			end
 		end
-		if i.transformar ~= nil and table.getn(i.transformar) >= 2 then
+		if i.transformar ~= nil and #i.transformar >= 2 then
 			local transformar = target
 			local itemTransformar = i.transformar[1]
 			local quantidadeTransformar = i.transformar[2]
@@ -996,7 +996,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				transformar:decay()
 			end
 		end
-		if i.transformarAleatorio ~= nil and table.getn(i.transformarAleatorio) >= 2 then
+		if i.transformarAleatorio ~= nil and #i.transformarAleatorio >= 2 then
 			local chanceTransformar = 0
 			for c, v in pairs(i.transformarAleatorio) do
 				chanceTransformar = chanceTransformar+v[3]
@@ -1036,7 +1036,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		if chanceQuebrar ~= nil and chanceQuebrar <= 10000 and chance <= chanceQuebrar then
 			target:remove(1)
 		end
-		if efeito ~= nil and table.getn(efeito) > 0 then
+		if efeito ~= nil and #efeito > 0 then
 			local posicaoEfeito = nil
 			if efeito[2] and efeito[2] ~= "to" then
 				if type(efeito[2]) == "table" then
@@ -1137,8 +1137,8 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				end
 			end
 		end
-		if i.sons ~= nil and type(i.sons) == "table" and table.getn(i.sons) > 0 then
-			player:say(formatarFrase(i.sons[math.random(1,table.getn(i.sons))], player.uid), TALKTYPE_ORANGE_1, false, 0, toPosition)
+		if i.sons ~= nil and type(i.sons) == "table" and #i.sons > 0 then
+			player:say(formatarFrase(i.sons[math.random(1, #i.sons)], player.uid), TALKTYPE_ORANGE_1, false, 0, toPosition)
 		end
 		if i.mensagemPlayer ~= nil then
 			player:sendTextMessage(MESSAGE_INFO_DESCR, i.mensagemPlayer)

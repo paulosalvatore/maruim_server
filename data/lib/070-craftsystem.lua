@@ -680,7 +680,7 @@ end
 function ordenarReceitasPorNome(receitas)
 	local nomesReceitas, exibirReceitas = {}, {}
 	for a, b in pairs(receitas) do
-		if table.getn(nomesReceitas) < 256 then
+		if #nomesReceitas < 256 then
 			local nomeReceita = capAll(getItemName(b.item))
 			if b.nome ~= nil then
 				nomeReceita = b.nome
@@ -692,7 +692,7 @@ function ordenarReceitasPorNome(receitas)
 	for _, k in ipairs(sortedKeys) do
 		local nomeReceita = nomesReceitas[k]
 		quantidade = receitas[k].quantidade
-		if quantidade ~= nil and ((type(quantidade) == "number" and quantidade > 1) or (type(quantidade) == "table" and table.getn(quantidade) == 2)) then
+		if quantidade ~= nil and ((type(quantidade) == "number" and quantidade > 1) or (type(quantidade) == "table" and #quantidade == 2)) then
 			if type(quantidade) == "table" then
 				quantidade = (quantidade[1].."-"..quantidade[2])
 			elseif quantidade > 1 then
