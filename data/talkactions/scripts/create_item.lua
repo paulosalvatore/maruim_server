@@ -19,20 +19,32 @@ function onSay(player, words, param)
 	end
 
 	local count = tonumber(split[2])
-	if count ~= nil then
+	if split[2] == "bp" then
+		count = 20
 		if itemType:isStackable() then
-			count = math.min(10000, math.max(1, count))
-		elseif not itemType:isFluidContainer() then
-			count = math.min(100, math.max(1, count))
-		else
-			count = math.max(1, count)
-			count = math.max(0, count)
+			count = count*100
+		end
+	elseif split[2] == "bag" then
+		count = 8
+		if itemType:isStackable() then
+			count = count*100
 		end
 	else
-		if not itemType:isFluidContainer() then
-			count = 1
+		if count ~= nil then
+			if itemType:isStackable() then
+				count = math.min(10000, math.max(1, count))
+			elseif not itemType:isFluidContainer() then
+				count = math.min(100, math.max(1, count))
+			else
+				count = math.max(1, count)
+				count = math.max(0, count)
+			end
 		else
-			count = 0
+			if not itemType:isFluidContainer() then
+				count = 1
+			else
+				count = 0
+			end
 		end
 	end
 
