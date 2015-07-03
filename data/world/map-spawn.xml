@@ -179,7 +179,7 @@
 		<monster name="Troll" x="0" y="-1" z="5" spawntime="60" />
 		<monster name="Troll" x="-1" y="0" z="5" spawntime="60" />
 	</spawn>
-	<spawn centerx="465" centery="865" centerz="5" radius="1">
+	<spawn centerx="464" centery="861" centerz="5" radius="1">
 		<monster name="Wolf" x="-1" y="-1" z="5" spawntime="60" />
 		<monster name="Wolf" x="1" y="1" z="5" spawntime="60" />
 	</spawn>
@@ -883,10 +883,13 @@
 	<spawn centerx="464" centery="855" centerz="6" radius="1">
 		<monster name="Wolf" x="-1" y="0" z="6" spawntime="60" />
 	</spawn>
+	<spawn centerx="471" centery="861" centerz="6" radius="1">
+		<monster name="Wolf" x="-1" y="0" z="6" spawntime="60" />
+	</spawn>
 	<spawn centerx="458" centery="866" centerz="6" radius="1">
 		<monster name="Wolf" x="-1" y="0" z="6" spawntime="60" />
 	</spawn>
-	<spawn centerx="471" centery="870" centerz="6" radius="1">
+	<spawn centerx="471" centery="872" centerz="6" radius="1">
 		<monster name="Wolf" x="-1" y="0" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="460" centery="877" centerz="6" radius="1">
@@ -916,6 +919,9 @@
 	</spawn>
 	<spawn centerx="562" centery="887" centerz="6" radius="1">
 		<monster name="Wolf" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="459" centery="889" centerz="6" radius="1">
+		<monster name="Wolf" x="-1" y="0" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="535" centery="891" centerz="6" radius="1">
 		<monster name="Spider" x="0" y="0" z="6" spawntime="60" />
@@ -970,8 +976,8 @@
 		<monster name="Dragon" x="2" y="-3" z="6" spawntime="60" />
 		<monster name="Dragon" x="-1" y="3" z="6" spawntime="60" />
 	</spawn>
-	<spawn centerx="836" centery="1258" centerz="6" radius="1">
-		<npc name="Akheria Sudayth" x="0" y="-1" z="6" spawntime="60" direction="2" />
+	<spawn centerx="839" centery="1255" centerz="6" radius="1">
+		<npc name="Akheria Sudayth" x="0" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="625" centery="1269" centerz="6" radius="4">
 		<monster name="Dragon" x="-3" y="-3" z="6" spawntime="60" />
@@ -2238,7 +2244,7 @@
 		<npc name="Darvia Swor" x="0" y="-1" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="573" centery="930" centerz="7" radius="1">
-		<npc name="Joe" x="0" y="1" z="7" spawntime="60" direction="2" />
+		<npc name="Joe" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="542" centery="933" centerz="7" radius="1">
 		<monster name="Rabbit" x="-1" y="0" z="7" spawntime="60" />
