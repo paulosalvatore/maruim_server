@@ -10,7 +10,7 @@ function onSay(player, words, param)
 			player:sendCancelMessage("Insufficient parameters.")
 			return false
 		else
-			if not player:teleportarJogador(Position(split[1], split[2], split[3])) then
+			if not player:teleportTo(Position(split[1], split[2], split[3])) then
 				player:sendCancelMessage("Position not found.")
 			end
 			return false
