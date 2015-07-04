@@ -369,16 +369,16 @@
 	<spawn centerx="764" centery="1541" centerz="5" radius="1">
 		<monster name="Tarnished Spirit" x="-1" y="-1" z="5" spawntime="60" />
 	</spawn>
-	<spawn centerx="736" centery="1542" centerz="5" radius="2">
-		<monster name="Vampire Bride" x="2" y="-2" z="5" spawntime="60" />
-		<monster name="Vampire Bride" x="-2" y="0" z="5" spawntime="60" />
-	</spawn>
 	<spawn centerx="748" centery="1542" centerz="5" radius="1">
 		<monster name="Tarnished Spirit" x="0" y="-1" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="769" centery="1542" centerz="5" radius="2">
 		<monster name="Vampire Bride" x="-2" y="-1" z="5" spawntime="60" />
 		<monster name="Vampire Bride" x="2" y="-1" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="736" centery="1543" centerz="5" radius="2">
+		<monster name="Vampire Bride" x="2" y="-2" z="5" spawntime="60" />
+		<monster name="Vampire Bride" x="-2" y="-1" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="755" centery="1543" centerz="5" radius="2">
 		<monster name="Vampire Viscount" x="2" y="-1" z="5" spawntime="60" />
@@ -387,11 +387,11 @@
 	<spawn centerx="776" centery="1544" centerz="5" radius="1">
 		<monster name="Tarnished Spirit" x="-1" y="-1" z="5" spawntime="60" />
 	</spawn>
-	<spawn centerx="742" centery="1545" centerz="5" radius="2">
+	<spawn centerx="742" centery="1546" centerz="5" radius="2">
 		<monster name="Vampire Viscount" x="2" y="-1" z="5" spawntime="60" />
 		<monster name="Vampire Viscount" x="-1" y="2" z="5" spawntime="60" />
 	</spawn>
-	<spawn centerx="736" centery="1547" centerz="5" radius="1">
+	<spawn centerx="736" centery="1548" centerz="5" radius="1">
 		<monster name="Tarnished Spirit" x="0" y="-1" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="773" centery="1549" centerz="5" radius="2">
