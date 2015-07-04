@@ -16,18 +16,17 @@ local function serverSave()
 end
 
 local function secondServerSaveWarning()
-	broadcastMessage("O servidor ir√° salvar em um minuto.", MESSAGE_STATUS_WARNING)
+	broadcastMessage("O servidor ir· salvar em um minuto.", MESSAGE_STATUS_WARNING)
 	addEvent(serverSave, 60000)
-	Game.setGameState(GAME_STATE_STARTUP)
 end
 
 local function firstServerSaveWarning()
-	broadcastMessage("O servidor ir√° salvar em 3 minutos.", MESSAGE_STATUS_WARNING)
+	broadcastMessage("O servidor ir· salvar em 3 minutos.", MESSAGE_STATUS_WARNING)
 	addEvent(secondServerSaveWarning, 120000)
 end
 
 function onThink(cid, interval, lastExecution)
-	broadcastMessage("O servidor ir√° salvar em 5 minutos.", MESSAGE_STATUS_WARNING)
+	broadcastMessage("O servidor ir· salvar em 5 minutos.", MESSAGE_STATUS_WARNING)
 	addEvent(firstServerSaveWarning, 120000)
 	return not shutdownAtServerSave
 end
