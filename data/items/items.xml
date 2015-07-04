@@ -14840,7 +14840,7 @@
 	<item id="7932" article="a" name="large hole">
 		<attribute key="description" value="It is loosely covered by some stones and earth." />
 	</item>
-	<item id="7933" article="a" name="hole">
+	<item id="7933" article="a" name="large hole">
 		<attribute key="floorchange" value="down" />
 		<attribute key="decayTo" value="7932" />
 		<attribute key="duration" value="600" />

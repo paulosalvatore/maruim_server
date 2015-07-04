@@ -3,6 +3,10 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		target:transform(392)
 		target:decay()
 		toPosition:sendMagicEffect(CONST_ME_POFF)
+	elseif target.itemid == 7932 then
+		target:transform(target.itemid+1)
+		target:decay()
+		toPosition:sendMagicEffect(CONST_ME_POFF)
 	elseif target.itemid == 8934 then
 		local chance = math.random(1, 100)
 		local adicionarItem
