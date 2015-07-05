@@ -186,7 +186,7 @@ function Player.depositMoney(self, amount)
 	return true
 end
 
-function Player.addMoney(self, amount)
+function Player.addMoneyBank(self, amount)
 	self:setBankBalance(self:getBankBalance() + amount)
 	return true
 end

@@ -86,7 +86,7 @@ function Player.completarTask(self, taskId)
 			if type(valorRecompensa) == "table" then
 				valorRecompensa = math.random(valorRecompensa[1], valorRecompensa[2])
 			end
-			self:addMoney(valorRecompensa)
+			self:addMoneyBank(valorRecompensa)
 			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Recompensa de Tarefa: A quantia de " .. valorRecompensa .. " gp foi depositada em sua conta bancária.")
 		end
 		if recompensa.nivel ~= nil then
