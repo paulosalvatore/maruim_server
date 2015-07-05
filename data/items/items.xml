@@ -28254,26 +28254,26 @@
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="20515" article="a" name="dead thief">
+	<item id="20515" article="a" name="dead angry villager">
 		<attribute key="containerSize" value="20" />
 		<attribute key="decayTo" value="20516" />
 		<attribute key="duration" value="300" />
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="20516" article="a" name="dead thief">
+	<item id="20516" article="a" name="dead angry villager">
 		<attribute key="containerSize" value="20" />
 		<attribute key="decayTo" value="20517" />
 		<attribute key="duration" value="300" />
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="20517" article="a" name="dead thief">
+	<item id="20517" article="a" name="dead angry villager">
 		<attribute key="decayTo" value="0" />
 		<attribute key="duration" value="300" />
 		<attribute key="corpseType" value="blood" />
 	</item>
-	<item id="20518" article="a" name="dead thief">
+	<item id="20518" article="a" name="dead angry villager">
 		<attribute key="containerSize" value="20" />
 		<attribute key="decayTo" value="20515" />
 		<attribute key="duration" value="10" />
