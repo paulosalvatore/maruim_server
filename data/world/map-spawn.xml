@@ -2459,6 +2459,9 @@
 	<spawn centerx="649" centery="1080" centerz="7" radius="1">
 		<monster name="Bug" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="622" centery="1084" centerz="7" radius="1">
+		<npc name="Jane" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="601" centery="1086" centerz="7" radius="1">
 		<npc name="Rafter Bous" x="-1" y="-1" z="7" spawntime="60" direction="2" />
 	</spawn>
