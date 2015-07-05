@@ -8599,6 +8599,12 @@
 	<spawn centerx="482" centery="951" centerz="8" radius="1">
 		<monster name="Rat" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="538" centery="951" centerz="8" radius="1">
+		<monster name="Snake" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="495" centery="952" centerz="8" radius="1">
+		<monster name="Snake" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="507" centery="952" centerz="8" radius="1">
 		<monster name="Snake" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
