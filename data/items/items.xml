@@ -781,14 +781,8 @@
 		<attribute key="decayTo" value="1510" />
 		<attribute key="duration" value="10" />
 	</item>
-	<item id="1512" name="strange holes">
-		<attribute key="decayTo" value="1513" />
-		<attribute key="duration" value="4" />
-	</item>
-	<item id="1513" name="spikes">
-		<attribute key="decayTo" value="1512" />
-		<attribute key="duration" value="4" />
-	</item>
+	<item id="1512" name="strange holes" />
+	<item id="1513" name="spikes" />
 	<item id="1514" article="a" name="stone pillar" />
 	<item id="1515" article="a" name="marble pillar" />
 	<item fromid="1516" toid="1523" article="a" name="wooden railing" />
