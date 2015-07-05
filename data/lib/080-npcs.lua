@@ -94,13 +94,13 @@ destinos = {
 	["ilha_inicial_parte_alta_baixa"] = {
 		nome = "Parte Baixa da Ilha",
 		posicao = {x = 601, y = 1085, z = 7},
-		custo = 100,
+		custo = 10,
 		levelNecessario = 0
 	},
 	["ilha_inicial_parte_baixa_alta"] = {
 		nome = "Parte Alta da Ilha",
 		posicao = {x = 587, y = 1018, z = 7},
-		custo = 100,
+		custo = 10,
 		levelNecessario = 0
 	}
 }
