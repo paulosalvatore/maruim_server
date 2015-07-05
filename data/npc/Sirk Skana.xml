@@ -8,7 +8,7 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_buyable" value="leather armor,2467,10;leather helmet,2461,5;leather legs,2649,7;leather boots,2643,9;wooden shield,2512,15;studded armor,2484,35;studded helmet,2482,20;studded legs,2468,30;studded shield,2526,50;" />
-		<parameter key="shop_sellable" value="" />
+		<parameter key="shop_buyable" value="leather boots,2643,9;wooden shield,2512,15;studded armor,2484,35;studded helmet,2482,20;studded legs,2468,30;studded shield,2526,50;" />
+		<parameter key="shop_sellable" value="leather helmet,2461,2;leather armor,2467,2;leather legs,2649,2;" />
 	</parameters>
 </npc>
