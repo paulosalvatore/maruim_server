@@ -16,7 +16,11 @@ function onLogin(player)
 			player:addItem(23721, 1)
 		elseif vocationId == 3 then
 			player:addItem(19390, 10)
-		elseif vocationId == 4 then
+		end
+	end
+	if player:getStorageValue(storageKnightItens) ~= 1 then
+		local vocationId = player:getVocation():getId()
+		if vocationId == 4 then
 			local modalTitulo = "Escolha uma Arma"
 			local modalMensagem = "Escolha uma das armas abaixo e clique em 'Escolher', tecle entre ou dê um clique duplo na opção desejada para recebê-la.\n\n"
 			local modal = ModalWindow(modalItensKnight, modalTitulo, modalMensagem)
