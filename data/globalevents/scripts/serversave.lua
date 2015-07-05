@@ -25,7 +25,7 @@ local function firstServerSaveWarning()
 	addEvent(secondServerSaveWarning, 120000)
 end
 
-function onThink(cid, interval, lastExecution)
+function onTime(interval)
 	broadcastMessage("O servidor irá salvar em 5 minutos.", MESSAGE_STATUS_WARNING)
 	addEvent(firstServerSaveWarning, 120000)
 	return not shutdownAtServerSave
