@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Jane" script="default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="134" head="78" body="76" legs="76" feet="115" addons="3" />
+	<parameters>
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja." />
+		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?" /> 
+		<parameter key="message_farewell" value="Adeus!" />
+		<parameter key="message_walkaway" value="Nos vemos depois!" />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="dead rat,2813,;wolf paw,5897,4;bear paw,5896,6;bone,2230,5;pelvis bone,12437,10;minotaur leather,5878,14;minotaur horn,12428,18;bunch of troll hair,10606,2;trollroot,12471,5;spider fangs,8859,5;poison spider shell,12441,7;goblin ear,12495,10;orc tooth,11113,5;orc leather,12435,10;angry villager,12382,8;"/>
+	</parameters>
+</npc>
