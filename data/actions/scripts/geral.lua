@@ -433,8 +433,8 @@ local config = {
 				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 3*60*1000,
-				chanceSucesso = 1000,
-				chanceNeutra = 9000,
+				chanceSucesso = 2000,
+				chanceNeutra = 4000,
 				profissao = "ferreiro"
 			}
 		}
@@ -768,7 +768,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		local adicionarEvento = false
 		if i["default"] ~= nil then
 			i = i["default"]
-		elseif	isInArray(sparkling, target.itemid) and #Tile(toPosition):getItems() == 2 and
+		elseif	isInArray(sparkling, target.itemid) and #Tile(toPosition):getItems() >= 2 and
 				(i["sparkling"][Tile(toPosition):getTileTopTopItem()] ~= nil or
 				i["sparkling"]["ferro"] ~= nil or
 				i["sparkling"]["carvao"] ~= nil or
