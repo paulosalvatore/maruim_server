@@ -82,6 +82,8 @@
 	<action itemid="9895" script="crafting.lua" />
 	<action itemid="9898" script="crafting.lua" />
 
+	<action itemid="2225" script="transformarMinerioFerro.lua" />
+
 	<!-- Quests -->
 	<action itemid="1740" script="quests.lua" />
 	<action fromid="1747" toid="1749" script="quests.lua" />
