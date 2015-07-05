@@ -3,12 +3,27 @@
 	<spawn centerx="448" centery="956" centerz="2" radius="2">
 		<npc name="Arti Earth" x="0" y="-1" z="2" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="577" centery="1038" centerz="2" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="2" spawntime="60" />
+	</spawn>
+	<spawn centerx="581" centery="1039" centerz="2" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="2" spawntime="60" />
+	</spawn>
+	<spawn centerx="578" centery="1042" centerz="2" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="2" spawntime="60" />
+	</spawn>
 	<spawn centerx="875" centery="1825" centerz="2" radius="1">
 		<monster name="Troll Champion" x="-1" y="0" z="2" spawntime="60" />
 		<monster name="Troll Champion" x="1" y="0" z="2" spawntime="60" />
 	</spawn>
 	<spawn centerx="927" centery="1898" centerz="2" radius="1">
 		<npc name="Pheanak Livertin" x="1" y="0" z="2" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="578" centery="1038" centerz="3" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="3" spawntime="60" />
+	</spawn>
+	<spawn centerx="578" centery="1042" centerz="3" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="3" spawntime="60" />
 	</spawn>
 	<spawn centerx="874" centery="1825" centerz="3" radius="1">
 		<monster name="Troll Champion" x="-1" y="0" z="3" spawntime="60" />
@@ -30,6 +45,18 @@
 	</spawn>
 	<spawn centerx="427" centery="886" centerz="4" radius="1">
 		<monster name="Poison Spider" x="0" y="0" z="4" spawntime="60" />
+	</spawn>
+	<spawn centerx="558" centery="1034" centerz="4" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="4" spawntime="60" />
+	</spawn>
+	<spawn centerx="559" centery="1036" centerz="4" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="4" spawntime="60" />
+	</spawn>
+	<spawn centerx="580" centery="1038" centerz="4" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="4" spawntime="60" />
+	</spawn>
+	<spawn centerx="577" centery="1041" centerz="4" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="4" spawntime="60" />
 	</spawn>
 	<spawn centerx="607" centery="1046" centerz="4" radius="2">
 		<monster name="Wolf" x="-1" y="-1" z="4" spawntime="60" />
@@ -248,8 +275,23 @@
 	<spawn centerx="545" centery="947" centerz="5" radius="2">
 		<npc name="Drorist Suhariux" x="0" y="-1" z="5" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="559" centery="1036" centerz="5" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="580" centery="1038" centerz="5" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="577" centery="1042" centerz="5" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="571" centery="1047" centerz="5" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="5" spawntime="60" />
+	</spawn>
 	<spawn centerx="626" centery="1048" centerz="5" radius="1">
 		<monster name="Wolf" x="0" y="0" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="567" centery="1049" centerz="5" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="607" centery="1053" centerz="5" radius="1">
 		<monster name="Wolf" x="0" y="0" z="5" spawntime="60" />
@@ -971,6 +1013,18 @@
 	</spawn>
 	<spawn centerx="650" centery="956" centerz="6" radius="1">
 		<npc name="Mylo" x="-1" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="558" centery="1036" centerz="6" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="577" centery="1041" centerz="6" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="566" centery="1049" centerz="6" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="569" centery="1049" centerz="6" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="638" centery="1255" centerz="6" radius="4">
 		<monster name="Dragon" x="2" y="-3" z="6" spawntime="60" />
@@ -2342,8 +2396,38 @@
 	<spawn centerx="595" centery="1005" centerz="7" radius="1">
 		<monster name="Poison Spider" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="566" centery="1015" centerz="7" radius="1">
+		<monster name="Bug" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="571" centery="1018" centerz="7" radius="1">
+		<monster name="Snake" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="593" centery="1018" centerz="7" radius="1">
 		<npc name="Rafter Demarm" x="0" y="1" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="568" centery="1024" centerz="7" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="558" centery="1035" centerz="7" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="568" centery="1035" centerz="7" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="579" centery="1039" centerz="7" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="558" centery="1041" centerz="7" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="564" centery="1043" centerz="7" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="569" centery="1044" centerz="7" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="566" centery="1049" centerz="7" radius="1">
+		<monster name="Angry Villager" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="612" centery="1058" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="0" z="7" spawntime="60" />
