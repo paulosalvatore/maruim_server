@@ -36,10 +36,10 @@ function creatureSayCallback(cid, type, msg)
 end
 
 keywordHandler:addKeywords({{"heal"}, {"curar"}}, StdModule.say, {npcHandler = npcHandler, text = "Você está ferida, criança. Eu irei curá-la."},
-	function(player) return player:getHealth() < math.max(40, math.floor(player:getMaxHealth()*0.1)) end,
+	function(player) return player:getHealth() < math.max(300, math.floor(player:getMaxHealth()*0.4)) end,
 	function(player)
 		local playerHP = player:getHealth()
-		local playerChecarHP = math.max(40, math.floor(player:getMaxHealth()*0.1))
+		local playerChecarHP = math.max(300, math.floor(player:getMaxHealth()*0.4))
 		local playerRecuperarHP = playerChecarHP-playerHP
 		if playerHP < playerChecarHP then player:addHealth(playerRecuperarHP) end
 		player:removerDebuffs()
