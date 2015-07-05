@@ -2,6 +2,12 @@ local firstItems = {2461, 2467, 2649}
 
 function onLogin(player)
 	if player:getLastLoginSaved() == 0 then
+		for i = 1, 733 do
+			if player:hasOutfit(i) then
+				player:addOutfitAddon(i, 1)
+				player:addOutfitAddon(i, 2)
+			end
+		end
 		for i = 1, 80 do
 			player:addMount(i)
 		end
