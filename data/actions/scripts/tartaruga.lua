@@ -102,23 +102,27 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local posicaoObjeto = posicaoJogador + {y = -2}
 	local checarTartaruga = Tile(posicaoObjeto):getGround():getId()
 	local inFight = getCreatureCondition(player, CONDITION_INFIGHT)
-	if inFight == false then
-		if checarTartaruga == 5755 then
-			if item.itemid == 9825 then
-				Item(item.uid):transform(item.itemid + 1)
-			elseif item.itemid == 9826 then
-				Item(item.uid):transform(item.itemid - 1)
-			end
-			local posicaoJogador = posicaoJogador + {y = -3}
-			player:teleportTo(posicaoJogador, true)
-			for i = 0, passos, 1 do
-				addEvent(moverTartaruga, tempo*i, player.uid, -1, posicaoJogador, i)
+	if player:getStorageValue(5756) ~= 1 then
+		player:sendCancelMessage("Você não pode viajar na tartaruga.")
+	else
+		if inFight == false then
+			if checarTartaruga == 5755 then
+				if item.itemid == 9825 then
+					Item(item.uid):transform(item.itemid + 1)
+				elseif item.itemid == 9826 then
+					Item(item.uid):transform(item.itemid - 1)
+				end
+				local posicaoJogador = posicaoJogador + {y = -3}
+				player:teleportTo(posicaoJogador, true)
+				for i = 0, passos, 1 do
+					addEvent(moverTartaruga, tempo*i, player.uid, -1, posicaoJogador, i)
+				end
+			else
+				player:sendTextMessage(MESSAGE_STATUS_SMALL, "Aguarde o retorno da tartaruga.")
 			end
 		else
-			player:sendTextMessage(MESSAGE_STATUS_SMALL, "Aguarde o retorno da tartaruga.")
+			player:sendTextMessage(MESSAGE_STATUS_SMALL, "Você deve sair do combate")
 		end
-	else
-		player:sendTextMessage(MESSAGE_STATUS_SMALL, "Você deve sair do combate")
 	end
 	return true
 end
