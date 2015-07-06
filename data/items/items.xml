@@ -8073,8 +8073,9 @@
 		<attribute key="description" value="It contains a collection of beautiful elven poems." />
 		<attribute key="weight" value="1300" />
 	</item>
-	<item id="4856" article="a" name="blacksmith's pick">
-		<attribute key="weight" value="14500" />
+	<item id="4856" article="an" name="ice pick">
+		<attribute key="description" value="It might come in handy in cold regions." />
+		<attribute key="weight" value="7000" />
 	</item>
 	<item id="4857" article="a" name="wrinkled parchment">
 		<attribute key="description" value="It is covered with strange numbers." />
@@ -20267,9 +20268,8 @@
 		<attribute key="duration" value="600" />
 		<attribute key="corpseType" value="undead" />
 	</item>
-	<item id="11421" article="a" name="ice pick">
-		<attribute key="description" value="It might come in handy in cold regions." />
-		<attribute key="weight" value="7000" />
+	<item id="11421" article="a" name="blacksmith's pick">
+		<attribute key="weight" value="3000" />
 	</item>
 	<item id="11422" article="a" name="damaged steel helmet">
 		<attribute key="description" value="The words 'Ramsay the Reckless' are engraved inside. It appears to be cracked and broken." />
