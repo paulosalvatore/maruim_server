@@ -51,18 +51,20 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			for a, b in pairs(i.recompensa) do
 				pesoTotalItens = pesoTotalItens + ItemType(b[1]):getWeight()
 			end
+			local exibirNome
+			if #i.recompensa > 1 then
+				exibirNome = ItemType(container):getName()
+			elseif #i.recompensa == 1 then
+				exibirNome = ItemType(i.recompensa[1][1]):getName()
+			end
 			if player:getFreeCapacity() >= pesoTotalItens then
 				local adicionarItem = player
-				local exibirNome
 				local container = config.containerPadrao
 				if i.container then
 					container = i.container
 				end
 				if #i.recompensa > 1 then
 					adicionarItem = adicionarItem:addItem(container, 1)
-					exibirNome = ItemType(container):getName()
-				elseif #i.recompensa == 1 then
-					exibirNome = ItemType(i.recompensa[1][1]):getName()
 				end
 				for a, b in pairs(i.recompensa) do
 					adicionarItem:addItem(b[1], b[2])
