@@ -32,7 +32,6 @@ function creatureSayCallback(cid, type, msg)
 		npcHandler:say({"Minha última esperança é um antídoto criado a partir de uma erva chamada Miraculum.",
 		"Tentei procurá-la mas não posso deixar a Julia sozinha, preciso ficar cuidando dela.",
 		"Você poderia encontrá-la para mim?"}, cid)
-		talkState[talkUser] = 2
 	elseif (msgcontains(msg, "yes") or msgcontains(msg, "sim")) then
 		if talkState[talkUser] == 1 then
 			npcHandler:say("Muito obrigado, volte quando encontrá-la.", cid)
@@ -43,7 +42,7 @@ function creatureSayCallback(cid, type, msg)
 				npcHandler:say("Muito obrigado, vejo que você encontrou a Miraculum. Em agradecimento, falarei com o guarda do castelo para liberar a sua entrada por lá. Boa sorte em sua jornada!", cid)
 				setPlayerStorageValue(cid, storage, 2)
 			else
-				npcHandler:say("Você não possui ela.", cid)
+				npcHandler:say("Você não possui a Miraculum.", cid)
 			end
 		end
 	elseif (msgcontains(msg, "no") and ((talkState[talkUser] == 1) or (talkState[talkUser] == 3))) then
