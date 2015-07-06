@@ -183,6 +183,7 @@ if NpcHandler == nil then
 			table.remove(shop_npcuid, focus)
 			table.remove(shop_eventtype, focus)
 			table.remove(shop_subtype, focus)
+			table.remove(shop_attributes, focus)
 			table.remove(shop_destination, focus)
 			table.remove(shop_premium, focus)
 		end

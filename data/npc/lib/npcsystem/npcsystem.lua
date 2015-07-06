@@ -8,6 +8,7 @@ shop_container = {}
 shop_npcuid = {}
 shop_eventtype = {}
 shop_subtype = {}
+shop_attributes = {}
 shop_destination = {}
 shop_premium = {}
 

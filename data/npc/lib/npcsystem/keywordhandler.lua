@@ -136,9 +136,12 @@ if KeywordHandler == nil then
 
 	-- Makes sure the correct childNode of lastNode gets a chance to process the message.
 	function KeywordHandler:processMessage(cid, message)
+		if message:find("-") then
+			message = message:gsub("-", " ")
+		end
 		local node = self:getLastNode(cid)
 		if node == nil then
-			error('No root node found.')
+			print('No root node found.')
 			return false
 		end
 
@@ -201,7 +204,7 @@ if KeywordHandler == nil then
 	
 	-- Adds multiples new keywords to the root keywordnode.
 	function KeywordHandler:addKeywords(keys, callback, parameters, condition, action)
-		for a,b in pairs(keys) do
+		for a, b in pairs(keys) do
 			self:addKeyword(b, callback, parameters, condition, action)
 		end
 		return true

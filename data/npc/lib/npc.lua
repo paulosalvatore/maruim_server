@@ -111,7 +111,7 @@ end
 function doPlayerSellItem(cid, itemid, count, cost)
 	if doPlayerTakeItem(cid, itemid, count) == true then
 		if not doPlayerAddMoney(cid, cost) then
-			error('Could not add money to ' .. getPlayerName(cid) .. '(' .. cost .. 'gp)')
+			print('Could not add money to ' .. getPlayerName(cid) .. '(' .. cost .. 'gp)')
 		end
 		return true
 	end

@@ -818,6 +818,9 @@ if Modules == nil then
 						subType = itemSubType or 1,
 						attributes = attributes or 1
 					}
+				if name:find("-") then
+					name = name:gsub("-", " ")
+				end
 
 				local node = self.npcHandler.keywordHandler:addKeyword({"buy", name}, ShopModule.tradeItem, parameters)
 				node:addChildKeywordNode(self.yesNode)
@@ -913,6 +916,9 @@ if Modules == nil then
 						module = self,
 						realName = realName or getItemName(itemid)
 					}
+				if name:find("-") then
+					name = name:gsub("-", " ")
+				end
 
 				local node = self.npcHandler.keywordHandler:addKeyword({"sell", name}, ShopModule.tradeItem, parameters)
 				node:addChildKeywordNode(self.yesNode)
@@ -1172,6 +1178,7 @@ if Modules == nil then
 
 	-- tradeItem callback function. Makes the npc say the message defined by MESSAGE_BUY or MESSAGE_SELL
 	function ShopModule.tradeItem(cid, message, keywords, parameters, node)
+		print(1)
 		local module = parameters.module
 		if(not module.npcHandler:isFocused(cid)) then
 			return false
