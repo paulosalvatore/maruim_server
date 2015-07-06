@@ -51,23 +51,23 @@ local config = {
 	{posicaoJogador = {x = 707, y = 966, z = 10}, posicaoEsqueleto = {x = 1, y = -1}}
 }
 function onStepIn(creature, item, position, fromPosition)
-	local player = creature:getPlayer()
-	if not player then
+	if not creature:isPlayer() then
 		return
 	end
 	for a, b in pairs(config) do
 		if position.x == b.posicaoJogador.x and position.y == b.posicaoJogador.y and position.z == b.posicaoJogador.z then
 			if b.posicaoDestino ~= nil then
-				player:teleportTo(b.posicaoDestino, true)
-				player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+				creature:teleportTo(b.posicaoDestino, true)
+				creature:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 			else
 				local posicaoEsqueleto = position + b.posicaoEsqueleto
-				if Tile(posicaoEsqueleto):getItemById(9522):remove(1) then
+				if Tile(posicaoEsqueleto):getItemById(9522) ~= nil then
+					Tile(posicaoEsqueleto):getItemById(9522):remove(1)
 					addEvent(function(posicaoEsqueleto)
 						Game.createItem(9522, 1, posicaoEsqueleto)
 					end, 120*1000, posicaoEsqueleto)
+					Game.createMonster("Skeleton", posicaoEsqueleto)
 				end
-				Game.createMonster("Skeleton", posicaoEsqueleto)
 			end
 			return true
 		end
