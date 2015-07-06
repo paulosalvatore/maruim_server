@@ -2,7 +2,7 @@ destinos = {
 	["ilha_inicial"] = {
 		nome = "Ilha Inicial",
 		posicao = {x = 633, y = 939, z = 6},
-		custo = 100,
+		custo = 30,
 		levelNecessario = 0
 	},
 	["mugulu"] = {
@@ -208,9 +208,9 @@ barqueiros = {
 	["Yendsos Anian"] = {
 		destinos = {
 			"civitaten_tapete",
-			"lorn",
 			"udecoat",
-			"hyalakur_tapete"
+			"hyalakur_tapete",
+			"khazad_dum"
 		},
 		tipoViagem = "tapete"
 	},
