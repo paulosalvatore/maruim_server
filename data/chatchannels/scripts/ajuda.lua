@@ -7,12 +7,12 @@ muted:setParameter(CONDITION_PARAM_TICKS, 3600000)
 function onSpeak(player, type, message)
 	local playerAccountType = player:getAccountType()
 	if player:getLevel() == 1 and playerAccountType == ACCOUNT_TYPE_NORMAL then
-		player:sendCancelMessage("You may not speak into channels as long as you are on level 1.")
+		player:sendCancelMessage("Você precisa ter nível maior do que 1 para falar neste canal.")
 		return false
 	end
 
 	if player:getCondition(CONDITION_CHANNELMUTEDTICKS, CONDITIONID_DEFAULT, CHANNEL_HELP) then
-		player:sendCancelMessage("You are muted from the Help channel for using it inappropriately.")
+		player:sendCancelMessage("Você está proibido de usar o 'Canal de Ajuda' por uso inapropriado.")
 		return false
 	end
 
@@ -24,12 +24,12 @@ function onSpeak(player, type, message)
 				if playerAccountType > target:getAccountType() then
 					if not target:getCondition(CONDITION_CHANNELMUTEDTICKS, CONDITIONID_DEFAULT, CHANNEL_HELP) then
 						target:addCondition(muted)
-						sendChannelMessage(CHANNEL_HELP, TALKTYPE_CHANNEL_R1, target:getName() .. " has been muted by " .. player:getName() .. " for using Help Channel inappropriately.")
+						sendChannelMessage(CHANNEL_HELP, TALKTYPE_CHANNEL_R1, target:getName() .. " foi mutado por " .. player:getName() .. " por utilizar o 'Canal de Ajudo' inapropriadamente.")
 					else
-						player:sendCancelMessage("That player is already muted.")
+						player:sendCancelMessage("Esse jogador já está mutado.")
 					end
 				else
-					player:sendCancelMessage("You are not authorized to mute that player.")
+					player:sendCancelMessage("Você não está autorizado a mutar esse jogador.")
 				end
 			else
 				player:sendCancelMessage(RETURNVALUE_PLAYERWITHTHISNAMEISNOTONLINE)
@@ -42,12 +42,12 @@ function onSpeak(player, type, message)
 				if playerAccountType > target:getAccountType() then
 					if target:getCondition(CONDITION_CHANNELMUTEDTICKS, CONDITIONID_DEFAULT, CHANNEL_HELP) then
 						target:removeCondition(CONDITION_CHANNELMUTEDTICKS, CONDITIONID_DEFAULT, CHANNEL_HELP)
-						sendChannelMessage(CHANNEL_HELP, TALKTYPE_CHANNEL_R1, target:getName() .. " has been unmuted by " .. player:getName() .. ".")
+						sendChannelMessage(CHANNEL_HELP, TALKTYPE_CHANNEL_R1, target:getName() .. " foi desmutado por " .. player:getName() .. ".")
 					else
-						player:sendCancelMessage("That player is not muted.")
+						player:sendCancelMessage("Esse jogador não está mutado.")
 					end
 				else
-					player:sendCancelMessage("You are not authorized to unmute that player.")
+					player:sendCancelMessage("Você não está autorizado a desmutar esse jogador.")
 				end
 			else
 				player:sendCancelMessage(RETURNVALUE_PLAYERWITHTHISNAMEISNOTONLINE)
