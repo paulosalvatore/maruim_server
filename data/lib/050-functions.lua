@@ -329,6 +329,12 @@ function removerAtributosItem(item)
 	if item:getAttribute(ITEM_ATTRIBUTE_EXTRADEFENSE) then
 		item:setAttribute(ITEM_ATTRIBUTE_EXTRADEFENSE, 0)
 	end
+	if item:getAttribute(ITEM_ATTRIBUTE_ARMOR) then
+		item:setAttribute(ITEM_ATTRIBUTE_ARMOR, 0)
+	end
+	if ferramentasPeso[item.itemid] and item:getAttribute(ITEM_ATTRIBUTE_WEIGHT) then
+		item:setAttribute(ITEM_ATTRIBUTE_WEIGHT, ferramentasPeso[item.itemid])
+	end
 	return true
 end
 

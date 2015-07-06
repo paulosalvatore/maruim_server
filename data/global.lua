@@ -87,6 +87,14 @@ Vocacoes = {
 	["knight"] = {4, 8}
 }
 
+ferramentasPeso = {
+	[2422] = 2000,
+	[2321] = 3000,
+	[2434] = 4000,
+	[2463] = 2000,
+	[2647] = 2000
+}
+
 itemDesativado = 2500
 
 modalTeleportCrystal = 9001
