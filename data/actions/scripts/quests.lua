@@ -20,6 +20,9 @@ local config = {
 		},
 		[7000] = {
 			recompensa = {{2464, 1}, {2648, 1}}
+		},
+		[12430] = {
+			recompensa = {{12430, 1}}
 		}
 	},
 	containerPadrao = 1987

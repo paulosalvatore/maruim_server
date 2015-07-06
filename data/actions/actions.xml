@@ -21,7 +21,7 @@
 	<action itemid="10317" script="geral.lua" />
 	<action itemid="7286" script="geral.lua" />
 	<action fromid="13193" toid="13195" script="geral.lua" />
-	<action itemid="4856" script="geral.lua" />
+	<action itemid="11421" script="geral.lua" />
 	<action itemid="2559" script="geral.lua" />
 	<action itemid="13757" script="geral.lua" />
 	<action fromid="2146" toid="2147" script="geral.lua" />
@@ -94,6 +94,7 @@
 	<action fromid="15640" toid="15642" script="quests.lua" />
 	<action fromid="18472" toid="18474" script="quests.lua" />
 	<action itemid="18510" script="quests.lua" />
+	<action itemid="12430" script="quests.lua" />
 
 	<!-- Tools -->
 	<action itemid="2420" script="tools/machete.lua" />

@@ -404,7 +404,7 @@ local config = {
 			efeito = {"hit"}
 		}
 	},
-	[4856] = {
+	[11421] = {
 		["sparkling"] = {
 			["ferro"] = {
 				itensPlayerAleatorio = {{5892, 1, 100}, {5880, 1, 3900}, {2225, {1, 2}, 6000}},
@@ -766,14 +766,14 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			i = config["unique"][item.uid]
 		end
 		local adicionarEvento = false
+		local topItem = Tile(toPosition):getTopVisibleThing():getId()
 		if i["default"] ~= nil then
 			i = i["default"]
 		elseif	isInArray(sparkling, target.itemid) and #Tile(toPosition):getItems() >= 2 and
-				(i["sparkling"][Tile(toPosition):getTileTopTopItem()] ~= nil or
-				i["sparkling"]["ferro"] ~= nil or
-				i["sparkling"]["carvao"] ~= nil or
-				i["sparkling"]["arvores"] ~= nil) then
-			local topItem = Tile(toPosition):getTileTopTopItem()
+				(i["sparkling"][topItem] ~= nil or
+				(i["sparkling"]["ferro"] ~= nil and isInArray(ferro, topItem)) or
+				(i["sparkling"]["carvao"] ~= nil and isInArray(carvao, topItem)) or
+				(i["sparkling"]["arvores"] ~= nil and isInArray(arvores, topItem))) then
 			if i["sparkling"]["ferro"] ~= nil and isInArray(ferro, topItem) then
 				i = i["sparkling"]["ferro"]
 			elseif i["sparkling"]["carvao"] ~= nil and isInArray(carvao, topItem) then
