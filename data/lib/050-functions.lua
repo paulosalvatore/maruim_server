@@ -306,8 +306,11 @@ function Player.teleportarJogador(self, posicao, forcar, extended)
 	return false
 end
 
-function Player.curarJogador(self)
-	self:addHealth(self:getMaxHealth()-self:getHealth())
+function Player.curarJogador(self, quantidade)
+	if quantidade == nil then
+		quantidade = self:getMaxHealth()-self:getHealth()
+	end
+	self:addHealth(quantidade)
 end
 
 function Player.removerDebuffs(self)
