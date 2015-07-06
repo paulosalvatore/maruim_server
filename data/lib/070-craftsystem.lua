@@ -876,7 +876,6 @@ function Player.getProfissaoModalQuantidade(self, profissaoId, receitaId, crista
 	local modalMensagem = "Selecione a quantidade de itens que deseja fabricar.\n\nClique no botão 'Criar', tecle 'Enter' ou dê dois cliques para iniciar o processo de fabricação.\n\n"
 	local modal = ModalWindow(modalId, modalTitulo, modalMensagem)
 	local quantidadePossivel = self:verificarJogadorItensReceita(profissaoId, receitaId, configProfissoes.maxQuantidadeFabricacao)
-	-- print(quantidadePossivel)
 	for i = 1, quantidadePossivel do
 		modal:addChoice(i, i)
 	end
@@ -992,12 +991,33 @@ function Player.iniciarReceita(self, profissaoId, receitaId, bloquearMovimento)
 	local receita = profissao.receitas[receitaId]
 	local ferramenta = receita.ferramenta
 	local materiais = receita.materiais
+	local ingredienteSecreto = receita.ingredienteSecreto
 	if	profissaoNivel < receita.nivel or
 		self:getLevel() < receita.nivelJogador or
 		(receita.aprender == 1 and self:getProfissaoReceitaAprendizado(profissaoId, receitaId) == 0) then
 		return false
 	end
 	if self:verificarJogadorItensReceita(profissaoId, receitaId) == 0 then
+		return false
+	end
+	local pesoTotalReceita = 0
+	for a, b in pairs(materiais) do
+		pesoTotalReceita = pesoTotalReceita + ItemType(b[1]):getWeight()*b[2]
+	end
+	if ingredienteSecreto ~= nil and self:getItemCount(ingredienteSecreto[1]) >= ingredienteSecreto[2] then
+		pesoTotalReceita = pesoTotalReceita + ItemType(ingredienteSecreto[1]):getWeight()*ingredienteSecreto[2]
+	end
+	local ingredienteMelhoria = self:getProfissaoIngredienteMelhoria(profissaoId)
+	if ingredienteMelhoria > 0 then
+		local ingredienteMelhoriaItem = profissao.ingredientesMelhoria[ingredienteMelhoria].item
+		if ingredienteMelhoriaItem ~= nil and self:getItemCount(ingredienteMelhoriaItem) > 0 then
+			pesoTotalReceita = pesoTotalReceita + ItemType(ingredienteMelhoriaItem):getWeight()
+		end
+	end
+	local pesoItem = ItemType(receita.item):getWeight() - pesoTotalReceita
+	if pesoItem > self:getFreeCapacity() then
+		self:sendCancelMessage("Você não possui capacidade suficiente para produzir essa receita. Você precisa liberar, pelo menos, " .. formatarPeso(pesoItem - self:getFreeCapacity()) .. ".")
+		self:sendMagicEffect(efeitos["poff"])
 		return false
 	end
 	for a, b in pairs(materiais) do
@@ -1048,7 +1068,7 @@ function Player.fabricarItem(self, receitaId, profissaoId, mesaTrabalhando, bloq
 	if ingredienteSecreto ~= nil and self:getItemCount(ingredienteSecreto[1]) >= ingredienteSecreto[2] then
 		self:removeItem(ingredienteSecreto[1], ingredienteSecreto[2])
 	end
-	ingredienteMelhoria = self:getProfissaoIngredienteMelhoria(profissaoId)
+	local ingredienteMelhoria = self:getProfissaoIngredienteMelhoria(profissaoId)
 	if ingredienteMelhoria > 0 then
 		local ingredienteMelhoriaItem = profissao.ingredientesMelhoria[ingredienteMelhoria].item
 		if ingredienteMelhoriaItem ~= nil and self:getItemCount(ingredienteMelhoriaItem) > 0 then
