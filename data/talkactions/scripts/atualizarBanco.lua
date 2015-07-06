@@ -1,4 +1,12 @@
 function onSay(player, words, param)
+	if not player:getGroup():getAccess() then
+		return true
+	end
+
+	if player:getAccountType() < ACCOUNT_TYPE_GOD then
+		return false
+	end
+
 	if param == nil then
 		player:sendCancelMessage("Parâmetros insuficientes.")
 	elseif param == "profissoes" or param == "profissões" then

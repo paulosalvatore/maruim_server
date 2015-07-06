@@ -1,4 +1,12 @@
 function onSay(player, words, param)
+	if not player:getGroup():getAccess() then
+		return true
+	end
+
+	if player:getAccountType() < ACCOUNT_TYPE_GOD then
+		return false
+	end
+
 	local split = param:split(",")
 	if split[1] == nil then
 		player:sendCancelMessage("Parâmetros insuficientes.")
