@@ -44,7 +44,7 @@ if Modules == nil then
 	function StdModule.say(cid, message, keywords, parameters, node)
 		local npcHandler = parameters.npcHandler
 		if npcHandler == nil then
-			error("StdModule.say called without any npcHandler instance.")
+			print("StdModule.say called without any npcHandler instance.")
 		end
 		local onlyFocus = (parameters.onlyFocus == nil or parameters.onlyFocus == true)
 		if not npcHandler:isFocused(cid) and onlyFocus then
@@ -69,7 +69,7 @@ if Modules == nil then
 	function StdModule.promotePlayer(cid, message, keywords, parameters, node)
 		local npcHandler = parameters.npcHandler
 		if npcHandler == nil then
-			error("StdModule.promotePlayer called without any npcHandler instance.")
+			print("StdModule.promotePlayer called without any npcHandler instance.")
 		end
 
 		if not npcHandler:isFocused(cid) then
@@ -100,7 +100,7 @@ if Modules == nil then
 	function StdModule.learnSpell(cid, message, keywords, parameters, node)
 		local npcHandler = parameters.npcHandler
 		if npcHandler == nil then
-			error("StdModule.learnSpell called without any npcHandler instance.")
+			print("StdModule.learnSpell called without any npcHandler instance.")
 		end
 
 		if not npcHandler:isFocused(cid) then
@@ -129,7 +129,7 @@ if Modules == nil then
 	function StdModule.bless(cid, message, keywords, parameters, node)
 		local npcHandler = parameters.npcHandler
 		if npcHandler == nil then
-			error("StdModule.bless called without any npcHandler instance.")
+			print("StdModule.bless called without any npcHandler instance.")
 		end
 
 		if not npcHandler:isFocused(cid) or getWorldType() == WORLD_TYPE_PVP_ENFORCED then
@@ -156,7 +156,7 @@ if Modules == nil then
 	function StdModule.travel(cid, message, keywords, parameters, node)
 		local npcHandler = parameters.npcHandler
 		if npcHandler == nil then
-			error("StdModule.travel called without any npcHandler instance.")
+			print("StdModule.travel called without any npcHandler instance.")
 		end
 
 		if not npcHandler:isFocused(cid) then
@@ -934,12 +934,12 @@ if Modules == nil then
 	function ShopModule:callbackOnBuy(cid, itemid, subType, amount, ignoreCap, inBackpacks)
 		local shopItem = self:getShopItem(itemid, subType)
 		if shopItem == nil then
-			error("[ShopModule.onBuy] shopItem == nil")
+			print("[ShopModule.onBuy] shopItem == nil")
 			return false
 		end
 
 		if shopItem.buy == -1 then
-			error("[ShopModule.onSell] attempt to buy a non-buyable item")
+			print("[ShopModule.onSell] attempt to buy a non-buyable item")
 			return false
 		end
 
@@ -999,12 +999,12 @@ if Modules == nil then
 	function ShopModule:callbackOnSell(cid, itemid, subType, amount, ignoreEquipped, _)
 		local shopItem = self:getShopItem(itemid, subType)
 		if shopItem == nil then
-			error("[ShopModule.onSell] items[itemid] == nil")
+			print("[ShopModule.onSell] items[itemid] == nil")
 			return false
 		end
 
 		if shopItem.sell == -1 then
-			error("[ShopModule.onSell] attempt to sell a non-sellable item")
+			print("[ShopModule.onSell] attempt to sell a non-sellable item")
 			return false
 		end
 
