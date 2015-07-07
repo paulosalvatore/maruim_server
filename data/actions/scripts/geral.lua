@@ -171,7 +171,7 @@ local config = {
 	[4006] = {
 		["default"] = {
 			itensPlayer = {{2675, {1, 8}}},
-			transformar = {4008, 1},
+			transformar = {4008, 1, "item"},
 			efeito = {"hit"},
 			criatura = {"Squirrel", 1000}
 		}
@@ -433,8 +433,8 @@ local config = {
 				removerTarget = 1,
 				efeito = {"hit"},
 				tempo = 3*60*1000,
-				chanceSucesso = 2000,
-				chanceNeutra = 4000,
+				chanceSucesso = 3000,
+				chanceNeutra = 3000,
 				profissao = "ferreiro"
 			}
 		}
@@ -1066,15 +1066,15 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			posicaoEfeito:sendMagicEffect(exibirEfeito)
 		end
 		if i.criatura ~= nil then
-			local chance = 10000
+			local chanceCriatura = 10000
 			local criatura = i.criatura
 			if type(criatura) == "table" then
 				if criatura[2] and type(criatura[2]) == "number" and criatura[2] >= 1 and criatura[2] <= 10000 then
-					chance = criatura[2]
+					chanceCriatura = criatura[2]
 				end
 				criatura = criatura[1]
 			end
-			if math.random(10000) <= chance then
+			if math.random(10000) <= chanceCriatura then
 				Game.createMonster(criatura, toPosition)
 			end
 		end
