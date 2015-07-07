@@ -35,6 +35,7 @@
 	<talkaction words="/testLoot" separator=" " script="testLoot.lua" />
 	<talkaction words="/atualizarBanco" separator=" " script="atualizarBanco.lua" />
 	<talkaction words="/addHealth" separator=" " script="addHealth.lua" />
+	<talkaction words="/online" script="online.lua" />
 
 	<!-- player talkactions -->
 	<!-- 
@@ -43,7 +44,6 @@
 		<talkaction words="!uptime" script="uptime.lua" />
 		<talkaction words="!deathlist" script="deathlist.lua" />
 		<talkaction words="!kills" script="kills.lua" />
-		<talkaction words="!online" script="online.lua" />
 		<talkaction words="!serverinfo" script="serverinfo.lua" />
 	 -->
 	<talkaction words="!buyhouse" script="buyhouse.lua" />
