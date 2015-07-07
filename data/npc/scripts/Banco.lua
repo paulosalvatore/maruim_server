@@ -5,7 +5,7 @@ NpcSystem.parseParameters(npcHandler)
 local count = {}
 local transfer = {}
 local frases = {
-	["inicial"] = "Pois não? O que eu posso fazer por você, |PLAYERNAME|? Negócios no Banco, talvez?",
+	["inicial"] = "Pois não? O que eu posso fazer por você, |PLAYERNAME|? Negócios no {banco}, talvez?",
 	["final"] = "Tenha um bom dia.",
 	["think"] = "Não se esqueça de depositar seu dinheiro no banco antes de ir a alguma aventura.",
 	["dinheiro"] = "Eu posso {trocar} dinheiro para você. Você também pode acessar sua {conta bancária}.",
@@ -367,8 +367,8 @@ end
 
 keywordHandler:addKeywords({{'money'}, {'dinheiro'}, {'bank'}, {'banco'}}, StdModule.say, {npcHandler = npcHandler, text = frases["dinheiro"]})
 keywordHandler:addKeywords({{'exchange'}, {'câmbio'}, {'cambio'}}, StdModule.say, {npcHandler = npcHandler, text = frases["troca"]})
-keywordHandler:addKeywords({{'advanced'}, {'avançado'}, {'avancado'}}, StdModule.say, {npcHandler = npcHandler, text = frases["avançado"]})
-keywordHandler:addKeywords({{'help'}, {'ajuda'}, {'functions'}, {'funções'}, {'funcoes'}, {'basic'}, {'básico'}, {'basico'}}, StdModule.say, {npcHandler = npcHandler, text = frases["ajuda"]})
+keywordHandler:addKeywords({{'advanced'}, {'avançado'}, {'avancado'}, {'avançada'}, {'avancada'}, {'avançadas'}, {'avancadas'}}, StdModule.say, {npcHandler = npcHandler, text = frases["avançado"]})
+keywordHandler:addKeywords({{'help'}, {'ajuda'}, {'functions'}, {'funções'}, {'funcoes'}, {'basic'}, {'básico'}, {'basico'}, {'básica'}, {'básicas'}, {'basica'}, {'basicas'}}, StdModule.say, {npcHandler = npcHandler, text = frases["ajuda"]})
 keywordHandler:addKeywords({{'job'}, {'profissão'}, {'profissao'}}, StdModule.say, {npcHandler = npcHandler, text = frases["profissão"]})
 
 npcHandler:setMessage(MESSAGE_GREET, frases["inicial"])
