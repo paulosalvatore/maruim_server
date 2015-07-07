@@ -992,6 +992,7 @@ function Player.iniciarReceita(self, profissaoId, receitaId, bloquearMovimento)
 	local ferramenta = receita.ferramenta
 	local materiais = receita.materiais
 	local ingredienteSecreto = receita.ingredienteSecreto
+	local efeitoFalha = profissao.efeitoFalha
 	if	profissaoNivel < receita.nivel or
 		self:getLevel() < receita.nivelJogador or
 		(receita.aprender == 1 and self:getProfissaoReceitaAprendizado(profissaoId, receitaId) == 0) then
@@ -1017,7 +1018,7 @@ function Player.iniciarReceita(self, profissaoId, receitaId, bloquearMovimento)
 	local pesoItem = ItemType(receita.item):getWeight() - pesoTotalReceita
 	if pesoItem > self:getFreeCapacity() then
 		self:sendCancelMessage("Você não possui capacidade suficiente para produzir essa receita. Você precisa liberar, pelo menos, " .. formatarPeso(pesoItem - self:getFreeCapacity()) .. ".")
-		self:sendMagicEffect(efeitos["poff"])
+		self:sendMagicEffect(efeitoFalha)
 		return false
 	end
 	for a, b in pairs(materiais) do
