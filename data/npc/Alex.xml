@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_sellable" value="wyvern talisman,10561,60;perfect behemoth fang,5893,1;behemoth claw,5930,1;cyclops toe,10574,20;" />
+		<parameter key="shop_sellable" value="wyvern talisman,10561,60;perfect behemoth fang,5893,1;behemoth claw,5930,1;cyclops toe,10574,20;wolf paw,5897,4;small stone,1294,7;stone wing,11195,30;piece of iron,2225,20;iron ore,5880,50;coal,13757,25;cyclops trophy,7398,1000;shaggy tail,11324,15;striped fur,11210,30;thick fur,11224,20;cobra tongue,10551,20;snake skin,10611,15;egg,2328,2;tortoise egg,5678,3;turtle shell,5899,15;crab pincers,11189,5;spider fangs,8859,5;poison spider shell,12441,7;" />
 	</parameters>
 </npc>

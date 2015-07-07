@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_sellable" value="wyvern talisman,10561,60;dwarven beard,5900,25;crossbow,2455,30;rusty helmet,9820,30;sword hilt,2350,30;rusty shield,9814,30;geomancer's robe,12414,20;geomancer's staff,12419,20;lost basher's spike,20106,1;bloody dwarven beard,20107,8;lost husher's staff,20128,1;broken throwing axe,20131,1;helmet of the lost,20132,1;lost bracers,20133,1;mad froth,20134,1;red hair dye,20135,1;" />
+		<parameter key="shop_sellable" value="wyvern talisman,10561,60;dwarven beard,5900,25;crossbow,2455,30;rusty helmet,9820,30;sword hilt,2350,30;rusty shield,9814,30;geomancer's robe,12414,20;geomancer's staff,12419,20;lost basher's spike,20106,1;bloody dwarven beard,20107,8;lost husher's staff,20128,1;broken throwing axe,20131,1;helmet of the lost,20132,1;lost bracers,20133,1;mad froth,20134,1;red hair dye,20135,1;small stone,1294,7;wyvern talisman,10561,60;stone wing,11195,30;" />
 	</parameters>
 </npc>

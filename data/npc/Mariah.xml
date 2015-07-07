@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_sellable" value="hydra egg,4850,140;cobra tongue,10551,20;scorpion tail,10568,10;hydra head,11199,75;winged tail,11230,90;" />
+		<parameter key="shop_sellable" value="hydra egg,4850,140;cobra tongue,10551,20;scorpion tail,10568,10;hydra head,11199,75;winged tail,11230,90;striped fur,11210,30;sabretooth,11228,25;centipede leg,11218,10;snake skin,10611,15;piece of crocodile leather,11196,20;turtle shell,5899,15;tortoise egg,5678,3;ape fur,5883,30;banana sash,12467,20;colourful feather,12470,40;terrorbird beak,11190,20;medusa skull,16105,500;strand of medusa hair,11226,35;crab pincers,11189,5;bloody pincers,10550,30;giant crab pincer,13304,200;wolf paw,5897,4;" />
 	</parameters>
 </npc>

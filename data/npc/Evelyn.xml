@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_sellable" value="spider fangs,8859,5;widow's mandibles,11328,40;spiderwebs,8860,30;poison spider shell,12441,7;tarantula trap,13933,30;tarantula egg,11198,10;spider silk,5879,100;" />
+		<parameter key="shop_sellable" value="spider fangs,8859,5;widow's mandibles,11328,40;spiderwebs,8860,30;poison spider shell,12441,7;tarantula trap,13933,30;tarantula egg,11198,10;spider silk,5879,100;carniphila seeds,11217,3;seeds,7732,2;sling herb,2802,20;powder herb,2803,20;shadow herb,2804,20;troll green,2805,5;bunch of troll hair,10606,2;trollroot,12471,5;egg,2328,2;" />
 	</parameters>
 </npc>
