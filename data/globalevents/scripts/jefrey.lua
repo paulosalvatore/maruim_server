@@ -43,7 +43,7 @@ function transformarCama(npc, dormir)
 		end
 	end
 end
-function onThink(interval, lastExecution)
+function iniciarJefrey()
 	local npc = Npc(nomeNpc)
 	if npc ~= nil then
 		local npcId = npc:getId()
@@ -61,5 +61,8 @@ function onThink(interval, lastExecution)
 			Npc(npcId):setDirection(direcoes["leste"])
 		end, walkInterval*movimentos+300, npc:getId())
 	end
+end
+function onThink(interval, lastExecution)
+	iniciarJefrey()
     return true
 end
