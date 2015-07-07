@@ -6,7 +6,7 @@ function onLogin(player)
 		modal:addButton(1, "Ok")
 		modal:setDefaultEnterButton(1)
 		modal:sendToPlayer(player)
-		addEvent(function() player:remove() end, 0)
+		addEvent(function(cid) Player(cid):remove() end, 0, player:getId())
 		return true
 	end
 	local loginStr = "Seja bem-vindo ao " .. configManager.getString(configKeys.SERVER_NAME) .. "!"
