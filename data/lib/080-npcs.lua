@@ -142,6 +142,7 @@ barqueiros = {
 		destinos = {
 			"mugulu",
 			"hyalakur_barco",
+			"civitaten_barco",
 			"ilha_inicial"
 		},
 		tipoViagem = "navio"
@@ -158,8 +159,10 @@ barqueiros = {
 	},
 	["Pewarthor Daellits"] = {
 		destinos = {
+			"hyalakur_barco",
 			"mugulu",
 			"algatar",
+			"otto",
 			"kyo",
 			"ilha_inicial"
 		},
@@ -223,6 +226,14 @@ barqueiros = {
 	},
 	["Rafter Bous"] = {
 		destinos = {"ilha_inicial_parte_baixa_alta"},
+		tipoViagem = "barco"
+	},
+	["Rafter Smar"] = {
+		destinos = {"mugulu_dragon"},
+		tipoViagem = "barco"
+	},
+	["Rafter Pras"] = {
+		destinos = {"dragon_mugulu"},
 		tipoViagem = "barco"
 	}
 }
