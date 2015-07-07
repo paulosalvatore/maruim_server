@@ -1,6 +1,8 @@
-pontosColetaMadeira = {}
-pontosColetaMadeiraDisponiveis = {}
-pontosColetaMadeiraAtuais = {}
+if pontosColetaMadeira == nil then
+	pontosColetaMadeira = {}
+	pontosColetaMadeiraDisponiveis = {}
+	pontosColetaMadeiraAtuais = {}
+end
 function gerarPontosColetaMadeira()
 	local inicio = {431, 1182}
 	local final = {1530, 2119}
