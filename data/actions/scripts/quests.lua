@@ -55,6 +55,10 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 				pesoTotalItens = pesoTotalItens + ItemType(b[1]):getWeight()
 			end
 			local exibirNome
+			local container = config.containerPadrao
+			if i.container then
+				container = i.container
+			end
 			if #i.recompensa > 1 then
 				exibirNome = ItemType(container):getName()
 			elseif #i.recompensa == 1 then
@@ -62,10 +66,6 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			end
 			if player:getFreeCapacity() >= pesoTotalItens then
 				local adicionarItem = player
-				local container = config.containerPadrao
-				if i.container then
-					container = i.container
-				end
 				if #i.recompensa > 1 then
 					adicionarItem = adicionarItem:addItem(container, 1)
 				end
