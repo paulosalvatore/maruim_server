@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_sellable" value="perfect behemoth fang,5893,1;behemoth claw,5930,1;cyclops toe,10574,20;" />
+		<parameter key="shop_sellable" value="wyvern talisman,10561,60;perfect behemoth fang,5893,1;behemoth claw,5930,1;cyclops toe,10574,20;" />
 	</parameters>
 </npc>
