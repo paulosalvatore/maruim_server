@@ -96,7 +96,7 @@ defaultPriority = "realtime"
 startupDatabaseOptimization = false
 
 -- Status server information
-ownerName = ""
-ownerEmail = ""
-url = ""
-location = ""
+ownerName = "Paulo Salvatore"
+ownerEmail = "paulo.salvatore@hotmail.com.br"
+url = "maruim.paulosalvatore.com.br"
+location = "Brasil"
