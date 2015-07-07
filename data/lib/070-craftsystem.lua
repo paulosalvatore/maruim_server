@@ -681,7 +681,7 @@ function ordenarReceitasPorNome(receitas)
 	local nomesReceitas, exibirReceitas = {}, {}
 	for a, b in pairs(receitas) do
 		if #nomesReceitas < 256 then
-			local nomeReceita = capAll(getItemName(b.item))
+			local nomeReceita = capAll(getItemName(b.item)) .. " - Nível de Profissão: " .. b.nivel
 			if b.nome ~= nil then
 				nomeReceita = b.nome
 			end
