@@ -148,6 +148,7 @@ barqueiros = {
 	},
 	["Mado Arbells"] = {
 		destinos = {
+			"civitaten_barco",
 			"otto",
 			"algatar",
 			"kyo",
@@ -183,6 +184,7 @@ barqueiros = {
 	},
 	["Vuwulo Retulon"] = {
 		destinos = {
+			"civitaten_tapete",
 			"pundera",
 			"udecoat",
 			"lorn",
@@ -199,6 +201,7 @@ barqueiros = {
 	},
 	["Pheanak Livertin"] = {
 		destinos = {
+			"hyalakur_tapete",
 			"udecoat",
 			"lorn",
 			"pundera"
