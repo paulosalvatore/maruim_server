@@ -350,7 +350,7 @@ profissoes = {
 
 			-- Distância (Lanças/Shurikens)
 			-- {item = 3965, nivel = 20, nivelJogador = 1, ferramenta = 2422, materiais = {{2389, 1}, {12425, 2}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0},
-			{item = 7378, nivel = 5, nivelJogador = 25, ferramenta = 2321, materiais = {{2389, 1}, {5880, 1}, {13757, 1}}, fabricarQuantidade = 1, tempo = 2, experiencia = 10, pontos = 1, chanceSucesso = 9000, aprender = 0},
+			{item = 7378, quantidade = 5, nivel = 5, nivelJogador = 25, ferramenta = 2321, materiais = {{2389, 1}, {5880, 1}, {13757, 1}}, fabricarQuantidade = 1, tempo = 2, experiencia = 10, pontos = 1, chanceSucesso = 9000, aprender = 0},
 			{item = 7367, nivel = 15, nivelJogador = 60, ferramenta = 7450, materiais = {{2389, 1}, {21246, 1}}, fabricarQuantidade = 1, tempo = 3, experiencia = 20, pontos = 2, chanceSucesso = 9000, aprender = 0},
 			-- {item = 7368, nivel = 20, nivelJogador = 1, ferramenta = 2421, materiais = {{7366, 1}, {8309, 2}, {13530, 5}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0},
 			-- {item = 7368, quantidade = 25, nivel = 20, nivelJogador = 1, ferramenta = 2421, materiais = {{7366, 25}, {5887, 2}, {13530, 5}}, fabricarQuantidade = 1, tempo = 0, experiencia = 10, pontos = 10, chanceSucesso = 1000, maxChanceSucesso = 2000, aprender = 0},
