@@ -655,7 +655,6 @@
 		<monster name="Cyclops" x="0" y="0" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="1362" centery="1698" centerz="5" radius="3">
-		<monster name="Stone Golem" x="2" y="-2" z="5" spawntime="60" />
 		<monster name="Stone Golem" x="-2" y="2" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="1066" centery="1699" centerz="5" radius="1">
@@ -664,8 +663,8 @@
 	<spawn centerx="1062" centery="1705" centerz="5" radius="1">
 		<monster name="Cyclops Drone" x="0" y="0" z="5" spawntime="60" />
 	</spawn>
-	<spawn centerx="1386" centery="1706" centerz="5" radius="2">
-		<monster name="Wyvern" x="2" y="-1" z="5" spawntime="60" />
+	<spawn centerx="1389" centery="1706" centerz="5" radius="2">
+		<monster name="Wyvern" x="-1" y="-1" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="1057" centery="1708" centerz="5" radius="1">
 		<monster name="Cyclops" x="0" y="0" z="5" spawntime="60" />
@@ -673,29 +672,29 @@
 	<spawn centerx="1061" centery="1709" centerz="5" radius="1">
 		<monster name="Cyclops Smith" x="0" y="0" z="5" spawntime="60" />
 	</spawn>
+	<spawn centerx="1359" centery="1712" centerz="5" radius="1">
+		<monster name="Stone Golem" x="1" y="-1" z="5" spawntime="60" />
+	</spawn>
 	<spawn centerx="1369" centery="1714" centerz="5" radius="3">
-		<monster name="Stone Golem" x="-2" y="-1" z="5" spawntime="60" />
 		<monster name="Stone Golem" x="2" y="0" z="5" spawntime="60" />
 	</spawn>
-	<spawn centerx="1406" centery="1717" centerz="5" radius="2">
-		<monster name="Wyvern" x="-1" y="-1" z="5" spawntime="60" />
+	<spawn centerx="1404" centery="1715" centerz="5" radius="2">
+		<monster name="Wyvern" x="-1" y="-2" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="1341" centery="1718" centerz="5" radius="3">
-		<monster name="Stone Golem" x="-2" y="-2" z="5" spawntime="60" />
-		<monster name="Stone Golem" x="2" y="2" z="5" spawntime="60" />
+		<monster name="Stone Golem" x="0" y="2" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="1384" centery="1718" centerz="5" radius="2">
+		<monster name="Wyvern" x="-1" y="1" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="612" centery="1724" centerz="5" radius="1">
 		<monster name="Ice Witch" x="0" y="-1" z="5" spawntime="60" />
 	</spawn>
-	<spawn centerx="1385" centery="1725" centerz="5" radius="2">
-		<monster name="Wyvern" x="-1" y="-1" z="5" spawntime="60" />
-	</spawn>
 	<spawn centerx="1422" centery="1725" centerz="5" radius="2">
 		<monster name="Wyvern" x="0" y="-2" z="5" spawntime="60" />
 	</spawn>
-	<spawn centerx="1353" centery="1726" centerz="5" radius="3">
+	<spawn centerx="1354" centery="1727" centerz="5" radius="3">
 		<monster name="Stone Golem" x="-2" y="-2" z="5" spawntime="60" />
-		<monster name="Stone Golem" x="2" y="1" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="1404" centery="1729" centerz="5" radius="2">
 		<monster name="Wyvern" x="0" y="-2" z="5" spawntime="60" />
@@ -703,8 +702,8 @@
 	<spawn centerx="1439" centery="1731" centerz="5" radius="2">
 		<monster name="Wyvern" x="-1" y="-2" z="5" spawntime="60" />
 	</spawn>
-	<spawn centerx="1414" centery="1735" centerz="5" radius="2">
-		<monster name="Wyvern" x="-1" y="-1" z="5" spawntime="60" />
+	<spawn centerx="1415" centery="1735" centerz="5" radius="2">
+		<monster name="Wyvern" x="0" y="-2" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="636" centery="1736" centerz="5" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="5" spawntime="60" />
@@ -736,7 +735,6 @@
 	</spawn>
 	<spawn centerx="1411" centery="1746" centerz="5" radius="2">
 		<monster name="Wyvern" x="-1" y="-1" z="5" spawntime="60" />
-		<monster name="Wyvern" x="1" y="1" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="647" centery="1747" centerz="5" radius="1">
 		<monster name="Ice Witch" x="0" y="-1" z="5" spawntime="60" />
@@ -1526,12 +1524,8 @@
 		<monster name="Stone Golem" x="2" y="-2" z="6" spawntime="60" />
 		<monster name="Stone Golem" x="-3" y="2" z="6" spawntime="60" />
 	</spawn>
-	<spawn centerx="1379" centery="1711" centerz="6" radius="1">
-		<monster name="Stone Golem" x="0" y="-1" z="6" spawntime="60" />
-	</spawn>
 	<spawn centerx="1391" centery="1711" centerz="6" radius="2">
 		<monster name="Gargoyle" x="2" y="-2" z="6" spawntime="60" />
-		<monster name="Gargoyle" x="2" y="2" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="1275" centery="1713" centerz="6" radius="1">
 		<npc name="Gilan Gomeretis" x="0" y="-1" z="6" spawntime="60" direction="2" />
@@ -1539,26 +1533,20 @@
 	<spawn centerx="1329" centery="1713" centerz="6" radius="1">
 		<npc name="Yendsos Anian" x="-1" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="1405" centery="1719" centerz="6" radius="2">
-		<monster name="Stone Golem" x="1" y="-2" z="6" spawntime="60" />
-		<monster name="Stone Golem" x="2" y="1" z="6" spawntime="60" />
+	<spawn centerx="1394" centery="1717" centerz="6" radius="2">
+		<monster name="Stone Golem" x="-1" y="-2" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1403" centery="1720" centerz="6" radius="2">
+		<monster name="Stone Golem" x="-2" y="-2" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="812" centery="1721" centerz="6" radius="1">
 		<npc name="Zoe" x="-1" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="1384" centery="1722" centerz="6" radius="2">
-		<monster name="Stone Golem" x="2" y="-1" z="6" spawntime="60" />
-		<monster name="Stone Golem" x="-1" y="1" z="6" spawntime="60" />
+	<spawn centerx="1410" centery="1724" centerz="6" radius="2">
+		<monster name="Gargoyle" x="-2" y="-1" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="1280" centery="1726" centerz="6" radius="1">
 		<npc name="Sergh Sinath" x="0" y="1" z="6" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="1372" centery="1726" centerz="6" radius="1">
-		<monster name="Stone Golem" x="0" y="-1" z="6" spawntime="60" />
-	</spawn>
-	<spawn centerx="1399" centery="1727" centerz="6" radius="2">
-		<monster name="Gargoyle" x="-2" y="-1" z="6" spawntime="60" />
-		<monster name="Gargoyle" x="1" y="1" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="1344" centery="1728" centerz="6" radius="1">
 		<monster name="Stone Golem" x="0" y="-1" z="6" spawntime="60" />
@@ -1567,17 +1555,17 @@
 		<monster name="Stone Golem" x="-2" y="-1" z="6" spawntime="60" />
 		<monster name="Stone Golem" x="2" y="0" z="6" spawntime="60" />
 	</spawn>
-	<spawn centerx="1373" centery="1743" centerz="6" radius="2">
-		<monster name="Stone Golem" x="-2" y="0" z="6" spawntime="60" />
-		<monster name="Stone Golem" x="1" y="2" z="6" spawntime="60" />
+	<spawn centerx="1367" centery="1744" centerz="6" radius="2">
+		<monster name="Stone Golem" x="-2" y="1" z="6" spawntime="60" />
 	</spawn>
-	<spawn centerx="1391" centery="1747" centerz="6" radius="2">
-		<monster name="Stone Golem" x="-2" y="-1" z="6" spawntime="60" />
-		<monster name="Stone Golem" x="1" y="2" z="6" spawntime="60" />
+	<spawn centerx="1381" centery="1745" centerz="6" radius="2">
+		<monster name="Stone Golem" x="-2" y="1" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="1407" centery="1747" centerz="6" radius="2">
-		<monster name="Stone Golem" x="-2" y="-1" z="6" spawntime="60" />
-		<monster name="Stone Golem" x="2" y="1" z="6" spawntime="60" />
+		<monster name="Stone Golem" x="2" y="-1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1396" centery="1749" centerz="6" radius="2">
+		<monster name="Stone Golem" x="2" y="0" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="585" centery="1762" centerz="6" radius="1">
 		<monster name="Polar Bear" x="-1" y="0" z="6" spawntime="60" />
@@ -4996,6 +4984,9 @@
 	<spawn centerx="1266" centery="1699" centerz="7" radius="1">
 		<monster name="Novice of the Cult" x="1" y="1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="1372" centery="1700" centerz="7" radius="1">
+		<monster name="Gargoyle" x="-1" y="-1" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="1067" centery="1702" centerz="7" radius="2">
 		<monster name="Cyclops Drone" x="-2" y="-2" z="7" spawntime="60" />
 		<monster name="Cyclops Drone" x="2" y="0" z="7" spawntime="60" />
@@ -5009,6 +5000,10 @@
 	<spawn centerx="985" centery="1704" centerz="7" radius="1">
 		<monster name="Lion" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="1434" centery="1704" centerz="7" radius="2">
+		<monster name="Stone Golem" x="2" y="0" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="-1" y="2" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="1062" centery="1705" centerz="7" radius="1">
 		<monster name="Cyclops Smith" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -5020,10 +5015,6 @@
 	</spawn>
 	<spawn centerx="1378" centery="1706" centerz="7" radius="1">
 		<monster name="Stone Golem" x="0" y="-1" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1435" centery="1706" centerz="7" radius="2">
-		<monster name="Gargoyle" x="1" y="-1" z="7" spawntime="60" />
-		<monster name="Gargoyle" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1011" centery="1707" centerz="7" radius="1">
 		<monster name="Lion" x="0" y="0" z="7" spawntime="60" />
@@ -5047,14 +5038,16 @@
 	<spawn centerx="1355" centery="1709" centerz="7" radius="1">
 		<monster name="Gargoyle" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="1453" centery="1709" centerz="7" radius="2">
+		<monster name="Gargoyle" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Gargoyle" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="1213" centery="1710" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1420" centery="1711" centerz="7" radius="2">
-		<monster name="Stone Golem" x="2" y="0" z="7" spawntime="60" />
-		<monster name="Stone Golem" x="-1" y="2" z="7" spawntime="60" />
+	<spawn centerx="1369" centery="1712" centerz="7" radius="2">
+		<monster name="Stone Golem" x="0" y="-2" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1369" centery="1712" centerz="7" radius="2" />
 	<spawn centerx="1354" centery="1713" centerz="7" radius="1">
 		<monster name="Gargoyle" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -5066,7 +5059,7 @@
 		<monster name="Gargoyle" x="-2" y="-1" z="7" spawntime="60" />
 		<monster name="Gargoyle" x="2" y="1" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1410" centery="1716" centerz="7" radius="2">
+	<spawn centerx="1417" centery="1716" centerz="7" radius="2">
 		<monster name="Gargoyle" x="1" y="-1" z="7" spawntime="60" />
 		<monster name="Gargoyle" x="-1" y="2" z="7" spawntime="60" />
 	</spawn>
@@ -5088,6 +5081,10 @@
 	<spawn centerx="1106" centery="1720" centerz="7" radius="1">
 		<monster name="Gnarlhound" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="1400" centery="1720" centerz="7" radius="2">
+		<monster name="Stone Golem" x="2" y="-2" z="7" spawntime="60" />
+		<monster name="Stone Golem" x="-2" y="2" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="1086" centery="1721" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
@@ -5100,11 +5097,7 @@
 	<spawn centerx="1191" centery="1722" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1398" centery="1722" centerz="7" radius="2">
-		<monster name="Stone Golem" x="-1" y="-1" z="7" spawntime="60" />
-		<monster name="Stone Golem" x="1" y="1" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1464" centery="1722" centerz="7" radius="2">
+	<spawn centerx="1467" centery="1722" centerz="7" radius="2">
 		<monster name="Stone Golem" x="-1" y="-1" z="7" spawntime="60" />
 		<monster name="Stone Golem" x="2" y="2" z="7" spawntime="60" />
 	</spawn>
@@ -5130,6 +5123,10 @@
 	<spawn centerx="1417" centery="1729" centerz="7" radius="2">
 		<monster name="Gargoyle" x="-1" y="-1" z="7" spawntime="60" />
 		<monster name="Gargoyle" x="2" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1494" centery="1730" centerz="7" radius="2">
+		<monster name="Gargoyle" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Gargoyle" x="1" y="2" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1124" centery="1731" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="-1" z="7" spawntime="60" />
@@ -5195,10 +5192,6 @@
 	<spawn centerx="1114" centery="1741" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1453" centery="1742" centerz="7" radius="2">
-		<monster name="Gargoyle" x="-2" y="-2" z="7" spawntime="60" />
-		<monster name="Gargoyle" x="2" y="1" z="7" spawntime="60" />
-	</spawn>
 	<spawn centerx="1513" centery="1742" centerz="7" radius="2">
 		<npc name="Rapim Alvanclana" x="0" y="1" z="7" spawntime="60" direction="2" />
 	</spawn>
@@ -5213,6 +5206,10 @@
 	</spawn>
 	<spawn centerx="1079" centery="1745" centerz="7" radius="1">
 		<monster name="Deer" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1464" centery="1745" centerz="7" radius="2">
+		<monster name="Gargoyle" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Gargoyle" x="1" y="2" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1485" centery="1745" centerz="7" radius="2">
 		<monster name="Stone Golem" x="-1" y="0" z="7" spawntime="60" />
@@ -5239,10 +5236,6 @@
 	<spawn centerx="1182" centery="1748" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1471" centery="1748" centerz="7" radius="2">
-		<monster name="Stone Golem" x="-1" y="-1" z="7" spawntime="60" />
-		<monster name="Stone Golem" x="1" y="2" z="7" spawntime="60" />
-	</spawn>
 	<spawn centerx="1441" centery="1750" centerz="7" radius="2">
 		<monster name="Stone Golem" x="1" y="-2" z="7" spawntime="60" />
 		<monster name="Stone Golem" x="-2" y="1" z="7" spawntime="60" />
@@ -5262,6 +5255,9 @@
 	<spawn centerx="1111" centery="1755" centerz="7" radius="1">
 		<monster name="Deer" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="1469" centery="1755" centerz="7" radius="1">
+		<monster name="Stone Golem" x="-1" y="-1" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="832" centery="1758" centerz="7" radius="1">
 		<monster name="Husky" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
@@ -5270,6 +5266,9 @@
 	</spawn>
 	<spawn centerx="1173" centery="1758" centerz="7" radius="1">
 		<monster name="Poison Spider" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1452" centery="1758" centerz="7" radius="1">
+		<monster name="Stone Golem" x="-1" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1156" centery="1759" centerz="7" radius="1">
 		<monster name="Deer" x="0" y="-1" z="7" spawntime="60" />
