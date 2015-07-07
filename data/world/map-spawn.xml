@@ -10164,6 +10164,9 @@
 		<monster name="Novice of the Cult" x="2" y="-2" z="8" spawntime="60" />
 		<monster name="Novice of the Cult" x="-1" y="2" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1507" centery="1684" centerz="8" radius="1">
+		<npc name="Rimi" x="-1" y="0" z="8" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="1174" centery="1685" centerz="8" radius="3">
 		<monster name="Cyclops Smith" x="-2" y="-1" z="8" spawntime="60" />
 		<monster name="Cyclops Smith" x="3" y="-1" z="8" spawntime="60" />
@@ -10180,17 +10183,14 @@
 		<monster name="Skeleton Warrior" x="-1" y="-2" z="8" spawntime="60" />
 		<monster name="Skeleton Warrior" x="0" y="1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1506" centery="1688" centerz="8" radius="1">
-		<npc name="Cameron" x="0" y="-1" z="8" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="730" centery="1689" centerz="8" radius="1">
 		<monster name="Skeleton" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1530" centery="1689" centerz="8" radius="1">
+		<npc name="Turizaban Ruanis" x="0" y="0" z="8" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="1168" centery="1690" centerz="8" radius="1">
 		<monster name="Cyclops" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1530" centery="1690" centerz="8" radius="1">
-		<npc name="Turizaban Ruanis" x="0" y="-1" z="8" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="687" centery="1691" centerz="8" radius="1">
 		<monster name="Ghoul" x="1" y="-1" z="8" spawntime="60" />
@@ -10263,10 +10263,10 @@
 		<monster name="Cyclops Drone" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1480" centery="1697" centerz="8" radius="1">
-		<npc name="Steve" x="-1" y="0" z="8" spawntime="60" direction="2" />
+		<npc name="Steve" x="0" y="0" z="8" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="1501" centery="1698" centerz="8" radius="1">
-		<npc name="Lee" x="0" y="-1" z="8" spawntime="60" direction="2" />
+	<spawn centerx="1500" centery="1699" centerz="8" radius="1">
+		<npc name="Lee" x="0" y="0" z="8" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="681" centery="1700" centerz="8" radius="2">
 		<monster name="Ghoul" x="-2" y="-1" z="8" spawntime="60" />
@@ -10313,8 +10313,8 @@
 		<monster name="Cyclops" x="0" y="0" z="8" spawntime="60" />
 		<monster name="Cyclops" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1509" centery="1716" centerz="8" radius="1">
-		<npc name="Rhurus Tivainga" x="0" y="-1" z="8" spawntime="60" direction="2" />
+	<spawn centerx="1508" centery="1715" centerz="8" radius="1">
+		<npc name="Rhurus Tivainga" x="0" y="0" z="8" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1142" centery="1718" centerz="8" radius="2">
 		<monster name="Cyclops" x="-1" y="-1" z="8" spawntime="60" />
@@ -10352,13 +10352,13 @@
 	<spawn centerx="1174" centery="1722" centerz="8" radius="1">
 		<monster name="Cyclops" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1515" centery="1723" centerz="8" radius="1">
-		<npc name="Anth Voon" x="-1" y="0" z="8" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="1248" centery="1724" centerz="8" radius="3">
 		<monster name="Cyclops Drone" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Cyclops Drone" x="3" y="0" z="8" spawntime="60" />
 		<monster name="Cyclops Drone" x="-1" y="3" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1515" centery="1724" centerz="8" radius="1">
+		<npc name="Anth Voon" x="0" y="0" z="8" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1212" centery="1725" centerz="8" radius="3">
 		<monster name="Cyclops Smith" x="-2" y="-2" z="8" spawntime="60" />
@@ -10374,6 +10374,9 @@
 	<spawn centerx="1232" centery="1725" centerz="8" radius="1">
 		<monster name="Cyclops" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1517" centery="1729" centerz="8" radius="1">
+		<npc name="Amyl Dannozon" x="0" y="0" z="8" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="1216" centery="1730" centerz="8" radius="1">
 		<monster name="Cyclops" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -10382,9 +10385,6 @@
 		<monster name="Cyclops Smith" x="2" y="-1" z="8" spawntime="60" />
 		<monster name="Cyclops Smith" x="2" y="2" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1516" centery="1730" centerz="8" radius="1">
-		<npc name="Amyl Dannozon" x="0" y="-1" z="8" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="670" centery="1732" centerz="8" radius="2">
 		<monster name="Crystal Spider" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Crystal Spider" x="2" y="1" z="8" spawntime="60" />
@@ -10392,6 +10392,9 @@
 	<spawn centerx="676" centery="1732" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
 		<monster name="Ice Golem" x="0" y="1" z="8" spawntime="1536" />
+	</spawn>
+	<spawn centerx="1510" centery="1732" centerz="8" radius="1">
+		<npc name="Cameron" x="0" y="0" z="8" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="489" centery="1734" centerz="8" radius="1">
 		<monster name="Crystal Spider" x="0" y="0" z="8" spawntime="60" />
