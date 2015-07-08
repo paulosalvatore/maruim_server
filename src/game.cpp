@@ -4849,7 +4849,7 @@ void Game::playerReportBug(uint32_t playerId, const std::string& message, const 
 	}
 	Database* db = Database::getInstance();
 	std::ostringstream query;
-	uint64_t currentTime = OTSYS_TIME();
+	uint64_t currentTime = time(nullptr);
 	query << "INSERT INTO `reports` (`conta`, `posicao_x`, `posicao_y`, `posicao_z`, `mensagem`, `categoria`, `data`) VALUES (" << player->getAccount() << ',' << position.getX() << ',' << position.getY() << ',' << position.getZ() << ',' << db->escapeString(message.c_str()) << ',' << db->escapeString(showCategory.c_str()) << ',' << currentTime << ')';
 	db->executeQuery(query.str());
 
