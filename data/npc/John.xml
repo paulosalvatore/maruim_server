@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_sellable" value="mutated flesh,11225,30;mutated rat tail,10585,50;mutated bat ear,10579,70;bat wing,5894,10;sabretooth,11228,25;" />
+		<parameter key="shop_sellable" value="troll green,2805,5;bunch of troll hair,10606,2;trollroot,12471,5;wolf paw,5897,4;mutated flesh,11225,30;mutated rat tail,10585,50;mutated bat ear,10579,70;bat wing,5894,10;sabretooth,11228,25;" />
 	</parameters>
 </npc>

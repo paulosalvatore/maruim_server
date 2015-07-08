@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_sellable" value="ape fur,5883,30;frost giant pelt,10575,30;snake skin,10611,15;piece of crocodile leather,11196,20;silky fur,11209,20;striped fur,11210,30;winter wolf fur,11212,15;badger fur,11216,10;thick fur,11224,20;werewolf fur,11234,60;warwolf fur,11235,25;wool,11236,10;black wool,12404,15;white deer skin,13534,40;" />
+		<parameter key="shop_sellable" value="carniphila seeds,11217,3;seeds,7732,2;sling herb,2802,20;powder herb,2803,20;shadow herb,2804,20;ape fur,5883,30;banana sash,12467,20;snake skin,10611,15;striped fur,11210,30;thick fur,11224,20;cobra tongue,10551,20;sabretooth,11228,25;centipede leg,11218,10;turtle shell,5899,15;tortoise egg,5678,3;" />
 	</parameters>
 </npc>=

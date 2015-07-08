@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_sellable" value="green dragon leather,5877,100;red dragon scale,5882,400;dragon claw,5919,300;green dragon scale,5920,150;red dragon leather,5948,200;dragon claw,10020,120;wyrm scale,10582,1;ghastly dragon head,11366,1;dragon's tail,12413,60;small dragon tear,21401,50;" />
+		<parameter key="shop_sellable" value="lion's mane,10608,25;lion trophy,7400,500;shaggy tail,11324,15;striped fur,11210,30;thick fur,11224,20;goblin ear,12495,10;honeycomb,5902,7;egg,2328,2;sample of sand wasp honey,9676,20;damselfly wing,19738,15;damselfly eye,19743,25;troll green,2805,5;bunch of troll hair,10606,2;trollroot,12471,5;wolf paw,5897,4;glooth injection tube,23474,150;bowl of glooth soup,23515,150;swampling moss,10557,5;piece of swampling wood,10557,3;poisonous slime,10557,12;mucus plug,18396,30;glob of mercury,9966,20;glob of acid slime,9967,25;glob of tar,9968,30;boggy dreads,10584,35;slime mould,13758,100;" />
 	</parameters>
 </npc>
