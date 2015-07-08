@@ -7,6 +7,7 @@ dofile('data/lib/090-reputacao.lua')
 dofile('data/lib/091-tasks.lua')
 dofile('data/lib/092-localizador_masmorra.lua')
 dofile('data/lib/coleta_madeira.lua')
+dofile('data/lib/tutorial.lua')
 
 ropeSpots = {384, 418, 8278, 8592, 13189, 14435, 14436, 15635, 19518}
 

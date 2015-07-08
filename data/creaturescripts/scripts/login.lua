@@ -1,14 +1,7 @@
 function onLogin(player)
-	if player:getVocation():getId() == 0 then
-		local modalTitulo = "Login Bloqueado"
-		local modalMensagem = "Você deve escolher uma vocação no site antes de conectar seu personagem.\n"
-		local modal = ModalWindow(modalNoVocation, modalTitulo, modalMensagem)
-		modal:addButton(1, "Ok")
-		modal:setDefaultEnterButton(1)
-		modal:sendToPlayer(player)
-		addEvent(function(cid) Player(cid):remove() end, 0, player:getId())
-		return true
-	end
+
+	player:checarSemVocacao()
+
 	local loginStr = "Seja bem-vindo ao " .. configManager.getString(configKeys.SERVER_NAME) .. "!"
 	if player:getLastLoginSaved() <= 0 then
 		loginStr = loginStr .. " Por favor, escolha seu outfit."

@@ -15,4 +15,6 @@
 	<event type="preparedeath" name="PrepareDeath" script="prepareDeath.lua" />
 	<event type="modalwindow" name="ItensKnight" script="itensKnight.lua" />
 	<event type="advance" name="LevelUp" script="LevelUp.lua" />
+	<event type="login" name="Tutorial" script="tutorial.lua" />
+	<event type="modalwindow" name="TutorialModal" script="tutorial.lua" />
 </creaturescripts>
