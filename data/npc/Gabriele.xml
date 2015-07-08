@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_sellable" value="frosty ear of a troll,10565,5;frosty heart,10578,7;ice cube,7441,25;shard,7290,15;frost charm,7289,50;flawless ice crystal,8300,80;scale from a frozen dragon,7314,1;mammoth tusk,11238,25;frozen heart,13028,1;polar bear paw,10567,12;skunk tail,11191,3;antlers,11214,5;winter wolf fur,11212,15;thick fur,11224,20;iced soil,8302,60;giant shimmering pearl,7632,100;red piece of cloth,5911,30;brown piece of cloth,5913,30;" />
+		<parameter key="shop_sellable" value="frosty ear of a troll,10565,5;frosty heart,10578,7;ice cube,7441,25;shard,7290,15;frost charm,7289,50;flawless ice crystal,8300,80;scale from a frozen dragon,7314,1;mammoth tusk,11238,25;frozen heart,13028,1;polar bear paw,10567,12;skunk tail,11191,3;antlers,11214,5;winter wolf fur,11212,15;thick fur,11224,20;iced soil,8302,60;giant shimmering pearl,7632,100;red piece of cloth,5911,30;brown piece of cloth,5913,30;green dragon leather,5877,100;red dragon scale,5882,400;dragon claw,5919,300;green dragon scale,5920,150;red dragon leather,5948,200;dragon claw,10020,120;dragon's tail,12413,60;small dragon tear,21401,50;" />
 	</parameters>
 </npc>
