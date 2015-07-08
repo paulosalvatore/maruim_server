@@ -40,6 +40,7 @@
 	<action itemid="13032" script="geral.lua" />
 	<action itemid="16105" script="geral.lua" />
 	<action fromid="23496" toid="23503" script="geral.lua" />
+	<action itemid="2225" script="geral.lua" />
 
 	<action actionid="2902" script="geral.lua" />
 
@@ -81,8 +82,6 @@
 	<action itemid="1793" script="crafting.lua" />
 	<action itemid="9895" script="crafting.lua" />
 	<action itemid="9898" script="crafting.lua" />
-
-	<action itemid="2225" script="transformarMinerioFerro.lua" />
 
 	<!-- Quests -->
 	<action itemid="1740" script="quests.lua" />

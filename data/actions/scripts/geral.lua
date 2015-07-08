@@ -413,7 +413,8 @@ local config = {
 				tempo = 3*60*1000,
 				chanceSucesso = 2000,
 				chanceNeutra = 4000,
-				profissao = "ferreiro"
+				profissao = "ferreiro",
+				expProfissao = 10
 			},
 			["carvao"] = {
 				itensPlayer = {{13757, 1}},
@@ -422,7 +423,8 @@ local config = {
 				tempo = 5*60*1000,
 				chanceSucesso = 2000,
 				chanceNeutra = 4000,
-				profissao = "ferreiro"
+				profissao = "ferreiro",
+				expProfissao = 10
 			}
 		}
 	},
@@ -585,7 +587,10 @@ local config = {
 			removerItem = 1,
 			removerTarget = 1,
 			efeito = {"green", "player_target"},
-			chanceSucesso = 1000
+			chanceSucesso = 5000,
+			profissao = "ferreiro",
+			nivelProfissao = 2,
+			expProfissao = 40
 		},
 		[5901] = {
 			itensGamePlayer = {{12503, 1}},
@@ -613,9 +618,18 @@ local config = {
 			itensGamePlayer = {{12501, 1}},
 			removerItem = 1,
 			removerTarget = 1,
-			removerItem = 1,
 			efeito = {"green", "player_target"},
 			chanceSucesso = 1000
+		}
+	},
+	[2225] = {
+		["default"] = {
+			itensGamePlayer = {{5880, 1}},
+			removerItensNecessarios = 1,
+			quantidadeItemNecessaria = 3,
+			profissao = "ferreiro",
+			efeito = {"green", "player_item"},
+			expProfissao = 10
 		}
 	},
 	[2327] = {
@@ -766,10 +780,14 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			i = config["unique"][item.uid]
 		end
 		local adicionarEvento = false
-		local topItem = Tile(toPosition):getTopVisibleThing():getId()
+		local piso = Tile(toPosition)
+		local topItem = 0
+		if piso ~= nil and piso:getTopVisibleThing() ~= nil then
+			topItem = piso:getTopVisibleThing():getId()
+		end
 		if i["default"] ~= nil then
 			i = i["default"]
-		elseif	isInArray(sparkling, target.itemid) and #Tile(toPosition):getItems() >= 2 and
+		elseif	isInArray(sparkling, target.itemid) and #piso:getItems() >= 2 and
 				(i["sparkling"][topItem] ~= nil or
 				(i["sparkling"]["ferro"] ~= nil and isInArray(ferro, topItem)) or
 				(i["sparkling"]["carvao"] ~= nil and isInArray(carvao, topItem)) or
@@ -831,6 +849,9 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				return player:sendCancelMessage("Você não pode entrar nessa área depois de atacar outro jogador.")
 			end
 		end
+		if i.quantidadeItemNecessaria ~= nil and player:getItemCount(item.itemid) < i.quantidadeItemNecessaria then
+			return false
+		end
 		if i.verificarPosicao ~= nil then
 			local verificarPosicao
 			if(i.verificarPosicao[2] == "item") then
@@ -848,6 +869,18 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				return false
 			end
 		end
+		local profissaoId = 0
+		local profissaoSkill =  0
+		if i.profissao ~= nil then
+			profissaoId = verificiarProfissaoPorNome(i.profissao)
+			profissaoSkill = player:getProfissaoSkill(profissaoId)
+			if i.nivelProfissao ~= nil and i.nivelProfissao > 0 and profissaoSkill < i.nivelProfissao then
+				return player:sendCancelMessage("Você precisa possuir nível " .. i.nivelProfissao .. " de " .. i.profissao .. " para realizar essa ação.")
+			end
+			if i.expProfissao ~= nil and i.expProfissao > 0 then
+				player:addProfissaoSkillExp(profissaoId, i.expProfissao)
+			end
+		end
 		local chanceSucesso = 10000
 		local chanceQuebrar = 0
 		if i.chanceSucesso ~= nil then
@@ -861,8 +894,6 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			efeito = i.efeito
 		end
 		if i.profissao ~= nil and verificiarProfissaoPorNome(i.profissao) and chanceSucesso ~= nil and chanceSucesso <= 10000 then
-			local profissaoId = verificiarProfissaoPorNome(i.profissao)
-			local profissaoSkill = player:getProfissaoSkill(profissaoId)
 			chanceSucesso = chanceSucesso+player:getProfissaoChanceColetaAdicional(profissaoId)
 		end
 		local chance = 10000
@@ -890,6 +921,9 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				end
 				player:getItemById(v[1], v3):remove(v[2])
 			end
+		end
+		if i.removerItensNecessarios ~= nil and i.removerItensNecessarios == 1 and not player:removeItem(item.itemid, i.quantidadeItemNecessaria) then
+			return false
 		end
 		if i.removerItem ~= nil and i.removerItem == 1 and not item:remove(1) then
 			return false
@@ -1038,17 +1072,17 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		end
 		if efeito ~= nil and #efeito > 0 then
 			local posicaoEfeito = nil
-			if efeito[2] and efeito[2] ~= "to" then
-				if type(efeito[2]) == "table" then
-					posicaoEfeito = fromPosition+efeito[2]
-				elseif efeito[2] == "from" then
+			if i.efeito[2] and i.efeito[2] ~= "to" then
+				if type(i.efeito[2]) == "table" then
+					posicaoEfeito = fromPosition+i.efeito[2]
+				elseif i.efeito[2] == "from" then
 					posicaoEfeito = fromPosition
-				elseif efeito[2] == "player" then
+				elseif i.efeito[2] == "player" then
 					posicaoEfeito = player:getPosition()
-				elseif efeito[2] == "player_item" or efeito[2] == "player_target" then
-					if efeito[2] == "player_item" then
+				elseif i.efeito[2] == "player_item" or i.efeito[2] == "player_target" then
+					if i.efeito[2] == "player_item" then
 						posicaoEfeito = fromPosition
-					elseif efeito[2] == "player_target" then
+					elseif i.efeito[2] == "player_target" then
 						posicaoEfeito = toPosition
 					end
 					if toPosition.x == 65535 then
