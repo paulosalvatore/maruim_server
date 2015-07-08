@@ -11881,6 +11881,9 @@
 	<spawn centerx="921" centery="1899" centerz="8" radius="1">
 		<monster name="Fire Elemental" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="934" centery="1899" centerz="8" radius="1">
+		<monster name="Massive Fire Elemental" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1345" centery="1899" centerz="8" radius="1">
 		<monster name="Cave Rat" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -11890,6 +11893,9 @@
 	<spawn centerx="1541" centery="1899" centerz="8" radius="2">
 		<monster name="Crocodile" x="-2" y="0" z="8" spawntime="60" />
 		<monster name="Crocodile" x="2" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="940" centery="1900" centerz="8" radius="1">
+		<monster name="Massive Fire Elemental" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1207" centery="1900" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
@@ -11913,9 +11919,6 @@
 	</spawn>
 	<spawn centerx="1381" centery="1901" centerz="8" radius="1">
 		<monster name="Spider" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="936" centery="1902" centerz="8" radius="1">
-		<monster name="Massive Fire Elemental" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1239" centery="1903" centerz="8" radius="1">
 		<monster name="Wolf" x="0" y="0" z="8" spawntime="60" />
@@ -11970,9 +11973,6 @@
 	</spawn>
 	<spawn centerx="889" centery="1908" centerz="8" radius="1">
 		<monster name="Fire Elemental" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="933" centery="1908" centerz="8" radius="1">
-		<monster name="Massive Fire Elemental" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1255" centery="1908" centerz="8" radius="1">
 		<monster name="Smuggler" x="0" y="0" z="8" spawntime="60" />
@@ -12539,7 +12539,6 @@
 	</spawn>
 	<spawn centerx="938" centery="1964" centerz="8" radius="1">
 		<monster name="Thornfire Wolf" x="0" y="0" z="8" spawntime="60" />
-		<monster name="Thornfire Wolf" x="0" y="1" z="8" spawntime="1792" />
 	</spawn>
 	<spawn centerx="903" centery="1965" centerz="8" radius="1">
 		<monster name="Blazing Fire Elemental" x="0" y="0" z="8" spawntime="60" />
@@ -12551,14 +12550,14 @@
 	<spawn centerx="1297" centery="1966" centerz="8" radius="1">
 		<monster name="Corym Charlatan" x="1" y="-1" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="913" centery="1968" centerz="8" radius="1">
+		<monster name="Thornfire Wolf" x="0" y="0" z="8" spawntime="60" />
+		<monster name="Thornfire Wolf" x="1" y="0" z="8" spawntime="1792" />
+	</spawn>
 	<spawn centerx="1277" centery="1968" centerz="8" radius="3">
 		<monster name="Corym Vanguard" x="2" y="-3" z="8" spawntime="60" />
 		<monster name="Corym Vanguard" x="-2" y="1" z="8" spawntime="60" />
 		<monster name="Corym Vanguard" x="3" y="1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="916" centery="1969" centerz="8" radius="1">
-		<monster name="Thornfire Wolf" x="0" y="0" z="8" spawntime="60" />
-		<monster name="Thornfire Wolf" x="1" y="0" z="8" spawntime="1792" />
 	</spawn>
 	<spawn centerx="1511" centery="1969" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
@@ -12570,12 +12569,12 @@
 		<monster name="Killer Caiman" x="-1" y="-2" z="8" spawntime="60" />
 		<monster name="Killer Caiman" x="1" y="2" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="928" centery="1971" centerz="8" radius="1">
-		<monster name="Thornfire Wolf" x="0" y="-1" z="8" spawntime="1792" />
-		<monster name="Thornfire Wolf" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
 	<spawn centerx="1346" centery="1971" centerz="8" radius="1">
 		<monster name="Corym Charlatan" x="1" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="925" centery="1972" centerz="8" radius="1">
+		<monster name="Thornfire Wolf" x="0" y="-1" z="8" spawntime="1792" />
+		<monster name="Thornfire Wolf" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1276" centery="1973" centerz="8" radius="1">
 		<monster name="Corym Charlatan" x="-1" y="-1" z="8" spawntime="60" />
@@ -15530,7 +15529,7 @@
 		<monster name="Quara Predator" x="-1" y="-1" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1575" centery="1637" centerz="10" radius="1">
-		<monster name="Dwarf Soldier" x="1" y="0" z="10" spawntime="60" />
+		<monster name="Dwarf Soldier" x="0" y="0" z="10" spawntime="60" />
 		<monster name="Dwarf Soldier" x="1" y="1" z="10" spawntime="1536" />
 	</spawn>
 	<spawn centerx="1078" centery="1639" centerz="10" radius="1">
