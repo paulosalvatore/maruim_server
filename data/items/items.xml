@@ -17187,27 +17187,31 @@
 	</item>
 	<item fromid="9808" toid="9810" article="a" name="rusty armor">
 		<attribute key="description" value="If you can remove the rust layer and dirt from the armor you will be able to see what it is." />
-		<attribute key="weight" value="12000" />
+		<attribute key="weight" value="3000" />
+		<attribute key="armor" value="1" />
+		<attribute key="slotType" value="body" />
 	</item>
 	<item fromid="9811" toid="9813" article="a" name="rusty legs">
 		<attribute key="description" value="If you can remove the rust layer and dirt from the legs you will be able to see what it is." />
-		<attribute key="weight" value="7000" />
+		<attribute key="weight" value="2800" />
+		<attribute key="armor" value="1" />
+		<attribute key="slotType" value="legs" />
 	</item>
 	<item fromid="9814" toid="9816" article="a" name="rusty shield">
 		<attribute key="description" value="If you can remove the rust layer and dirt from the shields you will be able to see what it is." />
-		<attribute key="weight" value="2800" />
+		<attribute key="weight" value="3000" />
 		<attribute key="defense" value="1" />
 		<attribute key="weaponType" value="shield" />
 	</item>
 	<item fromid="9817" toid="9819" article="a" name="rusty boots">
 		<attribute key="description" value="If you can remove the rust layer and dirt from the boots you will be able to see what it is." />
-		<attribute key="weight" value="2800" />
+		<attribute key="weight" value="2000" />
 		<attribute key="armor" value="1" />
 		<attribute key="slotType" value="feet" />
 	</item>
 	<item fromid="9820" toid="9822" article="a" name="rusty helmet">
 		<attribute key="description" value="If you can remove the rust layer and dirt from the helmets you will be able to see what it is." />
-		<attribute key="weight" value="2800" />
+		<attribute key="weight" value="2500" />
 		<attribute key="armor" value="1" />
 		<attribute key="slotType" value="head" />
 	</item>

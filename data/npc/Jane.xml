@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_sellable" value="dead rat,2813,5;wolf paw,5897,4;bear paw,5896,6;bone,2230,5;pelvis bone,12437,10;minotaur leather,5878,10;minotaur horn,12428,13;bunch of troll hair,10606,2;trollroot,12471,5;spider fangs,8859,5;poison spider shell,12441,7;goblin ear,12495,10;orc tooth,11113,5;orc leather,12435,10;scribbled sheet of paper,12382,8;honeycomb,5902,7;egg,2328,2;rabbit's food,13159,15;sample of sand wasp honey,9676,20;lump of dirt,10609,5;gland,8971,12;"/>
+		<parameter key="shop_sellable" value="dead rat,2813,5;dead rabbit,3119,5;dead wolf,3086,12;dead snake,2818,4;wolf paw,5897,4;bear paw,5896,6;bone,2230,5;pelvis bone,12437,10;minotaur leather,5878,10;minotaur horn,12428,13;bunch of troll hair,10606,2;trollroot,12471,5;spider fangs,8859,5;poison spider shell,12441,7;goblin ear,12495,10;orc tooth,11113,5;orc leather,12435,10;scribbled sheet of paper,12382,8;honeycomb,5902,7;egg,2328,2;rabbit's food,13159,15;sample of sand wasp honey,9676,20;lump of dirt,10609,5;gland,8971,12;"/>
 	</parameters>
 </npc>

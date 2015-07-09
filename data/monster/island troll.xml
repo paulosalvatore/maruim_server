@@ -32,5 +32,6 @@
 		<item id="12471" chance="50000" /><!-- Trollroot -->
 		<item id="2666" countmax="2" chance="40000" /><!-- Meat -->
 		<item id="2805" chance="10000" /><!-- Troll Green -->
+		<item id="5880" chance="10000" /><!-- Iron Ore -->
 	</loot>
 </monster>
