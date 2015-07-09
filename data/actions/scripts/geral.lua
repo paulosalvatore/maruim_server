@@ -620,6 +620,15 @@ local config = {
 			removerTarget = 1,
 			efeito = {"green", "player_target"},
 			chanceSucesso = 1000
+		},
+		[2193] = {
+			itensGamePlayer = {{2327, 1}},
+			removerItem = 1,
+			removerTarget = 1,
+			efeito = {"green", "player_target"},
+			chanceSucesso = 1000,
+			profissao = "ferreiro",
+			expProfissao = 15
 		}
 	},
 	[2225] = {
