@@ -740,11 +740,13 @@ function Player.addProfissaoSkill(self, profissaoId)
 	self:addProfissaoPontos(profissaoId, calcularPontosProfissao(skill))
 end
 function Player.addProfissaoSkillExp(self, profissaoId, experiencia)
+	local profissaoNome = profissoes[profissaoId].nome
 	local storageSkillExp = profissaoId+configProfissoes.skillExp
 	local skill = self:getProfissaoSkill(profissaoId)
 	local skillExp = self:getProfissaoSkillExp(profissaoId)
 	local skillExpProxLevel = calcularLevelProfissao(skill+1)
 	local novaExperiencia = 0
+	self:sendTextMessage(MESSAGE_EXPERIENCE, "Você recebeu " .. experiencia .. " pontos de experiência de " .. profissaoNome .. ".", self:getPosition(), experiencia, TEXTCOLOR_ORANGE)
 	if skill < configProfissoes.nivelMaximoProfissao and experiencia + skillExp >= skillExpProxLevel then
 		novaExperiencia = experiencia+skillExp-skillExpProxLevel
 		self:addProfissaoSkill(profissaoId)
