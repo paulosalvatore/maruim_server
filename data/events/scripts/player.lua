@@ -105,6 +105,11 @@ function Player:onLookInShop(itemType, count)
 end
 
 function Player:onMoveItem(item, count, fromPosition, toPosition)
+	local passoTutorial = self:pegarPassoTutorial()
+	if passoTutorial ~= tutorialFinalizado then
+		self:sendCancelMessage("Você não pode mover esse objeto enquanto está no tutorial.")
+		-- return false
+	end
 	local tile = Tile(toPosition)
 	if tile and tile:getHouse() ~= nil then
 		if tile:getItemCount() == 9 then

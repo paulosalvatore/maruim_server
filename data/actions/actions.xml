@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
+
+	<action actionid="4500" script="tutorial.lua" />
+
 	<!-- Geral -->
 	<action fromaid="2500" toaid="2502" script="item_desativado.lua" />
 

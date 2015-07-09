@@ -37,5 +37,6 @@ function onStartup()
 
 	gerarPontosColetaMadeira()
 	iniciarJefrey()
+	efeitosTutorial()
 
 end
