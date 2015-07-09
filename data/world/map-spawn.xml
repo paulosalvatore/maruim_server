@@ -2351,6 +2351,9 @@
 	<spawn centerx="544" centery="922" centerz="7" radius="1">
 		<monster name="Rabbit" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="586" centery="922" centerz="7" radius="1">
+		<npc name="Darvia Swor" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="466" centery="923" centerz="7" radius="1">
 		<monster name="Deer" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -2359,9 +2362,6 @@
 	</spawn>
 	<spawn centerx="511" centery="924" centerz="7" radius="1">
 		<npc name="Valiandriu Nitherac" x="-1" y="-1" z="7" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="586" centery="926" centerz="7" radius="1">
-		<npc name="Darvia Swor" x="0" y="-1" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="573" centery="930" centerz="7" radius="1">
 		<npc name="Joe" x="0" y="0" z="7" spawntime="60" direction="2" />
@@ -8346,6 +8346,15 @@
 	<spawn centerx="1229" centery="2090" centerz="7" radius="1">
 		<monster name="Crab" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="315" centery="2413" centerz="7" radius="1">
+		<npc name="Duriel" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="298" centery="2416" centerz="7" radius="1">
+		<npc name="Ramon" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="298" centery="2423" centerz="7" radius="1">
+		<npc name="Klaus" x="0" y="0" z="7" spawntime="60" direction="1" />
+	</spawn>
 	<spawn centerx="611" centery="806" centerz="8" radius="1">
 		<monster name="Bear" x="0" y="0" z="8" spawntime="60" />
 		<monster name="Bear" x="1" y="0" z="8" spawntime="768" />
@@ -8493,7 +8502,9 @@
 	<spawn centerx="574" centery="900" centerz="8" radius="1">
 		<monster name="Rat" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="647" centery="900" centerz="8" radius="1" />
+	<spawn centerx="647" centery="900" centerz="8" radius="1">
+		<npc name="Gras Fravotroth" x="0" y="-1" z="8" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="546" centery="901" centerz="8" radius="1">
 		<monster name="Cave Rat" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -10191,13 +10202,13 @@
 		<monster name="Novice of the Cult" x="2" y="-2" z="8" spawntime="60" />
 		<monster name="Novice of the Cult" x="-1" y="2" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1507" centery="1684" centerz="8" radius="1">
-		<npc name="Rimi" x="-1" y="0" z="8" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="1174" centery="1685" centerz="8" radius="3">
 		<monster name="Cyclops Smith" x="-2" y="-1" z="8" spawntime="60" />
 		<monster name="Cyclops Smith" x="3" y="-1" z="8" spawntime="60" />
 		<monster name="Cyclops Smith" x="0" y="3" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1507" centery="1685" centerz="8" radius="1">
+		<npc name="Rimi" x="-1" y="0" z="8" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="769" centery="1686" centerz="8" radius="1">
 		<monster name="Skeleton Warrior" x="-1" y="-1" z="8" spawntime="60" />
