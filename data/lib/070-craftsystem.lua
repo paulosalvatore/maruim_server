@@ -1131,7 +1131,7 @@ function Player.fabricarItem(self, receitaId, profissaoId, mesaTrabalhando, bloq
 				end
 				itemCriado:setAttribute(ITEM_ATTRIBUTE_ARMOR, itemCriado:getType():getArmor()+armaduraAdicional+bonusAdicional)
 			end
-			if itemCriado:getType():getShootRange() > 0 then
+			if itemCriado:getType():getShootRange() > 1 then
 				itemCriado:setAttribute(ITEM_ATTRIBUTE_SHOOTRANGE, itemCriado:getType():getShootRange()+math.random(0, 1))
 			end
 			if receita.atributos.health ~= nil then

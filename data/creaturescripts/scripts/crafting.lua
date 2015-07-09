@@ -247,10 +247,12 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 				local chanceSucessoAtual = formatarValor(player:getProfissaoChanceSucessoReceita(profissaoId, receitaId)).."%"
 				local materiais = receita.materiais
 				local mensagemMateriaisNecessarios = capAll(getItemName(item)).."\nNivel de Profissão Necessário: "..nivel.."\nNivel de Jogador Necessário: "..nivelJogador.."\nNecessário Aprender: "..necessarioAprender.."\n\nFerramenta Necessária:\n"..ferramenta.."\n\nTempo de Fabricação: "..tempo.."\nExperiência: "..experiencia.."\nPontos de Profissão: "..pontos.."\n\nChance de Sucesso Base: "..chanceSucesso.."\nChance de Sucesso Atual: "..chanceSucessoAtual.."\nChance de Sucesso Máxima: "..maxChanceSucesso.."\n\nMateriais:"
-				for a,b in pairs(materiais) do
+				for a, b in pairs(materiais) do
 					local itemNome = capAll(getItemName(b[1]))
 					if b[3] ~= nil and b[3] > 0 then
 						itemNome = itemNome.." of "..capAll(getFluidNameByType(b[3]))
+					else
+						b[3] = -1
 					end
 					mensagemMateriaisNecessarios = mensagemMateriaisNecessarios.."\n- "..itemNome.." ("..player:getItemCount(b[1], b[3]).."/"..b[2]..")"
 				end
