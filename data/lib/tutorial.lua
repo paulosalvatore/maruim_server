@@ -3,7 +3,7 @@ tutorialFinalizado = 50
 tutorialIntervaloMaximo = 100
 enviosLinksAcessoRapido = {}
 posicoesEfeitos = {
-	{x = 302, y = 2421, z = 7},
+	{x = 301, y = 2421, z = 7},
 	{x = 300, y = 2423, z = 7}
 }
 dataTutorial = {
@@ -12,28 +12,42 @@ dataTutorial = {
 }
 
 function Player.iniciarTutorial(self)
-	local posicaoInicioTutorial = Position({x = 315, y = 2415, z = 7})
-	self:teleportarJogador(posicaoInicioTutorial)
 	self:allowMovement(false)
 	self:enviarModalTutorial(2)
 end
 
 function Player.sairTutorial(self)
-	local ferramenta1 = self:getItemById(11421, -1)
-	local ferramenta2 = self:getItemById(2559, -1)
-	if ferramenta1 then
-		ferramenta1:removeAttribute(ITEM_ATTRIBUTE_ACTIONID)
-	end
-	if ferramenta2 then
-		ferramenta2:removeAttribute(ITEM_ATTRIBUTE_ACTIONID)
-	end
 	self:allowMovement(true)
 	local posicaoJogador = self:getPosition()
 	local posicaoTemplo = Town(1):getTemplePosition()
 	if	not (posicaoJogador.x == posicaoTemplo.x and
 		posicaoJogador.y == posicaoTemplo.y and
 		posicaoJogador.z == posicaoTemplo.z) then
-		self:teleportarJogador(posicaoTemplo)
+		self:teleportarJogador(posicaoTemplo, true)
+	end
+	local passoTutorial = self:pegarPassoTutorial()
+	if passoTutorial < 11 then
+		self:addItem(11421, 1)
+		self:addItem(2559, 1)
+	else
+		self:getItemById(11421, -1):removeAttribute(ITEM_ATTRIBUTE_ACTIONID)
+		self:getItemById(2559, -1):removeAttribute(ITEM_ATTRIBUTE_ACTIONID)
+	end
+	local vocacaoJogador = self:getVocation():getId()
+	if passoTutorial < 7 then
+		self:addItem(2461)
+		self:addItem(2467)
+		self:addItem(2649)
+		if vocacaoJogador == 1 then
+			self:addItem(23719, 1)
+		elseif vocacaoJogador == 2 then
+			self:addItem(23721, 1)
+		elseif vocacaoJogador == 3 then
+			self:addItem(19390, 10)
+		end
+		if vocacaoJogador == 4 then
+			self:enviarModalItensKnight()
+		end
 	end
 	self:atualizarPassoTutorial(tutorialFinalizado)
 end
@@ -114,6 +128,16 @@ function Player.enviarModalTutorial(self, id, atualizarPasso)
 		modalMensagem = modalMensagem .. "Com tudo isso em mãos, é hora de ir até a mesa de trabalho específica da produção, "
 		modalMensagem = modalMensagem .. "abrir a lista de receitas disponíveis e selecionar a receita desejada.\n"
 	elseif id == 8 then
+		passo = "Escolha uma Arma"
+		modalMensagem = modalMensagem .. "Escolha uma das armas abaixo e clique em 'Escolher', tecle entre ou dê "
+		modalMensagem = modalMensagem .. "um clique duplo na opção desejada para recebê-la.\n\n"
+		opcoes = {
+			"Arma Aleatória",
+			capAll(ItemType(itensKnight[1]):getName()),
+			capAll(ItemType(itensKnight[2]):getName()),
+			capAll(ItemType(itensKnight[3]):getName())
+		}
+	elseif id == 9 then
 		passo = "Obtendo Materiais"
 		modalMensagem = modalMensagem .. "Muito bem " .. self:getName() .. "! Agora que você já aprendeu como fabricar um item "
 		modalMensagem = modalMensagem .. "chegou a hora de saber um pouco mais sobre como obter os materiais das receitas.\n\n"
@@ -123,7 +147,7 @@ function Player.enviarModalTutorial(self, id, atualizarPasso)
 		modalMensagem = modalMensagem .. "     - Fabricando;\n"
 		modalMensagem = modalMensagem .. "     - Comprando de outros jogadores;\n"
 		modalMensagem = modalMensagem .. "     - Coletando na natureza.\n"
-	elseif id == 9 then
+	elseif id == 10 then
 		passo = "Coleta de Materiais"
 		modalMensagem = modalMensagem .. "Existem 3 tipos de materiais que podem ser coletados na natureza:\n"
 		modalMensagem = modalMensagem .. "Ferro, Carvão e Madeira.\n\n"
@@ -133,7 +157,7 @@ function Player.enviarModalTutorial(self, id, atualizarPasso)
 		modalMensagem = modalMensagem .. "Além disso, quanto maior for o seu nível na profissão específica daquele material, "
 		modalMensagem = modalMensagem .. "mais chance de sucesso você terá.\n\n"
 		modalMensagem = modalMensagem .. "Agora chegou a hora de você aprender como identificar uma fonte de coleta.\n"
-	elseif id == 13 then
+	elseif id == 14 then
 		passo = "Vocações"
 		modalMensagem = modalMensagem .. "Agora que você aprendeu os primeiros passos no sistema de crafting, chegou a hora "
 		modalMensagem = modalMensagem .. "de saber um pouco mais sobre as vocações.\n\n"
@@ -141,38 +165,39 @@ function Player.enviarModalTutorial(self, id, atualizarPasso)
 		modalMensagem = modalMensagem .. "desde equipamentos básicos até itens mais avançados.\n\n"
 		modalMensagem = modalMensagem .. "Além disso, você pode falar com o mestre da guilda, que lhe fornecerá tarefas para que possa "
 		modalMensagem = modalMensagem .. "provar seu valor dentro de sua vocação.\n"
-	elseif id == 14 then
-		passo = "Vocações - Promoção"
-		modalMensagem = modalMensagem .. "Para ser promovido dentro de sua vocação, você deve ser falar com o mestre da guilda "
-		modalMensagem = modalMensagem .. "e realizar qualquer uma das tarefas disponíveis.\n\n"
-		modalMensagem = modalMensagem .. "Após concluir a tarefa escolhida, vá até o mestre e peça por uma promoção.\n\n"
-		modalMensagem = modalMensagem .. "A cada tarefa concluída, você receberá pontos de reputação.\n\n"
-		modalMensagem = modalMensagem .. "Observação: Você precisa ter pelo menos nível 20 para ser promovido e não terá nenhum custo para isso.\n"
 	elseif id == 15 then
+		passo = "Vocações - Promoção"
+		modalMensagem = modalMensagem .. "Para ser promovido dentro de sua vocação, você deve falar com o mestre da guilda "
+		modalMensagem = modalMensagem .. "e realizar qualquer uma das tarefas disponíveis.\n\n"
+		modalMensagem = modalMensagem .. "Após concluir a tarefa escolhida vá até o mestre e peça por uma promoção.\n\n"
+		modalMensagem = modalMensagem .. "A cada tarefa concluída você receberá pontos de reputação.\n\n"
+		modalMensagem = modalMensagem .. "Observação: Você precisa ter pelo menos nível 20 para ser promovido e não terá nenhum custo para isso.\n"
+	elseif id == 16 then
 		passo = "Conhecendo a 'Maruim Island'"
 		modalMensagem = modalMensagem .. "A 'Maruim Island' é a ilha inicial de qualquer jogador. Nela estão localizadas as guildas das vocações e das profissões.\n\n"
 		modalMensagem = modalMensagem .. "Foram adicionadas marcas de referência no seu mini mapa, você pode consultá-las para facilitar a sua localização na ilha.\n"
-	elseif id == 16 then
+	elseif id == 17 then
 		passo = "Primeiros Passos"
 		modalMensagem = modalMensagem .. "Poucas criaturas derrubam 'gold coins', por isso, você deve recolher seus itens e procurar um NPC específico "
 		modalMensagem = modalMensagem .. "para vendê-los. Fique atento pois diversos itens derrubados são usados em receitas, você pode fabricar equipamentos "
 		modalMensagem = modalMensagem .. "e vender para um NPC ou para outros jogadores.\n"
-		modalMensagem = modalMensagem .. "Observação: As informações detalhadas de cada item você encontra no database de itens.\n\n"
+		modalMensagem = modalMensagem .. "Observação: As informações detalhadas de cada item você encontra no database de itens, localizado em nosso site.\n\n"
 		modalMensagem = modalMensagem .. "A principal forma de você melhorar seus equipamentos é fabricá-los através do sistema de crafting.\n"
 		modalMensagem = modalMensagem .. "Procure verificar a lista de receitas disponíveis (no site ou na mesa de trabalho da profissão) para tornar seu personagem cada vez mais forte.\n\n"
 		modalMensagem = modalMensagem .. "Dica:\n"
 		modalMensagem = modalMensagem .. "Algumas criaturas não derrubam itens para ser vendidos. Nesses casos, você pode coletar o corpo dessa criatura e vender direto no NPC.\n\n"
 		modalMensagem = modalMensagem .. "Link de Acesso Rápido: itens\n"
-	elseif id == 17 then
+	elseif id == 18 then
 		passo = "Informações Adicionais"
 		modalMensagem = modalMensagem .. "Você poderá sair da ilha a qualquer momento, basta possuir a quantia necessária para a viagem para uma das três cidades principais:\n"
 		modalMensagem = modalMensagem .. "Ôttô, a cidade simétrica, Hyalakur, a cidade desértica e Civitaten, a cidade do vulcão.\n"
-		modalMensagem = modalMensagem .. "Lembrando que você não é obrigado a deixar a ilha, e poderá voltar quando quiser (o preço da passagem é reduzido).\n"
+		modalMensagem = modalMensagem .. "Lembrando que você não é obrigado a deixar a ilha, e poderá voltar quando quiser (o preço da passagem é reduzido).\n\n"
 		modalMensagem = modalMensagem .. "É recomendado ficar na ilha pelo menos até o nível 8, porém, não precisa ter pressa para sair, a ilha possui áreas "
 		modalMensagem = modalMensagem .. "que lhe proporcionarão uma boa quantidade de experiência durante o início da sua jornada.\n\n"
 		modalMensagem = modalMensagem .. "Lembre-se sempre de consultar o banco de informações em nosso site, lá está listado todo o conteúdo "
-		modalMensagem = modalMensagem .. "disponível no MaruimOT: Itens, NPCs, Criaturas, Mapa e muita informação para auxiliar o seu jogo.\n"
-	elseif isInArray({7, 10, 11, 12}, id) then
+		modalMensagem = modalMensagem .. "disponível no MaruimOT: Itens, NPCs, Criaturas, Mapa e muita informação para auxiliar o seu jogo.\n\n"
+		modalMensagem = modalMensagem .. "Boa sorte em sua jornada!\n"
+	elseif isInArray({7, 11, 12, 13}, id) then
 		return
 	end
 	if passo ~= nil then
@@ -191,15 +216,41 @@ end
 
 function Player.checarSemVocacao(self)
 	if self:getVocation():getId() == 0 then
-		local modalTitulo = "Login Bloqueado"
-		local modalMensagem = "Você deve escolher uma vocação no site antes de conectar seu personagem.\n"
-		local modal = ModalWindow(modalNoVocation, modalTitulo, modalMensagem)
-		modal:addButton(1, "Ok")
-		modal:setDefaultEnterButton(1)
-		modal:sendToPlayer(self)
-		return false
+		return true
 	end
-	return true
+	return false
+end
+
+function Player.enviarModalSemVocacao(self)
+	local modalTitulo = "Escolha uma Vocação"
+	local modalMensagem = "O seu personagem não possui nenhuma vocação.\n\n"
+	modalMensagem = modalMensagem .. "Selecione uma das opções abaixo e tecle 'enter' ou clique em 'escolher' para mudar sua vocação.\n"
+	local modal = ModalWindow(tutorialId+tutorialFinalizado+4, modalTitulo, modalMensagem)
+	modal:addChoice(1, "Sorcerer")
+	modal:addChoice(2, "Druid")
+	modal:addChoice(3, "Paladin")
+	modal:addChoice(4, "Knight")
+	modal:addButton(1, "Escolher")
+	modal:setDefaultEnterButton(1)
+	modal:addButton(2, "Fechar")
+	modal:setDefaultEscapeButton(2)
+	modal:sendToPlayer(self)
+end
+
+function Player.enviarModalAindaSemVocacao(self)
+	if self:getVocation():getId() > 0 then
+		local modalTitulo = "Nenhuma Vocação foi Selecionada"
+		local modalMensagem = "Você não escolheu nenhuma vocação na janela anterior.\n"
+		modalMensagem = modalMensagem .. "É obrigatório a escolha de uma vocação para permanecer conectado ao jogo.\n\n"
+		modalMensagem = modalMensagem .. "Clique em 'Voltar' para retornar à janela anterior e selecionar uma vocação.\n"
+		modalMensagem = modalMensagem .. "Clique em 'Sair' caso não queira escolher uma vocação agora - essa opção te desconectará do jogo.\n"
+		local modal = ModalWindow(tutorialId+tutorialFinalizado+5, modalTitulo, modalMensagem)
+		modal:addButton(1, "Voltar")
+		modal:setDefaultEnterButton(1)
+		modal:addButton(2, "Sair")
+		modal:setDefaultEscapeButton(2)
+		modal:sendToPlayer(self)
+	end
 end
 
 function Player.pegarPassoTutorial(self)
@@ -219,25 +270,37 @@ function Player.enviarLinkAcessoRapido(self, codigo, descricao)
 end
 
 function Player.tutorialFabricarReceita(self)
+	self:allowMovement(false)
 	local npc = Npc("Duriel")
+	local itemArma
+	local vocacaoJogador = self:getVocation():getId()
+	if vocacaoJogador == 1 or vocacaoJogador == 2 then
+		itemArma = 7735
+	elseif vocacaoJogador == 3 then
+		itemArma = 8860
+	elseif vocacaoJogador == 4 then
+		itemArma = 5880
+	end
 	local mensagens = {
-		"Olá " .. self:getName() .. ". Para te ensinar como produzir receitas, vamos primeiro criar suas roupas.",
-		"Aqui estão 3 'brown piece of cloth' que serão utilizados na produção de seus equipamentos iniciais.",
+		"Olá " .. self:getName() .. ". Para te ensinar como produzir receitas, vamos criar suas roupas e sua arma.",
+		"Aqui estão 3 'brown piece of cloth', para seu equipamento, e 1 '" .. ItemType(itemArma):getName() .. "', para sua arma.",
 		"Para isso, você deve ir até a alfaiataria e usar a mesa de trabalho."
 	}
-	addEvent(tutorialAdicionarTecidos, 4150, self:getId())
-	for i = 1, #mensagens do
-		addEvent(npcSay, ((i-1)*4000)+150, self:getId(), npc:getId(), mensagens[i])
-	end
+	addEvent(tutorialAdicionarMateriais, 4150, self:getId(), itemArma)
+	addEvent(npcSay, 150, self:getId(), npc:getId(), mensagens[1])
+	addEvent(npcSay, 5000, self:getId(), npc:getId(), mensagens[2])
+	addEvent(npcSay, 10000, self:getId(), npc:getId(), mensagens[3])
 end
 
-function tutorialAdicionarTecidos(playerId)
+function tutorialAdicionarMateriais(playerId, itemArma)
 	local player = Player(playerId)
 	if not player then
 		return
 	end
 	player:addItem(5913, 3)
+	player:addItem(itemArma, 1)
 	player:atualizarPassoTutorial(7)
+	player:allowMovement(true)
 end
 
 function Player.tutorialJanelaFabricacao(self)
@@ -299,7 +362,7 @@ function Player.tutorialJanelaFabricacaoLista(self)
 		modalMensagem = modalMensagem .. "Clique no botão 'Criar', tecle 'Enter' ou dê dois cliques para iniciar o processo de fabricação.\n"
 		modalMensagem = modalMensagem .. "Clique no botão 'Info' para verificar os requisitos necessários para criação do item selecionado.\n"
 		local modal = ModalWindow(tutorialId+tutorialFinalizado+2, modalTitulo, modalMensagem)
-		modal:addChoice(1, "Equipamentos de Couro")
+		modal:addChoice(1, "Equipamentos Iniciais")
 		modal:addButton(3, "Info")
 		modal:addButton(2, "Voltar")
 		modal:addButton(1, "Criar")
@@ -322,6 +385,14 @@ function Player.tutorialIniciarFabricacao(self)
 	self:allowMovement(false)
 	local tempoFabricacao = 4
 	self:removeItem(5913, 3)
+	local vocacaoJogador = self:getVocation():getId()
+	if vocacaoJogador == 1 or vocacaoJogador == 2 then
+		self:getItemById(7735, -1):remove()
+	elseif vocacaoJogador == 3 then
+		self:getItemById(8860, -1):remove()
+	elseif vocacaoJogador == 4 then
+		self:getItemById(5880, -1):remove()
+	end
 	local craftCD = Condition(CONDITION_SPELLCOOLDOWN)
 	craftCD:setParameter(COMBAT_PARAM_AGGRESSIVE, 0)
 	craftCD:setParameter(CONDITION_PARAM_SUBID, 160)
@@ -344,11 +415,39 @@ function Player.tutorialIniciarFabricacao(self)
 				player:addItem(2461)
 				player:addItem(2467)
 				player:addItem(2649)
-				player:atualizarPassoTutorial(8)
+				local vocacaoJogador = player:getVocation():getId()
+				if vocacaoJogador == 1 then
+					player:addItem(23719, 1)
+				elseif vocacaoJogador == 2 then
+					player:addItem(23721, 1)
+				elseif vocacaoJogador == 3 then
+					player:addItem(19390, 10)
+				end
+				if vocacaoJogador ~= 4 then
+					player:enviarModalTutorial(9)
+				else
+					player:enviarModalTutorial(8)
+				end
 				player:allowMovement(true)
 			end
 		end, i*1000, self:getId(), i)
 	end
+end
+
+function Player.enviarModalItensKnight(self)
+	local modalTitulo = "Escolha uma Arma"
+	local modalMensagem = "Escolha uma das armas abaixo e clique em 'Escolher', tecle entre ou dê um clique duplo na opção desejada para recebê-la.\n\n"
+	local modal = ModalWindow(modalItensKnight, modalTitulo, modalMensagem)
+	modal:addChoice(1, "Arma Aleatória")
+	modal:addChoice(2, capAll(ItemType(itensKnight[1]):getName()))
+	modal:addChoice(3, capAll(ItemType(itensKnight[2]):getName()))
+	modal:addChoice(4, capAll(ItemType(itensKnight[3]):getName()))
+	modal:addButton(1, "Escolher")
+	modal:setDefaultEnterButton(1)
+	modal:addButton(2, "Sair")
+	modal:setDefaultEscapeButton(2)
+	modal:sendToPlayer(self)
+	self:registerEvent("ItensKnight")
 end
 
 function Player.tutorialAprenderColeta(self)
@@ -374,7 +473,7 @@ function tutorialAdicionarFerramenta(playerId)
 	end
 	player:addItem(11421):setActionId(4500)
 	player:addItem(2559):setActionId(4500)
-	player:atualizarPassoTutorial(10)
+	player:atualizarPassoTutorial(11)
 	player:allowMovement(true)
 end
 

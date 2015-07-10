@@ -1,19 +1,23 @@
 function onLogin(player)
-	if player:getName() == "Aman" or player:getName() == "Teste" then
-		local posicaoInicioTutorial = Position({x = 301, y = 2426, z = 8})
-		player:teleportarJogador(posicaoInicioTutorial)
-		player:atualizarPassoTutorial(14)
-		-- player:addItem(11421):setActionId(4500)
-		-- player:addItem(2559):setActionId(4500)
-		-- if passoTutorial == tutorialFinalizado then player:atualizarPassoTutorial(2) end -- linhaTeste
-		local passoTutorial = player:pegarPassoTutorial()
-		-- print(passoTutorial)
-		if passoTutorial ~= tutorialFinalizado then
-			player:enviarModalTutorial(passoTutorial)
-			player:registerEvent("TutorialModal")
+	local passoTutorial = player:pegarPassoTutorial()
+	if passoTutorial ~= tutorialFinalizado then
+		local posicaoJogador = player:getPosition()
+		local posicaoTemplo = Town(1):getTemplePosition()
+		local posicaoInicioTutorial = Position({x = 315, y = 2415, z = 7})
+		if	(posicaoJogador.x == posicaoTemplo.x and
+			posicaoJogador.y == posicaoTemplo.y and
+			posicaoJogador.z == posicaoTemplo.z) or
+			passoTutorial == 1 then
+			player:teleportarJogador(posicaoInicioTutorial, true)
 		end
+	end
+	player:registerEvent("TutorialModal")
+	if player:checarSemVocacao() then
+		player:enviarModalSemVocacao()
+	elseif passoTutorial ~= tutorialFinalizado then
+		player:enviarModalTutorial(passoTutorial)
 	else
-		player:atualizarPassoTutorial(tutorialFinalizado)
+		player:unregisterEvent("TutorialModal")
 	end
 	return true
 end
@@ -45,20 +49,27 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 				elseif modalWindowId == tutorialId+6 then
 					player:tutorialFabricarReceita()
 				elseif modalWindowId == tutorialId+8 then
+					if choiceId == 1 then
+						player:addItem(itensKnight[math.random(1, 3)], 1)
+					else
+						player:addItem(itensKnight[choiceId-1], 1)
+					end
 					player:enviarModalTutorial(9)
 				elseif modalWindowId == tutorialId+9 then
+					player:enviarModalTutorial(10)
+				elseif modalWindowId == tutorialId+10 then
 					player:tutorialAprenderColeta()
-				elseif modalWindowId == tutorialId+13 then
-					player:enviarModalTutorial(14)
 				elseif modalWindowId == tutorialId+14 then
-					player:teleportarJogador(Town(1):getTemplePosition())
 					player:enviarModalTutorial(15)
 				elseif modalWindowId == tutorialId+15 then
+					player:teleportarJogador(Town(1):getTemplePosition())
 					player:enviarModalTutorial(16)
-					player:enviarLinkAcessoRapido("itens", "Itens")
 				elseif modalWindowId == tutorialId+16 then
 					player:enviarModalTutorial(17)
+					player:enviarLinkAcessoRapido("itens", "Itens")
 				elseif modalWindowId == tutorialId+17 then
+					player:enviarModalTutorial(18)
+				elseif modalWindowId == tutorialId+18 then
 					player:sairTutorial()
 				else
 					player:confirmarSairTutorial()
@@ -88,6 +99,20 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 			end
 		elseif modalWindowId == tutorialId+tutorialFinalizado+3 then
 			player:tutorialJanelaFabricacao()
+		elseif modalWindowId == tutorialId+tutorialFinalizado+4 then
+			if buttonId == 1 then
+				player:setVocation(choiceId)
+				player:sendTextMessage(MESSAGE_INFO_DESCR, "Parabéns! Você se tornou um " .. Vocation(choiceId):getName() .. ".")
+				player:getPosition():sendMagicEffect(efeitos["green"])
+			else
+				player:enviarModalAindaSemVocacao()
+			end
+		elseif modalWindowId == tutorialId+tutorialFinalizado+5 then
+			if buttonId == 1 then
+				player:enviarModalSemVocacao()
+			else
+				player:remove()
+			end
 		else
 			player:confirmarSairTutorial()
 		end

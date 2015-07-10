@@ -99,11 +99,10 @@ ferramentasPeso = {
 itemDesativado = 2500
 
 modalTeleportCrystal = 9001
-storageKnightItens = 5000
-modalItensKnight = 5000
-modalNoVocation = 4000
+storageItensKnight = 5000
+modalItensKnight =  5000
 
-itensKnight = {2406, 2448, 2380}
+itensKnight = {2384, 2448, 2380}
 
 posicoesDepot = {
 	[2] = {x = 800, y = 1806, z = 7}, -- Mugulu

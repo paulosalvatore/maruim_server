@@ -5,7 +5,7 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 		else
 			player:addItem(itensKnight[choiceId-1], 1)
 		end
-		player:setStorageValue(storageKnightItens, 1)
+		player:setStorageValue(storageItensKnight, 1)
 	else
 		return false
 	end
