@@ -1,5 +1,5 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	local chanceFalha = 20
+	local chanceFalha = 50
 	local items = {
 		[5466] = {transformar = 5465},
 		[1485] = {transformar = 1484, duracao = 600, decairPara = {{1483, 1}, {1482, 1}, {1481, 1}, {1485, 1}}},
