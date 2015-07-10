@@ -1425,6 +1425,9 @@
 	<spawn centerx="1074" centery="1566" centerz="6" radius="1">
 		<npc name="Nigos Morionomad" x="0" y="-1" z="6" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="1083" centery="1566" centerz="6" radius="1">
+		<npc name="Oscar" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="770" centery="1568" centerz="6" radius="1">
 		<monster name="Banshee" x="-1" y="0" z="6" spawntime="60" />
 	</spawn>
@@ -4649,9 +4652,6 @@
 	<spawn centerx="1082" centery="1592" centerz="7" radius="1">
 		<npc name="Vuwulo Retulon" x="1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="1093" centery="1592" centerz="7" radius="1">
-		<npc name="Oscar" x="-1" y="0" z="7" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="884" centery="1593" centerz="7" radius="5">
 		<monster name="Gnarlhound" x="3" y="-3" z="7" spawntime="60" />
 		<monster name="Gnarlhound" x="-2" y="-2" z="7" spawntime="60" />
@@ -4680,6 +4680,9 @@
 	</spawn>
 	<spawn centerx="782" centery="1595" centerz="7" radius="1">
 		<monster name="Ghost" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1092" centery="1595" centerz="7" radius="1">
+		<npc name="Rimi" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1245" centery="1595" centerz="7" radius="1">
 		<monster name="Nomad Blue" x="0" y="0" z="7" spawntime="60" />
@@ -5197,6 +5200,9 @@
 	<spawn centerx="1417" centery="1716" centerz="7" radius="2">
 		<monster name="Gargoyle" x="1" y="-1" z="7" spawntime="120" />
 		<monster name="Gargoyle" x="-1" y="2" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="889" centery="1719" centerz="7" radius="1">
+		<monster name="Winter Wolf" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1143" centery="1719" centerz="7" radius="1">
 		<monster name="Gnarlhound" x="0" y="0" z="7" spawntime="60" />
