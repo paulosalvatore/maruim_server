@@ -11551,7 +11551,7 @@
 		<monster name="Yeti" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="889" centery="1834" centerz="8" radius="1">
-		<monster name="Massive Fire Elemental" x="-1" y="0" z="8" spawntime="170" />
+		<monster name="Blazing Fire Elemental" x="-1" y="0" z="8" spawntime="170" />
 	</spawn>
 	<spawn centerx="1077" centery="1834" centerz="8" radius="2">
 		<monster name="Rotworm" x="2" y="-1" z="8" spawntime="60" />
@@ -11614,7 +11614,7 @@
 		<monster name="Crystal Spider" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="899" centery="1839" centerz="8" radius="1">
-		<monster name="Massive Fire Elemental" x="0" y="-1" z="8" spawntime="170" />
+		<monster name="Blazing Fire Elemental" x="0" y="-1" z="8" spawntime="170" />
 	</spawn>
 	<spawn centerx="1010" centery="1839" centerz="8" radius="2">
 		<monster name="Rotworm" x="-2" y="-1" z="8" spawntime="60" />
@@ -11636,7 +11636,7 @@
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="885" centery="1842" centerz="8" radius="1">
-		<monster name="Massive Fire Elemental" x="0" y="1" z="8" spawntime="170" />
+		<monster name="Blazing Fire Elemental" x="0" y="1" z="8" spawntime="170" />
 	</spawn>
 	<spawn centerx="1019" centery="1842" centerz="8" radius="2">
 		<monster name="Rotworm" x="2" y="-2" z="8" spawntime="60" />
@@ -11670,10 +11670,10 @@
 		<monster name="Poison Spider" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="894" centery="1846" centerz="8" radius="1">
-		<monster name="Massive Fire Elemental" x="0" y="1" z="8" spawntime="170" />
+		<monster name="Blazing Fire Elemental" x="0" y="1" z="8" spawntime="170" />
 	</spawn>
 	<spawn centerx="978" centery="1847" centerz="8" radius="1">
-		<monster name="Massive Fire Elemental" x="-1" y="1" z="8" spawntime="170" />
+		<monster name="Blazing Fire Elemental" x="-1" y="1" z="8" spawntime="170" />
 	</spawn>
 	<spawn centerx="1063" centery="1847" centerz="8" radius="3">
 		<monster name="Rotworm" x="-2" y="-2" z="8" spawntime="60" />
@@ -11701,7 +11701,7 @@
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="912" centery="1850" centerz="8" radius="1">
-		<monster name="Massive Fire Elemental" x="0" y="-1" z="8" spawntime="170" />
+		<monster name="Blazing Fire Elemental" x="0" y="-1" z="8" spawntime="170" />
 	</spawn>
 	<spawn centerx="1032" centery="1850" centerz="8" radius="2">
 		<monster name="Rotworm" x="-1" y="-1" z="8" spawntime="60" />
@@ -11711,13 +11711,13 @@
 		<monster name="Poison Spider" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="935" centery="1851" centerz="8" radius="1">
-		<monster name="Massive Fire Elemental" x="1" y="0" z="8" spawntime="170" />
+		<monster name="Blazing Fire Elemental" x="1" y="0" z="8" spawntime="170" />
 	</spawn>
 	<spawn centerx="905" centery="1852" centerz="8" radius="1">
 		<monster name="Blazing Fire Elemental" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="957" centery="1852" centerz="8" radius="1">
-		<monster name="Massive Fire Elemental" x="1" y="1" z="8" spawntime="170" />
+		<monster name="Blazing Fire Elemental" x="1" y="1" z="8" spawntime="170" />
 	</spawn>
 	<spawn centerx="1183" centery="1852" centerz="8" radius="2">
 		<monster name="Poison Spider" x="-2" y="-2" z="8" spawntime="60" />
@@ -11727,7 +11727,7 @@
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="885" centery="1853" centerz="8" radius="1">
-		<monster name="Massive Fire Elemental" x="1" y="1" z="8" spawntime="170" />
+		<monster name="Blazing Fire Elemental" x="1" y="1" z="8" spawntime="170" />
 	</spawn>
 	<spawn centerx="1077" centery="1853" centerz="8" radius="2">
 		<monster name="Rotworm" x="2" y="-1" z="8" spawntime="60" />
@@ -11746,13 +11746,13 @@
 		<monster name="Tarantula" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="921" centery="1855" centerz="8" radius="1">
-		<monster name="Massive Fire Elemental" x="1" y="-1" z="8" spawntime="170" />
+		<monster name="Blazing Fire Elemental" x="1" y="-1" z="8" spawntime="170" />
 	</spawn>
 	<spawn centerx="938" centery="1855" centerz="8" radius="1">
 		<monster name="Fire Elemental" x="-1" y="-1" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="900" centery="1856" centerz="8" radius="1">
-		<monster name="Massive Fire Elemental" x="0" y="-1" z="8" spawntime="170" />
+		<monster name="Blazing Fire Elemental" x="0" y="-1" z="8" spawntime="170" />
 	</spawn>
 	<spawn centerx="1149" centery="1856" centerz="8" radius="2">
 		<monster name="Tarantula" x="1" y="-2" z="8" spawntime="60" />
@@ -11768,10 +11768,10 @@
 		<monster name="Tarantula" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="947" centery="1858" centerz="8" radius="1">
-		<monster name="Massive Fire Elemental" x="-1" y="-1" z="8" spawntime="170" />
+		<monster name="Blazing Fire Elemental" x="-1" y="-1" z="8" spawntime="170" />
 	</spawn>
 	<spawn centerx="970" centery="1858" centerz="8" radius="1">
-		<monster name="Massive Fire Elemental" x="0" y="-1" z="8" spawntime="170" />
+		<monster name="Blazing Fire Elemental" x="0" y="-1" z="8" spawntime="170" />
 	</spawn>
 	<spawn centerx="1256" centery="1859" centerz="8" radius="1">
 		<monster name="Crab" x="0" y="0" z="8" spawntime="60" />
@@ -11804,7 +11804,7 @@
 		<monster name="Poison Spider" x="-2" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="883" centery="1863" centerz="8" radius="1">
-		<monster name="Massive Fire Elemental" x="0" y="-1" z="8" spawntime="170" />
+		<monster name="Blazing Fire Elemental" x="0" y="-1" z="8" spawntime="170" />
 	</spawn>
 	<spawn centerx="899" centery="1864" centerz="8" radius="1">
 		<monster name="Fire Elemental" x="-1" y="1" z="8" spawntime="110" />
@@ -11825,7 +11825,7 @@
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="956" centery="1866" centerz="8" radius="1">
-		<monster name="Massive Fire Elemental" x="1" y="0" z="8" spawntime="170" />
+		<monster name="Blazing Fire Elemental" x="1" y="0" z="8" spawntime="170" />
 	</spawn>
 	<spawn centerx="1173" centery="1866" centerz="8" radius="1">
 		<monster name="Tarantula" x="0" y="-1" z="8" spawntime="60" />
@@ -11858,7 +11858,7 @@
 		<monster name="Crab" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="883" centery="1873" centerz="8" radius="1">
-		<monster name="Massive Fire Elemental" x="0" y="-1" z="8" spawntime="170" />
+		<monster name="Blazing Fire Elemental" x="0" y="-1" z="8" spawntime="170" />
 	</spawn>
 	<spawn centerx="1168" centery="1873" centerz="8" radius="1">
 		<monster name="Poison Spider" x="0" y="-1" z="8" spawntime="60" />
@@ -12049,9 +12049,6 @@
 		<monster name="Lizard Legionnaire" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Lizard Legionnaire" x="1" y="-1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="936" centery="1906" centerz="8" radius="1">
-		<monster name="Thornfire Wolf" x="1" y="1" z="8" spawntime="110" />
-	</spawn>
 	<spawn centerx="1037" centery="1906" centerz="8" radius="1">
 		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -12085,6 +12082,9 @@
 	</spawn>
 	<spawn centerx="888" centery="1908" centerz="8" radius="1">
 		<monster name="Thornfire Wolf" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="937" centery="1908" centerz="8" radius="1">
+		<monster name="Thornfire Wolf" x="1" y="1" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="1255" centery="1908" centerz="8" radius="1">
 		<monster name="Smuggler" x="0" y="0" z="8" spawntime="60" />
