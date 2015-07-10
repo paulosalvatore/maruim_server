@@ -81,7 +81,7 @@ destinos = {
 	},
 	["dragon_mugulu"] = {
 		nome = "Mugulu",
-		posicao = {x = 744, y = 1688, z = 7},
+		posicao = {x = 789, y = 1739, z = 7},
 		custo = 100,
 		levelNecessario = 0
 	},
