@@ -3088,8 +3088,12 @@ void ProtocolGame::AddShopItem(NetworkMessage& msg, const ShopInfo& item)
 		msg.addByte(0x00);
 	}
 
+	uint32_t peso = it.weight;
+	if (item.peso > 0) {
+		peso = item.peso;
+	}
 	msg.addString(item.realName);
-	msg.add<uint32_t>(it.weight);
+	msg.add<uint32_t>(peso);
 	msg.add<uint32_t>(item.buyPrice);
 	msg.add<uint32_t>(item.sellPrice);
 }

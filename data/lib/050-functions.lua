@@ -321,7 +321,7 @@ function Player.removerDebuffs(self)
 	end
 end
 
-function removerAtributosItem(item)
+function removerAtributosItem(cid, item)
 	local item = Item(item)
 	if item:getAttribute(ITEM_ATTRIBUTE_ATTACK) then
 		item:setAttribute(ITEM_ATTRIBUTE_ATTACK, 0)
@@ -335,8 +335,13 @@ function removerAtributosItem(item)
 	if item:getAttribute(ITEM_ATTRIBUTE_ARMOR) then
 		item:setAttribute(ITEM_ATTRIBUTE_ARMOR, 0)
 	end
-	if ferramentasPeso[item.itemid] and item:getAttribute(ITEM_ATTRIBUTE_WEIGHT) then
-		-- item:setAttribute(ITEM_ATTRIBUTE_WEIGHT, ferramentasPeso[item.itemid])
+	if ferramentas[item.itemid] and item:getAttribute(ITEM_ATTRIBUTE_WEIGHT) then
+		local player = Player(cid)
+		item:moveTo(player:getPosition())
+		local itemClone = item:clone()
+		item:remove()
+		itemClone:setAttribute(ITEM_ATTRIBUTE_WEIGHT, ferramentas[item.itemid])
+		player:addItemEx(itemClone)
 	end
 	return true
 end

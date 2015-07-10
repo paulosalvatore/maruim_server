@@ -467,16 +467,18 @@ struct ShopInfo {
 	uint32_t buyPrice;
 	uint32_t sellPrice;
 	std::string realName;
+	uint32_t peso;
 
 	ShopInfo() {
 		itemId = 0;
 		subType = 1;
 		buyPrice = 0;
 		sellPrice = 0;
+		peso = 0;
 	}
 
-	ShopInfo(uint16_t itemId, int32_t subType = 0, uint32_t buyPrice = 0, uint32_t sellPrice = 0, std::string realName = "")
-		: itemId(itemId), subType(subType), buyPrice(buyPrice), sellPrice(sellPrice), realName(realName) {}
+	ShopInfo(uint16_t itemId, int32_t subType = 0, uint32_t buyPrice = 0, uint32_t sellPrice = 0, std::string realName = "", uint32_t peso = 0)
+		: itemId(itemId), subType(subType), buyPrice(buyPrice), sellPrice(sellPrice), realName(realName), peso(peso) {}
 };
 
 struct MarketOffer {

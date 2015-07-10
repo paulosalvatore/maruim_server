@@ -47,7 +47,7 @@ function doNpcSellItem(cid, itemid, amount, subType, attributes, ignoreCap, inBa
 				end
 
 				if not attributes then
-					removerAtributosItem(item)
+					removerAtributosItem(cid, item)
 				end
 			end
 		end
@@ -60,7 +60,7 @@ function doNpcSellItem(cid, itemid, amount, subType, attributes, ignoreCap, inBa
 			break
 		end
 		if not attributes then
-			removerAtributosItem(item)
+			removerAtributosItem(cid, item)
 		end
 		a = i
 	end

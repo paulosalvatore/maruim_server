@@ -93,15 +93,13 @@ function Player:onLookInTrade(partner, item, distance)
 end
 
 function Player:onLookInShop(itemType, count)
-	local description = "You see " .. itemType:getArticle() .. " " .. itemType:getName() .. "."
-
-	local pesoItem = ferramentasPeso[itemType:getId()] or itemType:getWeight()
-	if pesoItem > 0 then
-		description = description .. "\nIt weighs " .. formatarPeso(pesoItem) .. "."
+	local ferramenta = ferramentas[itemType:getId()]
+	if ferramenta then
+		local description = "You see " .. itemType:getArticle() .. " " .. itemType:getName() .. ".\nIt weighs " .. formatarPeso(ferramenta) .. "."
+		self:sendTextMessage(MESSAGE_INFO_DESCR, description)
+		return false
 	end
-
-	self:sendTextMessage(MESSAGE_INFO_DESCR, description)
-	return false
+	return true
 end
 
 function Player:onMoveItem(item, count, fromPosition, toPosition)

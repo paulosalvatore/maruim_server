@@ -801,7 +801,7 @@ if Modules == nil then
 
 			local shopItem = self:getShopItem(itemid, itemSubType)
 			if shopItem == nil then
-				self.npcHandler.shopItems[#self.npcHandler.shopItems + 1] = {id = itemid, buy = cost, sell = -1, subType = itemSubType, name = realName or ItemType(itemid):getName(), attributes = attributes}
+				self.npcHandler.shopItems[#self.npcHandler.shopItems + 1] = {id = itemid, buy = cost, sell = -1, subType = itemSubType, name = realName or ItemType(itemid):getName(), attributes = attributes, peso = ferramentas[itemid] or 0}
 			else
 				shopItem.buy = cost
 			end
@@ -901,7 +901,7 @@ if Modules == nil then
 
 			local shopItem = self:getShopItem(itemid, itemSubType)
 			if shopItem == nil then
-				table.insert(self.npcHandler.shopItems, {id = itemid, buy = -1, sell = cost, subType = itemSubType, name = realName or getItemName(itemid)})
+				table.insert(self.npcHandler.shopItems, {id = itemid, buy = -1, sell = cost, subType = itemSubType, name = realName or getItemName(itemid), peso = ferramentas[itemid] or 0})
 			else
 				shopItem.sell = cost
 			end
