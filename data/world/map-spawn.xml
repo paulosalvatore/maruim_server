@@ -1160,11 +1160,23 @@
 	<spawn centerx="577" centery="1041" centerz="6" radius="1">
 		<monster name="Angry Villager" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
+	<spawn centerx="624" centery="1046" centerz="6" radius="1">
+		<monster name="Wolf" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="616" centery="1047" centerz="6" radius="1">
+		<monster name="Wolf" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
 	<spawn centerx="566" centery="1049" centerz="6" radius="1">
 		<monster name="Angry Villager" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="569" centery="1049" centerz="6" radius="1">
 		<monster name="Angry Villager" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="611" centery="1053" centerz="6" radius="1">
+		<monster name="Wolf" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="612" centery="1061" centerz="6" radius="1">
+		<monster name="Wolf" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="638" centery="1255" centerz="6" radius="4">
 		<monster name="Dragon" x="2" y="-3" z="6" spawntime="60" />
