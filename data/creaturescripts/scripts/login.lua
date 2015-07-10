@@ -1,7 +1,4 @@
 function onLogin(player)
-
-	player:checarSemVocacao()
-
 	local loginStr = "Seja bem-vindo ao " .. configManager.getString(configKeys.SERVER_NAME) .. "!"
 	if player:getLastLoginSaved() <= 0 then
 		loginStr = loginStr .. " Por favor, escolha seu outfit."

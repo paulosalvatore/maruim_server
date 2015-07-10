@@ -64,6 +64,7 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 				elseif modalWindowId == tutorialId+15 then
 					player:teleportarJogador(Town(1):getTemplePosition())
 					player:enviarModalTutorial(16)
+					player:adicionarMarcasMapa(1)
 				elseif modalWindowId == tutorialId+16 then
 					player:enviarModalTutorial(17)
 					player:enviarLinkAcessoRapido("itens", "Itens")

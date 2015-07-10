@@ -26,13 +26,6 @@ function Player.sairTutorial(self)
 		self:teleportarJogador(posicaoTemplo, true)
 	end
 	local passoTutorial = self:pegarPassoTutorial()
-	if passoTutorial < 11 then
-		self:addItem(11421, 1)
-		self:addItem(2559, 1)
-	else
-		self:getItemById(11421, -1):removeAttribute(ITEM_ATTRIBUTE_ACTIONID)
-		self:getItemById(2559, -1):removeAttribute(ITEM_ATTRIBUTE_ACTIONID)
-	end
 	local vocacaoJogador = self:getVocation():getId()
 	if passoTutorial < 7 then
 		self:addItem(2461)
@@ -48,6 +41,16 @@ function Player.sairTutorial(self)
 		if vocacaoJogador == 4 then
 			self:enviarModalItensKnight()
 		end
+	end
+	if passoTutorial < 11 then
+		self:addItem(11421, 1)
+		self:addItem(2559, 1)
+	else
+		self:getItemById(11421, -1):removeAttribute(ITEM_ATTRIBUTE_ACTIONID)
+		self:getItemById(2559, -1):removeAttribute(ITEM_ATTRIBUTE_ACTIONID)
+	end
+	if passoTutorial < 16 then
+		self:adicionarMarcasMapa(1)
 	end
 	self:atualizarPassoTutorial(tutorialFinalizado)
 end
