@@ -336,7 +336,7 @@ function removerAtributosItem(item)
 		item:setAttribute(ITEM_ATTRIBUTE_ARMOR, 0)
 	end
 	if ferramentasPeso[item.itemid] and item:getAttribute(ITEM_ATTRIBUTE_WEIGHT) then
-		item:setAttribute(ITEM_ATTRIBUTE_WEIGHT, ferramentasPeso[item.itemid])
+		-- item:setAttribute(ITEM_ATTRIBUTE_WEIGHT, ferramentasPeso[item.itemid])
 	end
 	return true
 end
