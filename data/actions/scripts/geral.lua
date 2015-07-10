@@ -622,13 +622,13 @@ local config = {
 			chanceSucesso = 1000
 		},
 		[2193] = {
-			itensGamePlayer = {{2327, 1}},
+			itensGamePlayer = {{2354, 1}},
 			removerItem = 1,
 			removerTarget = 1,
 			efeito = {"green", "player_target"},
-			chanceSucesso = 1000,
+			chanceSucesso = 5000,
 			profissao = "ferreiro",
-			expProfissao = 15
+			expProfissao = 40
 		}
 	},
 	[2225] = {
