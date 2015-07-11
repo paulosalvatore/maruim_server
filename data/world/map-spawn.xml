@@ -8894,6 +8894,9 @@
 	<spawn centerx="425" centery="975" centerz="8" radius="1">
 		<monster name="Wolf" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="496" centery="976" centerz="8" radius="1">
+		<monster name="Rat" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="532" centery="976" centerz="8" radius="1">
 		<monster name="Snake" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -8919,14 +8922,29 @@
 	<spawn centerx="519" centery="984" centerz="8" radius="1">
 		<monster name="Snake" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="487" centery="986" centerz="8" radius="1">
+		<monster name="Rat" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="478" centery="987" centerz="8" radius="1">
+		<monster name="Rat" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="533" centery="987" centerz="8" radius="1">
 		<monster name="Snake" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="464" centery="989" centerz="8" radius="1">
+		<monster name="Rat" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="530" centery="990" centerz="8" radius="1">
 		<monster name="Snake" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="535" centery="990" centerz="8" radius="1">
 		<monster name="Snake" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="475" centery="996" centerz="8" radius="1">
+		<monster name="Rat" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="478" centery="998" centerz="8" radius="1">
+		<monster name="Rat" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="608" centery="1035" centerz="8" radius="1">
 		<monster name="Skeleton" x="0" y="0" z="8" spawntime="60" />
@@ -13004,11 +13022,22 @@
 	<spawn centerx="714" centery="951" centerz="9" radius="1">
 		<monster name="Troll" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="495" centery="952" centerz="9" radius="1">
+		<monster name="Bug" x="0" y="0" z="9" spawntime="60" />
+		<monster name="Snake" x="1" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="667" centery="955" centerz="9" radius="1">
 		<monster name="Troll" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="679" centery="955" centerz="9" radius="1">
 		<monster name="Troll" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="488" centery="957" centerz="9" radius="1">
+		<monster name="Bug" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="479" centery="959" centerz="9" radius="1">
+		<monster name="Snake" x="1" y="-1" z="9" spawntime="60" />
+		<monster name="Bug" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="732" centery="959" centerz="9" radius="2">
 		<monster name="Troll" x="-2" y="-1" z="9" spawntime="60" />
