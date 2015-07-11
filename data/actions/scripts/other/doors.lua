@@ -30,6 +30,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			return true
 		end
 		item:transform(itemId + 1)
+		player:teleportTo(toPosition, true)
 		return true
 	end
 
