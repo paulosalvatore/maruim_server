@@ -6527,7 +6527,7 @@
 	<item fromid="3101" toid="3102" article="a" name="dead dog">
 		<attribute key="weight" value="700" />
 	</item>
-	<item id="3103" article="a" name="dead skeleton">
+	<item id="3103" article="a" name="slain skeleton">
 		<attribute key="weight" value="10000" />
 		<attribute key="decayTo" value="0" />
 		<attribute key="duration" value="600" />
@@ -9650,7 +9650,7 @@
 	</item>
 	<item id="5972" article="a" name="slain skeleton">
 		<attribute key="containerSize" value="10" />
-		<attribute key="decayTo" value="3103" />
+		<attribute key="decayTo" value="2843" />
 		<attribute key="duration" value="10" />
 		<attribute key="corpseType" value="undead" />
 	</item>
