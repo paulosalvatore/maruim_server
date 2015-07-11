@@ -38,6 +38,7 @@
 		<element icePercent="-15" />
 	</elements>
 	<loot>
+		<item id="5864" countmax="1" chance="20000" /><!-- Fire Bug -->
 		<item id="8299" countmax="2" chance="70000" /><!-- Glimmering Soil -->
 		<item id="9970" countmax="2" chance="20000" /><!-- Small Topaz -->
 	</loot>
