@@ -4,6 +4,8 @@ if pontosColetaMadeira == nil then
 	pontosColetaMadeiraAtuais = {}
 end
 function gerarPontosColetaMadeira()
+	print(">> Gerando pontos de coleta de madeira")
+	print("> Mapeando objetos...")
 	local inicio = {431, 1182}
 	local final = {1530, 2119}
 	for i = inicio[1], final[1] do
@@ -24,9 +26,12 @@ function gerarPontosColetaMadeira()
 			end
 		end
 	end
-	while #pontosColetaMadeiraAtuais < math.floor(#pontosColetaMadeira*0.1) do
+	print("> Inserindo pontos...")
+	local maxPontosColeta = math.floor(#pontosColetaMadeira*0.1)
+	while #pontosColetaMadeiraAtuais < maxPontosColeta do
 		gerarPontoColetaMadeira()
 	end
+	print("> " .. #pontosColetaMadeiraAtuais .. " pontos foram gerados!")
 end
 
 function gerarPontoColetaMadeira(posicaoAntiga)
