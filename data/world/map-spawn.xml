@@ -1637,8 +1637,8 @@
 	<spawn centerx="1144" centery="1698" centerz="6" radius="1">
 		<monster name="Cyclops" x="-1" y="0" z="6" spawntime="110" />
 	</spawn>
-	<spawn centerx="882" centery="1708" centerz="6" radius="1">
-		<monster name="Scorpion" x="0" y="0" z="6" spawntime="60" />
+	<spawn centerx="883" centery="1708" centerz="6" radius="1">
+		<monster name="Scorpion" x="-1" y="0" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="939" centery="1708" centerz="6" radius="1">
 		<monster name="Lion" x="1" y="0" z="6" spawntime="60" />
@@ -1659,8 +1659,8 @@
 	<spawn centerx="1329" centery="1713" centerz="6" radius="1">
 		<npc name="Yendsos Anian" x="-1" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="875" centery="1716" centerz="6" radius="1">
-		<monster name="Hyaena" x="0" y="0" z="6" spawntime="60" />
+	<spawn centerx="876" centery="1716" centerz="6" radius="1">
+		<monster name="Hyaena" x="-1" y="0" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="1394" centery="1717" centerz="6" radius="2">
 		<monster name="Stone Golem" x="-1" y="-2" z="6" spawntime="60" />
@@ -1914,6 +1914,9 @@
 	</spawn>
 	<spawn centerx="1115" centery="1907" centerz="6" radius="1">
 		<monster name="Sibang" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="961" centery="1910" centerz="6" radius="1">
+		<npc name="Rimi" x="0" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1058" centery="1910" centerz="6" radius="2">
 		<monster name="Lizard Sentinel" x="-2" y="-1" z="6" spawntime="60" />
@@ -2832,6 +2835,9 @@
 	</spawn>
 	<spawn centerx="915" centery="1285" centerz="7" radius="1">
 		<monster name="Goblin" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="851" centery="1286" centerz="7" radius="1">
+		<npc name="Rimi" x="-1" y="-1" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="859" centery="1286" centerz="7" radius="1">
 		<npc name="Ryan" x="-1" y="0" z="7" spawntime="60" direction="2" />
@@ -10547,11 +10553,11 @@
 		<monster name="Skeleton Warrior" x="-1" y="-2" z="8" spawntime="60" />
 		<monster name="Skeleton Warrior" x="2" y="2" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1333" centery="1660" centerz="8" radius="1">
+		<monster name="Acolyte of the Cult" x="-1" y="0" z="8" spawntime="170" />
+	</spawn>
 	<spawn centerx="769" centery="1662" centerz="8" radius="1">
 		<monster name="Skeleton" x="-1" y="-1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1332" centery="1662" centerz="8" radius="1">
-		<monster name="Adept of the Cult" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1281" centery="1663" centerz="8" radius="1">
 		<monster name="Novice of the Cult" x="0" y="-1" z="8" spawntime="60" />
@@ -10566,12 +10572,6 @@
 	<spawn centerx="1306" centery="1663" centerz="8" radius="1">
 		<monster name="Acolyte of the Cult" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1315" centery="1663" centerz="8" radius="1">
-		<monster name="Novice of the Cult" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1324" centery="1663" centerz="8" radius="1">
-		<monster name="Acolyte of the Cult" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
 	<spawn centerx="713" centery="1664" centerz="8" radius="2">
 		<monster name="Skeleton" x="-2" y="-1" z="8" spawntime="60" />
 		<monster name="Skeleton" x="1" y="2" z="8" spawntime="60" />
@@ -10584,6 +10584,12 @@
 		<monster name="Skeleton" x="1" y="-2" z="8" spawntime="60" />
 		<monster name="Skeleton" x="-2" y="2" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1314" centery="1664" centerz="8" radius="1">
+		<monster name="Novice of the Cult" x="1" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1322" centery="1664" centerz="8" radius="1">
+		<monster name="Acolyte of the Cult" x="-1" y="-1" z="8" spawntime="110" />
+	</spawn>
 	<spawn centerx="779" centery="1666" centerz="8" radius="2">
 		<monster name="Skeleton" x="0" y="-1" z="8" spawntime="60" />
 		<monster name="Skeleton" x="2" y="1" z="8" spawntime="60" />
@@ -10593,10 +10599,6 @@
 		<monster name="Rotworm" x="3" y="-1" z="8" spawntime="60" />
 		<monster name="Rotworm" x="0" y="2" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1336" centery="1666" centerz="8" radius="2">
-		<monster name="Acolyte of the Cult" x="2" y="-1" z="8" spawntime="60" />
-		<monster name="Acolyte of the Cult" x="-2" y="1" z="8" spawntime="60" />
-	</spawn>
 	<spawn centerx="681" centery="1667" centerz="8" radius="1">
 		<monster name="Skeleton" x="1" y="-1" z="8" spawntime="60" />
 		<monster name="Skeleton Warrior" x="-1" y="0" z="8" spawntime="60" />
@@ -10605,6 +10607,9 @@
 		<monster name="Rotworm" x="-2" y="-3" z="8" spawntime="60" />
 		<monster name="Rotworm" x="3" y="-1" z="8" spawntime="60" />
 		<monster name="Rotworm" x="0" y="3" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1336" centery="1667" centerz="8" radius="1">
+		<monster name="Acolyte of the Cult" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="679" centery="1668" centerz="8" radius="1" />
 	<spawn centerx="790" centery="1670" centerz="8" radius="2">
@@ -10622,7 +10627,7 @@
 		<monster name="Skeleton" x="0" y="2" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1334" centery="1675" centerz="8" radius="1">
-		<monster name="Acolyte of the Cult" x="0" y="1" z="8" spawntime="60" />
+		<monster name="Acolyte of the Cult" x="0" y="1" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="715" centery="1676" centerz="8" radius="2">
 		<monster name="Skeleton Warrior" x="-1" y="-2" z="8" spawntime="60" />
@@ -10649,9 +10654,8 @@
 		<monster name="Skeleton" x="2" y="-1" z="8" spawntime="60" />
 		<monster name="Skeleton" x="-2" y="1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1334" centery="1684" centerz="8" radius="2">
-		<monster name="Novice of the Cult" x="2" y="-2" z="8" spawntime="60" />
-		<monster name="Novice of the Cult" x="-1" y="2" z="8" spawntime="60" />
+	<spawn centerx="1334" centery="1684" centerz="8" radius="1">
+		<monster name="Novice of the Cult" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1507" centery="1684" centerz="8" radius="1">
 		<npc name="Rimi" x="-1" y="0" z="8" spawntime="60" direction="2" />
@@ -10693,7 +10697,7 @@
 		<monster name="Cyclops Smith" x="0" y="-1" z="8" spawntime="200" />
 	</spawn>
 	<spawn centerx="1335" centery="1693" centerz="8" radius="2">
-		<monster name="Novice of the Cult" x="-1" y="-2" z="8" spawntime="60" />
+		<monster name="Novice of the Cult" x="-1" y="-2" z="8" spawntime="110" />
 		<monster name="Novice of the Cult" x="-2" y="2" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="685" centery="1694" centerz="8" radius="1">
