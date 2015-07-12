@@ -23212,8 +23212,7 @@
 	<item fromid="14659" toid="14665" name="small moist stones" />
 	<item fromid="14668" toid="14705" name="hive structure" />
 	<item fromid="14706" toid="14715" article="a" name="hive structure" />
-	<item fromid="14755" toid="14757" article="a" name="hive gate" />
-	<item fromid="14767" toid="14769" article="a" name="hive gate" />
+	<item fromid="14750" toid="14771" article="a" name="hive gate" />
 	<item id="14818" article="a" name="ramp">
 		<attribute key="floorchange" value="north" />
 	</item>
