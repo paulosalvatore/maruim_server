@@ -7,13 +7,14 @@ modalRecompensaAberto = {}
 
 RecompensasNivel = {
 	[1] = {
-		nivel = 12,
-		recompensa = {2160, 1}
+		nivel = 8,
+		vocacao = {"sorcerer"},
+		recompensa = {2190, 1}
 	},
 	[2] = {
-		nivel = 13,
-		vocacao = {"sorcerer", "druid", "knight"},
-		recompensa = {2148, 1}
+		nivel = 8,
+		vocacao = {"druid"},
+		recompensa = {2182, 1}
 	}
 }
 
@@ -91,7 +92,7 @@ function Player.entregarRecompensa(self, recompensaId, correio)
 	adicionarPara:addItem(item[1], item[2], true, 1)
 	self:setStorageValue(recompensaIdBase+recompensasInicio+recompensaId, 0)
 	if not self:pegarRecompensaPendente() then
-		player:unregisterEvent("RecompensaNivel")
+		self:unregisterEvent("RecompensaNivel")
 		self:setStorageValue(recompensaIdBase+recompensaPendente, 0)
 	end
 end
@@ -122,7 +123,7 @@ function Player.enviarModalRecompensaMaisTarde(self, recompensaId, tempo)
 		end
 
 		if not modalRecompensaAberto[playerId] or modalRecompensaAberto[playerId] == recompensaId then
-			self:enviarModalRecompensa(recompensaId)
+			player:enviarModalRecompensa(recompensaId)
 		end
 	end, tempo*1000, self:getId(), recompensaId)
 end
