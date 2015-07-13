@@ -34,7 +34,8 @@ Tasks = {
 	[1] = {
 		nivelMinimo = 0,
 		nivelMaximo = 0,
-		quantidade = 50,
+		repetir = 1,
+		quantidade = 1,
 		criatura = "vampire",
 		recompensa = {
 			reputacao = 100
@@ -44,6 +45,7 @@ Tasks = {
 		nivelMinimo = 0,
 		nivelMaximo = 0,
 		quantidade = 50,
+		repetir = 0,
 		criatura = "fire elemental",
 		recompensa = {
 			reputacao = 100
@@ -157,8 +159,7 @@ function Player.pegarTasksDisponiveis(self)
 	for a, b in pairs(Tasks) do
 		local playerLevel = self:getLevel()
 		local statusTask = self:verificarStatusTask(a)
-		if	(statusTask == 0 or
-			statusTask == configTasks.valorFinalizada) and
+		if	(statusTask == 0 or (b.repetir == 1 and statusTask == configTasks.valorFinalizada)) and
 			((b.nivelMinimo == nil) or (b.nivelMinimo == 0) or (b.nivelMinimo > 0 and playerLevel >= b.nivelMinimo)) and
 			((b.nivelMaximo == nil) or (b.nivelMaximo == 0) or (b.nivelMaximo > 0 and playerLevel <= b.nivelMaximo)) and
 			((b.reputacao == nil) or (b.reputacao == 0) or (b.reputacao > 0 and self:pegarReputacao() >= b.reputacao)) then
@@ -381,17 +382,22 @@ function Player.enviarTasksModalInfo(self, taskId, modalId)
 	if recompensa.reputacao ~= nil then
 		modalMensagem = modalMensagem .. "Reputação: " .. recompensa.reputacao .. "\n"
 	end
+	if task.repetir == 1 and (statusTask == configTasks.valorCompleta or statusTask == configTasks.valorFinalizada) then
+		modalMensagem = modalMensagem .. "\nCaso queira, você pode realizá-la novamente. Para isso, clique no botão 'Iniciar'.\n"
+	end
 	local modal = ModalWindow(configTasks.storageBase+modalId, modalTitulo, modalMensagem)
-	if statusTask == 0 then
+	modal:addButton(3, "Voltar")
+	modal:addButton(2, "Sair")
+	if statusTask == 0 or (task.repetir == 1 and (statusTask == configTasks.valorCompleta or statusTask == configTasks.valorFinalizada)) then
 		modal:addButton(1, "Iniciar")
-		modal:setDefaultEnterButton(1)
+		if statusTask == 0 then
+			modal:setDefaultEnterButton(1)
+		end
 	end
 	modal:setDefaultEscapeButton(2)
-	modal:addButton(3, "Voltar")
 	if statusTask > 0 then
 		modal:setDefaultEnterButton(3)
 	end
-	modal:addButton(2, "Sair")
 	modal:sendToPlayer(self)
 end
 function Player.retirarRecompensa(self, taskId)
