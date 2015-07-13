@@ -17,4 +17,6 @@
 	<event type="login" name="Tutorial" script="tutorial.lua" />
 	<event type="modalwindow" name="TutorialModal" script="tutorial.lua" />
 	<event type="modalwindow" name="ItensKnight" script="itensKnight.lua" />
+	<event type="think" name="RecompensaNivel" script="RecompensaNivel.lua" />
+	<event type="modalwindow" name="RecompensaNivelModal" script="RecompensaNivel.lua" />
 </creaturescripts>

@@ -21,5 +21,10 @@ function onLogin(player)
 	player:registerEvent("DropLoot")
 	player:registerEvent("MatarCriatura")
 	player:registerEvent("LevelUp")
+
+	if player:checarRecompensaPendente() then
+		player:registerEvent("RecompensaNivel")
+	end
+
 	return true
 end
