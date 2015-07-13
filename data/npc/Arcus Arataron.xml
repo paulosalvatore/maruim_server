@@ -3,8 +3,8 @@
 	<health now="100" max="100" />
 	<look type="146" head="1" body="19" legs="65" feet="57" addons="3" />
 	<parameters>
-		<parameter key="shop_buyable" value="obsidian knife,5908,100,0,0;skinning knife,13828,100,0,0;"/>
-		<parameter key="shop_sellable" value="hat of the mad,2323,1000;blue robe,2656,1700;mystic turban,2663,200;bandana,5917,50;pirate knee breeches,5918,120;pirate shirt,6095,100;pirate hat,6096,350;fur boots,7457,100;fur cap,7458,300;mammoth fur cape,7463,300;mammoth fur shorts,7464,100;blue legs,7730,1000;magma boots,7891,1800;glacier shoes,7892,1800;spirit cloak,8870,200;belted cape,8872,400;ethno coat,8892,150;jade hat,11368,2000;mage's cap,13756,500;"/>
+		<parameter key="shop_buyable" value="obsidian knife,5908,100,0,0;skinning knife,13828,100,0,0;" />
+		<parameter key="shop_sellable" value="hat of the mad,2323,1000;blue robe,2656,1700;mystic turban,2663,200;bandana,5917,50;pirate knee breeches,5918,120;pirate shirt,6095,100;pirate hat,6096,350;fur boots,7457,100;fur cap,7458,300;mammoth fur cape,7463,300;mammoth fur shorts,7464,100;blue legs,7730,1000;magma boots,7891,1800;glacier shoes,7892,1800;spirit cloak,8870,200;belted cape,8872,400;ethno coat,8892,150;jade hat,11368,2000;mage's cap,13756,500;" />
 		<parameter key="module_shop" value="1" />
 	</parameters>
 </npc>

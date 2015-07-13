@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <npc name="Melamif Tufis" script="default.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
-	<look type="147" head="0" body="114" legs="76" feet="117" addons="0"/>
+	<look type="147" head="0" body="114" legs="76" feet="117" addons="0" />
 	<parameters>
 		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja de utilidades." />
 		<parameter key="message_sendtrade" value="Está pensando em ir pra alguma aventura? Dê uma olhada aqui." /> 

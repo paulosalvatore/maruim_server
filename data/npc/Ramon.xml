@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <npc name="Ramon" script="inativo.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
-	<look type="472" head="0" body="21" legs="21" feet="59" addons="3"/>
+	<look type="472" head="0" body="21" legs="21" feet="59" addons="3" />
 </npc>

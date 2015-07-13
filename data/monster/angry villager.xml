@@ -22,7 +22,7 @@
 	</attacks>
 	<defenses armor="10" defense="10" />
 	<immunities>
-		<immunity invisible="1"/>
+		<immunity invisible="1" />
 	</immunities>
 	<loot>
 		<item id="12382" chance="10000" /><!-- Scribbled Sheet of Paper -->

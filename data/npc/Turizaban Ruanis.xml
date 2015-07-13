@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <npc name="Turizaban Ruanis" script="default.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
-	<look type="160" head="114" body="114" legs="114" feet="114"/>
+	<look type="160" head="114" body="114" legs="114" feet="114" />
 	<parameters>
 		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo aos correios." />
 		<parameter key="message_sendtrade" value="Deseja mandar algum presente?" /> 

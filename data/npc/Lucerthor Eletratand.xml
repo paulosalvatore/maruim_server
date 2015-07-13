@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <npc name="Lucerthor Eletratand" script="default.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
-	<look type="134" head="49" body="60" legs="114" feet="40" addons="3"/>
+	<look type="134" head="49" body="60" legs="114" feet="40" addons="3" />
 	<parameters>
 		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja de utilidades." />
 		<parameter key="message_sendtrade" value="Está pensando em ir pra alguma aventura? Dê uma olhada aqui." /> 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <npc name="Gras Fravotroth" script="reputation.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
-	<look type="134" head="114" body="12" legs="95" feet="1" addons="3"/>
+	<look type="134" head="114" body="12" legs="95" feet="1" addons="3" />
 	<parameters>
 	</parameters>
 </npc>
