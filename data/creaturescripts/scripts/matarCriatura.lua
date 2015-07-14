@@ -3,11 +3,12 @@ function onKill(player, target)
 		return true 
 	end
 
-	local taskId = target:checarTask()
-	if taskId > 0 then
-		local statusTask = player:verificarStatusTask(taskId)
-		if statusTask == configTasks.valorIniciada then
-			player:adicionarProgressoTask(taskId)
+	local tasks = target:checarTask()
+	if #tasks > 0 then
+		for a, b in pairs(tasks) do
+			if player:verificarStatusTask(b) == configTasks.valorIniciada then
+				player:adicionarProgressoTask(b)
+			end
 		end
 	end
 
