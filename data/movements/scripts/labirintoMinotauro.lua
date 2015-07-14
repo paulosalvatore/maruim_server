@@ -33,7 +33,7 @@ local config = {
 	{posicaoJogador = {x = 714, y = 966, z = 10}, posicaoDestino = posicaoInicial},
 	{posicaoJogador = {x = 715, y = 971, z = 10}, posicaoDestino = posicaoInicial},
 	{posicaoJogador = {x = 715, y = 972, z = 10}, posicaoDestino = posicaoInicial},
-	{posicaoJogador = {x = 713, y = 943, z = 10}, posicaoDestino = posicaoInicial},
+	{posicaoJogador = {x = 712, y = 940, z = 10}, posicaoDestino = posicaoInicial},
 	{posicaoJogador = {x = 714, y = 964, z = 10}, posicaoDestino = posicaoInicial},
 	{posicaoJogador = {x = 717, y = 964, z = 10}, posicaoDestino = posicaoInicial},
 	{posicaoJogador = {x = 697, y = 966, z = 10}, posicaoDestino = {x = 697, y = 969, z = 10}},
