@@ -508,6 +508,24 @@ local config = {
 			checarPz = true
 		}
 	},
+	[14756] = {
+		["default"] = {
+			verificarPosicaoTeleportar = {
+				{{y = -1}, {y = 1}, "item", "sul"},
+				{{y = 1}, {y = -1}, "item", "norte"}
+			},
+			efeitoTeleport = "poff"
+		}
+	},
+	[14768] = {
+		["default"] = {
+			verificarPosicaoTeleportar = {
+				{{x = -1}, {x = 1}, "item", "leste"},
+				{{x = 1}, {x = -1}, "item", "oeste"}
+			},
+			efeitoTeleport = "poff"
+		}
+	},
 	[11754] = {
 		["default"] = {
 			transformar = {11755, 1, "item"},
