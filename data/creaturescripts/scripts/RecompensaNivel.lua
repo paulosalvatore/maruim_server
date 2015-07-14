@@ -12,9 +12,9 @@ function onThink(player, interval)
 end
 
 function onModalWindow(player, modalWindowId, buttonId, choiceId)
-	if modalWindowId < recompensaIdBase or modalWindowId > recompensaIdBase+recompensasMaximo then
+	if modalWindowId < recompensaIdBase or modalWindowId > recompensaIdBase+recompensasInicio+recompensasMaximo then
 		return false
-	elseif modalWindowId > recompensaIdBase+recompensasInicio and modalWindowId < recompensaIdBase+recompensasMaisTardeInicio then
+	elseif modalWindowId > recompensaIdBase+recompensasInicio and modalWindowId < recompensaIdBase+recompensasOpcoesInicio then
 		local recompensaId = modalWindowId - recompensaIdBase - recompensasInicio
 		if buttonId == 1 then
 			if choiceId == 1 then
@@ -24,10 +24,19 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 			elseif choiceId == 3 then
 				player:modalTempoRecompensaMaisTarde(recompensaId)
 			end
+		elseif buttonId == 3 then
+			player:removerEscolhaRecompensa(recompensaId)
 		else
 			player:enviarModalRecompensaMaisTarde(recompensaId, 30)
 		end
-	elseif modalWindowId > recompensaIdBase+recompensasInicio+recompensasMaisTardeInicio and modalWindowId < recompensaIdBase+recompensasMaximo then
+	elseif modalWindowId > recompensaIdBase+recompensasInicio+recompensasOpcoesInicio and modalWindowId < recompensaIdBase+recompensasInicio+recompensasMaisTardeInicio then
+		local recompensaId = modalWindowId - recompensaIdBase - recompensasOpcoesInicio - recompensasInicio
+		if buttonId == 1 then
+			player:selecionarRecompensa(recompensaId, choiceId)
+		else
+			player:enviarModalRecompensaMaisTarde(recompensaId, 30)
+		end
+	elseif modalWindowId > recompensaIdBase+recompensasInicio+recompensasMaisTardeInicio and modalWindowId < recompensaIdBase+recompensasInicio+recompensasMaximo then
 		local recompensaId = modalWindowId - recompensaIdBase - recompensasMaisTardeInicio - recompensasInicio
 		if buttonId == 1 and choiceId == 1 then
 			player:enviarModalRecompensaMaisTarde(recompensaId, 10)
