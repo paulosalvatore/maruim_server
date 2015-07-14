@@ -119,20 +119,6 @@ posicoesDepot = {
 	[13] = {x = 1530, y = 1702, z = 7} -- Khazad-dûm
 }
 
-function Tile.getTileTopTopItem(self)
-	local items = self:getItems()
-	return items[#items].itemid
-end
-
-local function inArray(table, value)
-	for i,v in pairs(table) do
-		if (v.name == string.lower(value)) then
-			return i
-		end
-	end
-	return 0
-end
-
 function getDistanceBetween(firstPosition, secondPosition)
 	local xDif = math.abs(firstPosition.x - secondPosition.x)
 	local yDif = math.abs(firstPosition.y - secondPosition.y)
