@@ -11,9 +11,14 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local targetId = target.itemid
 	if(items[targetId]) then
 		if(math.random(100) > chanceFalha) then
-			doSendMagicEffect(target:getPosition(), CONST_ME_HITBYFIRE)
-			target:transform(items[targetId].transformar)
-			target:decay()
+			target:getPosition():sendMagicEffect(efeitos["fire"])
+			if target:getType():isMovable() then
+				target:remove(1)
+				player:addItem(items[targetId].transformar, 1)
+			else
+				target:transform(items[targetId].transformar)
+				target:decay()
+			end
 			local duracao = items[targetId].duracao
 			local decairPara = items[targetId].decairPara
 			if duracao ~= nil then
@@ -39,7 +44,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				end, duracao*1000, items[targetId].transformar, toPosition, decairPara)
 			end
 		else
-			item:remove()
+			item:remove(1)
 			doTargetCombatHealth(0, player, COMBAT_FORMULA_DAMAGE, -5, -5, CONST_ME_FIREAREA)
 		end
 		return true
