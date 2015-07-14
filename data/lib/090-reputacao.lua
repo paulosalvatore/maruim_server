@@ -7,7 +7,7 @@ Reputacao = {
 		},
 		{
 			nome = "Amigável",
-			pontos = 500,
+			pontos = 100,
 			fraseNpc = "Olá |PLAYERNAME|, você deseja verificar suas {tarefas} ou por acaso está procurando por uma {promoção}?",
 			fraseNpcPromovido = "Olá |PLAYERNAME|, você deseja verificar suas {tarefas} ou visualizar os itens disponíveis para {negociação}?"
 		},
@@ -19,13 +19,13 @@ Reputacao = {
 		},
 		{
 			nome = "Reverenciado",
-			pontos = 3000,
+			pontos = 2000,
 			fraseNpc = "Olá |PLAYERNAME|, você deseja verificar suas {tarefas} ou por acaso está procurando por uma {promoção}?",
 			fraseNpcPromovido = "Olá |MESTRE| |PLAYERNAME|, você deseja verificar suas {tarefas} ou visualizar os itens disponíveis para {negociação}?"
 		},
 		{
 			nome = "Exaltado",
-			pontos = 6000,
+			pontos = 5000,
 			fraseNpc = "Olá |PLAYERNAME|, você deseja verificar suas {tarefas} ou por acaso está procurando por uma {promoção}?",
 			fraseNpcPromovido = "Olá |VOCATIONNAME| |PLAYERNAME|, você deseja verificar suas {tarefas} ou visualizar os itens disponíveis para {negociação}?"
 		}
@@ -35,7 +35,7 @@ Reputacao = {
 		[9941] = {preco = 100, reputacao = 1},
 		[9980] = {preco = 100, reputacao = 1},
 	},
-	promocao = 500
+	promocao = 200
 }
 function pegarNpcReputacao(vocacaoId)
 	if vocacaoId == 1 or vocacaoId == 5 then
