@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <quests>
-	<quest name="Tarefas" startstorageid="30001" startstoragevalue="1">
+	<quest name="Tarefas" startstorageid="30000" startstoragevalue="1">
 		<mission name="Vampire" storageid="30001" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Objetivo: Matar 50 'Vampires'. Recompensa: 200 Pontos de Reputação." />
 			<missionstate id="2" description="Você deve matar 50 'Vampires' para completar essa tarefa e receber 200 pontos de reputação." />

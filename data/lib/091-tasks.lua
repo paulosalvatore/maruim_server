@@ -90,6 +90,9 @@ end
 
 function Player.iniciarTask(self, taskId)
 	local task = Tasks[taskId]
+	if self:getStorageValue(configTasks.storageBase) ~= 1 then
+		self:setStorageValue(configTasks.storageBase, 1)
+	end
 	self:setStorageValue(configTasks.storageBase+taskId, configTasks.valorIniciada)
 	self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Nova tarefa iniciada.")
 end
