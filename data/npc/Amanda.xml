@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_sellable" value="red tome,1986,1;spellbook,2175,30;spellbook,2217,30;blank rune,2260,10;cultish mask,10555,80;cultish robe,10556,35;tattered piece of robe,10601,1;book of necromantic rituals,11237,50;luminous orb,12410,1;cultish symbol,12411,20;reins,13295,1;lancet,21242,55;horoscope,21243,20;blood tincture in a vial,21245,12;incantation notes,21246,100;pieces of magic chalk,21247,80;" />
+		<parameter key="shop_sellable" value="red tome,1986,1;spellbook,2175,30;spellbook,2217,30;blank rune,2260,10;cultish mask,10555,80;cultish robe,10556,35;tattered piece of robe,10601,1;book of necromantic rituals,11237,50;luminous orb,12410,1;cultish symbol,12411,20;reins,13295,1;lancet,21242,55;horoscope,21243,20;blood tincture in a vial,21245,20;incantation notes,21246,100;pieces of magic chalk,21247,80;" />
 	</parameters>
 </npc>
