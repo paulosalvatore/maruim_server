@@ -201,3 +201,28 @@ function atualizarCidades()
 		db.query("INSERT INTO `z_cidades` (`id`, `nome`, `posx`, `posy`, `posz`) VALUES ('" .. a .. "', " .. db.escapeString(formatarNomeCidade(b:getName())) .. ", " .. db.escapeString(posicaoCidade.x) .. ", " .. db.escapeString(posicaoCidade.y) .. ", " .. db.escapeString(posicaoCidade.z) .. ")")
 	end
 end
+
+itensSemNome = {}
+itensSemNomeVerificados = {}
+function verificarItensSemNome()
+	print(">> Verificando itens sem nome...")
+	for z = 0, 15 do
+		for x = 0, 3000 do
+			for y = 0, 3000 do
+				local tile = Tile(x, y, z)
+				if tile then
+					local itens = tile:getItems()
+					if itens and #itens > 0 then
+						for i = 1, #itens do
+							if itens[i]:getName() == "" and not isInArray(itensSemNome, itens[i]:getId()) then
+								table.insert(itensSemNome, itens[i]:getId())
+							end
+						end
+					end
+				end
+			end
+		end
+		print("> Andar " .. z .. " verificado.")
+	end
+	print("> " .. #itensSemNome .. " itens sem nome foram encontrados.")
+end

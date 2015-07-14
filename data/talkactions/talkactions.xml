@@ -36,6 +36,7 @@
 	<talkaction words="/atualizarBanco" separator=" " script="atualizarBanco.lua" />
 	<talkaction words="/addHealth" separator=" " script="addHealth.lua" />
 	<talkaction words="/online" script="online.lua" />
+	<talkaction words="/verificarItensSemNome" separator=" " script="verificarItensSemNome.lua" />
 
 	<!-- player talkactions -->
 	<!-- 
