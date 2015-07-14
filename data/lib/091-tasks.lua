@@ -31,22 +31,62 @@ configTasks = {
 	-- }
 -- }
 Tasks = {
-	[1] = {
+	{
 		nivelMinimo = 0,
 		nivelMaximo = 0,
 		repetir = 1,
-		quantidade = 1,
+		quantidade = 50,
 		criatura = "vampire",
+		recompensa = {
+			reputacao = 200
+		}
+	},
+	{
+		nivelMinimo = 0,
+		nivelMaximo = 0,
+		quantidade = 50,
+		repetir = 1,
+		criatura = "fire elemental",
+		recompensa = {
+			reputacao = 200
+		}
+	},
+	{
+		nivelMinimo = 0,
+		nivelMaximo = 0,
+		quantidade = 40,
+		repetir = 0,
+		criatura = "rotworm",
 		recompensa = {
 			reputacao = 100
 		}
 	},
-	[2] = {
+	{
 		nivelMinimo = 0,
 		nivelMaximo = 0,
-		quantidade = 50,
+		quantidade = 40,
 		repetir = 0,
-		criatura = "fire elemental",
+		criatura = "minotaur",
+		recompensa = {
+			reputacao = 100
+		}
+	},
+	{
+		nivelMinimo = 0,
+		nivelMaximo = 0,
+		quantidade = 40,
+		repetir = 0,
+		criatura = "larva",
+		recompensa = {
+			reputacao = 100
+		}
+	},
+	{
+		nivelMinimo = 0,
+		nivelMaximo = 0,
+		quantidade = 40,
+		repetir = 0,
+		criatura = "goblin",
 		recompensa = {
 			reputacao = 100
 		}
