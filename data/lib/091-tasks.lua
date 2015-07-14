@@ -11,7 +11,8 @@ configTasks = {
 	modalTasksDisponiveisInfo = 4,
 	modalTasksProgressoInfo = 5,
 	modalTasksRealizadasInfo = 6,
-	modalTasksRecompensas = 7
+	modalTasksRecompensas = 7,
+	limiteTasksProgresso = 3
 }
 -- Exemplo de Configuração:
 -- [idTarefa] = {
@@ -196,6 +197,9 @@ function Creature.checarTask(self)
 end
 function Player.pegarTasksDisponiveis(self)
 	local tasks = {}
+	if #self:pegarTasksProgresso() == configTasks.limiteTasksProgresso then
+		return tasks
+	end
 	for a, b in pairs(Tasks) do
 		local playerLevel = self:getLevel()
 		local statusTask = self:verificarStatusTask(a)
@@ -428,7 +432,7 @@ function Player.enviarTasksModalInfo(self, taskId, modalId)
 	local modal = ModalWindow(configTasks.storageBase+modalId, modalTitulo, modalMensagem)
 	modal:addButton(3, "Voltar")
 	modal:addButton(2, "Sair")
-	if statusTask == 0 or (task.repetir == 1 and (statusTask == configTasks.valorCompleta or statusTask == configTasks.valorFinalizada)) then
+	if #self:pegarTasksProgresso() < configTasks.limiteTasksProgresso and (statusTask == 0 or (task.repetir == 1 and (statusTask == configTasks.valorCompleta or statusTask == configTasks.valorFinalizada))) then
 		modal:addButton(1, "Iniciar")
 		if statusTask == 0 then
 			modal:setDefaultEnterButton(1)
