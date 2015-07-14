@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quests>
-	<quest name="Example Quest I" startstorageid="1001" startstoragevalue="1">
-		<mission name="Example Mission 1" storageid="1001" startvalue="1" endvalue="3">
-			<missionstate id="1" description="Example description 1" />
-			<missionstate id="2" description="Example description 2" />
-			<missionstate id="3" description="Example description 3" />
+	<quest name="Tarefas" startstorageid="30001" startstoragevalue="1">
+		<mission name="Vampire" storageid="30001" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Objetivo: Matar 50 'Vampires'. Recompensa: 200 Pontos de Reputação." />
+			<missionstate id="2" description="Você deve matar 50 'Vampires' para completar essa tarefa e receber 200 pontos de reputação." />
+			<missionstate id="3" description="Você matou 50 'Vampires' e recebeu 200 pontos de reputação." />
 		</mission>
-		<mission name="Example Mission 2" storageid="1001" startvalue="4" endvalue="5">
-			<missionstate id="4" description="Example description 1" />
-			<missionstate id="5" description="Example description 2" />
+		<mission name="Fire Elemental" storageid="30002" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Objetivo: Matar 50 'Fire Elementals'. Recompensa: 200 Pontos de Reputação." />
+			<missionstate id="2" description="Você deve matar 50 'Fire Elementals' para completar essa tarefa e receber 200 pontos de reputação." />
+			<missionstate id="3" description="Você matou 50 'Fire Elementals' e recebeu 200 pontos de reputação." />
+		</mission>
+		<mission name="Rotworm" storageid="30003" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Objetivo: Matar 40 'Rotworms'. Recompensa: 100 Pontos de Reputação." />
+			<missionstate id="2" description="Você deve matar 40 'Rotworms' para completar essa tarefa e receber 100 pontos de reputação." />
+			<missionstate id="3" description="Você matou 40 'Rotworms' e recebeu 100 pontos de reputação." />
+		</mission>
+		<mission name="Minotaur" storageid="30004" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Objetivo: Matar 40 'Minotaurs'. Recompensa: 100 Pontos de Reputação." />
+			<missionstate id="2" description="Você deve matar 40 'Minotaurs' para completar essa tarefa e receber 100 pontos de reputação." />
+			<missionstate id="3" description="Você matou 40 'Minotaurs' e recebeu 100 pontos de reputação." />
+		</mission>
+		<mission name="Larva" storageid="30005" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Objetivo: Matar 40 'Larvas'. Recompensa: 100 Pontos de Reputação." />
+			<missionstate id="2" description="Você deve matar 40 'Larvas' para completar essa tarefa e receber 100 pontos de reputação." />
+			<missionstate id="3" description="Você matou 40 'Larvas' e recebeu 100 pontos de reputação." />
+		</mission>
+		<mission name="Goblin" storageid="30006" startvalue="1" endvalue="3">
+			<missionstate id="1" description="Objetivo: Matar 40 'Goblins'. Recompensa: 100 Pontos de Reputação." />
+			<missionstate id="2" description="Você deve matar 40 'Goblins' para completar essa tarefa e receber 100 pontos de reputação." />
+			<missionstate id="3" description="Você matou 40 'Goblins' e recebeu 100 pontos de reputação." />
 		</mission>
 	</quest>
 </quests>
