@@ -8,7 +8,7 @@ function onLogin(player)
 			player:sendTextMessage(MESSAGE_STATUS_DEFAULT, loginStr)
 		end
 
-		loginStr = string.format("Sua última visita foi em %s.", os.date("%a %b %d %X %Y", player:getLastLoginSaved()))
+		loginStr = string.format("Sua última visita foi em %s.", os.date("%d/%m/%Y às %X", player:getLastLoginSaved()))
 	end
 	player:sendTextMessage(MESSAGE_STATUS_DEFAULT, loginStr)
 
