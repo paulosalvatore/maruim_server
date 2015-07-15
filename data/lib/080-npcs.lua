@@ -89,7 +89,8 @@ destinos = {
 		nome = "Ilha dos Dragões",
 		posicao = {x = 704, y = 1241, z = 7},
 		custo = 100,
-		levelNecessario = 0
+		levelNecessario = 0,
+		palavrasChave = {"ilha dos dragoes"}
 	},
 	["ilha_inicial_parte_alta_baixa"] = {
 		nome = "Parte Baixa da Ilha",
