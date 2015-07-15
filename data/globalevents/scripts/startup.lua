@@ -1,3 +1,8 @@
+local function atualizarOnline()
+	db.query("UPDATE `server_config` SET `value` = " .. db.escapeString(os.time()) .. " WHERE `config` = 'online'")
+	addEvent(atualizarOnline, 10*1000)
+end
+
 function onStartup()
 	db.query("TRUNCATE TABLE `players_online`")
 	db.asyncQuery("DELETE FROM `guild_wars` WHERE `status` = 0")
@@ -34,6 +39,9 @@ function onStartup()
 		until not result.next(resultId)
 		result.free(resultId)
 	end
+
+	atualizarOnline()
+	db.query("UPDATE `server_config` SET `value` = " .. db.escapeString(os.time()) .. " WHERE `config` = 'uptime'")
 
 	gerarPontosColetaMadeira()
 	iniciarJefrey()
