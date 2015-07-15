@@ -46,6 +46,9 @@
 	<spawn centerx="836" centery="1716" centerz="3" radius="1">
 		<monster name="Roaring Lion" x="1" y="-1" z="3" spawntime="170" />
 	</spawn>
+	<spawn centerx="802" centery="1718" centerz="3" radius="1">
+		<monster name="Roaring Lion" x="0" y="-1" z="3" spawntime="170" />
+	</spawn>
 	<spawn centerx="819" centery="1721" centerz="3" radius="1">
 		<monster name="Roaring Lion" x="0" y="-1" z="3" spawntime="170" />
 	</spawn>
