@@ -203,6 +203,7 @@ function atualizarCidades()
 end
 
 itensSemNome = {}
+verificarItensSemNome = true
 itensSemNomeVerificados = {}
 function verificarItensSemNome()
 	print(">> Verificando itens sem nome...")
@@ -211,11 +212,13 @@ function verificarItensSemNome()
 			for y = 0, 3000 do
 				local tile = Tile(x, y, z)
 				if tile then
-					local itens = tile:getItems()
-					if itens and #itens > 0 then
-						for i = 1, #itens do
-							if itens[i]:getName() == "" and not isInArray(itensSemNome, itens[i]:getId()) then
-								table.insert(itensSemNome, itens[i]:getId())
+					if z ~= 7 or (z == 7 and (x < 687 or x > 932) and (y < 2050 or y > 2258)) then
+						local itens = tile:getItems()
+						if itens and #itens > 0 then
+							for i = 1, #itens do
+								if itens[i]:getName() == "" and not isInArray(itensSemNome, itens[i]:getId()) then
+									table.insert(itensSemNome, itens[i]:getId())
+								end
 							end
 						end
 					end
@@ -224,5 +227,6 @@ function verificarItensSemNome()
 		end
 		print("> Andar " .. z .. " verificado.")
 	end
+	table.sort(itensSemNome)
 	print("> " .. #itensSemNome .. " itens sem nome foram encontrados.")
 end

@@ -10,8 +10,11 @@ function onSay(player, words, param)
 	if param == "zerar" then
 		itensSemNomeVerificados[player:getId()] = nil
 	else
-		if #itensSemNome == 0 then
+		if verificarItensSemNome then
 			verificarItensSemNome()
+		end
+		if #verificarItensSemNome == 0 then
+			return false
 		end
 
 		if not itensSemNomeVerificados[player:getId()] then
@@ -28,6 +31,9 @@ function onSay(player, words, param)
 			for i = 1, #itensTile do
 				itensTile[i]:remove(1)
 			end
+		end
+		if not itensSemNome[verificarItem] then
+			return false
 		end
 		player:sendTextMessage(MESSAGE_EVENT_DEFAULT, "Item " .. itensSemNome[verificarItem] .. " inserido.")
 		Game.createItem(itensSemNome[verificarItem], 1, posicaoItem)
