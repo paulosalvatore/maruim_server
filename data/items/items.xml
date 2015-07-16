@@ -30356,7 +30356,7 @@
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item fromid="22513" toid="22514" article="a" name="pile of bones">
+	<item fromid="22513" toid="22514" article="a" name="pile of bones" />
 	<item id="22516" article="a" name="ring of ending">
 		<attribute key="description" value="This constantly rotating ring is perfectly weightless, yet feels infinitely heavy at the same time." />
 		<attribute key="slotType" value="ring" />
