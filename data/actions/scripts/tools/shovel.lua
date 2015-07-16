@@ -1,8 +1,9 @@
-local holes = {468, 481, 483}
+local holes = {468, 481, 483, 7932}
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if isInArray(holes, target.itemid) then
 		target:transform(target.itemid + 1)
 		target:decay()
+		toPosition:sendMagicEffect(CONST_ME_POFF)
 	elseif target.itemid == 231 then
 		local rand = math.random(1, 100)
 		if rand == 1 then
