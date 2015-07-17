@@ -29,16 +29,16 @@ local config = {
 }
 
 function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if (item.actionid ~= nil and config["action"][item.actionid]) or item.uid ~= nil or (item.uid ~= nil and config["unique"][item.uid]) then
+	if (item.actionid ~= nil and config["action"][item.actionid]) or item.uid <= 65535 or (item.uid <= 65535 and config["unique"][item.uid]) then
 		local i
 		local storage
 		if config["action"][item.actionid] then
 			i = config["action"][item.actionid]
 			storage = item.actionid
-		elseif config["unique"][item.uid] then
+		elseif item.uid <= 65535 and config["unique"][item.uid] then
 			i = config["unique"][item.uid]
 			storage = item.uid
-		elseif item.uid ~= nil then
+		elseif item.uid <= 65535 then
 			i = {recompensa = {{item.uid, 1}}}
 			storage = item.uid
 		end
