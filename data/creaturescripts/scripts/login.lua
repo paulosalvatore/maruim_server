@@ -2,7 +2,6 @@ function onLogin(player)
 	local loginStr = "Seja bem-vindo ao " .. configManager.getString(configKeys.SERVER_NAME) .. "!"
 	if player:getLastLoginSaved() <= 0 then
 		loginStr = loginStr .. " Por favor, escolha seu outfit."
-		player:sendOutfitWindow()
 	else
 		if loginStr ~= "" then
 			player:sendTextMessage(MESSAGE_STATUS_DEFAULT, loginStr)
