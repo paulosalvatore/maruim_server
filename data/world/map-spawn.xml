@@ -8514,7 +8514,9 @@
 	<spawn centerx="574" centery="900" centerz="8" radius="1">
 		<monster name="Rat" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="647" centery="900" centerz="8" radius="1" />
+	<spawn centerx="647" centery="900" centerz="8" radius="1">
+		<npc name="Gras Fravotroth" x="0" y="-1" z="8" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="546" centery="901" centerz="8" radius="1">
 		<monster name="Cave Rat" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -8616,6 +8618,9 @@
 	<spawn centerx="532" centery="936" centerz="8" radius="1">
 		<monster name="Poison Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="680" centery="938" centerz="8" radius="1">
+		<monster name="Troll" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="417" centery="939" centerz="8" radius="1">
 		<monster name="Wolf" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -8627,9 +8632,6 @@
 	</spawn>
 	<spawn centerx="543" centery="939" centerz="8" radius="1">
 		<monster name="Snake" x="-1" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="678" centery="939" centerz="8" radius="1">
-		<monster name="Troll" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="688" centery="939" centerz="8" radius="1">
 		<monster name="Troll" x="0" y="0" z="8" spawntime="60" />
@@ -13064,6 +13066,9 @@
 	<spawn centerx="436" centery="872" centerz="9" radius="1">
 		<monster name="Skeleton" x="1" y="0" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="674" centery="874" centerz="9" radius="1">
+		<monster name="Rotworm" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="678" centery="875" centerz="9" radius="1">
 		<monster name="Rotworm" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
@@ -13088,6 +13093,9 @@
 		<monster name="Cave Rat" x="1" y="1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="704" centery="889" centerz="9" radius="1">
+		<monster name="Rotworm" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="693" centery="890" centerz="9" radius="1">
 		<monster name="Rotworm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="672" centery="892" centerz="9" radius="1">
