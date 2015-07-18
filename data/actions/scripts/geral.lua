@@ -438,6 +438,16 @@ local config = {
 				chanceSucesso = 3000,
 				chanceNeutra = 3000,
 				profissao = "ferreiro"
+			},
+			[2743] = {
+				itensPlayerAleatorio = {{5921, 1, 10000}},
+				removerTarget = 1,
+				efeito = {"hit"},
+				tempo = 3*60*1000,
+				chanceSucesso = 5000,
+				chanceNeutra = 2000,
+				profissao = "alquimista",
+				expProfissao = 10
 			}
 		}
 	},
@@ -749,6 +759,22 @@ local config = {
 	[23503] = {
 		["default"] = {
 			transformar = {23499, 1, "item"}
+		}
+	},
+	[7585] = {
+		["default"] = {
+			chances = {
+				[7000] = {
+					transformar = {7586, 1, "item"},
+					efeito = {"hit"},
+					criatura = {"Spider", 10000}
+				},
+				[10000] = {
+					transformar = {7586, 1, "item"},
+					efeito = {"hit"},
+					criatura = {"Poison Spider", 10000}
+				},
+			}
 		}
 	},
 	["action"] = {

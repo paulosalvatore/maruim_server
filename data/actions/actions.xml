@@ -46,6 +46,7 @@
 	<action itemid="2225" script="geral.lua" />
 	<action itemid="14756" script="geral.lua" />
 	<action itemid="14768" script="geral.lua" />
+	<action itemid="7585" script="geral.lua" />
 
 	<action actionid="2902" script="geral.lua" />
 
