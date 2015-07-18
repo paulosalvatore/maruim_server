@@ -438,17 +438,20 @@ local config = {
 				chanceSucesso = 3000,
 				chanceNeutra = 3000,
 				profissao = "ferreiro"
-			},
-			[2743] = {
-				itensPlayerAleatorio = {{5921, 1, 10000}},
-				removerTarget = 1,
-				efeito = {"hit"},
-				tempo = 3*60*1000,
-				chanceSucesso = 5000,
-				chanceNeutra = 2000,
-				profissao = "alquimista",
-				expProfissao = 10
 			}
+		}
+	},
+	["sparkling"] = {
+		["default"] = {
+			checarItem = 2743,
+			itensPlayerAleatorio = {{5921, 1, 10000}},
+			removerItem = 1,
+			efeito = {"hit"},
+			tempo = 2*60*1000,
+			chanceSucesso = 5000,
+			chanceNeutra = 2000,
+			profissao = "alquimista",
+			expProfissao = 10
 		}
 	},
 	[13757] = {
@@ -823,7 +826,7 @@ for a, b in pairs(config) do
 	end
 end
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if config[item.itemid] ~= nil or config["action"][item.actionid] ~= nil or config["unique"][item.uid] ~= nil then
+	if config[item.itemid] ~= nil or config["action"][item.actionid] ~= nil or config["unique"][item.uid] ~= nil or (isInArray(sparkling, item.itemid) and config["sparkling"] ~= nil) then
 		local i
 		if config[item.itemid] ~= nil then
 			i = config[item.itemid]
@@ -831,15 +834,25 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			i = config["action"][item.actionid]
 		elseif config["unique"][item.uid] ~= nil then
 			i = config["unique"][item.uid]
+		elseif isInArray(sparkling, item.itemid) and config["sparkling"] ~= nil then
+			i = config["sparkling"]
 		end
-		local adicionarEvento = false
+		if i == nil then
+			return false
+		end
 		local piso = Tile(toPosition)
 		local topItem = 0
 		if piso ~= nil and piso:getTopVisibleThing() ~= nil then
 			topItem = piso:getTopVisibleThing():getId()
 		end
+		local adicionarEvento = false
 		if i["default"] ~= nil then
 			i = i["default"]
+			if i.checarItem ~= nil and topItem ~= i.checarItem then
+				return false
+			else
+				adicionarEvento = true
+			end
 		elseif	isInArray(sparkling, target.itemid) and #piso:getItems() >= 2 and
 				(i["sparkling"][topItem] ~= nil or
 				(i["sparkling"]["ferro"] ~= nil and isInArray(ferro, topItem)) or
@@ -1245,9 +1258,13 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		if gerarNovoPontoColetaMadeira then
 			gerarPontoColetaMadeira(toPosition.x .. "," .. toPosition.y .. "," .. toPosition.z)
 		elseif adicionarEvento then
+			local adicionarItemEvento = target.itemid
+			if target.itemid == 0 then
+				adicionarItemEvento = item.itemid
+			end
 			addEvent(function(posicao, item)
-			Game.createItem(item, 1, posicao)
-			end, i.tempo, toPosition, target.itemid)
+				Game.createItem(item, 1, posicao)
+			end, i.tempo, toPosition, adicionarItemEvento)
 		end
 		return true
 	end
