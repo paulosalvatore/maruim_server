@@ -51,7 +51,9 @@ local function creatureSayCallback(cid, type, msg)
 	end
 end
 
-npcHandler:setMessage(MESSAGE_GREET, "Olá |PLAYERNAME|. Eu posso fazer {poções} para você. Basta me trazer uma erva chamada {heaven blossom}.")
+keywordHandler:addKeywords({{'erva'}, {'heaven blossom'}}, StdModule.say, {npcHandler = npcHandler, text = "A heaven blossom é uma erva excelente na criação de {poções} de cura. Você pode coletá-la em diversos locais da Maruim Island, basta selecionar a opção 'use' em cima de uma que esteja brilhando."})
+
+npcHandler:setMessage(MESSAGE_GREET, "Olá |PLAYERNAME|. Eu posso fazer {poções} para você. Basta me trazer uma {erva} chamada {heaven blossom}.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Até logo!")
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
