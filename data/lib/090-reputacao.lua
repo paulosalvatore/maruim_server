@@ -35,7 +35,7 @@ Reputacao = {
 		[9941] = {preco = 100, reputacao = 1},
 		[9980] = {preco = 100, reputacao = 1},
 	},
-	promocao = 200
+	promocao = 100
 }
 function pegarNpcReputacao(vocacaoId)
 	if vocacaoId == 1 or vocacaoId == 5 then
