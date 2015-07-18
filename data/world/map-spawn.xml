@@ -252,6 +252,15 @@
 	<spawn centerx="974" centery="1905" centerz="4" radius="1">
 		<npc name="Mood Neva" x="0" y="0" z="4" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="950" centery="1906" centerz="4" radius="1">
+		<monster name="Weak Fire Elemental" x="0" y="0" z="4" spawntime="60" />
+	</spawn>
+	<spawn centerx="942" centery="1910" centerz="4" radius="1">
+		<monster name="Weak Fire Elemental" x="0" y="0" z="4" spawntime="60" />
+	</spawn>
+	<spawn centerx="949" centery="1919" centerz="4" radius="1">
+		<monster name="Weak Fire Elemental" x="0" y="0" z="4" spawntime="60" />
+	</spawn>
 	<spawn centerx="1406" centery="2018" centerz="4" radius="1">
 		<monster name="Pirate Buccaneer" x="-1" y="0" z="4" spawntime="60" />
 		<monster name="Pirate Buccaneer" x="1" y="1" z="4" spawntime="60" />
