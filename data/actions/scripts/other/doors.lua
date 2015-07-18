@@ -24,13 +24,13 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 	local itemId = item:getId()
 
-	if vocationDoor[item.actionid] ~= nil then
+	if vocationDoor[item.actionid] ~= nil and isInArray(questDoors, itemId) then
 		if not isInArray(vocationDoor[item.actionid], player:getVocation():getId()) then
 			player:sendCancelMessage("Você precisa ser um " .. Vocation(vocationDoor[item.actionid][1]):getName() .. " para abrir essa porta.")
-			return true
+		else
+			item:transform(itemId + 1)
+			player:teleportTo(toPosition, true)
 		end
-		item:transform(itemId + 1)
-		player:teleportTo(toPosition, true)
 		return true
 	end
 
