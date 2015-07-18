@@ -21,19 +21,7 @@ local config = {
 	}
 }
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-
 	local itemId = item:getId()
-
-	if vocationDoor[item.actionid] ~= nil and isInArray(questDoors, itemId) then
-		if not isInArray(vocationDoor[item.actionid], player:getVocation():getId()) then
-			player:sendCancelMessage("Você precisa ser um " .. Vocation(vocationDoor[item.actionid][1]):getName() .. " para abrir essa porta.")
-		else
-			item:transform(itemId + 1)
-			player:teleportTo(toPosition, true)
-		end
-		return true
-	end
-
 	if isInArray(questDoors, itemId) then
 		local storage = item.actionid
 		local valor = 1
@@ -51,11 +39,13 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				valor = i.valor
 			end
 		end
-		if player:getStorageValue(storage) == valor then
+		if vocationDoor[item.actionid] ~= nil and not isInArray(vocationDoor[item.actionid], player:getVocation():getId()) then
+			player:sendCancelMessage("Você precisa ser um " .. Vocation(vocationDoor[item.actionid][1]):getName() .. " para abrir essa porta.")
+		elseif vocationDoor[item.actionid] == nil and player:getStorageValue(storage) ~= valor then
+			player:sendTextMessage(MESSAGE_INFO_DESCR, "Essa porta parece estar selada contra intrusos indesejados.")
+		else
 			item:transform(itemId + 1)
 			player:teleportTo(toPosition, true)
-		else
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "Essa porta parece estar selada contra intrusos indesejados.")
 		end
 		return true
 	elseif isInArray(levelDoors, itemId) then
