@@ -23,7 +23,13 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		addEvent(function(posicao)
 			Game.createItem(6283, 1, posicao):setActionId(3000)
 		end, 300000, toPosition)
-		return true
+	elseif target.actionid == 19959 and target.itemid == 19959 then
+		target:remove()
+		toPosition:sendMagicEffect(CONST_ME_POFF)
+		addEvent(function(posicao)
+			posicao:sendMagicEffect(CONST_ME_POFF)
+			Game.createItem(19959, 1, posicao):setActionId(19959)
+		end, 10000, toPosition)
 	else
 		return false
 	end
