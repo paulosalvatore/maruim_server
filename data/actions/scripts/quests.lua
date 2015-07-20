@@ -11,15 +11,20 @@ local config = {
 	["action"] = {
 	},
 	["unique"] = {
+		[2600] = {
+			recompensaVocacao = {
+				{{7735, 1}, {8819, 1}}, -- Sorcerer
+				{{7735, 1}, {8819, 1}}, -- Druid
+				{{12407, 1}, {2660, 1}}, -- Paladin
+				{{2350, 1}, {2509, 1}} -- Knight
+			}
+		},
 		[2700] = {
 			recompensa = {{2465, 1}, {2478, 1}},
 			container = 21475
 		},
 		[2800] = {
 			recompensa = {{2152, 5}, {8860, 1}}
-		},
-		[7000] = {
-			recompensa = {{2464, 1}, {2648, 1}}
 		},
 		[12430] = {
 			recompensa = {{12430, 1}}
@@ -50,6 +55,18 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			checarValor = i.checarValor
 		end
 		if player:getStorageValue(storage) == checarValor then
+			if i.recompensaVocacao ~= nil then
+				local vocacao = player:getVocation():getId()
+				if isInArray(Vocacoes.sorcerer, vocacao) then
+					i.recompensa = i.recompensaVocacao[1]
+				elseif isInArray(Vocacoes.druid, vocacao) then
+					i.recompensa = i.recompensaVocacao[2]
+				elseif isInArray(Vocacoes.paladin, vocacao) then
+					i.recompensa = i.recompensaVocacao[3]
+				elseif isInArray(Vocacoes.knight, vocacao) then
+					i.recompensa = i.recompensaVocacao[4]
+				end
+			end
 			local pesoTotalItens = 0
 			for a, b in pairs(i.recompensa) do
 				pesoTotalItens = pesoTotalItens + ItemType(b[1]):getWeight()
