@@ -95,7 +95,11 @@ end
 function Player:onLookInShop(itemType, count)
 	local ferramenta = ferramentas[itemType:getId()]
 	if ferramenta then
-		local description = "You see " .. itemType:getArticle() .. " " .. itemType:getName() .. ".\nIt weighs " .. formatarPeso(ferramenta) .. "."
+		local peso = ferramenta
+		if peso == 0 then
+			peso = itemType:getWeight()
+		end
+		local description = "You see " .. itemType:getArticle() .. " " .. itemType:getName() .. ".\nIt weighs " .. formatarPeso(peso) .. "."
 		self:sendTextMessage(MESSAGE_INFO_DESCR, description)
 		return false
 	end
