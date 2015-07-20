@@ -4578,17 +4578,17 @@
 	<spawn centerx="1212" centery="1588" centerz="7" radius="1">
 		<monster name="Nomad" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1241" centery="1589" centerz="7" radius="1">
-		<monster name="Nomad" x="0" y="0" z="7" spawntime="60" />
-	</spawn>
 	<spawn centerx="1442" centery="1589" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1252" centery="1590" centerz="7" radius="1">
-		<monster name="Nomad Blue" x="0" y="0" z="7" spawntime="60" />
+	<spawn centerx="1251" centery="1590" centerz="7" radius="1">
+		<monster name="Nomad" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1402" centery="1590" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1262" centery="1591" centerz="7" radius="1">
+		<monster name="Nomad Blue" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1295" centery="1591" centerz="7" radius="1">
 		<monster name="Nomad" x="0" y="0" z="7" spawntime="60" />
@@ -4607,12 +4607,6 @@
 	<spawn centerx="1004" centery="1593" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1262" centery="1593" centerz="7" radius="1">
-		<monster name="Nomad Blue" x="0" y="0" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1272" centery="1593" centerz="7" radius="1">
-		<monster name="Nomad" x="0" y="0" z="7" spawntime="60" />
-	</spawn>
 	<spawn centerx="1351" centery="1593" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -4622,20 +4616,23 @@
 	<spawn centerx="754" centery="1594" centerz="7" radius="1">
 		<monster name="Ghost" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="1272" centery="1594" centerz="7" radius="1">
+		<monster name="Nomad Blue" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1282" centery="1594" centerz="7" radius="1">
+		<monster name="Nomad" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="1092" centery="1595" centerz="7" radius="1">
 		<npc name="Rimi" x="0" y="0" z="7" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="1245" centery="1595" centerz="7" radius="1">
-		<monster name="Nomad Blue" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1381" centery="1595" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="1255" centery="1596" centerz="7" radius="1">
+		<monster name="Nomad Blue" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="1364" centery="1599" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1257" centery="1600" centerz="7" radius="1">
-		<monster name="Nomad Blue" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1046" centery="1601" centerz="7" radius="1">
 		<npc name="Mano Widin" x="-1" y="0" z="7" spawntime="60" direction="2" />
@@ -4646,11 +4643,14 @@
 	<spawn centerx="1146" centery="1601" centerz="7" radius="1">
 		<monster name="Nomad" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1265" centery="1601" centerz="7" radius="1">
+	<spawn centerx="1267" centery="1601" centerz="7" radius="1">
 		<monster name="Nomad Blue" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="992" centery="1602" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1275" centery="1602" centerz="7" radius="1">
+		<monster name="Nomad Blue" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1401" centery="1602" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
@@ -4666,14 +4666,11 @@
 		<monster name="Gnarlhound" x="3" y="-1" z="7" spawntime="60" />
 		<monster name="Gnarlhound" x="2" y="5" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1248" centery="1605" centerz="7" radius="1">
+	<spawn centerx="1258" centery="1606" centerz="7" radius="1">
 		<monster name="Nomad Blue" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1061" centery="1607" centerz="7" radius="1">
 		<npc name="Bura Suharulaus" x="-1" y="0" z="7" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="1259" centery="1608" centerz="7" radius="1">
-		<monster name="Nomad Blue" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1440" centery="1608" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
@@ -4683,6 +4680,9 @@
 	</spawn>
 	<spawn centerx="971" centery="1609" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1269" centery="1609" centerz="7" radius="1">
+		<monster name="Nomad Blue" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1381" centery="1609" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
@@ -4714,7 +4714,7 @@
 	<spawn centerx="1449" centery="1614" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1272" centery="1615" centerz="7" radius="1">
+	<spawn centerx="1282" centery="1616" centerz="7" radius="1">
 		<monster name="Nomad Female" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1420" centery="1616" centerz="7" radius="1">
