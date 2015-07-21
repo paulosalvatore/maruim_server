@@ -555,13 +555,13 @@ local config = {
 				[1000] = {
 					transformar = {7553, 1, "item"},
 					itensPlayer = {{7632, 1}},
-					mensagemPlayer = '"Você encontrou uma bela perola!"',
+					mensagemPlayer = '"Você encontrou uma bela pérola!"',
 					efeito = {"hit"}
 				},
 				[2000] = {
 					transformar = {7553, 1, "item"},
 					itensPlayer = {{7633, 1}},
-					mensagemPlayer = '"Você encontrou uma bela perola!"',
+					mensagemPlayer = '"Você encontrou uma bela pérola!"',
 					efeito = {"hit"}
 				},
 				[6000] = {
