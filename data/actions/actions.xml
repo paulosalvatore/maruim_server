@@ -117,8 +117,6 @@
 	<action itemid="1876" function="decreaseItemId" />
 	<action itemid="2162" function="increaseItemId" />
 	<action itemid="2163" function="decreaseItemId" />
-	<action itemid="3743" function="increaseItemId" />
-	<action itemid="3744" function="decreaseItemId" />
 	<action itemid="3947" function="increaseItemId" />
 	<action itemid="3948" function="decreaseItemId" />
 	<action itemid="1479" function="increaseItemId" />
