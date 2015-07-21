@@ -1676,9 +1676,6 @@
 	<spawn centerx="847" centery="1728" centerz="6" radius="1">
 		<monster name="Hyaena" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
-	<spawn centerx="1344" centery="1728" centerz="6" radius="1">
-		<monster name="Stone Golem" x="0" y="-1" z="6" spawntime="60" />
-	</spawn>
 	<spawn centerx="1418" centery="1729" centerz="6" radius="2">
 		<monster name="Stone Golem" x="-2" y="-1" z="6" spawntime="60" />
 		<monster name="Stone Golem" x="2" y="0" z="6" spawntime="60" />
@@ -2161,13 +2158,13 @@
 	<spawn centerx="1016" centery="1997" centerz="6" radius="1">
 		<npc name="Volouk Alithraudo" x="-1" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="1325" centery="1998" centerz="6" radius="1">
+	<spawn centerx="1324" centery="1998" centerz="6" radius="1">
 		<monster name="Pirate Buccaneer" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="1036" centery="2000" centerz="6" radius="1">
 		<npc name="Tom" x="0" y="-1" z="6" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="1324" centery="2001" centerz="6" radius="1">
+	<spawn centerx="1323" centery="2001" centerz="6" radius="1">
 		<monster name="Pirate Buccaneer" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="1329" centery="2003" centerz="6" radius="1">
@@ -5276,6 +5273,9 @@
 	<spawn centerx="968" centery="1739" centerz="7" radius="1">
 		<monster name="Rabbit" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="1419" centery="1739" centerz="7" radius="1">
+		<monster name="Stone Golem" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="1131" centery="1740" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
@@ -5300,6 +5300,9 @@
 	<spawn centerx="1079" centery="1745" centerz="7" radius="1">
 		<monster name="Deer" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="1367" centery="1745" centerz="7" radius="1">
+		<monster name="Stone Golem" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="1464" centery="1745" centerz="7" radius="2">
 		<monster name="Gargoyle" x="1" y="-1" z="7" spawntime="60" />
 		<monster name="Gargoyle" x="1" y="2" z="7" spawntime="120" />
@@ -5319,6 +5322,9 @@
 	</spawn>
 	<spawn centerx="1197" centery="1747" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1387" centery="1747" centerz="7" radius="1">
+		<monster name="Stone Golem" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1057" centery="1748" centerz="7" radius="1">
 		<monster name="Bug" x="0" y="1" z="7" spawntime="60" />
@@ -5341,6 +5347,9 @@
 	</spawn>
 	<spawn centerx="1133" centery="1752" centerz="7" radius="1">
 		<monster name="Poison Spider" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1402" centery="1752" centerz="7" radius="1">
+		<monster name="Stone Golem" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1165" centery="1753" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="-1" z="7" spawntime="60" />
@@ -8034,7 +8043,22 @@
 		<monster name="Mammoth" x="-2" y="-1" z="7" spawntime="60" />
 		<monster name="Mammoth" x="2" y="1" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1324" centery="1998" centerz="7" radius="1">
+	<spawn centerx="1361" centery="1993" centerz="7" radius="1">
+		<monster name="Pirate Cutthroat" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1367" centery="1993" centerz="7" radius="1">
+		<monster name="Pirate Buccaneer" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1349" centery="1996" centerz="7" radius="1">
+		<monster name="Pirate Cutthroat" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1373" centery="1996" centerz="7" radius="1">
+		<monster name="Pirate Cutthroat" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1355" centery="1997" centerz="7" radius="1">
+		<monster name="Pirate Buccaneer" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1323" centery="1998" centerz="7" radius="1">
 		<monster name="Pirate Corsair" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="405" centery="1999" centerz="7" radius="1">
@@ -8043,11 +8067,32 @@
 	<spawn centerx="424" centery="2000" centerz="7" radius="1">
 		<monster name="Ice Golem" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1325" centery="2001" centerz="7" radius="1">
+	<spawn centerx="1324" centery="2001" centerz="7" radius="1">
 		<monster name="Pirate Cutthroat" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1376" centery="2001" centerz="7" radius="1">
+		<monster name="Pirate Buccaneer" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1036" centery="2003" centerz="7" radius="1">
 		<npc name="Sarah" x="1" y="-1" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1361" centery="2003" centerz="7" radius="1">
+		<monster name="Pirate Buccaneer" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1366" centery="2004" centerz="7" radius="1">
+		<monster name="Pirate Cutthroat" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1348" centery="2005" centerz="7" radius="1">
+		<monster name="Pirate Buccaneer" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1402" centery="2006" centerz="7" radius="1">
+		<monster name="Pirate Cutthroat" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1374" centery="2007" centerz="7" radius="1">
+		<monster name="Pirate Cutthroat" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1405" centery="2007" centerz="7" radius="1">
+		<monster name="Pirate Cutthroat" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="381" centery="2008" centerz="7" radius="1">
 		<monster name="Water Elemental" x="0" y="-1" z="7" spawntime="60" />
@@ -8062,8 +8107,26 @@
 	<spawn centerx="421" centery="2010" centerz="7" radius="1">
 		<monster name="Water Elemental" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="1360" centery="2010" centerz="7" radius="1">
+		<monster name="Pirate Cutthroat" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1403" centery="2010" centerz="7" radius="1">
+		<monster name="Pirate Corsair" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="520" centery="2011" centerz="7" radius="1">
 		<monster name="Ice Golem" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1347" centery="2011" centerz="7" radius="1">
+		<monster name="Pirate Cutthroat" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1407" centery="2011" centerz="7" radius="1">
+		<monster name="Pirate Buccaneer" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1367" centery="2012" centerz="7" radius="1">
+		<monster name="Pirate Buccaneer" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1374" centery="2013" centerz="7" radius="1">
+		<monster name="Pirate Buccaneer" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="401" centery="2014" centerz="7" radius="1">
 		<monster name="Ice Golem" x="0" y="-1" z="7" spawntime="60" />
@@ -8074,6 +8137,9 @@
 	<spawn centerx="1272" centery="2014" centerz="7" radius="1">
 		<monster name="Crab" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="1402" centery="2014" centerz="7" radius="1">
+		<monster name="Pirate Buccaneer" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="1239" centery="2015" centerz="7" radius="1">
 		<monster name="Blood Crab" x="1" y="-1" z="7" spawntime="60" />
 	</spawn>
@@ -8083,11 +8149,20 @@
 	<spawn centerx="499" centery="2016" centerz="7" radius="1">
 		<monster name="Water Elemental" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="1349" centery="2016" centerz="7" radius="1">
+		<monster name="Pirate Buccaneer" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="1078" centery="2017" centerz="7" radius="1">
 		<npc name="Rodbla Pheak" x="0" y="-1" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1262" centery="2017" centerz="7" radius="1">
 		<monster name="Crab" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1362" centery="2017" centerz="7" radius="1">
+		<monster name="Pirate Cutthroat" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1405" centery="2017" centerz="7" radius="1">
+		<monster name="Pirate Cutthroat" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="546" centery="2018" centerz="7" radius="1">
 		<monster name="Ice Golem" x="0" y="-1" z="7" spawntime="60" />
@@ -8097,6 +8172,12 @@
 	</spawn>
 	<spawn centerx="1214" centery="2019" centerz="7" radius="1">
 		<monster name="Crab" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1355" centery="2019" centerz="7" radius="1">
+		<monster name="Pirate Buccaneer" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1368" centery="2019" centerz="7" radius="1">
+		<monster name="Pirate Cutthroat" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="438" centery="2022" centerz="7" radius="1">
 		<monster name="Water Elemental" x="0" y="-1" z="7" spawntime="60" />
