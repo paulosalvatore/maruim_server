@@ -693,6 +693,7 @@
 	</spawn>
 	<spawn centerx="1150" centery="1688" centerz="5" radius="1">
 		<monster name="Cyclops" x="-1" y="0" z="5" spawntime="110" />
+		<monster name="Cyclops" x="1" y="0" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="1161" centery="1688" centerz="5" radius="1">
 		<monster name="Cyclops" x="0" y="-1" z="5" spawntime="110" />
@@ -1552,10 +1553,16 @@
 	<spawn centerx="875" centery="1664" centerz="6" radius="1">
 		<monster name="Gnarlhound" x="-1" y="-1" z="6" spawntime="60" />
 	</spawn>
+	<spawn centerx="1088" centery="1664" centerz="6" radius="1">
+		<monster name="Cyclops" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
 	<spawn centerx="884" centery="1665" centerz="6" radius="1">
 		<monster name="Lion" x="1" y="-1" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="1104" centery="1666" centerz="6" radius="1">
+		<monster name="Cyclops" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1087" centery="1668" centerz="6" radius="1">
 		<monster name="Cyclops" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="1118" centery="1671" centerz="6" radius="2">
@@ -1582,6 +1589,9 @@
 	</spawn>
 	<spawn centerx="1164" centery="1680" centerz="6" radius="1">
 		<monster name="Cyclops" x="0" y="1" z="6" spawntime="110" />
+	</spawn>
+	<spawn centerx="1150" centery="1684" centerz="6" radius="1">
+		<monster name="Cyclops" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="1303" centery="1684" centerz="6" radius="1">
 		<npc name="Orran Samod" x="0" y="0" z="6" spawntime="60" direction="2" />
@@ -4988,6 +4998,9 @@
 	</spawn>
 	<spawn centerx="1203" centery="1685" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1155" centery="1686" centerz="7" radius="1">
+		<monster name="Cyclops" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1277" centery="1686" centerz="7" radius="1">
 		<monster name="Doomsday Cultist" x="0" y="1" z="7" spawntime="60" />
@@ -10948,6 +10961,9 @@
 	<spawn centerx="719" centery="1751" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1105" centery="1751" centerz="8" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="597" centery="1752" centerz="8" radius="2">
 		<monster name="Crystal Spider" x="2" y="-2" z="8" spawntime="60" />
 		<monster name="Crystal Spider" x="-1" y="1" z="8" spawntime="60" />
@@ -10970,6 +10986,9 @@
 	<spawn centerx="809" centery="1755" centerz="8" radius="2">
 		<monster name="Winter Wolf" x="-1" y="-2" z="8" spawntime="60" />
 		<monster name="Winter Wolf" x="-1" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1113" centery="1755" centerz="8" radius="1">
+		<monster name="Skeleton Warrior" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="483" centery="1756" centerz="8" radius="1">
 		<monster name="Frost Dragon Hatchling" x="0" y="0" z="8" spawntime="60" />
@@ -11005,6 +11024,9 @@
 		<monster name="Frost Giant" x="0" y="-2" z="8" spawntime="60" />
 		<monster name="Frost Giant" x="0" y="2" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1107" centery="1760" centerz="8" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="770" centery="1761" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="1" y="1" z="8" spawntime="60" />
 	</spawn>
@@ -11028,6 +11050,9 @@
 	<spawn centerx="766" centery="1765" centerz="8" radius="1">
 		<monster name="Frost Giant" x="-1" y="1" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1113" centery="1765" centerz="8" radius="1">
+		<monster name="Skeleton Warrior" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="544" centery="1767" centerz="8" radius="2">
 		<monster name="Crystal Spider" x="0" y="-2" z="8" spawntime="60" />
 		<monster name="Crystal Spider" x="-1" y="2" z="8" spawntime="60" />
@@ -11049,6 +11074,12 @@
 	<spawn centerx="474" centery="1769" centerz="8" radius="2">
 		<monster name="Crystal Spider" x="-2" y="-2" z="8" spawntime="60" />
 		<monster name="Crystal Spider" x="2" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1120" centery="1769" centerz="8" radius="1">
+		<monster name="Ghoul" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1115" centery="1770" centerz="8" radius="1">
+		<monster name="Skeleton Warrior" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1151" centery="1770" centerz="8" radius="1">
 		<monster name="Wolf" x="-1" y="-1" z="8" spawntime="60" />
@@ -11120,6 +11151,9 @@
 	<spawn centerx="968" centery="1780" centerz="8" radius="1">
 		<npc name="Jund Alder" x="1" y="1" z="8" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="1119" centery="1781" centerz="8" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1376" centery="1781" centerz="8" radius="1">
 		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
@@ -11168,6 +11202,9 @@
 	</spawn>
 	<spawn centerx="565" centery="1785" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1129" centery="1785" centerz="8" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1347" centery="1785" centerz="8" radius="1">
 		<monster name="Clay Guardian" x="1" y="-1" z="8" spawntime="60" />
@@ -11220,11 +11257,17 @@
 	<spawn centerx="817" centery="1788" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1114" centery="1788" centerz="8" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="732" centery="1789" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="815" centery="1789" centerz="8" radius="1">
 		<monster name="Frost Giant" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1138" centery="1789" centerz="8" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1451" centery="1789" centerz="8" radius="1">
 		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
@@ -11254,6 +11297,9 @@
 	<spawn centerx="793" centery="1795" centerz="8" radius="2">
 		<monster name="Ice Golem" x="-2" y="-1" z="8" spawntime="60" />
 		<monster name="Ice Golem" x="2" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1120" centery="1795" centerz="8" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1163" centery="1795" centerz="8" radius="3">
 		<monster name="Tarantula" x="2" y="-3" z="8" spawntime="60" />
@@ -11345,6 +11391,10 @@
 	</spawn>
 	<spawn centerx="778" centery="1803" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1125" centery="1803" centerz="8" radius="1">
+		<monster name="Ghoul" x="-1" y="-1" z="8" spawntime="60" />
+		<monster name="Skeleton" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="542" centery="1805" centerz="8" radius="1">
 		<monster name="Crystal Spider" x="0" y="0" z="8" spawntime="60" />
@@ -14334,7 +14384,7 @@
 		<monster name="Demon Skeleton" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="955" centery="1638" centerz="9" radius="2">
-		<monster name="Carrion Worm" x="2" y="-2" z="9" spawntime="90" />
+		<monster name="Carrion Worm" x="1" y="-1" z="9" spawntime="90" />
 		<monster name="Carrion Worm" x="-2" y="2" z="9" spawntime="50" />
 	</spawn>
 	<spawn centerx="644" centery="1639" centerz="9" radius="2">
