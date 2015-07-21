@@ -179,7 +179,7 @@ local config = {
 	[5157] = {
 		["default"] = {
 			itensPlayer = {{5097, {1, 8}}},
-			transformar = {5156, 1},
+			transformar = {5156, 1, "item"},
 			efeito = {"hit"},
 			criatura = {"Squirrel", 1000}
 		}
@@ -437,7 +437,8 @@ local config = {
 				tempo = 3*60*1000,
 				chanceSucesso = 3000,
 				chanceNeutra = 3000,
-				profissao = "ferreiro"
+				profissao = "ferreiro",
+				expProfissao = 5
 			}
 		}
 	},
