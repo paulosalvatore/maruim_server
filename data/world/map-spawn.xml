@@ -2512,6 +2512,9 @@
 	<spawn centerx="474" centery="955" centerz="7" radius="1">
 		<npc name="Dana Suretina" x="-1" y="-1" z="7" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="604" centery="955" centerz="7" radius="1">
+		<npc name="Dorota" x="-1" y="1" z="7" spawntime="60" direction="1" />
+	</spawn>
 	<spawn centerx="515" centery="956" centerz="7" radius="1">
 		<monster name="Deer" x="0" y="0" z="7" spawntime="60" />
 	</spawn>

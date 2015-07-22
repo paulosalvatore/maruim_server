@@ -350,3 +350,13 @@ function round(num, idp)
 	local mult = 10^(idp or 0)
 	return math.floor(num * mult + 0.5) / mult
 end
+
+function getPlayerNameById(id)
+    local resultName = db.storeQuery("SELECT `name` FROM `players` WHERE `id` = " .. db.escapeString(id))
+    if resultName ~= false then
+        local name = result.getDataString(resultName, "name")
+        result.free(resultName)
+        return name
+    end
+    return 0
+end

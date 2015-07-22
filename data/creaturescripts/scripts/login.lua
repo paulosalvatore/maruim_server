@@ -11,6 +11,21 @@ function onLogin(player)
 	end
 	player:sendTextMessage(MESSAGE_STATUS_DEFAULT, loginStr)
 
+	-- Casamento
+	if player:getSex() == PLAYERSEX_FEMALE then
+		if getPlayerMarriageStatus(player:getGuid()) == MARRIED_STATUS and not player:hasOutfit(329) then
+			player:addOutfit(329)
+		elseif getPlayerMarriageStatus(player:getGuid()) ~= MARRIED_STATUS and player:hasOutfit(329) then
+			player:removeOutfit(329)
+		end
+	else
+		if getPlayerMarriageStatus(player:getGuid()) == MARRIED_STATUS and not player:hasOutfit(328) then
+			player:addOutfit(328)
+		elseif getPlayerMarriageStatus(player:getGuid()) ~= MARRIED_STATUS and player:hasOutfit(328) then
+			player:removeOutfit(328)
+		end
+	end
+
 	-- Stamina
 	nextUseStaminaTime[player.uid] = 0
 

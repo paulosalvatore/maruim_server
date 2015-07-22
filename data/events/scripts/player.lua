@@ -5,6 +5,13 @@ end
 function Player:onLook(thing, position, distance)
 	local utf8 = require("data/lib/utf8")
 	local description = utf8.convert("You see " .. thing:getDescription(distance))
+
+	if LOOK_MARRIAGE_DESCR and thing:isCreature() then
+        if thing:isPlayer() then
+            description = description .. self:getMarriageDescription(thing)
+        end
+    end
+
 	if thing:isItem() and thing:getActionId() == 2900 then
 		description = "You see Julia.\n"
 		if(self:getStorageValue(2900) == 2) then
@@ -15,6 +22,7 @@ function Player:onLook(thing, position, distance)
 	elseif thing:isItem() and thing:getActionId() == 3200 and (thing.itemid == 7787 or thing.itemid == 7788) then
 		description =  "You see a bed.\nJefrey is sleeping there."
 	end
+
 	if self:getGroup():getAccess() then
 		if thing:isItem() then
 			description = string.format("%s\nItem ID: %d", description, thing:getId())
