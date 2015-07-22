@@ -99,10 +99,12 @@ if KeywordHandler == nil then
 
 	-- Adds multiples childNodes to this node.
 	function KeywordNode:addChildKeywords(keywords, callback, parameters, condition, action)
-		for a,b in pairs(keywords) do
-			self:addChildKeywordNode(KeywordNode:new(b, callback, parameters, condition, action))
+		local ret = {}
+		for a, b in pairs(keywords) do
+			local add = self:addChildKeyword(b, callback, parameters, condition, action)
+			table.insert(ret, add)
 		end
-		return true
+		return ret
 	end
 
 	-- Adds a pre-created childNode to this node. Should be used for example if several nodes should have a common child.
@@ -204,10 +206,12 @@ if KeywordHandler == nil then
 	
 	-- Adds multiples new keywords to the root keywordnode.
 	function KeywordHandler:addKeywords(keys, callback, parameters, condition, action)
+		local ret = {}
 		for a, b in pairs(keys) do
-			self:addKeyword(b, callback, parameters, condition, action)
+			local add = self:addKeyword(b, callback, parameters, condition, action)
+			table.insert(ret, add)
 		end
-		return true
+		return ret
 	end
 
 	-- Moves the current position in the keyword hierarchy steps upwards. Steps defalut value = 1.
