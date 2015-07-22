@@ -11,14 +11,20 @@ function onLogin(player)
 			player:teleportarJogador(posicaoInicioTutorial, true)
 		end
 	end
-	player:registerEvent("TutorialModal")
-	if player:checarSemVocacao() then
-		player:enviarModalSemVocacao()
-	elseif passoTutorial ~= tutorialFinalizado then
-		player:enviarModalTutorial(passoTutorial)
-	else
-		player:unregisterEvent("TutorialModal")
-	end
+	addEvent(function(playerId)
+		local player = Player(playerId)
+		if not player then
+			return
+		end
+		player:registerEvent("TutorialModal")
+		if player:checarSemVocacao() then
+			player:enviarModalSemVocacao()
+		elseif passoTutorial ~= tutorialFinalizado then
+			player:enviarModalTutorial(passoTutorial)
+		else
+			player:unregisterEvent("TutorialModal")
+		end
+	end, 0, player:getId())
 	return true
 end
 
