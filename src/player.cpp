@@ -1165,7 +1165,7 @@ void Player::onCreatureAppear(Creature* creature, bool isLogin)
 		char buf[32];
 		strftime(buf, sizeof(buf), "%d/%m/%Y %H:%M:%S", now);
 
-		std::cout << "[" << buf << "]" << name << " has logged in." << std::endl;
+		std::cout << "[" << buf << "] " << name << " has logged in." << std::endl;
 
 		if (guild) {
 			guild->addMember(this);
@@ -1385,7 +1385,7 @@ void Player::onRemoveCreature(Creature* creature, bool isLogout)
 		char buf[32];
 		strftime(buf, sizeof(buf), "%d/%m/%Y %H:%M:%S", now);
 
-		std::cout << "[" << buf << "]" << getName() << " has logged out." << std::endl;
+		std::cout << "[" << buf << "] " << getName() << " has logged out." << std::endl;
 
 		if (guild) {
 			guild->removeMember(this);
