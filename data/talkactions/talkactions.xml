@@ -37,6 +37,7 @@
 	<talkaction words="/addHealth" separator=" " script="addHealth.lua" />
 	<talkaction words="/online" script="online.lua" />
 	<talkaction words="/verificarItensSemNome" separator=" " script="verificarItensSemNome.lua" />
+	<talkaction words="/carregarMiniMapa" script="carregarMiniMapa.lua" />
 
 	<!-- player talkactions -->
 	<!-- 
