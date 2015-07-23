@@ -2,11 +2,14 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 local talkState = {}
-function onCreatureAppear(cid)       npcHandler:onCreatureAppear(cid)       end
-function onCreatureDisappear(cid)     npcHandler:onCreatureDisappear(cid)       end
-function onCreatureSay(cid, type, msg)     npcHandler:onCreatureSay(cid, type, msg)     end
-function onThink()         npcHandler:onThink()           end
+
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
+function onThink()						npcHandler:onThink()						end
+
 local storage = 2900
+
 function creatureSayCallback(cid, type, msg)
 	local talkUser = NPCHANDLER_CONVBEHAVIOR == CONVERSATION_DEFAULT and 0 or cid
 	local player = Player(cid)

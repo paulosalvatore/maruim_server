@@ -5,7 +5,7 @@ NpcSystem.parseParameters(npcHandler)
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
 function onCreatureSay(player, type, msg)
-	local fraseNpc = "Olá, |PLAYERNAME|! Espero que você seja um grande alfaiate."
+	local fraseNpc = "Olá, |PLAYERNAME|! Espero que você seja um" .. player:pegarArtigo(2) .. " grande alfaiate."
 	if player:getStorageValue(Storage.thickFur) ~= 1 then
 		fraseNpc = "Olá, |PLAYERNAME|! Vejo que essa é sua primeira vez por aqui, caso queira, posso te ajudar em sua {alfaiataria}."
 	end
@@ -20,9 +20,9 @@ function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-	if msg == "alfaiataria" then
+	if isInArray({"alfaiataria", "alfaiate"}, msg) then
 		if player:getStorageValue(Storage.thickFur) ~= 1 then
-			npcHandler:say("Aqui está, espero que isso possa lhe ser útil.", cid)
+			npcHandler:say("Aqui está duas 'thick fur', você pode conseguir produzir algum equipamento com elas, espero que possa lhe ser útil.", cid)
 			player:addItem(11224, 2)
 			player:setStorageValue(Storage.thickFur, 1)
 		end

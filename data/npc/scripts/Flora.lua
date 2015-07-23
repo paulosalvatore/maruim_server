@@ -74,5 +74,6 @@ keywordHandler:addKeyword({'quantidade'}, StdModule.say, {npcHandler = npcHandle
 
 npcHandler:setMessage(MESSAGE_GREET, "Olá |PLAYERNAME|. Eu posso fazer {poções} para você. Basta me trazer uma {erva} chamada {heaven blossom}.")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Até logo!")
+
 npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
