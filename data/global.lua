@@ -201,11 +201,11 @@ function allowMovementEvent(playerId, allow, oldPosition, pz)
     event = addEvent(allowMovementEvent, 100, playerId, allow, oldPosition, pz)
 end
 
-function Player.allowMovement(self, allow)
+function Player:allowMovement(allow)
     allowMovementEvent(self:getId(), allow, self:getPosition(), false)
 end
 
-function Player.allowLeavePz(self, allow)
+function Player:allowLeavePz(allow)
     allowMovementEvent(self:getId(), allow, self:getPosition(), true)
 end
 

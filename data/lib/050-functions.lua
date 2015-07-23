@@ -167,7 +167,7 @@ function getMoneyWeight(money)
 	return (ItemType(2160):getWeight() * crystal) + (ItemType(2152):getWeight() * platinum) + (ItemType(2148):getWeight() * gold)
 end
 
-function Player.withdrawMoney(self, amount)
+function Player:withdrawMoney(amount)
 	local balance = self:getBankBalance()
 	if amount > balance or not self:addMoney(amount) then
 		return false
@@ -177,7 +177,7 @@ function Player.withdrawMoney(self, amount)
 	return true
 end
 
-function Player.depositMoney(self, amount)
+function Player:depositMoney(amount)
 	if not self:removeMoney(amount) then
 		return false
 	end
@@ -186,12 +186,12 @@ function Player.depositMoney(self, amount)
 	return true
 end
 
-function Player.addMoneyBank(self, amount)
+function Player:addMoneyBank(amount)
 	self:setBankBalance(self:getBankBalance() + amount)
 	return true
 end
 
-function Player.transferMoneyTo(self, target, amount)
+function Player:transferMoneyTo(target, amount)
 	local balance = self:getBankBalance()
 	if amount > balance then
 		return false
@@ -228,15 +228,15 @@ function isWalkable(pos, creature, proj, pz)
 	return true
 end
 
-function Player.adicionarReputacao(self, valor)
+function Player:adicionarReputacao(valor)
 	self:setStorageValue(Storage.reputacao, self:pegarReputacao()+valor)
 end
 
-function Player.pegarReputacao(self)
+function Player:pegarReputacao()
 	return math.max(0, self:getStorageValue(Storage.reputacao))
 end
 
-function Player.pegarRankReputacao(self)
+function Player:pegarRankReputacao()
 	local reputacao = self:pegarReputacao()
 	local rankId
 	for a, b in pairs(Reputacao.ranks) do
@@ -262,14 +262,14 @@ function pegarReputacaoRank(rankId)
 	return false
 end
 
-function Player.isPromoted(self)
+function Player:isPromoted()
 	local vocation = self:getVocation()
 	local promotedVocation = vocation:getPromotion()
 	promotedVocation = promotedVocation and promotedVocation:getId() or 0
 	return promotedVocation == 0 and vocation:getId() ~= promotedVocation
 end
 
-function Player.promote(self)
+function Player:promote()
 	self:setVocation(Vocation(self:getVocation():getPromotion():getId()))
 end
 
@@ -278,11 +278,11 @@ function getExpForLevel(level)
 	return ((50 * level * level * level) - (150 * level * level) + (400 * level)) / 3
 end
 
-function Player.addLevel(self)
+function Player:addLevel()
 	self:addExperience(getExpForLevel(self:getLevel() + 1) - self:getExperience())
 end
 
-function Player.teleportarJogador(self, posicao, forcar, extended)
+function Player:teleportarJogador(posicao, forcar, extended)
 	if not self then
 		return
 	end
@@ -306,14 +306,14 @@ function Player.teleportarJogador(self, posicao, forcar, extended)
 	return false
 end
 
-function Player.curarJogador(self, quantidade)
+function Player:curarJogador(quantidade)
 	if quantidade == nil then
 		quantidade = self:getMaxHealth()-self:getHealth()
 	end
 	self:addHealth(quantidade)
 end
 
-function Player.removerDebuffs(self)
+function Player:removerDebuffs()
 	for i, v in ipairs(conditionsHealing) do
 		if getCreatureCondition(self, v) == true then
 			doRemoveCondition(self, v)

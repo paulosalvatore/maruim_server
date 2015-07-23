@@ -1,11 +1,11 @@
-function Tile.isCreature(self)
+function Tile:isCreature()
 	return false
 end
 
-function Tile.isItem(self)
+function Tile:isItem()
 	return false
 end
 
-function Tile.isTile(self)
+function Tile:isTile()
 	return true
 end

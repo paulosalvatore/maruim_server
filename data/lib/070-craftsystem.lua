@@ -710,18 +710,18 @@ function ordenarReceitasPorNome(receitas)
 	end
 	return exibirReceitas
 end
-function Player.getProfissaoSkill(self, profissaoId)
+function Player:getProfissaoSkill(profissaoId)
 	return math.max(1, self:getStorageValue(profissaoId+configProfissoes.skill))
 end
-function Player.getProfissaoSkillExp(self, profissaoId)
+function Player:getProfissaoSkillExp(profissaoId)
 	return math.max(0, self:getStorageValue(profissaoId+configProfissoes.skillExp))
 end
-function Player.getProfissaoSkillExpProximoNivel(self, profissaoId)
+function Player:getProfissaoSkillExpProximoNivel(profissaoId)
 	local skill = math.max(1, self:getStorageValue(profissaoId+configProfissoes.skill))
 	local skillExp = math.max(0, self:getStorageValue(profissaoId+configProfissoes.skillExp))
 	return calcularLevelProfissao(skill+1)-skillExp
 end
-function Player.getProfissaoSkillPorcentagem(self, profissaoId)
+function Player:getProfissaoSkillPorcentagem(profissaoId)
 	local skillExp = self:getProfissaoSkillExp(profissaoId)
 	local skillExpProximoNivel = self:getProfissaoSkillExpProximoNivel(profissaoId)+skillExp
 	local percent = math.floor(100*skillExp/skillExpProximoNivel)
@@ -731,7 +731,7 @@ function Player.getProfissaoSkillPorcentagem(self, profissaoId)
 		return 0
 	end
 end
-function Player.addProfissaoSkill(self, profissaoId)
+function Player:addProfissaoSkill(profissaoId)
 	local profissao = profissoes[profissaoId]
 	local storageSkill = profissaoId+configProfissoes.skill
 	local storageSkillExp = profissaoId+configProfissoes.skillExp
@@ -741,7 +741,7 @@ function Player.addProfissaoSkill(self, profissaoId)
 	self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Você avançou seu nível de "..string.lower(profissao.nome).." para "..skill..".")
 	self:addProfissaoPontos(profissaoId, calcularPontosProfissao(skill))
 end
-function Player.addProfissaoSkillExp(self, profissaoId, experiencia)
+function Player:addProfissaoSkillExp(profissaoId, experiencia)
 	local profissaoNome = profissoes[profissaoId].nome
 	local storageSkillExp = profissaoId+configProfissoes.skillExp
 	local skill = self:getProfissaoSkill(profissaoId)
@@ -757,63 +757,63 @@ function Player.addProfissaoSkillExp(self, profissaoId, experiencia)
 	end
 	self:setStorageValue(storageSkillExp, novaExperiencia)
 end
-function Player.getProfissaoPontos(self, profissaoId)
+function Player:getProfissaoPontos(profissaoId)
 	return math.max(0, self:getStorageValue(profissaoId+configProfissoes.pontosProfissao))
 end
-function Player.addProfissaoPontos(self, profissaoId, pontos)
+function Player:addProfissaoPontos(profissaoId, pontos)
 	local profissao = profissoes[profissaoId]
 	local storagePontos = profissaoId+configProfissoes.pontosProfissao
 	local pontosTotais = self:getProfissaoPontos(profissaoId)+pontos
 	self:setStorageValue(storagePontos, pontosTotais)
 	self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Você recebeu "..pontos.." pontos de "..string.lower(profissao.nome)..". Você possui um total de "..pontosTotais.." pontos.")
 end
-function Player.getProfissaoReceitasFabricadas(self, profissaoId)
+function Player:getProfissaoReceitasFabricadas(profissaoId)
 	return math.max(0, self:getStorageValue(profissaoId+configProfissoes.receitasFabricadas))
 end
-function Player.addProfissaoReceitasFabricadas(self, profissaoId)
+function Player:addProfissaoReceitasFabricadas(profissaoId)
 	local storageReceitasFabricadas = profissaoId+configProfissoes.receitasFabricadas
 	local receitasFabricadas = math.max(0, self:getStorageValue(storageReceitasFabricadas))
 	self:setStorageValue(storageReceitasFabricadas, receitasFabricadas+1)
 end
-function Player.getProfissaoReceitasFalhadas(self, profissaoId)
+function Player:getProfissaoReceitasFalhadas(profissaoId)
 	return math.max(0, self:getStorageValue(profissaoId+configProfissoes.receitasFalhadas))
 end
-function Player.addProfissaoReceitasFalhadas(self, profissaoId)
+function Player:addProfissaoReceitasFalhadas(profissaoId)
 	local storageReceitasFalhadas = profissaoId+configProfissoes.receitasFalhadas
 	local receitasFalhadas = math.max(0, self:getStorageValue(storageReceitasFalhadas))
 	self:setStorageValue(storageReceitasFalhadas, receitasFalhadas+1)
 end
-function Player.addProfissaoUltimaReceita(self, profissaoId, receitaId)
+function Player:addProfissaoUltimaReceita(profissaoId, receitaId)
 	self:setStorageValue(profissaoId+configProfissoes.ultimaReceita, receitaId)
 end
-function Player.getProfissaoUltimaReceita(self, profissaoId)
+function Player:getProfissaoUltimaReceita(profissaoId)
 	return math.max(0, self:getStorageValue(profissaoId+configProfissoes.ultimaReceita))
 end
-function Player.getProfissaoUltimasReceitasFalhadas(self, profissaoId, receitaId)
+function Player:getProfissaoUltimasReceitasFalhadas(profissaoId, receitaId)
 	return math.floor(math.max(0, self:getStorageValue(profissaoId+configProfissoes.ultimasReceitasFalhadas+receitaId))*50)
 end
-function Player.addProfissaoUltimasReceitasFalhadas(self, profissaoId, receitaId)
+function Player:addProfissaoUltimasReceitasFalhadas(profissaoId, receitaId)
 	local storageUltimasReceitasFalhadas = profissaoId+configProfissoes.ultimasReceitasFalhadas+receitaId
 	local ultimasReceitasFalhadas = math.max(0, self:getStorageValue(storageUltimasReceitasFalhadas))
 	self:setStorageValue(storageUltimasReceitasFalhadas, ultimasReceitasFalhadas+1)
 end
-function Player.resetProfissaoUltimasReceitasFalhadas(self, profissaoId, receitaId)
+function Player:resetProfissaoUltimasReceitasFalhadas(profissaoId, receitaId)
 	self:setStorageValue(profissaoId+configProfissoes.ultimasReceitasFalhadas+receitaId, 0)
 end
-function Player.getProfissaoBonusAdicional(self, profissaoId)
+function Player:getProfissaoBonusAdicional(profissaoId)
 	local nivel = self:getProfissaoSkill(profissaoId)
 	return math.floor(0.05*nivel)
 end
-function Player.getProfissaoIngredienteMelhoria(self, profissaoId)
+function Player:getProfissaoIngredienteMelhoria(profissaoId)
 	return math.max(0, self:getStorageValue(profissaoId+configProfissoes.ingredienteMelhoria))
 end
-function Player.addProfissaoIngredienteMelhoria(self, profissaoId, ingredienteMelhoria)
+function Player:addProfissaoIngredienteMelhoria(profissaoId, ingredienteMelhoria)
 	self:setStorageValue(profissaoId+configProfissoes.ingredienteMelhoria, ingredienteMelhoria)
 end
-function Player.resetProfissaoIngredienteMelhoria(self, profissaoId)
+function Player:resetProfissaoIngredienteMelhoria(profissaoId)
 	self:addProfissaoIngredienteMelhoria(profissaoId, 0)
 end
-function Player.getProfissaoChanceSucessoAdicional(self, profissaoId)
+function Player:getProfissaoChanceSucessoAdicional(profissaoId)
 	local nivel = self:getProfissaoSkill(profissaoId)
 	local chanceSucessoAdicional = (20*(nivel-1))
 	local pocaoProfissaoStorage = self:getStorageValue(configProfissoes.pocaoProfissaoStorage)
@@ -823,11 +823,11 @@ function Player.getProfissaoChanceSucessoAdicional(self, profissaoId)
 	end
 	return chanceSucessoAdicional
 end
-function Player.getProfissaoChanceColetaAdicional(self, profissaoId)
+function Player:getProfissaoChanceColetaAdicional(profissaoId)
 	local nivel = self:getProfissaoSkill(profissaoId)
 	return (40*(nivel-1))
 end
-function Player.getProfissaoChanceSucessoReceita(self, profissaoId, receitaId)
+function Player:getProfissaoChanceSucessoReceita(profissaoId, receitaId)
 	local profissao = profissoes[profissaoId]
 	local receita = profissao.receitas[receitaId]
 	local chanceSucessoAdicional = self:getProfissaoChanceSucessoAdicional(profissaoId)
@@ -851,14 +851,14 @@ function Player.getProfissaoChanceSucessoReceita(self, profissaoId, receitaId)
 	chanceSucessoReceita = math.min(maxChanceSucesso, chanceSucessoReceita)
 	return chanceSucessoReceita
 end
-function Player.getProfissaoReceitaAprendizado(self, profissaoId, receitaId)
+function Player:getProfissaoReceitaAprendizado(profissaoId, receitaId)
 	return math.max(0, self:getStorageValue(profissaoId+configProfissoes.receitasInicio+receitaId))
 end
-function Player.addProfissaoReceitaAprendizado(self, profissaoId, receitaId)
+function Player:addProfissaoReceitaAprendizado(profissaoId, receitaId)
 	local storageReceitasInicio = profissaoId+configProfissoes.receitasInicio+receitaId
 	self:setStorageValue(storageReceitasInicio, 1)
 end
-function Player.getPosicaoMesaTrabalho(self, profissaoId, trabalhando)
+function Player:getPosicaoMesaTrabalho(profissaoId, trabalhando)
 	local extraData = profissoes[profissaoId].extraData[self:getId()]
 	local posicaoMesaTrabalho = extraData.mesaTrabalho:getPosition()
 	local posicaoEfeitoMesaTrabalho = extraData.mesaTrabalho:getPosition()
@@ -876,7 +876,7 @@ function Player.getPosicaoMesaTrabalho(self, profissaoId, trabalhando)
 	end
 	return {mesaTrabalho = posicaoMesaTrabalho, efeito = posicaoEfeitoMesaTrabalho}
 end
-function Player.getProfissaoModalQuantidade(self, profissaoId, receitaId, cristalAtivo)
+function Player:getProfissaoModalQuantidade(profissaoId, receitaId, cristalAtivo)
 	local profissao = profissoes[profissaoId]
 	local receita = profissao.receitas[receitaId]
 	local modalId = profissaoId+configProfissoes.receitasInicio+receitaId
@@ -893,7 +893,7 @@ function Player.getProfissaoModalQuantidade(self, profissaoId, receitaId, crista
 	modal:setDefaultEscapeButton(2)
 	return modal
 end
-function Player.getProfissaoModalPrincipal(self, profissaoId)
+function Player:getProfissaoModalPrincipal(profissaoId)
 	local profissao = profissoes[profissaoId]
 	local profissaoMensagem = profissao.mensagem
 	local profissaoNome = profissao.nome
@@ -916,14 +916,14 @@ function Player.getProfissaoModalPrincipal(self, profissaoId)
 	modal:setDefaultEscapeButton(2)
 	return modal
 end
-function Player.getProfissaoModalTitulo(self, profissaoId)
+function Player:getProfissaoModalTitulo(profissaoId)
 	local profissao = profissoes[profissaoId]
 	local profissaoNome = profissao.nome
 	local profissaoNivel = self:getProfissaoSkill(profissaoId)
 	local profissaoExpPorcentagem = self:getProfissaoSkillPorcentagem(profissaoId)
 	return profissaoNome.." - Nível: "..profissaoNivel.." ("..profissaoExpPorcentagem.."%)"
 end
-function Player.verificarJogadorItensReceita(self, profissaoId, receitaId, quantidadeMaxima)
+function Player:verificarJogadorItensReceita(profissaoId, receitaId, quantidadeMaxima)
 	if quantidadeMaxima == nil then
 		quantidadeMaxima = 1
 	end
@@ -948,7 +948,7 @@ function Player.verificarJogadorItensReceita(self, profissaoId, receitaId, quant
 	end
 	return math.min(unpack(quantidadesPossiveis))
 end
-function Player.iniciarReceitaQuantidade(self, profissaoId, receitaId, quantidadeTotal, quantidadeAtual, tempo)
+function Player:iniciarReceitaQuantidade(profissaoId, receitaId, quantidadeTotal, quantidadeAtual, tempo)
 	if quantidadeAtual == 0 then
 		self:allowMovement(false)
 	end
@@ -972,7 +972,7 @@ function Player.iniciarReceitaQuantidade(self, profissaoId, receitaId, quantidad
 		end
 	end, delay*1000, self.uid, profissaoId, receitaId, quantidadeTotal, quantidadeAtual+1, tempo)
 end
-function Player.getIngredientesMelhoria(self, profissaoId)
+function Player:getIngredientesMelhoria(profissaoId)
 	local profissao = profissoes[profissaoId]
 	local ingredientesMelhoria = profissao.ingredientesMelhoria
 	local ingredientesMelhoriaDisponiveis = {}
@@ -985,7 +985,7 @@ function Player.getIngredientesMelhoria(self, profissaoId)
 	end
 	return ingredientesMelhoriaDisponiveis
 end
-function Player.iniciarReceita(self, profissaoId, receitaId, bloquearMovimento)
+function Player:iniciarReceita(profissaoId, receitaId, bloquearMovimento)
 	local mesaTrabalho = profissoes[profissaoId].extraData[self:getId()].mesaTrabalho
 	if mesaTrabalho:getActionId() == itemDesativado then
 		return false
@@ -1062,7 +1062,7 @@ function Player.iniciarReceita(self, profissaoId, receitaId, bloquearMovimento)
 	end, tempo*1000, self.uid, receitaId, profissaoId, mesaTrabalhando, bloquearMovimento)
 	return true
 end
-function Player.fabricarItem(self, receitaId, profissaoId, mesaTrabalhando, bloquearMovimento)
+function Player:fabricarItem(receitaId, profissaoId, mesaTrabalhando, bloquearMovimento)
 	local profissao = profissoes[profissaoId]
 	local mesaTrabalho = profissao.extraData[self:getId()].mesaTrabalho
 	local posicaoMesaTrabalho = self:getPosicaoMesaTrabalho(profissaoId).efeito

@@ -11,6 +11,6 @@ local slotBits = {
 	[CONST_SLOT_AMMO] = SLOTP_AMMO
 }
 
-function ItemType.usesSlot(self, slot)
+function ItemType:usesSlot(slot)
 	return bit.band(self:getSlotPosition(), slotBits[slot] or 0) ~= 0
 end

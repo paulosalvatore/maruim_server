@@ -1,6 +1,6 @@
 local foodCondition = Condition(CONDITION_REGENERATION, CONDITIONID_DEFAULT)
 
-function Player.feed(self, food)
+function Player:feed(food)
 	local condition = self:getCondition(CONDITION_REGENERATION, CONDITIONID_DEFAULT)
 	if condition then
 		condition:setTicks(condition:getTicks() + (food * 1000))
@@ -21,18 +21,18 @@ function Player.feed(self, food)
 	return true
 end
 
-function Player.getClosestFreePosition(self, position, extended)
+function Player:getClosestFreePosition(position, extended)
 	if self:getGroup():getAccess() then
 		return position
 	end
 	return Creature.getClosestFreePosition(self, position, extended)
 end
 
-function Player.getDepotItems(self, depotId)
+function Player:getDepotItems(depotId)
 	return self:getDepotChest(depotId, true):getItemHoldingCount()
 end
 
-function Player.getLossPercent(self)
+function Player:getLossPercent(self)
 	local blessings = 0
 	local lossPercent = {
 		[0] = 100,
@@ -51,22 +51,22 @@ function Player.getLossPercent(self)
 	return lossPercent[blessings]
 end
 
-function Player.isPremium(self)
+function Player:isPremium(self)
 	return self:getPremiumDays() > 0 or configManager.getBoolean(configKeys.FREE_PREMIUM)
 end
 
-function Player.sendCancelMessage(self, message)
+function Player:sendCancelMessage(message)
 	if type(message) == "number" then
 		message = Game.getReturnMessage(message)
 	end
 	return self:sendTextMessage(MESSAGE_STATUS_SMALL, message)
 end
 
-function Player.isUsingOtClient(self)
+function Player:isUsingOtClient(self)
 	return self:getClient().os >= CLIENTOS_OTCLIENT_LINUX
 end
 
-function Player.sendExtendedOpcode(self, opcode, buffer)
+function Player:sendExtendedOpcode(opcode, buffer)
 	if not self:isUsingOtClient() then
 		return false
 	end
@@ -82,7 +82,7 @@ end
 
 APPLY_SKILL_MULTIPLIER = true
 local addSkillTriesFunc = Player.addSkillTries
-function Player.addSkillTries(...)
+function Player:addSkillTries(...)
 	APPLY_SKILL_MULTIPLIER = false
 	local ret = addSkillTriesFunc(...)
 	APPLY_SKILL_MULTIPLIER = true

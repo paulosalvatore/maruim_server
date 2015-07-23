@@ -81,11 +81,11 @@ Masmorras = {
 	}
 }
 
-function Player.pegarDelayMasmorra(self, masmorraId)
+function Player:pegarDelayMasmorra(masmorraId)
 	return math.max(0, self:getStorageValue(configMasmorras.storageBase+configMasmorras.storageMasmorras+masmorraId))
 end
 
-function Player.pegarMasmorrasDisponiveis(self)
+function Player:pegarMasmorrasDisponiveis()
 	local masmorras = {}
 	for a, b in pairs(Masmorras) do
 		local playerLevel = self:getLevel()
@@ -99,7 +99,7 @@ function Player.pegarMasmorrasDisponiveis(self)
 	return masmorras
 end
 
-function Player.enviarModalMasmorra(self)
+function Player:enviarModalMasmorra()
 	local modalTitulo, modalMensagem, modal
 	local modalId = configMasmorras.storageBase+configMasmorras.janelasModal.modalPrincipal
 	if self:verificarFila() > 0 then
@@ -141,7 +141,7 @@ function pegarNomeMasmorra(masmorraId)
 	return capAll(Masmorras[masmorraId].nome)
 end
 
-function Player.verificarInicializacaoLocalizadorMasmorra(self, masmorraId)
+function Player:verificarInicializacaoLocalizadorMasmorra(masmorraId)
 	if self:getParty() then
 		return configMasmorras.mensagens.possuiParty
 	elseif self:pegarDelayMasmorra(masmorraId) > os.time() then
@@ -150,7 +150,7 @@ function Player.verificarInicializacaoLocalizadorMasmorra(self, masmorraId)
 	return true
 end
 
-function Player.iniciarLocalizadorMasmorra(self, masmorraId)
+function Player:iniciarLocalizadorMasmorra(masmorraId)
 	local verificarInicializacaoLocalizadorMasmorra = self:verificarInicializacaoLocalizadorMasmorra(masmorraId)
 	if verificarInicializacaoLocalizadorMasmorra == true then
 		self:allowLeavePz(false)
@@ -162,13 +162,13 @@ function Player.iniciarLocalizadorMasmorra(self, masmorraId)
 	self:sendCancelMessage(verificarInicializacaoLocalizadorMasmorra)
 end
 
-function Player.removerLocalizadorMasmorra(self)
+function Player:removerLocalizadorMasmorra()
 	self:sendTextMessage(MESSAGE_EVENT_ADVANCE, configMasmorras.mensagens.removidoFila)
 	self:setStorageValue(configMasmorras.storageBase, os.time()+configMasmorras.tempoLocalizador)
 	self:removerFila()
 end
 
-function Player.removerFila(self)
+function Player:removerFila()
 	local masmorraId = self:verificarFila()
 	local fila = Masmorras[masmorraId].data.fila
 	table.remove(Masmorras[masmorraId].data.fila, searchArrayKey(fila, self:getId()))
@@ -180,7 +180,7 @@ function removerJogadoresMasmorra(masmorraId)
 	Masmorras[masmorraId].data.jogadores = {}
 end
 
-function Player.verificarFila(self)
+function Player:verificarFila()
 	for a, b in pairs(Masmorras) do
 		if isInArray(b.data.fila, self:getId()) then
 			return a
@@ -189,7 +189,7 @@ function Player.verificarFila(self)
 	return 0
 end
 
-function Player.verificarMasmorra(self)
+function Player:verificarMasmorra()
 	for a, b in pairs(Masmorras) do
 		if isInArray(b.data.jogadores, self:getId()) then
 			return a
@@ -215,7 +215,7 @@ function processarFilaLocalizadorMasmorra(masmorraId)
 	end
 end
 
-function Player.fecharJanelasModalMasmorra(self)
+function Player:fecharJanelasModalMasmorra()
 	local idBase = configMasmorras.storageBase
 	for a, b in pairs(configMasmorras.janelasModal) do
 		self:closeModalId(idBase+b)
@@ -248,7 +248,7 @@ function masmorraEncontrada(masmorraId, jogadores)
 	addEvent(verificarInicioMasmorra, configMasmorras.tempoAceitar*1000, masmorraId, jogadores)
 end
 
-function Player.aceitarConviteMasmorra(self)
+function Player:aceitarConviteMasmorra()
 	local playerId = self:getId()
 	local masmorraId = self:verificarFila()
 	local masmorra = Masmorras[masmorraId]
@@ -465,7 +465,7 @@ function finalizarMasmorra(masmorraId, checarMasmorraAtual, evento)
 	return true
 end
 
-function Player.teleportarJogadorSalaMasmorra(self, masmorraId)
+function Player:teleportarJogadorSalaMasmorra(masmorraId)
 	local playerId = self:getId()
 	local masmorra = Masmorras[masmorraId]
 	local localizacao = masmorra.data.informacaoJogadores[playerId].localizacao
@@ -491,7 +491,7 @@ function checarLocalizacaoJogadoresMasmorra(masmorraId)
 	return "sala"
 end
 
-function Player.checarReviverJogadoresMasmorra(self, masmorraId)
+function Player:checarReviverJogadoresMasmorra(masmorraId)
 	local masmorra = Masmorras[masmorraId]
 	local jogadores = masmorra.data.jogadores
 	if masmorra.data.informacaoJogadores[self:getId()].localizacao == "sala" then
@@ -515,7 +515,7 @@ function Player.checarReviverJogadoresMasmorra(self, masmorraId)
 	return true
 end
 
-function Player.teleportarJogadorMasmorra(masmorraId, masmorraAtual)
+function Player:teleportarJogadorMasmorra(masmorraId, masmorraAtual)
 	local masmorra = Masmorras[masmorraId]
 	if masmorra.masmorraAtual == masmorraAtual then
 		local posicao = masmorra.posicao

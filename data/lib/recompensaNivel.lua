@@ -34,19 +34,19 @@ RecompensasNivel = {
 	}
 }
 
-function Player.adicionarRecompensaPendente(self, recompensa)
+function Player:adicionarRecompensaPendente(recompensa)
 	self:setStorageValue(recompensaIdBase+recompensasInicio+recompensa, 1)
 	self:setStorageValue(recompensaIdBase+recompensaPendente, 1)
 end
 
-function Player.checarRecompensaPendente(self)
+function Player:checarRecompensaPendente()
 	if self:getStorageValue(recompensaIdBase+recompensaPendente) == 1 then
 		return true
 	end
 	return false
 end
 
-function Player.pegarRecompensaPendente(self)
+function Player:pegarRecompensaPendente()
 	for i = 1, #RecompensasNivel do
 		if self:getStorageValue(recompensaIdBase+recompensasInicio+i) == 1 then
 			return i
@@ -55,11 +55,11 @@ function Player.pegarRecompensaPendente(self)
 	return false
 end
 
-function Player.pegarRecompensaOpcaoSelecionada(self, recompensaId)
+function Player:pegarRecompensaOpcaoSelecionada(recompensaId)
 	return self:getStorageValue(recompensaIdBase+recompensasOpcoesInicio+recompensasInicio+recompensaId)
 end
 
-function Player.enviarModalRecompensa(self, recompensaId)
+function Player:enviarModalRecompensa(recompensaId)
 	if not recompensaId then
 		recompensaId = self:pegarRecompensaPendente()
 	end
@@ -132,17 +132,17 @@ function pegarExibicaoRecompensa(item)
 	return {quantidadeItem .. " " .. nomeItem, pesoItem}
 end
 
-function Player.selecionarRecompensa(self, recompensaId, opcao)
+function Player:selecionarRecompensa(recompensaId, opcao)
 	self:setStorageValue(recompensaIdBase+recompensasInicio+recompensasOpcoesInicio+recompensaId, opcao)
 	self:enviarModalRecompensa(recompensaId)
 end
 
-function Player.removerEscolhaRecompensa(self, recompensaId, correio)
+function Player:removerEscolhaRecompensa(recompensaId, correio)
 	self:setStorageValue(recompensaIdBase+recompensasInicio+recompensasOpcoesInicio+recompensaId, 0)
 	self:enviarModalRecompensa(recompensaId)
 end
 
-function Player.entregarRecompensa(self, recompensaId, correio)
+function Player:entregarRecompensa(recompensaId, correio)
 	modalRecompensaAberto[self:getId()] = false
 	local recompensaInfo = RecompensasNivel[recompensaId]
 	local item = recompensaInfo.recompensa
@@ -166,7 +166,7 @@ function Player.entregarRecompensa(self, recompensaId, correio)
 	end
 end
 
-function Player.modalTempoRecompensaMaisTarde(self, recompensaId)
+function Player:modalTempoRecompensaMaisTarde(recompensaId)
 	local modalTitulo = "Perguntar novamente mais tarde"
 	local modalMensagem = "Você selecionou a opção 'perguntar novamente mais tarde'.\n\n"
 	modalMensagem = modalMensagem .. "Escolha daqui a quanto tempo você deseja receber uma nova notificação para recebimento da recompensa.\n\n"
@@ -184,7 +184,7 @@ function Player.modalTempoRecompensaMaisTarde(self, recompensaId)
 	modal:sendToPlayer(self)
 end
 
-function Player.enviarModalRecompensaMaisTarde(self, recompensaId, tempo)
+function Player:enviarModalRecompensaMaisTarde(recompensaId, tempo)
 	addEvent(function(playerId, recompensaId)
 		local player = Player(playerId)
 		if not player then

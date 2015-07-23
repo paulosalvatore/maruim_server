@@ -128,7 +128,7 @@ local marcasMapa = {
 	}
 }
 
-function Player.adicionarMarcasMapa(self, cidade)
+function Player:adicionarMarcasMapa(cidade)
 	local marcas = marcasMapa[cidade]
 	for i = 1, #marcas do
 		local marca = marcas[i]

@@ -11,12 +11,12 @@ dataTutorial = {
 	mesa = {}
 }
 
-function Player.iniciarTutorial(self)
+function Player:iniciarTutorial()
 	self:allowMovement(false)
 	self:enviarModalTutorial(2)
 end
 
-function Player.sairTutorial(self)
+function Player:sairTutorial()
 	self:allowMovement(true)
 	local posicaoJogador = self:getPosition()
 	local posicaoTemplo = Town(1):getTemplePosition()
@@ -55,7 +55,7 @@ function Player.sairTutorial(self)
 	self:atualizarPassoTutorial(tutorialFinalizado)
 end
 
-function Player.confirmarSairTutorial(self)
+function Player:confirmarSairTutorial()
 	local modalTitulo = "Sair do Tutorial"
 	local modalMensagem = "Você tem certeza que deseja sair do tutorial?\n"
 	local modal = ModalWindow(tutorialId, modalTitulo, modalMensagem)
@@ -66,7 +66,7 @@ function Player.confirmarSairTutorial(self)
 	modal:sendToPlayer(self)
 end
 
-function Player.enviarModalTutorial(self, id, atualizarPasso)
+function Player:enviarModalTutorial(id, atualizarPasso)
 	if atualizarPasso == nil or atualizarPasso then
 		self:atualizarPassoTutorial(id)
 	end
@@ -217,14 +217,14 @@ function Player.enviarModalTutorial(self, id, atualizarPasso)
 	modal:sendToPlayer(self)
 end
 
-function Player.checarSemVocacao(self)
+function Player:checarSemVocacao()
 	if self:getVocation():getId() == 0 then
 		return true
 	end
 	return false
 end
 
-function Player.enviarModalSemVocacao(self)
+function Player:enviarModalSemVocacao()
 	local modalTitulo = "Escolha uma Vocação"
 	local modalMensagem = "O seu personagem não possui nenhuma vocação.\n\n"
 	modalMensagem = modalMensagem .. "Selecione uma das opções abaixo e tecle 'enter' ou clique em 'escolher' para mudar sua vocação.\n"
@@ -240,7 +240,7 @@ function Player.enviarModalSemVocacao(self)
 	modal:sendToPlayer(self)
 end
 
-function Player.enviarModalAindaSemVocacao(self)
+function Player:enviarModalAindaSemVocacao()
 	if self:getVocation():getId() > 0 then
 		local modalTitulo = "Nenhuma Vocação foi Selecionada"
 		local modalMensagem = "Você não escolheu nenhuma vocação na janela anterior.\n"
@@ -256,15 +256,15 @@ function Player.enviarModalAindaSemVocacao(self)
 	end
 end
 
-function Player.pegarPassoTutorial(self)
+function Player:pegarPassoTutorial()
 	return math.max(1, self:getStorageValue(tutorialId))
 end
 
-function Player.atualizarPassoTutorial(self, passo)
+function Player:atualizarPassoTutorial(passo)
 	return self:setStorageValue(tutorialId, passo)
 end
 
-function Player.enviarLinkAcessoRapido(self, codigo, descricao)
+function Player:enviarLinkAcessoRapido(codigo, descricao)
 	if not enviosLinksAcessoRapido[self:getId()] then
 		enviosLinksAcessoRapido[self:getId()] = 1
 		self:sendTextMessage(4, "Para utilizar um Link de Acesso Rápido você deve ir até o site http://maruim.paulosalvatore.com.br/ e digitá-lo no campo que está localizado na barra direita.")
@@ -272,7 +272,7 @@ function Player.enviarLinkAcessoRapido(self, codigo, descricao)
 	self:sendTextMessage(1, "Link de Acesso Rápido: \"" .. codigo .. "\" - " .. descricao .. ".")
 end
 
-function Player.tutorialFabricarReceita(self)
+function Player:tutorialFabricarReceita()
 	self:allowMovement(false)
 	local npc = Npc("Duriel")
 	local itemArma
@@ -306,7 +306,7 @@ function tutorialAdicionarMateriais(playerId, itemArma)
 	player:allowMovement(true)
 end
 
-function Player.tutorialJanelaFabricacao(self)
+function Player:tutorialJanelaFabricacao()
 	local modalTitulo = self:getProfissaoModalTitulo(22000)
 	local modalMensagem = "Este é um exemplo de janela de profissão.\n\n"
 	modalMensagem = modalMensagem .. "Todas as profissões possuem as mesmas opções.\n\n"
@@ -325,7 +325,7 @@ function Player.tutorialJanelaFabricacao(self)
 	modal:sendToPlayer(self)
 end
 
-function Player.tutorialJanelaFabricacaoInformacao(self)
+function Player:tutorialJanelaFabricacaoInformacao()
 	local profissaoId = 22000
 	local profissaoNivel = self:getProfissaoSkill(profissaoId)
 	local profissaoExpPorcentagem = self:getProfissaoSkillPorcentagem(profissaoId)
@@ -351,7 +351,7 @@ function Player.tutorialJanelaFabricacaoInformacao(self)
 	modal:sendToPlayer(self)
 end
 
-function Player.tutorialJanelaFabricacaoLista(self)
+function Player:tutorialJanelaFabricacaoLista()
 	if self:pegarPassoTutorial() ~= 7 then
 		local modalTitulo = "Lista Vazia"
 		local modalMensagem = "Você já produziu seus equipamentos.\nClique no botão 'Voltar' e selecione outra opção.\n"
@@ -375,7 +375,7 @@ function Player.tutorialJanelaFabricacaoLista(self)
 	end
 end
 
-function Player.tutorialJanelaFabricacaoIndisponivel(self)
+function Player:tutorialJanelaFabricacaoIndisponivel()
 	local modalTitulo = "Janela Indisponível"
 	local modalMensagem = "Esta janela está indisponível durante o tutorial.\n"
 	local modal = ModalWindow(tutorialId+tutorialFinalizado+3, modalTitulo, modalMensagem)
@@ -384,7 +384,7 @@ function Player.tutorialJanelaFabricacaoIndisponivel(self)
 	modal:sendToPlayer(self)
 end
 
-function Player.tutorialIniciarFabricacao(self)
+function Player:tutorialIniciarFabricacao()
 	self:allowMovement(false)
 	local tempoFabricacao = 4
 	self:removeItem(5913, 3)
@@ -437,7 +437,7 @@ function Player.tutorialIniciarFabricacao(self)
 	end
 end
 
-function Player.enviarModalItensKnight(self)
+function Player:enviarModalItensKnight()
 	local modalTitulo = "Escolha uma Arma"
 	local modalMensagem = "Escolha uma das armas abaixo e clique em 'Escolher', tecle entre ou dê um clique duplo na opção desejada para recebê-la.\n\n"
 	local modal = ModalWindow(modalItensKnight, modalTitulo, modalMensagem)
@@ -453,7 +453,7 @@ function Player.enviarModalItensKnight(self)
 	self:registerEvent("ItensKnight")
 end
 
-function Player.tutorialAprenderColeta(self)
+function Player:tutorialAprenderColeta()
 	self:allowMovement(false)
 	local npc = Npc("Klaus")
 	local mensagens = {
