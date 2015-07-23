@@ -360,3 +360,32 @@ function getPlayerNameById(id)
     end
     return 0
 end
+
+function Player:pegarArtigo(tipo)
+	if tipo == 1 then
+		return ((self:getSex() == PLAYERSEX_FEMALE) and 'a' or 'o')
+	elseif tipo == 2 then
+		return ((self:getSex() == PLAYERSEX_FEMALE) and 'a' or '')
+	end
+	return ''
+end
+
+function Player:removerOutfit(lookType)
+	self:removeOutfit(lookType)
+	local outfit = self:getOutfit()
+	if outfit.lookType == lookType then
+		local novoLookType
+		if self:getSex() == PLAYERSEX_FEMALE then
+			novoLookType = 136
+		else
+			novoLookType = 128
+		end
+		self:mudarOutfit(novoLookType)
+		self:sendOutfitWindow()
+	end
+end
+
+function Player:mudarOutfit(lookType)
+	local outfit = self:getOutfit()
+	self:setOutfit({lookType = lookType, lookFeet = outfit.lookFeet, lookLegs = outfit.lookLegs, lookMount = outfit.lookMount, lookHead = outfit.lookHead, lookTypeEx = outfit.lookTypeEx, lookAddons = outfit.lookAddons, lookBody = outfit.lookBody})
+end

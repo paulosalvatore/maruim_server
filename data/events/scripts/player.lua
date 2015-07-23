@@ -8,7 +8,7 @@ function Player:onLook(thing, position, distance)
 
 	if LOOK_MARRIAGE_DESCR and thing:isCreature() then
         if thing:isPlayer() then
-            description = description .. self:getMarriageDescription(thing)
+            description = description .. self:pegarDescricaoCasamento(thing)
         end
     end
 

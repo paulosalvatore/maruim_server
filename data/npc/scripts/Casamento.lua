@@ -2,192 +2,191 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid)            npcHandler:onCreatureAppear(cid)            end
-function onCreatureDisappear(cid)        npcHandler:onCreatureDisappear(cid)            end
-function onCreatureSay(cid, type, msg)    npcHandler:onCreatureSay(cid, type, msg)    end
-function onThink()                        npcHandler:onThink()                        end
-
-local function greetCallback(cid)
-	local player = Player(cid)
-	local msg = 'Seja bem-vindo, ' .. player:getName() .. '.'
-
-	local playerStatus = getPlayerMarriageStatus(player:getGuid())
-	local playerSpouse = getPlayerSpouse(player:getGuid())
-	if (playerStatus == MARRIED_STATUS) then
-		msg = msg .. ' Eu vejo que você está muito feliz casad' .. ((player:getSex() == PLAYERSEX_FEMALE) and 'a' or 'o') .. '. O que você faz por aqui? Procurando por um {divórcio}?'
-	elseif (playerStatus == PROPOSED_STATUS) then
-		msg = msg .. ' Você ainda está esperando a proposta de casamento que fez para {' .. (getPlayerNameById(playerSpouse)) .. '}. Você gostaria de {remover} o pedido?'
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureSay(player, type, msg)
+	local fraseNpc = "Seja bem-vind" .. player:pegarArtigo(1) .. ", " .. player:getName() .. "."
+	local statusCasamento = player:pegarStatusCasamento()
+	local conjuge = player:pegarConjuge()
+	if statusCasamento == STATUS_CASAMENTO_CASADO then
+		fraseNpc = fraseNpc .. " Eu vejo que você está muito feliz casad" .. player:pegarArtigo(1) .. ". O que você faz por aqui?"
+	elseif statusCasamento == STATUS_CASAMENTO_PEDIDO then
+		fraseNpc = fraseNpc .. " Você ainda está esperando a proposta de casamento que fez para {" .. (getPlayerNameById(conjuge)) .. "}. Você gostaria de {remover} o pedido?"
 	else
-		msg = msg .. ' O que você faz por aqui? Quer {casar} com alguém?'
+		fraseNpc = fraseNpc .. " O que você faz por aqui? Deseja {casar} com alguém?"
 	end
-	npcHandler:say(msg,cid)
-	npcHandler:addFocus(cid)
-	return false
+	npcHandler:setMessage(MESSAGE_GREET, fraseNpc)
+	npcHandler:onCreatureSay(player, type, msg)
 end
+function onThink()						npcHandler:onThink()						end
 
-local function confirmRemoveEngage(cid, message, keywords, parameters, node)
+function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
 		return false
 	end
 
 	local player = Player(cid)
-	local playerStatus = getPlayerMarriageStatus(player:getGuid())
-	local playerSpouse = getPlayerSpouse(player:getGuid())
-	if playerStatus == PROPOSED_STATUS then
-		npcHandler:say('Você tem certeza que deseja remover sua proposta de casamento para {' .. getPlayerNameById(playerSpouse) .. '}?', cid)
-		node:addChildKeywords({{'no'}, {'nao'}, {'não'}}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, moveup = 3, text = 'Tudo bem, vamos deixar assim então.'})
-
-		local function removeEngage(cid, message, keywords, parameters, node)
-			local player = Player(cid)
-			player:addItem(ITEM_WEDDING_RING, 1)
-			player:addItem(ITEM_WEDDING_OUTFIT_BOX, 1)
-			setPlayerMarriageStatus(player:getGuid(), 0)
-			setPlayerSpouse(player:getGuid(), -1)
-			npcHandler:say(parameters.text, cid)
-			keywordHandler:moveUp(parameters.moveup)
-		end
-		node:addChildKeywords({{'yes'}, {'sim'}}, removeEngage, {moveup = 3, text = "Sua proposta de casamento para {" .. getPlayerNameById(playerSpouse) .. "} foi removida. Aqui está seu 'wedding ring' e sua 'wedding outfit box' de volta."})
-	else
-		npcHandler:say('Você não possui nenhuma proposta de casamento pendentes para remover.', cid)
-		keywordHandler:moveUp(2)
-	end
-	return true
-end
-
-local function confirmDivorce(cid, message, keywords, parameters, node)
-	if(not npcHandler:isFocused(cid)) then
-		return false
-	end
-
-	local player = Player(cid)
-	local playerStatus = getPlayerMarriageStatus(player:getGuid())
-	local playerSpouse = getPlayerSpouse(player:getGuid())
-	if playerStatus == MARRIED_STATUS then
-		npcHandler:say('Você tem certeza que deseja se divorciar de {' .. getPlayerNameById(playerSpouse) .. '}?', cid)
-		node:addChildKeywords({{'no'}, {'nao'}, {'não'}}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, moveup = 3, text = 'Maravilha! Casamento deve ser um compromisso eterno.'})
-
-		local function divorce(cid, message, keywords, parameters, node)
-			local player = Player(cid)
-			local spouse = getPlayerSpouse(player:getGuid())
-			setPlayerMarriageStatus(player:getGuid(), 0)
-			setPlayerSpouse(player:getGuid(), -1)
-			setPlayerMarriageStatus(spouse, 0)
-			setPlayerSpouse(spouse, -1)
-			if player:getSex() == PLAYERSEX_FEMALE then
-				player:removeOutfit(329)
+	local statusCasamento = player:pegarStatusCasamento()
+	local conjuge = player:pegarConjuge()
+	if npcHandler.topic[cid] == 0 then
+		if isInArray({"marry", "marriage", "casar", "casamento"}, msg) then
+			if statusCasamento == STATUS_CASAMENTO_PEDIDO then
+				npcHandler:say("Você já está casad" .. player:pegarArtigo(1) .. " com {" .. getPlayerNameById(conjuge) .. "}.", cid)
+			elseif statusCasamento == STATUS_CASAMENTO_CASADO then
+				npcHandler:say("Você já fez uma proposta de casamento para {" .. getPlayerNameById(conjuge) .. "}. Você pode {remover} o pedido, caso queira.", cid)
 			else
-				player:removeOutfit(328)
+				npcHandler:say("Para casar com alguém você teve possuir um 'wedding ring' e uma 'wedding outfit box'. Você deseja casar?", cid)
+				npcHandler.topic[cid] = 1
 			end
-			local playerSpouse = Player(getPlayerNameById(spouse))
-			if playerSpouse then
-				if playerSpouse:getSex() == PLAYERSEX_FEMALE then
-					playerSpouse:removeOutfit(329)
-				else
-					playerSpouse:removeOutfit(328)
-				end
+		elseif isInArray({"remove", "remover", "desfazer"}, msg) then
+			local statusCasamento = player:pegarStatusCasamento()
+			if statusCasamento == STATUS_CASAMENTO_PEDIDO then
+				local conjuge = player:pegarConjuge()
+				npcHandler:say("Você tem certeza que deseja remover sua proposta de casamento para {" .. getPlayerNameById(conjuge) .. "}?", cid)
+				npcHandler.topic[cid] = 3
+			else
+				npcHandler:say("Você não possui nenhuma proposta de casamento pendente para remover.", cid)
 			end
-			npcHandler:say(parameters.text, cid)
-			keywordHandler:moveUp(parameters.moveup)
+		elseif isInArray({"divorce", "divorcio", "divórcio", "divorciar"}, msg) then
+			local statusCasamento = player:pegarStatusCasamento()
+			if statusCasamento == STATUS_CASAMENTO_CASADO then
+				local conjuge = player:pegarConjuge()
+				npcHandler:say("Você tem certeza que deseja se divorciar de {" .. getPlayerNameById(conjuge) .. "}? Isso lhe custará " .. CUSTO_DIVORCIO .. " gold.", cid)
+				npcHandler.topic[cid] = 4
+			else
+				npcHandler:say("Você não está casad" .. player:pegarArtigo(1) .. " com ninguém para se divorciar.", cid)
+			end
 		end
-		node:addChildKeywords({{'yes'}, {'sim'}}, divorce, {moveup = 3, text = 'Pronto, você se divorciou de {' .. getPlayerNameById(playerSpouse) .. '}. Pense melhor da próxima vez que for casar com alguém.'})
-	else
-		npcHandler:say('Você não está casad' .. ((player:getSex() == PLAYERSEX_FEMALE) and 'a' or 'o') .. ' para se divorciar.', cid)
-		keywordHandler:moveUp(2)
-	end
-	return true
-end
-
-local function tryEngage(cid, message, keywords, parameters, node)
-	if(not npcHandler:isFocused(cid)) then
-		return false
-	end
-
-	if isInArray({'remove', 'remover'}, message) then
-		confirmRemoveEngage(cid, message, keywords, parameters, node)
-		return
-	elseif isInArray({'divorce', 'divorciar'}, message) then
-		confirmDivorce(cid, message, keywords, parameters, node)
-		return
-	end
-
-	local player = Player(cid)
-
-	local playerStatus = getPlayerMarriageStatus(player:getGuid())
-	local playerSpouse = getPlayerSpouse(player:getGuid())
-	if playerStatus == MARRIED_STATUS then
-		npcHandler:say('Você já está casad' .. ((player:getSex() == PLAYERSEX_FEMALE) and 'a' or 'o') .. ' com {' .. getPlayerNameById(playerSpouse) .. '}.', cid)
-	elseif playerStatus == PROPOSED_STATUS then
-		npcHandler:say('Você já fez uma proposta de casamento para {' .. getPlayerNameById(playerSpouse) .. '}. Você pode {remover} o pedido, caso queira.', cid)
-	else
-		local candidate = getPlayerGUIDByName(message)
-		if candidate == 0 then
-			npcHandler:say('Essa pessoa não existe.', cid)
-		elseif candidate == player:getGuid() then
-			npcHandler:say('Você não pode casar você mesm' .. ((player:getSex() == PLAYERSEX_FEMALE) and 'a' or 'o') .. '.', cid)
+	elseif npcHandler.topic[cid] == 1 then
+		if isInArray({"yes", "sim"}, msg) then
+			npcHandler:say("Muito bem! Com quem você quer casar?", cid)
+			npcHandler.topic[cid] = 2
+		elseif isInArray({"no", "nao", "não"}, msg) then
+			npcHandler:say("Sem problemas, posso ajudá-lo em alguma outra coisa?", cid)
+			npcHandler.topic[cid] = 0
+		end
+	elseif npcHandler.topic[cid] == 2 then
+		if isInArray({"desistir"}, msg) then
+			npcHandler:say("Sem problemas, posso ajudá-lo em alguma outra coisa?", cid)
+			npcHandler.topic[cid] = 0
 		else
-			if player:getItemCount(ITEM_WEDDING_RING) == 0 then
-				npcHandler:say("Como eu disse, você precisa de um 'wedding ring' para se casar.", cid)
-			elseif player:getItemCount(ITEM_WEDDING_OUTFIT_BOX) == 0 then
-				npcHandler:say("Como eu disse, você precisa de uma 'wedding outfit box' para se casar.", cid)
+			local candidatoNome = msg
+			local candidatoId = getPlayerGUIDByName(candidatoNome)
+			local candidato = Player(candidatoNome)
+			candidatoNome = candidato:getName()
+			if candidatoId == 0 then
+				npcHandler:say("Essa pessoa não existe, você pode {desistir} caso queira.", cid)
+			elseif not candidato then
+				npcHandler:say("Essa pessoa não está online, você pode {desistir} caso queira.", cid)
+			elseif candidatoId == player:getGuid() then
+				npcHandler:say("Você não pode casar com você mesm" .. player:pegarArtigo(1) .. ".", cid)
 			else
-				local candidateStatus = getPlayerMarriageStatus(candidate)
-				local candidateSpouse = getPlayerSpouse(candidate)
-				if candidateStatus == MARRIED_STATUS then
-					npcHandler:say('{' .. getPlayerNameById(candidate) .. '} possui um casamento com {' .. getPlayerNameById(candidateSpouse) .. '}.', cid)
-				elseif candidateStatus == PROPOSED_STATUS then
-					if candidateSpouse == player:getGuid() then
-						npcHandler:say('Já que ambas as jovens almas desejam se casar, eu declaro você e {' .. getPlayerNameById(candidate) .. '} casados. {' .. player:getName() .. '}, aqui estão as alianças. Pegue uma e dê a outra para ' .. ((player:getSex() == PLAYERSEX_FEMALE) and 'o seu esposo' or 'a sua esposa') .. '.', cid)
+				if player:getItemCount(ITEM_WEDDING_RING) == 0 then
+					npcHandler:say("Você precisa de um 'wedding ring' para se {casar}.", cid)
+					npcHandler.topic[cid] = 0
+				elseif player:getItemCount(ITEM_WEDDING_OUTFIT_BOX) == 0 then
+					npcHandler:say("Você precisa de uma 'wedding outfit box' para se {casar}.", cid)
+					npcHandler.topic[cid] = 0
+				else
+					local candidatoStatusCasamento = candidato:pegarStatusCasamento()
+					local candidatoConjuge = candidato:pegarConjuge()
+					if candidatoStatusCasamento == STATUS_CASAMENTO_CASADO then
+						npcHandler:say("{" .. candidatoNome .. "} possui um casamento com {" .. getPlayerNameById(candidato:pegarConjuge()) .. "}.", cid)
+					elseif candidatoStatusCasamento == STATUS_CASAMENTO_PEDIDO then
+						if candidatoConjuge == player:getGuid() then
+							npcHandler:say("Já que é da vontade de todos, eu declaro {" .. player:getName() .. "} e {" .. candidatoNome .. '} casados. Muito bem, aqui estão as alianças. Pegue uma e dê a outra para ' .. ((player:getSex() == PLAYERSEX_FEMALE) and 'o seu esposo' or 'a sua esposa') .. '.', cid)
+							player:getPosition():sendMagicEffect(CONST_ME_HEARTS)
+							candidato:getPosition():sendMagicEffect(CONST_ME_HEARTS)
+							player:removeItem(ITEM_WEDDING_RING, 1)
+							player:removeItem(ITEM_WEDDING_OUTFIT_BOX, 1)
+							local alianca1 = player:addItem(ITEM_ENGRAVED_WEDDING_RING, 1)
+							local alianca2 = player:addItem(ITEM_ENGRAVED_WEDDING_RING, 1)
+							local descricaoAlianca = player:getName() .. " & " .. candidatoNome .. ' para sempre - casados em ' .. os.date('%d/%m/%Y.')
+							alianca1:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, descricaoAlianca)
+							alianca2:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, descricaoAlianca)
+							if player:getSex() == PLAYERSEX_FEMALE then
+								player:addOutfit(329)
+								player:mudarOutfit(329)
+							else
+								player:addOutfit(328)
+								player:mudarOutfit(328)
+							end
+							if candidato:getSex() == PLAYERSEX_FEMALE then
+								candidato:addOutfit(329)
+								candidato:mudarOutfit(329)
+							else
+								candidato:addOutfit(328)
+								candidato:mudarOutfit(328)
+							end
+							player:definirConjuge(candidatoId)
+							player:definirStatusCasamento(STATUS_CASAMENTO_CASADO)
+							candidato:definirStatusCasamento(STATUS_CASAMENTO_CASADO)
+							npcHandler.topic[cid] = 0
+						else
+							npcHandler:say("{" .. candidatoNome .. "} já fez uma proposta de casamento para {" .. getPlayerNameById(candidatoConjuge) .. "}.", cid)
+						end
+					else
+						npcHandler:say("Tudo bem, agora vamos aguardar e ver se a sua proposta será aceita. Você pode {remover} o pedido a qualquer momento.", cid)
 						player:removeItem(ITEM_WEDDING_RING, 1)
 						player:removeItem(ITEM_WEDDING_OUTFIT_BOX, 1)
-						local item1 = Item(doPlayerAddItem(cid, ITEM_ENGRAVED_WEDDING_RING, 1))
-						local item2 = Item(doPlayerAddItem(cid, ITEM_ENGRAVED_WEDDING_RING, 1))
-						item1:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, player:getName() .. ' & ' .. getPlayerNameById(candidate) .. ' para sempre - casados em ' .. os.date('%d/%m/%Y.'))
-						item2:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, player:getName() .. ' & ' .. getPlayerNameById(candidate) .. ' para sempre - casados em ' .. os.date('%d/%m/%Y.'))
-						if player:getSex() == PLAYERSEX_FEMALE then
-							player:addOutfit(329)
-						else
-							player:addOutfit(328)
-						end
-						local playerCandidato = Player(getPlayerNameById(candidate))
-						if playerCandidato then
-							if playerCandidato:getSex() == PLAYERSEX_FEMALE then
-								playerCandidato:addOutfit(329)
-							else
-								playerCandidato:addOutfit(328)
-							end
-						end
-						setPlayerMarriageStatus(player:getGuid(), MARRIED_STATUS)
-						setPlayerMarriageStatus(candidate, MARRIED_STATUS)
-						setPlayerSpouse(player:getGuid(), candidate)
-					else
-						npcHandler:say('{' .. getPlayerNameById(candidate) .. '} já fez uma proposta de casamento para {' .. getPlayerNameById(candidateSpouse) .. '}.', cid)
+						player:definirStatusCasamento(STATUS_CASAMENTO_PEDIDO)
+						player:definirConjuge(candidatoId)
+						npcHandler.topic[cid] = 0
 					end
-				else
-					npcHandler:say("Tudo bem, agora vamos aguardar e ver se {" ..  getPlayerNameById(candidate) .. "} aceita a sua proposta. Eu lhe darei seu 'wedding ring' de volta assim que {" ..  getPlayerNameById(candidate) .. "} aceitar sua proposta. Caso não aceite, devolverei também a sua 'wedding outfit box'. Você pode {remover} o pedido a qualquer momento.", cid)
-					player:removeItem(ITEM_WEDDING_RING, 1)
-					player:removeItem(ITEM_WEDDING_OUTFIT_BOX, 1)
-					setPlayerMarriageStatus(player:getGuid(), PROPOSED_STATUS)
-					setPlayerSpouse(player:getGuid(), candidate)
 				end
 			end
 		end
+	elseif npcHandler.topic[cid] == 3 then
+		local conjuge = player:pegarConjuge()
+		if isInArray({"yes", "sim"}, msg) then
+			npcHandler:say("Sua proposta de casamento para {" .. getPlayerNameById(conjuge) .. "} foi removida. Aqui está seu 'wedding ring' e sua 'wedding outfit box' de volta.", cid)
+			player:addItem(ITEM_WEDDING_RING, 1)
+			player:addItem(ITEM_WEDDING_OUTFIT_BOX, 1)
+			player:definirStatusCasamento(0)
+			player:definirConjuge(0)
+			npcHandler.topic[cid] = 0
+		elseif isInArray({"no", "nao", "não"}, msg) then
+			npcHandler:say("Tudo bem, vamos deixar assim então.", cid)
+			npcHandler.topic[cid] = 0
+		end
+	elseif npcHandler.topic[cid] == 4 then
+		local conjugeId = player:pegarConjuge()
+		local conjugeNome = getPlayerNameById(conjugeId)
+		if isInArray({"yes", "sim"}, msg) then
+			local statusCasamento = player:pegarStatusCasamento()
+			if statusCasamento == STATUS_CASAMENTO_CASADO then
+				if not player:removeMoney(CUSTO_DIVORCIO) then
+					npcHandler:say("Você não possui dinheiro suficiente.", cid)
+				else
+					npcHandler:say("Pronto, você se divorciou de {" .. conjugeNome .. "}. Pense melhor da próxima vez que for casar com alguém.", cid)
+					player:desfazerCasamento()
+					if player:getSex() == PLAYERSEX_FEMALE then
+						player:removerOutfit(329)
+					else
+						player:removerOutfit(328)
+					end
+					local conjuge = Player(conjugeNome)
+					if conjuge then
+						if conjuge:getSex() == PLAYERSEX_FEMALE then
+							conjuge:removerOutfit(329)
+						else
+							conjuge:removerOutfit(328)
+						end
+					end
+				end
+			else
+				npcHandler:say("Você não está casad" .. player:pegarArtigo(1) .. " com ninguém para se divorciar.", cid)
+			end
+			npcHandler.topic[cid] = 0
+		elseif isInArray({"no", "nao", "não"}, msg) then
+			npcHandler:say("Tudo bem, vamos deixar assim então.", cid)
+			npcHandler.topic[cid] = 0
+		end
 	end
-	keywordHandler:moveUp(3)
-	return true
 end
 
-local node1 = keywordHandler:addKeywords({{'marry'}, {'casar'}, {'casamento'}}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = "Você gostaria de se casar? Certifique-se de que possui um 'wedding ring' e uma 'wedding outfit box' com você."})
-for a, b in pairs(node1) do
-	b:addChildKeywords({{'no'}, {'nao'}, {'não'}}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, moveup = 1, text = 'Sem problemas.'})
-	local node2 = b:addChildKeywords({{'yes'}, {'sim'}}, StdModule.say, {npcHandler = npcHandler, onlyFocus = true, text = 'Você gostaria de casar-se com quem?'})
-	for c, d in pairs(node2) do
-		d:addChildKeyword({'[%w]'}, tryEngage, {})
-	end
-end
+npcHandler:setMessage(MESSAGE_WALKAWAY, "Até mais!")
+npcHandler:setMessage(MESSAGE_FAREWELL, "Boa sorte em sua jornada, |PLAYERNAME|!")
 
-keywordHandler:addKeywords({{'remove'}, {'remover'}}, confirmRemoveEngage, {})
-
-keywordHandler:addKeywords({{'divorce'}, {'divorcio'}, {'divórcio'}}, confirmDivorce, {})
-
-npcHandler:setCallback(CALLBACK_GREET, greetCallback)
+npcHandler:setCallback(CALLBACK_MESSAGE_DEFAULT, creatureSayCallback)
 npcHandler:addModule(FocusModule:new())
