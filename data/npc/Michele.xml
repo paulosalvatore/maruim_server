@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_sellable" value="bone,2230,5;lump of dirt,10609,5;pelvis bone,12437,10;skull,2229,200;big bone,2231,1;mysterious voodoo skull,5669,1;hardened bone,5925,40;skeleton decoration,6526,1;bony tail,11194,35;unholy bone,11233,1;maxilla maximus,13291,10000;maxilla,13302,1;cavebear skull,13303,1;blazing bone,18425,1;" />
+		<parameter key="shop_sellable" value="bone,2230,15;lump of dirt,10609,5;pelvis bone,12437,7;skull,2229,200;big bone,2231,1;mysterious voodoo skull,5669,1;hardened bone,5925,40;skeleton decoration,6526,1;bony tail,11194,35;unholy bone,11233,1;maxilla maximus,13291,10000;maxilla,13302,1;cavebear skull,13303,1;blazing bone,18425,1;" />
 	</parameters>
 </npc>
