@@ -8,10 +8,18 @@ function onCreatureSay(player, type, msg)
 	local fraseNpc = "Seja bem-vind" .. player:pegarArtigo(1) .. ", " .. player:getName() .. "."
 	local statusCasamento = player:pegarStatusCasamento()
 	local conjuge = player:pegarConjuge()
+	local propostas = player:pegarPropostas()
 	if statusCasamento == STATUS_CASAMENTO_CASADO then
 		fraseNpc = fraseNpc .. " Eu vejo que você está muito feliz casad" .. player:pegarArtigo(1) .. ". O que você faz por aqui?"
 	elseif statusCasamento == STATUS_CASAMENTO_PEDIDO then
 		fraseNpc = fraseNpc .. " Você ainda está esperando a proposta de casamento que fez para {" .. (getPlayerNameById(conjuge)) .. "}. Você gostaria de {remover} o pedido?"
+	elseif statusCasamento == 0 and #propostas > 0 then
+		if #propostas == 1 then
+			fraseNpc = fraseNpc .. " {" .. propostas[1] .. "} lhe pediu em casamento, você pode {aceitar} esse pedido, caso queira."
+		else
+			local exibirPropostas = exibirPropostas(propostas)
+			fraseNpc = fraseNpc .. "Você possui " .. #propostas .. " propostas de casamento:\n" .. exibirPropostas .. ". Você deseja {casar} com alguma dessas pessoas?"
+		end
 	else
 		fraseNpc = fraseNpc .. " O que você faz por aqui? Deseja {casar} com alguém?"
 	end
@@ -28,6 +36,7 @@ function creatureSayCallback(cid, type, msg)
 	local player = Player(cid)
 	local statusCasamento = player:pegarStatusCasamento()
 	local conjuge = player:pegarConjuge()
+	local propostas = player:pegarPropostas()
 	if npcHandler.topic[cid] == 0 then
 		if isInArray({"marry", "marriage", "casar", "casamento"}, msg) then
 			if statusCasamento == STATUS_CASAMENTO_PEDIDO then
@@ -56,6 +65,18 @@ function creatureSayCallback(cid, type, msg)
 			else
 				npcHandler:say("Você não está casad" .. player:pegarArtigo(1) .. " com ninguém para se divorciar.", cid)
 			end
+		elseif isInArray({"propostas", "pedidos"}, msg) then
+			if #propostas == 0 then
+				npcHandler:say("Você não possui nenhuma proposta de casamento pendente.", cid)
+			elseif #propostas == 1 then
+				npcHandler:say("{" .. propostas[1] .. "} lhe pediu em casamento, você pode {aceitar} ou {recusar} esse pedido.", cid)
+			else
+				local exibirPropostas = exibirPropostas(propostas)
+				npcHandler:say("Você possui " .. #propostas .. " propostas de casamento:\n" .. exibirPropostas .. ". Você deseja {casar} com alguma dessas pessoas?", cid)
+			end
+		elseif #propostas == 1 and isInArray({"aceitar"}, msg) then
+			npcHandler:say("Confirme o nome da pessoa com quem você irá casar.", cid)
+			npcHandler.topic[cid] = 2
 		end
 	elseif npcHandler.topic[cid] == 1 then
 		if isInArray({"yes", "sim"}, msg) then
@@ -73,13 +94,17 @@ function creatureSayCallback(cid, type, msg)
 			local candidatoNome = msg
 			local candidatoId = getPlayerGUIDByName(candidatoNome)
 			local candidato = Player(candidatoNome)
-			candidatoNome = candidato:getName()
+			if candidato then
+				candidatoNome = candidato:getName()
+			end
 			if candidatoId == 0 then
 				npcHandler:say("Essa pessoa não existe, você pode {desistir} caso queira.", cid)
-			elseif not candidato then
-				npcHandler:say("Essa pessoa não está online, você pode {desistir} caso queira.", cid)
 			elseif candidatoId == player:getGuid() then
 				npcHandler:say("Você não pode casar com você mesm" .. player:pegarArtigo(1) .. ".", cid)
+			elseif not candidato then
+				npcHandler:say("Essa pessoa não está online, você pode {desistir} caso queira.", cid)
+			elseif player:getAccountId() == candidato:getAccountId() then
+				npcHandler:say("Você não pode casar com um personagem de sua conta.", cid)
 			else
 				if player:getItemCount(ITEM_WEDDING_RING) == 0 then
 					npcHandler:say("Você precisa de um 'wedding ring' para se {casar}.", cid)
