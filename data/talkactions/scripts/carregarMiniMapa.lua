@@ -7,6 +7,7 @@ function onSay(player, words, param)
 		return false
 	end
 
+	carregarPosicoesMiniMapa()
 	carregarMiniMapa(player:getId())
 
 	return false
