@@ -94,9 +94,6 @@ function creatureSayCallback(cid, type, msg)
 			local candidatoNome = msg
 			local candidatoId = getPlayerGUIDByName(candidatoNome)
 			local candidato = Player(candidatoNome)
-			if candidato then
-				candidatoNome = candidato:getName()
-			end
 			if candidatoId == 0 then
 				npcHandler:say("Essa pessoa não existe, você pode {desistir} caso queira.", cid)
 			elseif candidatoId == player:getGuid() then
@@ -106,6 +103,7 @@ function creatureSayCallback(cid, type, msg)
 			elseif player:getAccountId() == candidato:getAccountId() then
 				npcHandler:say("Você não pode casar com um personagem de sua conta.", cid)
 			else
+				candidatoNome = candidato:getName()
 				if player:getItemCount(ITEM_WEDDING_RING) == 0 then
 					npcHandler:say("Você precisa de um 'wedding ring' para se {casar}.", cid)
 					npcHandler.topic[cid] = 0
@@ -121,6 +119,7 @@ function creatureSayCallback(cid, type, msg)
 						if candidatoConjuge == player:getGuid() then
 							npcHandler:say("Já que é da vontade de todos, eu declaro {" .. player:getName() .. "} e {" .. candidatoNome .. '} casados. Muito bem, aqui estão as alianças. Pegue uma e dê a outra para ' .. ((player:getSex() == PLAYERSEX_FEMALE) and 'o seu esposo' or 'a sua esposa') .. '.', cid)
 							player:getPosition():sendMagicEffect(CONST_ME_HEARTS)
+							candidato:sendTextMessage(MESSAGE_INFO_DESCR, "Parabéns! Seu pedido de casamento para " .. player:getName() .. " foi aceito.")
 							candidato:getPosition():sendMagicEffect(CONST_ME_HEARTS)
 							player:removeItem(ITEM_WEDDING_RING, 1)
 							player:removeItem(ITEM_WEDDING_OUTFIT_BOX, 1)
@@ -156,6 +155,7 @@ function creatureSayCallback(cid, type, msg)
 						player:removeItem(ITEM_WEDDING_OUTFIT_BOX, 1)
 						player:definirStatusCasamento(STATUS_CASAMENTO_PEDIDO)
 						player:definirConjuge(candidatoId)
+						candidato:sendTextMessage(MESSAGE_INFO_DESCR, "Você recebeu uma proposta de casamento de " .. player:getName() .. ".")
 						npcHandler.topic[cid] = 0
 					end
 				end
