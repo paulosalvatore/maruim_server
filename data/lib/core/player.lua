@@ -32,7 +32,7 @@ function Player:getDepotItems(depotId)
 	return self:getDepotChest(depotId, true):getItemHoldingCount()
 end
 
-function Player:getLossPercent(self)
+function Player:getLossPercent()
 	local blessings = 0
 	local lossPercent = {
 		[0] = 100,
@@ -51,7 +51,7 @@ function Player:getLossPercent(self)
 	return lossPercent[blessings]
 end
 
-function Player:isPremium(self)
+function Player:isPremium()
 	return self:getPremiumDays() > 0 or configManager.getBoolean(configKeys.FREE_PREMIUM)
 end
 
@@ -62,7 +62,7 @@ function Player:sendCancelMessage(message)
 	return self:sendTextMessage(MESSAGE_STATUS_SMALL, message)
 end
 
-function Player:isUsingOtClient(self)
+function Player:isUsingOtClient()
 	return self:getClient().os >= CLIENTOS_OTCLIENT_LINUX
 end
 
