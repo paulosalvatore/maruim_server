@@ -4709,11 +4709,11 @@
 	<spawn centerx="1404" centery="1613" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="797" centery="1614" centerz="7" radius="1">
-		<npc name="Darcalgan Nightbrem" x="-1" y="0" z="7" spawntime="60" direction="2" />
+	<spawn centerx="795" centery="1614" centerz="7" radius="1">
+		<npc name="Darcalgan Nightbrem" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="801" centery="1614" centerz="7" radius="1">
-		<npc name="Draish Garath" x="1" y="0" z="7" spawntime="60" direction="2" />
+	<spawn centerx="802" centery="1614" centerz="7" radius="1">
+		<npc name="Draish Garath" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1174" centery="1614" centerz="7" radius="1">
 		<monster name="Nomad" x="0" y="0" z="7" spawntime="60" />
