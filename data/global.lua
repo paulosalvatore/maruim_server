@@ -254,3 +254,44 @@ function verificarItensSemNome()
 	print("> " .. #itensSemNome .. " itens sem nome foram encontrados.")
 	itensSemNomeVerificados = true
 end
+
+if itensMoviveis == nil then
+	itensMoviveis = {}
+	itensMoviveisVerificados = false
+	itensMoviveisAtual = {}
+end
+
+function verificarItensMoviveis()
+	if itensMoviveisVerificados then
+		return
+	end
+	print(">> Verificando itens moviveis sem actionId...")
+	for z = 0, 15 do
+		for x = 0, 3000 do
+			for y = 0, 3000 do
+				local tile = Tile(x, y, z)
+				if tile then
+					if (x > 670 and x < 932) and (y > 2031 and y < 2258) then
+						
+					elseif (x > 482 and x < 959) and (y > 2318 and y < 2530) then
+					
+					else
+						local itens = tile:getItems()
+
+						if itens and #itens > 0 then
+							for i = 1, #itens do
+								if ItemType(itens[i]:getId()):isMovable() and itens[i]:getUniqueId() > 65535 and itens[i]:getActionId() == 0 and not isInArray(itensMoviveis, itens[i]:getId()) then
+									table.insert(itensMoviveis, itens[i])
+									itens[i]:setActionId(2500)
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+		print("> Andar " .. z .. " verificado.")
+	end
+	print("> " .. #itensMoviveis .. " itens moviveis sem actionId foram encontrados e modificados.")
+	itensMoviveisVerificados = true
+end
