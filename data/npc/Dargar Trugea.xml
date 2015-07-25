@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Dargar Trugea" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Dargar Trugea" script="Default.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="157" head="123" body="123" legs="123" feet="123" addons="2" />
 	<parameters>

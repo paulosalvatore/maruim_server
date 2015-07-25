@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Belyne Fegotheahi" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Belyne Fegotheahi" script="Default.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="159" head="56" body="70" legs="41" feet="100" />
 	<parameters>

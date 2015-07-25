@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Fron" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Fron" script="Default.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="138" head="40" body="63" legs="38" feet="85" addons="3" />
 	<parameters>

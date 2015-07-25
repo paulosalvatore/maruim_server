@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Rimi" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Rimi" script="Default.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="268" head="24" body="7" legs="80" feet="55" addons="2" />
 	<parameters>

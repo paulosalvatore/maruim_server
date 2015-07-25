@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Kardo Siren" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Kardo Siren" script="Default.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="131" head="11" body="94" legs="76" feet="82" addons="3" />
 	<parameters>

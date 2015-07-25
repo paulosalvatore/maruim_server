@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Rukarian Miru" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Rukarian Miru" script="Default.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="137" head="95" body="118" legs="116" feet="118" addons="3" />
 	<parameters>

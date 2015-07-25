@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Evephy Phly" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Evephy Phly" script="Default.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="138" head="116" body="132" legs="17" feet="17" addons="0" />
 	<parameters>

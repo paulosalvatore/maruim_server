@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Phaos Thourasa" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Phaos Thourasa" script="Vendedor Utilidades.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="128" head="1" body="68" legs="97" feet="36" addons="1" />
 	<parameters>
@@ -8,6 +8,6 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_buyable" value="backpack,1988,20;pick,2553,10;shovel,2554,20;rope,2120,20;torch,2050,10;" />
+		<parameter key="shop_buyable" value="torch,2050,5;" />
 	</parameters>
 </npc>

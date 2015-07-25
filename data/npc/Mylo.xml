@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Mylo" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Mylo" script="Default.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="684" head="77" body="43" legs="69" feet="100" addons="3" />
 	<parameters>

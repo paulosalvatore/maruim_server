@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Jund Alder" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Jund Alder" script="Default.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="143" head="116" body="114" legs="114" feet="90" addons="3" />
 	<parameters>

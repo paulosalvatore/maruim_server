@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Eladriani Ewor" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Eladriani Ewor" script="Default.lua" walkinterval="2000" floorchange="0">
     <health now="100" max="100" />
     <look type="136" head="1" body="31" legs="132" feet="3" addons="3" />
     <parameters>

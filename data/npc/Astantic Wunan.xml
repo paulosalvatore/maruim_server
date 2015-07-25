@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Astantic Wunan" script="default.lua" walkinterval="2000" floorchange="0">
+<npc name="Astantic Wunan" script="Default.lua" walkinterval="2000" floorchange="0">
     <health now="100" max="100" />
     <look type="251" head="86" body="66" legs="85" feet="114" addons="3" />
     <parameters>
