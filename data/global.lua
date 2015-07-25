@@ -176,7 +176,7 @@ function allowMovementEvent(playerId, allow, oldPosition, pz)
     if not player then
         return false
     end
-	
+
 	local position = player:getPosition()
 	if pz then
 		if not Tile(position):hasFlag(TILESTATE_PROTECTIONZONE) then
@@ -218,8 +218,8 @@ function atualizarCidades()
 end
 
 itensSemNome = {}
-verificarItensSemNome = true
-itensSemNomeVerificados = {}
+itensSemNomeVerificados = false
+itensSemNomeAtual = {}
 function verificarItensSemNome()
 	print(">> Verificando itens sem nome...")
 	for z = 0, 15 do
@@ -229,11 +229,19 @@ function verificarItensSemNome()
 				if tile then
 					if z ~= 7 or (z == 7 and (x < 687 or x > 932) and (y < 2050 or y > 2258)) then
 						local itens = tile:getItems()
+						local ground = tile:getGround()
+
 						if itens and #itens > 0 then
 							for i = 1, #itens do
 								if itens[i]:getName() == "" and not isInArray(itensSemNome, itens[i]:getId()) then
 									table.insert(itensSemNome, itens[i]:getId())
 								end
+							end
+						end
+
+						if ground then
+							if ground:getName() == "" and not isInArray(itensSemNome, ground:getId()) then
+								table.insert(itensSemNome, ground:getId())
 							end
 						end
 					end
@@ -244,4 +252,5 @@ function verificarItensSemNome()
 	end
 	table.sort(itensSemNome)
 	print("> " .. #itensSemNome .. " itens sem nome foram encontrados.")
+	itensSemNomeVerificados = true
 end

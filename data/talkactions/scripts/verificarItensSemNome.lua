@@ -8,33 +8,34 @@ function onSay(player, words, param)
 	end
 
 	if param == "zerar" then
-		itensSemNomeVerificados[player:getId()] = nil
+		itensSemNomeAtual[player:getId()] = nil
 	else
-		if verificarItensSemNome then
+		if not itensSemNomeVerificados then
 			verificarItensSemNome()
 		end
-		if #verificarItensSemNome == 0 then
+		if #itensSemNome == 0 then
+			player:sendTextMessage(MESSAGE_EVENT_DEFAULT, "Nenhum item sem nome foi encontrado.")
 			return false
 		end
 
-		if not itensSemNomeVerificados[player:getId()] then
-			itensSemNomeVerificados[player:getId()] = 1
+		if not itensSemNomeAtual[player:getId()] or not itensSemNome[itensSemNomeAtual[player:getId()] + 1] then
+			itensSemNomeAtual[player:getId()] = 1
 		else
-			itensSemNomeVerificados[player:getId()] = itensSemNomeVerificados[player:getId()] + 1
+			itensSemNomeAtual[player:getId()] = itensSemNomeAtual[player:getId()] + 1
 		end
-		
-		local verificarItem = itensSemNomeVerificados[player:getId()]
+
+		local verificarItem = itensSemNomeAtual[player:getId()]
 		local posicaoItem = player:getPosition() + {x = 1}
 		local tile = Tile(posicaoItem)
 		local itensTile = tile:getItems()
+
 		if itensTile and #itensTile > 0 then
 			for i = 1, #itensTile do
 				itensTile[i]:remove(1)
 			end
 		end
-		if not itensSemNome[verificarItem] then
-			return false
-		end
+		Game.createItem(Tile(player:getPosition()):getGround():getId(), 1, posicaoItem)
+
 		player:sendTextMessage(MESSAGE_EVENT_DEFAULT, "Item " .. itensSemNome[verificarItem] .. " inserido.")
 		Game.createItem(itensSemNome[verificarItem], 1, posicaoItem)
 	end
