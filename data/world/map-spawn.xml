@@ -526,6 +526,9 @@
 	<spawn centerx="737" centery="1559" centerz="5" radius="1">
 		<monster name="Vampire Viscount" x="-1" y="0" z="5" spawntime="60" />
 	</spawn>
+	<spawn centerx="776" centery="1559" centerz="5" radius="1">
+		<monster name="Vampire Viscount" x="0" y="0" z="5" spawntime="60" />
+	</spawn>
 	<spawn centerx="755" centery="1560" centerz="5" radius="2">
 		<monster name="Vampire Viscount" x="1" y="-2" z="5" spawntime="60" />
 		<monster name="Vampire Viscount" x="-2" y="1" z="5" spawntime="60" />
@@ -534,9 +537,6 @@
 		<monster name="Vampire Viscount" x="0" y="-1" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="771" centery="1561" centerz="5" radius="1">
-		<monster name="Vampire Viscount" x="0" y="-1" z="5" spawntime="60" />
-	</spawn>
-	<spawn centerx="776" centery="1561" centerz="5" radius="1">
 		<monster name="Vampire Viscount" x="0" y="-1" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="743" centery="1564" centerz="5" radius="1">
@@ -14111,6 +14111,9 @@
 	<spawn centerx="1396" centery="1505" centerz="9" radius="1">
 		<monster name="Lancer Beetle" x="-1" y="0" z="9" spawntime="230" />
 	</spawn>
+	<spawn centerx="729" centery="1508" centerz="9" radius="1">
+		<monster name="Nightfiend" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="672" centery="1509" centerz="9" radius="1">
 		<monster name="Nightfiend" x="-1" y="1" z="9" spawntime="60" />
 	</spawn>
@@ -14173,6 +14176,9 @@
 	</spawn>
 	<spawn centerx="679" centery="1521" centerz="9" radius="1">
 		<monster name="Vicious Manbat" x="0" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="731" centery="1521" centerz="9" radius="1">
+		<monster name="Nightfiend" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1372" centery="1521" centerz="9" radius="1">
 		<monster name="Scarab" x="-1" y="0" z="9" spawntime="110" />
