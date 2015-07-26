@@ -14,6 +14,8 @@ shopModule:addBuyableItem({"backpack"}, 1988, 20, "backpack")
 shopModule:addBuyableItem({"pick"}, 2553, 10, "pick")
 shopModule:addBuyableItem({"shovel"}, 2554, 20, "shovel")
 shopModule:addBuyableItem({"rope"}, 2120, 20, "rope")
+shopModule:addBuyableItem({"fishing rod"}, 2580, 100, "fishing rod")
+shopModule:addBuyableItem({"worm"}, 3976, 1, "worm")
 
 npcHandler:setMessage(MESSAGE_GREET, "Olá |PLAYERNAME|. Seja bem-vindo à minha loja de utilidades.")
 npcHandler:setMessage(MESSAGE_SENDTRADE, "Está pensando em ir pra alguma aventura? Dê uma olhada aqui.")
