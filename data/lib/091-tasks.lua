@@ -293,7 +293,7 @@ function Player:enviarTasksModalDisponiveis()
 	local listaTasks = self:pegarTasksDisponiveis()
 	if #listaTasks > 0 then
 		for a, b in pairs(listaTasks) do
-			modal:addChoice(b, pegarNomeTask(b))
+			modal:addChoice(b, pegarNomeTask(b, false, 65))
 		end
 		modal:addButton(4, "Info")
 		modal:setDefaultEnterButton(1)
@@ -385,7 +385,7 @@ end
 function Player:enviarTasksModalInfo(taskId, modalId)
 	local task = Tasks[taskId]
 	local statusTask = self:verificarStatusTask(taskId)
-	local modalTitulo = "Tarefa - " .. pegarNomeTask(taskId) .. " - Informações"
+	local modalTitulo = "Tarefa - " .. pegarNomeTask(taskId, false, 33) .. " - Informações"
 	local modalMensagem = ""
 	if statusTask == 0 then
 		modalMensagem = "Clique no botão 'Iniciar' ou tecle 'Enter' para iniciar a tarefa.\n\n"
@@ -480,9 +480,10 @@ function Player:retirarRecompensa(taskId)
 	return true
 end
 
-function pegarNomeTask(taskId, ocultarQuantidade)
+function pegarNomeTask(taskId, ocultarQuantidade, limiteCaracteres)
 	local task = Tasks[taskId]
 	local nomeTask = ""
+
 	for a, b in pairs(task.criaturas) do
 		nomeTask = nomeTask .. capAll(b)
 		if a == #task.criaturas - 1 then
@@ -491,15 +492,24 @@ function pegarNomeTask(taskId, ocultarQuantidade)
 			nomeTask = nomeTask .. ", "
 		end
 	end
+
 	local exibirNomeTask
 	if task.nome and #task.criaturas > 1 then
 		exibirNomeTask = capAll(task.nome) .. " (" .. nomeTask .. ")"
 	else
 		exibirNomeTask = nomeTask
 	end
+
 	if not ocultarQuantidade then
 		exibirNomeTask = task.quantidade .. " " .. exibirNomeTask
 	end
+	
+	if limiteCaracteres ~= nil then
+		if #exibirNomeTask > limiteCaracteres then
+			exibirNomeTask = exibirNomeTask:sub(0, limiteCaracteres) .. "..."
+		end
+	end
+
 	return exibirNomeTask
 end
 
