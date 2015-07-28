@@ -19,6 +19,9 @@
 	<spawn centerx="927" centery="1898" centerz="2" radius="1">
 		<npc name="Pheanak Livertin" x="1" y="0" z="2" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="933" centery="1919" centerz="2" radius="1">
+		<npc name="Lucius" x="-1" y="0" z="2" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="578" centery="1038" centerz="3" radius="1">
 		<monster name="Angry Villager" x="0" y="0" z="3" spawntime="60" />
 	</spawn>
@@ -1508,6 +1511,9 @@
 	<spawn centerx="754" centery="1586" centerz="6" radius="1">
 		<monster name="Blood Priest" x="1" y="0" z="6" spawntime="60" />
 	</spawn>
+	<spawn centerx="1083" centery="1591" centerz="6" radius="1">
+		<npc name="Lucius" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="861" centery="1604" centerz="6" radius="1">
 		<monster name="Lion" x="0" y="-1" z="6" spawntime="60" />
 	</spawn>
@@ -1944,9 +1950,6 @@
 	<spawn centerx="1323" centery="1911" centerz="6" radius="1">
 		<npc name="Evephy Phly" x="0" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="1329" centery="1911" centerz="6" radius="1">
-		<npc name="Sionizoris Rungo" x="0" y="0" z="6" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="1055" centery="1912" centerz="6" radius="1">
 		<monster name="Lizard Templar" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
@@ -1955,6 +1958,9 @@
 	</spawn>
 	<spawn centerx="1110" centery="1912" centerz="6" radius="1">
 		<monster name="Merlkin" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1333" centery="1912" centerz="6" radius="1">
+		<npc name="Sionizoris Rungo" x="0" y="1" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1119" centery="1917" centerz="6" radius="2">
 		<monster name="Sibang" x="2" y="-1" z="6" spawntime="60" />
@@ -2481,8 +2487,11 @@
 		<monster name="Rat" x="-1" y="-1" z="7" spawntime="60" />
 		<monster name="Rat" x="1" y="1" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="596" centery="914" centerz="7" radius="1">
-		<npc name="Flora" x="0" y="0" z="7" spawntime="60" direction="3" />
+	<spawn centerx="579" centery="910" centerz="7" radius="1">
+		<npc name="Albert" x="-1" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="596" centery="915" centerz="7" radius="1">
+		<npc name="Flora" x="0" y="-1" z="7" spawntime="60" direction="3" />
 	</spawn>
 	<spawn centerx="492" centery="918" centerz="7" radius="1">
 		<monster name="Deer" x="0" y="0" z="7" spawntime="60" />
@@ -3051,6 +3060,9 @@
 	<spawn centerx="615" centery="1330" centerz="7" radius="2">
 		<monster name="Dragon Hatchling" x="-2" y="-2" z="7" spawntime="110" />
 		<monster name="Dragon Hatchling" x="2" y="1" z="7" spawntime="170" />
+	</spawn>
+	<spawn centerx="813" centery="1330" centerz="7" radius="1">
+		<npc name="Lucius" x="-1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="822" centery="1330" centerz="7" radius="4">
 		<npc name="Helena" x="1" y="0" z="7" spawntime="60" direction="2" />
@@ -4825,7 +4837,7 @@
 	<spawn centerx="970" centery="1634" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1058" centery="1634" centerz="7" radius="1">
+	<spawn centerx="1057" centery="1634" centerz="7" radius="1">
 		<npc name="Aaron" x="-1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1064" centery="1634" centerz="7" radius="1">

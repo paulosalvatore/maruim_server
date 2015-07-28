@@ -2,7 +2,7 @@
 <houses>
 	<house name="Hyalakur I" houseid="1" entryx="1063" entryy="1539" entryz="7" rent="0" townid="9" size="22" />
 	<house name="Hyalakur II" houseid="2" entryx="1061" entryy="1533" entryz="7" rent="0" townid="9" size="32" />
-	<house name="Hyalakur III" houseid="3" entryx="1063" entryy="1531" entryz="7" rent="0" townid="9" size="22" />
+	<house name="Hyalakur III" houseid="3" entryx="1063" entryy="1531" entryz="7" rent="0" townid="9" size="20" />
 	<house name="Hyalakur IV" houseid="4" entryx="1066" entryy="1533" entryz="7" rent="0" townid="9" size="32" />
 	<house name="Hyalakur V" houseid="5" entryx="1064" entryy="1539" entryz="7" rent="0" townid="9" size="22" />
 	<house name="Hyalakur VI" houseid="6" entryx="1081" entryy="1535" entryz="7" rent="0" townid="9" size="22" />
@@ -47,7 +47,7 @@
 	<house name="Hyalakur XLV" houseid="45" entryx="1057" entryy="1626" entryz="7" rent="0" townid="9" size="45" />
 	<house name="Hyalakur XLVI" houseid="46" entryx="1065" entryy="1616" entryz="7" rent="0" townid="9" size="45" />
 	<house name="Hyalakur XLVII" houseid="47" entryx="1075" entryy="1626" entryz="7" rent="0" townid="9" size="52" />
-	<house name="Hyalakur XLVIII" houseid="48" entryx="1084" entryy="1616" entryz="7" rent="0" townid="9" size="148" />
+	<house name="Hyalakur XLVIII" houseid="48" entryx="1084" entryy="1616" entryz="7" rent="0" townid="9" size="145" />
 	<house name="Hyalakur XLVIX" houseid="49" entryx="1008" entryy="1634" entryz="7" rent="0" townid="9" size="45" />
 	<house name="Hyalakur L" houseid="50" entryx="1021" entryy="1633" entryz="7" rent="0" townid="9" size="45" />
 	<house name="Hyalakur LI" houseid="51" entryx="1039" entryy="1634" entryz="7" rent="0" townid="9" size="45" />
