@@ -12,6 +12,12 @@ Reputacao = {
 			fraseNpcPromovido = "Olá |PLAYERNAME|, você deseja verificar suas {tarefas} ou visualizar os itens disponíveis para {negociação}?"
 		},
 		{
+			nome = "Empenhado",
+			pontos = 500,
+			fraseNpc = "Olá |PLAYERNAME|, você deseja verificar suas {tarefas} ou por acaso está procurando por uma {promoção}?",
+			fraseNpcPromovido = "Olá |PLAYERNAME|, você deseja verificar suas {tarefas} ou visualizar os itens disponíveis para {negociação}?"
+		},
+		{
 			nome = "Respeitado",
 			pontos = 1000,
 			fraseNpc = "Olá |PLAYERNAME|, você deseja verificar suas {tarefas} ou por acaso está procurando por uma {promoção}?",
@@ -35,8 +41,13 @@ Reputacao = {
 		[9941] = {preco = 100, reputacao = 1},
 		[9980] = {preco = 100, reputacao = 1},
 	},
-	promocao = 100
+	promocao = 100,
+	viagem = {
+		valor = 200,
+		acessoLiberado = 500
+	}
 }
+
 function pegarNpcReputacao(vocacaoId)
 	if vocacaoId == 1 or vocacaoId == 5 then
 		return "Etevi Drayn"
