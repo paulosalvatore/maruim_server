@@ -48,8 +48,8 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			player:teleportTo(toPosition, true)
 		end
 		return true
-	elseif isInArray(levelDoors, itemId) then
-		if item.actionid > 0 and player:getLevel() >= item.actionid - 1000 then
+	elseif isInArray(levelDoors, itemId) or item.actionid == 2505 then
+		if item.actionid == 2505 or (item.actionid > 0 and player:getLevel() >= item.actionid - 1000) then
 			item:transform(itemId + 1)
 			player:teleportTo(toPosition, true)
 		else
