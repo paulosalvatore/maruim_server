@@ -14969,10 +14969,6 @@
 	<spawn centerx="839" centery="1756" centerz="9" radius="1">
 		<monster name="Chakoya Toolshaper" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1139" centery="1759" centerz="9" radius="1">
-		<monster name="Ghoul" x="-1" y="-1" z="9" spawntime="60" />
-		<monster name="Ghoul" x="1" y="0" z="9" spawntime="60" />
-	</spawn>
 	<spawn centerx="1506" centery="1759" centerz="9" radius="2">
 		<monster name="Medusa" x="1" y="-2" z="9" spawntime="60" />
 		<monster name="Medusa" x="-2" y="0" z="9" spawntime="60" />
@@ -14986,6 +14982,10 @@
 	<spawn centerx="1114" centery="1761" centerz="9" radius="1">
 		<monster name="Skeleton Warrior" x="-1" y="0" z="9" spawntime="60" />
 		<monster name="Ghoul" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1138" centery="1761" centerz="9" radius="1">
+		<monster name="Ghoul" x="-1" y="0" z="9" spawntime="60" />
+		<monster name="Ghoul" x="1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="827" centery="1764" centerz="9" radius="3">
 		<monster name="Chakoya Tribewarden" x="-2" y="-2" z="9" spawntime="60" />
@@ -17783,10 +17783,8 @@
 		<monster name="Deepling Master Librarian" x="-2" y="1" z="11" spawntime="60" />
 		<monster name="Deepling Master Librarian" x="2" y="3" z="11" spawntime="60" />
 	</spawn>
-	<spawn centerx="1166" centery="1752" centerz="11" radius="1">
-		<monster name="Demon Skeleton" x="0" y="-1" z="11" spawntime="60" />
-		<monster name="Ghoul" x="-1" y="0" z="11" spawntime="60" />
-		<monster name="Scorpion" x="0" y="1" z="11" spawntime="60" />
+	<spawn centerx="1174" centery="1752" centerz="11" radius="1">
+		<monster name="Demon Skeleton" x="0" y="0" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="1112" centery="1753" centerz="11" radius="1">
 		<monster name="Demon Skeleton" x="0" y="-1" z="11" spawntime="60" />
@@ -17795,6 +17793,11 @@
 	<spawn centerx="1132" centery="1753" centerz="11" radius="1">
 		<monster name="Banshee" x="-1" y="0" z="11" spawntime="60" />
 		<monster name="Demon Skeleton" x="-1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1163" centery="1753" centerz="11" radius="1">
+		<monster name="Demon Skeleton" x="1" y="-1" z="11" spawntime="60" />
+		<monster name="Ghoul" x="-1" y="0" z="11" spawntime="60" />
+		<monster name="Scorpion" x="0" y="1" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="907" centery="1754" centerz="11" radius="1">
 		<monster name="Deepling Tyrant" x="-1" y="-1" z="11" spawntime="60" />
@@ -17812,6 +17815,7 @@
 	<spawn centerx="1146" centery="1754" centerz="11" radius="1">
 		<monster name="Demon Skeleton" x="0" y="-1" z="11" spawntime="60" />
 		<monster name="Ghoul" x="1" y="-1" z="11" spawntime="60" />
+		<monster name="Scorpion" x="0" y="1" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="1005" centery="1756" centerz="11" radius="1">
 		<monster name="Deepling Master Librarian" x="1" y="1" z="11" spawntime="60" />
@@ -17870,7 +17874,7 @@
 		<monster name="Ghoul" x="-1" y="1" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="1102" centery="1766" centerz="11" radius="1">
-		<monster name="Ghoul" x="-1" y="0" z="11" spawntime="60" />
+		<monster name="Demon Skeleton" x="-1" y="0" z="11" spawntime="60" />
 		<monster name="Demon Skeleton" x="0" y="1" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="896" centery="1767" centerz="11" radius="2">
@@ -17913,6 +17917,7 @@
 		<monster name="Deepling Guard" x="1" y="-1" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="1149" centery="1768" centerz="11" radius="1">
+		<monster name="Ghoul" x="1" y="0" z="11" spawntime="60" />
 		<monster name="Scorpion" x="-1" y="1" z="11" spawntime="60" />
 		<monster name="Demon Skeleton" x="0" y="1" z="11" spawntime="60" />
 	</spawn>
