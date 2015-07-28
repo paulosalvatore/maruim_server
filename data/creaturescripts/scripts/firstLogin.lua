@@ -11,6 +11,11 @@ function onLogin(player)
 		end
 		player:addItem(2050, 1)
 		player:addItem(1988, 1):addItem(2789, 10)
+		local item = player:addItem(3901, 1)
+		item:setAttribute(ITEM_ATTRIBUTE_NAME, "rope and shovel kit")
+		item:setAttribute(ITEM_ATTRIBUTE_WEIGHT, 100)
+		item:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, "Use it only when you need a rope or a shovel.")
+		item:setActionId(3901)
 		player:sendOutfitWindow()
 	end
 	if player:getVocation():getId() == 4 and player:pegarPassoTutorial() == tutorialFinalizado and player:getStorageValue(storageItensKnight) ~= 1 then

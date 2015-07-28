@@ -794,6 +794,12 @@ local config = {
 		}
 	},
 	["action"] = {
+		[3901] = {
+			["default"] = {
+				itensPlayer = {{2554, 1}, {2120, 1}},
+				removerItem = 1
+			}
+		}
 	},
 	["unique"] = {
 	}

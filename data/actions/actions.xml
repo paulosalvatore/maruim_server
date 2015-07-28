@@ -50,6 +50,7 @@
 	<action fromid="8046" toid="8047" script="geral.lua" />
 
 	<action actionid="2902" script="geral.lua" />
+	<action actionid="3901" script="geral.lua" />
 
 	<action itemid="16016" script="pintando.lua" />
 	<action fromid="16018" toid="16019" script="pintando.lua" />
