@@ -21,6 +21,9 @@ function onSay(player, words, param)
 	elseif param == "cidades" then
 		atualizarCidades()
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Cidades atualizadas.")
+	elseif param == "itens" then
+		atualizarItens()
+		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "Itens atualizadas.")
 	end
 	return false
 end

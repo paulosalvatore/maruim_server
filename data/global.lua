@@ -295,3 +295,25 @@ function verificarItensMoviveis()
 	print("> " .. #itensMoviveis .. " itens moviveis sem actionId foram encontrados e modificados.")
 	itensMoviveisVerificados = true
 end
+
+function atualizarItens()
+	local resultId = db.storeQuery("SELECT `id` FROM `z_itens`")
+	if resultId ~= false then
+		repeat
+		local itemId = result.getDataInt(resultId, "id")
+		local editarAtributos = ""
+		local itemType = ItemType(itemId)
+		if itemType:isStackable() then
+			editarAtributos = editarAtributos .. "`agrupavel` = '1'"
+		end
+		if itemType:isFluidContainer() then
+			editarAtributos = editarAtributos .. "`carrega_liquido` = '1'"
+		end
+		if editarAtributos ~= "" then
+			db.query("UPDATE `z_itens` SET " .. editarAtributos .. " WHERE `id` = " .. db.escapeString(itemId))
+			print("Item " .. itemId .. " -> atualizado com sucesso.")
+		end
+		until not result.next(resultId)
+		result.free(resultId)
+	end
+end
