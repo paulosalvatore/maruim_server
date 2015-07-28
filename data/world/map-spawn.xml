@@ -5395,6 +5395,9 @@
 	<spawn centerx="1469" centery="1755" centerz="7" radius="1">
 		<monster name="Stone Golem" x="-1" y="-1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="920" centery="1756" centerz="7" radius="1">
+		<npc name="Iskan" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="832" centery="1758" centerz="7" radius="1">
 		<monster name="Husky" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
@@ -9667,48 +9670,102 @@
 	<spawn centerx="939" centery="1464" centerz="8" radius="1">
 		<monster name="Rot Elemental" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1184" centery="1469" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="290" />
+	</spawn>
+	<spawn centerx="1186" centery="1472" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="230" />
+	</spawn>
 	<spawn centerx="948" centery="1475" centerz="8" radius="1">
 		<monster name="Rot Elemental" x="0" y="1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1178" centery="1480" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="290" />
+	<spawn centerx="1184" centery="1475" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="170" />
 	</spawn>
-	<spawn centerx="1180" centery="1483" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="230" />
+	<spawn centerx="1194" centery="1475" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1178" centery="1478" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="170" />
+	</spawn>
+	<spawn centerx="1190" centery="1478" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1184" centery="1479" centerz="8" radius="1">
+		<monster name="Larva" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1182" centery="1480" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1197" centery="1482" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="960" centery="1484" centerz="8" radius="2">
 		<monster name="Rot Elemental" x="-2" y="-1" z="8" spawntime="60" />
 		<monster name="Rot Elemental" x="2" y="2" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1188" centery="1484" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1165" centery="1485" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
 	<spawn centerx="939" centery="1486" centerz="8" radius="2">
 		<monster name="Rot Elemental" x="1" y="-1" z="8" spawntime="60" />
 		<monster name="Rot Elemental" x="-1" y="2" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1178" centery="1486" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="170" />
-	</spawn>
-	<spawn centerx="1188" centery="1486" centerz="8" radius="1">
+	<spawn centerx="1169" centery="1487" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
-	<spawn centerx="1172" centery="1489" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="170" />
-	</spawn>
-	<spawn centerx="1180" centery="1490" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1176" centery="1491" centerz="8" radius="1">
+	<spawn centerx="1178" centery="1487" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
-	<spawn centerx="1191" centery="1493" centerz="8" radius="1">
+	<spawn centerx="1183" centery="1487" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1205" centery="1487" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1195" centery="1489" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1203" centery="1489" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1173" centery="1490" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1184" centery="1492" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1198" centery="1493" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1165" centery="1495" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="230" />
 	</spawn>
 	<spawn centerx="963" centery="1496" centerz="8" radius="2">
 		<monster name="Rot Elemental" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Rot Elemental" x="2" y="2" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1172" centery="1496" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1195" centery="1496" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
 	<spawn centerx="1458" centery="1497" centerz="8" radius="1">
 		<monster name="Crypt Defiler" x="-1" y="-1" z="8" spawntime="80" />
 		<monster name="Crypt Defiler" x="1" y="1" z="8" spawntime="80" />
+	</spawn>
+	<spawn centerx="1167" centery="1498" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="170" />
+	</spawn>
+	<spawn centerx="1179" centery="1498" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1185" centery="1498" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="1466" centery="1498" centerz="8" radius="2">
 		<monster name="Scarab" x="0" y="-2" z="8" spawntime="170" />
@@ -9722,12 +9779,24 @@
 		<monster name="Rot Elemental" x="1" y="-2" z="8" spawntime="60" />
 		<monster name="Rot Elemental" x="-2" y="1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1189" centery="1500" centerz="8" radius="1">
+	<spawn centerx="1175" centery="1500" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1190" centery="1501" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1202" centery="1501" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1163" centery="1502" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="1404" centery="1502" centerz="8" radius="2">
 		<monster name="Crypt Defiler" x="0" y="-1" z="8" spawntime="110" />
 		<monster name="Crypt Defiler" x="2" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1199" centery="1503" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="701" centery="1504" centerz="8" radius="1">
 		<monster name="Undead Gladiator" x="1" y="0" z="8" spawntime="60" />
@@ -9741,6 +9810,18 @@
 	<spawn centerx="962" centery="1504" centerz="8" radius="1">
 		<monster name="Rot Elemental" x="0" y="1" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1155" centery="1504" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1171" centery="1504" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1181" centery="1504" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1152" centery="1505" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
 	<spawn centerx="1424" centery="1505" centerz="8" radius="2">
 		<monster name="Crypt Defiler" x="0" y="-1" z="8" spawntime="110" />
 		<monster name="Grave Robber" x="-2" y="0" z="8" spawntime="60" />
@@ -9749,16 +9830,13 @@
 	<spawn centerx="730" centery="1506" centerz="8" radius="1">
 		<monster name="Undead Gladiator" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1159" centery="1506" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="230" />
-	</spawn>
 	<spawn centerx="1415" centery="1506" centerz="8" radius="1">
 		<monster name="Grave Robber" x="-1" y="0" z="8" spawntime="80" />
 	</spawn>
-	<spawn centerx="1166" centery="1507" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	<spawn centerx="1175" centery="1507" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
-	<spawn centerx="1189" centery="1507" centerz="8" radius="1">
+	<spawn centerx="1194" centery="1507" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="739" centery="1508" centerz="8" radius="1">
@@ -9776,42 +9854,65 @@
 		<monster name="Grave Robber" x="-2" y="2" z="8" spawntime="80" />
 		<monster name="Grave Robber" x="2" y="2" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1126" centery="1509" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="230" />
+	</spawn>
+	<spawn centerx="1188" centery="1509" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
 	<spawn centerx="695" centery="1510" centerz="8" radius="1">
 		<monster name="Lich" x="0" y="1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1161" centery="1510" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="170" />
+	<spawn centerx="1181" centery="1510" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1169" centery="1511" centerz="8" radius="1">
+	<spawn centerx="1130" centery="1511" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="290" />
+	</spawn>
+	<spawn centerx="1154" centery="1511" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+		<monster name="Larva" x="1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1156" centery="1511" centerz="8" radius="1" />
+	<spawn centerx="1177" centery="1511" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="722" centery="1512" centerz="8" radius="1">
 		<monster name="Undead Gladiator" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1184" centery="1512" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1196" centery="1512" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	<spawn centerx="1124" centery="1512" centerz="8" radius="1">
+		<monster name="Larva" x="0" y="-1" z="8" spawntime="170" />
 	</spawn>
 	<spawn centerx="714" centery="1513" centerz="8" radius="1">
 		<monster name="Spectre" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1149" centery="1513" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
 	<spawn centerx="1415" centery="1513" centerz="8" radius="1">
 		<monster name="Grave Robber" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1193" centery="1514" centerz="8" radius="1">
+	<spawn centerx="1171" centery="1514" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="684" centery="1515" centerz="8" radius="1">
 		<monster name="Spectre" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1175" centery="1515" centerz="8" radius="1">
+	<spawn centerx="1123" centery="1515" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="966" centery="1516" centerz="8" radius="2">
 		<monster name="Rot Elemental" x="-1" y="-2" z="8" spawntime="60" />
 		<monster name="Rot Elemental" x="2" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1128" centery="1516" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1166" centery="1517" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1177" centery="1517" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1442" centery="1517" centerz="8" radius="4">
 		<monster name="Scarab" x="-2" y="-3" z="8" spawntime="11" />
@@ -9839,8 +9940,11 @@
 		<monster name="Scarab" x="-2" y="0" z="8" spawntime="60" />
 		<monster name="Scarab" x="2" y="0" z="8" spawntime="170" />
 	</spawn>
-	<spawn centerx="1120" centery="1520" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="230" />
+	<spawn centerx="1119" centery="1520" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1145" centery="1520" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="1412" centery="1520" centerz="8" radius="1">
 		<monster name="Grave Robber" x="-1" y="0" z="8" spawntime="80" />
@@ -9859,8 +9963,11 @@
 	<spawn centerx="740" centery="1521" centerz="8" radius="1">
 		<monster name="Spectre" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1175" centery="1521" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	<spawn centerx="1127" centery="1521" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1179" centery="1521" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="1422" centery="1521" centerz="8" radius="1">
 		<monster name="Grave Robber" x="-1" y="-1" z="8" spawntime="80" />
@@ -9871,14 +9978,32 @@
 	<spawn centerx="721" centery="1522" centerz="8" radius="1">
 		<monster name="Undead Gladiator" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1124" centery="1522" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="290" />
+	<spawn centerx="1114" centery="1522" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1151" centery="1522" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1167" centery="1522" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1173" centery="1522" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="713" centery="1524" centerz="8" radius="1">
 		<monster name="Lich" x="0" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1119" centery="1524" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="170" />
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1125" centery="1524" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1132" centery="1524" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1141" centery="1525" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1440" centery="1525" centerz="8" radius="1">
 		<monster name="Larva" x="1" y="-1" z="8" spawntime="60" />
@@ -9895,7 +10020,10 @@
 	<spawn centerx="672" centery="1527" centerz="8" radius="1">
 		<monster name="Undead Gladiator" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1122" centery="1527" centerz="8" radius="1">
+	<spawn centerx="1110" centery="1527" centerz="8" radius="1">
+		<monster name="Larva" x="0" y="-1" z="8" spawntime="290" />
+	</spawn>
+	<spawn centerx="1165" centery="1527" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="1414" centery="1527" centerz="8" radius="1">
@@ -9909,14 +10037,35 @@
 		<monster name="Rot Elemental" x="3" y="-1" z="8" spawntime="60" />
 		<monster name="Rot Elemental" x="-1" y="3" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1160" centery="1528" centerz="8" radius="1">
+	<spawn centerx="1115" centery="1528" centerz="8" radius="1">
+		<monster name="Larva" x="0" y="-1" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1137" centery="1528" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1148" centery="1528" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1171" centery="1528" centerz="8" radius="1">
+	<spawn centerx="1121" centery="1529" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1125" centery="1529" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1155" centery="1529" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="-1" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1162" centery="1529" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1172" centery="1529" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="722" centery="1530" centerz="8" radius="1">
 		<monster name="Spectre" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1111" centery="1530" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="230" />
 	</spawn>
 	<spawn centerx="1458" centery="1530" centerz="8" radius="1">
 		<monster name="Scorpion" x="-1" y="-1" z="8" spawntime="60" />
@@ -9946,13 +10095,25 @@
 		<monster name="Scarab" x="-1" y="-1" z="8" spawntime="110" />
 		<monster name="Scarab" x="0" y="1" z="8" spawntime="170" />
 	</spawn>
+	<spawn centerx="1132" centery="1531" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
 	<spawn centerx="1418" centery="1531" centerz="8" radius="1">
 		<monster name="Larva" x="0" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1427" centery="1531" centerz="8" radius="1">
 		<monster name="Larva" x="0" y="1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1121" centery="1532" centerz="8" radius="1">
+	<spawn centerx="1116" centery="1532" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="170" />
+	</spawn>
+	<spawn centerx="1142" centery="1532" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1153" centery="1532" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1179" centery="1532" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="675" centery="1533" centerz="8" radius="1">
@@ -9973,11 +10134,11 @@
 	<spawn centerx="739" centery="1535" centerz="8" radius="1">
 		<monster name="Undead Gladiator" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1113" centery="1535" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	<spawn centerx="1142" centery="1535" centerz="8" radius="1">
+		<monster name="Larva" x="1" y="0" z="8" spawntime="170" />
 	</spawn>
-	<spawn centerx="1126" centery="1535" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	<spawn centerx="1174" centery="1535" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="1452" centery="1535" centerz="8" radius="1">
 		<monster name="Larva" x="1" y="-1" z="8" spawntime="60" />
@@ -9987,7 +10148,7 @@
 		<monster name="Larva" x="1" y="-1" z="8" spawntime="60" />
 		<monster name="Larva" x="-1" y="1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1135" centery="1536" centerz="8" radius="1">
+	<spawn centerx="1180" centery="1536" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1413" centery="1536" centerz="8" radius="1">
@@ -9996,34 +10157,37 @@
 	<spawn centerx="1447" centery="1536" centerz="8" radius="1">
 		<monster name="Larva" x="1" y="-1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1105" centery="1537" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="290" />
+	<spawn centerx="1125" centery="1537" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1132" centery="1537" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1158" centery="1537" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="1476" centery="1537" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Larva" x="1" y="-1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1159" centery="1538" centerz="8" radius="1">
+	<spawn centerx="1149" centery="1538" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
-	<spawn centerx="1109" centery="1539" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
-	</spawn>
-	<spawn centerx="1142" centery="1539" centerz="8" radius="1">
+	<spawn centerx="1164" centery="1538" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1116" centery="1539" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="676" centery="1540" centerz="8" radius="2">
 		<monster name="Undead Gladiator" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Undead Gladiator" x="2" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1119" centery="1540" centerz="8" radius="1">
+	<spawn centerx="1142" centery="1540" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
-	<spawn centerx="1149" centery="1540" centerz="8" radius="1">
+	<spawn centerx="1181" centery="1540" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
-	</spawn>
-	<spawn centerx="1166" centery="1540" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1481" centery="1540" centerz="8" radius="1">
 		<monster name="Scarab" x="-1" y="-1" z="8" spawntime="110" />
@@ -10035,8 +10199,17 @@
 	<spawn centerx="721" centery="1541" centerz="8" radius="1">
 		<monster name="Lich" x="0" y="1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1105" centery="1541" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="230" />
+	<spawn centerx="1121" centery="1541" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1130" centery="1541" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1170" centery="1541" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1176" centery="1541" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="1474" centery="1541" centerz="8" radius="1">
 		<monster name="Grave Robber" x="-1" y="-1" z="8" spawntime="60" />
@@ -10048,22 +10221,31 @@
 	<spawn centerx="727" centery="1542" centerz="8" radius="1">
 		<monster name="Undead Gladiator" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1110" centery="1543" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="170" />
-	</spawn>
-	<spawn centerx="1136" centery="1543" centerz="8" radius="1">
+	<spawn centerx="1184" centery="1543" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="666" centery="1544" centerz="8" radius="1">
 		<monster name="Spectre" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1114" centery="1544" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1142" centery="1544" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1163" centery="1544" centerz="8" radius="1">
+		<monster name="Larva" x="0" y="-1" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1190" centery="1544" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
 	<spawn centerx="670" centery="1545" centerz="8" radius="1">
 		<monster name="Lich" x="0" y="1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1136" centery="1546" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="170" />
+	<spawn centerx="1135" centery="1545" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
-	<spawn centerx="1168" centery="1546" centerz="8" radius="1">
+	<spawn centerx="1195" centery="1546" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="1439" centery="1546" centerz="8" radius="1">
@@ -10072,20 +10254,35 @@
 	<spawn centerx="1444" centery="1546" centerz="8" radius="1">
 		<monster name="Scarab" x="0" y="-1" z="8" spawntime="110" />
 	</spawn>
-	<spawn centerx="1174" centery="1547" centerz="8" radius="1">
+	<spawn centerx="1147" centery="1547" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1159" centery="1547" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1165" centery="1547" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1182" centery="1547" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1200" centery="1547" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="1449" centery="1547" centerz="8" radius="1">
 		<monster name="Scorpion" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1119" centery="1548" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1152" centery="1548" centerz="8" radius="1">
+	<spawn centerx="1117" centery="1548" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
-	<spawn centerx="1158" centery="1549" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	<spawn centerx="1154" centery="1548" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1137" centery="1549" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1205" centery="1549" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="1434" centery="1549" centerz="8" radius="1">
 		<monster name="Scorpion" x="-1" y="-1" z="8" spawntime="110" />
@@ -10095,8 +10292,29 @@
 		<monster name="Scorpion" x="-1" y="-1" z="8" spawntime="80" />
 		<monster name="Scorpion" x="2" y="1" z="8" spawntime="110" />
 	</spawn>
-	<spawn centerx="1115" centery="1552" centerz="8" radius="1">
+	<spawn centerx="1131" centery="1550" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1210" centery="1550" centerz="8" radius="1">
+		<monster name="Larva" x="0" y="1" z="8" spawntime="230" />
+	</spawn>
+	<spawn centerx="1169" centery="1551" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1116" centery="1552" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1125" centery="1552" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1141" centery="1552" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1180" centery="1552" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1208" centery="1552" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="170" />
 	</spawn>
 	<spawn centerx="670" centery="1553" centerz="8" radius="1">
 		<monster name="Undead Gladiator" x="1" y="0" z="8" spawntime="60" />
@@ -10116,10 +10334,25 @@
 	<spawn centerx="729" centery="1554" centerz="8" radius="1">
 		<monster name="Spectre" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1108" centery="1555" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	<spawn centerx="1147" centery="1554" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
-	<spawn centerx="1157" centery="1555" centerz="8" radius="1">
+	<spawn centerx="1165" centery="1554" centerz="8" radius="1">
+		<monster name="Larva" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1154" centery="1555" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1120" centery="1556" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1137" centery="1556" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1193" centery="1556" centerz="8" radius="1">
+		<monster name="Larva" x="0" y="-1" z="8" spawntime="230" />
+	</spawn>
+	<spawn centerx="1210" centery="1556" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="1454" centery="1556" centerz="8" radius="1">
@@ -10128,8 +10361,26 @@
 	<spawn centerx="695" centery="1557" centerz="8" radius="1">
 		<monster name="Undead Gladiator" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1159" centery="1558" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	<spawn centerx="1159" centery="1557" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1180" centery="1557" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1132" centery="1558" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1150" centery="1558" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1174" centery="1558" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1186" centery="1558" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1206" centery="1558" centerz="8" radius="1">
+		<monster name="Larva" x="0" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1438" centery="1558" centerz="8" radius="2">
 		<monster name="Scorpion" x="-2" y="-2" z="8" spawntime="80" />
@@ -10142,14 +10393,35 @@
 	<spawn centerx="712" centery="1559" centerz="8" radius="1">
 		<monster name="Undead Gladiator" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1205" centery="1562" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="230" />
-	</spawn>
-	<spawn centerx="1110" centery="1563" centerz="8" radius="1">
+	<spawn centerx="1165" centery="1559" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
-	<spawn centerx="1202" centery="1563" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="170" />
+	<spawn centerx="1200" centery="1559" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1126" centery="1560" centerz="8" radius="1">
+		<monster name="Larva" x="1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1121" centery="1561" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1169" centery="1561" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1196" centery="1561" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1160" centery="1562" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1172" centery="1562" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1184" centery="1562" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1148" centery="1563" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="1444" centery="1563" centerz="8" radius="2">
 		<monster name="Scarab" x="0" y="-2" z="8" spawntime="110" />
@@ -10157,6 +10429,9 @@
 	</spawn>
 	<spawn centerx="673" centery="1565" centerz="8" radius="1">
 		<monster name="Undead Gladiator" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1155" centery="1565" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="678" centery="1566" centerz="8" radius="1">
 		<monster name="Spectre" x="-1" y="0" z="8" spawntime="60" />
@@ -10167,20 +10442,29 @@
 	<spawn centerx="713" centery="1566" centerz="8" radius="1">
 		<monster name="Lich" x="0" y="1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1160" centery="1566" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1189" centery="1566" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="230" />
+	<spawn centerx="1195" centery="1566" centerz="8" radius="1">
+		<monster name="Larva" x="0" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="704" centery="1567" centerz="8" radius="1">
 		<monster name="Undead Gladiator" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1204" centery="1567" centerz="8" radius="1">
+	<spawn centerx="1182" centery="1567" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1185" centery="1567" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="694" centery="1568" centerz="8" radius="1">
 		<monster name="Undead Gladiator" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1151" centery="1568" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1179" centery="1569" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1190" centery="1569" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="1442" centery="1569" centerz="8" radius="2">
 		<monster name="Crypt Defiler" x="1" y="-2" z="8" spawntime="80" />
@@ -10189,82 +10473,64 @@
 	<spawn centerx="1447" centery="1569" centerz="8" radius="1">
 		<monster name="Grave Robber" x="1" y="-1" z="8" spawntime="140" />
 	</spawn>
-	<spawn centerx="1194" centery="1570" centerz="8" radius="1">
+	<spawn centerx="1173" centery="1570" centerz="8" radius="1">
+		<monster name="Larva" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1149" centery="1573" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1202" centery="1570" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1120" centery="1571" centerz="8" radius="1">
+	<spawn centerx="1193" centery="1573" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
-	<spawn centerx="1115" centery="1572" centerz="8" radius="1">
+	<spawn centerx="1169" centery="1574" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1154" centery="1575" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1187" centery="1575" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1190" centery="1572" centerz="8" radius="1">
+	<spawn centerx="1146" centery="1576" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1158" centery="1576" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1165" centery="1576" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1197" centery="1576" centerz="8" radius="1">
+		<monster name="Larva" x="0" y="-1" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1135" centery="1579" centerz="8" radius="1">
+		<monster name="Larva" x="0" y="1" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1141" centery="1579" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1189" centery="1579" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1201" centery="1579" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="-1" z="8" spawntime="170" />
+	</spawn>
+	<spawn centerx="1144" centery="1580" centerz="8" radius="1">
+		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="1130" centery="1581" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="170" />
 	</spawn>
-	<spawn centerx="1166" centery="1573" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
-	</spawn>
-	<spawn centerx="1142" centery="1574" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
-	</spawn>
-	<spawn centerx="1191" centery="1575" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
-	</spawn>
-	<spawn centerx="1179" centery="1578" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
-	</spawn>
-	<spawn centerx="1145" centery="1579" centerz="8" radius="1">
+	<spawn centerx="1197" centery="1581" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1176" centery="1579" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1168" centery="1580" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1188" centery="1580" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1143" centery="1585" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1181" centery="1586" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1152" centery="1587" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1191" centery="1587" centerz="8" radius="1">
+	<spawn centerx="1192" centery="1582" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
 	</spawn>
-	<spawn centerx="1159" centery="1588" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
-	</spawn>
-	<spawn centerx="1195" centery="1589" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="170" />
-	</spawn>
-	<spawn centerx="1183" centery="1590" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
-	</spawn>
-	<spawn centerx="1130" centery="1591" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
-	</spawn>
-	<spawn centerx="1138" centery="1591" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="110" />
-	</spawn>
-	<spawn centerx="1124" centery="1592" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="170" />
-	</spawn>
-	<spawn centerx="1191" centery="1592" centerz="8" radius="1">
-		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1195" centery="1593" centerz="8" radius="1">
+	<spawn centerx="1201" centery="1582" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="230" />
 	</spawn>
-	<spawn centerx="1127" centery="1594" centerz="8" radius="1">
+	<spawn centerx="1133" centery="1583" centerz="8" radius="1">
 		<monster name="Larva" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="945" centery="1605" centerz="8" radius="3">
