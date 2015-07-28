@@ -467,6 +467,12 @@ local config = {
 			removerItensPlayer = {{21246, 1}},
 			efeito = {42},
 			removerItem = 1
+		},
+		["sparkling"] = {
+			actionId = 3300,
+			adicionarStorage = {3300, 1},
+			efeito = {44},
+			removerItem = 1
 		}
 	},
 	[2147] = {
@@ -482,6 +488,12 @@ local config = {
 			itensPlayer = {{7761, 1}},
 			removerItensPlayer = {{21246, 1}},
 			efeito = {9},
+			removerItem = 1
+		},
+		["sparkling"] = {
+			actionId = 3301,
+			adicionarStorage = {3301, 1},
+			efeito = {46},
 			removerItem = 1
 		}
 	},
@@ -847,6 +859,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			topItem = piso:getTopVisibleThing():getId()
 		end
 		local adicionarEvento = false
+		local cancelarEvento = false
 		if i["default"] ~= nil then
 			i = i["default"]
 			if i.checarItem ~= nil and topItem ~= i.checarItem then
@@ -858,7 +871,8 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				(i["sparkling"][topItem] ~= nil or
 				(i["sparkling"]["ferro"] ~= nil and isInArray(ferro, topItem)) or
 				(i["sparkling"]["carvao"] ~= nil and isInArray(carvao, topItem)) or
-				(i["sparkling"]["arvores"] ~= nil and isInArray(arvores, topItem))) then
+				(i["sparkling"]["arvores"] ~= nil and isInArray(arvores, topItem)) or
+				i["sparkling"] ~= nil) then
 			if i["sparkling"]["ferro"] ~= nil and isInArray(ferro, topItem) then
 				i = i["sparkling"]["ferro"]
 			elseif i["sparkling"]["carvao"] ~= nil and isInArray(carvao, topItem) then
@@ -867,10 +881,20 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				i = i["sparkling"]["arvores"]
 				verificarNovoPontoColetaMadeira = true
 				gerarNovoPontoColetaMadeira = true
-			else
+			elseif i["sparkling"][topItem] ~= nil then
 				i = i["sparkling"][topItem]
+			else
+				for a, b in pairs(i["sparkling"]) do
+					if type(a) == "number" then
+						return false
+					end
+				end
+				i = i["sparkling"]
+				cancelarEvento = true
 			end
-			adicionarEvento = true
+			if not cancelarEvento then
+				adicionarEvento = true
+			end
 		elseif isInArray(fire_source, target.itemid) and i["fire_source"] ~= nil then
 			i = i["fire_source"]
 		elseif isInArray(fruits, target.itemid) and i["fruits"] ~= nil then
@@ -890,6 +914,9 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		elseif i["unique"] ~= nil and i["unique"][item.uid] ~= nil then
 			i = i["unique"][item.uid]
 		else
+			return false
+		end
+		if i == nil then
 			return false
 		end
 		if i.chances ~= nil then
@@ -935,6 +962,12 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			if i.verificarPosicao[1].z ~= nil and player:getPosition().z ~= verificarPosicao.z+i.verificarPosicao[1].z then
 				return false
 			end
+		end
+		if i.adicionarStorage ~= nil then
+			if player:getStorageValue(i.adicionarStorage[1]) == i.adicionarStorage[2] then
+				return false
+			end
+			player:setStorageValue(i.adicionarStorage[1], i.adicionarStorage[2])
 		end
 		local profissaoId = 0
 		local profissaoSkill =  0
