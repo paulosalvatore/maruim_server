@@ -103,9 +103,9 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local checarTartaruga = Tile(posicaoObjeto):getGround():getId()
 	local inFight = getCreatureCondition(player, CONDITION_INFIGHT)
 	if player:getStorageValue(5756) ~= 2 then
-		player:sendCancelMessage("Você não pode viajar na tartaruga.")
+		player:sendCancelMessage("Você não pode viajar na tartaruga do Iskan. Peça autorização a ele antes.")
 	else
-		if inFight == false then
+		if not inFight then
 			if checarTartaruga == 5755 then
 				if item.itemid == 9825 then
 					Item(item.uid):transform(item.itemid + 1)
@@ -121,7 +121,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 				player:sendTextMessage(MESSAGE_STATUS_SMALL, "Aguarde o retorno da tartaruga.")
 			end
 		else
-			player:sendTextMessage(MESSAGE_STATUS_SMALL, "Você deve sair do combate")
+			player:sendTextMessage(MESSAGE_STATUS_SMALL, "Você deve sair de combate.")
 		end
 	end
 	return true
