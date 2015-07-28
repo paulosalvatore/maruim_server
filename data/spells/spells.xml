@@ -742,4 +742,6 @@
 	<instant name="djinn cancel invisibility" words="###47"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/djinn cancel invisibility.lua" />
 	<instant name="betrayed wraith skill reducer" words="###48"  direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/betrayed wraith skill reducer.lua" />
 	<instant name="pirate corsair skill reducer" words="###49"  direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/pirate corsair skill reducer.lua" />
+	<instant name="djinn electrify 2"  words="###52"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/djinn electrify 2.lua"/>
+	<instant name="djinn paralyze" words="###55"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/djinn paralyze.lua"/>
 </spells>
