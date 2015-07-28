@@ -102,7 +102,7 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 	local posicaoObjeto = posicaoJogador + {y = -2}
 	local checarTartaruga = Tile(posicaoObjeto):getGround():getId()
 	local inFight = getCreatureCondition(player, CONDITION_INFIGHT)
-	if player:getStorageValue(5756) ~= 1 then
+	if player:getStorageValue(5756) ~= 2 then
 		player:sendCancelMessage("Você não pode viajar na tartaruga.")
 	else
 		if inFight == false then
