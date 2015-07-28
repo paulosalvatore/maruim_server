@@ -79,6 +79,8 @@
 	<action itemid="18457" script="teleport_crystals.lua" />
 	<action itemid="18509" script="teleport_crystals.lua" />
 
+	<action fromaid="6501" toaid="6503" script="lever_undead_area.lua" />
+
 	<!-- Crafting -->
 	<action itemid="2555" script="crafting.lua" />
 	<action itemid="8671" script="crafting.lua" />
@@ -384,6 +386,7 @@
 	<action fromid="19840" toid="19857" script="other/doors.lua" />
 	<action fromid="19980" toid="19997" script="other/doors.lua" />
 	<action fromid="20273" toid="20290" script="other/doors.lua" />
+	<action actionid="2505" script="other/doors.lua" />
 
 	<action itemid="14405" function="market" />
 
