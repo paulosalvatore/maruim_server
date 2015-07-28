@@ -24044,6 +24044,7 @@
 		<attribute key="containerSize" value="6" />
 		<attribute key="description" value="A filigree case made of seashell. It seems there is a small lock on the side of the case." />
 	</item>
+	<item fromid="15475" toid="15476" article="a" name="seashell book" />
 	<item id="15479" article="a" name="swarmer antenna">
 		<attribute key="weight" value="100" />
 	</item>
@@ -24168,7 +24169,7 @@
 	<item id="15538" name="stairs">
 		<attribute key="floorchange" value="down" />
 	</item>
-	<item id="15539" name="stairs" />
+	<item fromid="15540" toid="15543" article="a" name="wet temple floor" />
 	<item id="15545" article="a" name="foxtail">
 		<attribute key="weight" value="200" />
 		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
@@ -24511,18 +24512,18 @@
 		<attribute key="corpseType" value="undead" />
 	</item>
 	<item fromid="17221" toid="17232" name="stone" />
-	<item id="17235" article="a" name="closed door">
+	<item id="17235" article="a" name="moist door">
 		<attribute key="type" value="door" />
 		<attribute key="blockprojectile" value="1" />
 	</item>
-	<item id="17236" article="an" name="open door">
+	<item id="17236" article="an" name="moist door">
 		<attribute key="type" value="door" />
 	</item>
-	<item id="17237" article="a" name="closed door">
+	<item id="17237" article="a" name="moist door">
 		<attribute key="type" value="door" />
 		<attribute key="blockprojectile" value="1" />
 	</item>
-	<item id="17238" article="an" name="open door">
+	<item id="17238" article="an" name="moist door">
 		<attribute key="type" value="door" />
 	</item>
 	<item id="17239" article="a" name="strange idol" />
