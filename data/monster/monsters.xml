@@ -312,6 +312,7 @@
 	<monster name="Skeleton" file="skeleton.xml" />
 	<monster name="Skunk" file="skunk.xml" />
 	<monster name="Slime" file="slime.xml" />
+	<monster name="Slug" file="slug.xml" />
 	<monster name="Smuggler" file="smuggler.xml" />
 	<monster name="Snake" file="snake.xml" />
 	<monster name="Son Of Verminor" file="son of verminor.xml" />
@@ -346,6 +347,7 @@
 	<monster name="Undead Cavebear" file="undead cavebear.xml" />
 	<monster name="Undead Dragon" file="undead dragon.xml" />
 	<monster name="Undead Gladiator" file="undead gladiator.xml" />
+	<monster name="Undead Prospector" file="undead prospector.xml" />
 	<monster name="Valkyrie" file="valkyrie.xml" />
 	<monster name="Vampire Bride" file="vampire bride.xml" />
 	<monster name="Vampire Lord" file="vampire lord.xml" />
