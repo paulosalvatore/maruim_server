@@ -211,6 +211,22 @@
 	<action itemid="6361" function="decreaseItemId" />
 	<action itemid="6362" function="increaseItemId" />
 	<action itemid="6363" function="decreaseItemId" />
+	<action itemid="15121" function="increaseItemId" />
+	<action itemid="15122" function="decreaseItemId" />
+	<action itemid="15123" function="increaseItemId" />
+	<action itemid="15124" function="decreaseItemId" />
+	<action itemid="15124" function="increaseItemId" />
+	<action itemid="15126" function="decreaseItemId" />
+	<action itemid="15127" function="increaseItemId" />
+	<action itemid="15128" function="decreaseItemId" />
+	<action itemid="15129" function="increaseItemId" />
+	<action itemid="15130" function="decreaseItemId" />
+	<action itemid="15131" function="increaseItemId" />
+	<action itemid="15132" function="decreaseItemId" />
+	<action itemid="15133" function="increaseItemId" />
+	<action itemid="15134" function="decreaseItemId" />
+	<action itemid="15135" function="increaseItemId" />
+	<action itemid="15136" function="decreaseItemId" />
 
 	<!-- Food -->
 	<action itemid="2328" script="other/food.lua" />
