@@ -4,8 +4,17 @@ function onThink(player, interval)
 		return
 	end
 
-	if not player:getCondition(CONDITION_INFIGHT) and not modalRecompensaAberto[player:getId()] then
-		player:enviarModalRecompensa()
+	if not modalRecompensaAberto[player:getId()] then
+		local emBatalha = player:getCondition(CONDITION_INFIGHT, CONDITIONID_DEFAULT)
+		if not emBatalha or Tile(player:getPosition()):hasFlag(TILESTATE_PROTECTIONZONE) then
+				player:enviarModalRecompensa()
+			end
+		else
+			if not recompensaAguardando[player:getId()] or recompensaAguardando[player:getId()] <= os.time() - tempoMensagemRecompensaAguardando then
+				recompensaAguardando[player:getId()] = os.time()
+				player:sendTextMessage(MESSAGE_INFO_DESCR, "Você recebeu uma recompensa por nível que está aguardando você sair da batalha.")
+			end
+		end
 	end
 
 	return true

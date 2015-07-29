@@ -1,10 +1,12 @@
-recompensaIdBase = 6000
+recompensaIdBase = 50000
 recompensaPendente = 1
 recompensasInicio = 5
 recompensasOpcoesInicio = 300
 recompensasMaisTardeInicio = 600
 recompensasMaximo = 900
 modalRecompensaAberto = {}
+recompensaAguardando = {}
+tempoMensagemRecompensaAguardando = 30
 
 RecompensasNivel = {
 	{
@@ -185,6 +187,7 @@ function Player:modalTempoRecompensaMaisTarde(recompensaId)
 end
 
 function Player:enviarModalRecompensaMaisTarde(recompensaId, tempo)
+	recompensaAguardando[self:getId()] = os.time() + tempo - tempoMensagemRecompensaAguardando
 	addEvent(function(playerId, recompensaId)
 		local player = Player(playerId)
 		if not player then
@@ -192,7 +195,7 @@ function Player:enviarModalRecompensaMaisTarde(recompensaId, tempo)
 		end
 
 		if not modalRecompensaAberto[playerId] or modalRecompensaAberto[playerId] == recompensaId then
-			player:enviarModalRecompensa(recompensaId)
+			modalRecompensaAberto[playerId] = nil
 		end
 	end, tempo*1000, self:getId(), recompensaId)
 end
