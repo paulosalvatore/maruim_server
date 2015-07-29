@@ -3,6 +3,7 @@
 	<monster name="Acid Blob" file="acid blob.xml" />
 	<monster name="Acolyte Of The Cult" file="acolyte of the cult.xml" />
 	<monster name="Adept Of The Cult" file="adept of the cult.xml" />
+	<monster name="Alligator" file="alligator.xml" />
 	<monster name="Amazon" file="amazon.xml" />
 	<monster name="Ancient Scarab" file="ancient scarab.xml" />
 	<monster name="Angry Villager" file="angry villager.xml" />
@@ -11,6 +12,7 @@
 	<monster name="Askarak Lord" file="askarak lord.xml" />
 	<monster name="Askarak Prince" file="askarak prince.xml" />
 	<monster name="Assassin" file="assassin.xml" />
+	<monster name="Azure Frog" file="azure frog.xml" />
 	<monster name="Badger" file="badger.xml" />
 	<monster name="Bandit" file="bandit.xml" />
 	<monster name="Banshee" file="banshee.xml" />
@@ -34,6 +36,7 @@
 	<monster name="Blue Butterfly" file="blue butterfly.xml" />
 	<monster name="Blue Djinn" file="blue djinn.xml" />
 	<monster name="Boar" file="boar.xml" />
+	<monster name="Bog Frog" file="bog frog.xml" />
 	<monster name="Bog Raider" file="bog raider.xml" />
 	<monster name="Bonebeast" file="bonebeast.xml" />
 	<monster name="Bonelord" file="bonelord.xml" />
@@ -53,12 +56,14 @@
 	<monster name="Clay Guardian" file="clay guardian.xml" />
 	<monster name="Cliff Strider" file="cliff strider.xml" />
 	<monster name="Cobra" file="cobra.xml" />
+	<monster name="Coral Frog" file="coral frog.xml" />
 	<monster name="Corym Charlatan" file="corym charlatan.xml" />
 	<monster name="Corym Skirmisher" file="corym skirmisher.xml" />
 	<monster name="Corym Vanguard" file="corym vanguard.xml" />
 	<monster name="Crab" file="crab.xml" />
 	<monster name="Crawler" file="crawler.xml" />
 	<monster name="Crazed Beggar" file="crazed beggar.xml" />
+	<monster name="Crimson Frog" file="crimson frog.xml" />
 	<monster name="Crocodile" file="crocodile.xml" />
 	<monster name="Crustacea Gigantica" file="crustacea gigantica.xml" />
 	<monster name="Crypt Defiler" file="crypt defiler.xml" />
@@ -135,6 +140,7 @@
 	<monster name="Farm Pig" file="farm pig.xml" />
 	<monster name="Farm Sheep" file="farm sheep.xml" />
 	<monster name="Feversleep" file="feversleep.xml" />
+	<monster name="Filth Toad" file="filth toad.xml" />
 	<monster name="Fire Elemental" file="fire elemental.xml" />
 	<monster name="Flamingo" file="flamingo.xml" />
 	<monster name="Frazzlemaw" file="frazzlemaw.xml" />
@@ -163,6 +169,7 @@
 	<monster name="Grave Robber" file="grave robber.xml" />
 	<monster name="Gravedigger" file="gravedigger.xml" />
 	<monster name="Green Djinn" file="green djinn.xml" />
+	<monster name="Green Frog" file="green frog.xml" />
 	<monster name="Grim Reaper" file="grim reaper.xml" />
 	<monster name="Guzzlemaw" file="guzzlemaw.xml" />
 	<monster name="Hand Of Cursed Fate" file="hand of cursed fate.xml" />
@@ -182,7 +189,9 @@
 	<monster name="Hydra" file="hydra.xml" />
 	<monster name="Ice Golem" file="ice golem.xml" />
 	<monster name="Ice Witch" file="ice witch.xml" />
+	<monster name="Infernal Frog" file="infernal frog.xml" />
 	<monster name="Infernalist" file="infernalist.xml" />
+	<monster name="Insect Swarm" file="insect swarm.xml" />
 	<monster name="Insectoid Scout" file="insectoid scout.xml" />
 	<monster name="Insectoid Worker" file="insectoid worker.xml" />
 	<monster name="Iron Servant" file="iron servant.xml" />
@@ -254,6 +263,7 @@
 	<monster name="Orc Spearman" file="orc spearman.xml" />
 	<monster name="Orc Warlord" file="orc warlord.xml" />
 	<monster name="Orc" file="orc.xml" />
+	<monster name="Orchid Frog" file="orchid frog.xml" />
 	<monster name="Orewalker" file="orewalker.xml" />
 	<monster name="Overcharged Energy Elemental" file="overcharged energy elemental.xml" />
 	<monster name="Penguin" file="penguin.xml" />
