@@ -19406,26 +19406,26 @@
 		<attribute key="weight" value="440" />
 		<attribute key="showcount" value="0" />
 	</item>
-	<item id="11138" article="a" name="dead killer caiman">
+	<item id="11138" article="a" name="dead crocodile">
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="11139" />
 		<attribute key="duration" value="10" />
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="11139" article="a" name="dead killer caiman">
+	<item id="11139" article="a" name="dead crocodile">
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="11140" />
 		<attribute key="duration" value="300" />
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="11140" article="a" name="dead killer caiman">
+	<item id="11140" article="a" name="dead crocodile">
 		<attribute key="decayTo" value="11141" />
 		<attribute key="duration" value="300" />
 		<attribute key="corpseType" value="blood" />
 	</item>
-	<item id="11141" article="a" name="dead killer caiman">
+	<item id="11141" article="a" name="dead crocodile">
 		<attribute key="decayTo" value="0" />
 		<attribute key="duration" value="60" />
 		<attribute key="corpseType" value="blood" />
@@ -20271,26 +20271,26 @@
 	<item id="11429" article="a" name="crocodile steak">
 		<attribute key="weight" value="440" />
 	</item>
-	<item id="11430" article="a" name="dead killer caiman">
+	<item id="11430" article="a" name="dead crocodile">
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="11431" />
 		<attribute key="duration" value="10" />
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="11431" article="a" name="dead killer caiman">
+	<item id="11431" article="a" name="dead crocodile">
 		<attribute key="containerSize" value="10" />
 		<attribute key="decayTo" value="11432" />
 		<attribute key="duration" value="300" />
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="11432" article="a" name="dead killer caiman">
+	<item id="11432" article="a" name="dead crocodile">
 		<attribute key="decayTo" value="11433" />
 		<attribute key="duration" value="300" />
 		<attribute key="corpseType" value="blood" />
 	</item>
-	<item id="11433" article="a" name="dead killer caiman">
+	<item id="11433" article="a" name="dead crocodile">
 		<attribute key="decayTo" value="0" />
 		<attribute key="duration" value="60" />
 		<attribute key="corpseType" value="blood" />
