@@ -96,7 +96,7 @@ function moverTartaruga(playerUid, direcaoY, posicao, passo)
 	end
 	return true
 end
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local posicaoJogador = player:getPosition()
 	posicaoJogador:sendMagicEffect(CONST_ME_POFF)
 	local posicaoObjeto = posicaoJogador + {y = -2}

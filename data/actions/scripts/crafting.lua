@@ -10,7 +10,7 @@ local function verificiarMesaTrabalho(table, value)
 	end
 	return 0
 end
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local oven = {1787, 1789, 1791, 1793}
 	local livros = {2347, 10006, 12497}
 	if isInArray(oven, item.itemid) then

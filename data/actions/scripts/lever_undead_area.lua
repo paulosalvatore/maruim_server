@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	-- player:setStorageValue(6500, 0)
 	-- player:setStorageValue(6501, 0)
 	-- player:setStorageValue(6502, 0)

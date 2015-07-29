@@ -1,5 +1,5 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if itemEx.itemid ~= 1 or itemEx.type ~= THING_TYPE_PLAYER then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if target:getId() ~= 1 or target.type ~= THING_TYPE_PLAYER then
 		return false
 	end
 	if configProfissoes.pocoes[item.itemid] then

@@ -1,4 +1,4 @@
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local plantas = {
 		7681,
 		7683,
@@ -44,62 +44,51 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 		[9989] = 15449,
 		[9991] = 15450
 	}
-	if(item.itemid == 7734) then
-		if(itemEx.itemid == 7665) then
-			iEx = Item(itemEx.uid)
-			iEx:transform(7678)
-			iEx:decay()
-			doSendMagicEffect(iEx:getPosition(), CONST_ME_BLOCKHIT)
-			return true
-		elseif(itemEx.itemid == 7670) then
+	if(item:getId() == 7734) then
+		if(target:getId() == 7665) then
+			target:transform(7678)
+			target:decay()
+			target:getPosition():sendMagicEffect(CONST_ME_BLOCKHIT)
+		elseif(target:getId() == 7670) then
 			local valor = math.random(0, 5)
 			local planta = plantas[valor]
-			iEx = Item(itemEx.uid)
-			iEx:transform(planta)
-			iEx:decay()
-			doSendMagicEffect(iEx:getPosition(), CONST_ME_BLOCKHIT)
-			return true
-		elseif(isInArray(plantas, itemEx.itemid) or itemEx.itemid == 7678) then
+			target:transform(planta)
+			target:decay()
+			target:getPosition():sendMagicEffect(CONST_ME_BLOCKHIT)
+		elseif(isInArray(plantas, target:getId()) or target:getId() == 7678) then
 			player:sendTextMessage(MESSAGE_EVENT_ORANGE, "Essa planta não precisa de água.")
-			return true
-		elseif(plantas_regar[itemEx.itemid]) then
-			iEx = Item(itemEx.uid)
-			iEx:transform(plantas_regar[itemEx.itemid])
-			iEx:decay()
-			doSendMagicEffect(iEx:getPosition(), CONST_ME_BLOCKHIT)
-			return true
+		elseif(plantas_regar[target:getId()]) then
+			target:transform(plantas_regar[target:getId()])
+			target:decay()
+			target:getPosition():sendMagicEffect(CONST_ME_BLOCKHIT)
 		else
 			return false
 		end
-	elseif(item.itemid == 15271) then
-		if(itemEx.itemid == 7679) then
-			Item(item.uid):remove(1)
-			iEx = Item(itemEx.uid)
-			iEx:transform(15443)
-			iEx:decay()
-			doSendMagicEffect(iEx:getPosition(), CONST_ME_BLOCKHIT)
-			return true
-		elseif(plantas_imortais[itemEx.itemid]) then
-			Item(item.uid):remove(1)
-			iEx = Item(itemEx.uid)
-			iEx:transform(plantas_imortais[itemEx.itemid])
-			iEx:decay()
-			doSendMagicEffect(iEx:getPosition(), CONST_ME_BLOCKHIT)
-			return true
+		return true
+	elseif(item:getId() == 15271) then
+		if(target:getId() == 7679) then
+			item:remove(1)
+			target:transform(15443)
+			target:decay()
+			target:getPosition():sendMagicEffect(CONST_ME_BLOCKHIT)
+		elseif(plantas_imortais[target:getId()]) then
+			item:remove(1)
+			target:transform(plantas_imortais[target:getId()])
+			target:decay()
+			target:getPosition():sendMagicEffect(CONST_ME_BLOCKHIT)
 		else
 			return false
 		end
-	elseif(item.itemid == 15269) then
+		return true
+	elseif(item:getId() == 15269) then
 		local chance = math.random(0, 100)
 		if(chance < 20) then
 			player:addItem(15271, 1)
 		end
-		local it = Item(item.uid)
-		it:transform(15270)
-		it:decay()
-		doSendMagicEffect(it:getPosition(), CONST_ME_BLOCKHIT)
+		item:transform(15270)
+		item:decay()
+		item:getPosition():sendMagicEffect(CONST_ME_BLOCKHIT)
 		return true
-	else
-		return false
 	end
+	return false
 end

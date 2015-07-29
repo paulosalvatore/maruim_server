@@ -33,7 +33,7 @@ local config = {
 	containerPadrao = 1987
 }
 
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if (item.actionid ~= nil and config["action"][item.actionid]) or item.uid <= 65535 or (item.uid <= 65535 and config["unique"][item.uid]) then
 		local i
 		local storage

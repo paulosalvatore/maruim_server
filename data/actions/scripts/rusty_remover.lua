@@ -7,14 +7,14 @@ local rustyItems = {
     [9812] = {2468, 2648, 2478, {2647, 40}, {2477, 20}, {2488, 10}},
     [9813] = {2478, 2647, {2477, 40}, {2488, 20}, {2470, 3}}
 }
-function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
-	if rustyItems[itemEx.itemid] ~= nil then
+function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+	if rustyItems[target.itemid] ~= nil then
 		local broke = 0
 		local novoItem = 0
 		if math.random(100) <= breakChance then
 			broke = 1
 		else
-			local rustyItem = rustyItems[itemEx.itemid][math.random(#rustyItems[itemEx.itemid])]
+			local rustyItem = rustyItems[target.itemid][math.random(#rustyItems[target.itemid])]
 			if type(rustyItem) == "table" then
 				if math.random(100) <= rustyItem[2] then
 					novoItem = rustyItem[1]
@@ -26,11 +26,11 @@ function onUse(player, item, fromPosition, itemEx, toPosition, isHotkey)
 			end
 		end
 		if broke == 1 then
-			itemEx:remove(1)
+			target:remove(1)
 			player:sendTextMessage(MESSAGE_INFO_DESCR, "You broke it.")
 			toPosition:sendMagicEffect(CONST_ME_POFF)
 		else
-			itemEx:transform(novoItem)
+			target:transform(novoItem)
 			player:sendTextMessage(MESSAGE_INFO_DESCR, "You removed the rust, revealing a "..getItemName(novoItem))
 			toPosition:sendMagicEffect(CONST_ME_BLOCKHIT)
 		end
