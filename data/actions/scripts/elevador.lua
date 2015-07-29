@@ -98,7 +98,7 @@ local function moverElevador(cid, ativadorUid, posicao)
 	return true
 end
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if player:getCondition(CONDITION_INFIGHT) then
+	if player:getCondition(CONDITION_INFIGHT, CONDITIONID_DEFAULT) then
 		return player:sendCancelMessage("Você está em batalha.")
 	end
 	return moverElevador(player.uid, item.uid, fromPosition)
