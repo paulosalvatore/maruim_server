@@ -1,9 +1,4 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	-- player:setStorageValue(6500, 0)
-	-- player:setStorageValue(6501, 0)
-	-- player:setStorageValue(6502, 0)
-	-- player:setStorageValue(6503, 0)
-
 	local storages = {6501, 6502, 6503}
 	local storage = item:getActionId()
 	local storageValue = player:getStorageValue(storage)
@@ -19,7 +14,6 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		end
 	end
 
-	print(storagesValores)
 	if storagesValores == 2 then
 		local storagePrincipal = 6500
 		player:setStorageValue(storagePrincipal, 1)
