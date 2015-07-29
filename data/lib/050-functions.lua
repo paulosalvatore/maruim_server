@@ -282,7 +282,7 @@ function Player:addLevel()
 	self:addExperience(getExpForLevel(self:getLevel() + 1) - self:getExperience())
 end
 
-function Player:teleportarJogador(posicao, forcar, extended)
+function Player:teleportarJogador(posicao, forcar, extended, direcao)
 	if not self then
 		return
 	end
@@ -298,8 +298,12 @@ function Player:teleportarJogador(posicao, forcar, extended)
 		end
 	end
 
+	if not direcao or not direcoes[direcao] then
+		direcao = "sul"
+	end
+
 	if self:teleportTo(posicao) then
-		self:setDirection(direcoes["sul"])
+		self:setDirection(direcoes[direcao])
 		Position(posicao):sendMagicEffect(efeitos["teleport"])
 		return true
 	end
