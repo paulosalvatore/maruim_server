@@ -6,7 +6,7 @@ posicoesEfeitos = {
 	{x = 301, y = 2421, z = 7},
 	{x = 300, y = 2423, z = 7}
 }
-dataTutorial = {
+dadosTutorial = {
 	linkJanela = {},
 	mesa = {}
 }
@@ -401,7 +401,7 @@ function Player:tutorialIniciarFabricacao()
 	craftCD:setParameter(CONDITION_PARAM_SUBID, 160)
 	craftCD:setParameter(CONDITION_PARAM_TICKS, (tempoFabricacao+1)*1000)
 	self:addCondition(craftCD)
-	local mesa = dataTutorial.mesa[self:getId()]
+	local mesa = dadosTutorial.mesa[self:getId()]
 	mesa:transform(mesa.itemid+1)
 	for i = 1, tempoFabricacao do
 		addEvent(function(playerId)
@@ -409,7 +409,7 @@ function Player:tutorialIniciarFabricacao()
 			if not player then
 				return
 			end
-			local mesa = dataTutorial.mesa[player:getId()]
+			local mesa = dadosTutorial.mesa[player:getId()]
 			if i < 4 then
 				mesa:getPosition():sendMagicEffect(efeitos["hit"])
 			else

@@ -1,10 +1,10 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if item.itemid == 9895 or item.itemid == 9898 then
-		if not dataTutorial.linkJanela[player:getId()] then
+		if not dadosTutorial.linkJanela[player:getId()] then
 			player:enviarLinkAcessoRapido("janela profissão", "Detalhamento da Janela de Profissões")
-			dataTutorial.linkJanela[player:getId()] = true
+			dadosTutorial.linkJanela[player:getId()] = true
 		end
-		dataTutorial.mesa[player:getId()] = Item(item.uid)
+		dadosTutorial.mesa[player:getId()] = Item(item.uid)
 		player:tutorialJanelaFabricacao()
 	elseif target.itemid == 8047 then
 		local passoTutorial = player:pegarPassoTutorial()
