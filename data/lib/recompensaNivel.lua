@@ -6,7 +6,7 @@ recompensasMaisTardeInicio = 600
 recompensasMaximo = 900
 modalRecompensaAberto = {}
 recompensaAguardando = {}
-tempoMensagemRecompensaAguardando = 30
+tempoMensagemRecompensaAguardando = 60
 
 RecompensasNivel = {
 	{
