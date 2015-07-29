@@ -11153,11 +11153,23 @@
 	<spawn centerx="1231" centery="1725" centerz="8" radius="1">
 		<monster name="Cyclops" x="1" y="0" z="8" spawntime="140" />
 	</spawn>
+	<spawn centerx="1066" centery="1727" centerz="8" radius="1">
+		<monster name="Filth Toad" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1072" centery="1729" centerz="8" radius="1">
+		<monster name="Toad" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1517" centery="1729" centerz="8" radius="1">
 		<npc name="Amyl Dannozon" x="0" y="0" z="8" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1241" centery="1730" centerz="8" radius="1">
 		<monster name="Cyclops Smith" x="0" y="-1" z="8" spawntime="290" />
+	</spawn>
+	<spawn centerx="1047" centery="1731" centerz="8" radius="1">
+		<monster name="Scorpion" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1066" centery="1731" centerz="8" radius="1">
+		<monster name="Scorpion" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="670" centery="1732" centerz="8" radius="2">
 		<monster name="Crystal Spider" x="-1" y="-1" z="8" spawntime="60" />
@@ -11167,8 +11179,23 @@
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
 		<monster name="Ice Golem" x="0" y="1" z="8" spawntime="1536" />
 	</spawn>
+	<spawn centerx="1069" centery="1732" centerz="8" radius="1">
+		<monster name="Crimson Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1510" centery="1732" centerz="8" radius="1">
 		<npc name="Cameron" x="0" y="0" z="8" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1021" centery="1733" centerz="8" radius="1">
+		<monster name="Azure Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1026" centery="1733" centerz="8" radius="1">
+		<monster name="Insect Swarm" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1043" centery="1733" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1050" centery="1733" centerz="8" radius="1">
+		<monster name="Azure Frog" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="489" centery="1734" centerz="8" radius="1">
 		<monster name="Crystal Spider" x="0" y="0" z="8" spawntime="60" />
@@ -11181,6 +11208,9 @@
 	</spawn>
 	<spawn centerx="708" centery="1734" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1055" centery="1734" centerz="8" radius="1">
+		<monster name="Green Frog" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="473" centery="1735" centerz="8" radius="4">
 		<monster name="Crystal Spider" x="-4" y="-3" z="8" spawntime="60" />
@@ -11199,11 +11229,23 @@
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
 		<monster name="Ice Golem" x="-1" y="1" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1025" centery="1735" centerz="8" radius="1">
+		<monster name="Green Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="565" centery="1736" centerz="8" radius="1">
 		<monster name="Crystal Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="721" centery="1736" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1041" centery="1736" centerz="8" radius="1">
+		<monster name="Salamander" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1067" centery="1736" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1095" centery="1736" centerz="8" radius="1">
+		<monster name="Salamander" x="-1" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="494" centery="1737" centerz="8" radius="2">
 		<monster name="Frost Dragon Hatchling" x="-1" y="-2" z="8" spawntime="60" />
@@ -11219,6 +11261,9 @@
 	<spawn centerx="770" centery="1737" centerz="8" radius="1">
 		<monster name="Frost Giant" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1056" centery="1737" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="501" centery="1738" centerz="8" radius="2">
 		<monster name="Frost Dragon Hatchling" x="1" y="-2" z="8" spawntime="60" />
 		<monster name="Frost Dragon Hatchling" x="-2" y="2" z="8" spawntime="60" />
@@ -11232,8 +11277,24 @@
 	<spawn centerx="637" centery="1738" centerz="8" radius="1">
 		<monster name="Crystal Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1066" centery="1738" centerz="8" radius="1">
+		<monster name="Bog Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1090" centery="1738" centerz="8" radius="1">
+		<monster name="Filth Toad" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="805" centery="1739" centerz="8" radius="1">
 		<monster name="Frost Troll" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1027" centery="1739" centerz="8" radius="1">
+		<monster name="Crimson Frog" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1041" centery="1739" centerz="8" radius="1">
+		<monster name="Green Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1094" centery="1739" centerz="8" radius="1">
+		<monster name="Filth Toad" x="1" y="0" z="8" spawntime="60" />
+		<monster name="Azure Frog" x="-1" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="623" centery="1740" centerz="8" radius="2">
 		<monster name="Ice Golem" x="2" y="-2" z="8" spawntime="60" />
@@ -11242,6 +11303,12 @@
 	<spawn centerx="759" centery="1740" centerz="8" radius="1">
 		<monster name="Frost Giant" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1059" centery="1740" centerz="8" radius="1">
+		<monster name="Salamander" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1088" centery="1741" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="749" centery="1742" centerz="8" radius="1">
 		<monster name="Frost Giant" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -11249,6 +11316,15 @@
 		<monster name="Winter Wolf" x="-1" y="-2" z="8" spawntime="60" />
 		<monster name="Winter Wolf" x="1" y="-2" z="8" spawntime="60" />
 		<monster name="Winter Wolf" x="2" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1029" centery="1742" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1039" centery="1742" centerz="8" radius="1">
+		<monster name="Crimson Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1092" centery="1742" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1116" centery="1742" centerz="8" radius="1">
 		<monster name="Bear" x="0" y="0" z="8" spawntime="60" />
@@ -11276,8 +11352,14 @@
 	<spawn centerx="748" centery="1744" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1062" centery="1744" centerz="8" radius="1">
+		<monster name="Crimson Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="727" centery="1745" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1090" centery="1745" centerz="8" radius="1">
+		<monster name="Toad" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="518" centery="1746" centerz="8" radius="2">
 		<monster name="Crystal Spider" x="1" y="-2" z="8" spawntime="60" />
@@ -11293,6 +11375,13 @@
 		<monster name="Crystal Spider" x="-1" y="-2" z="8" spawntime="60" />
 		<monster name="Crystal Spider" x="1" y="1" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1030" centery="1747" centerz="8" radius="1">
+		<monster name="Insect Swarm" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1052" centery="1747" centerz="8" radius="1">
+		<monster name="Filth Toad" x="-1" y="-1" z="8" spawntime="60" />
+		<monster name="Toad" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="612" centery="1748" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -11304,6 +11393,9 @@
 	</spawn>
 	<spawn centerx="954" centery="1748" centerz="8" radius="1">
 		<npc name="Kilver Dojuf" x="0" y="-1" z="8" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1039" centery="1748" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="584" centery="1749" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
@@ -11321,6 +11413,15 @@
 		<monster name="Frost Troll" x="1" y="-2" z="8" spawntime="60" />
 		<monster name="Frost Troll" x="-1" y="1" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1049" centery="1749" centerz="8" radius="1">
+		<monster name="Scorpion" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1054" centery="1749" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1063" centery="1749" centerz="8" radius="1">
+		<monster name="Insect Swarm" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="737" centery="1750" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -11333,6 +11434,12 @@
 	<spawn centerx="719" centery="1751" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1038" centery="1751" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1092" centery="1751" centerz="8" radius="1">
+		<monster name="Bog Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1104" centery="1751" centerz="8" radius="1">
 		<monster name="Skeleton" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -11342,6 +11449,9 @@
 	</spawn>
 	<spawn centerx="919" centery="1753" centerz="8" radius="1">
 		<npc name="Tara Alcreka" x="0" y="0" z="8" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1090" centery="1753" centerz="8" radius="1">
+		<monster name="Azure Frog" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1111" centery="1753" centerz="8" radius="1">
 		<monster name="Skeleton Warrior" x="0" y="0" z="8" spawntime="60" />
@@ -11354,6 +11464,15 @@
 	</spawn>
 	<spawn centerx="950" centery="1754" centerz="8" radius="1">
 		<npc name="Samantha" x="-1" y="0" z="8" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1041" centery="1754" centerz="8" radius="1">
+		<monster name="Salamander" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1045" centery="1754" centerz="8" radius="1">
+		<monster name="Bog Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1064" centery="1754" centerz="8" radius="1">
+		<monster name="Azure Frog" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1513" centery="1754" centerz="8" radius="2">
 		<npc name="Airotear Greli" x="-1" y="-1" z="8" spawntime="60" direction="2" />
@@ -11372,12 +11491,18 @@
 	<spawn centerx="770" centery="1756" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1092" centery="1756" centerz="8" radius="1">
+		<monster name="Scorpion" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="491" centery="1757" centerz="8" radius="2">
 		<monster name="Crystal Spider" x="-2" y="-2" z="8" spawntime="60" />
 		<monster name="Crystal Spider" x="2" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="509" centery="1757" centerz="8" radius="1">
 		<monster name="Frost Dragon Hatchling" x="1" y="0" z="8" spawntime="1536" />
+	</spawn>
+	<spawn centerx="1026" centery="1757" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="474" centery="1758" centerz="8" radius="2">
 		<monster name="Frost Dragon Hatchling" x="-2" y="-2" z="8" spawntime="60" />
@@ -11386,8 +11511,20 @@
 	<spawn centerx="680" centery="1758" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1067" centery="1758" centerz="8" radius="1">
+		<monster name="Green Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1090" centery="1758" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1118" centery="1758" centerz="8" radius="1">
 		<monster name="Ghoul" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1071" centery="1759" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1075" centery="1759" centerz="8" radius="1">
+		<monster name="Toad" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="592" centery="1760" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
@@ -11408,12 +11545,52 @@
 	<spawn centerx="799" centery="1761" centerz="8" radius="1">
 		<monster name="Winter Wolf" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1019" centery="1761" centerz="8" radius="1">
+		<monster name="Green Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1045" centery="1761" centerz="8" radius="1">
+		<monster name="Azure Frog" x="1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1072" centery="1761" centerz="8" radius="1">
+		<monster name="Salamander" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1022" centery="1762" centerz="8" radius="1">
+		<monster name="Insect Swarm" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1077" centery="1762" centerz="8" radius="1">
+		<monster name="Green Frog" x="-1" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1100" centery="1762" centerz="8" radius="1">
+		<monster name="Toad" x="-1" y="0" z="8" spawntime="60" />
+		<monster name="Azure Frog" x="1" y="1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1137" centery="1762" centerz="8" radius="1">
 		<monster name="Wolf" x="1" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1036" centery="1763" centerz="8" radius="1">
+		<monster name="Salamander" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1079" centery="1763" centerz="8" radius="1">
+		<monster name="Insect Swarm" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1150" centery="1763" centerz="8" radius="1">
 		<monster name="Wolf" x="1" y="-1" z="8" spawntime="60" />
 		<monster name="Wolf" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1045" centery="1764" centerz="8" radius="1">
+		<monster name="Scorpion" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1048" centery="1764" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1091" centery="1764" centerz="8" radius="1">
+		<monster name="Salamander" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1094" centery="1764" centerz="8" radius="1">
+		<monster name="Bog Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1098" centery="1764" centerz="8" radius="1">
+		<monster name="Crimson Frog" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1119" centery="1764" centerz="8" radius="1">
 		<monster name="Skeleton Warrior" x="-1" y="0" z="8" spawntime="60" />
@@ -11428,8 +11605,17 @@
 	<spawn centerx="766" centery="1765" centerz="8" radius="1">
 		<monster name="Frost Giant" x="-1" y="1" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1019" centery="1765" centerz="8" radius="1">
+		<monster name="Scorpion" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1031" centery="1765" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1114" centery="1765" centerz="8" radius="1">
 		<monster name="Skeleton Warrior" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1079" centery="1766" centerz="8" radius="1">
+		<monster name="Crimson Frog" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="544" centery="1767" centerz="8" radius="2">
 		<monster name="Crystal Spider" x="0" y="-2" z="8" spawntime="60" />
@@ -11437,6 +11623,12 @@
 	</spawn>
 	<spawn centerx="677" centery="1767" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1035" centery="1767" centerz="8" radius="1">
+		<monster name="Scorpion" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1049" centery="1767" centerz="8" radius="1">
+		<monster name="Green Frog" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1130" centery="1767" centerz="8" radius="1">
 		<monster name="Wolf" x="1" y="-1" z="8" spawntime="60" />
@@ -11449,6 +11641,15 @@
 	<spawn centerx="777" centery="1768" centerz="8" radius="1">
 		<monster name="Frost Giant" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1016" centery="1768" centerz="8" radius="1">
+		<monster name="Crimson Frog" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1081" centery="1768" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1086" centery="1768" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1120" centery="1768" centerz="8" radius="1">
 		<monster name="Ghoul" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -11458,6 +11659,15 @@
 	</spawn>
 	<spawn centerx="1115" centery="1769" centerz="8" radius="1">
 		<monster name="Skeleton Warrior" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1029" centery="1770" centerz="8" radius="1">
+		<monster name="Bog Frog" x="1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1049" centery="1770" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1078" centery="1770" centerz="8" radius="1">
+		<monster name="Scorpion" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1151" centery="1770" centerz="8" radius="1">
 		<monster name="Wolf" x="-1" y="-1" z="8" spawntime="60" />
@@ -11479,9 +11689,18 @@
 	<spawn centerx="946" centery="1771" centerz="8" radius="2">
 		<npc name="Mineiana Aeleus" x="1" y="0" z="8" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="1038" centery="1771" centerz="8" radius="1">
+		<monster name="Crimson Frog" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1100" centery="1771" centerz="8" radius="1">
+		<monster name="Salamander" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="486" centery="1772" centerz="8" radius="2">
 		<monster name="Crystal Spider" x="1" y="-2" z="8" spawntime="60" />
 		<monster name="Crystal Spider" x="-1" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1104" centery="1772" centerz="8" radius="1">
+		<monster name="Crimson Frog" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="498" centery="1773" centerz="8" radius="2">
 		<monster name="Frost Dragon Hatchling" x="-1" y="-2" z="8" spawntime="60" />
@@ -11496,11 +11715,26 @@
 	<spawn centerx="774" centery="1773" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="1" y="-1" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1021" centery="1773" centerz="8" radius="1">
+		<monster name="Azure Frog" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1027" centery="1773" centerz="8" radius="1">
+		<monster name="Insect Swarm" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1048" centery="1773" centerz="8" radius="1">
+		<monster name="Salamander" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1140" centery="1773" centerz="8" radius="1">
 		<monster name="Wolf" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="920" centery="1774" centerz="8" radius="1">
 		<npc name="Haless Amonius" x="0" y="-1" z="8" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1015" centery="1774" centerz="8" radius="1">
+		<monster name="Insect Swarm" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1103" centery="1774" centerz="8" radius="1">
+		<monster name="Scorpion" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="595" centery="1775" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
@@ -11508,11 +11742,42 @@
 	<spawn centerx="932" centery="1775" centerz="8" radius="1">
 		<npc name="Fenwanius Thri" x="-1" y="-1" z="8" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="1076" centery="1776" centerz="8" radius="1">
+		<monster name="Azure Frog" x="1" y="0" z="8" spawntime="60" />
+		<monster name="Crimson Frog" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="576" centery="1777" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1026" centery="1777" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1041" centery="1777" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1045" centery="1777" centerz="8" radius="1">
+		<monster name="Crimson Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1056" centery="1777" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1083" centery="1777" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="681" centery="1778" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1080" centery="1778" centerz="8" radius="1">
+		<monster name="Green Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1015" centery="1779" centerz="8" radius="1">
+		<monster name="Salamander" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1071" centery="1779" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1099" centery="1779" centerz="8" radius="1">
+		<monster name="Insect Swarm" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="475" centery="1780" centerz="8" radius="2">
 		<monster name="Frost Dragon Hatchling" x="-2" y="-2" z="8" spawntime="60" />
@@ -11529,8 +11794,23 @@
 	<spawn centerx="968" centery="1780" centerz="8" radius="1">
 		<npc name="Jund Alder" x="1" y="1" z="8" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="1052" centery="1780" centerz="8" radius="1">
+		<monster name="Crimson Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1056" centery="1780" centerz="8" radius="1">
+		<monster name="Filth Toad" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1119" centery="1780" centerz="8" radius="1">
 		<monster name="Skeleton" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1028" centery="1781" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1058" centery="1781" centerz="8" radius="1">
+		<monster name="Bog Frog" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1073" centery="1781" centerz="8" radius="1">
+		<monster name="Salamander" x="-1" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1376" centery="1781" centerz="8" radius="1">
 		<monster name="Eternal Guardian" x="0" y="-1" z="8" spawntime="60" />
@@ -11554,6 +11834,9 @@
 	<spawn centerx="948" centery="1782" centerz="8" radius="1">
 		<npc name="Gogilock Lena" x="0" y="-1" z="8" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="1069" centery="1782" centerz="8" radius="1">
+		<monster name="Insect Swarm" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1141" centery="1782" centerz="8" radius="1">
 		<monster name="Wolf" x="1" y="-1" z="8" spawntime="60" />
 	</spawn>
@@ -11567,6 +11850,12 @@
 	<spawn centerx="961" centery="1783" centerz="8" radius="1">
 		<npc name="Lucerthor Eletratand" x="0" y="1" z="8" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="1054" centery="1783" centerz="8" radius="1">
+		<monster name="Scorpion" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1090" centery="1783" centerz="8" radius="1">
+		<monster name="Azure Frog" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="775" centery="1784" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -11574,12 +11863,28 @@
 		<monster name="Frost Giant" x="0" y="0" z="8" spawntime="60" />
 		<monster name="Frost Giant" x="1" y="0" z="8" spawntime="1536" />
 	</spawn>
+	<spawn centerx="1022" centery="1784" centerz="8" radius="1">
+		<monster name="Crimson Frog" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1041" centery="1784" centerz="8" radius="1">
+		<monster name="Scorpion" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1097" centery="1784" centerz="8" radius="1">
+		<monster name="Bog Frog" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1333" centery="1784" centerz="8" radius="2">
 		<monster name="Clay Guardian" x="-2" y="-1" z="8" spawntime="60" />
 		<monster name="Clay Guardian" x="2" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="565" centery="1785" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1063" centery="1785" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="-1" z="8" spawntime="60" />
+		<monster name="Azure Frog" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1094" centery="1785" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1347" centery="1785" centerz="8" radius="1">
 		<monster name="Clay Guardian" x="1" y="-1" z="8" spawntime="60" />
@@ -11626,6 +11931,12 @@
 	<spawn centerx="928" centery="1787" centerz="8" radius="1">
 		<npc name="Nate" x="-1" y="0" z="8" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="1022" centery="1787" centerz="8" radius="1">
+		<monster name="Green Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1038" centery="1787" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1118" centery="1787" centerz="8" radius="1">
 		<monster name="Skeleton" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -11644,6 +11955,12 @@
 	<spawn centerx="815" centery="1789" centerz="8" radius="1">
 		<monster name="Frost Giant" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1020" centery="1789" centerz="8" radius="1">
+		<monster name="Insect Swarm" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1095" centery="1789" centerz="8" radius="1">
+		<monster name="Scorpion" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1137" centery="1789" centerz="8" radius="2">
 		<monster name="Skeleton Warrior" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Ghoul" x="-1" y="0" z="8" spawntime="60" />
@@ -11654,6 +11971,21 @@
 	<spawn centerx="682" centery="1790" centerz="8" radius="1">
 		<monster name="Crystal Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1016" centery="1791" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1031" centery="1791" centerz="8" radius="1">
+		<monster name="Salamander" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1041" centery="1791" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1057" centery="1791" centerz="8" radius="1">
+		<monster name="Crimson Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1099" centery="1791" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1126" centery="1791" centerz="8" radius="1">
 		<monster name="Skeleton" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
@@ -11662,6 +11994,9 @@
 	</spawn>
 	<spawn centerx="687" centery="1792" centerz="8" radius="1">
 		<monster name="Crystal Spider" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1029" centery="1792" centerz="8" radius="1">
+		<monster name="Insect Swarm" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1108" centery="1792" centerz="8" radius="2">
 		<monster name="Ghoul" x="-2" y="1" z="8" spawntime="60" />
@@ -11673,8 +12008,23 @@
 	<spawn centerx="805" centery="1793" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1044" centery="1793" centerz="8" radius="1">
+		<monster name="Green Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1050" centery="1793" centerz="8" radius="1">
+		<monster name="Salamander" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1100" centery="1793" centerz="8" radius="1">
+		<monster name="Crimson Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="778" centery="1794" centerz="8" radius="1">
 		<monster name="Frost Giant" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1029" centery="1794" centerz="8" radius="1">
+		<monster name="Toad" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1054" centery="1794" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1119" centery="1794" centerz="8" radius="1">
 		<monster name="Skeleton" x="0" y="1" z="8" spawntime="60" />
@@ -11686,6 +12036,12 @@
 	<spawn centerx="793" centery="1795" centerz="8" radius="2">
 		<monster name="Ice Golem" x="-2" y="-1" z="8" spawntime="60" />
 		<monster name="Ice Golem" x="2" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1046" centery="1795" centerz="8" radius="1">
+		<monster name="Azure Frog" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1077" centery="1795" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1132" centery="1795" centerz="8" radius="1">
 		<monster name="Skeleton Warrior" x="-1" y="0" z="8" spawntime="60" />
@@ -11709,6 +12065,12 @@
 	<spawn centerx="750" centery="1796" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1016" centery="1796" centerz="8" radius="1">
+		<monster name="Salamander" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1073" centery="1796" centerz="8" radius="1">
+		<monster name="Salamander" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1194" centery="1796" centerz="8" radius="1">
 		<monster name="Poison Spider" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
@@ -11725,6 +12087,12 @@
 		<monster name="Ice Golem" x="-2" y="-2" z="8" spawntime="60" />
 		<monster name="Ice Golem" x="3" y="-1" z="8" spawntime="60" />
 		<monster name="Ice Golem" x="-1" y="3" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1070" centery="1798" centerz="8" radius="1">
+		<monster name="Green Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1079" centery="1798" centerz="8" radius="1">
+		<monster name="Azure Frog" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1200" centery="1798" centerz="8" radius="1">
 		<monster name="Tarantula" x="-1" y="-1" z="8" spawntime="60" />
@@ -11749,15 +12117,30 @@
 		<monster name="Eternal Guardian" x="2" y="-1" z="8" spawntime="60" />
 		<monster name="Eternal Guardian" x="-1" y="1" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1070" centery="1800" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1100" centery="1800" centerz="8" radius="1">
+		<monster name="Insect Swarm" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1205" centery="1800" centerz="8" radius="1">
 		<monster name="Poison Spider" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="722" centery="1801" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1081" centery="1801" centerz="8" radius="1">
+		<monster name="Insect Swarm" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="759" centery="1802" centerz="8" radius="2">
 		<monster name="Ice Golem" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Ice Golem" x="1" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1020" centery="1802" centerz="8" radius="1">
+		<monster name="Insect Swarm" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1031" centery="1802" centerz="8" radius="1">
+		<monster name="Bog Frog" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1125" centery="1802" centerz="8" radius="1">
 		<monster name="Ghoul" x="-1" y="0" z="8" spawntime="60" />
@@ -11785,11 +12168,32 @@
 	<spawn centerx="778" centery="1803" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1029" centery="1804" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1099" centery="1804" centerz="8" radius="1">
+		<monster name="Azure Frog" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="542" centery="1805" centerz="8" radius="1">
 		<monster name="Crystal Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="798" centery="1805" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1024" centery="1805" centerz="8" radius="1">
+		<monster name="Azure Frog" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1045" centery="1805" centerz="8" radius="1">
+		<monster name="Insect Swarm" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1066" centery="1805" centerz="8" radius="1">
+		<monster name="Crimson Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1083" centery="1805" centerz="8" radius="1">
+		<monster name="Scorpion" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1096" centery="1805" centerz="8" radius="1">
+		<monster name="Green Frog" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1177" centery="1805" centerz="8" radius="1">
 		<monster name="Tarantula" x="-1" y="-1" z="8" spawntime="60" />
@@ -11814,6 +12218,15 @@
 		<monster name="Frost Giant" x="0" y="0" z="8" spawntime="60" />
 		<monster name="Frost Giant" x="1" y="0" z="8" spawntime="1792" />
 	</spawn>
+	<spawn centerx="1035" centery="1806" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1042" centery="1806" centerz="8" radius="1">
+		<monster name="Green Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1048" centery="1806" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1334" centery="1806" centerz="8" radius="2">
 		<monster name="Clay Guardian" x="-2" y="-1" z="8" spawntime="60" />
 		<monster name="Clay Guardian" x="1" y="-1" z="8" spawntime="60" />
@@ -11821,6 +12234,9 @@
 	<spawn centerx="1451" centery="1806" centerz="8" radius="2">
 		<monster name="Eternal Guardian" x="-2" y="-1" z="8" spawntime="60" />
 		<monster name="Eternal Guardian" x="2" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1038" centery="1807" centerz="8" radius="1">
+		<monster name="Crimson Frog" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1292" centery="1807" centerz="8" radius="1">
 		<monster name="Crab" x="0" y="0" z="8" spawntime="60" />
@@ -11831,6 +12247,18 @@
 	</spawn>
 	<spawn centerx="814" centery="1808" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1032" centery="1808" centerz="8" radius="1">
+		<monster name="Scorpion" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1076" centery="1808" centerz="8" radius="1">
+		<monster name="Toad" x="1" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1094" centery="1808" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1099" centery="1808" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1204" centery="1808" centerz="8" radius="1">
 		<monster name="Tarantula" x="-1" y="-1" z="8" spawntime="60" />
@@ -11844,6 +12272,19 @@
 		<monster name="Ice Golem" x="3" y="-1" z="8" spawntime="60" />
 		<monster name="Ice Golem" x="0" y="3" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1050" centery="1809" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="-1" z="8" spawntime="60" />
+		<monster name="Azure Frog" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1073" centery="1809" centerz="8" radius="1">
+		<monster name="Azure Frog" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1086" centery="1809" centerz="8" radius="1">
+		<monster name="Crimson Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1062" centery="1810" centerz="8" radius="1">
+		<monster name="Insect Swarm" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1299" centery="1810" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
@@ -11853,6 +12294,18 @@
 	<spawn centerx="777" centery="1811" centerz="8" radius="1">
 		<monster name="Frost Giant" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1065" centery="1811" centerz="8" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1069" centery="1811" centerz="8" radius="1">
+		<monster name="Bog Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1077" centery="1811" centerz="8" radius="1">
+		<monster name="Coral Frog" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1092" centery="1811" centerz="8" radius="1">
+		<monster name="Salamander" x="-1" y="1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="743" centery="1812" centerz="8" radius="2">
 		<monster name="Ice Golem" x="-2" y="-2" z="8" spawntime="60" />
 		<monster name="Ice Golem" x="2" y="2" z="8" spawntime="60" />
@@ -11860,6 +12313,9 @@
 	<spawn centerx="824" centery="1812" centerz="8" radius="1">
 		<monster name="Frost Giantess" x="0" y="0" z="8" spawntime="60" />
 		<monster name="Frost Giantess" x="1" y="0" z="8" spawntime="1792" />
+	</spawn>
+	<spawn centerx="1059" centery="1812" centerz="8" radius="1">
+		<monster name="Scorpion" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="562" centery="1813" centerz="8" radius="1">
 		<monster name="Ice Golem" x="0" y="0" z="8" spawntime="60" />
@@ -15138,9 +15594,18 @@
 	<spawn centerx="1609" centery="1718" centerz="9" radius="2">
 		<monster name="Dwarf" x="-1" y="1" z="9" spawntime="80" />
 	</spawn>
+	<spawn centerx="1048" centery="1720" centerz="9" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1602" centery="1722" centerz="9" radius="2">
 		<monster name="Dwarf" x="1" y="-1" z="9" spawntime="90" />
 		<monster name="Dwarf" x="-2" y="2" z="9" spawntime="50" />
+	</spawn>
+	<spawn centerx="1041" centery="1723" centerz="9" radius="1">
+		<monster name="Alligator" x="1" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1052" centery="1723" centerz="9" radius="1">
+		<monster name="Infernal Frog" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1629" centery="1724" centerz="9" radius="4">
 		<monster name="Dwarf" x="-1" y="-3" z="9" spawntime="50" />
@@ -15148,14 +15613,23 @@
 		<monster name="Dwarf" x="4" y="0" z="9" spawntime="150" />
 		<monster name="Dwarf" x="-1" y="3" z="9" spawntime="120" />
 	</spawn>
+	<spawn centerx="1093" centery="1728" centerz="9" radius="1">
+		<monster name="Infernal Frog" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1591" centery="1729" centerz="9" radius="2">
 		<monster name="Dwarf Soldier" x="1" y="-2" z="9" spawntime="50" />
 		<monster name="Dwarf Soldier" x="-1" y="2" z="9" spawntime="120" />
+	</spawn>
+	<spawn centerx="1046" centery="1731" centerz="9" radius="1">
+		<monster name="Slug" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1598" centery="1733" centerz="9" radius="2">
 		<monster name="Dwarf" x="1" y="-1" z="9" spawntime="50" />
 		<monster name="Dwarf" x="-2" y="0" z="9" spawntime="90" />
 		<monster name="Dwarf" x="2" y="2" z="9" spawntime="120" />
+	</spawn>
+	<spawn centerx="1090" centery="1734" centerz="9" radius="1">
+		<monster name="Alligator" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="830" centery="1736" centerz="9" radius="1">
 		<monster name="Chakoya Windcaller" x="0" y="-1" z="9" spawntime="60" />
@@ -15164,10 +15638,31 @@
 		<monster name="Dwarf" x="-1" y="-2" z="9" spawntime="50" />
 		<monster name="Rotworm" x="2" y="2" z="9" spawntime="90" />
 	</spawn>
+	<spawn centerx="1056" centery="1737" centerz="9" radius="1">
+		<monster name="Azure Frog" x="1" y="1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1060" centery="1738" centerz="9" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1087" centery="1738" centerz="9" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="824" centery="1739" centerz="9" radius="3">
 		<monster name="Chakoya Tribewarden" x="2" y="-2" z="9" spawntime="60" />
 		<monster name="Chakoya Tribewarden" x="-3" y="-1" z="9" spawntime="60" />
 		<monster name="Chakoya Tribewarden" x="0" y="2" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1043" centery="1739" centerz="9" radius="1">
+		<monster name="Crimson Frog" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1050" centery="1739" centerz="9" radius="1">
+		<monster name="Filth Toad" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1066" centery="1739" centerz="9" radius="1">
+		<monster name="Slug" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1070" centery="1739" centerz="9" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="834" centery="1740" centerz="9" radius="3">
 		<monster name="Chakoya Toolshaper" x="-2" y="-3" z="9" spawntime="60" />
@@ -15178,8 +15673,14 @@
 		<monster name="Hydra" x="2" y="-2" z="9" spawntime="60" />
 		<monster name="Hydra" x="-1" y="2" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1076" centery="1741" centerz="9" radius="1">
+		<monster name="Alligator" x="0" y="-1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1499" centery="1741" centerz="9" radius="1">
 		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1037" centery="1742" centerz="9" radius="1">
+		<monster name="Filth Toad" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1487" centery="1742" centerz="9" radius="2">
 		<monster name="Medusa" x="2" y="-2" z="9" spawntime="60" />
@@ -15198,9 +15699,18 @@
 	<spawn centerx="826" centery="1744" centerz="9" radius="1">
 		<monster name="Chakoya Windcaller" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1031" centery="1744" centerz="9" radius="1">
+		<monster name="Azure Frog" x="1" y="1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1610" centery="1745" centerz="9" radius="2">
 		<monster name="Dwarf" x="-2" y="-1" z="9" spawntime="90" />
 		<monster name="Dwarf" x="2" y="2" z="9" spawntime="50" />
+	</spawn>
+	<spawn centerx="1058" centery="1746" centerz="9" radius="1">
+		<monster name="Azure Frog" x="1" y="1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1051" centery="1747" centerz="9" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1482" centery="1747" centerz="9" radius="1">
 		<monster name="Eternal Guardian" x="-1" y="-1" z="9" spawntime="60" />
@@ -15211,6 +15721,19 @@
 	</spawn>
 	<spawn centerx="851" centery="1748" centerz="9" radius="1">
 		<monster name="Chakoya Tribewarden" x="0" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1043" centery="1749" centerz="9" radius="1">
+		<monster name="Filth Toad" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1064" centery="1749" centerz="9" radius="1">
+		<monster name="Filth Toad" x="-1" y="-1" z="9" spawntime="60" />
+		<monster name="Bog Frog" x="0" y="1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1033" centery="1750" centerz="9" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1074" centery="1750" centerz="9" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1508" centery="1750" centerz="9" radius="1">
 		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
@@ -15226,6 +15749,9 @@
 	<spawn centerx="1622" centery="1751" centerz="9" radius="1">
 		<monster name="Rotworm" x="-1" y="-1" z="9" spawntime="50" />
 	</spawn>
+	<spawn centerx="1056" centery="1752" centerz="9" radius="1">
+		<monster name="Crimson Frog" x="-1" y="1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1631" centery="1752" centerz="9" radius="2">
 		<monster name="Dwarf" x="-2" y="-1" z="9" spawntime="50" />
 		<monster name="Rotworm" x="2" y="1" z="9" spawntime="90" />
@@ -15238,6 +15764,9 @@
 		<monster name="Dwarf" x="-2" y="0" z="9" spawntime="90" />
 		<monster name="Dwarf" x="2" y="2" z="9" spawntime="120" />
 	</spawn>
+	<spawn centerx="1078" centery="1755" centerz="9" radius="1">
+		<monster name="Azure Frog" x="1" y="1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1481" centery="1755" centerz="9" radius="1">
 		<monster name="Hydra" x="-1" y="1" z="9" spawntime="60" />
 	</spawn>
@@ -15247,15 +15776,37 @@
 	<spawn centerx="839" centery="1756" centerz="9" radius="1">
 		<monster name="Chakoya Toolshaper" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1045" centery="1756" centerz="9" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1036" centery="1757" centerz="9" radius="1">
+		<monster name="Filth Toad" x="1" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1052" centery="1757" centerz="9" radius="1">
+		<monster name="Filth Toad" x="1" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1033" centery="1758" centerz="9" radius="1">
+		<monster name="Azure Frog" x="1" y="1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1062" centery="1759" centerz="9" radius="1">
+		<monster name="Toad" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1506" centery="1759" centerz="9" radius="2">
 		<monster name="Medusa" x="1" y="-2" z="9" spawntime="60" />
 		<monster name="Medusa" x="-2" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1082" centery="1760" centerz="9" radius="1">
+		<monster name="Filth Toad" x="-1" y="-1" z="9" spawntime="60" />
+		<monster name="Toad" x="0" y="1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1481" centery="1760" centerz="9" radius="1">
 		<monster name="Medusa" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="841" centery="1761" centerz="9" radius="1">
 		<monster name="Chakoya Windcaller" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1030" centery="1761" centerz="9" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1114" centery="1761" centerz="9" radius="1">
 		<monster name="Skeleton Warrior" x="-1" y="0" z="9" spawntime="60" />
@@ -15265,16 +15816,44 @@
 		<monster name="Ghoul" x="-1" y="0" z="9" spawntime="60" />
 		<monster name="Ghoul" x="1" y="0" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1094" centery="1762" centerz="9" radius="1">
+		<monster name="Filth Toad" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1098" centery="1762" centerz="9" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="827" centery="1764" centerz="9" radius="3">
 		<monster name="Chakoya Tribewarden" x="-2" y="-2" z="9" spawntime="60" />
 		<monster name="Chakoya Tribewarden" x="3" y="-1" z="9" spawntime="60" />
 		<monster name="Chakoya Tribewarden" x="-1" y="2" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1026" centery="1764" centerz="9" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1069" centery="1764" centerz="9" radius="1">
+		<monster name="Toad" x="0" y="-1" z="9" spawntime="60" />
+		<monster name="Filth Toad" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1084" centery="1765" centerz="9" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1088" centery="1765" centerz="9" radius="1">
+		<monster name="Green Frog" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1511" centery="1765" centerz="9" radius="1">
 		<monster name="Eternal Guardian" x="-1" y="-1" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1041" centery="1766" centerz="9" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1051" centery="1766" centerz="9" radius="1">
+		<monster name="Filth Toad" x="1" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1133" centery="1766" centerz="9" radius="1">
 		<monster name="Scorpion" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1030" centery="1767" centerz="9" radius="1">
+		<monster name="Filth Toad" x="1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1153" centery="1767" centerz="9" radius="1">
 		<monster name="Ghoul" x="-1" y="-1" z="9" spawntime="60" />
@@ -15283,14 +15862,26 @@
 	<spawn centerx="1500" centery="1767" centerz="9" radius="1">
 		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1072" centery="1768" centerz="9" radius="1">
+		<monster name="Coral Frog" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="854" centery="1769" centerz="9" radius="3">
 		<monster name="Chakoya Tribewarden" x="-2" y="-2" z="9" spawntime="60" />
 		<monster name="Chakoya Tribewarden" x="2" y="-1" z="9" spawntime="60" />
 		<monster name="Chakoya Tribewarden" x="0" y="2" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1056" centery="1769" centerz="9" radius="1">
+		<monster name="Green Frog" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1060" centery="1770" centerz="9" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1097" centery="1770" centerz="9" radius="1">
 		<monster name="Ghoul" x="0" y="0" z="9" spawntime="60" />
 		<monster name="Ghoul" x="-1" y="1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1072" centery="1771" centerz="9" radius="1">
+		<monster name="Toad" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1120" centery="1771" centerz="9" radius="1">
 		<monster name="Scorpion" x="0" y="0" z="9" spawntime="60" />
@@ -15301,6 +15892,9 @@
 	<spawn centerx="819" centery="1773" centerz="9" radius="1">
 		<monster name="Chakoya Windcaller" x="0" y="1" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1038" centery="1773" centerz="9" radius="1">
+		<monster name="Crocodile" x="1" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1126" centery="1773" centerz="9" radius="1">
 		<monster name="Demon Skeleton" x="0" y="-1" z="9" spawntime="60" />
 		<monster name="Ghoul" x="-1" y="0" z="9" spawntime="60" />
@@ -15309,9 +15903,15 @@
 	<spawn centerx="797" centery="1774" centerz="9" radius="1">
 		<monster name="Chakoya Windcaller" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1087" centery="1774" centerz="9" radius="1">
+		<monster name="Infernal Frog" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1424" centery="1774" centerz="9" radius="2">
 		<monster name="Hydra" x="2" y="-2" z="9" spawntime="60" />
 		<monster name="Hydra" x="-2" y="1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1075" centery="1775" centerz="9" radius="1">
+		<monster name="Filth Toad" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1481" centery="1775" centerz="9" radius="1">
 		<monster name="Eternal Guardian" x="-1" y="-1" z="9" spawntime="60" />
@@ -15326,6 +15926,9 @@
 		<monster name="Chakoya Toolshaper" x="2" y="0" z="9" spawntime="60" />
 		<monster name="Chakoya Toolshaper" x="-1" y="3" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1084" centery="1776" centerz="9" radius="1">
+		<monster name="Filth Toad" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1108" centery="1776" centerz="9" radius="1">
 		<monster name="Ghoul" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
@@ -15336,11 +15939,27 @@
 	<spawn centerx="830" centery="1777" centerz="9" radius="1">
 		<monster name="Chakoya Windcaller" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1025" centery="1777" centerz="9" radius="1">
+		<monster name="Toad" x="1" y="0" z="9" spawntime="60" />
+		<monster name="Filth Toad" x="0" y="1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1028" centery="1777" centerz="9" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1038" centery="1778" centerz="9" radius="1">
+		<monster name="Green Frog" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1131" centery="1778" centerz="9" radius="1">
 		<monster name="Skeleton Warrior" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1044" centery="1780" centerz="9" radius="1">
+		<monster name="Toad" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1421" centery="1780" centerz="9" radius="2">
 		<monster name="Medusa" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1062" centery="1781" centerz="9" radius="1">
+		<monster name="Filth Toad" x="1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1519" centery="1781" centerz="9" radius="1">
 		<monster name="Eternal Guardian" x="-1" y="-1" z="9" spawntime="60" />
@@ -15348,11 +15967,20 @@
 	<spawn centerx="801" centery="1783" centerz="9" radius="1">
 		<monster name="Chakoya Windcaller" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1086" centery="1783" centerz="9" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1117" centery="1783" centerz="9" radius="1">
 		<monster name="Scorpion" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1076" centery="1784" centerz="9" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1458" centery="1784" centerz="9" radius="1">
 		<monster name="Hydra" x="0" y="-1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1023" centery="1785" centerz="9" radius="1">
+		<monster name="Crocodile" x="1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1467" centery="1785" centerz="9" radius="1">
 		<monster name="Eternal Guardian" x="-1" y="-1" z="9" spawntime="60" />
@@ -15395,14 +16023,27 @@
 		<monster name="Medusa" x="4" y="0" z="9" spawntime="60" />
 		<monster name="Medusa" x="-2" y="3" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1029" centery="1789" centerz="9" radius="1">
+		<monster name="Bog Frog" x="0" y="1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1064" centery="1789" centerz="9" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1451" centery="1789" centerz="9" radius="2">
 		<monster name="Eternal Guardian" x="2" y="-1" z="9" spawntime="60" />
 		<monster name="Eternal Guardian" x="-2" y="2" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1085" centery="1790" centerz="9" radius="1">
+		<monster name="Filth Toad" x="1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1422" centery="1790" centerz="9" radius="4">
 		<monster name="Eternal Guardian" x="0" y="-4" z="9" spawntime="60" />
 		<monster name="Eternal Guardian" x="4" y="0" z="9" spawntime="60" />
 		<monster name="Eternal Guardian" x="-2" y="3" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1035" centery="1793" centerz="9" radius="1">
+		<monster name="Toad" x="-1" y="-1" z="9" spawntime="60" />
+		<monster name="Filth Toad" x="1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1166" centery="1793" centerz="9" radius="1">
 		<monster name="Poison Spider" x="-1" y="-1" z="9" spawntime="60" />
@@ -15417,9 +16058,21 @@
 	<spawn centerx="829" centery="1795" centerz="9" radius="1">
 		<monster name="Chakoya Windcaller" x="0" y="-1" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="1055" centery="1795" centerz="9" radius="1">
+		<monster name="Filth Toad" x="1" y="0" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1106" centery="1795" centerz="9" radius="2">
 		<monster name="Skeleton Warrior" x="-1" y="-1" z="9" spawntime="60" />
 		<monster name="Ghoul" x="1" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1046" centery="1796" centerz="9" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1051" centery="1796" centerz="9" radius="1">
+		<monster name="Orchid Frog" x="0" y="1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1083" centery="1797" centerz="9" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1166" centery="1798" centerz="9" radius="2">
 		<monster name="Tarantula" x="2" y="-1" z="9" spawntime="60" />
@@ -16883,6 +17536,13 @@
 	<spawn centerx="1134" centery="1716" centerz="10" radius="1">
 		<monster name="Quara Pincher" x="0" y="-1" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1051" centery="1717" centerz="10" radius="1">
+		<monster name="Crocodile" x="1" y="-1" z="10" spawntime="60" />
+		<monster name="Alligator" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1062" centery="1717" centerz="10" radius="1">
+		<monster name="Alligator" x="1" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1600" centery="1717" centerz="10" radius="2">
 		<monster name="Dwarf Soldier" x="-1" y="1" z="10" spawntime="50" />
 	</spawn>
@@ -16893,12 +17553,18 @@
 		<monster name="Dwarf Soldier" x="-1" y="-1" z="10" spawntime="50" />
 		<monster name="Dwarf Soldier" x="1" y="2" z="10" spawntime="120" />
 	</spawn>
+	<spawn centerx="1059" centery="1720" centerz="10" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1585" centery="1720" centerz="10" radius="2">
 		<monster name="Dwarf Guard" x="-2" y="0" z="10" spawntime="50" />
 		<monster name="Dwarf Guard" x="2" y="1" z="10" spawntime="110" />
 	</spawn>
 	<spawn centerx="1092" centery="1722" centerz="10" radius="1">
 		<monster name="Quara Mantassin Scout" x="-1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1046" centery="1723" centerz="10" radius="1">
+		<monster name="Crocodile" x="1" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1147" centery="1723" centerz="10" radius="2">
 		<monster name="Quara Hydromancer" x="-2" y="-1" z="10" spawntime="60" />
@@ -16916,6 +17582,10 @@
 		<monster name="Dwarf Guard" x="2" y="0" z="10" spawntime="110" />
 		<monster name="Dwarf Guard" x="-2" y="1" z="10" spawntime="50" />
 	</spawn>
+	<spawn centerx="1053" centery="1725" centerz="10" radius="1">
+		<monster name="Alligator" x="0" y="-1" z="10" spawntime="60" />
+		<monster name="Crocodile" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1092" centery="1725" centerz="10" radius="1">
 		<monster name="Quara Constrictor Scout" x="-1" y="1" z="10" spawntime="60" />
 	</spawn>
@@ -16923,8 +17593,18 @@
 		<monster name="Dwarf Soldier" x="-2" y="0" z="10" spawntime="50" />
 		<monster name="Dwarf Soldier" x="2" y="0" z="10" spawntime="120" />
 	</spawn>
+	<spawn centerx="1060" centery="1727" centerz="10" radius="1">
+		<monster name="Crocodile" x="1" y="-1" z="10" spawntime="60" />
+		<monster name="Alligator" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="992" centery="1728" centerz="10" radius="1">
 		<monster name="Deepling Spellsinger" x="-1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1055" centery="1728" centerz="10" radius="1">
+		<monster name="Slug" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1075" centery="1728" centerz="10" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1595" centery="1728" centerz="10" radius="2">
 		<monster name="Dwarf Soldier" x="2" y="-2" z="10" spawntime="120" />
@@ -16935,6 +17615,9 @@
 	</spawn>
 	<spawn centerx="937" centery="1729" centerz="10" radius="1">
 		<monster name="Deepling Warrior" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1071" centery="1729" centerz="10" radius="1">
+		<monster name="Slug" x="-1" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1615" centery="1730" centerz="10" radius="2">
 		<monster name="Dwarf Guard" x="2" y="0" z="10" spawntime="110" />
@@ -16948,6 +17631,10 @@
 	</spawn>
 	<spawn centerx="986" centery="1731" centerz="10" radius="1">
 		<monster name="Deepling Warrior" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1045" centery="1731" centerz="10" radius="1">
+		<monster name="Crocodile" x="0" y="-1" z="10" spawntime="60" />
+		<monster name="Alligator" x="1" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1140" centery="1731" centerz="10" radius="2">
 		<monster name="Quara Mantassin" x="-2" y="-2" z="10" spawntime="60" />
@@ -16973,6 +17660,9 @@
 	<spawn centerx="926" centery="1733" centerz="10" radius="1">
 		<monster name="Deepling Spellsinger" x="-1" y="-1" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1054" centery="1734" centerz="10" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1196" centery="1734" centerz="10" radius="2">
 		<monster name="Quara Constrictor" x="-1" y="-2" z="10" spawntime="60" />
 		<monster name="Quara Constrictor" x="1" y="2" z="10" spawntime="60" />
@@ -16995,6 +17685,9 @@
 		<monster name="Deepling Warrior" x="-2" y="-2" z="10" spawntime="60" />
 		<monster name="Deepling Warrior" x="2" y="2" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1073" centery="1736" centerz="10" radius="1">
+		<monster name="Slug" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1139" centery="1738" centerz="10" radius="2">
 		<monster name="Quara Pincher" x="-2" y="-1" z="10" spawntime="60" />
 		<monster name="Quara Pincher" x="2" y="1" z="10" spawntime="60" />
@@ -17015,10 +17708,16 @@
 		<monster name="Deepling Brawler" x="0" y="-2" z="10" spawntime="60" />
 		<monster name="Deepling Brawler" x="1" y="2" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1071" centery="1740" centerz="10" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="885" centery="1741" centerz="10" radius="3">
 		<monster name="Deepling Brawler" x="-2" y="-2" z="10" spawntime="60" />
 		<monster name="Deepling Brawler" x="3" y="0" z="10" spawntime="60" />
 		<monster name="Deepling Brawler" x="0" y="3" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1066" centery="1741" centerz="10" radius="1">
+		<monster name="Slug" x="-1" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1204" centery="1741" centerz="10" radius="2">
 		<monster name="Quara Mantassin" x="-1" y="-2" z="10" spawntime="60" />
@@ -17027,6 +17726,12 @@
 	<spawn centerx="932" centery="1742" centerz="10" radius="1">
 		<monster name="Deepling Warrior" x="0" y="-1" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1062" centery="1742" centerz="10" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1083" centery="1742" centerz="10" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1158" centery="1742" centerz="10" radius="2">
 		<monster name="Quara Mantassin" x="1" y="-1" z="10" spawntime="60" />
 		<monster name="Quara Mantassin" x="-1" y="1" z="10" spawntime="60" />
@@ -17034,6 +17739,15 @@
 	<spawn centerx="1215" centery="1742" centerz="10" radius="2">
 		<monster name="Quara Constrictor" x="-2" y="-2" z="10" spawntime="60" />
 		<monster name="Quara Constrictor" x="2" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1047" centery="1743" centerz="10" radius="1">
+		<monster name="Slug" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1080" centery="1744" centerz="10" radius="1">
+		<monster name="Slug" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1058" centery="1745" centerz="10" radius="1">
+		<monster name="Slug" x="-1" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="933" centery="1746" centerz="10" radius="1">
 		<monster name="Deepling Scout" x="1" y="-1" z="10" spawntime="60" />
@@ -17048,12 +17762,21 @@
 	<spawn centerx="979" centery="1747" centerz="10" radius="1">
 		<monster name="Deepling Spellsinger" x="-1" y="-1" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1045" centery="1747" centerz="10" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1147" centery="1747" centerz="10" radius="2">
 		<monster name="Quara Constrictor" x="-1" y="-2" z="10" spawntime="60" />
 		<monster name="Quara Constrictor" x="2" y="1" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="900" centery="1749" centerz="10" radius="1">
 		<monster name="Deepling Spellsinger" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1051" centery="1749" centerz="10" radius="1">
+		<monster name="Filth Toad" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1067" centery="1749" centerz="10" radius="1">
+		<monster name="Slug" x="-1" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="884" centery="1750" centerz="10" radius="1">
 		<monster name="Deepling Warrior" x="0" y="-1" z="10" spawntime="60" />
@@ -17063,6 +17786,12 @@
 		<monster name="Deepling Scout" x="-2" y="-1" z="10" spawntime="60" />
 		<monster name="Deepling Scout" x="0" y="2" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1047" centery="1752" centerz="10" radius="1">
+		<monster name="Slug" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1063" centery="1752" centerz="10" radius="1">
+		<monster name="Filth Toad" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="938" centery="1753" centerz="10" radius="1">
 		<monster name="Deepling Brawler" x="1" y="-1" z="10" spawntime="60" />
 	</spawn>
@@ -17071,8 +17800,14 @@
 		<monster name="Deepling Brawler" x="2" y="-1" z="10" spawntime="60" />
 		<monster name="Deepling Brawler" x="-1" y="3" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1054" centery="1753" centerz="10" radius="1">
+		<monster name="Crocodile" x="0" y="1" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="956" centery="1754" centerz="10" radius="1">
 		<monster name="Deepling Warrior" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1070" centery="1755" centerz="10" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="983" centery="1756" centerz="10" radius="1">
 		<monster name="Deepling Warrior" x="0" y="-1" z="10" spawntime="60" />
@@ -17082,6 +17817,12 @@
 	</spawn>
 	<spawn centerx="965" centery="1758" centerz="10" radius="1">
 		<monster name="Deepling Worker" x="-1" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1050" centery="1758" centerz="10" radius="1">
+		<monster name="Slug" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1059" centery="1760" centerz="10" radius="1">
+		<monster name="Slug" x="-1" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1100" centery="1760" centerz="10" radius="1">
 		<monster name="Demon Skeleton" x="0" y="0" z="10" spawntime="60" />
@@ -17106,11 +17847,21 @@
 	<spawn centerx="974" centery="1763" centerz="10" radius="1">
 		<monster name="Deepling Scout" x="0" y="-1" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1055" centery="1763" centerz="10" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1045" centery="1764" centerz="10" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1126" centery="1764" centerz="10" radius="1">
 		<monster name="Ghoul" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1171" centery="1764" centerz="10" radius="1">
 		<monster name="Scorpion" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1068" centery="1766" centerz="10" radius="1">
+		<monster name="Toad" x="1" y="-1" z="10" spawntime="60" />
+		<monster name="Filth Toad" x="-1" y="1" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1123" centery="1766" centerz="10" radius="1">
 		<monster name="Demon Skeleton" x="-1" y="0" z="10" spawntime="60" />
@@ -17126,6 +17877,9 @@
 		<monster name="Deepling Brawler" x="-2" y="-2" z="10" spawntime="60" />
 		<monster name="Deepling Brawler" x="2" y="1" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1064" centery="1767" centerz="10" radius="1">
+		<monster name="Toad" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1086" centery="1767" centerz="10" radius="1">
 		<monster name="Ghoul" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
@@ -17138,6 +17892,9 @@
 	</spawn>
 	<spawn centerx="1112" centery="1768" centerz="10" radius="1">
 		<monster name="Demon Skeleton" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1050" centery="1770" centerz="10" radius="1">
+		<monster name="Slug" x="-1" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1097" centery="1770" centerz="10" radius="1">
 		<monster name="Ghoul" x="1" y="-1" z="10" spawntime="60" />
@@ -17162,6 +17919,9 @@
 	<spawn centerx="887" centery="1773" centerz="10" radius="1">
 		<monster name="Deepling Brawler" x="1" y="-1" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1052" centery="1773" centerz="10" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="884" centery="1774" centerz="10" radius="1">
 		<monster name="Deepling Spellsinger" x="1" y="1" z="10" spawntime="60" />
 	</spawn>
@@ -17185,11 +17945,18 @@
 		<monster name="Deepling Scout" x="2" y="-1" z="10" spawntime="60" />
 		<monster name="Deepling Scout" x="-2" y="1" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1056" centery="1776" centerz="10" radius="1">
+		<monster name="Slug" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="1146" centery="1776" centerz="10" radius="1">
 		<monster name="Demon Skeleton" x="-1" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1151" centery="1776" centerz="10" radius="1">
 		<monster name="Ghoul" x="0" y="1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1045" centery="1778" centerz="10" radius="1">
+		<monster name="Toad" x="0" y="-1" z="10" spawntime="60" />
+		<monster name="Filth Toad" x="-1" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1116" centery="1778" centerz="10" radius="1">
 		<monster name="Scorpion" x="0" y="0" z="10" spawntime="60" />
@@ -17216,6 +17983,9 @@
 		<monster name="Deepling Worker" x="-3" y="-3" z="10" spawntime="60" />
 		<monster name="Deepling Worker" x="3" y="-2" z="10" spawntime="60" />
 		<monster name="Deepling Worker" x="1" y="3" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1051" centery="1783" centerz="10" radius="1">
+		<monster name="Slug" x="-1" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1073" centery="1783" centerz="10" radius="1">
 		<monster name="Ghoul" x="0" y="0" z="10" spawntime="60" />
@@ -17248,6 +18018,9 @@
 	<spawn centerx="898" centery="1787" centerz="10" radius="2">
 		<monster name="Deepling Warrior" x="1" y="-2" z="10" spawntime="60" />
 		<monster name="Deepling Warrior" x="-2" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1049" centery="1787" centerz="10" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1096" centery="1787" centerz="10" radius="1">
 		<monster name="Scorpion" x="0" y="0" z="10" spawntime="60" />
@@ -17295,6 +18068,9 @@
 		<monster name="Deepling Scout" x="0" y="-2" z="10" spawntime="60" />
 		<monster name="Deepling Scout" x="-1" y="2" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1049" centery="1793" centerz="10" radius="1">
+		<monster name="Slug" x="-1" y="0" z="10" spawntime="60" />
+	</spawn>
 	<spawn centerx="965" centery="1794" centerz="10" radius="3">
 		<monster name="Deepling Brawler" x="1" y="-3" z="10" spawntime="60" />
 		<monster name="Deepling Brawler" x="-3" y="0" z="10" spawntime="60" />
@@ -17318,6 +18094,9 @@
 	</spawn>
 	<spawn centerx="883" centery="1797" centerz="10" radius="1">
 		<monster name="Deepling Warrior" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1044" centery="1800" centerz="10" radius="1">
+		<monster name="Blood Crab" x="1" y="0" z="10" spawntime="60" />
 	</spawn>
 	<spawn centerx="1131" centery="1800" centerz="10" radius="1">
 		<monster name="Demon Skeleton" x="0" y="0" z="10" spawntime="60" />
@@ -17954,6 +18733,60 @@
 	<spawn centerx="1250" centery="1957" centerz="10" radius="1">
 		<monster name="Blood Crab" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
+	<spawn centerx="1076" centery="1699" centerz="11" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1078" centery="1702" centerz="11" radius="1">
+		<monster name="Alligator" x="-1" y="-1" z="11" spawntime="60" />
+		<monster name="Killer Caiman" x="1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1058" centery="1706" centerz="11" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1064" centery="1708" centerz="11" radius="1">
+		<monster name="Alligator" x="-1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1053" centery="1709" centerz="11" radius="1">
+		<monster name="Alligator" x="-1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1069" centery="1709" centerz="11" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1049" centery="1711" centerz="11" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1073" centery="1712" centerz="11" radius="1">
+		<monster name="Alligator" x="-1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1046" centery="1716" centerz="11" radius="1">
+		<monster name="Alligator" x="-1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1057" centery="1720" centerz="11" radius="1">
+		<monster name="Alligator" x="-1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1064" centery="1720" centerz="11" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1078" centery="1720" centerz="11" radius="1">
+		<monster name="Alligator" x="-1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1045" centery="1721" centerz="11" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1068" centery="1721" centerz="11" radius="1">
+		<monster name="Alligator" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1084" centery="1721" centerz="11" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1038" centery="1723" centerz="11" radius="1">
+		<monster name="Killer Caiman" x="-1" y="-1" z="11" spawntime="60" />
+		<monster name="Alligator" x="1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1088" centery="1723" centerz="11" radius="1">
+		<monster name="Alligator" x="-1" y="-1" z="11" spawntime="60" />
+		<monster name="Killer Caiman" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
 	<spawn centerx="899" centery="1724" centerz="11" radius="1">
 		<monster name="Deepling Elite" x="-1" y="-1" z="11" spawntime="60" />
 	</spawn>
@@ -17983,6 +18816,19 @@
 		<monster name="Deepling Elite" x="2" y="-2" z="11" spawntime="60" />
 		<monster name="Deepling Elite" x="-2" y="2" z="11" spawntime="60" />
 	</spawn>
+	<spawn centerx="1054" centery="1729" centerz="11" radius="1">
+		<monster name="Alligator" x="0" y="-1" z="11" spawntime="60" />
+		<monster name="Crocodile" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1063" centery="1731" centerz="11" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1073" centery="1731" centerz="11" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1074" centery="1733" centerz="11" radius="1">
+		<monster name="Slug" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
 	<spawn centerx="905" centery="1735" centerz="11" radius="1">
 		<monster name="Deepling Elite" x="-1" y="-1" z="11" spawntime="60" />
 	</spawn>
@@ -18002,8 +18848,15 @@
 	<spawn centerx="984" centery="1737" centerz="11" radius="1">
 		<monster name="Deepling Master Librarian" x="1" y="1" z="11" spawntime="60" />
 	</spawn>
+	<spawn centerx="1071" centery="1737" centerz="11" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
 	<spawn centerx="893" centery="1738" centerz="11" radius="1">
 		<monster name="Deepling Master Librarian" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1047" centery="1738" centerz="11" radius="1">
+		<monster name="Alligator" x="0" y="-1" z="11" spawntime="60" />
+		<monster name="Crocodile" x="-1" y="0" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="878" centery="1739" centerz="11" radius="1">
 		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
@@ -18013,6 +18866,15 @@
 	</spawn>
 	<spawn centerx="1012" centery="1739" centerz="11" radius="1">
 		<monster name="Deepling Master Librarian" x="1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1062" centery="1740" centerz="11" radius="1">
+		<monster name="Slug" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1053" centery="1744" centerz="11" radius="1">
+		<monster name="Crocodile" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1063" centery="1744" centerz="11" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="1134" centery="1744" centerz="11" radius="1">
 		<monster name="Demon Skeleton" x="1" y="0" z="11" spawntime="60" />
@@ -18045,6 +18907,9 @@
 	<spawn centerx="1009" centery="1748" centerz="11" radius="1">
 		<monster name="Deepling Guard" x="1" y="-1" z="11" spawntime="60" />
 	</spawn>
+	<spawn centerx="1070" centery="1748" centerz="11" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
 	<spawn centerx="1122" centery="1748" centerz="11" radius="1">
 		<monster name="Ghoul" x="-1" y="-1" z="11" spawntime="60" />
 		<monster name="Scorpion" x="1" y="0" z="11" spawntime="60" />
@@ -18056,10 +18921,16 @@
 	<spawn centerx="893" centery="1749" centerz="11" radius="2">
 		<monster name="Deepling Master Librarian" x="2" y="-2" z="11" spawntime="60" />
 	</spawn>
+	<spawn centerx="1056" centery="1749" centerz="11" radius="1">
+		<monster name="Slug" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
 	<spawn centerx="947" centery="1751" centerz="11" radius="3">
 		<monster name="Deepling Master Librarian" x="1" y="-3" z="11" spawntime="60" />
 		<monster name="Deepling Master Librarian" x="-2" y="1" z="11" spawntime="60" />
 		<monster name="Deepling Master Librarian" x="2" y="3" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1067" centery="1752" centerz="11" radius="1">
+		<monster name="Slug" x="-1" y="0" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="1174" centery="1752" centerz="11" radius="1">
 		<monster name="Demon Skeleton" x="0" y="0" z="11" spawntime="60" />
@@ -18098,11 +18969,17 @@
 	<spawn centerx="1005" centery="1756" centerz="11" radius="1">
 		<monster name="Deepling Master Librarian" x="1" y="1" z="11" spawntime="60" />
 	</spawn>
+	<spawn centerx="1057" centery="1756" centerz="11" radius="1">
+		<monster name="Blood Crab" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
 	<spawn centerx="878" centery="1757" centerz="11" radius="1">
 		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="917" centery="1758" centerz="11" radius="1">
 		<monster name="Deepling Master Librarian" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1059" centery="1758" centerz="11" radius="1">
+		<monster name="Slug" x="-1" y="0" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="947" centery="1759" centerz="11" radius="1">
 		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
@@ -18151,6 +19028,9 @@
 		<monster name="Demon Skeleton" x="0" y="0" z="11" spawntime="60" />
 		<monster name="Ghoul" x="-1" y="1" z="11" spawntime="60" />
 	</spawn>
+	<spawn centerx="1069" centery="1766" centerz="11" radius="1">
+		<monster name="Filth Toad" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
 	<spawn centerx="1102" centery="1766" centerz="11" radius="1">
 		<monster name="Demon Skeleton" x="-1" y="0" z="11" spawntime="60" />
 		<monster name="Demon Skeleton" x="0" y="1" z="11" spawntime="60" />
@@ -18168,6 +19048,9 @@
 		<monster name="Deepling Master Librarian" x="-2" y="-1" z="11" spawntime="60" />
 		<monster name="Deepling Master Librarian" x="3" y="0" z="11" spawntime="60" />
 		<monster name="Deepling Master Librarian" x="0" y="3" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1073" centery="1767" centerz="11" radius="1">
+		<monster name="Toad" x="0" y="-1" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="1126" centery="1767" centerz="11" radius="1">
 		<monster name="Demon Skeleton" x="0" y="-1" z="11" spawntime="60" />
@@ -18220,9 +19103,15 @@
 	<spawn centerx="925" centery="1771" centerz="11" radius="1">
 		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
 	</spawn>
+	<spawn centerx="1058" centery="1772" centerz="11" radius="1">
+		<monster name="Filth Toad" x="-1" y="0" z="11" spawntime="60" />
+	</spawn>
 	<spawn centerx="1136" centery="1772" centerz="11" radius="1">
 		<monster name="Banshee" x="1" y="0" z="11" spawntime="60" />
 		<monster name="Demon Skeleton" x="1" y="1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1065" centery="1773" centerz="11" radius="1">
+		<monster name="Toad" x="0" y="-1" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="1110" centery="1773" centerz="11" radius="1">
 		<monster name="Demon Skeleton" x="0" y="-1" z="11" spawntime="60" />
@@ -18246,6 +19135,12 @@
 	</spawn>
 	<spawn centerx="901" centery="1777" centerz="11" radius="1">
 		<monster name="Deepling Master Librarian" x="1" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1054" centery="1777" centerz="11" radius="1">
+		<monster name="Toad" x="0" y="-1" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1047" centery="1779" centerz="11" radius="1">
+		<monster name="Filth Toad" x="-1" y="0" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="990" centery="1780" centerz="11" radius="1">
 		<monster name="Deepling Master Librarian" x="1" y="1" z="11" spawntime="60" />
