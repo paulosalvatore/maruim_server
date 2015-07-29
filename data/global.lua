@@ -116,7 +116,6 @@ ferramentas = {
 itemDesativado = 2500
 
 modalTeleportCrystal = 9001
-storageItensKnight = 5000
 modalItensKnight =  5000
 
 itensKnight = {2384, 2448, 2380}

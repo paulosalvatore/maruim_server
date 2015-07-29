@@ -2,13 +2,11 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-local storage = 5756
-
 function onCreatureAppear(cid)				npcHandler:onCreatureAppear(cid)				end
 function onCreatureDisappear(cid)			npcHandler:onCreatureDisappear(cid)				end
 function onCreatureSay(player, type, msg)
 	local fraseNpc = "Olá |PLAYERNAME|."
-	local storageValue = player:getStorageValue(storage)
+	local storageValue = player:getStorageValue(Storage.tartaruga)
 	if storageValue <= 0 then
 		fraseNpc = fraseNpc .. " Que bons ventos o trazem por aqui? Talvez você queira saber algumas informações sobre minha {tartaruga}."
 	elseif storageValue == 1 then
@@ -27,19 +25,19 @@ function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-	local storageValue = player:getStorageValue(storage)
+	local storageValue = player:getStorageValue(Storage.tartaruga)
 	if storageValue <= 0 and isInArray({"tartaruga"}, msg) and npcHandler.topic[cid] == 0 then
 		npcHandler:say("Então você está interessado? Muito bem! Minha tartaruga é um animal muito bem treinado para transportar viajantes pelo lago. Porém, ela só transporta aqueles que possuem a minha {autorização}.", cid)
 		npcHandler.topic[cid] = 1
 	elseif storageValue <= 0 and isInArray({"autorizacao", "autorização"}, msg) and npcHandler.topic[cid] == 1 then
 		npcHandler:say("Para conseguir a minha autorização, você deve me trazer 10 fish fins. Você pode conseguí-los matando aquelas criaturas nojentas que habitam as profundezas dessas águas.", cid)
-		player:setStorageValue(storage, 1)
+		player:setStorageValue(Storage.tartaruga, 1)
 	elseif storageValue == 1 and isInArray({"yes", "sim", "fish fin", "fish fins"}, msg) and npcHandler.topic[cid] == 0 then
 		if not player:removeItem(5895, 10) then
 			npcHandler:say("Volte aqui quando tiver as 10 fish fins!", cid)
 		else
 			npcHandler:say("Muito obrigado! Agora você poderá viajar pela {tartaruga} quando quiser. Sempre que quiser voltar para ela, fale comigo.", cid)
-			player:setStorageValue(storage, 2)
+			player:setStorageValue(Storage.tartaruga, 2)
 		end
 	elseif storageValue == 2 and isInArray({"tartaruga"}, msg) then
 		npcHandler:say("Deseja voltar para a tartaruga?", cid)

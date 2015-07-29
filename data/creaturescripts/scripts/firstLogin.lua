@@ -18,7 +18,7 @@ function onLogin(player)
 		item:setActionId(3901)
 		player:sendOutfitWindow()
 	end
-	if player:getVocation():getId() == 4 and player:pegarPassoTutorial() == tutorialFinalizado and player:getStorageValue(storageItensKnight) ~= 1 then
+	if player:getVocation():getId() == 4 and player:pegarPassoTutorial() == tutorialFinalizado and player:getStorageValue(Storage.itensKnight) ~= 1 then
 		player:enviarModalItensKnight()
 	end
 	return true
