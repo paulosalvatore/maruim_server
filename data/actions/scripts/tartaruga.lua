@@ -101,11 +101,11 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	posicaoJogador:sendMagicEffect(CONST_ME_POFF)
 	local posicaoObjeto = posicaoJogador + {y = -2}
 	local checarTartaruga = Tile(posicaoObjeto):getGround():getId()
-	local inFight = getCreatureCondition(player, CONDITION_INFIGHT)
-	if player:getStorageValue(5756) ~= 2 then
+	local emBatalha = player:getCondition(CONDITION_INFIGHT, CONDITIONID_DEFAULT)
+	if player:getStorageValue(Storage.tartaruga) ~= 2 then
 		player:sendCancelMessage("Você não pode viajar na tartaruga do Iskan. Peça autorização a ele antes.")
 	else
-		if not inFight then
+		if not emBatalha then
 			if checarTartaruga == 5755 then
 				if item.itemid == 9825 then
 					Item(item.uid):transform(item.itemid + 1)
