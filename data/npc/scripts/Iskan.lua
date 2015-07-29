@@ -14,7 +14,7 @@ function onCreatureSay(player, type, msg)
 	elseif storageValue == 1 then
 		fraseNpc = fraseNpc .. " Por acaso você trouxe os 10 fish fins que eu te pedi?"
 	elseif storageValue == 2 then
-		fraseNpc = fraseNpc .. " Você poderá viajar de voltar para a {tartaruga} quando quiser."
+		fraseNpc = fraseNpc .. " Você poderá viajar de volta para a {tartaruga} quando quiser."
 	end
 	npcHandler:setMessage(MESSAGE_GREET, fraseNpc)
 	npcHandler:onCreatureSay(player, type, msg)
