@@ -27,6 +27,10 @@ function capAll(str)
 	return novaStr
 end
 
+function firstToUpper(str)
+	return (str:gsub("^%l", string.upper))
+end
+
 function formatarValor(valor, exibirDecimal)
 	if exibirDecimal == nil then
 		exibirDecimal = false
@@ -392,4 +396,52 @@ end
 function Player:mudarOutfit(lookType)
 	local outfit = self:getOutfit()
 	self:setOutfit({lookType = lookType, lookFeet = outfit.lookFeet, lookLegs = outfit.lookLegs, lookMount = outfit.lookMount, lookHead = outfit.lookHead, lookTypeEx = outfit.lookTypeEx, lookAddons = outfit.lookAddons, lookBody = outfit.lookBody})
+end
+
+function Player:pegarOutfitLookType(outfitNome)
+	local lookType = 0
+	local resultId = db.storeQuery("SELECT `looktype` FROM `z_outfits` WHERE (`name` LIKE " .. db.escapeString(outfitNome) .. " OR `maleName` LIKE " .. db.escapeString(outfitNome) .. ") AND `type` LIKE " .. db.escapeString(self:getSex()))
+	if resultId ~= false then
+		lookType = result.getDataInt(resultId, "looktype")
+		result.free(resultId)
+	end
+	return lookType
+end
+
+function pegarOutfitNome(lookType)
+	local outfitNome = ""
+	local resultId = db.storeQuery("SELECT `name` FROM `z_outfits` WHERE `looktype` LIKE " .. db.escapeString(lookType))
+	if resultId ~= false then
+		outfitNome = result.getDataString(resultId, "name")
+		result.free(resultId)
+	end
+	return outfitNome
+end
+
+function pegarMontariaId(montariaNome)
+	local montariaId = 0
+	local resultId = db.storeQuery("SELECT `id` FROM `z_montarias` WHERE `name` LIKE " .. db.escapeString(montariaNome))
+	if resultId ~= false then
+		montariaId = result.getDataInt(resultId, "id")
+		result.free(resultId)
+	end
+	return montariaId
+end
+
+function pegarMontariaNome(montariaId)
+	local montariaNome = ""
+	local resultId = db.storeQuery("SELECT `name` FROM `z_montarias` WHERE `id` LIKE " .. db.escapeString(montariaId))
+	if resultId ~= false then
+		montariaNome = result.getDataString(resultId, "name")
+		result.free(resultId)
+	end
+	return montariaNome
+end
+
+function exibirAddon(addon, exibirArtigo)
+	local exibirAddon = (exibirArtigo and "o" or "") .. (addon == 1 and "primeiro" or "segundo") .. " addon"
+	if addon == 3 then
+		exibirAddon = "todos os addons"
+	end
+	return exibirAddon
 end
