@@ -275,14 +275,19 @@ function atualizarNpcBanco(npc, tipo, informacoes)
 end
 
 function atualizarNpcs()
+	db.query("TRUNCATE TABLE `z_npcs_posicoes`")
 	local npcs = {}
 	local resultId = db.storeQuery("SELECT `id`, `nome` FROM `z_npcs`")
 
 	if resultId ~= false then
-		while result.next(resultId) do
+		local proximoResultado = true
+		while proximoResultado do
 			local npcId = result.getDataInt(resultId, "id")
 			local npcNome = result.getDataString(resultId, "nome")
 			table.insert(npcs, {npcId, npcNome})
+			if not result.next(resultId) then
+				proximoResultado = false
+			end
 		end
 		result.free(resultId)
 	end
@@ -318,5 +323,4 @@ end
 if atualizarNpcsBanco then
 	db.query("TRUNCATE TABLE `z_npcs`")
 	db.query("TRUNCATE TABLE `z_npcs_itens`")
-	db.query("TRUNCATE TABLE `z_npcs_posicoes`")
 end
