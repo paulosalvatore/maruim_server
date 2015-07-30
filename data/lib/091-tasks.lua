@@ -15,20 +15,20 @@ configTasks = {
 	limiteTasksProgresso = 3
 }
 -- Exemplo de Configuração:
--- [idTarefa] = {
+-- [idTarefa - Opcional] = {
 	-- nivelMinimo = int - Opcional,
 	-- nivelMaximo = int - Opcional,
 	-- reputacao = int - Opcional,
-	-- criatura = var - Obrigatório,
+	-- criatura = table{var} - Obrigatório,
 	-- recompensa = {
-		-- dinheiro = array ou int - Opcional,
-		-- experiencia = array ou int - Opcional,
-		-- item = array(int, array ou int) - Opcional,
+		-- dinheiro = table{min, max} ou int - Opcional,
+		-- experiencia = table{min, max} ou int - Opcional,
+		-- item = table{int, table{min, max} ou int} - Opcional,
 		-- nivel = int,
 		-- reputacao = int,
-		-- outfit = int,
-		-- addon = int,
-		-- montaria = int
+		-- outfit = var,
+		-- addon = table{var, int(1, 2 ou 3)},
+		-- montaria = var
 	-- }
 -- }
 Tasks = {
@@ -123,6 +123,7 @@ function Player:completarTask(taskId)
 	local task = Tasks[taskId]
 	if task.recompensa ~= nil then
 		local recompensa = task.recompensa
+
 		if recompensa.dinheiro ~= nil then
 			local valorRecompensa = recompensa.dinheiro
 			if type(valorRecompensa) == "table" then
@@ -131,6 +132,7 @@ function Player:completarTask(taskId)
 			self:addMoneyBank(valorRecompensa)
 			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Recompensa de Tarefa: A quantia de " .. valorRecompensa .. " gp foi depositada em sua conta bancária.")
 		end
+
 		if recompensa.nivel ~= nil then
 			local valorRecompensa = recompensa.nivel
 			local exibirRecompensa = valorRecompensa .. " nív"
@@ -144,6 +146,7 @@ function Player:completarTask(taskId)
 				self:addLevel()
 			end
 		end
+
 		if recompensa.experiencia ~= nil then
 			local valorRecompensa = recompensa.experiencia
 			if type(valorRecompensa) == "table" then
@@ -156,6 +159,7 @@ function Player:completarTask(taskId)
 			self:addExperience(valorRecompensa)
 			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Recompensa de Tarefa: Você recebeu " .. exibirRecompensa .. " de experiência.")
 		end
+
 		if recompensa.reputacao ~= nil then
 			local valorRecompensa = recompensa.reputacao
 			local exibirRecompensa = valorRecompensa .. " ponto"
@@ -165,6 +169,25 @@ function Player:completarTask(taskId)
 			self:adicionarReputacao(valorRecompensa)
 			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Recompensa de Tarefa: Você recebeu " .. exibirRecompensa .. " de reputação.")
 		end
+
+		if recompensa.outfit ~= nil then
+			local valorRecompensa = self:pegarOutfitLookType(recompensa.outfit)
+			self:addOutfit(valorRecompensa)
+			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Recompensa de Tarefa: Você recebeu o outfit '" .. recompensa.outfit .. "'.")
+		end
+
+		if recompensa.addon ~= nil then
+			local valorRecompensa = {self:pegarOutfitLookType(recompensa.addon[1]), recompensa.addon[2]}
+			self:addOutfitAddon(valorRecompensa[1], valorRecompensa[2])
+			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Recompensa de Tarefa: Você recebeu " .. exibirAddon(valorRecompensa[2], true) .. " do outfit '" .. recompensa.addon[1] .. "'.")
+		end
+
+		if recompensa.montaria ~= nil then
+			local valorRecompensa = pegarMontariaId(recompensa.montaria)
+			self:addMount(valorRecompensa)
+			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Recompensa de Tarefa: Você recebeu a montaria '" .. recompensa.montaria .. "'.")
+		end
+
 		if recompensa.item ~= nil then
 			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Recompensa de Tarefa: Você recebeu " .. exibirTaskItemRecompensa(recompensa.item) .. ". Vá a algum NPC de Tarefas para retirá-lo.")
 		else
@@ -417,6 +440,7 @@ function Player:enviarTasksModalInfo(taskId, modalId)
 	end
 	modalMensagem = modalMensagem .. "\nRecompensa\n"
 	local recompensa = task.recompensa
+
 	if recompensa.dinheiro ~= nil then
 		local exibirTaskDinheiro = recompensa.dinheiro
 		if type(exibirTaskDinheiro) == "table" then
@@ -424,6 +448,7 @@ function Player:enviarTasksModalInfo(taskId, modalId)
 		end
 		modalMensagem = modalMensagem .. "Dinheiro: " .. exibirTaskDinheiro .. "\n"
 	end
+
 	if recompensa.experiencia ~= nil then
 		local exibirTaskExperiencia = recompensa.experiencia
 		if type(exibirTaskExperiencia) == "table" then
@@ -431,18 +456,35 @@ function Player:enviarTasksModalInfo(taskId, modalId)
 		end
 		modalMensagem = modalMensagem .. "Experiência: " .. exibirTaskExperiencia .. "\n"
 	end
+
 	if recompensa.item ~= nil then
 		modalMensagem = modalMensagem .. "Item: " .. exibirTaskItemRecompensa(recompensa.item) .. "\n"
 	end
+
 	if recompensa.nivel ~= nil then
 		modalMensagem = modalMensagem .. "Nível: " .. recompensa.nivel .. "\n"
 	end
+
 	if recompensa.reputacao ~= nil then
 		modalMensagem = modalMensagem .. "Reputação: " .. recompensa.reputacao .. "\n"
 	end
+
+	if recompensa.outfit ~= nil then
+		modalMensagem = modalMensagem .. "Outfit: " .. recompensa.outfit .. "\n"
+	end
+
+	if recompensa.addon ~= nil then
+		modalMensagem = modalMensagem .. firstToUpper(exibirAddon(recompensa.addon[2])) .. " do outfit '" .. recompensa.addon[1] .. "'\n"
+	end
+
+	if recompensa.montaria ~= nil then
+		modalMensagem = modalMensagem .. "Montaria: " .. recompensa.montaria .. "\n"
+	end
+
 	if task.repetir == 1 and (statusTask == configTasks.valorCompleta or statusTask == configTasks.valorFinalizada) then
 		modalMensagem = modalMensagem .. "\nCaso queira, você pode realizá-la novamente. Para isso, clique no botão 'Iniciar'.\n"
 	end
+
 	local modal = ModalWindow(configTasks.storageBase+modalId, modalTitulo, modalMensagem)
 	modal:addButton(3, "Voltar")
 	modal:addButton(2, "Sair")
@@ -503,7 +545,7 @@ function pegarNomeTask(taskId, ocultarQuantidade, limiteCaracteres)
 	if not ocultarQuantidade then
 		exibirNomeTask = task.quantidade .. " " .. exibirNomeTask
 	end
-	
+
 	if limiteCaracteres ~= nil then
 		if #exibirNomeTask > limiteCaracteres then
 			exibirNomeTask = exibirNomeTask:sub(0, limiteCaracteres) .. "..."
