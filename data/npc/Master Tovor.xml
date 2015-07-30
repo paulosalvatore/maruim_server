@@ -2,6 +2,4 @@
 <npc name="Master Tovor" script="promotion.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="146" head="120" body="120" legs="116" feet="116" addons="3" />
-	<parameters>
-	</parameters>
 </npc>

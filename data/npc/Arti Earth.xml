@@ -2,6 +2,4 @@
 <npc name="Arti Earth" script="Mestre Guilda.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="129" head="116" body="119" legs="114" feet="115" addons="3" />
-	<parameters>
-	</parameters>
 </npc>
