@@ -7,8 +7,7 @@ function onThink(player, interval)
 	if not modalRecompensaAberto[player:getId()] then
 		local emBatalha = player:getCondition(CONDITION_INFIGHT, CONDITIONID_DEFAULT)
 		if not emBatalha or Tile(player:getPosition()):hasFlag(TILESTATE_PROTECTIONZONE) then
-				player:enviarModalRecompensa()
-			end
+			player:enviarModalRecompensa()
 		else
 			if not recompensaAguardando[player:getId()] or recompensaAguardando[player:getId()] <= os.time() - tempoMensagemRecompensaAguardando then
 				recompensaAguardando[player:getId()] = os.time()
