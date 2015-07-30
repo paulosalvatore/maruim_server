@@ -45,10 +45,22 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 			player:enviarTasksModalPrincipal()
 		end
 	elseif modalWindowId == configTasks.storageBase+configTasks.modalTasksDisponiveisInfo then
-		player:enviarTasksModalDisponiveis()
+		if buttonId == 1 then
+			player:iniciarTask(choiceId)
+		else
+			player:enviarTasksModalDisponiveis()
+		end
 	elseif modalWindowId == configTasks.storageBase+configTasks.modalTasksProgressoInfo then
-		player:enviarTasksModalProgresso()
+		if buttonId == 1 then
+			player:iniciarTask(choiceId)
+		else
+			player:enviarTasksModalProgresso()
+		end
 	elseif modalWindowId == configTasks.storageBase+configTasks.modalTasksRealizadasInfo then
-		player:enviarTasksModalRealizadas()
+		if buttonId == 1 then
+			player:iniciarTask(choiceId)
+		else
+			player:enviarTasksModalRealizadas()
+		end
 	end
 end
