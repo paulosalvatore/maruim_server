@@ -47,5 +47,8 @@ function onStartup()
 	verificarItensMoviveis()
 	iniciarJefrey()
 	efeitosTutorial()
+	if atualizarNpcsBanco then
+		atualizarNpcs()
+	end
 
 end

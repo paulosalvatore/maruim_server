@@ -1,3 +1,5 @@
+atualizarNpcsBanco = false
+
 destinos = {
 	["ilha_inicial"] = {
 		nome = "Ilha Inicial",
@@ -241,17 +243,11 @@ barqueiros = {
 
 tempoBlessWoodenStake = 24*60*60
 
-local limparNpcs = false
-atualizarNpcsBanco = false
-if limparNpcs then
-	db.query("TRUNCATE TABLE `z_npcs`")
-	db.query("TRUNCATE TABLE `z_npcs_itens`")
-end
-
 function atualizarNpcBanco(npc, tipo, informacoes)
 	local npcNome = npc:getName()
 	local npcId
 	local resultId = db.storeQuery("SELECT `id` FROM `z_npcs` WHERE `nome` = " .. db.escapeString(npcNome))
+
 	if resultId == false then
 		db.query("INSERT INTO `z_npcs` (`nome`) VALUES (" .. db.escapeString(npcNome) .. ")")
 		npcId = db.lastInsertId()
@@ -259,6 +255,7 @@ function atualizarNpcBanco(npc, tipo, informacoes)
 	else
 		npcId = result.getDataInt(resultId, "id")
 	end
+
 	if tipo then
 		if tipo == "comerciante" then
 			local itemId = informacoes[1]
@@ -278,19 +275,48 @@ function atualizarNpcBanco(npc, tipo, informacoes)
 end
 
 function atualizarNpcs()
+	local npcs = {}
 	local resultId = db.storeQuery("SELECT `id`, `nome` FROM `z_npcs`")
+
 	if resultId ~= false then
-		repeat
-		local npcId = result.getDataInt(resultId, "id")
-		local npcNome = result.getDataString(resultId, "nome")
-		local npc = Npc(npcNome)
-		if npc ~= nil then
-			local posicaoNpc = npc:getPosition()
-			local npcOutfit = npc:getOutfit()
-			db.query("UPDATE `z_npcs` SET `posx` = " .. db.escapeString(posicaoNpc.x) .. ", `posy` = " .. db.escapeString(posicaoNpc.y) .. ", `posz` = " .. db.escapeString(posicaoNpc.z) .. ", `lookBody` = " .. db.escapeString(npcOutfit.lookBody) .. ", `lookFeet` = " .. db.escapeString(npcOutfit.lookFeet) .. ", `lookHead` = " .. db.escapeString(npcOutfit.lookHead) .. ", `lookLegs` = " .. db.escapeString(npcOutfit.lookLegs) .. ", `lookType` = " .. db.escapeString(npcOutfit.lookType) .. ", `lookAddons` = " .. db.escapeString(npcOutfit.lookAddons) .. ", `lookMount` = " .. db.escapeString(npcOutfit.lookMount) .. "  WHERE `id` = " .. db.escapeString(npcId))
-			print(npcNome .. " -> atualizado com sucesso.")
+		while result.next(resultId) do
+			local npcId = result.getDataInt(resultId, "id")
+			local npcNome = result.getDataString(resultId, "nome")
+			table.insert(npcs, {npcId, npcNome})
 		end
-		until not result.next(resultId)
 		result.free(resultId)
 	end
+
+	for i = 1, #npcs do
+		local npcId = npcs[i][1]
+		local npcNome = npcs[i][2]
+		local npcPosicoes = {}
+
+		local npc = Npc(npcNome)
+		while npc ~= nil do
+			local outfit = npc:getOutfit()
+			local posicao = npc:getPosition()
+			db.query("UPDATE `z_npcs` SET `lookBody` = " .. db.escapeString(outfit.lookBody) .. ", `lookFeet` = " .. db.escapeString(outfit.lookFeet) .. ", `lookHead` = " .. db.escapeString(outfit.lookHead) .. ", `lookLegs` = " .. db.escapeString(outfit.lookLegs) .. ", `lookType` = " .. db.escapeString(outfit.lookType) .. ", `lookAddons` = " .. db.escapeString(outfit.lookAddons) .. ", `lookMount` = " .. db.escapeString(outfit.lookMount) .. "  WHERE `id` = " .. db.escapeString(npcId))
+			db.query("INSERT INTO `z_npcs_posicoes` (`npc`, `posx`, `posy`, `posz`) VALUES (" .. db.escapeString(npcId) .. ", " .. db.escapeString(posicao.x) .. ", " .. db.escapeString(posicao.y) .. ", " .. db.escapeString(posicao.z) .. ")")
+			print(npcNome .. " -> atualizado com sucesso.")
+			if npcNome ~= "Jefrey" then
+				table.insert(npcPosicoes, posicao)
+				npc:remove(1)
+				npc = Npc(npcNome)
+			else
+				npc = nil
+			end
+		end
+
+		for i = 1, #npcPosicoes do
+			local npc = Game.createNpc(npcNome, npcPosicoes[i])
+			npc:setMasterPos(npcPosicoes[i])
+		end
+	end
+end
+
+if atualizarNpcsBanco then
+	db.query("TRUNCATE TABLE `z_npcs`")
+	db.query("TRUNCATE TABLE `z_npcs_itens`")
+	db.query("TRUNCATE TABLE `z_npcs_posicoes`")
 end
