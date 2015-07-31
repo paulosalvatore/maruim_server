@@ -1,7 +1,17 @@
-local config = {
+quests = {
 	-- ["action" ou "unique"] = {
 		-- [action_id ou unique_id] = {
 			-- recompensa = {{id, quantidade}},
+			-- recompensaVocacao = {{{id, quantidade}} -- Uma para cada vocação},
+			-- recompensaVocacao = {
+				-- {{id, quantidade}}, -- Sorcerer
+				-- {{id, quantidade}}, -- Druid
+				-- {{id, quantidade}}, -- Paladin
+				-- {{id, quantidade}}, -- Knight
+			-- }
+			-- recompensaOpcional = {
+				-- {{id, quantidade}} -- Uma para cada opção
+			-- },
 			-- storage = valor do storage (informar apenas se for diferente da action_id ou unique_id),
 			-- checarValor = valor (informar apenas se for diferente de -1),
 			-- adicionarValor = valor (informar apenas se for diferente de 1),
@@ -34,73 +44,45 @@ local config = {
 }
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if (item.actionid ~= nil and config["action"][item.actionid]) or item.uid <= 65535 or (item.uid <= 65535 and config["unique"][item.uid]) then
-		local i
-		local storage
-		if config["action"][item.actionid] then
-			i = config["action"][item.actionid]
-			storage = item.actionid
-		elseif item.uid <= 65535 and config["unique"][item.uid] then
-			i = config["unique"][item.uid]
-			storage = item.uid
-		elseif item.uid <= 65535 then
-			i = {recompensa = {{item.uid, 1}}}
-			storage = item.uid
+
+	local quest
+	local storage
+
+	if quests["action"][item.actionid] then
+		quest = quests["action"][item.actionid]
+		storage = item.actionid
+	elseif item.uid <= 65535 and quests["unique"][item.uid] then
+		quest = quests["unique"][item.uid]
+		storage = item.uid
+	elseif item.uid <= 65535 then
+		quest = {recompensa = {{item.uid, 1}}}
+		storage = item.uid
+	else
+		return false
+	end
+
+	if quest.recompensaOpcional then
+		local modalTitulo = "Selecione uma Recompensa"
+		local modalMensagem = "Você pode escolher uma das recompensas abaixo para recebê-la.\n\n"
+		modalMensagem = modalMensagem .. "Qual você deseja obter?\n"
+		local modal = ModalWindow(modalQuest+quest.modalId, modalTitulo, modalMensagem)
+		for a, b in pairs(quest.recompensaOpcional) do
+			modal:addChoice(a, exibirRecompensa(b, container))
 		end
-		if i.storage then
-			storage = i.storage
-		end
-		local checarValor = -1
-		if i.checarValor then
-			checarValor = i.checarValor
-		end
-		if player:getStorageValue(storage) == checarValor then
-			if i.recompensaVocacao ~= nil then
-				local vocacao = player:getVocation():getId()
-				if isInArray(Vocacoes.sorcerer, vocacao) then
-					i.recompensa = i.recompensaVocacao[1]
-				elseif isInArray(Vocacoes.druid, vocacao) then
-					i.recompensa = i.recompensaVocacao[2]
-				elseif isInArray(Vocacoes.paladin, vocacao) then
-					i.recompensa = i.recompensaVocacao[3]
-				elseif isInArray(Vocacoes.knight, vocacao) then
-					i.recompensa = i.recompensaVocacao[4]
-				end
-			end
-			local pesoTotalItens = 0
-			for a, b in pairs(i.recompensa) do
-				pesoTotalItens = pesoTotalItens + ItemType(b[1]):getWeight()
-			end
-			local exibirNome
-			local container = config.containerPadrao
-			if i.container then
-				container = i.container
-			end
-			if #i.recompensa > 1 then
-				exibirNome = ItemType(container):getName()
-			elseif #i.recompensa == 1 then
-				exibirNome = ItemType(i.recompensa[1][1]):getName()
-			end
-			if player:getFreeCapacity() >= pesoTotalItens then
-				local adicionarItem = player
-				if #i.recompensa > 1 then
-					adicionarItem = adicionarItem:addItem(container, 1)
-				end
-				for a, b in pairs(i.recompensa) do
-					adicionarItem:addItem(b[1], b[2])
-				end
-				player:sendTextMessage(MESSAGE_INFO_DESCR, "Você encontrou o item '" .. exibirNome .. "'.")
-				local adicionarValor = 1
-				if i.adicionarValor then
-					adicionarValor = i.adicionarValor
-				end
-				player:setStorageValue(storage, adicionarValor)
-			else
-				player:sendTextMessage(MESSAGE_INFO_DESCR, "Você encontrou o item '" .. exibirNome .. "' que pesa " .. pesoTotalItens .. " oz. É muito peso para você carregar.")
-			end
-		else
-			player:sendTextMessage(MESSAGE_INFO_DESCR, "Está vazio.")
-		end
+		modal:addButton(1, "Escolher")
+		modal:setDefaultEnterButton(1)
+		modal:addButton(2, "Sair")
+		modal:setDefaultEscapeButton(2)
+		modal:sendToPlayer(player)
+		player:registerEvent("Quests")
 		return true
 	end
+
+	if quest.storage then
+		storage = quest.storage
+	end
+
+	player:receberQuest(quest, storage)
+
+	return true
 end

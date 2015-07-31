@@ -445,3 +445,103 @@ function exibirAddon(addon, exibirArtigo)
 	end
 	return exibirAddon
 end
+
+function exibirRecompensa(recompensa, container)
+	local exibirRecompensa
+	if #recompensa > 1 then
+		exibirRecompensa = "1 " .. ItemType(container):getName()
+	elseif #recompensa == 1 then
+		exibirRecompensa = recompensa[1][2] .. " " .. ItemType(recompensa[1][1]):getName()
+	end
+	return exibirRecompensa
+end
+
+function Player:adicionarItensJogador(itens, container, modal)
+
+	local sucesso = false
+	local mensagem
+	local pesoTotalItens = 0
+
+	if container then
+		pesoTotalItens = ItemType(container):getWeight()
+	end
+
+	for a, b in pairs(itens) do
+		pesoTotalItens = pesoTotalItens + ItemType(b[1]):getWeight()
+	end
+
+	local exibirNome = exibirRecompensa(itens, container)
+
+	if self:getFreeCapacity() >= pesoTotalItens then
+
+		local item
+
+		if container then
+			item = Game.createItem(container, 1)
+			for a, b in pairs(itens) do
+				item:addItem(b[1], b[2])
+			end
+		else
+			item = Game.createItem(itens[1][1], itens[1][2])
+		end
+
+		if self:addItemEx(item) == 0 then
+			mensagem = "Você " .. (modal and "recebeu" or "encontrou") .. " '" .. exibirNome .. "'."
+			sucesso = true
+		else
+			mensagem = "Você não possui espaço para receber " .. (#itens == 1 and "o item" or "os itens") .. "."
+		end
+	else
+		mensagem = "Você " .. (modal and "escolheu" or "encontrou") .. " o item '" .. exibirNome .. "' que pesa " .. pesoTotalItens .. " oz. É muito peso para você carregar."
+	end
+
+	return {sucesso, mensagem}
+end
+
+function Player:receberQuest(quest, storage, modal)
+
+	local checarValor = -1
+	if quest.checarValor then
+		checarValor = quest.checarValor
+	end
+
+	if self:getStorageValue(storage) ~= checarValor then
+		self:sendTextMessage(MESSAGE_INFO_DESCR, "Está vazio.")
+		return false
+	end
+
+	local adicionarValor = 1
+	if quest.adicionarValor then
+		adicionarValor = quest.adicionarValor
+	end
+
+	local recompensa
+	if quest.recompensa then
+		recompensa = quest.recompensa
+	elseif quest.recompensaVocacao then
+		local vocacao = self:getVocation():getId()
+		if isInArray(Vocacoes.sorcerer, vocacao) then
+			recompensa = quest.recompensaVocacao[1]
+		elseif isInArray(Vocacoes.druid, vocacao) then
+			recompensa = quest.recompensaVocacao[2]
+		elseif isInArray(Vocacoes.paladin, vocacao) then
+			recompensa = quest.recompensaVocacao[3]
+		elseif isInArray(Vocacoes.knight, vocacao) then
+			recompensa = quest.recompensaVocacao[4]
+		end
+	elseif modal then
+		recompensa = quest.recompensaOpcional[modal]
+	end
+	local container
+	if quest.container then
+		container = quest.container
+	elseif #recompensa > 1 then
+		container = quests.containerPadrao
+	end
+
+	local adicionarItens = self:adicionarItensJogador(recompensa, container, modal)
+	self:sendTextMessage(MESSAGE_INFO_DESCR, adicionarItens[2])
+	if adicionarItens[1] then
+		self:setStorageValue(storage, adicionarValor)
+	end
+end

@@ -19,4 +19,5 @@
 	<event type="modalwindow" name="ItensKnight" script="itensKnight.lua" />
 	<event type="think" name="RecompensaNivel" script="RecompensaNivel.lua" />
 	<event type="modalwindow" name="RecompensaNivelModal" script="RecompensaNivel.lua" />
+	<event type="modalwindow" name="Quests" script="Quests.lua" />
 </creaturescripts>
