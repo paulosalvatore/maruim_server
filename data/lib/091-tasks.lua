@@ -173,13 +173,13 @@ function Player:completarTask(taskId)
 		if recompensa.outfit ~= nil then
 			local valorRecompensa = self:pegarOutfitLookType(recompensa.outfit)
 			self:addOutfit(valorRecompensa)
-			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Recompensa de Tarefa: Você recebeu o outfit '" .. recompensa.outfit .. "'.")
+			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Recompensa de Tarefa: Você recebeu o outfit '" .. pegarOutfitNome(valorRecompensa) .. "'.")
 		end
 
 		if recompensa.addon ~= nil then
 			local valorRecompensa = {self:pegarOutfitLookType(recompensa.addon[1]), recompensa.addon[2]}
 			self:addOutfitAddon(valorRecompensa[1], valorRecompensa[2])
-			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Recompensa de Tarefa: Você recebeu " .. exibirAddon(valorRecompensa[2], true) .. " do outfit '" .. recompensa.addon[1] .. "'.")
+			self:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Recompensa de Tarefa: Você recebeu " .. exibirAddon(valorRecompensa[2], true) .. " do outfit '" .. pegarOutfitNome(valorRecompensa[1]) .. "'.")
 		end
 
 		if recompensa.montaria ~= nil then
