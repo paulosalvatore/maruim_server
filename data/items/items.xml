@@ -15378,25 +15378,18 @@
 	</item>
 	<item id="8577" name="void" />
 	<item id="8578" name="jungle grass" />
-	<item id="8579" article="a" name="loose stone pile">
-		<attribute key="description" value="Rightclick on your shovel, select 'Use' and then leftclick on this stonepile to dig." />
-	</item>
+	<item id="8579" article="a" name="loose stone pile" />
 	<item id="8580" article="a" name="sewer grate" />
 	<item id="8581" name="Zirella's cart" article="a" />
 	<item id="8582" article="a" name="branch">
-		<attribute key="description" value="Push it back to Zirella by holding the left mousebutton down on it and pushing it over the grass." />
 		<attribute key="weight" value="100000" />
 	</item>
-	<item id="8583" article="a" name="dead tree">
-		<attribute key="description" value="It is one of those Zirella mentioned. Rightclick it and select 'Use' to break a branch from it." />
-	</item>
+	<item id="8583" article="a" name="dead tree" />
 	<item id="8584" name="Jerom's family necklace">
 		<attribute key="weight" value="630" />
 	</item>
 	<item id="8585" article="a" name="hole">
 		<attribute key="floorchange" value="down" />
-		<attribute key="decayTo" value="8579" />
-		<attribute key="duration" value="600" />
 	</item>
 	<item id="8586" name="dirt floor" />
 	<item id="8587" article="a" name="sturdy chest">
@@ -15405,11 +15398,8 @@
 	<item fromid="8588" toid="8589" article="a" name="bone" />
 	<item id="8590" name="tiled floor" />
 	<item id="8591" name="grass" />
-	<item id="8592" name="dirt floor">
-		<attribute key="description" value="Rightclick your rope and select 'Use', then leftclick on this spot to climb up again." />
-	</item>
+	<item id="8592" name="dirt floor" />
 	<item id="8593" name="dead cockroach">
-		<attribute key="description" value="If you killed this cockroach, rightclick it and select 'Open' to see what it carried." />
 		<attribute key="weight" value="60000" />
 		<attribute key="containerSize" value="8" />
 		<attribute key="decayTo" value="0" />
@@ -15426,7 +15416,6 @@
 	<item id="8599" article="a" name="ladder" />
 	<item id="8600" article="a" name="branch">
 		<attribute key="weight" value="100000" />
-		<attribute key="description" value="Push it back to Zirella by holding the left mousebutton down on it and pushing it over the grass." />
 	</item>
 	<item id="8601" article="a" name="steel axe">
 		<attribute key="weight" value="4100" />
