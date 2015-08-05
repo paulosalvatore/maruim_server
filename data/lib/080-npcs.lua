@@ -1,8 +1,8 @@
 atualizarNpcsBanco = false
 
 destinos = {
-	["ilha_inicial"] = {
-		nome = "Ilha Inicial",
+	["maruim_island"] = {
+		nome = "Maruim Island",
 		posicao = {x = 633, y = 939, z = 6},
 		custo = 30,
 		levelNecessario = 0
@@ -94,21 +94,22 @@ destinos = {
 		levelNecessario = 0,
 		palavrasChave = {"ilha dos dragoes"}
 	},
-	["ilha_inicial_parte_alta_baixa"] = {
+	["maruim_island_parte_alta_baixa"] = {
 		nome = "Parte Baixa da Ilha",
 		posicao = {x = 601, y = 1085, z = 7},
 		custo = 10,
 		levelNecessario = 0
 	},
-	["ilha_inicial_parte_baixa_alta"] = {
+	["maruim_island_parte_baixa_alta"] = {
 		nome = "Parte Alta da Ilha",
 		posicao = {x = 587, y = 1018, z = 7},
 		custo = 10,
 		levelNecessario = 0
 	}
 }
+
 barqueiros = {
-	["Palter Dilventan"] = {
+	["maruim_island"] = {
 		destinos = {
 			"civitaten_barco",
 			"hyalakur_barco",
@@ -116,7 +117,7 @@ barqueiros = {
 		},
 		tipoViagem = "navio"
 	},
-	["Eteringe Genon"] = {
+	["algatar"] = {
 		destinos = {
 			"kyo",
 			"hyalakur_barco",
@@ -125,7 +126,7 @@ barqueiros = {
 		},
 		tipoViagem = "navio"
 	},
-	["Ghariva Titodimoon"] = {
+	["mugulu"] = {
 		destinos = {
 			"otto",
 			"algatar",
@@ -133,7 +134,7 @@ barqueiros = {
 		},
 		tipoViagem = "navio"
 	},
-	["Zairda Soron"] = {
+	["kyo"] = {
 		destinos = {
 			"algatar",
 			"hyalakur_barco",
@@ -141,37 +142,37 @@ barqueiros = {
 		},
 		tipoViagem = "navio"
 	},
-	["Akheria Sudayth"] = {
+	["otto"] = {
 		destinos = {
 			"mugulu",
 			"hyalakur_barco",
 			"civitaten_barco",
-			"ilha_inicial"
+			"maruim_island"
 		},
 		tipoViagem = "navio"
 	},
-	["Mado Arbells"] = {
+	["hyalakur_barco"] = {
 		destinos = {
 			"civitaten_barco",
 			"otto",
 			"algatar",
 			"kyo",
-			"ilha_inicial"
+			"maruim_island"
 		},
 		tipoViagem = "navio"
 	},
-	["Pewarthor Daellits"] = {
+	["civitaten_barco"] = {
 		destinos = {
 			"hyalakur_barco",
 			"mugulu",
 			"algatar",
 			"otto",
 			"kyo",
-			"ilha_inicial"
+			"maruim_island"
 		},
 		tipoViagem = "navio"
 	},
-	["Zerillion Darica"] = {
+	["pundera"] = {
 		destinos = {
 			"udecoat",
 			"civitaten_tapete",
@@ -179,7 +180,7 @@ barqueiros = {
 		},
 		tipoViagem = "tapete"
 	},
-	["Haless Amonius"] = {
+	["udecoat"] = {
 		destinos = {
 			"pundera",
 			"civitaten_tapete",
@@ -188,7 +189,7 @@ barqueiros = {
 		},
 		tipoViagem = "tapete"
 	},
-	["Vuwulo Retulon"] = {
+	["hyalakur_tapete"] = {
 		destinos = {
 			"civitaten_tapete",
 			"pundera",
@@ -198,14 +199,14 @@ barqueiros = {
 		},
 		tipoViagem = "tapete"
 	},
-	["Airotear Greli"] = {
+	["khazad_dum_tapete"] = {
 		destinos = {
 			"lorn",
 			"hyalakur_tapete"
 		},
 		tipoViagem = "tapete"
 	},
-	["Pheanak Livertin"] = {
+	["civitaten_tapete"] = {
 		destinos = {
 			"hyalakur_tapete",
 			"udecoat",
@@ -214,7 +215,7 @@ barqueiros = {
 		},
 		tipoViagem = "tapete"
 	},
-	["Yendsos Anian"] = {
+	["lorn"] = {
 		destinos = {
 			"civitaten_tapete",
 			"udecoat",
@@ -223,22 +224,42 @@ barqueiros = {
 		},
 		tipoViagem = "tapete"
 	},
-	["Rafter Demarm"] = {
-		destinos = {"ilha_inicial_parte_alta_baixa"},
+	["maruim_island_parte_alta"] = {
+		destinos = {"maruim_island_parte_alta_baixa"},
 		tipoViagem = "barco"
 	},
-	["Rafter Bous"] = {
-		destinos = {"ilha_inicial_parte_baixa_alta"},
+	["maruim_island_parte_baixa"] = {
+		destinos = {"maruim_island_parte_baixa_alta"},
 		tipoViagem = "barco"
 	},
-	["Rafter Smar"] = {
+	["mugulu_dragon"] = {
 		destinos = {"mugulu_dragon"},
 		tipoViagem = "barco"
 	},
-	["Rafter Pras"] = {
+	["dragon_mugulu"] = {
 		destinos = {"dragon_mugulu"},
 		tipoViagem = "barco"
 	}
+}
+
+relacionarBarqueiros = {
+	["Palter Dilventan"] = "maruim_island",
+	["Eteringe Genon"] = "algatar",
+	["Ghariva Titodimoon"] = "mugulu",
+	["Zairda Soron"] = "kyo",
+	["Akheria Sudayth"] = "otto",
+	["Mado Arbells"] = "hyalakur_barco",
+	["Pewarthor Daellits"] = "civitaten_barco",
+	["Zerillion Darica"] = "pundera",
+	["Haless Amonius"] = "udecoat",
+	["Vuwulo Retulon"] = "hyalakur_tapete",
+	["Airotear Greli"] = "khazad_dum_tapete",
+	["Pheanak Livertin"] = "civitaten_tapete",
+	["Yendsos Anian"] = "lorn",
+	["Rafter Demarm"] = "maruim_island_parte_alta",
+	["Rafter Bous"] = "maruim_island_parte_baixa",
+	["Rafter Smar"] = "mugulu_dragon",
+	["Rafter Pras"] = "dragon_mugulu"
 }
 
 tempoBlessWoodenStake = 24*60*60

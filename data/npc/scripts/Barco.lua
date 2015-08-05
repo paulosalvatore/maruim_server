@@ -9,7 +9,7 @@ function onThink()				npcHandler:onThink()					end
 
 local npc = Npc()
 local npcName = npc:getName()
-local configNpc = barqueiros[npcName]
+local configNpc = barqueiros[relacionarBarqueiros[npcName]]
 if configNpc == nil then
 	return
 end
