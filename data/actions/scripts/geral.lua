@@ -804,6 +804,7 @@ local config = {
 	["unique"] = {
 	}
 }
+
 local condition = {}
 for a, b in pairs(config) do
 	if condition[a] == nil then
@@ -836,6 +837,7 @@ for a, b in pairs(config) do
 				end
 			end
 		end
+
 		if adicionarCondition > 0 then
 			if dano[2] == "cargas" then
 				condition[adicionarCondition] = createConditionObject(conditionsDamage[dano[1]][1])
@@ -844,6 +846,7 @@ for a, b in pairs(config) do
 		end
 	end
 end
+
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if config[item.itemid] ~= nil or config["action"][item.actionid] ~= nil or config["unique"][item.uid] ~= nil or (isInArray(sparkling, item.itemid) and config["sparkling"] ~= nil) then
 		local i

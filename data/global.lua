@@ -273,9 +273,9 @@ function verificarItensMoviveis()
 				local tile = Tile(x, y, z)
 				if tile then
 					if (x > 670 and x < 932) and (y > 2031 and y < 2258) then
-						
+
 					elseif (x > 482 and x < 959) and (y > 2318 and y < 2530) then
-					
+
 					else
 						local itens = tile:getItems()
 
