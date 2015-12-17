@@ -50,7 +50,6 @@
 	 -->
 	<talkaction words="!buyhouse" script="buyhouse.lua" />
 	<talkaction words="!leavehouse" script="leavehouse.lua" />
-	<talkaction words="/masmorra" script="localizador_masmorra.lua" />
 	<talkaction words="exura res" script="reviver_masmorra.lua" />
 
 	<!-- test effects talkactions -->
