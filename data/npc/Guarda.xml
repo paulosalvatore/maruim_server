@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Guarda" script="Inativo.lua" walkinterval="0" floorchange="0">
+	<health now="100" max="100" />
+	<look type="268" head="58" body="38" legs="57" feet="76" addons="2" />
+</npc>

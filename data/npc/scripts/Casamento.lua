@@ -2,13 +2,15 @@ local keywordHandler = KeywordHandler:new()
 local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
-function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
-function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
+function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)		end
+function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)		end
+
 function onCreatureSay(player, type, msg)
 	local fraseNpc = "Seja bem-vind" .. player:pegarArtigo(1) .. ", " .. player:getName() .. "."
 	local statusCasamento = player:pegarStatusCasamento()
 	local conjuge = player:pegarConjuge()
 	local propostas = player:pegarPropostas()
+
 	if statusCasamento == STATUS_CASAMENTO_CASADO then
 		fraseNpc = fraseNpc .. " Eu vejo que você está muito feliz casad" .. player:pegarArtigo(1) .. ". O que você faz por aqui?"
 	elseif statusCasamento == STATUS_CASAMENTO_PEDIDO then
@@ -23,10 +25,12 @@ function onCreatureSay(player, type, msg)
 	else
 		fraseNpc = fraseNpc .. " O que você faz por aqui? Deseja {casar} com alguém?"
 	end
+
 	npcHandler:setMessage(MESSAGE_GREET, fraseNpc)
 	npcHandler:onCreatureSay(player, type, msg)
 end
-function onThink()						npcHandler:onThink()						end
+
+function onThink()						npcHandler:onThink()					end
 
 function creatureSayCallback(cid, type, msg)
 	if not npcHandler:isFocused(cid) then
@@ -37,6 +41,7 @@ function creatureSayCallback(cid, type, msg)
 	local statusCasamento = player:pegarStatusCasamento()
 	local conjuge = player:pegarConjuge()
 	local propostas = player:pegarPropostas()
+
 	if npcHandler.topic[cid] == 0 then
 		if isInArray({"marry", "marriage", "casar", "casamento"}, msg) then
 			if statusCasamento == STATUS_CASAMENTO_PEDIDO then
