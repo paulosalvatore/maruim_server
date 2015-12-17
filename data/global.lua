@@ -12,6 +12,7 @@ dofile('data/lib/marcasMapa.lua')
 dofile('data/lib/recompensaNivel.lua')
 dofile('data/lib/carregarMiniMapa.lua')
 dofile('data/lib/casamento.lua')
+dofile('data/lib/monstros.lua')
 
 ropeSpots = {384, 418, 8278, 8592, 13189, 14435, 14436, 15635, 19518}
 

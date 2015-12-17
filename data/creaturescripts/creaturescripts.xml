@@ -20,4 +20,7 @@
 	<event type="think" name="RecompensaNivel" script="RecompensaNivel.lua" />
 	<event type="modalwindow" name="RecompensaNivelModal" script="RecompensaNivel.lua" />
 	<event type="modalwindow" name="Quests" script="Quests.lua" />
+
+	<event type="death" name="CriaturaMorta" script="criaturaMorta.lua" />
+	<event type="healthchange" name="HealthChangeCriatura" script="healthChangeCriatura.lua" />
 </creaturescripts>
