@@ -873,7 +873,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			i = i["default"]
 			if i.checarItem ~= nil and topItem ~= i.checarItem then
 				return false
-			else
+			elseif i.tempo ~= nil and i.tempo > 0 then
 				adicionarEvento = true
 			end
 		elseif	isInArray(sparkling, target.itemid) and #piso:getItems() >= 2 and
@@ -1114,17 +1114,21 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				itemGame:decay()
 			end
 		end
+
 		if i.transformar ~= nil and #i.transformar >= 2 then
 			local transformar = target
 			local itemTransformar = i.transformar[1]
 			local quantidadeTransformar = i.transformar[2]
 			local realizarTransformacao = true
+
 			if type(quantidadeTransformar) == "table" then
 				quantidadeTransformar = math.random(quantidadeTransformar[1], quantidadeTransformar[2])
 			end
+
 			if i.transformar[3] ~= nil and i.transformar[3] == "item" then
 				transformar = item
 			end
+
 			if i.chanceNeutra ~= nil and i.chanceNeutra <= 10000 then
 				local chanceNeutra = i.chanceNeutra+chanceSucesso
 				if (not (chance <= chanceSucesso)) and (chance <= chanceNeutra) then
@@ -1134,11 +1138,13 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 					efeito = {"poff"}
 				end
 			end
+
 			if realizarTransformacao then
 				transformar:transform(itemTransformar, quantidadeTransformar)
 				transformar:decay()
 			end
 		end
+
 		if i.transformarAleatorio ~= nil and #i.transformarAleatorio >= 2 then
 			local chanceTransformar = 0
 			for c, v in pairs(i.transformarAleatorio) do
