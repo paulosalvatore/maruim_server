@@ -90,27 +90,35 @@ end
 
 function formatarFrase(frase, cid, msg, count, transfer)
 	local player = Player(cid)
+
 	if frase:find("|PLAYERNAME|") then
 		frase = frase:gsub("|PLAYERNAME|", player:getName())
 	end
+
 	if frase:find("|PLAYERBALANCE|") then
 		frase = frase:gsub("|PLAYERBALANCE|", player:getBankBalance())
 	end
+
 	if frase:find("|PLAYERMONEY|") then
 		frase = frase:gsub("|PLAYERMONEY|", player:getMoney())
 	end
+
 	if frase:find("|MONEYCOUNT|") then
 		frase = frase:gsub("|MONEYCOUNT|", getMoneyCount(msg))
 	end
+
 	if frase:find("|MONEYCOUNT100|") then
 		frase = frase:gsub("|MONEYCOUNT100|", getMoneyCount(msg)*100)
 	end
+
 	if frase:find("|SHOWCOUNT|") then
 		frase = frase:gsub("|SHOWCOUNT|", count)
 	end
+
 	if frase:find("|SHOWTRANSFER|") then
 		frase = frase:gsub("|SHOWTRANSFER|", transfer)
 	end
+
 	if frase:find("|SENHOR|") then
 		local exibir = "Senhor"
 		if player:getSex() == 0 then
@@ -118,6 +126,7 @@ function formatarFrase(frase, cid, msg, count, transfer)
 		end
 		frase = frase:gsub("|SENHOR|", exibir)
 	end
+
 	if frase:find("|MESTRE|") then
 		local exibir = "Mestre"
 		if player:getSex() == 0 then
@@ -125,9 +134,11 @@ function formatarFrase(frase, cid, msg, count, transfer)
 		end
 		frase = frase:gsub("|MESTRE|", exibir)
 	end
+
 	if frase:find("|VOCATIONNAME|") then
 		frase = frase:gsub("|VOCATIONNAME|", player:getVocation():getName())
 	end
+
 	return frase
 end
 
@@ -191,7 +202,9 @@ function Player:depositMoney(amount)
 end
 
 function Player:addMoneyBank(amount)
-	self:setBankBalance(self:getBankBalance() + amount)
+	local balancoJogador = self:getBankBalance() + amount
+	self:setBankBalance(balancoJogador)
+	self:sendTextMessage(MESSAGE_INFO_DESCR, "Você recebeu " .. amount .. " gold coins em sua conta bancária. Seu balanço é " .. balancoJogador .. " gold coins.")
 	return true
 end
 
