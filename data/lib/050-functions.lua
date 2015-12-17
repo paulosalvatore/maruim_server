@@ -49,16 +49,16 @@ function formatarValor(valor, exibirDecimal)
 	return math.floor(valor/100) .. decimal
 end
 
+function formatarPlural(valor)
+	return (valor == 1 and "" or "s")
+end
+
 function formatarPeso(valor)
 	return formatarValor(valor, true) .. " oz"
 end
 
 function formatarTempo(tempo)
-	local exibirTempo = " segundo"
-	if tempo > 1 then
-		exibirTempo = exibirTempo .. "s"
-	end
-	return tempo .. exibirTempo
+	return tempo .. " segundo" .. formatarPlural(tempo)
 end
 
 function searchArrayKey(t, value)
@@ -204,7 +204,7 @@ end
 function Player:addMoneyBank(amount)
 	local balancoJogador = self:getBankBalance() + amount
 	self:setBankBalance(balancoJogador)
-	self:sendTextMessage(MESSAGE_INFO_DESCR, "Você recebeu " .. amount .. " gold coins em sua conta bancária. Seu balanço é " .. balancoJogador .. " gold coins.")
+	self:sendTextMessage(MESSAGE_INFO_DESCR, "Você recebeu " .. amount .. " gold coin" .. formatarPlural(amount) .. " em sua conta bancária. Seu balanço é " .. balancoJogador .. " gold coin" .. formatarPlural(balancoJogador) .. ".")
 	return true
 end
 
