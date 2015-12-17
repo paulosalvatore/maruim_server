@@ -115,11 +115,6 @@ function Player:onLookInShop(itemType, count)
 end
 
 function Player:onMoveItem(item, count, fromPosition, toPosition)
-	local passoTutorial = self:pegarPassoTutorial()
-	if passoTutorial ~= tutorialFinalizado then
-		self:sendCancelMessage("Você não pode mover esse objeto enquanto está no tutorial.")
-		return false
-	end
 	local tile = Tile(toPosition)
 	if tile and tile:getHouse() ~= nil then
 		if tile:getItemCount() == 9 then
@@ -129,23 +124,22 @@ function Player:onMoveItem(item, count, fromPosition, toPosition)
 			local peso = item:getWeight()
 			local pesoMaximo = 1500000
 			local itens = tile:getItems()
+
 			if itens then
 				for i = 1, #itens do
 					peso = peso + itens[i]:getWeight()
 				end
 			end
+
 			if peso > pesoMaximo then
 				self:sendCancelMessage("Não é possível adicionar mais itens a esse local.")
 				return false
 			end
 		end
 	end
+
 	if item:getActionId() == 2500 or item:getActionId() == 2503 then
 		self:sendCancelMessage("Você não pode mover esse item.")
-		return false
-	end
-	if getCreatureCondition(self, CONDITION_SPELLCOOLDOWN, 160) then
-		self:sendCancelMessage("Você está ocupado.")
 		return false
 	end
 	return true
