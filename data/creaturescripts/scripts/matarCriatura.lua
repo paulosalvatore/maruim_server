@@ -30,4 +30,6 @@ function onKill(player, target)
 			enviarProgressoMasmorra(masmorraId)
 		end
 	end
+
+	return true
 end
