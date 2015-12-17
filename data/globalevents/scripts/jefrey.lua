@@ -7,20 +7,25 @@ local portaAberta = 1222
 local itemDormindo = 13562
 local walkInterval = 800
 local movimentos = 4
+
 function moverNpc(npcId, x, y)
 	local npc = Npc(npcId)
 	local posicao = npc:getPosition()
 	local novaPosicao = posicao+{x = x, y = y}
+
 	if Tile(novaPosicao):getItemById(portaFechada) ~= nil then
 		Tile(novaPosicao):getItemById(portaFechada):transform(portaAberta)
 	end
+
 	npc:teleportTo(novaPosicao, true)
+
 	if Tile(posicao):getItemById(portaAberta) ~= nil then
 		addEvent(function()
 			Tile(posicao):getItemById(portaAberta):transform(portaFechada)
 		end, 600)
 	end
 end
+
 function transformarCama(npc, dormir)
 	if dormir == true then
 		npc = Npc(npc)
@@ -43,6 +48,7 @@ function transformarCama(npc, dormir)
 		end
 	end
 end
+
 function iniciarJefrey()
 	local npc = Npc(nomeNpc)
 	if npc ~= nil then
@@ -62,7 +68,8 @@ function iniciarJefrey()
 		end, walkInterval*movimentos+300, npc:getId())
 	end
 end
+
 function onThink(interval, lastExecution)
-	iniciarJefrey()
+	-- iniciarJefrey()
     return true
 end

@@ -43,10 +43,10 @@ function onStartup()
 	atualizarOnline()
 	db.query("UPDATE `server_config` SET `value` = " .. db.escapeString(os.time()) .. " WHERE `config` = 'uptime'")
 
-	gerarPontosColetaMadeira()
-	verificarItensMoviveis()
-	iniciarJefrey()
-	efeitosTutorial()
+	-- gerarPontosColetaMadeira()
+	-- verificarItensMoviveis()
+	-- iniciarJefrey()
+	-- efeitosTutorial()
 	if atualizarNpcsBanco then
 		atualizarNpcs()
 	end
