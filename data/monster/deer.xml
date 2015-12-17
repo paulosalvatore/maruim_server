@@ -24,7 +24,11 @@
 	<loot>
 		<item id="2671" chance="80000" /><!-- Ham -->
 		<item id="2666" countmax="4" chance="80000" /><!-- Meat -->
-		<item id="7397" chance="1000" /><!-- deer trophy -->
-		<item id="11214" countmax="2" chance="30000" /><!-- antlers -->
+		<item id="7397" chance="1000" /><!-- Deer Trophy -->
+		<item id="11214" countmax="2" chance="30000" /><!-- Antlers -->
 	</loot>
+	<script>
+		<event name="HealthChangeCriatura"/>
+		<event name="CriaturaMorta"/>
+	</script>
 </monster>

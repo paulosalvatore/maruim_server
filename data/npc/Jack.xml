@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Joe" script="Default.lua" walkinterval="2000" floorchange="0">
+<npc name="Jack" script="Default.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
-	<look type="144" head="114" body="115" legs="95" feet="116" addons="3" />
+	<look type="146" head="97" body="40" legs="60" feet="38" addons="1" />
 	<parameters>
 		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja." />
 		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?" /> 
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_buyable" value="miraculum,12430,500;" />
-		<parameter key="shop_sellable" value="troll green,2805,25;miraculum,12430,40;" />
+		<parameter key="shop_sellable" value="mouldy cheese,2235,40;honeycomb,5902,40;trollroot,12471,40;sample of sand wasp honey,9676,45;bear paw,5896,50;wolf paw,5897,50;gland,8971,50;minotaur leather,5878,80;orc tooth,11113,100;" />
 	</parameters>
 </npc>

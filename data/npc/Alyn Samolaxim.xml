@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Alyn Samolaxim" script="Default.lua" walkinterval="0" floorchange="0">
-	<health now="100" max="100" />
-	<look type="133" head="116" body="130" legs="131" feet="0" addons="1" />
-	<parameters>
-		<parameter key="message_greet" value="Olá |PLAYERNAME|." />
-		<parameter key="module_shop" value="1" />
-	</parameters>
-</npc>

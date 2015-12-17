@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Jachim Melliel" script="Vendedor Utilidades.lua" walkinterval="2000" floorchange="0">
-	<health now="100" max="100" />
-	<look type="159" head="110" body="115" legs="98" feet="47" />
-</npc>

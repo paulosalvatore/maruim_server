@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Oragon" script="Vendedor Utilidades.lua" walkinterval="2000" floorchange="0">
-	<health now="100" max="100" />
-	<look type="128" head="115" body="42" legs="37" feet="63" addons="3" />
-</npc>

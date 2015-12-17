@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Iskan" script="Iskan.lua" walkinterval="2000" floorchange="0">
-	<health now="100" max="100" />
-	<look type="733" head="57" body="22" legs="38" feet="19" addons="3" mount="735" />
-</npc>

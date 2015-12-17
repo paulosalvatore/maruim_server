@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Vuwulo Retulon" script="Barco.lua" walkinterval="2000" floorchange="0">
-	<health now="100" max="100" />
-	<look type="130" head="117" body="117" legs="56" feet="48" addons="0" />
-</npc>

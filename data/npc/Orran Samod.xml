@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Orran Samod" script="Vendedor Utilidades.lua" walkinterval="2000" floorchange="0">
-	<health now="100" max="100" />
-	<look type="146" head="117" body="12" legs="126" feet="114" addons="3" />
-</npc>

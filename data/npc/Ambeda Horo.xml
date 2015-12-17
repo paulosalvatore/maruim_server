@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Ambeda Horo" script="Banco.lua" walkinterval="2000" floorchange="0">
-	<health now="100" max="100" />
-	<look type="159" head="114" body="115" legs="95" feet="116" />
-</npc>
