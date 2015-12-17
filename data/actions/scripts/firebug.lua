@@ -1,5 +1,6 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local chanceFalha = 50
+
 	local items = {
 		[5466] = {transformar = 5465},
 		[1485] = {transformar = 1484, duracao = 600, decairPara = {{1483, 1}, {1482, 1}, {1481, 1}, {1485, 1}}},
@@ -8,10 +9,14 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		[13757] = {transformar = 21585},
 		[5880] = {transformar = 18427}
 	}
+
 	local targetId = target.itemid
-	if(items[targetId]) then
-		if(math.random(100) > chanceFalha) then
+
+	if items[targetId] then
+		if math.random(100) > chanceFalha then
+
 			target:getPosition():sendMagicEffect(efeitos["fire"])
+
 			if target:getType():isMovable() then
 				target:remove(1)
 				player:addItem(items[targetId].transformar, 1)
@@ -19,22 +24,28 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				target:transform(items[targetId].transformar)
 				target:decay()
 			end
+
 			local duracao = items[targetId].duracao
 			local decairPara = items[targetId].decairPara
+
 			if duracao ~= nil then
 				addEvent(function(targetId, toPosition, decairPara)
 					local target = Tile(toPosition):getItemById(targetId)
+
 					if target then
 						if decairPara ~= nil then
 							for a, b in pairs(decairPara) do
 								local transformar = b[1]
 								local tempo = a*b[2]*1000
+
 								addEvent(function(targetId, toPosition, transformar)
 									local target = Tile(toPosition):getItemById(targetId)
+
 									if target then
 										target:transform(transformar)
 									end
 								end, tempo, targetId, toPosition, transformar)
+
 								targetId = transformar
 							end
 						else

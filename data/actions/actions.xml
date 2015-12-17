@@ -1,97 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
 
-	<action actionid="4500" script="tutorial.lua" />
-
 	<!-- Geral -->
 	<action fromaid="2500" toaid="2502" script="item_desativado.lua" />
 
-	<action itemid="6277" script="geral.lua" />
-	<action itemid="8846" script="geral.lua" />
-	<action itemid="8848" script="geral.lua" />
-	<action itemid="9112" script="geral.lua" />
-	<action itemid="5467" script="geral.lua" />
-	<action itemid="2565" script="geral.lua" />
-	<action itemid="2566" script="geral.lua" />
-	<action itemid="4006" script="geral.lua" />
-	<action itemid="5157" script="geral.lua" />
-	<action fromid="12014" toid="12017" script="geral.lua" />
-	<action itemid="5865" script="geral.lua" />
-	<action itemid="18336" script="geral.lua" />
-	<action itemid="5908" script="geral.lua" />
-	<action itemid="11339" script="geral.lua" />
-	<action itemid="19948" script="geral.lua" />
-	<action itemid="10317" script="geral.lua" />
-	<action itemid="7286" script="geral.lua" />
-	<action fromid="13193" toid="13195" script="geral.lua" />
-	<action itemid="11421" script="geral.lua" />
-	<action itemid="2559" script="geral.lua" />
-	<action itemid="13757" script="geral.lua" />
-	<action fromid="2146" toid="2147" script="geral.lua" />
-	<action fromid="2149" toid="2150" script="geral.lua" />
-	<action itemid="21247" script="geral.lua" />
-	<action itemid="2093" script="geral.lua" />
-	<action itemid="2099" script="geral.lua" />
-	<action itemid="11754" script="geral.lua" />
-	<action itemid="7552" script="geral.lua" />
-	<action itemid="10153" script="geral.lua" />
-	<action itemid="23875" script="geral.lua" />
-	<action itemid="2327" script="geral.lua" />
-	<action itemid="13559" script="geral.lua" />
-	<action itemid="13028" script="geral.lua" />
-	<action itemid="13030" script="geral.lua" />
-	<action itemid="13032" script="geral.lua" />
-	<action itemid="16105" script="geral.lua" />
-	<action fromid="23496" toid="23503" script="geral.lua" />
-	<action itemid="2225" script="geral.lua" />
-	<action itemid="14756" script="geral.lua" />
-	<action itemid="14768" script="geral.lua" />
-	<action itemid="7585" script="geral.lua" />
-	<action fromid="8046" toid="8047" script="geral.lua" />
+	<action itemid="6277" script="geral.lua" /><!-- Lump of Cake Dough -->
+	<action itemid="8846" script="geral.lua" /><!-- Lump of Chocolate Dough -->
+	<action itemid="8848" script="geral.lua" /><!-- Baking Tray -->
+	<action itemid="9112" script="geral.lua" /><!-- Lump of Holy Water Dough -->
+	<action itemid="5467" script="geral.lua" /><!-- Bunch of Sugar Cane -->
+	<action itemid="2565" script="geral.lua" /><!-- Spoon -->
+	<action itemid="2566" script="geral.lua" /><!-- Kitchen Knife -->
+	<action itemid="4006" script="geral.lua" /><!-- Orange Tree -->
+	<action itemid="5157" script="geral.lua" /><!-- Mango Tree -->
+	<action fromid="12014" toid="12017" script="geral.lua" /><!-- Mystic Floor Lamp -->
+	<action itemid="5865" script="geral.lua" /><!-- Juice Squeezer -->
+	<action itemid="18336" script="geral.lua" /><!-- Strange Stone -->
+	<action itemid="5908" script="geral.lua" /><!-- Obsidian Knife -->
+	<action itemid="11339" script="geral.lua" /><!-- Clay Lump -->
+	<action itemid="19948" script="geral.lua" /><!-- Goblin Advertisement Sign -->
+	<action itemid="10317" script="geral.lua" /><!-- The Rain Coat -->
+	<action itemid="7286" script="geral.lua" /><!-- Nilsor's Waterskin -->
+	<action fromid="13193" toid="13195" script="geral.lua" /><!-- Small Powders -->
+	<action itemid="11421" script="geral.lua" /><!-- Blacksmith's Pick -->
+	<action itemid="2559" script="geral.lua" /><!-- Small Axe -->
+	<action itemid="13757" script="geral.lua" /><!-- Coal -->
+	<action fromid="2146" toid="2147" script="geral.lua" /><!-- Small Sapphire/Ruby -->
+	<action fromid="2149" toid="2150" script="geral.lua" /><!-- Small Emerald/Amethyst -->
+	<action itemid="21247" script="geral.lua" /><!-- Pieces of Magic Chalk -->
+	<action itemid="2093" script="geral.lua" /><!-- Water Pipe -->
+	<action itemid="2099" script="geral.lua" /><!-- Water Pipe -->
+	<action itemid="11754" script="geral.lua" /><!-- Ferumbras' Doll -->
+	<action itemid="7552" script="geral.lua" /><!-- Large Seashell -->
+	<action itemid="10153" script="geral.lua" /><!-- Golem Disassembler -->
+	<action itemid="23875" script="geral.lua" /><!-- Special Liquid -->
+	<action itemid="2327" script="geral.lua" /><!-- Blessed Ankh -->
+	<action itemid="13559" script="geral.lua" /><!-- Dread Doll -->
+	<action itemid="13028" script="geral.lua" /><!-- Frozen Heart -->
+	<action itemid="13030" script="geral.lua" /><!-- Draken Doll -->
+	<action itemid="13032" script="geral.lua" /><!-- Music Box -->
+	<action itemid="16105" script="geral.lua" /><!-- Medusa Skull -->
+	<action fromid="23496" toid="23503" script="geral.lua" /><!-- Levers -->
+	<action itemid="2225" script="geral.lua" /><!-- Piece of Iron -->
+	<action itemid="14756" script="geral.lua" /><!-- Hive Gate -->
+	<action itemid="14768" script="geral.lua" /><!-- Hive Gate -->
+	<action itemid="7585" script="geral.lua" /><!-- Spider Egg -->
+	<action fromid="8046" toid="8047" script="geral.lua" /><!-- Something Sparkling -->
 
-	<action actionid="2902" script="geral.lua" />
-	<action actionid="3901" script="geral.lua" />
+	<action actionid="2902" script="geral.lua" /><!-- Janela do Castelo (Miraculum) -->
+	<action actionid="3901" script="geral.lua" /><!-- Rope and Shovel Kit -->
 
-	<action itemid="16016" script="pintando.lua" />
-	<action fromid="16018" toid="16019" script="pintando.lua" />
+	<action itemid="16016" script="pintando.lua" /><!-- Pincel -->
+	<action fromid="16018" toid="16019" script="pintando.lua" /><!-- Tela/Pincel com Tinta -->
 
-	<action itemid="7734" script="flores.lua" />
-	<action itemid="15271" script="flores.lua" />
-	<action itemid="15269" script="flores.lua" />
+	<action itemid="7734" script="flores.lua" /><!-- Regador -->
+	<action itemid="15271" script="flores.lua" /><!-- Ice Flower Seeds -->
+	<action itemid="15269" script="flores.lua" /><!-- Ice Flower -->
 
-	<action itemid="5468" script="firebug.lua" />
+	<action itemid="5468" script="firebug.lua" /><!-- Fire Bug -->
 
-	<action itemid="2405" script="sickle.lua" />
+	<action actionid="5756" script="tartaruga.lua" /><!-- Alavanca Tartaruga -->
 
-	<action actionid="5756" script="tartaruga.lua" />
-
-	<action itemid="10223" script="tools/fishing.lua" allowfaruse="1" />
-
-	<action itemid="9930" script="rusty_remover.lua" />
-
-	<action itemid="21309" script="pocoes_profissao.lua" />
-	<action itemid="21426" script="pocoes_profissao.lua" />
+	<action itemid="9930" script="rusty_remover.lua" /><!-- Rusty Remover -->
 
 	<action itemid="20220" script="elevador.lua" />
 	<action itemid="20224" script="elevador.lua" />
 	<action itemid="23422" script="elevador.lua" />
 	<action itemid="23429" script="elevador.lua" />
 
-	<action itemid="18457" script="teleport_crystals.lua" />
-	<action itemid="18509" script="teleport_crystals.lua" />
+	<action itemid="18457" script="teleport_crystals.lua" /><!-- Blue Teleport Crystal -->
+	<action itemid="18509" script="teleport_crystals.lua" /><!-- Red Teleport Crystal -->
 
-	<action fromaid="6501" toaid="6503" script="lever_undead_area.lua" />
-
-	<!-- Crafting -->
-	<action itemid="2555" script="crafting.lua" />
-	<action itemid="8671" script="crafting.lua" />
-	<action fromid="9909" toid="9910" script="crafting.lua" />
-	<action itemid="1787" script="crafting.lua" />
-	<action itemid="1789" script="crafting.lua" />
-	<action itemid="1791" script="crafting.lua" />
-	<action itemid="1793" script="crafting.lua" />
-	<action itemid="9895" script="crafting.lua" />
-	<action itemid="9898" script="crafting.lua" />
+	<action fromaid="6501" toaid="6503" script="lever_undead_area.lua" /><!-- Alavancas da Quest Blue Armor/Legs -->
 
 	<action actionid="9530" script="portaoPundera.lua" />
 
@@ -111,9 +91,11 @@
 	<action itemid="2420" script="tools/machete.lua" />
 	<action itemid="2550" script="tools/scythe.lua" />
 	<action itemid="2580" script="tools/fishing.lua" allowfaruse="1" />
+	<action itemid="10223" script="tools/fishing.lua" allowfaruse="1" /><!-- Mechanical Fishing Rod -->
 	<action itemid="2554" script="tools/shovel.lua" />
 	<action itemid="2120" script="tools/rope.lua" />
 	<action itemid="2553" script="tools/pick.lua" />
+	<action itemid="2405" script="tools/sickle.lua" />
 
 	<!-- Increase/Decrease ItemId -->
 	<action itemid="1873" function="increaseItemId" />

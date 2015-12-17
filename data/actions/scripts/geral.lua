@@ -451,8 +451,8 @@ local config = {
 			tempo = 2*60*1000,
 			chanceSucesso = 5000,
 			chanceNeutra = 2000,
-			profissao = "alquimista",
-			expProfissao = 10
+			-- profissao = "alquimista",
+			-- expProfissao = 10
 		}
 	},
 	[13757] = {
