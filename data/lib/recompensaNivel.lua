@@ -10,29 +10,74 @@ tempoMensagemRecompensaAguardando = 60
 
 RecompensasNivel = {
 	{
-		nivel = 8,
+		nivel = 10,
 		vocacao = {"sorcerer"},
 		recompensa = {2190, 1}
 	},
 	{
-		nivel = 8,
+		nivel = 10,
 		vocacao = {"druid"},
 		recompensa = {2182, 1}
 	},
 	{
-		nivel = 3,
-		vocacao = {"knight"},
-		recompensaOpcoes = {{2385, 1}, {2449, 1}, {2386, 1}}
+		nivel = 10,
+		vocacao = {"sorcerer", "druid"},
+		recompensa = {8820, 1}
 	},
 	{
-		nivel = 5,
-		vocacao = {"knight"},
-		recompensaOpcoes = {{2376, 1}, {2437, 1}, {2418, 1}}
+		nivel = 10,
+		vocacao = {"sorcerer", "druid"},
+		recompensa = {8819, 1}
 	},
 	{
-		nivel = 8,
+		nivel = 10,
+		vocacao = {"sorcerer", "druid"},
+		recompensa = {2175, 1}
+	},
+	{
+		nivel = 10,
 		vocacao = {"knight"},
-		recompensaOpcoes = {{2395, 1}, {2398, 1}, {2388, 1}}
+		recompensaOpcoes = {{8602, 1}, {2439, 1}, {8601, 1}}
+	},
+	{
+		nivel = 10,
+		vocacao = {"knight"},
+		recompensa = {2481, 1}
+	},
+	{
+		nivel = 10,
+		vocacao = {"knight"},
+		recompensa = {2465, 1}
+	},
+	{
+		nivel = 10,
+		vocacao = {"knight"},
+		recompensa = {2478, 1}
+	},
+	{
+		nivel = 10,
+		vocacao = {"knight"},
+		recompensa = {2509, 1}
+	},
+	{
+		nivel = 10,
+		vocacao = {"paladin"},
+		recompensa = {2456, 1}
+	},
+	{
+		nivel = 10,
+		vocacao = {"paladin"},
+		recompensa = {2544, 20}
+	},
+	{
+		nivel = 10,
+		vocacao = {"paladin"},
+		recompensa = {2660, 1}
+	},
+	{
+		nivel = 10,
+		vocacao = {"paladin"},
+		recompensa = {8923, 1}
 	}
 }
 
