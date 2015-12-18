@@ -12498,11 +12498,11 @@
 		<attribute key="extradef" value="2" />
 	</item>
 	<item id="7385" article="a" name="crimson sword">
-		<attribute key="description" value="Its blade is very notchy." />
 		<attribute key="weight" value="3600" />
 		<attribute key="defense" value="20" />
-		<attribute key="attack" value="18" />
+		<attribute key="attack" value="28" />
 		<attribute key="weaponType" value="sword" />
+		<attribute key="extradef" value="1" />
 	</item>
 	<item id="7386" article="a" name="mercenary sword">
 		<attribute key="weight" value="6800" />
@@ -15042,11 +15042,11 @@
 		<attribute key="duration" value="120" />
 	</item>
 	<item id="8209" article="a" name="crimson sword">
+		<attribute key="description" value="Its blade is very notchy." />
 		<attribute key="weight" value="3600" />
 		<attribute key="defense" value="20" />
-		<attribute key="attack" value="28" />
+		<attribute key="attack" value="18" />
 		<attribute key="weaponType" value="sword" />
-		<attribute key="extradef" value="1" />
 	</item>
 	<item fromid="8210" toid="8213" article="a" name="cave entrance">
 		<attribute key="floorchange" value="down" />
@@ -20196,11 +20196,11 @@
 		<attribute key="description" value="A goblet forged by the dragon Khax that represents all the knowledge and wisdom." />
 	</item>
 	<item id="11395" article="a" name="crimson sword">
+		<attribute key="description" value="Its blade is very notchy." />
 		<attribute key="weight" value="3600" />
 		<attribute key="defense" value="20" />
-		<attribute key="attack" value="28" />
+		<attribute key="attack" value="18" />
 		<attribute key="weaponType" value="sword" />
-		<attribute key="extradef" value="1" />
 	</item>
 	<item id="11396" name="special flask">
 		<attribute key="weight" value="180" />
