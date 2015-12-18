@@ -6,6 +6,11 @@ local marcasMapa = {
 			descricao = "Templo"
 		},
 		{
+			marca = MAPMARK_TEMPLE,
+			posicao = {x = 607, y = 955, z = 7},
+			descricao = "Igreja"
+		},
+		{
 			marca = MAPMARK_BAG,
 			posicao = {x = 575, y = 956, z = 7},
 			descricao = "Loja de Equipamentos"
@@ -19,6 +24,11 @@ local marcasMapa = {
 			marca = MAPMARK_SHOVEL,
 			posicao = {x = 597, y = 949, z = 7},
 			descricao = "Vendedor de Utilidades"
+		},
+		{
+			marca = MAPMARK_BAG,
+			posicao = {x = 610, y = 921, z = 7},
+			descricao = "Vendedor de Armas à Distância"
 		},
 		{
 			marca = MAPMARK_DOLLAR,
@@ -47,7 +57,7 @@ local marcasMapa = {
 		},
 		{
 			marca = MAPMARK_FLAG,
-			posicao = {x = 633, y = 938, z = 7},
+			posicao = {x = 632, y = 939, z = 7},
 			descricao = "Navio"
 		},
 		{
@@ -129,6 +139,11 @@ local marcasMapa = {
 			marca = MAPMARK_FLAG,
 			posicao = {x = 643, y = 848, z = 7},
 			descricao = "Castelo"
+		},
+		{
+			marca = MAPMARK_FLAG,
+			posicao = {x = 598, y = 1102, z = 7},
+			descricao = "Taverna"
 		}
 	}
 }
