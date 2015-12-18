@@ -9,6 +9,8 @@
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_buyable" value="miraculum,12430,500;" />
-		<parameter key="shop_sellable" value="troll green,2805,25;miraculum,12430,40;" />
+		<parameter key="shop_sellable" value="
+			troll green,2805,25;
+			miraculum,12430,40;" />
 	</parameters>
 </npc>

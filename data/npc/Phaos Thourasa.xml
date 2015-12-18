@@ -8,6 +8,7 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_buyable" value="torch,2050,5;" />
+		<parameter key="shop_buyable" value="
+			torch,2050,5;" />
 	</parameters>
 </npc>

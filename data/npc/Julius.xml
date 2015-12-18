@@ -8,7 +8,13 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_buyable" value="scarf,2661,15;bronze amulet,2172,100;silver amulet,2170,100;" />
-		<parameter key="shop_sellable" value="scarf,2661,5;bronze amulet,2172,45;silver amulet,2170,45;" />
+		<parameter key="shop_buyable" value="
+			scarf,2661,15;
+			bronze amulet,2172,100;
+			silver amulet,2170,100;" />
+		<parameter key="shop_sellable" value="
+			scarf,2661,5;
+			bronze amulet,2172,45;
+			silver amulet,2170,45;" />
 	</parameters>
 </npc>

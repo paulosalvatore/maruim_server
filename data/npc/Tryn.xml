@@ -8,7 +8,27 @@
 		<parameter key="message_farewell" value="Adeus!" />
 		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_buyable" value="wooden shield,2512,15;studded shield,2526,50;brass shield,2511,60;plate shield,2510,110;copper shield,2530,150;bone shield,2541,180;steel shield,2509,230;viking shield,2531,260;battle shield,2513,330;dwarven shield,2525,450;" />
-		<parameter key="shop_sellable" value="wooden shield,2512,5;studded shield,2526,16;brass shield,2511,25;plate shield,2510,45;copper shield,2530,60;bone shield,2541,80;steel shield,2509,80;viking shield,2531,85;battle shield,2513,95;dwarven shield,2525,100;" />
+		<parameter key="shop_buyable" value="
+			wooden shield,2512,15;
+			studded shield,2526,50;
+			brass shield,2511,60;
+			plate shield,2510,110;
+			copper shield,2530,150;
+			bone shield,2541,180;
+			steel shield,2509,230;
+			viking shield,2531,260;
+			battle shield,2513,330;
+			dwarven shield,2525,450;" />
+		<parameter key="shop_sellable" value="
+			wooden shield,2512,5;
+			studded shield,2526,16;
+			brass shield,2511,25;
+			plate shield,2510,45;
+			copper shield,2530,60;
+			bone shield,2541,80;
+			steel shield,2509,80;
+			viking shield,2531,85;
+			battle shield,2513,95;
+			dwarven shield,2525,100;" />
 	</parameters>
 </npc>
