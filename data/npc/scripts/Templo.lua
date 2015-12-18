@@ -37,7 +37,7 @@ function creatureSayCallback(cid, type, msg)
 end
 
 keywordHandler:addKeywords({{"heal"}, {"curar"}}, StdModule.say, {npcHandler = npcHandler, text = "Você está ferida, criança. Eu irei curá-la."},
-	function(player) return player:getHealth() < math.max(300, round(player:getMaxHealth()*0.4)) end,
+	function(player) return Tile(player:getPosition()):hasFlag(TILESTATE_PROTECTIONZONE) and player:getHealth() < math.max(300, round(player:getMaxHealth()*0.4)) end,
 	function(player)
 		local playerHP = player:getHealth()
 		local playerChecarHP = math.max(300, round(player:getMaxHealth()*0.4))
