@@ -67,7 +67,7 @@ RecompensasNivel = {
 	{
 		nivel = 10,
 		vocacao = {"paladin"},
-		recompensa = {2544, 20}
+		recompensa = {2544, 50}
 	},
 	{
 		nivel = 10,
