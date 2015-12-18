@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Lertrac" script="Default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="129" head="0" body="40" legs="19" feet="0" addons="3" />
+	<parameters>
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Eu negocios diversas armas para paladins." />
+		<parameter key="message_sendtrade" value="Aqui está minha lista! Interessado em algo?" /> 
+		<parameter key="message_farewell" value="Adeus!" />
+		<parameter key="message_walkaway" value="Nos vemos depois!" />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
+			spire spear,19390,2;
+			arrow,2544,3;
+			poison arrow,2545,3;
+			flaming arrow,7840,5;
+			earth arrow,7850,5;
+			flash arrow,7838,5;
+			shiver arrow,7839,5;
+			sniper arrow,7364,5;
+			burst arrow,2546,15;
+			bolt,2543,4;
+			piercing bolt,7363,5;
+			vortex bolt,15649,6;
+			power bolt,2547,7;
+			drill bolt,18436,12;
+			spear,2389,9;
+			royal spear,7378,15;
+			throwing knife,2410,23;
+			throwing star,2399,42;
+			bow,2456,350;
+			crossbow,2455,500;" />
+		<parameter key="shop_sellable" value="
+			spire spear,19390,1;
+			spear,2389,3;
+			throwing knife,2410,4;
+			bow,2456,130;
+			crossbow,2455,160;" />
+	</parameters>
+</npc>
