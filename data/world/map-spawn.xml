@@ -368,8 +368,17 @@
 	<spawn centerx="558" centery="910" centerz="5" radius="1">
 		<monster name="Snake" x="0" y="-1" z="5" spawntime="60" />
 	</spawn>
+	<spawn centerx="657" centery="913" centerz="5" radius="1">
+		<npc name="Ganor" x="0" y="0" z="5" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="546" centery="943" centerz="5" radius="1">
+		<npc name="Xanthe" x="0" y="0" z="5" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="545" centery="947" centerz="5" radius="2">
 		<npc name="Drorist Suhariux" x="0" y="-1" z="5" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="450" centery="960" centerz="5" radius="1">
+		<npc name="Lertrac" x="0" y="0" z="5" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="558" centery="1036" centerz="5" radius="1">
 		<monster name="Angry Villager" x="1" y="0" z="5" spawntime="60" />
@@ -1155,6 +1164,9 @@
 	</spawn>
 	<spawn centerx="539" centery="912" centerz="6" radius="1">
 		<monster name="Spider" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="653" centery="913" centerz="6" radius="1">
+		<npc name="Boror" x="0" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="547" centery="916" centerz="6" radius="1">
 		<monster name="Spider" x="0" y="0" z="6" spawntime="60" />
@@ -2476,6 +2488,9 @@
 	<spawn centerx="491" centery="917" centerz="7" radius="1">
 		<monster name="Deer" x="1" y="1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="659" centery="917" centerz="7" radius="1">
+		<npc name="Andor" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="566" centery="920" centerz="7" radius="1">
 		<monster name="Rabbit" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -2535,6 +2550,9 @@
 	</spawn>
 	<spawn centerx="652" centery="951" centerz="7" radius="1">
 		<npc name="Barna, Barba de Cascalho" x="-1" y="0" z="7" spawntime="60" direction="3" />
+	</spawn>
+	<spawn centerx="581" centery="952" centerz="7" radius="1">
+		<npc name="James" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="592" centery="954" centerz="7" radius="1">
 		<monster name="Rabbit" x="-1" y="0" z="7" spawntime="60" />
