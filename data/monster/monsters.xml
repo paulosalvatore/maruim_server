@@ -2,6 +2,7 @@
 <monsters>
 	<monster name="Angry Villager" file="angry villager.xml" />
 	<monster name="Bear" file="bear.xml" />
+	<monster name="Blue Butterfly" file="blue butterfly.xml" />
 	<monster name="Bug" file="bug.xml" />
 	<monster name="Cave Rat" file="cave rat.xml" />
 	<monster name="Deer" file="deer.xml" />
@@ -12,6 +13,7 @@
 	<monster name="Poison Spider" file="poison spider.xml" />
 	<monster name="Rabbit" file="rabbit.xml" />
 	<monster name="Rat" file="rat.xml" />
+	<monster name="Red Butterfly" file="red butterfly.xml" />
 	<monster name="Rotworm" file="rotworm.xml" />
 	<monster name="Skeleton Warrior" file="skeleton warrior.xml" />
 	<monster name="Skeleton" file="skeleton.xml" />
@@ -20,4 +22,5 @@
 	<monster name="Troll" file="troll.xml" />
 	<monster name="Wasp" file="wasp.xml" />
 	<monster name="Wolf" file="wolf.xml" />
+	<monster name="Yellow Butterfly" file="yellow butterfly.xml" />
 </monsters>
