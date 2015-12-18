@@ -8,7 +8,12 @@ local marcasMapa = {
 		{
 			marca = MAPMARK_BAG,
 			posicao = {x = 575, y = 956, z = 7},
-			descricao = "Vendedor de Armaduras"
+			descricao = "Loja de Equipamentos"
+		},
+		{
+			marca = MAPMARK_BAG,
+			posicao = {x = 581, y = 952, z = 7},
+			descricao = "Vendedor de Comidas"
 		},
 		{
 			marca = MAPMARK_SHOVEL,
@@ -17,53 +22,48 @@ local marcasMapa = {
 		},
 		{
 			marca = MAPMARK_DOLLAR,
-			posicao = {x = 559, y = 944, z = 7},
-			descricao = "Comprador de Produtos de Criaturas"
+			posicao = {x = 564, y = 946, z = 7},
+			descricao = "Compradores de Produtos de Criaturas"
 		},
 		{
 			marca = MAPMARK_BAG,
-			posicao = {x = 573, y = 930, z = 7},
-			descricao = "Comprador de Ervas"
+			posicao = {x = 570, y = 922, z = 7},
+			descricao = "Loja de Ervas"
+		},
+		{
+			marca = MAPMARK_BAG,
+			posicao = {x = 580, y = 934, z = 7},
+			descricao = "Loja de Amuletos/Colares"
 		},
 		{
 			marca = MAPMARK_BAG,
 			posicao = {x = 651, y = 951, z = 7},
-			descricao = "NPC Ferreiro"
-		},
-		{
-			marca = MAPMARK_BAG,
-			posicao = {x = 657, y = 949, z = 6},
-			descricao = "Ferreiro de Knight"
+			descricao = "Loja de Armas"
 		},
 		{
 			marca = MAPMARK_BAG,
 			posicao = {x = 649, y = 956, z = 6},
-			descricao = "Ferreiro de Paladin"
+			descricao = "Loja de Escudos"
 		},
 		{
-			marca = MAPMARK_BAG,
-			posicao = {x = 588, y = 976, z = 8},
-			descricao = "Alquimista"
-		},
-		{
-			marca = MAPMARK_BAG,
-			posicao = {x = 580, y = 954, z = 6},
-			descricao = "Alfaiate"
+			marca = MAPMARK_FLAG,
+			posicao = {x = 633, y = 938, z = 7},
+			descricao = "Navio"
 		},
 		{
 			marca = MAPMARK_FLAG,
 			posicao = {x = 633, y = 938, z = 6},
-			descricao = "Barqueiro para Main Land"
+			descricao = "Capitão do Navio"
 		},
 		{
 			marca = MAPMARK_FLAG,
 			posicao = {x = 593, y = 1019, z = 7},
-			descricao = "Parte Baixa da Ilha"
+			descricao = "Acesso à Parte Baixa da Ilha"
 		},
 		{
 			marca = MAPMARK_FLAG,
 			posicao = {x = 600, y = 1085, z = 7},
-			descricao = "Parte Alta da Ilha"
+			descricao = "Acesso à Parte Alta da Ilha"
 		},
 		{
 			marca = MAPMARK_STAR,
@@ -73,7 +73,7 @@ local marcasMapa = {
 		{
 			marca = MAPMARK_STAR,
 			posicao = {x = 449, y = 957, z = 7},
-			descricao = "Guilda de Paladin"
+			descricao = "Guilda dos Paladins"
 		},
 		{
 			marca = MAPMARK_STAR,
@@ -83,7 +83,7 @@ local marcasMapa = {
 		{
 			marca = MAPMARK_STAR,
 			posicao = {x = 537, y = 945, z = 7},
-			descricao = "Guilda de Druid"
+			descricao = "Guilda dos Druids"
 		},
 		{
 			marca = MAPMARK_STAR,
@@ -93,7 +93,7 @@ local marcasMapa = {
 		{
 			marca = MAPMARK_STAR,
 			posicao = {x = 605, y = 974, z = 7},
-			descricao = "Guilda de Sorcerer"
+			descricao = "Guilda dos Sorcerers"
 		},
 		{
 			marca = MAPMARK_STAR,
@@ -103,7 +103,7 @@ local marcasMapa = {
 		{
 			marca = MAPMARK_STAR,
 			posicao = {x = 642, y = 908, z = 7},
-			descricao = "Guilda de Knight"
+			descricao = "Guilda dos Knights"
 		},
 		{
 			marca = MAPMARK_SKULL,
@@ -123,7 +123,12 @@ local marcasMapa = {
 		{
 			marca = MAPMARK_FLAG,
 			posicao = {x = 485, y = 946, z = 7},
-			descricao = "Vilajero dos Elfos"
+			descricao = "Lar dos Primeiros Elfos"
+		},
+		{
+			marca = MAPMARK_FLAG,
+			posicao = {x = 643, y = 848, z = 7},
+			descricao = "Castelo"
 		}
 	}
 }

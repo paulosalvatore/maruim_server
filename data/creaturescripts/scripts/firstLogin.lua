@@ -33,6 +33,8 @@ function onLogin(player)
 		item:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, "Use it only when you need a rope or a shovel.")
 		item:setActionId(3901)
 
+		player:adicionarMarcasMapa(1)
+
 		player:sendOutfitWindow()
 	end
 
