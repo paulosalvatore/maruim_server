@@ -22,7 +22,7 @@ destinos = {
 	["civitaten_barco"] = {
 		nome = "Civitaten",
 		posicao = {x = 882, y = 1940, z = 6},
-		custo = 100,
+		custo = 60,
 		levelNecessario = 0
 	},
 	["udecoat"] = {
@@ -34,7 +34,7 @@ destinos = {
 	["otto"] = {
 		nome = "Ôttô",
 		posicao = {x = 834, y = 1258, z = 6},
-		custo = 100,
+		custo = 60,
 		levelNecessario = 0,
 		palavrasChave = {"otto", "ôttô"}
 	},
@@ -53,7 +53,7 @@ destinos = {
 	["hyalakur_barco"] = {
 		nome = "Hyalakur",
 		posicao = {x = 1102, y = 1512, z = 6},
-		custo = 100,
+		custo = 60,
 		levelNecessario = 0
 	},
 	["lorn"] = {
