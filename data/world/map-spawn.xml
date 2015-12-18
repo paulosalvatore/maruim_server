@@ -283,14 +283,14 @@
 	<spawn centerx="974" centery="1905" centerz="4" radius="1">
 		<npc name="Mood Neva" x="0" y="0" z="4" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="950" centery="1906" centerz="4" radius="1">
-		<monster name="Weak Fire Elemental" x="0" y="0" z="4" spawntime="60" />
+	<spawn centerx="951" centery="1906" centerz="4" radius="1">
+		<monster name="Weak Fire Elemental" x="-1" y="0" z="4" spawntime="60" />
 	</spawn>
-	<spawn centerx="942" centery="1910" centerz="4" radius="1">
-		<monster name="Weak Fire Elemental" x="0" y="0" z="4" spawntime="60" />
+	<spawn centerx="943" centery="1910" centerz="4" radius="1">
+		<monster name="Weak Fire Elemental" x="-1" y="0" z="4" spawntime="60" />
 	</spawn>
-	<spawn centerx="949" centery="1919" centerz="4" radius="1">
-		<monster name="Weak Fire Elemental" x="0" y="0" z="4" spawntime="60" />
+	<spawn centerx="948" centery="1919" centerz="4" radius="1">
+		<monster name="Weak Fire Elemental" x="1" y="0" z="4" spawntime="60" />
 	</spawn>
 	<spawn centerx="1406" centery="2018" centerz="4" radius="1">
 		<monster name="Pirate Buccaneer" x="-1" y="0" z="4" spawntime="60" />
@@ -989,11 +989,17 @@
 	<spawn centerx="964" centery="1899" centerz="5" radius="1">
 		<npc name="Yugan Peffon" x="1" y="0" z="5" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="947" centery="1903" centerz="5" radius="1">
+		<monster name="Weak Fire Elemental" x="-1" y="0" z="5" spawntime="60" />
+	</spawn>
 	<spawn centerx="1113" centery="1910" centerz="5" radius="1">
 		<monster name="Kongra" x="0" y="0" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="965" centery="1911" centerz="5" radius="1">
 		<npc name="Quimela Sedit" x="0" y="0" z="5" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="938" centery="1912" centerz="5" radius="1">
+		<monster name="Weak Fire Elemental" x="-1" y="0" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="1123" centery="1921" centerz="5" radius="2">
 		<monster name="Kongra" x="-1" y="-2" z="5" spawntime="60" />
@@ -1917,6 +1923,12 @@
 	<spawn centerx="467" centery="1898" centerz="6" radius="1">
 		<monster name="Ice Golem" x="-1" y="0" z="6" spawntime="60" />
 	</spawn>
+	<spawn centerx="947" centery="1899" centerz="6" radius="1">
+		<monster name="Weak Fire Elemental" x="-1" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="939" centery="1903" centerz="6" radius="1">
+		<monster name="Weak Fire Elemental" x="-1" y="0" z="6" spawntime="60" />
+	</spawn>
 	<spawn centerx="1392" centery="1905" centerz="6" radius="1">
 		<npc name="Frin Sale" x="-1" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
@@ -1953,6 +1965,9 @@
 	</spawn>
 	<spawn centerx="1333" centery="1912" centerz="6" radius="1">
 		<npc name="Sionizoris Rungo" x="0" y="1" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="936" centery="1913" centerz="6" radius="1">
+		<monster name="Weak Fire Elemental" x="-1" y="0" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="1119" centery="1917" centerz="6" radius="2">
 		<monster name="Sibang" x="2" y="-1" z="6" spawntime="60" />
@@ -2501,11 +2516,11 @@
 	<spawn centerx="566" centery="920" centerz="7" radius="1">
 		<monster name="Rabbit" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="610" centery="921" centerz="7" radius="1">
-		<npc name="Artanis" x="0" y="0" z="7" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="544" centery="922" centerz="7" radius="1">
 		<monster name="Rabbit" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="610" centery="922" centerz="7" radius="1">
+		<npc name="Artanis" x="0" y="-1" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="466" centery="923" centerz="7" radius="1">
 		<monster name="Deer" x="0" y="0" z="7" spawntime="60" />
@@ -7070,6 +7085,9 @@
 	<spawn centerx="478" centery="1908" centerz="7" radius="1">
 		<monster name="Polar Bear" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="934" centery="1908" centerz="7" radius="1">
+		<monster name="Weak Fire Elemental" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="1090" centery="1908" centerz="7" radius="1">
 		<monster name="Cobra" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
@@ -7113,6 +7131,9 @@
 	</spawn>
 	<spawn centerx="1249" centery="1910" centerz="7" radius="1">
 		<monster name="Spit Nettle" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="936" centery="1911" centerz="7" radius="1">
+		<monster name="Weak Fire Elemental" x="-1" y="1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1056" centery="1911" centerz="7" radius="1">
 		<monster name="Lizard Sentinel" x="-1" y="1" z="7" spawntime="50" />
@@ -12961,14 +12982,14 @@
 	<spawn centerx="1265" centery="1847" centerz="8" radius="1">
 		<monster name="Crab" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="973" centery="1848" centerz="8" radius="1">
+		<monster name="Fire Elemental" x="1" y="0" z="8" spawntime="110" />
+	</spawn>
 	<spawn centerx="1162" centery="1848" centerz="8" radius="1">
 		<monster name="Tarantula" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1230" centery="1848" centerz="8" radius="1">
 		<monster name="Crab" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="975" centery="1849" centerz="8" radius="1">
-		<monster name="Fire Elemental" x="-1" y="-1" z="8" spawntime="110" />
 	</spawn>
 	<spawn centerx="1092" centery="1849" centerz="8" radius="2">
 		<monster name="Rotworm" x="-1" y="-1" z="8" spawntime="60" />
@@ -13153,6 +13174,9 @@
 	<spawn centerx="1182" centery="1875" centerz="8" radius="1">
 		<monster name="Tarantula" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="958" centery="1877" centerz="8" radius="1">
+		<monster name="Fire Elemental" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1188" centery="1878" centerz="8" radius="2">
 		<monster name="Poison Spider" x="-2" y="0" z="8" spawntime="60" />
 		<monster name="Poison Spider" x="2" y="0" z="8" spawntime="60" />
@@ -13314,6 +13338,9 @@
 	<spawn centerx="1381" centery="1901" centerz="8" radius="1">
 		<monster name="Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="932" centery="1902" centerz="8" radius="1">
+		<monster name="Fire Elemental" x="1" y="0" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="921" centery="1903" centerz="8" radius="1">
 		<monster name="Thornfire Wolf" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
@@ -13326,6 +13353,9 @@
 	<spawn centerx="1039" centery="1904" centerz="8" radius="1">
 		<monster name="Lizard Legionnaire" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Lizard Legionnaire" x="1" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="930" centery="1905" centerz="8" radius="1">
+		<monster name="Weak Fire Elemental" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1037" centery="1906" centerz="8" radius="1">
 		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
@@ -13348,6 +13378,9 @@
 	</spawn>
 	<spawn centerx="963" centery="1907" centerz="8" radius="1">
 		<monster name="Thornfire Wolf" x="-1" y="-1" z="8" spawntime="110" />
+	</spawn>
+	<spawn centerx="969" centery="1907" centerz="8" radius="1">
+		<monster name="Fire Elemental" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="977" centery="1907" centerz="8" radius="1">
 		<monster name="Thornfire Wolf" x="1" y="-1" z="8" spawntime="60" />
@@ -13444,6 +13477,9 @@
 	<spawn centerx="1497" centery="1915" centerz="8" radius="2">
 		<monster name="Crocodile" x="2" y="-2" z="8" spawntime="60" />
 		<monster name="Crocodile" x="-1" y="2" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="934" centery="1916" centerz="8" radius="1">
+		<monster name="Fire Elemental" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1041" centery="1916" centerz="8" radius="1">
 		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
@@ -16956,6 +16992,9 @@
 	<spawn centerx="1238" centery="1905" centerz="9" radius="1">
 		<monster name="Smuggler" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="923" centery="1906" centerz="9" radius="1">
+		<monster name="Fire Elemental" x="1" y="-1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1373" centery="1906" centerz="9" radius="1" />
 	<spawn centerx="1379" centery="1906" centerz="9" radius="1">
 		<monster name="Swamp Troll" x="0" y="0" z="9" spawntime="60" />
@@ -16968,6 +17007,9 @@
 	</spawn>
 	<spawn centerx="1373" centery="1911" centerz="9" radius="1">
 		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="922" centery="1912" centerz="9" radius="1">
+		<monster name="Fire Elemental" x="1" y="-1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1387" centery="1913" centerz="9" radius="1">
 		<monster name="Swamp Troll" x="0" y="0" z="9" spawntime="60" />
@@ -17000,6 +17042,9 @@
 	<spawn centerx="1361" centery="1919" centerz="9" radius="1">
 		<monster name="Swamp Troll" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="918" centery="1920" centerz="9" radius="1">
+		<monster name="Fire Elemental" x="0" y="-1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1180" centery="1920" centerz="9" radius="1">
 		<monster name="Blood Crab" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
@@ -17008,6 +17053,12 @@
 	</spawn>
 	<spawn centerx="1196" centery="1921" centerz="9" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="909" centery="1922" centerz="9" radius="1">
+		<monster name="Fire Elemental" x="1" y="1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="928" centery="1922" centerz="9" radius="1">
+		<monster name="Fire Elemental" x="-1" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1182" centery="1923" centerz="9" radius="1">
 		<monster name="Tortoise" x="0" y="0" z="9" spawntime="60" />
@@ -17022,8 +17073,17 @@
 	<spawn centerx="1368" centery="1925" centerz="9" radius="1">
 		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="918" centery="1926" centerz="9" radius="1">
+		<monster name="Fire Elemental" x="1" y="1" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="906" centery="1927" centerz="9" radius="1">
+		<monster name="Fire Elemental" x="-1" y="1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1374" centery="1928" centerz="9" radius="1">
 		<monster name="Swamp Troll" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="935" centery="1930" centerz="9" radius="1">
+		<monster name="Fire Elemental" x="-1" y="1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1363" centery="1930" centerz="9" radius="1">
 		<monster name="Swamp Troll" x="0" y="0" z="9" spawntime="60" />
@@ -17056,6 +17116,9 @@
 	</spawn>
 	<spawn centerx="1379" centery="1939" centerz="9" radius="1">
 		<monster name="Swamp Troll" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="933" centery="1941" centerz="9" radius="1">
+		<monster name="Fire Elemental" x="1" y="1" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1245" centery="1942" centerz="9" radius="1">
 		<monster name="Bandit" x="0" y="0" z="9" spawntime="60" />
@@ -17110,6 +17173,9 @@
 	<spawn centerx="1395" centery="1953" centerz="9" radius="1">
 		<monster name="Poison Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
+	<spawn centerx="929" centery="1954" centerz="9" radius="1">
+		<monster name="Fire Elemental" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1340" centery="1954" centerz="9" radius="1">
 		<monster name="Swamp Troll" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
@@ -17124,6 +17190,9 @@
 		<monster name="Swamp Troll" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
 	<spawn centerx="1335" centery="1958" centerz="9" radius="1" />
+	<spawn centerx="938" centery="1960" centerz="9" radius="1">
+		<monster name="Fire Elemental" x="-1" y="-1" z="9" spawntime="60" />
+	</spawn>
 	<spawn centerx="1398" centery="1961" centerz="9" radius="1">
 		<monster name="Swamp Troll" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
