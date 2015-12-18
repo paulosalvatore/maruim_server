@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Ganor" script="Default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="131" head="79" body="21" legs="0" feet="95" addons="1" />
+	<parameters>
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Eu compro e vendo diversos tipos de clavas poderosas. Interessado em algo, cavaleiro?" />
+		<parameter key="message_sendtrade" value="Aqui está a lista!" /> 
+		<parameter key="message_farewell" value="Adeus!" />
+		<parameter key="message_walkaway" value="Nos vemos depois!" />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
+			small axe,2559,6;
+			hand axe,2380,7;
+			axe,2386,20;
+			hatchet,2388,65;
+			daramian axe,2441,200;
+			steel axe,8601,500;
+			battle axe,2378,535;
+			barbarian axe,2429,590;
+			obsidian lance,2425,2500;
+			zaoan halberd,11323,6000;" />
+		<parameter key="shop_sellable" value="
+			small axe,2559,5;
+			hand axe,2380,5;
+			axe,2386,10;
+			hatchet,2388,25;
+			daramian axe,2441,105;
+			steel axe,8601,100;
+			battle axe,2378,110;
+			barbarian axe,2429,185;
+			orcish axe,2428,350;
+			obsidian lance,2425,500;
+			zaoan halberd,11323,1000;" />
+	</parameters>
+</npc>

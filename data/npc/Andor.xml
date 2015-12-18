@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Andor" script="Default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="131" head="115" body="57" legs="58" feet="116" addons="1" />
+	<parameters>
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Eu compro e vendo diversos tipos de clavas poderosas. Interessado em algo, cavaleiro?" />
+		<parameter key="message_sendtrade" value="Aqui está a lista!" /> 
+		<parameter key="message_farewell" value="Adeus!" />
+		<parameter key="message_walkaway" value="Nos vemos depois!" />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
+			studded club,2448,15;
+			bone club,2449,25;
+			light mace,2437,50;
+			mace,2398,65;
+			iron hammer,2422,230;
+			daramian mace,2439,500;
+			battle hammer,2417,550;
+			morning star,2394,630;
+			clerical mace,2423,720;
+			dragon hammer,2434,2500;" />
+		<parameter key="shop_sellable" value="
+			studded club,2448,5;
+			bone club,2449,12;
+			light mace,2437,25;
+			mace,2398,30;
+			iron hammer,2422,105;
+			daramian mace,2439,100;
+			battle hammer,2417,120;
+			morning star,2394,150;
+			clerical mace,2423,170;
+			dragon hammer,2434,1700;" />
+	</parameters>
+</npc>
