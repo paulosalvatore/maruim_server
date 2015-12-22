@@ -6,7 +6,13 @@
 	<monster name="Bug" file="bug.xml" />
 	<monster name="Cave Rat" file="cave rat.xml" />
 	<monster name="Deer" file="deer.xml" />
+	<monster name="Emerald Damselfly" file="emerald damselfly.xml" />
+	<monster name="Gnarlhound" file="gnarlhound.xml" />
+	<monster name="Goblin Assassin" file="goblin assassin.xml" />
+	<monster name="Goblin Scavenger" file="goblin scavenger.xml" />
 	<monster name="Goblin" file="goblin.xml" />
+	<monster name="Island Troll" file="island troll.xml" />
+	<monster name="Leaf Golem" file="leaf golem.xml" />
 	<monster name="Minotaur" file="minotaur.xml" />
 	<monster name="Orc Spearman" file="orc spearman.xml" />
 	<monster name="Orc" file="orc.xml" />
@@ -15,12 +21,17 @@
 	<monster name="Rat" file="rat.xml" />
 	<monster name="Red Butterfly" file="red butterfly.xml" />
 	<monster name="Rotworm" file="rotworm.xml" />
+	<monster name="Sheep" file="sheep.xml" />
 	<monster name="Skeleton Warrior" file="skeleton warrior.xml" />
 	<monster name="Skeleton" file="skeleton.xml" />
+	<monster name="Slime" file="slime.xml" />
 	<monster name="Snake" file="snake.xml" />
 	<monster name="Spider" file="spider.xml" />
+	<monster name="Swamp Troll" file="swamp troll.xml" />
+	<monster name="Swampling" file="swampling.xml" />
 	<monster name="Troll" file="troll.xml" />
 	<monster name="Wasp" file="wasp.xml" />
+	<monster name="Wisp" file="wisp.xml" />
 	<monster name="Wolf" file="wolf.xml" />
 	<monster name="Yellow Butterfly" file="yellow butterfly.xml" />
 </monsters>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Island Troll" nameDescription="an island troll" race="blood" experience="20" speed="190" manacost="290">
+	<health now="50" max="50" />
+	<look type="282" corpse="7930" />
+	<targetchange interval="5000" chance="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag staticattack="90" />
+		<flag targetdistance="1" />
+		<flag runonhealth="15" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="0" max="-10" />
+	</attacks>
+	<defenses armor="10" defense="10" />
+	<voices interval="5000" chance="10">
+		<voice sentence="Hmmm, turtles" />
+		<voice sentence="Hmmm, dogs" />
+		<voice sentence="Hmmm, worms" />
+		<voice sentence="Groar" />
+		<voice sentence="Gruntz!" />
+	</voices>
+	<loot>
+		<item id="10606" countmax="3" chance="81000" /><!-- Bunch of Troll Hair -->
+		<item id="2666" countmax="2" chance="43000" /><!-- Meat -->
+		<item id="5901" chance="32600" /><!-- Wood -->
+		<item id="2461" chance="26300" /><!-- Leather Helmet -->
+		<item id="2380" chance="24800" /><!-- Hand Axe -->
+		<item id="19390" countmax="2" chance="23000" /><!-- Spire Spear -->
+		<item id="5097" chance="21470" /><!-- Mango -->
+		<item id="2120" chance="17950" /><!-- Rope -->
+		<item id="2512" chance="16980" /><!-- Wooden Shield -->
+		<item id="2448" chance="15720" /><!-- Studded Club -->
+		<item id="2389" chance="12940" /><!-- Spear -->
+		<item id="2643" chance="12510" /><!-- Leather Boots -->
+		<item id="2805" chance="11730" /><!-- Troll Green -->
+		<item id="12471" chance="2630" /><!-- Trollroot -->
+		<item id="7963" chance="2410" /><!-- Marlin -->
+		<item id="2170" chance="2140" /><!-- Silver Amulet -->
+	</loot>
+	<script>
+		<event name="HealthChangeCriatura"/>
+		<event name="CriaturaMorta"/>
+	</script>
+</monster>

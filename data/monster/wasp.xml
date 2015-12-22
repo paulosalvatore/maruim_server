@@ -31,8 +31,8 @@
 		<voice sentence="Bssssss" />
 	</voices>
 	<loot>
-		<item id="5902" countmax="2" chance="30000" /><!-- Honeycomb -->
-		<item id="9676" chance="10000" /><!-- Sample of Sand Wasp Honey -->
+		<item id="5902" chance="31965" /><!-- Honeycomb -->
+		<item id="9676" chance="13573" /><!-- Sample of Sand Wasp Honey -->
 	</loot>
 	<script>
 		<event name="HealthChangeCriatura"/>
