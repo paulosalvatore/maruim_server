@@ -60,11 +60,11 @@
 	<spawn centerx="928" centery="1902" centerz="3" radius="1">
 		<npc name="Gundo Vangidma" x="-1" y="-1" z="3" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="984" centery="1914" centerz="3" radius="1">
-		<npc name="Freenya Irin" x="0" y="0" z="3" spawntime="60" direction="2" />
+	<spawn centerx="984" centery="1913" centerz="3" radius="1">
+		<npc name="Freenya Irin" x="0" y="1" z="3" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="954" centery="1927" centerz="3" radius="1">
-		<npc name="Gren" x="-1" y="0" z="3" spawntime="60" direction="2" />
+	<spawn centerx="953" centery="1927" centerz="3" radius="1">
+		<npc name="Eladriani Ewor" x="0" y="-1" z="3" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="425" centery="885" centerz="4" radius="1">
 		<monster name="Poison Spider" x="-1" y="-1" z="4" spawntime="60" />
@@ -280,11 +280,11 @@
 	<spawn centerx="959" centery="1895" centerz="4" radius="1">
 		<npc name="Meldo Shairine" x="1" y="0" z="4" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="974" centery="1905" centerz="4" radius="1">
-		<npc name="Mood Neva" x="0" y="0" z="4" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="951" centery="1906" centerz="4" radius="1">
 		<monster name="Weak Fire Elemental" x="-1" y="0" z="4" spawntime="60" />
+	</spawn>
+	<spawn centerx="975" centery="1906" centerz="4" radius="1">
+		<npc name="Mood Neva" x="-1" y="1" z="4" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="943" centery="1910" centerz="4" radius="1">
 		<monster name="Weak Fire Elemental" x="-1" y="0" z="4" spawntime="60" />
@@ -995,8 +995,8 @@
 	<spawn centerx="1113" centery="1910" centerz="5" radius="1">
 		<monster name="Kongra" x="0" y="0" z="5" spawntime="60" />
 	</spawn>
-	<spawn centerx="965" centery="1911" centerz="5" radius="1">
-		<npc name="Quimela Sedit" x="0" y="0" z="5" spawntime="60" direction="2" />
+	<spawn centerx="964" centery="1911" centerz="5" radius="1">
+		<npc name="Quimela Sedit" x="1" y="0" z="5" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="938" centery="1912" centerz="5" radius="1">
 		<monster name="Weak Fire Elemental" x="-1" y="0" z="5" spawntime="60" />
@@ -1011,11 +1011,8 @@
 		<monster name="Kongra" x="-2" y="2" z="5" spawntime="60" />
 		<monster name="Kongra" x="2" y="2" z="5" spawntime="60" />
 	</spawn>
-	<spawn centerx="935" centery="1925" centerz="5" radius="1">
-		<npc name="Maurice" x="0" y="0" z="5" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="944" centery="1928" centerz="5" radius="1">
-		<npc name="Eladriani Ewor" x="-1" y="0" z="5" spawntime="60" direction="2" />
+	<spawn centerx="934" centery="1925" centerz="5" radius="1">
+		<npc name="Maurice" x="1" y="0" z="5" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="593" centery="1945" centerz="5" radius="1">
 		<monster name="Husky" x="0" y="0" z="5" spawntime="60" />
@@ -1990,6 +1987,9 @@
 		<monster name="Frost Troll" x="0" y="-2" z="6" spawntime="60" />
 		<monster name="Frost Troll" x="2" y="2" z="6" spawntime="60" />
 	</spawn>
+	<spawn centerx="934" centery="1927" centerz="6" radius="1">
+		<npc name="Beth" x="-1" y="-1" z="6" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="1119" centery="1928" centerz="6" radius="2">
 		<monster name="Merlkin" x="-1" y="-2" z="6" spawntime="60" />
 		<monster name="Merlkin" x="2" y="1" z="6" spawntime="60" />
@@ -2572,8 +2572,8 @@
 	<spawn centerx="652" centery="951" centerz="7" radius="1">
 		<npc name="Barna, Barba de Cascalho" x="-1" y="0" z="7" spawntime="60" direction="3" />
 	</spawn>
-	<spawn centerx="581" centery="952" centerz="7" radius="1">
-		<npc name="James" x="0" y="0" z="7" spawntime="60" direction="2" />
+	<spawn centerx="580" centery="952" centerz="7" radius="1">
+		<npc name="James" x="1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="592" centery="954" centerz="7" radius="1">
 		<monster name="Rabbit" x="-1" y="0" z="7" spawntime="60" />
