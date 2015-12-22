@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <npc name="Seynos Malia" script="Default.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
-	<look type="153" head="131" body="131" legs="131" feet="131" addons="2" />
+	<look type="128" head="79" body="28" legs="108" feet="95" addons="0" />
 	<parameters>
-		<parameter key="message_greet" value="Olá |PLAYERNAME|, Como vai você?" />
-		<parameter key="message_farewell" value="Até breve." />
-		<parameter key="message_walkaway" value="Que rude!!" />
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja." />
+		<parameter key="message_sendtrade" value="Tenho diversos bons itens para aventureiros, haha, dê uma olhada!" /> 
+		<parameter key="message_farewell" value="Adeus!" />
+		<parameter key="message_walkaway" value="Nos vemos depois!" />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
+			fish,2667,5;" />
+		<parameter key="shop_sellable" value="
+			green perch,7159,100;
+			marlin,7963,800;
+			northern pike,2669,100;
+			rainbow trout,7158,100;
+			shimmer swimmer,13546,3000;" />
 	</parameters>
 </npc>

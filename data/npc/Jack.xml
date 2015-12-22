@@ -10,8 +10,8 @@
 		<parameter key="module_shop" value="1" />
 		<parameter key="shop_sellable" value="
 			mouldy cheese,2235,40;
-			honeycomb,5902,40;
 			trollroot,12471,40;
+			honeycomb,5902,40;
 			sample of sand wasp honey,9676,45;
 			bear paw,5896,50;
 			wolf paw,5897,50;

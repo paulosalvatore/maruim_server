@@ -3,7 +3,12 @@
 	<health now="100" max="100" />
 	<look type="146" head="1" body="19" legs="65" feet="57" addons="3" />
 	<parameters>
-		<parameter key="shop_buyable" value="" />
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Podemos realizar uma negociação caso você tenha madeiras de boa qualidade para me vender." />
+		<parameter key="message_sendtrade" value="Interessado em negociar comigo? É pra já!" /> 
+		<parameter key="message_farewell" value="Adeus!" />
+		<parameter key="message_walkaway" value="Nos vemos depois!" />
 		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="
+			wood,5901,40;" />
 	</parameters>
 </npc>

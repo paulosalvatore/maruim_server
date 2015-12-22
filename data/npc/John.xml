@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="John" script="Default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="325" head="97" body="120" legs="114" feet="114" addons="2" />
+	<parameters>
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja." />
+		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?" /> 
+		<parameter key="message_farewell" value="Adeus!" />
+		<parameter key="message_walkaway" value="Nos vemos depois!" />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="
+			bunch of troll hair,10606,4;
+			twigs,2245,8;
+			goblin ear,12495,15;
+			bone,2230,20;
+			swamp grass,10603,20;
+			swampling moss,20102,20;
+			damselfly wing,19738,20;
+			damselfly eye,19743,25;
+			troll green,2805,25;
+			fir cone,21428,25;
+			shaggy tail,11324,25;
+			piece of swampling wood,20103,30;
+			dowser,21427,35;
+			mouldy cheese,2235,42;
+			trollroot,12471,44;
+			honeycomb,5902,45;
+			sample of sand wasp honey,9676,50;
+			poisonous slime,10557,50;
+			wolf paw,5897,60;" />
+	</parameters>
+</npc>

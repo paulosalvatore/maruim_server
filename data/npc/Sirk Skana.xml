@@ -30,7 +30,7 @@
 			brass legs,2478,195;
 			plate legs,2647,350;
 			sandals,2642,4;
-			leather boots,2643,4" />
+			leather boots,2643,4;" />
 		<parameter key="shop_sellable" value="
 			leather helmet,2461,4;
 			chain helmet,2458,17;
@@ -53,6 +53,6 @@
 			brass legs,2478,49;
 			plate legs,2647,115;
 			sandals,2642,2;
-			leather boots,2643,2" />
+			leather boots,2643,2;" />
 	</parameters>
 </npc>
