@@ -5,12 +5,14 @@
 	<monster name="Blue Butterfly" file="blue butterfly.xml" />
 	<monster name="Bug" file="bug.xml" />
 	<monster name="Cave Rat" file="cave rat.xml" />
+	<monster name="Crab" file="crab.xml" />
 	<monster name="Deer" file="deer.xml" />
 	<monster name="Emerald Damselfly" file="emerald damselfly.xml" />
 	<monster name="Gnarlhound" file="gnarlhound.xml" />
 	<monster name="Goblin Assassin" file="goblin assassin.xml" />
 	<monster name="Goblin Scavenger" file="goblin scavenger.xml" />
 	<monster name="Goblin" file="goblin.xml" />
+	<monster name="Island Tortoise" file="island tortoise.xml" />
 	<monster name="Island Troll" file="island troll.xml" />
 	<monster name="Leaf Golem" file="leaf golem.xml" />
 	<monster name="Minotaur" file="minotaur.xml" />

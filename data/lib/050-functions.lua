@@ -204,7 +204,7 @@ end
 function Player:addMoneyBank(amount)
 	local balancoJogador = self:getBankBalance() + amount
 	self:setBankBalance(balancoJogador)
-	self:sendTextMessage(MESSAGE_INFO_DESCR, "Você recebeu " .. amount .. " gold coin" .. formatarPlural(amount) .. " em sua conta bancária. Seu balanço é " .. balancoJogador .. " gold coin" .. formatarPlural(balancoJogador) .. ".")
+	self:sendTextMessage(MESSAGE_EVENT_DEFAULT, "Você recebeu " .. amount .. " gold coin" .. formatarPlural(amount) .. " em sua conta bancária. Seu balanço é " .. balancoJogador .. " gold coin" .. formatarPlural(balancoJogador) .. ".")
 	return true
 end
 
