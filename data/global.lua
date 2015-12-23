@@ -1,6 +1,7 @@
 dofile('data/lib/lib.lua')
 dofile('data/lib/050-functions.lua')
 dofile('data/lib/051-storages.lua')
+dofile('data/lib/itens.lua')
 dofile('data/lib/080-npcs.lua')
 dofile('data/lib/090-reputacao.lua')
 dofile('data/lib/091-tasks.lua')

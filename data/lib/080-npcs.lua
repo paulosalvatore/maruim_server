@@ -1,5 +1,60 @@
 atualizarNpcsBanco = false
 
+frases = {
+	["correio"] = {
+		["greet"] = "Olá |PLAYERNAME|. Seja bem-vindo aos correios.",
+		["trade"] = "Deseja mandar algum presente?"
+	}
+}
+
+comerciantes = {
+	["Freenya Irin"] = { -- Vendedor de Utilidades - Civitaten
+		["itens"] = {
+			["c"] = {"utilidades"}
+		}
+	},
+	["Jack"] = { -- Comprador de Produtos "Raros" de Criaturas - Maruim Island
+		["itens"] = {
+			["v"] = {2235, 5878, 5896, 5897, 5902, 8971, 9676, 11113, 12471}
+		}
+	},
+	["Jane"] = { -- Comprador de Produtos "Comuns" de Criaturas - Maruim Island
+		["itens"] = {
+			["v"] = {2230, 2813, 2817, 3086, 3119, 8859, 10606, 10609, 11214, 12382, 12435, 12437, 12441, 12495, 13159}
+		}
+	},
+	["Kalfafiny Niduril"] = { -- Vendedor de Utilidades - Ôttô
+		["itens"] = {
+			["c"] = {"utilidades"}
+		}
+	},
+	["Maurice"] = { -- Comprador de Produtos de Criaturas - Civitaten
+		["itens"] = {
+			["v"] = {5678, 5899, 11189}
+		}
+	},
+	["Mood Neva"] = { -- Carteiro - Civitaten
+		["itens"] = {
+			["c"] = {"correio"}
+		},
+		["frases"] = frases["correio"]
+	},
+	["Phaos Thourasa"] = { -- Vendedor de Utilidades - Maruim Island
+		["itens"] = {
+			["c"] = {"utilidades", 2050}
+		}
+	},
+	["Seynos Malia"] = { -- Peixeiro - Maruim Island (Parte Baixa da Ilha)
+		["itens"] = {
+			["c"] = {2667},
+			["v"] = {2669, 7158, 7159, 7963, 13546}
+		},
+		["frases"] = {
+			["trade"] = "Tenho diversos bons itens para aventureiros, haha, dê uma olhada!"
+		}
+	}
+}
+
 destinos = {
 	["maruim_island"] = {
 		nome = "Maruim Island",

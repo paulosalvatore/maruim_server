@@ -1,28 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Jane" script="Default.lua" walkinterval="2000" floorchange="0">
+<npc name="Jane" script="Comerciante.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="142" head="131" body="116" legs="114" feet="115" addons="3" mount="370" />
-	<parameters>
-		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja." />
-		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?" /> 
-		<parameter key="message_farewell" value="Adeus!" />
-		<parameter key="message_walkaway" value="Nos vemos depois!" />
-		<parameter key="module_shop" value="1" />
-		<parameter key="shop_sellable" value="
-			dead snake,2817,4;
-			dead rat,2813,5;
-			dead rabbit,3119,5;
-			dead wolf,3086,12;
-			bunch of troll hair,10606,4;
-			antlers,11214,5;
-			spider fangs,8859,7;
-			pelvis bone,12437,8;
-			poison spider shell,12441,8;
-			lump of dirt,10609,10;
-			goblin ear,12495,12;
-			rabbit's foot,13159,15;
-			scribbled sheet of paper,12382,17;
-			bone,2230,18;
-			orc leather,12435,30;" />
-	</parameters>
 </npc>
