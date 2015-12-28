@@ -371,11 +371,11 @@
 	<spawn centerx="657" centery="913" centerz="5" radius="1">
 		<npc name="Ganor" x="0" y="0" z="5" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="546" centery="943" centerz="5" radius="1">
-		<npc name="Xanthe" x="0" y="0" z="5" spawntime="60" direction="2" />
+	<spawn centerx="546" centery="944" centerz="5" radius="1">
+		<npc name="Xanthe" x="0" y="-1" z="5" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="545" centery="947" centerz="5" radius="2">
-		<npc name="Drorist Suhariux" x="0" y="-1" z="5" spawntime="60" direction="2" />
+	<spawn centerx="545" centery="947" centerz="5" radius="1">
+		<npc name="Drorist Suhariux" x="0" y="1" z="5" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="450" centery="960" centerz="5" radius="1">
 		<npc name="Lertrac" x="0" y="0" z="5" spawntime="60" direction="2" />
@@ -1014,6 +1014,9 @@
 	<spawn centerx="934" centery="1925" centerz="5" radius="1">
 		<npc name="Maurice" x="1" y="0" z="5" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="944" centery="1927" centerz="5" radius="1">
+		<npc name="Doror" x="-1" y="1" z="5" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="593" centery="1945" centerz="5" radius="1">
 		<monster name="Husky" x="0" y="0" z="5" spawntime="60" />
 	</spawn>
@@ -1186,6 +1189,9 @@
 	<spawn centerx="658" centery="949" centerz="6" radius="1" />
 	<spawn centerx="650" centery="956" centerz="6" radius="1">
 		<npc name="Tryn" x="-1" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="601" centery="966" centerz="6" radius="1">
+		<npc name="Thanus Blackwood" x="1" y="-1" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="559" centery="1036" centerz="6" radius="1">
 		<monster name="Angry Villager" x="-1" y="0" z="6" spawntime="60" />
@@ -2495,8 +2501,8 @@
 		<monster name="Snake" x="-1" y="-1" z="7" spawntime="60" />
 		<monster name="Rat" x="1" y="0" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="580" centery="910" centerz="7" radius="2">
-		<npc name="Albert" x="0" y="0" z="7" spawntime="60" direction="2" />
+	<spawn centerx="580" centery="911" centerz="7" radius="2">
+		<npc name="Albert" x="0" y="-1" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="596" centery="915" centerz="7" radius="1">
 		<npc name="Flora" x="0" y="-1" z="7" spawntime="60" direction="3" />
@@ -2528,17 +2534,19 @@
 	<spawn centerx="511" centery="924" centerz="7" radius="1">
 		<npc name="Valiandriu Nitherac" x="-1" y="-1" z="7" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="586" centery="925" centerz="7" radius="1">
-		<npc name="Darvia Swor" x="0" y="0" z="7" spawntime="60" direction="2" />
+	<spawn centerx="585" centery="925" centerz="7" radius="1">
+		<npc name="Darvia Swor" x="1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="580" centery="926" centerz="7" radius="1" />
+	<spawn centerx="573" centery="931" centerz="7" radius="1" />
 	<spawn centerx="542" centery="933" centerz="7" radius="1">
 		<monster name="Rabbit" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="470" centery="934" centerz="7" radius="1">
 		<npc name="Doyalaveri Keaza" x="-1" y="-1" z="7" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="580" centery="934" centerz="7" radius="1">
-		<npc name="Julius" x="0" y="0" z="7" spawntime="60" direction="2" />
+	<spawn centerx="579" centery="934" centerz="7" radius="1">
+		<npc name="Julius" x="1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="495" centery="936" centerz="7" radius="1">
 		<npc name="Souluki Thale" x="-1" y="-1" z="7" spawntime="60" direction="2" />
@@ -2564,10 +2572,10 @@
 		<monster name="Blue Butterfly" x="1" y="2" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="598" centery="949" centerz="7" radius="1">
-		<npc name="Phaos Thourasa" x="-1" y="0" z="7" spawntime="60" direction="2" />
+		<npc name="Phaos Thourasa" x="-1" y="1" z="7" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="564" centery="950" centerz="7" radius="1">
-		<npc name="Jack" x="0" y="0" z="7" spawntime="60" direction="2" />
+	<spawn centerx="565" centery="950" centerz="7" radius="1">
+		<npc name="Jack" x="-1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="652" centery="951" centerz="7" radius="1">
 		<npc name="Barna, Barba de Cascalho" x="-1" y="0" z="7" spawntime="60" direction="3" />
@@ -2584,17 +2592,17 @@
 	<spawn centerx="515" centery="955" centerz="7" radius="1">
 		<monster name="Deer" x="0" y="1" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="604" centery="955" centerz="7" radius="1">
-		<npc name="Dorota" x="-1" y="1" z="7" spawntime="60" direction="1" />
+	<spawn centerx="603" centery="955" centerz="7" radius="1">
+		<npc name="Dorota" x="0" y="1" z="7" spawntime="60" direction="1" />
 	</spawn>
-	<spawn centerx="575" centery="956" centerz="7" radius="1">
-		<npc name="Sirk Skana" x="0" y="0" z="7" spawntime="60" direction="2" />
+	<spawn centerx="574" centery="956" centerz="7" radius="1">
+		<npc name="Sirk Skana" x="1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="502" centery="959" centerz="7" radius="1">
 		<npc name="Tren Xafis" x="1" y="1" z="7" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="580" centery="961" centerz="7" radius="1">
-		<npc name="Arcus Arataron" x="0" y="0" z="7" spawntime="60" direction="2" />
+	<spawn centerx="579" centery="961" centerz="7" radius="1">
+		<npc name="Arcus Arataron" x="1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="470" centery="962" centerz="7" radius="1">
 		<monster name="Rabbit" x="0" y="1" z="7" spawntime="60" />
@@ -3101,7 +3109,9 @@
 	<spawn centerx="850" centery="1327" centerz="7" radius="1">
 		<npc name="Gandor" x="-1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="869" centery="1327" centerz="7" radius="1" />
+	<spawn centerx="869" centery="1327" centerz="7" radius="1">
+		<npc name="Balim" x="-1" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="914" centery="1327" centerz="7" radius="1">
 		<monster name="Goblin" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
@@ -9266,8 +9276,8 @@
 	<spawn centerx="532" centery="976" centerz="8" radius="1">
 		<monster name="Snake" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="589" centery="976" centerz="8" radius="1">
-		<npc name="Fron" x="-1" y="0" z="8" spawntime="60" direction="2" />
+	<spawn centerx="587" centery="976" centerz="8" radius="1">
+		<npc name="Fron" x="1" y="0" z="8" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="440" centery="977" centerz="8" radius="1">
 		<monster name="Bug" x="1" y="-1" z="8" spawntime="60" />
@@ -9328,14 +9338,10 @@
 		<monster name="Cave Rat" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Snake" x="1" y="1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="616" centery="997" centerz="8" radius="1">
-		<monster name="Bug" x="1" y="1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="620" centery="1000" centerz="8" radius="1">
-		<monster name="Rat" x="0" y="-1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="616" centery="1001" centerz="8" radius="1">
-		<monster name="Bug" x="0" y="1" z="8" spawntime="60" />
+	<spawn centerx="618" centery="1000" centerz="8" radius="2">
+		<monster name="Bug" x="-1" y="-2" z="8" spawntime="60" />
+		<monster name="Rat" x="2" y="-1" z="8" spawntime="60" />
+		<monster name="Bug" x="-2" y="2" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="609" centery="1035" centerz="8" radius="1">
 		<monster name="Skeleton" x="-1" y="0" z="8" spawntime="60" />

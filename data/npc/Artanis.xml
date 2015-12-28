@@ -1,20 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Artanis" script="Default.lua" walkinterval="2000" floorchange="0">
+<npc name="Artanis" script="Comerciante.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="129" head="79" body="4" legs="22" feet="116" addons="2" />
-	<parameters>
-		<parameter key="message_greet" value="Olá |PLAYERNAME|. Eu vendo lanças e facas bem afiadas e de primeira linha. Você também pode me vender as suas, caso tenha alguma." />
-		<parameter key="message_sendtrade" value="É pra já! Interessado em algo?" /> 
-		<parameter key="message_farewell" value="Adeus!" />
-		<parameter key="message_walkaway" value="Nos vemos depois!" />
-		<parameter key="module_shop" value="1" />
-		<parameter key="shop_buyable" value="
-			spire spear,19390,4;
-			spear,2389,9;
-			throwing knife,2410,25;" />
-		<parameter key="shop_sellable" value="
-			spire spear,19390,1;
-			spear,2389,3;
-			throwing knife,2410,4;" />
-	</parameters>
 </npc>

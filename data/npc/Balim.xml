@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Balim" script="Default.lua" walkinterval="2000" floorchange="0">
+<npc name="Balim" script="Comerciante.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="144" head="21" body="28" legs="1" feet="0" addons="0" />
-	<parameters>
-		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja de tecidos." />
-		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?" /> 
-		<parameter key="message_farewell" value="Adeus!" />
-		<parameter key="message_walkaway" value="Nos vemos depois!" />
-		<parameter key="module_shop" value="1" />
-		<parameter key="shop_sellable" value="
-			wool,11236,15;
-			striped fur,11210,50;
-			thick fur,11224,150;" />
-	</parameters>
 </npc>

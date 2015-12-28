@@ -1,58 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Sirk Skana" script="Default.lua" walkinterval="2000" floorchange="0">
+<npc name="Sirk Skana" script="Comerciante.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="134" head="22" body="68" legs="50" feet="92" addons="3" />
-	<parameters>
-		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja." />
-		<parameter key="message_sendtrade" value="Tenho diversos bons itens para aventureiros, haha, dê uma olhada!" /> 
-		<parameter key="message_farewell" value="Adeus!" />
-		<parameter key="message_walkaway" value="Nos vemos depois!" />
-		<parameter key="module_shop" value="1" />
-		<parameter key="shop_buyable" value="
-			leather helmet,2461,10;
-			chain helmet,2458,44;
-			studded helmet,2482,50;
-			brass helmet,2460,90;
-			viking helmet,2473,180;
-			legion helmet,2480,230;
-			soldier helmet,2481,260;
-			iron helmet,2459,290;
-			leather armor,2467,22;
-			studded armor,2484,70;
-			chain armor,2464,150;
-			native armor,2508,230;
-			brass armor,2465,450;
-			scale armor,2483,230;
-			plate armor,2463,900;
-			leather legs,2468,10;
-			studded legs,2468,40;
-			chain legs,2648,23;
-			brass legs,2478,195;
-			plate legs,2647,350;
-			sandals,2642,4;
-			leather boots,2643,4;" />
-		<parameter key="shop_sellable" value="
-			leather helmet,2461,4;
-			chain helmet,2458,17;
-			studded helmet,2482,20;
-			brass helmet,2460,30;
-			viking helmet,2473,60;
-			legion helmet,2480,68;
-			soldier helmet,2481,100;
-			iron helmet,2459,150;
-			leather armor,2467,12;
-			studded armor,2484,25;
-			chain armor,2464,60;
-			native armor,2508,110;
-			brass armor,2465,150;
-			scale armor,2483,75;
-			plate armor,2463,400;
-			leather legs,2468,9;
-			studded legs,2468,15;
-			chain legs,2648,70;
-			brass legs,2478,49;
-			plate legs,2647,115;
-			sandals,2642,2;
-			leather boots,2643,2;" />
-	</parameters>
 </npc>

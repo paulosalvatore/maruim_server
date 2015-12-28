@@ -4,13 +4,124 @@ frases = {
 	["correio"] = {
 		["greet"] = "Olá |PLAYERNAME|. Seja bem-vindo aos correios.",
 		["trade"] = "Deseja mandar algum presente?"
+	},
+	["comidas"] = {
+		["greet"] = "Olá |PLAYERNAME|. Seja bem-vindo à minha loja de alimentos.",
+		["trade"] = "Interessado em algo? Você me parece faminto!"
 	}
 }
 
 comerciantes = {
+	["Andor"] = { -- Loja de Clavas - Guilda dos Knights
+		["itens"] = {
+			["c"] = {2394, 2398, 2417, 2422, 2423, 2434, 2437, 2439, 2448, 2449},
+			["v"] = {2394, 2398, 2417, 2422, 2423, 2434, 2437, 2439, 2448, 2449}
+		},
+		["frases"] = {
+			["greet"] = "Olá |PLAYERNAME|. Eu compro e vendo diversos tipos de clavas poderosas. Interessado em algo, cavaleiro?"
+		}
+	},
+	["Arcus Arataron"] = { -- Comprador de Madeira - Maruim Island
+		["itens"] = {
+			["v"] = {5901}
+		},
+		["frases"] = {
+			["greet"] = "Olá |PLAYERNAME|. Podemos fazer negócio caso você tenha madeiras de boa qualidade para me vender.",
+			["trade"] = "Interessado em negociar comigo? É pra já!"
+		}
+	},
+	["Artanis"] = { -- Vendedor de Armas à Distância "básicas" - Maruim Island
+		["itens"] = {
+			["c"] = {2389, {2410, 25}, {19390, 4}},
+			["v"] = {2389, 2410, 19390}
+		},
+		["frases"] = {
+			["greet"] = "Olá |PLAYERNAME|. Eu vendo lanças e facas bem afiadas e de primeira linha. Você também pode me vender as suas, caso tenha alguma.",
+			["trade"] = "É pra já! Veja se está interessado em algo."
+		}
+	},
+	["Balim"] = { -- Comprador de Tecidos - Ôttô
+		["itens"] = {
+			["v"] = {11210, 11224, 11236}
+		},
+		["frases"] = {
+			["greet"] = "Olá |PLAYERNAME|. Seja bem-vindo à minha loja de tecidos."
+		}
+	},
+	["Barna, Barba de Cascalho"] = { -- Loja de Armas - Maruim Island
+		["itens"] = {
+			["c"] = {2376, 2379, 2380, 2384, 2385, 2386, 2388, 2395, 2397, 2398, 2406, 2409, 2412, 2422, 2437, 2439, 2441, 2448, 2449, 2450, 2559, 8601, 8602},
+			["v"] = {2376, 2379, 2380, 2384, 2385, 2386, 2388, 2395, 2397, 2398, 2406, 2409, 2412, 2422, 2437, 2439, 2441, 2448, 2449, 2450, 2559, 8601, 8602}
+		}
+	},
+	["Beth"] = { -- Vendedor de Comidas - Civitaten
+		["itens"] = {
+			["c"] = {"comidas_basicas"}
+		},
+		["frases"] = frases["comidas"]
+	},
+	["Boror"] = { -- Loja de Espadas - Guilda dos Knights
+		["itens"] = {
+			["c"] = {2376, 2377, 2379, 2383, 2384, 2385, 2395, 2396, 2397, 2406, 2409, 2412, 2450, 7385, 8602, 11309},
+			["v"] = {2376, 2377, 2379, 2383, 2384, 2385, 2395, 2396, 2397, 2406, 2409, 2412, 2450, 7385, 8602, 11309}
+		},
+		["frases"] = {
+			["greet"] = "Olá |PLAYERNAME|. Eu compro e vendo diversos tipos de espadas poderosas. Interessado em algo, cavaleiro?"
+		}
+	},
+	["Doror"] = { -- Loja de Armas - Civitaten
+		["itens"] = {
+			["v"] = {2417}
+		},
+		["frases"] = {
+			["greet"] = "Olá |PLAYERNAME|. Eu compro diversos tipos de armas."
+		}
+	},
+	["Falatius Relidol"] = { -- Carteiro - Ôttô
+		["itens"] = {
+			["c"] = {"correio"}
+		},
+		["frases"] = frases["correio"]
+	},
 	["Freenya Irin"] = { -- Vendedor de Utilidades - Civitaten
 		["itens"] = {
 			["c"] = {"utilidades"}
+		}
+	},
+	["Fron"] = { -- Vendedor de Itens Mágicos - Maruim Island
+		["itens"] = {
+			["c"] = {2175, 8819, 8820}
+		},
+		["frases"] = {
+			["greet"] = "Olá |PLAYERNAME|. Seja bem-vindo à minha loja mágica.",
+			["trade"] = "Precisa de algo para criar algum feitiço? Dê uma olhada."
+		}
+	},
+	["Gandor"] = { -- Loja de Armas - Ôttô
+		["itens"] = {
+			["v"] = {2379, 2380, 2406, 2448, 2449, 2559, 20104}
+		},
+		["frases"] = {
+			["greet"] = "Olá |PLAYERNAME|. Eu compro diversas armas."
+		}
+	},
+	["Ganor"] = { -- Loja de Machados - Guilda dos Knights
+		["itens"] = {
+			["c"] = {2378, 2380, 2386, 2388, 2425, 2429, 2441, 2559, 8601, 11323},
+			["v"] = {2378, 2380, 2386, 2388, 2425, 2428, 2429, 2441, 2559, 8601, 11323}
+		},
+		["frases"] = {
+			["greet"] = "Olá |PLAYERNAME|. Eu compro e vendo diversos tipos de machados poderosos. Interessado em algo, cavaleiro?"
+		}
+	},
+	["Gundo Vangidma"] = { -- Vendedor de Armas à Distância - Civitaten
+		["itens"] = {
+			["c"] = {"armas_distancia_c"},
+			["v"] = {"armas_distancia_v"}
+		},
+		["frases"] = {
+			["greet"] = "Olá |PLAYERNAME|. Eu negocios diversas armas para paladins.",
+			["trade"] = "Aqui está minha lista! Interessado em algo?"
 		}
 	},
 	["Jack"] = { -- Comprador de Produtos "Raros" de Criaturas - Maruim Island
@@ -18,14 +129,50 @@ comerciantes = {
 			["v"] = {2235, 5878, 5896, 5897, 5902, 8971, 9676, 11113, 12471}
 		}
 	},
+	["James"] = { -- Vendedor de Comidas - Maruim Island
+		["itens"] = {
+			["c"] = {"comidas_basicas"}
+		},
+		["frases"] = frases["comidas"]
+	},
 	["Jane"] = { -- Comprador de Produtos "Comuns" de Criaturas - Maruim Island
 		["itens"] = {
 			["v"] = {2230, 2813, 2817, 3086, 3119, 8859, 10606, 10609, 11214, 12382, 12435, 12437, 12441, 12495, 13159}
 		}
 	},
+	["Joe"] = { -- Comprador de Ervas - Maruim Island
+		["itens"] = {
+			["c"] = {12430},
+			["v"] = {2805, 12430}
+		}
+	},
+	["John"] = { -- Comprador de Produtos de Criaturas - Ôttô
+		["itens"] = {
+			["v"] = {{2230, 20}, {2235, 42}, 2245, 2805, {5897, 60}, {5902, 45}, {9676, 50}, 10557, 10603, 10606, 11324, {12471, 44}, {12495, 15}, 19738, 19743, 20102, 20103, 21427, 21428}
+		}
+	},
+	["Julius"] = { -- Vendedor de Amuletos - Maruim Island
+		["itens"] = {
+			["c"] = {2661, 2172, 2170},
+			["v"] = {2661, 2172, 2170}
+		},
+		["frases"] = {
+			["greet"] = "Olá |PLAYERNAME|. Eu negocios alguns tipos de amuletos."
+		}
+	},
 	["Kalfafiny Niduril"] = { -- Vendedor de Utilidades - Ôttô
 		["itens"] = {
 			["c"] = {"utilidades"}
+		}
+	},
+	["Lertrac"] = { -- Vendedor de Armas à Distância - Guilda dos Paladins
+		["itens"] = {
+			["c"] = {"armas_distancia_c"},
+			["v"] = {"armas_distancia_v"}
+		},
+		["frases"] = {
+			["greet"] = "Olá |PLAYERNAME|. Eu negocios diversas armas para paladins.",
+			["trade"] = "Aqui está minha lista! Interessado em algo?"
 		}
 	},
 	["Maurice"] = { -- Comprador de Produtos de Criaturas - Civitaten
@@ -46,11 +193,58 @@ comerciantes = {
 	},
 	["Seynos Malia"] = { -- Peixeiro - Maruim Island (Parte Baixa da Ilha)
 		["itens"] = {
-			["c"] = {2667},
+			["c"] = {{2667, 5}},
 			["v"] = {2669, 7158, 7159, 7963, 13546}
 		},
 		["frases"] = {
 			["trade"] = "Tenho diversos bons itens para aventureiros, haha, dê uma olhada!"
+		}
+	},
+	["Talita Dakeris"] = { -- Vendedor de Armas à Distância - Ôttô
+		["itens"] = {
+			["c"] = {"armas_distancia_c"},
+			["v"] = {"armas_distancia_v"}
+		},
+		["frases"] = {
+			["greet"] = "Olá |PLAYERNAME|. Eu negocios diversas armas para paladins.",
+			["trade"] = "Aqui está minha lista! Interessado em algo?"
+		}
+	},
+	["Sirk Skana"] = { -- Loja de Armaduras - Maruim Island
+		["itens"] = {
+			["c"] = {2458, 2459, 2460, 2461, 2463, 2464, 2465, 2467, 2468, 2473, 2478, 2480, 2481, 2482, 2483, 2484, 2508, 2642, 2643, 2647, 2648, 2649},
+			["v"] = {2458, 2459, 2460, 2461, 2463, 2464, 2465, 2467, 2468, 2473, 2478, 2480, 2481, 2482, 2483, 2484, 2508, 2642, 2643, 2647, 2648, 2649}
+		},
+		["frases"] = {
+			["trade"] = "Tenho diversos bons itens para aventureiros, haha, dê uma olhada!"
+		}
+	},
+	["Thanus Blackwood"] = { -- Vendedor de Wands - Guilda dos Sorcerers
+		["itens"] = {
+			["c"] = {2187, 2188, 2189, 2190, 2191, 8920, 8921, 8922}
+		},
+		["frases"] = {
+			["greet"] = "Olá |PLAYERNAME|. Eu vendo wands para sorcerers.",
+			["trade"] = "Aqui estão, dê uma olhada!"
+		}
+	},
+	["Tryn"] = { -- Loja de Escudos - Maruim Island
+		["itens"] = {
+			["c"] = {2509, 2510, 2511, 2512, 2513, 2525, 2526, 2530, 2531, 2541},
+			["v"] = {2509, 2510, 2511, 2512, 2513, 2525, 2526, 2530, 2531, 2541}
+		},
+		["frases"] = {
+			["greet"] = "Olá |PLAYERNAME|. Seja bem-vindo à minha loja. Escudos são a minha especialidade!",
+			["trade"] = "Essa é a lista de escudos que eu negocio!"
+		}
+	},
+	["Xanthe"] = { -- Vendedor de Rods - Guilda dos Druids
+		["itens"] = {
+			["c"] = {2181, 2182, 2183, 2185, 2186, 8910, 8911, 8912}
+		},
+		["frases"] = {
+			["greet"] = "Olá |PLAYERNAME|. Eu vendo rods para druids.",
+			["trade"] = "Aqui estão, dê uma olhada!"
 		}
 	}
 }

@@ -1,46 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Boror" script="Default.lua" walkinterval="2000" floorchange="0">
+<npc name="Boror" script="Comerciante.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="131" head="115" body="78" legs="41" feet="116" addons="1" />
-	<parameters>
-		<parameter key="message_greet" value="Olá |PLAYERNAME|. Eu compro e vendo diversos tipos de espadas poderosas. Interessado em algo, cavaleiro?" />
-		<parameter key="message_sendtrade" value="Aqui está a lista!" /> 
-		<parameter key="message_farewell" value="Adeus!" />
-		<parameter key="message_walkaway" value="Nos vemos depois!" />
-		<parameter key="module_shop" value="1" />
-		<parameter key="shop_buyable" value="
-			dagger,2379,5;
-			rapier,2384,15;
-			short sword,2406,22;
-			sabre,2385,26;
-			bone sword,2450,50;
-			sword,2376,65;
-			carlin sword,2395,170;
-			katana,2412,190;
-			longsword,2397,230;
-			serpent sword,2409,370;
-			jagged sword,8602,500;
-			crimson sword,7385,600;
-			two handed sword,2377,900;
-			spike sword,2383,1300;
-			twin hooks,11309,3000;
-			ice rapier,2396,6000;" />
-		<parameter key="shop_sellable" value="
-			dagger,2379,2;
-			rapier,2384,5;
-			short sword,2406,10;
-			sabre,2385,12;
-			bone sword,2450,20;
-			sword,2376,25;
-			carlin sword,2395,118;
-			katana,2412,80;
-			longsword,2397,105;
-			serpent sword,2409,300;
-			jagged sword,8602,100;
-			crimson sword,7385,150;
-			spike sword,2383,400;
-			two handed sword,2377,450;
-			twin hooks,11309,800;
-			ice rapier,2396,1000;" />
-	</parameters>
 </npc>

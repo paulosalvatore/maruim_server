@@ -1,20 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Gandor" script="Default.lua" walkinterval="2000" floorchange="0">
+<npc name="Gandor" script="Comerciante.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
 	<look type="131" head="115" body="77" legs="28" feet="156" addons="1" />
-	<parameters>
-		<parameter key="message_greet" value="Olá |PLAYERNAME|. Eu compro diversos tipos de armas." />
-		<parameter key="message_sendtrade" value="É pra já!" /> 
-		<parameter key="message_farewell" value="Adeus!" />
-		<parameter key="message_walkaway" value="Nos vemos depois!" />
-		<parameter key="module_shop" value="1" />
-		<parameter key="shop_sellable" value="
-			dagger,2379,2;
-			studded club,2448,5;
-			hand axe,2380,5;
-			small axe,2559,6;
-			short sword,2406,10;
-			bone club,2449,12;
-			swampling club,20104,40;" />
-	</parameters>
 </npc>

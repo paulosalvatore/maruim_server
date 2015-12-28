@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Thanus Blackwood" script="Default.lua" walkinterval="2000" floorchange="0">
+<npc name="Thanus Blackwood" script="Comerciante.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
-	<look type="134" head="22" body="68" legs="50" feet="92" addons="3" />
-	<parameters>
-		<parameter key="message_greet" value="Olá |PLAYERNAME|. Eu vendo wands para sorcerers, gostaria de conferir minha lista?" />
-		<parameter key="message_sendtrade" value="Aqui estão, dê uma olhada!" /> 
-		<parameter key="message_farewell" value="Adeus!" />
-		<parameter key="message_walkaway" value="Nos vemos depois!" />
-		<parameter key="module_shop" value="1" />
-		<parameter key="shop_buyable" value="
-			wand of vortex,2190,500;
-			wand of dragonbreath,2191,1000;
-			wand of decay,2188,5000;
-			wand of draconia,8921,7500;
-			wand of cosmic energy,2189,10000;
-			wand of inferno,2187,15000;
-			wand of starstorm,8920,18000;
-			wand of voodoo,8922,22000;" />
-	</parameters>
+	<look type="432" head="0" body="56" legs="19" feet="75" addons="1" />
 </npc>

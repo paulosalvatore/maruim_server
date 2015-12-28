@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<npc name="Xanthe" script="Default.lua" walkinterval="2000" floorchange="0">
+<npc name="Xanthe" script="Comerciante.lua" walkinterval="2000" floorchange="0">
 	<health now="100" max="100" />
-	<look type="134" head="22" body="68" legs="50" feet="92" addons="3" />
-	<parameters>
-		<parameter key="message_greet" value="Olá |PLAYERNAME|. Eu vendo rods para druids, gostaria de conferir minha lista?" />
-		<parameter key="message_sendtrade" value="Aqui estão, dê uma olhada!" /> 
-		<parameter key="message_farewell" value="Adeus!" />
-		<parameter key="message_walkaway" value="Nos vemos depois!" />
-		<parameter key="module_shop" value="1" />
-		<parameter key="shop_buyable" value="
-			snakebite rod,2182,500;
-			moonlight rod,2186,1000;
-			necrotic rod,2185,5000;
-			northwind rod,8911,7500;
-			terra rod,2181,10000;
-			hailstorm rod,2183,15000;
-			springsprout rod,8912,18000;
-			underworld rod,8910,22000;" />
-	</parameters>
+	<look type="144" head="20" body="59" legs="57" feet="23" addons="2" />
 </npc>

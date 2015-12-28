@@ -55,7 +55,7 @@ if frases["greet"] == nil then
 end
 
 if frases["trade"] == nil then
-	frases["trade"] = "Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?"
+	frases["trade"] = "Essa é a lista de mercadorias que eu negocio. Interessado em algo?"
 end
 
 if frases["farewell"] == nil then
