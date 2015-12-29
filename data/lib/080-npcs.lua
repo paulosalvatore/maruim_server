@@ -8,6 +8,9 @@ frases = {
 	["comidas"] = {
 		["greet"] = "Olá |PLAYERNAME|. Seja bem-vindo à minha loja de alimentos.",
 		["trade"] = "Interessado em algo? Você me parece faminto!"
+	},
+	["moveis"] = {
+		["greet"] = "Seja bem-vindo, |PLAYERNAME|! Procurando por móveis? Você veio ao lugar certo!"
 	}
 }
 
@@ -76,6 +79,12 @@ comerciantes = {
 		["frases"] = {
 			["greet"] = "Olá |PLAYERNAME|. Eu compro diversos tipos de armas."
 		}
+	},
+	["Eladriani Ewor"] = { -- Loja de Móveis - Civitaten
+		["itens"] = {
+			["c"] = {"moveis"}
+		},
+		["frases"] = frases["moveis"]
 	},
 	["Falatius Relidol"] = { -- Carteiro - Ôttô
 		["itens"] = {
@@ -177,7 +186,7 @@ comerciantes = {
 	},
 	["Maurice"] = { -- Comprador de Produtos de Criaturas - Civitaten
 		["itens"] = {
-			["v"] = {5678, 5899, 11189}
+			["v"] = {5678, {5897, 70}, 5899, 10553, 11189}
 		}
 	},
 	["Mood Neva"] = { -- Carteiro - Civitaten
