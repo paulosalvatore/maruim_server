@@ -20,15 +20,16 @@ npcHandler:addModule(shopModule)
 
 for tipo, itens in pairs(configNpc["itens"]) do
 	for chave, item in pairs(itens) do
-		local itemId
-		local valorItem
+		local itemId, valorItem, subtypeItem
 
 		if type(item) == "table" then
 			itemId = item[1]
-			valorItem = item[2]
+			valorItem = item[2] > 0 and item[2] or valorItens[itemId]
+			subtypeItem = item[3] ~= nil and item[3] or 0
 		elseif type(item) == "number" then
 			itemId = item
 			valorItem = valorItens[itemId]
+			subtypeItem = 0
 		else
 			for c, d in pairs(categoriasItens[item]) do
 				table.insert(itens, d)
@@ -40,9 +41,9 @@ for tipo, itens in pairs(configNpc["itens"]) do
 			local nomeItem = itemType:getName()
 
 			if tipo == "c" then
-				shopModule:addBuyableItem({nomeItem}, itemId, type(valorItem) == "table" and valorItem[1] or valorItem, nomeItem)
+				shopModule:addBuyableItem({nomeItem}, itemId, type(valorItem) == "table" and valorItem[1] or valorItem, subtypeItem, nomeItem)
 			elseif tipo == "v" then
-				shopModule:addSellableItem({nomeItem}, itemId, type(valorItem) == "table" and valorItem[2] or valorItem, nomeItem)
+				shopModule:addSellableItem({nomeItem}, itemId, type(valorItem) == "table" and valorItem[2] or valorItem, nomeItem, subtypeItem)
 			end
 		end
 	end
