@@ -7101,8 +7101,9 @@
 		<attribute key="description" value="Use it in your house to construct a small table." />
 		<attribute key="weight" value="2500" />
 	</item>
-	<item id="3909" article="an" name="unknown kit">
-		<attribute key="weight" value="2500" />
+	<item id="3909" article="an" name="cabinet kit">
+		<attribute key="description" value="Use it in your house to construct a cabinet." />
+		<attribute key="weight" value="3500" />
 	</item>
 	<item id="3910" article="a" name="christmas tree package">
 		<attribute key="description" value="Use it in your house to reveal a christmas tree." />
@@ -7216,7 +7217,8 @@
 		<attribute key="description" value="Use it in your house to reveal an indoor plant." />
 		<attribute key="weight" value="3000" />
 	</item>
-	<item id="3938" article="an" name="unknown kit">
+	<item id="3938" article="an" name="ornamented stone table kit">
+		<attribute key="description" value="Use it in your house to construct an ornamented stone table." />
 		<attribute key="weight" value="3000" />
 	</item>
 	<item id="3939" article="a" name="camouflage bag">
