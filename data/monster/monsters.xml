@@ -8,6 +8,7 @@
 	<monster name="Crab" file="crab.xml" />
 	<monster name="Deer" file="deer.xml" />
 	<monster name="Emerald Damselfly" file="emerald damselfly.xml" />
+	<monster name="Fire Elemental" file="fire elemental.xml" />
 	<monster name="Gnarlhound" file="gnarlhound.xml" />
 	<monster name="Goblin Assassin" file="goblin assassin.xml" />
 	<monster name="Goblin Scavenger" file="goblin scavenger.xml" />
@@ -31,6 +32,7 @@
 	<monster name="Spider" file="spider.xml" />
 	<monster name="Swamp Troll" file="swamp troll.xml" />
 	<monster name="Swampling" file="swampling.xml" />
+	<monster name="Thornfire Wolf" file="thornfire wolf.xml" />
 	<monster name="Troll" file="troll.xml" />
 	<monster name="Wasp" file="wasp.xml" />
 	<monster name="Wisp" file="wisp.xml" />
