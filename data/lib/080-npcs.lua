@@ -186,7 +186,7 @@ comerciantes = {
 	},
 	["Maurice"] = { -- Comprador de Produtos de Criaturas - Civitaten
 		["itens"] = {
-			["v"] = {5678, {5897, 70}, 5899, 10553, 11189}
+			["v"] = {5678, {5897, 70}, 5899, 10553, 11189, 13757}
 		}
 	},
 	["Mood Neva"] = { -- Carteiro - Civitaten
@@ -254,6 +254,17 @@ comerciantes = {
 		["frases"] = {
 			["greet"] = "Olá |PLAYERNAME|. Eu vendo rods para druids.",
 			["trade"] = "Aqui estão, dê uma olhada!"
+		}
+	},
+	["Yoruba"] = { -- Comprador de Fragmentos de Solo
+		["itens"] = {
+			["v"] = {8299}
+		},
+		["frases"] = {
+			["greet"] = "Jy het iets vir my?",
+			["trade"] = "Kom ons kyk.",
+			["farewell"] = "Totsiens, gaan veilig!",
+			["walkaway"] = "Die vloek op julle!!"
 		}
 	}
 }
