@@ -1,6 +1,7 @@
 monstros = {
 	["Angry Villager"] = {3, 15},
 	["Bear"] = {0, 5},
+	["Blazing Fire Elemental"] = {12, 125},
 	["Bug"] = {0, 6},
 	["Cave Rat"] = {0, 4},
 	["Crab"] = {1, 10},
@@ -28,6 +29,7 @@ monstros = {
 	["Swampling"] = {1, 12},
 	["Thornfire Wolf"] = {7, 53},
 	["Troll"] = {1, 12},
+	["Weak Fire Elemental"] = {4, 26},
 	["Wasp"] = {0, 4},
 	["Wisp"] = {3, 15},
 	["Wolf"] = {0, 5}

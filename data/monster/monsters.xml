@@ -2,6 +2,7 @@
 <monsters>
 	<monster name="Angry Villager" file="angry villager.xml" />
 	<monster name="Bear" file="bear.xml" />
+	<monster name="Blazing Fire Elemental" file="blazing fire elemental.xml" />
 	<monster name="Blue Butterfly" file="blue butterfly.xml" />
 	<monster name="Bug" file="bug.xml" />
 	<monster name="Cave Rat" file="cave rat.xml" />
@@ -35,6 +36,7 @@
 	<monster name="Thornfire Wolf" file="thornfire wolf.xml" />
 	<monster name="Troll" file="troll.xml" />
 	<monster name="Wasp" file="wasp.xml" />
+	<monster name="Weak Fire Elemental" file="weak fire elemental.xml" />
 	<monster name="Wisp" file="wisp.xml" />
 	<monster name="Wolf" file="wolf.xml" />
 	<monster name="Yellow Butterfly" file="yellow butterfly.xml" />

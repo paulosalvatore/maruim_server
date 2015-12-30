@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Fire Elemental" nameDescription="a fire elemental" race="fire" experience="220" speed="200" manacost="690">
-	<health now="280" max="280" />
+<monster name="Blazing Fire Elemental" nameDescription="a blazing fire elemental" race="fire" experience="450" speed="220" manacost="0">
+	<health now="580" max="580" />
 	<look type="49" corpse="8964" />
 	<targetchange interval="4000" chance="10" />
 	<strategy attack="100" defense="0" />
 	<flags>
-		<flag summonable="1" />
+		<flag summonable="0" />
 		<flag attackable="1" />
 		<flag hostile="1" />
 		<flag illusionable="1" />
-		<flag convinceable="1" />
+		<flag convinceable="0" />
 		<flag pushable="0" />
 		<flag canpushitems="1" />
 		<flag canpushcreatures="0" />
@@ -19,7 +19,10 @@
 	</flags>
 	<attacks>
 		<attack name="melee" interval="2000" skill="30" attack="50" />
-		<attack name="fire" interval="2000" chance="20" range="7" radius="2" target="1" min="-45" max="-160"> <!-- target fire explosion -->
+		<attack name="fire" interval="2000" chance="25" radius="5" target="0" min="-65" max="-205"> <!-- self fire ball -->
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+		<attack name="fire" interval="2000" chance="20" range="7" radius="5" target="1" min="-110" max="-150"> <!-- target fire ball -->
 			<attribute key="shootEffect" value="fire" />
 			<attribute key="areaEffect" value="firearea" />
 		</attack>
@@ -27,7 +30,6 @@
 			<attribute key="shootEffect" value="fire" />
 		</attack>
 	</attacks>
-	<defenses armor="15" defense="15" />
 	<elements>
 		<element icePercent="-25" />
 	</elements>
@@ -39,8 +41,11 @@
 		<immunity invisible="1" />
 	</immunities>
 	<loot>
-		<item id="5468" chance="7983" /><!-- Fire Bug -->
-		<item id="10553" chance="3732" /><!-- Fiery Heart -->
+		<item id="7840" countmax="3" chance="33764" /><!-- Flaming Arrow -->
+		<item id="5468" chance="23461" /><!-- Fire Bug -->
+		<item id="10553" chance="16732" /><!-- Fiery Heart -->
+		<item id="13757" chance="9244" /><!-- Coal -->
+		<item id="8299" chance="8734" /><!-- Glimmering Soil -->
 	</loot>
 	<script>
 		<event name="HealthChangeCriatura"/>
