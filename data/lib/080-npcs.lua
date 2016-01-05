@@ -126,7 +126,7 @@ comerciantes = {
 	["Gundo Vangidma"] = { -- Vendedor de Armas à Distância - Civitaten
 		["itens"] = {
 			["c"] = {"armas_distancia_c"},
-			["v"] = {"armas_distancia_v"}
+			["v"] = {"armas_distancia_v", 3965}
 		},
 		["frases"] = {
 			["greet"] = "Olá |PLAYERNAME|. Eu negocios diversas armas para paladins.",
@@ -151,8 +151,8 @@ comerciantes = {
 	},
 	["Joe"] = { -- Comprador de Ervas - Maruim Island
 		["itens"] = {
-			["c"] = {12430},
-			["v"] = {2805, 12430}
+			["c"] = {2799, 2800, 12430},
+			["v"] = {2799, 2800, 2805, 12430}
 		}
 	},
 	["John"] = { -- Comprador de Produtos de Criaturas - Ôttô
@@ -186,7 +186,7 @@ comerciantes = {
 	},
 	["Maurice"] = { -- Comprador de Produtos de Criaturas - Civitaten
 		["itens"] = {
-			["v"] = {5678, {5897, 70}, 5899, 10553, 11189, 13757}
+			["v"] = {2129, 2229, 2800, 2805, 5678, {5897, 70}, 5899, 8859, 10553, 10569, 10606, 11189, 11191, 11210, 11224, 11324, 12399, 12400, 12441, 12471, 13757}
 		}
 	},
 	["Mood Neva"] = { -- Carteiro - Civitaten
