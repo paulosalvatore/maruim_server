@@ -35,19 +35,19 @@
 		<voice sentence="Hmmm, dogs." />
 	</voices>
 	<loot>
-		<item id="10606" countmax="3" chance="80000" /><!-- Bunch of Troll Hair -->
-		<item id="2666" countmax="2" chance="40000" /><!-- Meat -->
-		<item id="2461" chance="25000" /><!-- Leather Helmet -->
-		<item id="2380" chance="24000" /><!-- Hand Axe -->
-		<item id="19390" countmax="2" chance="23000" /><!-- Spire Spear -->
-		<item id="2120" chance="19950" /><!-- Rope -->
-		<item id="2512" chance="16730" /><!-- Wooden Shield -->
-		<item id="2448" chance="15000" /><!-- Studded Club -->
-		<item id="2389" chance="13000" /><!-- Spear -->
-		<item id="2643" chance="12000" /><!-- Leather Boots -->
-		<item id="2805" chance="8730" /><!-- Troll Green -->
-		<item id="12471" chance="2200" /><!-- Trollroot -->
-		<item id="2170" chance="540" /><!-- Silver Amulet -->
+		<item id="10606" countmax="3" chance="86132" /><!-- Bunch of Troll Hair -->
+		<item id="2666" countmax="2" chance="43196" /><!-- Meat -->
+		<item id="2461" chance="25643" /><!-- Leather Helmet -->
+		<item id="2380" chance="24172" /><!-- Hand Axe -->
+		<item id="19390" countmax="2" chance="23632" /><!-- Spire Spear -->
+		<item id="2120" chance="19957" /><!-- Rope -->
+		<item id="2512" chance="16733" /><!-- Wooden Shield -->
+		<item id="2448" chance="15134" /><!-- Studded Club -->
+		<item id="2389" chance="13914" /><!-- Spear -->
+		<item id="2643" chance="12327" /><!-- Leather Boots -->
+		<item id="2805" chance="8731" /><!-- Troll Green -->
+		<item id="12471" chance="2247" /><!-- Trollroot -->
+		<item id="2170" chance="543" /><!-- Silver Amulet -->
 	</loot>
 	<script>
 		<event name="HealthChangeCriatura"/>

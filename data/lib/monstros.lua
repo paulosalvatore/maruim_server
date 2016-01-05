@@ -1,4 +1,5 @@
 monstros = {
+	["Amazon"] = {5, 20},
 	["Angry Villager"] = {3, 15},
 	["Bear"] = {0, 5},
 	["Blazing Fire Elemental"] = {12, 125},
@@ -22,16 +23,20 @@ monstros = {
 	["Rotworm"] = {2, 17},
 	["Skeleton Warrior"] = {2, 12},
 	["Skeleton"] = {1, 10},
+	["Skunk"] = {2, 15},
 	["Slime"] = {3, 17},
 	["Snake"] = {0, 4},
 	["Spider"] = {0, 5},
 	["Swamp Troll"] = {0, 8},
 	["Swampling"] = {1, 12},
 	["Thornfire Wolf"] = {7, 53},
+	["Troll Champion"] = {3, 12},
 	["Troll"] = {1, 12},
+	["Valkyrie"] = {1, 12},
 	["Weak Fire Elemental"] = {4, 26},
 	["Wasp"] = {0, 4},
 	["Wisp"] = {3, 15},
+	["Witch"] = {7, 40},
 	["Wolf"] = {0, 5}
 }
 

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Witch" nameDescription="a witch" race="blood" experience="120" speed="195" manacost="0">
+	<health now="300" max="300" />
+	<look type="54" corpse="20535" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="4" />
+		<flag staticattack="90" />
+		<flag runonhealth="30" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="0" max="-20" />
+		<attack name="fire" interval="2000" chance="20" range="7" min="-30" max="-75">
+			<attribute key="shootEffect" value="fire" />
+			<attribute key="areaEffect" value="fire" />
+		</attack>
+		<attack name="firefield" interval="2000" chance="10" range="7" radius="1" target="1">
+			<attribute key="shootEffect" value="fire" />
+		</attack>
+		<attack name="outfit" interval="2000" chance="1" target="1" range="5" monster="green frog" duration="2000" />
+	</attacks>
+	<defenses armor="15" defense="15" />
+	<elements>
+		<element earthPercent="20" />
+		<element deathPercent="-5" />
+		<element physicalPercent="-10" />
+	</elements>
+	<immunities>
+		<immunity invisible="1" />
+		<immunity energy="1" />
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Horax pokti!" />
+		<voice sentence="Herba budinia ex!" />
+		<voice sentence="Hihihihi!" />
+	</voices>
+	<loot>
+		<item id="2687" countmax="8" chance="34647" /><!-- Cookie -->
+		<item id="10569" chance="11923" /><!-- Witch Broom -->
+		<item id="2129" chance="11712" /><!-- Wolf Tooth Chain -->
+		<item id="2800" chance="10786" /><!-- Star Herb-->
+		<item id="2643" chance="5430" /><!-- Leather Boots -->
+		<item id="2654" chance="5382" /><!-- Cape -->
+		<item id="2405" chance="4428" /><!-- Sickle -->
+		<item id="2199" chance="3934" /><!-- Garlic Necklace -->
+		<item id="2651" chance="2843" /><!-- Coat -->
+		<item id="2185" chance="2091" /><!-- Necrotic Rod -->
+		<item id="13537" chance="1833" /><!-- Bag of Apple Slices -->
+		<item id="2402" chance="937" /><!-- Silver Dagger -->
+		<item id="10570" chance="238" /><!-- Witch Hat -->
+		<item id="11211" chance="63" /><!-- Stuffed Toad -->
+	</loot>
+	<script>
+		<event name="HealthChangeCriatura"/>
+		<event name="CriaturaMorta"/>
+	</script>
+</monster>

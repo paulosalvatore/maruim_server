@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monsters>
+	<monster name="Amazon" file="amazon.xml" />
 	<monster name="Angry Villager" file="angry villager.xml" />
 	<monster name="Bear" file="bear.xml" />
 	<monster name="Blazing Fire Elemental" file="blazing fire elemental.xml" />
@@ -9,6 +10,13 @@
 	<monster name="Crab" file="crab.xml" />
 	<monster name="Deer" file="deer.xml" />
 	<monster name="Emerald Damselfly" file="emerald damselfly.xml" />
+	<monster name="Farm Black Sheep" file="farm black sheep.xml" />
+	<monster name="Farm Deer" file="farm deer.xml" />
+	<monster name="Farm Horse (Brown)" file="farm horse (brown).xml" />
+	<monster name="Farm Horse (Grey)" file="farm horse (grey).xml" />
+	<monster name="Farm Horse" file="farm horse.xml" />
+	<monster name="Farm Pig" file="farm pig.xml" />
+	<monster name="Farm Sheep" file="farm sheep.xml" />
 	<monster name="Fire Elemental" file="fire elemental.xml" />
 	<monster name="Gnarlhound" file="gnarlhound.xml" />
 	<monster name="Goblin Assassin" file="goblin assassin.xml" />
@@ -28,16 +36,20 @@
 	<monster name="Sheep" file="sheep.xml" />
 	<monster name="Skeleton Warrior" file="skeleton warrior.xml" />
 	<monster name="Skeleton" file="skeleton.xml" />
+	<monster name="Skunk" file="skunk.xml" />
 	<monster name="Slime" file="slime.xml" />
 	<monster name="Snake" file="snake.xml" />
 	<monster name="Spider" file="spider.xml" />
 	<monster name="Swamp Troll" file="swamp troll.xml" />
 	<monster name="Swampling" file="swampling.xml" />
 	<monster name="Thornfire Wolf" file="thornfire wolf.xml" />
+	<monster name="Troll Champion" file="troll champion.xml" />
 	<monster name="Troll" file="troll.xml" />
+	<monster name="Valkyrie" file="valkyrie.xml" />
 	<monster name="Wasp" file="wasp.xml" />
 	<monster name="Weak Fire Elemental" file="weak fire elemental.xml" />
 	<monster name="Wisp" file="wisp.xml" />
+	<monster name="Witch" file="witch.xml" />
 	<monster name="Wolf" file="wolf.xml" />
 	<monster name="Yellow Butterfly" file="yellow butterfly.xml" />
 </monsters>
