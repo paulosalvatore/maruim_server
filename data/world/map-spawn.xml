@@ -1571,17 +1571,14 @@
 	<spawn centerx="1232" centery="1653" centerz="6" radius="1">
 		<npc name="Nart Thod" x="-1" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="1259" centery="1654" centerz="6" radius="1">
-		<npc name="Silingria Eowst" x="-1" y="0" z="6" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="870" centery="1655" centerz="6" radius="1">
 		<monster name="Lion" x="0" y="-1" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="1245" centery="1657" centerz="6" radius="1">
 		<npc name="Arto Larimin" x="-1" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="1216" centery="1658" centerz="6" radius="1">
-		<npc name="Amanda" x="-1" y="0" z="6" spawntime="60" direction="2" />
+	<spawn centerx="1261" centery="1657" centerz="6" radius="1">
+		<npc name="Alex" x="-1" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1131" centery="1661" centerz="6" radius="1">
 		<monster name="Cyclops" x="-1" y="0" z="6" spawntime="110" />
@@ -1617,9 +1614,6 @@
 		<monster name="Cyclops" x="3" y="0" z="6" spawntime="180" />
 		<monster name="Cyclops" x="-2" y="4" z="6" spawntime="110" />
 	</spawn>
-	<spawn centerx="1213" centery="1678" centerz="6" radius="1">
-		<npc name="Alex" x="-1" y="0" z="6" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="1111" centery="1679" centerz="6" radius="1">
 		<monster name="Cyclops" x="0" y="1" z="6" spawntime="110" />
 	</spawn>
@@ -1640,6 +1634,9 @@
 	</spawn>
 	<spawn centerx="1309" centery="1687" centerz="6" radius="1">
 		<npc name="Pith Dalen" x="0" y="1" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1304" centery="1688" centerz="6" radius="1">
+		<npc name="Silingria Eowst" x="-1" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1147" centery="1689" centerz="6" radius="1">
 		<monster name="Cyclops" x="-1" y="0" z="6" spawntime="170" />
