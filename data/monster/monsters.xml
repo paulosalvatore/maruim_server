@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monsters>
+	<monster name="Alligator" file="alligator.xml" />
 	<monster name="Amazon" file="amazon.xml" />
 	<monster name="Angry Villager" file="angry villager.xml" />
+	<monster name="Azure Frog" file="azure frog.xml" />
 	<monster name="Bear" file="bear.xml" />
 	<monster name="Blazing Fire Elemental" file="blazing fire elemental.xml" />
+	<monster name="Blood Crab" file="blood crab.xml" />
 	<monster name="Blue Butterfly" file="blue butterfly.xml" />
+	<monster name="Bog Frog" file="bog frog.xml" />
 	<monster name="Bug" file="bug.xml" />
+	<monster name="Carrion Worm" file="carrion worm.xml" />
 	<monster name="Cave Rat" file="cave rat.xml" />
+	<monster name="Coral Frog" file="coral frog.xml" />
 	<monster name="Crab" file="crab.xml" />
+	<monster name="Crimson Frog" file="crimson frog.xml" />
+	<monster name="Crocodile" file="crocodile.xml" />
+	<monster name="Cyclops Drone" file="cyclops drone.xml" />
+	<monster name="Cyclops Smith" file="cyclops smith.xml" />
+	<monster name="Cyclops" file="cyclops.xml" />
 	<monster name="Deer" file="deer.xml" />
 	<monster name="Emerald Damselfly" file="emerald damselfly.xml" />
 	<monster name="Farm Black Sheep" file="farm black sheep.xml" />
@@ -17,32 +28,42 @@
 	<monster name="Farm Horse" file="farm horse.xml" />
 	<monster name="Farm Pig" file="farm pig.xml" />
 	<monster name="Farm Sheep" file="farm sheep.xml" />
+	<monster name="Filth Toad" file="filth toad.xml" />
 	<monster name="Fire Elemental" file="fire elemental.xml" />
 	<monster name="Gnarlhound" file="gnarlhound.xml" />
 	<monster name="Goblin Assassin" file="goblin assassin.xml" />
 	<monster name="Goblin Scavenger" file="goblin scavenger.xml" />
 	<monster name="Goblin" file="goblin.xml" />
+	<monster name="Green Frog" file="green frog.xml" />
+	<monster name="Infernal Frog" file="infernal frog.xml" />
+	<monster name="Insect Swarm" file="insect swarm.xml" />
 	<monster name="Island Tortoise" file="island tortoise.xml" />
 	<monster name="Island Troll" file="island troll.xml" />
+	<monster name="Killer Caiman" file="killer caiman.xml" />
 	<monster name="Leaf Golem" file="leaf golem.xml" />
 	<monster name="Minotaur" file="minotaur.xml" />
 	<monster name="Orc Spearman" file="orc spearman.xml" />
 	<monster name="Orc" file="orc.xml" />
+	<monster name="Orchid Frog" file="orchid frog.xml" />
 	<monster name="Poison Spider" file="poison spider.xml" />
 	<monster name="Rabbit" file="rabbit.xml" />
 	<monster name="Rat" file="rat.xml" />
 	<monster name="Red Butterfly" file="red butterfly.xml" />
 	<monster name="Rotworm" file="rotworm.xml" />
+	<monster name="Salamander" file="salamander.xml" />
+	<monster name="Scorpion" file="scorpion.xml" />
 	<monster name="Sheep" file="sheep.xml" />
 	<monster name="Skeleton Warrior" file="skeleton warrior.xml" />
 	<monster name="Skeleton" file="skeleton.xml" />
 	<monster name="Skunk" file="skunk.xml" />
 	<monster name="Slime" file="slime.xml" />
+	<monster name="Slug" file="slug.xml" />
 	<monster name="Snake" file="snake.xml" />
 	<monster name="Spider" file="spider.xml" />
 	<monster name="Swamp Troll" file="swamp troll.xml" />
 	<monster name="Swampling" file="swampling.xml" />
 	<monster name="Thornfire Wolf" file="thornfire wolf.xml" />
+	<monster name="Toad" file="toad.xml" />
 	<monster name="Troll Champion" file="troll champion.xml" />
 	<monster name="Troll" file="troll.xml" />
 	<monster name="Valkyrie" file="valkyrie.xml" />
