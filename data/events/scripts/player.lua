@@ -101,24 +101,30 @@ function Player:onLookInTrade(partner, item, distance)
 end
 
 function Player:onLookInShop(itemType, count)
-	local ferramenta = ferramentas[itemType:getId()]
-	if ferramenta then
-		local peso = ferramenta
+	local modificarItemPeso = modificarItensPeso[itemType:getId()]
+
+	if modificarItemPeso then
+		local peso = modificarItemPeso
+
 		if peso == 0 then
 			peso = itemType:getWeight()
 		end
+
 		local description = "You see " .. itemType:getArticle() .. " " .. itemType:getName() .. ".\nIt weighs " .. formatarPeso(peso) .. "."
 		self:sendTextMessage(MESSAGE_INFO_DESCR, description)
 		return false
 	end
+
 	return true
 end
 
 function Player:onMoveItem(item, count, fromPosition, toPosition)
 	local tile = Tile(toPosition)
+
 	if tile and tile:getHouse() ~= nil then
 		if tile:getItemCount() == 9 then
 			self:sendCancelMessage("Não é possível adicionar mais itens a esse local.")
+
 			return false
 		else
 			local peso = item:getWeight()
@@ -133,6 +139,7 @@ function Player:onMoveItem(item, count, fromPosition, toPosition)
 
 			if peso > pesoMaximo then
 				self:sendCancelMessage("Não é possível adicionar mais itens a esse local.")
+
 				return false
 			end
 		end
@@ -140,8 +147,10 @@ function Player:onMoveItem(item, count, fromPosition, toPosition)
 
 	if item:getActionId() == 2500 or item:getActionId() == 2503 then
 		self:sendCancelMessage("Você não pode mover esse item.")
+
 		return false
 	end
+
 	return true
 end
 
@@ -151,27 +160,34 @@ end
 
 function Player:onTurn(direction)
     if self:getDirection() == direction and self:getGroup():getAccess() then
-        local nextPosition = self:getPosition()
-        nextPosition:getNextPosition(direction)
+
+		local nextPosition = self:getPosition()
+
+		nextPosition:getNextPosition(direction)
 
         self:teleportTo(nextPosition, true)
     end
-    return true
+
+	return true
 end
 
 function Player:onTradeRequest(target, item)
 	if getCreatureCondition(self, CONDITION_SPELLCOOLDOWN, 160) then
 		self:sendCancelMessage("Você está ocupado.")
+
 		return false
 	end
+
 	return true
 end
 
 function Player:onTradeAccept(target, item, targetItem)
 	if getCreatureCondition(self, CONDITION_SPELLCOOLDOWN, 160) then
 		self:sendCancelMessage("Você está ocupado.")
+
 		return false
 	end
+
 	return true
 end
 
@@ -181,6 +197,7 @@ soulCondition:setParameter(CONDITION_PARAM_SOULGAIN, 1)
 
 local function useStamina(player)
 	local staminaMinutes = player:getStamina()
+
 	if staminaMinutes == 0 then
 		return
 	end
@@ -188,6 +205,7 @@ local function useStamina(player)
 	local playerId = player:getId()
 	local currentTime = os.time()
 	local timePassed = currentTime - nextUseStaminaTime[playerId]
+
 	if timePassed <= 0 then
 		return
 	end
@@ -203,6 +221,7 @@ local function useStamina(player)
 		staminaMinutes = staminaMinutes - 1
 		nextUseStaminaTime[playerId] = currentTime + 60
 	end
+
 	player:setStamina(staminaMinutes)
 end
 
@@ -213,6 +232,7 @@ function Player:onGainExperience(source, exp, rawExp)
 
 	-- Soul regeneration
 	local vocation = self:getVocation()
+
 	if self:getSoul() < vocation:getMaxSoul() and exp >= self:getLevel() then
 		soulCondition:setParameter(CONDITION_PARAM_SOULTICKS, vocation:getSoulGainTicks() * 1000)
 		self:addCondition(soulCondition)
@@ -226,6 +246,7 @@ function Player:onGainExperience(source, exp, rawExp)
 		useStamina(self)
 
 		local staminaMinutes = self:getStamina()
+
 		if staminaMinutes > 2400 and self:isPremium() then
 			exp = exp * 1.5
 		elseif staminaMinutes <= 840 then
@@ -244,8 +265,10 @@ function Player:onGainSkillTries(skill, tries)
 	if APPLY_SKILL_MULTIPLIER == false then
 		return tries
 	end
+
 	if skill == SKILL_MAGLEVEL then
 		return tries * configManager.getNumber(configKeys.RATE_MAGIC)
 	end
+
 	return tries * configManager.getNumber(configKeys.RATE_SKILL)
 end

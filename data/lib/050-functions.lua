@@ -344,26 +344,32 @@ end
 
 function removerAtributosItem(cid, item)
 	local item = Item(item)
+
 	if item:getAttribute(ITEM_ATTRIBUTE_ATTACK) then
 		item:setAttribute(ITEM_ATTRIBUTE_ATTACK, 0)
 	end
+
 	if item:getAttribute(ITEM_ATTRIBUTE_DEFENSE) then
 		item:setAttribute(ITEM_ATTRIBUTE_DEFENSE, 0)
 	end
+
 	if item:getAttribute(ITEM_ATTRIBUTE_EXTRADEFENSE) then
 		item:setAttribute(ITEM_ATTRIBUTE_EXTRADEFENSE, 0)
 	end
+
 	if item:getAttribute(ITEM_ATTRIBUTE_ARMOR) then
 		item:setAttribute(ITEM_ATTRIBUTE_ARMOR, 0)
 	end
-	if ferramentas[item.itemid] and item:getAttribute(ITEM_ATTRIBUTE_WEIGHT) then
+
+	if modificarItensPeso[item.itemid] and item:getAttribute(ITEM_ATTRIBUTE_WEIGHT) then
 		local player = Player(cid)
 		item:moveTo(player:getPosition())
 		local itemClone = item:clone()
 		item:remove()
-		itemClone:setAttribute(ITEM_ATTRIBUTE_WEIGHT, ferramentas[item.itemid])
+		itemClone:setAttribute(ITEM_ATTRIBUTE_WEIGHT, modificarItensPeso[item.itemid])
 		player:addItemEx(itemClone)
 	end
+
 	return true
 end
 
@@ -374,11 +380,13 @@ end
 
 function getPlayerNameById(id)
     local resultName = db.storeQuery("SELECT `name` FROM `players` WHERE `id` = " .. db.escapeString(id))
+
     if resultName ~= false then
         local name = result.getDataString(resultName, "name")
         result.free(resultName)
         return name
     end
+
     return 0
 end
 
@@ -388,19 +396,24 @@ function Player:pegarArtigo(tipo)
 	elseif tipo == 2 then
 		return ((self:getSex() == PLAYERSEX_FEMALE) and 'a' or '')
 	end
+
 	return ''
 end
 
 function Player:removerOutfit(lookType)
 	self:removeOutfit(lookType)
+
 	local outfit = self:getOutfit()
+
 	if outfit.lookType == lookType then
 		local novoLookType
+
 		if self:getSex() == PLAYERSEX_FEMALE then
 			novoLookType = 136
 		else
 			novoLookType = 128
 		end
+
 		self:mudarOutfit(novoLookType)
 		self:sendOutfitWindow()
 	end
@@ -408,64 +421,77 @@ end
 
 function Player:mudarOutfit(lookType)
 	local outfit = self:getOutfit()
+
 	self:setOutfit({lookType = lookType, lookFeet = outfit.lookFeet, lookLegs = outfit.lookLegs, lookMount = outfit.lookMount, lookHead = outfit.lookHead, lookTypeEx = outfit.lookTypeEx, lookAddons = outfit.lookAddons, lookBody = outfit.lookBody})
 end
 
 function Player:pegarOutfitLookType(outfitNome)
 	local lookType = 0
 	local resultId = db.storeQuery("SELECT `looktype` FROM `z_outfits` WHERE (`name` LIKE " .. db.escapeString(outfitNome) .. " OR `maleName` LIKE " .. db.escapeString(outfitNome) .. ") AND `type` LIKE " .. db.escapeString(self:getSex()))
+
 	if resultId ~= false then
 		lookType = result.getDataInt(resultId, "looktype")
 		result.free(resultId)
 	end
+
 	return lookType
 end
 
 function pegarOutfitNome(lookType)
 	local outfitNome = ""
 	local resultId = db.storeQuery("SELECT `name` FROM `z_outfits` WHERE `looktype` LIKE " .. db.escapeString(lookType))
+
 	if resultId ~= false then
 		outfitNome = result.getDataString(resultId, "name")
 		result.free(resultId)
 	end
+
 	return outfitNome
 end
 
 function pegarMontariaId(montariaNome)
 	local montariaId = 0
 	local resultId = db.storeQuery("SELECT `id` FROM `z_montarias` WHERE `name` LIKE " .. db.escapeString(montariaNome))
+
 	if resultId ~= false then
 		montariaId = result.getDataInt(resultId, "id")
 		result.free(resultId)
 	end
+
 	return montariaId
 end
 
 function pegarMontariaNome(montariaId)
 	local montariaNome = ""
 	local resultId = db.storeQuery("SELECT `name` FROM `z_montarias` WHERE `id` LIKE " .. db.escapeString(montariaId))
+
 	if resultId ~= false then
 		montariaNome = result.getDataString(resultId, "name")
 		result.free(resultId)
 	end
+
 	return montariaNome
 end
 
 function exibirAddon(addon, exibirArtigo)
 	local exibirAddon = (exibirArtigo and "o" or "") .. (addon == 1 and "primeiro" or "segundo") .. " addon"
+
 	if addon == 3 then
 		exibirAddon = "todos os addons"
 	end
+
 	return exibirAddon
 end
 
 function exibirRecompensa(recompensa, container)
 	local exibirRecompensa
+
 	if #recompensa > 1 then
 		exibirRecompensa = "1 " .. ItemType(container):getName()
 	elseif #recompensa == 1 then
 		exibirRecompensa = recompensa[1][2] .. " " .. ItemType(recompensa[1][1]):getName()
 	end
+
 	return exibirRecompensa
 end
 
@@ -514,6 +540,7 @@ end
 function Player:receberQuest(quest, storage, modal)
 
 	local checarValor = -1
+
 	if quest.checarValor then
 		checarValor = quest.checarValor
 	end
@@ -524,11 +551,13 @@ function Player:receberQuest(quest, storage, modal)
 	end
 
 	local adicionarValor = 1
+
 	if quest.adicionarValor then
 		adicionarValor = quest.adicionarValor
 	end
 
 	local recompensa
+
 	if quest.recompensa then
 		recompensa = quest.recompensa
 	elseif quest.recompensaVocacao then
@@ -545,7 +574,9 @@ function Player:receberQuest(quest, storage, modal)
 	elseif modal then
 		recompensa = quest.recompensaOpcional[modal]
 	end
+
 	local container
+
 	if quest.container then
 		container = quest.container
 	elseif #recompensa > 1 then
@@ -553,7 +584,9 @@ function Player:receberQuest(quest, storage, modal)
 	end
 
 	local adicionarItens = self:adicionarItensJogador(recompensa, container, modal)
+
 	self:sendTextMessage(MESSAGE_INFO_DESCR, adicionarItens[2])
+
 	if adicionarItens[1] then
 		self:setStorageValue(storage, adicionarValor)
 	end
