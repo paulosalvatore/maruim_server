@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Dragon" nameDescription="a dragon" race="blood" experience="700" speed="185" manacost="0">
+	<health now="1000" max="1000" />
+	<look type="34" corpse="5973" />
+	<targetchange interval="4000" chance="10" />
+	<strategy attack="100" defense="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="80" />
+		<flag runonhealth="300" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="50" attack="40" />
+		<attack name="fire" interval="2000" chance="15" range="7" radius="4" target="1" min="-60" max="-140">
+			<attribute key="shootEffect" value="fire" />
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+		<attack name="fire" interval="2000" chance="10" length="8" spread="3" min="-100" max="-170">
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+	</attacks>
+	<defenses armor="30" defense="30">
+		<defense name="healing" interval="2000" chance="15" min="40" max="70">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	<elements>
+		<element earthPercent="80" />
+		<element energyPercent="20" />
+		<element icePercent="-10" />
+	</elements>
+	<immunities>
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
+		<immunity fire="1" />
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="GROOAAARRR" yell="1" />
+		<voice sentence="FCHHHHH" yell="1" />
+	</voices>
+	<loot>
+		<item id="2672" countmax="3" chance="83591" /><!-- Dragon Ham -->
+		<item id="2509" chance="23467" /><!-- Steel Shield -->
+		<item id="2455" chance="19875" /><!-- Crossbow -->
+		<item id="12413" chance="18643" /><!-- Dragon's Tail -->
+		<item id="2546" countmax="10" chance="15478" /><!-- Burst Arrow -->
+		<item id="2397" chance="8613" /><!-- Longsword -->
+		<item id="2457" chance="6837" /><!-- Steel Helmet -->
+		<item id="7588" chance="4982" /><!-- Strong Health Potion -->
+		<item id="2647" chance="4977" /><!-- Plate Legs -->
+		<item id="2413" chance="3248" /><!-- Broadsword -->
+		<item id="5877" chance="2169" /><!-- Green Dragon Leather -->
+		<item id="2187" chance="2072" /><!-- Wand of Inferno -->
+		<item id="5920" chance="2058" /><!-- Green Dragon Scale -->
+		<item id="2387" chance="1862" /><!-- Double Axe -->
+		<item id="2434" chance="1294" /><!-- Dragon Hammer -->
+		<item id="2409" chance="1173" /><!-- Serpent Sword -->
+		<item id="2145" chance="738" /><!-- Small Diamond -->
+		<item id="2516" chance="692" /><!-- Dragon Shield -->
+		<item id="2177" chance="341" /><!-- Life Crystal -->
+		<item id="7430" chance="238" /><!-- Dragonbone Staff -->
+	</loot>
+	<script>
+		<event name="HealthChangeCriatura" />
+		<event name="CriaturaMorta" />
+	</script>
+</monster>

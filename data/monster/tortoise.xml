@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Tortoise" nameDescription="a tortoise" race="blood" experience="90" speed="200" manacost="445">
+	<health now="185" max="185" />
+	<look type="197" corpse="6072" />
+	<targetchange interval="5000" chance="0" />
+	<strategy attack="100" defense="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag staticattack="90" />
+		<flag targetdistance="1" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="40" attack="20" />
+	</attacks>
+	<defenses armor="30" defense="30" />
+	<elements>
+		<element physicalPercent="35" />
+		<element icePercent="20" />
+		<element earthPercent="20" />
+		<element firePercent="-10" />
+	</elements>
+	<loot>
+		<item id="5678" countmax="8" chance="73219" /><!-- Tortoise Egg -->
+		<item id="2667" chance="19962" /><!-- Fish -->
+		<item id="2510" chance="12976" /><!-- Plate Shield -->
+		<item id="2417" chance="8349" /><!-- Battle Hammer -->
+		<item id="5899" chance="8761" /><!-- Turtle Shell -->
+		<item id="6131" chance="2398" /><!-- Tortoise Shield -->
+	</loot>
+	<script>
+		<event name="HealthChangeCriatura"/>
+		<event name="CriaturaMorta"/>
+	</script>
+</monster>

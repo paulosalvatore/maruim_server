@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Dragon Lord" nameDescription="a dragon lord" race="blood" experience="2100" speed="200" manacost="0">
+	<health now="1900" max="1900" />
+	<look type="39" corpse="5984" />
+	<targetchange interval="4000" chance="10" />
+	<strategy attack="100" defense="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="80" />
+		<flag runonhealth="300" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="105" attack="40" />
+		<attack name="fire" interval="2000" chance="20" range="7" radius="4" target="1" min="-100" max="-200">
+			<attribute key="shootEffect" value="fire" />
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+		<attack name="firefield" interval="2000" chance="10" range="7" radius="4" target="1">
+			<attribute key="shootEffect" value="fire" />
+		</attack>
+		<attack name="fire" interval="2000" chance="15" length="8" spread="3" min="-150" max="-230">
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+	</attacks>
+	<defenses armor="35" defense="35">
+		<defense name="healing" interval="2000" chance="15" min="57" max="93">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	<elements>
+		<element earthPercent="80" />
+		<element energyPercent="20" />
+		<element icePercent="-10" />
+	</elements>
+	<immunities>
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
+		<immunity fire="1" />
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="ZCHHHHH" yell="1" />
+		<voice sentence="YOU WILL BURN!" yell="1" />
+	</voices>
+	<loot>
+		<item id="2672" countmax="5" chance="92127" /><!-- Dragon Ham -->
+		<item id="2796" chance="22374" /><!-- Green Mushroom -->
+		<item id="1976" chance="18794" /><!-- Gemmed Book -->
+		<item id="7378" countmax="3" chance="13429" /><!-- Royal Spear -->
+		<item id="2547" countmax="7" chance="11572" /><!-- Power Bolt -->
+		<item id="2146" chance="11195" /><!-- Small Sapphire -->
+		<item id="2167" chance="10971" /><!-- Energy Ring -->
+		<item id="2033" chance="6837" /><!-- Golden Mug -->
+		<item id="7588" chance="5643" /><!-- Strong Health Potion -->
+		<item id="5882" chance="4986" /><!-- Red Dragon Scale -->
+		<item id="5948" chance="4734" /><!-- Red Dragon Leather -->
+		<item id="2177" chance="1643" /><!-- Life Crystal -->
+		<item id="2479" chance="1482" /><!-- Strange Helmet -->
+		<item id="2392" chance="984" /><!-- Fire Sword -->
+		<item id="2498" chance="673" /><!-- Royal Helmet -->
+		<item id="2528" chance="549" /><!-- Tower Shield -->
+		<item id="2492" chance="381" /><!-- Dragon Scale Mail -->
+		<item id="7402" chance="342" /><!-- Dragon Slayer -->
+		<item id="7399" chance="246" /><!-- Dragon Lord Trophy -->
+	</loot>
+	<script>
+		<event name="HealthChangeCriatura" />
+		<event name="CriaturaMorta" />
+	</script>
+</monster>

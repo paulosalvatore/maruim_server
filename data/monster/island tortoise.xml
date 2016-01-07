@@ -22,7 +22,7 @@
 	</attacks>
 	<defenses armor="15" defense="15" />
 	<loot>
-		<item id="5678" countmax="6" chance="54673" /> <!-- Tortoise Egg -->
+		<item id="5678" countmax="5" chance="54673" /> <!-- Tortoise Egg -->
 		<item id="2667" chance="12867" /><!-- Fish -->
 		<item id="2510" chance="7984" /><!-- Plate Shield -->
 		<item id="2417" chance="6762" /><!-- Battle Hammer -->

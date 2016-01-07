@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Quara Constrictor Scout" nameDescription="a quara constrictor scout" race="blood" experience="200" speed="200" manacost="670">
+	<health now="450" max="450" />
+	<look type="46" corpse="6065" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag staticattack="90" />
+		<flag targetdistance="1" />
+		<flag runonhealth="20" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="50" attack="45" />
+		<attack name="lifedrain" interval="2000" chance="15" radius="3" target="0" max="-80">
+			<attribute key="areaEffect" value="blackspark" />
+		</attack>
+	</attacks>
+	<defenses armor="15" defense="15" />
+	<elements>
+		<element energyPercent="-10" />
+		<element physicalPercent="-5" />
+	</elements>
+	<immunities>
+		<immunity lifedrain="1" />
+		<immunity fire="1" />
+		<immunity paralyze="1" />
+		<immunity ice="1" />
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Gaaahhh!" />
+		<voice sentence="Gluh! Gluh!" />
+		<voice sentence="Tssss!" />
+		<voice sentence="Boohaa!" />
+	</voices>
+	<loot>
+		<item id="12443" chance="30614" /><!-- Quara Tentacle -->
+		<item id="2670" countmax="3" chance="18376" /><!-- Shrimp -->
+		<item id="2397" chance="15724" /><!-- Longsword -->
+		<item id="2465" chance="9467" /><!-- Brass Armor -->
+		<item id="2150" chance="6734" /><!-- Small Amethyst -->
+		<item id="5895" chance="981" /><!-- Fish Fin -->
+	</loot>
+	<script>
+		<event name="HealthChangeCriatura" />
+		<event name="CriaturaMorta" />
+	</script>
+</monster>

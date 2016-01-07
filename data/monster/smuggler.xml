@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Smuggler" nameDescription="a smuggler" race="blood" experience="48" speed="170" manacost="390">
+	<health now="130" max="130" />
+	<look type="134" head="95" body="0" legs="113" feet="115" corpse="20507" />
+	<targetchange interval="4000" chance="10" />
+	<strategy attack="100" defense="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="15" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="20" attack="40" />
+	</attacks>
+	<defenses armor="15" defense="15" />
+	<elements>
+		<element physicalPercent="-5" />
+		<element deathPercent="-5" />
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="I will silence you forever!" />
+		<voice sentence="You saw something you shouldn't!" />
+	</voices>
+	<loot>
+		<item id="12382" chance="65372" /><!-- Scribbled Sheet of Paper -->
+		<item id="2050" countmax="2" chance="48821" /><!-- Torch -->
+		<item id="2649" chance="28964" /><!-- Leather Legs -->
+		<item id="2671" chance="22346" /><!-- Ham -->
+		<item id="2406" chance="21997" /><!-- Short Sword -->
+		<item id="2461" chance="21642" /><!-- Leather Helmet -->
+		<item id="2403" chance="18336" /><!-- Knife -->
+		<item id="8840" countmax="5" chance="12437" /><!-- Raspberries -->
+		<item id="2376" chance="9948" /><!-- Sword -->
+		<item id="2404" chance="9783" /><!-- Combat Knife -->
+	</loot>
+	<script>
+		<event name="HealthChangeCriatura"/>
+		<event name="CriaturaMorta"/>
+	</script>
+</monster>

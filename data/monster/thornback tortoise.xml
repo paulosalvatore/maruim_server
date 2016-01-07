@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Thornback Tortoise" nameDescription="a thornback tortoise" race="blood" experience="150" speed="200" manacost="490">
+	<health now="300" max="300" />
+	<look type="198" corpse="6073" />
+	<targetchange interval="5000" chance="0" />
+	<strategy attack="100" defense="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag staticattack="90" />
+		<flag targetdistance="1" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="45" attack="40" poison="40" />
+	</attacks>
+	<defenses armor="40" defense="40" />
+	<elements>
+		<element physicalPercent="45" />
+		<element earthPercent="20" />
+		<element icePercent="20" />
+		<element firePercent="-10" />
+	</elements>
+	<loot>
+		<item id="5678" countmax="10" chance="94372" /><!-- Tortoise Egg -->
+		<item id="2391" chance="32976" /><!-- Thorn -->
+		<item id="2667" countmax="2" chance="23494" /><!-- Fish -->
+		<item id="5899" chance="12761" /><!-- Turtle Shell -->
+		<item id="7618" chance="9764" /><!-- Health Potion -->
+		<item id="2143" chance="5728" /><!-- White Pearl -->
+		<item id="2787" chance="5619" /><!-- White Mushroom -->
+		<item id="2789" chance="5320" /><!-- Brown Mushroom -->
+		<item id="2144" chance="3467" /><!-- Black Pearl -->
+		<item id="2391" chance="2613" /><!-- War Hammer -->
+	</loot>
+	<script>
+		<event name="HealthChangeCriatura"/>
+		<event name="CriaturaMorta"/>
+	</script>
+</monster>

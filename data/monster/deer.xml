@@ -22,10 +22,10 @@
 	</attacks>
 	<defenses armor="5" defense="5" />
 	<loot>
-		<item id="2671" chance="80000" /><!-- Ham -->
-		<item id="2666" countmax="4" chance="80000" /><!-- Meat -->
-		<item id="7397" chance="1000" /><!-- Deer Trophy -->
-		<item id="11214" countmax="2" chance="30000" /><!-- Antlers -->
+		<item id="2671" chance="92316" /><!-- Ham -->
+		<item id="2666" countmax="4" chance="89465" /><!-- Meat -->
+		<item id="11214" countmax="2" chance="38671" /><!-- Antlers -->
+		<item id="7397" chance="329" /><!-- Deer Trophy -->
 	</loot>
 	<script>
 		<event name="HealthChangeCriatura"/>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Demon Skeleton" nameDescription="a demon skeleton" race="undead" experience="240" speed="170" manacost="620">
+	<health now="400" max="400" />
+	<look type="37" corpse="5963" />
+	<targetchange interval="4000" chance="10" />
+	<strategy attack="100" defense="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="64" attack="50" />
+		<attack name="death" interval="2000" chance="10" radius="1" target="1" range="1" min="-30" max="-50">
+			<attribute key="areaEffect" value="smallclouds" />
+		</attack>
+	</attacks>
+	<defenses armor="30" defense="30" />
+	<elements>
+		<element holyPercent="-25" />
+	</elements>
+	<immunities>
+		<immunity paralyze="1" />
+		<immunity death="1" />
+		<immunity fire="1" />
+		<immunity earth="1" />
+		<immunity drown="1" />
+		<immunity lifedrain="1" />
+		<immunity drunk="1" />
+	</immunities>
+	<loot>
+		<item id="12437" chance="68384" /><!-- Pelvis Bone -->
+		<item id="10564" chance="38679" /><!-- Demonic Skeletal Hand -->
+		<item id="7618" countmax="2" chance="22437" /><!-- Health Potion -->
+		<item id="2229" chance="20341" /><!-- Skull -->
+		<item id="2399" countmax="3" chance="19643" /><!-- Throwing Star -->
+		<item id="7620" chance="12775" /><!-- Mana Potion -->
+		<item id="2050" chance="10648" /><!-- Torch -->
+		<item id="2513" chance="9984" /><!-- Battle Shield -->
+		<item id="2417" chance="8972" /><!-- Battle Hammer -->
+		<item id="2144" chance="7633" /><!-- Black Pearl -->
+		<item id="2459" chance="6879" /><!-- Iron Helmet -->
+		<item id="2194" chance="4973" /><!-- Mysterious Fetish -->
+		<item id="2178" chance="2762" /><!-- Mind Stone -->
+		<item id="2147" chance="2571" /><!-- Small Ruby -->
+		<item id="2515" chance="1983" /><!-- Guardian Shield -->
+	</loot>
+	<script>
+		<event name="HealthChangeCriatura"/>
+		<event name="CriaturaMorta"/>
+	</script>
+</monster>
