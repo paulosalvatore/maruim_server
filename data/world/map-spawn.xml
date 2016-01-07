@@ -368,8 +368,8 @@
 	<spawn centerx="558" centery="910" centerz="5" radius="1">
 		<monster name="Snake" x="0" y="-1" z="5" spawntime="60" />
 	</spawn>
-	<spawn centerx="657" centery="913" centerz="5" radius="1">
-		<npc name="Ganor" x="0" y="0" z="5" spawntime="60" direction="2" />
+	<spawn centerx="657" centery="914" centerz="5" radius="1">
+		<npc name="Ganor" x="0" y="-1" z="5" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="546" centery="944" centerz="5" radius="1">
 		<npc name="Xanthe" x="0" y="-1" z="5" spawntime="60" direction="2" />
@@ -1171,8 +1171,8 @@
 	<spawn centerx="539" centery="912" centerz="6" radius="1">
 		<monster name="Spider" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
-	<spawn centerx="653" centery="913" centerz="6" radius="1">
-		<npc name="Boror" x="0" y="0" z="6" spawntime="60" direction="2" />
+	<spawn centerx="654" centery="913" centerz="6" radius="1">
+		<npc name="Boror" x="-1" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="547" centery="916" centerz="6" radius="1">
 		<monster name="Spider" x="0" y="0" z="6" spawntime="60" />
@@ -2513,8 +2513,8 @@
 	<spawn centerx="491" centery="917" centerz="7" radius="1">
 		<monster name="Deer" x="1" y="1" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="659" centery="917" centerz="7" radius="1">
-		<npc name="Andor" x="0" y="0" z="7" spawntime="60" direction="2" />
+	<spawn centerx="659" centery="918" centerz="7" radius="1">
+		<npc name="Andor" x="0" y="-1" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="566" centery="920" centerz="7" radius="1">
 		<monster name="Rabbit" x="-1" y="0" z="7" spawntime="60" />
@@ -8846,12 +8846,12 @@
 		<monster name="Spider" x="0" y="-1" z="8" spawntime="60" />
 		<monster name="Bug" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="648" centery="899" centerz="8" radius="1">
+		<npc name="Gras Fravotroth" x="-1" y="0" z="8" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="566" centery="900" centerz="8" radius="1">
 		<monster name="Cave Rat" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Bug" x="1" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="647" centery="900" centerz="8" radius="1">
-		<npc name="Gras Fravotroth" x="0" y="-1" z="8" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="573" centery="902" centerz="8" radius="1">
 		<monster name="Snake" x="0" y="-1" z="8" spawntime="60" />
@@ -19672,14 +19672,16 @@
 	<spawn centerx="895" centery="1802" centerz="11" radius="1">
 		<monster name="Deepling Guard" x="0" y="-1" z="11" spawntime="60" />
 	</spawn>
-	<spawn centerx="961" centery="1830" centerz="11" radius="2">
-		<monster name="Rotworm" x="1" y="-1" z="11" spawntime="60" />
-		<monster name="Rotworm" x="-1" y="2" z="11" spawntime="60" />
+	<spawn centerx="959" centery="1831" centerz="11" radius="2">
+		<monster name="Carrion Worm" x="0" y="-2" z="11" spawntime="90" />
+		<monster name="Rotworm" x="2" y="-1" z="11" spawntime="60" />
+		<monster name="Rotworm" x="-2" y="1" z="11" spawntime="60" />
 	</spawn>
 	<spawn centerx="966" centery="1836" centerz="11" radius="4">
 		<monster name="Carrion Worm" x="2" y="-3" z="11" spawntime="60" />
 		<monster name="Carrion Worm" x="-3" y="0" z="11" spawntime="90" />
 		<monster name="Carrion Worm" x="3" y="0" z="11" spawntime="120" />
+		<monster name="Rotworm" x="2" y="2" z="11" spawntime="60" />
 		<monster name="Carrion Worm" x="0" y="3" z="11" spawntime="150" />
 	</spawn>
 	<spawn centerx="1207" centery="1851" centerz="11" radius="1">
