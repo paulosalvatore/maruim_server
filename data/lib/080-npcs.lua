@@ -17,8 +17,8 @@ frases = {
 comerciantes = {
 	["Andor"] = { -- Loja de Clavas - Guilda dos Knights
 		["itens"] = {
-			["c"] = {2394, 2398, 2417, 2422, 2423, 2434, 2437, 2439, 2448, 2449},
-			["v"] = {2394, 2398, 2417, 2422, 2423, 2434, 2437, 2439, 2448, 2449}
+			["c"] = {2391, 2394, 2398, 2417, 2422, 2423, 2434, 2437, 2439, 2448, 2449},
+			["v"] = {2391, 2394, 2398, 2417, 2422, 2423, 2434, 2437, 2439, 2448, 2449}
 		},
 		["frases"] = {
 			["greet"] = "Olá |PLAYERNAME|. Eu compro e vendo diversos tipos de clavas poderosas. Interessado em algo, cavaleiro?"
@@ -74,7 +74,7 @@ comerciantes = {
 	},
 	["Doror"] = { -- Loja de Armas - Civitaten
 		["itens"] = {
-			["v"] = {2417}
+			["v"] = {2377, 2378, 2381, 2387, 2391, 2417, 2442, 7452}
 		},
 		["frases"] = {
 			["greet"] = "Olá |PLAYERNAME|. Eu compro diversos tipos de armas."
@@ -117,7 +117,7 @@ comerciantes = {
 	["Ganor"] = { -- Loja de Machados - Guilda dos Knights
 		["itens"] = {
 			["c"] = {2378, 2380, 2386, 2388, 2425, 2429, 2441, 2559, 8601, 11323},
-			["v"] = {2378, 2380, 2386, 2388, 2425, 2428, 2429, 2441, 2559, 8601, 11323}
+			["v"] = {2378, 2380, 2381, 2386, 2388, 2425, 2428, 2429, 2441, 2559, 8601, 11323}
 		},
 		["frases"] = {
 			["greet"] = "Olá |PLAYERNAME|. Eu compro e vendo diversos tipos de machados poderosos. Interessado em algo, cavaleiro?"
@@ -186,7 +186,7 @@ comerciantes = {
 	},
 	["Maurice"] = { -- Comprador de Produtos de Criaturas - Civitaten
 		["itens"] = {
-			["v"] = {2129, 2229, 2800, 2805, 5678, {5897, 70}, 5899, 8859, 10553, 10569, 10606, 11189, 11191, 11210, 11224, 11324, 12399, 12400, 12441, 12471, 13757}
+			["v"] = {2129, 2229, 2800, 2805, 5678, {5897, 70}, 5899, 8859, 10553, 10557, 10568, 10569, 10574, 10606, 11189, 11191, 11192, 11210, 11224, 11324, 12399, 12400, 12441, 12471, 13757}
 		}
 	},
 	["Mood Neva"] = { -- Carteiro - Civitaten
