@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Draken Elite" nameDescription="a draken elite" race="blood" experience="4200" speed="250" manacost="0">
+	<health now="5550" max="5550" />
+	<look type="362" corpse="12609" />
+	<targetchange interval="5000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="110" attack="59" />
+		<attack name="fire" interval="2000" chance="10" length="4" spread="3" min="-240" max="-550">
+			<attribute key="areaEffect" value="explosion" />
+		</attack>
+		<attack name="fire" interval="2000" chance="15" range="7" target="1" min="-200" max="-300">
+			<attribute key="shootEffect" value="fire" />
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+		<attack name="earth" interval="2000" chance="15" target="1" radius="4" min="-280" max="-410">
+			<attribute key="areaEffect" value="poff" />
+		</attack>
+		<attack name="soulfire" interval="2000" chance="10" />
+		<attack name="poisoncondition" interval="2000" chance="10" range="7" target="1" min="-250" max="-320">
+			<attribute key="shootEffect" value="poison" />
+		</attack>
+	</attacks>
+	<defenses armor="45" defense="45">
+		<defense name="healing" interval="2000" chance="15" min="510" max="600">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	<elements>
+		<element holyPercent="30" />
+		<element deathPercent="30" />
+		<element energyPercent="40" />
+	</elements>
+	<immunities>
+		<immunity fire="1" />
+		<immunity earth="1" />
+		<immunity invisible="1" />
+	</immunities>
+	<voices interval="2000" chance="7">
+		<voice sentence="For ze emperor!" />
+		<voice sentence="You will die zhouzandz deazhz!" />
+	</voices>
+	<loot>
+		<item id="2666" chance="46791" /><!-- Meat -->
+		<item id="12617" chance="29675" /><!-- Broken Slicer -->
+		<item id="12616" chance="21934" /><!-- Broken Draken Mail -->
+		<item id="12615" chance="19038" /><!-- Draken Wristbands -->
+		<item id="7590" countmax="3" chance="14349" /><!-- Great Mana Potion -->
+		<item id="8473" countmax="3" chance="14253" /><!-- Ultimate Health Potion -->
+		<item id="12614" chance="11684" /><!-- Draken Sulphur -->
+		<item id="2145" countmax="4" chance="3241" /><!-- Small Diamond -->
+		<item id="5904" chance="2905" /><!-- Magic Sulphur -->
+		<item id="7404" chance="1487" /><!-- Assassin Dagger -->
+		<item id="12613" chance="1416" /><!-- Twiceslicer -->
+		<item id="11304" chance="1273" /><!-- Zaoan Legs -->
+		<item id="12646" chance="1108" /><!-- Draken Boots -->
+		<item id="11307" chance="991" /><!-- Zaoan Sword -->
+		<item id="11301" chance="894" /><!-- Zaoan Armor -->
+		<item id="11302" chance="322" /><!-- Zaoan Helmet -->
+		<item id="12607" chance="229" /><!-- Elite Draken Mail -->
+		<item id="12647" chance="133" /><!-- Snake God's Wristguard -->
+		<item id="12649" chance="98" /><!-- Blade of Corruption -->
+		<item id="12630" chance="62" /><!-- Cobra Crown -->
+	</loot>
+	<script>
+		<event name="HealthChangeCriatura" />
+		<event name="CriaturaMorta" />
+	</script>
+</monster>

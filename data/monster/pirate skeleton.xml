@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Pirate Skeleton" nameDescription="a pirate skeleton" race="undead" experience="85" speed="180" manacost="0">
+	<health now="190" max="190" />
+	<look type="195" corpse="6070" />
+	<targetchange interval="5000" chance="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag staticattack="90" />
+		<flag targetdistance="1" />
+		<flag runonhealth="20" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="40" attack="20" />
+	</attacks>
+	<defenses armor="15" defense="15" />
+	<elements>
+		<element holyPercent="-25" />
+	</elements>
+	<immunities>
+		<immunity death="1" />
+	</immunities>
+	<loot>
+		<item id="2230" chance="29376" /><!-- Bone -->
+		<item id="2231" chance="18746" /><!-- Big Bone -->
+		<item id="2229" chance="12632" /><!-- Skull -->
+		<item id="10559" chance="8994" /><!-- Spooky Blue Eye -->
+		<item id="2406" chance="3496" /><!-- Short Sword -->
+		<item id="2376" chance="2567" /><!-- Sword -->
+		<item id="2449" chance="1974" /><!-- Bone Club -->
+	</loot>
+	<script>
+		<event name="HealthChangeCriatura" />
+		<event name="CriaturaMorta" />
+	</script>
+</monster>

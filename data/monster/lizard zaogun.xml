@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Lizard Zaogun" nameDescription="a lizard zaogun" race="blood" experience="1700" speed="250" manacost="0">
+	<health now="2955" max="2955" />
+	<look type="343" corpse="11284" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="75" attack="82" />
+		<attack name="earth" interval="2000" chance="15" range="7" radius="1" target="1" min="-220" max="-375">
+			<attribute key="shootEffect" value="poison" />
+			<attribute key="areaEffect" value="poison" />
+		</attack>
+	</attacks>
+	<defenses armor="40" defense="40">
+		<defense name="healing" interval="2000" chance="10" min="175" max="275">
+			<attribute key="areaEffect" value="greenshimmer" />
+		</defense>
+	</defenses>
+	<elements>
+		<element physicalPercent="5" />
+		<element deathPercent="10" />
+		<element firePercent="45" />
+		<element energyPercent="20" />
+		<element icePercent="15" />
+	</elements>
+	<immunities>
+		<immunity earth="1" />
+		<immunity invisible="1" />
+	</immunities>
+	<loot>
+		<item id="11331" chance="21980" /><!-- Zaogun Shoulderplates -->
+		<item id="5876" chance="19360" /><!-- Lizard Leather -->
+		<item id="5881" chance="17520" /><!-- Lizard Scale -->
+		<item id="11330" chance="12280" /><!-- Zaogun Flag -->
+		<item id="7588" chance="11643" /><!-- Strong Health Potion -->
+		<item id="7591" countmax="3" chance="9876" /><!-- Great Health Potion -->
+		<item id="2149" countmax="5" chance="7830" /><!-- Small Emerald -->
+		<item id="11206" chance="3670" /><!-- Red Lantern -->
+		<item id="2528" chance="2144" /><!-- Tower Shield -->
+		<item id="11304" chance="1832" /><!-- Zaoan Legs -->
+		<item id="11303" chance="1736" /><!-- Zaoan Shoes -->
+		<item id="11301" chance="1148" /><!-- Zaoan Armor -->
+	</loot>
+	<script>
+		<event name="HealthChangeCriatura" />
+		<event name="CriaturaMorta" />
+	</script>
+</monster>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Draken Abomination" nameDescription="a draken abomination" race="venom" experience="3800" speed="230" manacost="0">
+	<health now="6250" max="6250" />
+	<look type="357" corpse="12623" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="70" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="110" attack="70" />
+		<attack name="fire" interval="2000" chance="10" length="4" spread="3" min="-310" max="-630">
+			<attribute key="areaEffect" value="explosion" />
+		</attack>
+		<attack name="draken abomination curse" interval="2000" range="5" chance="10" />
+		<attack name="death" interval="2000" chance="15" length="4" spread="0" min="-170" max="-370">
+			<attribute key="areaEffect" value="mortarea" />
+		</attack>
+		<attack name="drunk" interval="2000" chance="15" range="7" radius="4" target="0" duration="9000">
+			<attribute key="shootEffect" value="poison" />
+			<attribute key="areaEffect" value="poison" />
+		</attack>
+		<attack name="physical" interval="2000" chance="10" range="7" radius="3" target="0">
+			<attribute key="areaEffect" value="greenspark" />
+		</attack>
+	</attacks>
+	<defenses armor="30" defense="30">
+		<defense name="healing" interval="2000" chance="15" min="650" max="700">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	<elements>
+		<element holyPercent="-5" />
+		<element energyPercent="-5" />
+		<element icePercent="5" />
+	</elements>
+	<immunities>
+		<immunity fire="1" />
+		<immunity earth="1" />
+		<immunity death="1" />
+		<immunity invisible="1" />
+	</immunities>
+	<summons maxSummons="2">
+		<summon name="Death Blob" interval="2000" chance="10" max="2" />
+	</summons>
+	<voices interval="2000" chance="7">
+		<voice sentence="Ugggh!" />
+		<voice sentence="Gll" />
+	</voices>
+	<loot>
+		<item id="2666" countmax="4" chance="61452" /><!-- Meat -->
+		<item id="12627" chance="16116" /><!-- Eye of Corruption -->
+		<item id="12629" chance="13944" /><!-- Scale of Corruption -->
+		<item id="7590" countmax="3" chance="12457" /><!-- Great Mana Potion -->
+		<item id="8473" countmax="3" chance="11308" /><!-- Ultimate Health Potion -->
+		<item id="7903" chance="10733" /><!-- Terra Hood -->
+		<item id="12628" chance="9249" /><!-- Tail of Corruption -->
+		<item id="8472" countmax="3" chance="7905" /><!-- Great Spirit Potion -->
+		<item id="9970" countmax="4" chance="4902" /><!-- Small Topaz -->
+		<item id="8922" chance="2523" /><!-- Wand of Voodoo -->
+		<item id="11304" chance="1181" /><!-- Zaoan Legs -->
+		<item id="11302" chance="962" /><!-- Zaoan Helmet -->
+		<item id="12646" chance="947" /><!-- Draken Boots -->
+		<item id="11301" chance="775" /><!-- Zaoan Armor -->
+		<item id="13538" chance="665" /><!-- Bamboo Leaves -->
+		<item id="12644" chance="106" /><!-- Shield of Corruption -->
+		<item id="12647" chance="104" /><!-- Snake God's wristguard -->
+	</loot>
+	<script>
+		<event name="HealthChangeCriatura" />
+		<event name="CriaturaMorta" />
+	</script>
+</monster>
