@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Rot Elemental" nameDescription="a rot elemental" race="blood" experience="150" speed="200" manacost="490">
+	<health now="260" max="260" />
+	<look type="615" corpse="23481" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="60" attack="30" />
+	</attacks>
+	<defenses armor="20" defense="20" />
+	<elements>
+		<element energyPercent="25" />
+		<element holyPercent="20" />
+		<element earthPercent="-10" />
+		<element deathPercent="-10" />
+	</elements>
+	<voices interval="2000" chance="7">
+		<voice sentence="Il lorstok human!" />
+		<voice sentence="Toks utat." />
+		<voice sentence="Human, uh whil dyh!" />
+		<voice sentence="Youh ah trak!" />
+		<voice sentence="Let da mashing begin!" />
+	</voices>
+	<loot>
+		<item id="23553" chance="21985" /><!-- Glob of Glooth -->
+		<item id="7589" chance="16732" /><!-- Strong Mana Potion -->
+		<item id="7588" chance="16652" /><!-- Strong Health Potion -->
+		<item id="2146" chance="8221" /><!-- Small Sapphire -->
+		<item id="2149" countmax="2" chance="8167" /><!-- Small Emerald -->
+		<item id="9970" countmax="2" chance="8122" /><!-- Small Topaz -->
+		<item id="23529" chance="7219" /><!-- Glooth Spear -->
+		<item id="2168" chance="2983" /><!-- Life Ring -->
+		<item id="23551" chance="529" /><!-- Glooth Axe -->
+		<item id="23554" chance="512" /><!-- Glooth Amulet -->
+		<item id="2155" chance="438" /><!-- Green Gem -->
+	</loot>
+	<script>
+		<event name="HealthChangeCriatura" />
+		<event name="CriaturaMorta" />
+	</script>
+</monster>
