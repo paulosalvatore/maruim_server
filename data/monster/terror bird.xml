@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Terror Bird" nameDescription="a terror bird" race="blood" experience="150" speed="220" manacost="490">
+	<health now="300" max="300" />
+	<look type="218" corpse="6057" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="35" attack="40" />
+	</attacks>
+	<defenses armor="15" defense="15" />
+	<elements>
+		<element energyPercent="20" />
+		<element icePercent="20" />
+		<element firePercent="-10" />
+		<element earthPercent="-10" />
+		<element deathPercent="-5" />
+	</elements>
+	<voices interval="2000" chance="7">
+		<voice sentence="CRAAAHHH!" />
+		<voice sentence="Gruuuh Gruuuh." />
+		<voice sentence="Carrah Carrah!" />
+	</voices>
+	<loot>
+		<item id="2148" countmax="3" chance="59467" /><!-- Meat -->
+		<item id="3976" countmax="3" chance="32642" /><!-- Worm -->
+		<item id="11190" chance="24989" /><!-- Terrorbird Beak -->
+		<item id="12470" chance="6721" /><!-- Colourful Feather -->
+		<item id="7618" chance="4498" /><!-- Health Potion -->
+		<item id="7732" chance="862" /><!-- Seeds -->
+		<item id="3970" chance="548" /><!-- Feather Headdress -->
+	</loot>
+	<script>
+		<event name="HealthChangeCriatura" />
+		<event name="CriaturaMorta" />
+	</script>
+</monster>

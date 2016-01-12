@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Roaring Lion" nameDescription="a roaring lion" race="blood" experience="800" speed="210" manacost="0">
+	<health now="1000" max="1000" />
+	<look type="570" corpse="21420" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="0" max="-200" />
+	</attacks>
+	<defenses armor="20" defense="20">
+		<defense name="speed" interval="2000" chance="15" speedchange="230" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+	<elements>
+		<element firePercent="20" />
+		<element icePercent="25" />
+		<element earthPercent="25" />
+		<element holyPercent="50" />
+	</elements>
+	<immunities>
+		<immunity invisible="1" />
+	</immunities>
+	<voices interval="2000" chance="7">
+		<voice sentence="Groarrrr! Rwarrrr!" />
+		<voice sentence="Growl!" />
+	</voices>
+	<loot>
+		<item id="2666" countmax="4" chance="52673" /><!-- Meat -->
+		<item id="2671" countmax="2" chance="51997" /><!-- Ham -->
+		<item id="10608" chance="37641" /><!-- Lion's Mane -->
+		<item id="2147" chance="14998" /><!-- Small Ruby -->
+		<item id="9970" chance="14667" /><!-- Small Topaz -->
+		<item id="2146" chance="12987" /><!-- Small Sapphire -->
+		<item id="2150" chance="11337" /><!-- Small Amethyst -->
+		<item id="2193" chance="5683" /><!-- Ankh -->
+		<item id="2164" chance="1862" /><!-- Might Ring -->
+		<item id="2491" chance="734" /><!-- Crown Helmet -->
+	</loot>
+	<script>
+		<event name="HealthChangeCriatura" />
+		<event name="CriaturaMorta" />
+	</script>
+</monster>

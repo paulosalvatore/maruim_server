@@ -4791,9 +4791,6 @@
 	<spawn centerx="1282" centery="1594" centerz="7" radius="1">
 		<monster name="Nomad" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1092" centery="1595" centerz="7" radius="1">
-		<npc name="Rimi" x="0" y="0" z="7" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="1381" centery="1595" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -5638,10 +5635,10 @@
 		<monster name="Spider" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1232" centery="1775" centerz="7" radius="1">
-		<monster name="Butterfly" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Blue Butterfly" x="-1" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1288" centery="1776" centerz="7" radius="1">
-		<monster name="Butterfly" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Red Butterfly" x="-1" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1300" centery="1776" centerz="7" radius="1">
 		<monster name="Tortoise" x="-1" y="0" z="7" spawntime="60" />
@@ -5731,7 +5728,7 @@
 		<monster name="Tiger" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1204" centery="1788" centerz="7" radius="1">
-		<monster name="Red Butterfly" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Blue Butterfly" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1222" centery="1789" centerz="7" radius="1">
 		<monster name="Spit Nettle" x="-1" y="0" z="7" spawntime="60" />
@@ -5789,7 +5786,7 @@
 		<monster name="Cobra" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1159" centery="1796" centerz="7" radius="1">
-		<monster name="Red Butterfly" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Blue Butterfly" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1202" centery="1796" centerz="7" radius="1">
 		<monster name="Centipede" x="1" y="0" z="7" spawntime="60" />
@@ -5939,7 +5936,7 @@
 		<monster name="Yellow Butterfly" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1251" centery="1810" centerz="7" radius="1">
-		<monster name="Red Butterfly" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Purple Butterfly" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1171" centery="1811" centerz="7" radius="1">
 		<monster name="Tiger" x="0" y="-1" z="7" spawntime="60" />
@@ -5960,7 +5957,7 @@
 		<monster name="Deer" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1210" centery="1813" centerz="7" radius="1">
-		<monster name="Butterfly" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Red Butterfly" x="-1" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1216" centery="1813" centerz="7" radius="1">
 		<monster name="Cobra" x="0" y="-1" z="7" spawntime="60" />
@@ -6018,13 +6015,13 @@
 		<monster name="Snake" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1150" centery="1816" centerz="7" radius="1">
-		<monster name="Butterfly" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Purple Butterfly" x="-1" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1284" centery="1816" centerz="7" radius="1">
 		<monster name="Cobra" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1302" centery="1816" centerz="7" radius="1">
-		<monster name="Red Butterfly" x="1" y="-1" z="7" spawntime="60" />
+		<monster name="Purple Butterfly" x="1" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="904" centery="1817" centerz="7" radius="1">
 		<monster name="Skunk" x="0" y="-1" z="7" spawntime="60" />
@@ -6229,7 +6226,7 @@
 		<monster name="Tiger" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1240" centery="1834" centerz="7" radius="1">
-		<monster name="Butterfly" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Red Butterfly" x="-1" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="672" centery="1835" centerz="7" radius="1">
 		<monster name="Polar Bear" x="0" y="-1" z="7" spawntime="60" />
@@ -6380,7 +6377,7 @@
 		<monster name="Tiger" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1225" centery="1848" centerz="7" radius="1">
-		<monster name="Red Butterfly" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Yellow Butterfly" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1303" centery="1848" centerz="7" radius="1">
 		<monster name="Tortoise" x="-1" y="0" z="7" spawntime="60" />
@@ -6512,7 +6509,7 @@
 		<monster name="Snake" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1182" centery="1857" centerz="7" radius="1">
-		<monster name="Red Butterfly" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Yellow Butterfly" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1190" centery="1857" centerz="7" radius="1">
 		<monster name="Tiger" x="0" y="-1" z="7" spawntime="60" />
@@ -6562,7 +6559,7 @@
 		<monster name="Snake" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1128" centery="1860" centerz="7" radius="1">
-		<monster name="Butterfly" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Red Butterfly" x="-1" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1136" centery="1860" centerz="7" radius="1">
 		<monster name="Cobra" x="0" y="-1" z="7" spawntime="60" />
@@ -6577,7 +6574,7 @@
 		<monster name="Tortoise" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1203" centery="1861" centerz="7" radius="1">
-		<monster name="Butterfly" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Red Butterfly" x="-1" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1265" centery="1861" centerz="7" radius="1">
 		<monster name="Tiger" x="0" y="-1" z="7" spawntime="60" />
@@ -6969,7 +6966,7 @@
 		<monster name="Cobra" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1178" centery="1892" centerz="7" radius="1">
-		<monster name="Butterfly" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Red Butterfly" x="-1" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1205" centery="1892" centerz="7" radius="1">
 		<monster name="Centipede" x="1" y="0" z="7" spawntime="60" />
@@ -7125,7 +7122,7 @@
 		<monster name="Cobra" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1242" centery="1904" centerz="7" radius="1">
-		<monster name="Butterfly" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Red Butterfly" x="-1" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1145" centery="1905" centerz="7" radius="1">
 		<monster name="Red Butterfly" x="-1" y="0" z="7" spawntime="60" />
@@ -7644,7 +7641,7 @@
 		<monster name="Merlkin" x="2" y="1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1162" centery="1945" centerz="7" radius="1">
-		<monster name="Butterfly" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Red Butterfly" x="-1" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1181" centery="1945" centerz="7" radius="1">
 		<monster name="Centipede" x="1" y="0" z="7" spawntime="60" />
@@ -7808,7 +7805,7 @@
 		<monster name="Merlkin" x="2" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1231" centery="1955" centerz="7" radius="1">
-		<monster name="Butterfly" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Red Butterfly" x="-1" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1245" centery="1955" centerz="7" radius="1">
 		<monster name="Centipede" x="1" y="0" z="7" spawntime="60" />
@@ -11245,9 +11242,6 @@
 	<spawn centerx="759" centery="1683" centerz="8" radius="2">
 		<monster name="Skeleton" x="2" y="-1" z="8" spawntime="60" />
 		<monster name="Skeleton" x="-2" y="1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1507" centery="1684" centerz="8" radius="1">
-		<npc name="Rimi" x="-1" y="0" z="8" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1174" centery="1685" centerz="8" radius="3">
 		<monster name="Cyclops Smith" x="-2" y="-1" z="8" spawntime="300" />

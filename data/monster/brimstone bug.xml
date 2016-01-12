@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<monster name="Brimstone Bug" namedescription="a brimstone bug" race="venom" experience="900" speed="200" manacost="0">
+	<health now="1300" max="1300" />
+	<look type="352" corpse="12527" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="75" attack="50" poison="400" />
+		<attack name="speed" interval="2000" chance="20" range="7" speedchange="-600" duration="10000">
+			<attribute key="shootEffect" value="death" />
+			<attribute key="areaEffect" value="mortarea" />
+		</attack>
+		<attack name="earth" interval="2000" chance="5" radius="6" target="0" min="-140" max="-310">
+			<attribute key="areaEffect" value="smallplants" />
+		</attack>
+		<attack name="manadrain" interval="2000" chance="10" length="6" spread="0" min="-130" max="-200">
+			<attribute key="areaEffect" value="greenspark" />
+		</attack>
+		<attack name="poison" interval="2000" chance="15" length="8" spread="3" min="-80" max="-120">
+			<attribute key="areaEffect" value="yellowbubble" />
+		</attack>
+	</attacks>
+	<defenses armor="25" defense="25" />
+	<elements>
+		<element firePercent="-10" />
+		<element icePercent="-10" />
+		<element holyPercent="-10" />
+		<element energyPercent="-10" />
+		<element physicalPercent="-5" />
+	</elements>
+	<immunities>
+		<immunity lifedrain="1" />
+		<immunity death="1" />
+		<immunity earth="1" />
+		<immunity invisible="1" />
+	</immunities>
+	<voices interval="2000" chance="7">
+		<voice sentence="Chrrr!" />
+	</voices>
+	<loot>
+		<item id="10557" chance="82364" /><!-- Poisonous Slime -->
+		<item id="11222" chance="48662" /><!-- Lump of Earth -->
+		<item id="11232" chance="24376" /><!-- Sulphurous Stone -->
+		<item id="12659" chance="23998" /><!-- Brimstone Shell -->
+		<item id="7589" chance="14657" /><!-- Strong Mana Potion -->
+		<item id="7588" chance="14598" /><!-- Strong Health Potion -->
+		<item id="12658" chance="12664" /><!-- Brimstone Fangs -->
+		<item id="2149" countmax="4" chance="5863" /><!-- Small Emerald -->
+		<item id="5904" chance="3488" /><!-- Magic Sulphur -->
+		<item id="2165" chance="1541" /><!-- Stealth Ring -->
+		<item id="2171" chance="329" /><!-- Platinum Amulet -->
+	</loot>
+	<script>
+		<event name="HealthChangeCriatura" />
+		<event name="CriaturaMorta" />
+	</script>
+</monster>
