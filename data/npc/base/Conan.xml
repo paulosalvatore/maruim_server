@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Conan" script="Default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="143" head="114" body="115" legs="76" feet="115" addons="3" />
+	<parameters>
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja." />
+		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?" /> 
+		<parameter key="message_farewell" value="Adeus!" />
+		<parameter key="message_walkaway" value="Nos vemos depois!" />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="fishbone,2226,5;rotten meat,2227,5;shaggy tail,11324,1;broken shamanic staff,12408,1;shamanic hood,12434,1;skull belt,12436,1" />
+	</parameters>
+</npc>

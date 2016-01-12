@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Sarah" script="Default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="270" head="0" body="115" legs="91" feet="95" addons="3" />
+	<parameters>
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja." />
+		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?" /> 
+		<parameter key="message_farewell" value="Adeus!" />
+		<parameter key="message_walkaway" value="Nos vemos depois!" />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="bola,20089,50;cheese cutter,20097,40;cheesy figurine,20098,40;earflap,20099,500;rat cheese,20101,30;rat god doll,20105,10000;leather harness,20126,300;" />
+	</parameters>
+</npc>

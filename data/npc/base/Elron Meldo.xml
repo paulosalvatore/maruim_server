@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Elron Meldo" script="Default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="159" head="38" body="59" legs="15" feet="97" />
+	<parameters>
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Eu posso ajudá-lo a se preparar para uma caça!" />
+		<parameter key="message_sendtrade" value="Veja as ferramentas que possuo para uma boa caçada!" /> 
+		<parameter key="message_farewell" value="Adeus!" />
+		<parameter key="message_walkaway" value="Nos vemos depois!" />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="crossbow,2455,360;bow,2456,200;spear,2389,20;bolt,2543,3;arrow,2544,2;" />
+	</parameters>
+</npc>

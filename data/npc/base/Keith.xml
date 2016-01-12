@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Keith" script="Default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="463" head="0" body="77" legs="123" feet="78" addons="3" />
+	<parameters>
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja." />
+		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?" /> 
+		<parameter key="message_farewell" value="Adeus!" />
+		<parameter key="message_walkaway" value="Nos vemos depois!" />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="necklace of the deep,15403,160;fish fin,5895,300;quara tentacle,12443,70;quara eye,12444,80;mantassin tail,12445,100;quara pincers,12446,110;quara bone,12447,120;giant shrimp,13305,10000;eye of a deepling,13870,30;deepling warts,15425,50;deepling scales,15430,70;deepling filet,15488,100;deeptags,15426,110;deepling ridge,15452,140;deepling breaktime snack,15424,150;deepling claw,15455,200;deepling guard belt buckle,15423,300;sea serpent scale,10583,1;" />
+	</parameters>
+</npc>

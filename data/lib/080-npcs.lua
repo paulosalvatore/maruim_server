@@ -15,6 +15,11 @@ frases = {
 }
 
 comerciantes = {
+	["Anth Voon"] = { -- Vendedor de Utilidades - Khazad-Dûm
+		["itens"] = {
+			["c"] = {"utilidades"}
+		}
+	},
 	["Andor"] = { -- Loja de Clavas - Guilda dos Knights
 		["itens"] = {
 			["c"] = {2391, 2394, 2398, 2417, 2422, 2423, 2434, 2437, 2439, 2448, 2449},
@@ -33,6 +38,11 @@ comerciantes = {
 			["trade"] = "Interessado em negociar comigo? É pra já!"
 		}
 	},
+	["Arrongaria Turien"] = { -- Vendedor de Utilidades - Hyalakur
+		["itens"] = {
+			["c"] = {"utilidades"}
+		}
+	},
 	["Artanis"] = { -- Vendedor de Armas à Distância "básicas" - Maruim Island
 		["itens"] = {
 			["c"] = {2389, {2410, 25}, {19390, 4}},
@@ -41,6 +51,17 @@ comerciantes = {
 		["frases"] = {
 			["greet"] = "Olá |PLAYERNAME|. Eu vendo lanças e facas bem afiadas e de primeira linha. Você também pode me vender as suas, caso tenha alguma.",
 			["trade"] = "É pra já! Veja se está interessado em algo."
+		}
+	},
+	["Arto Larimin"] = { -- Carteiro - Lorn
+		["itens"] = {
+			["c"] = {"correio"}
+		},
+		["frases"] = frases["correio"]
+	},
+	["Ashlynois Homus"] = { -- Vendedor de Utilidades - Mugulu
+		["itens"] = {
+			["c"] = {"utilidades"}
 		}
 	},
 	["Balim"] = { -- Comprador de Tecidos - Ôttô
@@ -86,6 +107,18 @@ comerciantes = {
 		},
 		["frases"] = frases["moveis"]
 	},
+	["Eron Darmbeon"] = { -- Carteiro - Pundera
+		["itens"] = {
+			["c"] = {"correio"}
+		},
+		["frases"] = frases["correio"]
+	},
+	["Evephy Phly"] = { -- Carteiro - Kyo
+		["itens"] = {
+			["c"] = {"correio"}
+		},
+		["frases"] = frases["correio"]
+	},
 	["Falatius Relidol"] = { -- Carteiro - Ôttô
 		["itens"] = {
 			["c"] = {"correio"}
@@ -123,6 +156,12 @@ comerciantes = {
 			["greet"] = "Olá |PLAYERNAME|. Eu compro e vendo diversos tipos de machados poderosos. Interessado em algo, cavaleiro?"
 		}
 	},
+	["Gogilock Lena"] = { -- Carteiro - Udecoat
+		["itens"] = {
+			["c"] = {"correio"}
+		},
+		["frases"] = frases["correio"]
+	},
 	["Gundo Vangidma"] = { -- Vendedor de Armas à Distância - Civitaten
 		["itens"] = {
 			["c"] = {"armas_distancia_c"},
@@ -131,6 +170,11 @@ comerciantes = {
 		["frases"] = {
 			["greet"] = "Olá |PLAYERNAME|. Eu negocios diversas armas para paladins.",
 			["trade"] = "Aqui está minha lista! Interessado em algo?"
+		}
+	},
+	["Jachim Melliel"] = { -- Vendedor de Utilidades - Algatar
+		["itens"] = {
+			["c"] = {"utilidades"}
 		}
 	},
 	["Jack"] = { -- Comprador de Produtos "Raros" de Criaturas - Maruim Island
@@ -184,9 +228,25 @@ comerciantes = {
 			["trade"] = "Aqui está minha lista! Interessado em algo?"
 		}
 	},
+	["Lucerthor Eletratand"] = { -- Vendedor de Utilidades - Udecoat
+		["itens"] = {
+			["c"] = {"utilidades"}
+		}
+	},
 	["Maurice"] = { -- Comprador de Produtos de Criaturas - Civitaten
 		["itens"] = {
 			["v"] = {2129, 2229, 2800, 2805, 5678, {5897, 70}, 5899, 8859, 10553, 10557, 10568, 10569, 10574, 10606, 11189, 11191, 11192, 11208, 11210, 11224, 11324, 12399, 12400, 12423, 12440, 12441, 12471, 13757}
+		}
+	},
+	["Mayanzux Uhko"] = { -- Carteiro - Mugulu
+		["itens"] = {
+			["c"] = {"correio"}
+		},
+		["frases"] = frases["correio"]
+	},
+	["Melamif Tufis"] = { -- Vendedor de Utilidades - Kyo
+		["itens"] = {
+			["c"] = {"utilidades"}
 		}
 	},
 	["Mood Neva"] = { -- Carteiro - Civitaten
@@ -195,15 +255,40 @@ comerciantes = {
 		},
 		["frases"] = frases["correio"]
 	},
+	["Oragon"] = { -- Vendedor de Utilidades - Pundera
+		["itens"] = {
+			["c"] = {"utilidades"}
+		}
+	},
+	["Orran Samod"] = { -- Vendedor de Utilidades - Lorn
+		["itens"] = {
+			["c"] = {"utilidades"}
+		}
+	},
 	["Phaos Thourasa"] = { -- Vendedor de Utilidades - Maruim Island
 		["itens"] = {
 			["c"] = {"utilidades", 2050}
 		}
 	},
+	["Ratur Miren"] = { -- Carteiro - Algatar
+		["itens"] = {
+			["c"] = {"correio"}
+		},
+		["frases"] = frases["correio"]
+	},
 	["Seynos Malia"] = { -- Peixeiro - Maruim Island (Parte Baixa da Ilha)
 		["itens"] = {
 			["c"] = {{2667, 5}},
 			["v"] = {2669, 7158, 7159, 7963, 13546}
+		},
+		["frases"] = {
+			["trade"] = "Tenho diversos bons itens para aventureiros, haha, dê uma olhada!"
+		}
+	},
+	["Sirk Skana"] = { -- Loja de Armaduras - Maruim Island
+		["itens"] = {
+			["c"] = {2457, 2458, 2459, 2460, 2461, 2463, 2464, 2465, 2467, 2468, 2473, 2478, 2480, 2481, 2482, 2483, 2484, 2508, 2642, 2643, 2647, 2648, 2649},
+			["v"] = {2457, 2458, 2459, 2460, 2461, 2463, 2464, 2465, 2467, 2468, 2473, 2478, 2480, 2481, 2482, 2483, 2484, 2508, 2642, 2643, 2647, 2648, 2649}
 		},
 		["frases"] = {
 			["trade"] = "Tenho diversos bons itens para aventureiros, haha, dê uma olhada!"
@@ -217,15 +302,6 @@ comerciantes = {
 		["frases"] = {
 			["greet"] = "Olá |PLAYERNAME|. Eu negocios diversas armas para paladins.",
 			["trade"] = "Aqui está minha lista! Interessado em algo?"
-		}
-	},
-	["Sirk Skana"] = { -- Loja de Armaduras - Maruim Island
-		["itens"] = {
-			["c"] = {2457, 2458, 2459, 2460, 2461, 2463, 2464, 2465, 2467, 2468, 2473, 2478, 2480, 2481, 2482, 2483, 2484, 2508, 2642, 2643, 2647, 2648, 2649},
-			["v"] = {2457, 2458, 2459, 2460, 2461, 2463, 2464, 2465, 2467, 2468, 2473, 2478, 2480, 2481, 2482, 2483, 2484, 2508, 2642, 2643, 2647, 2648, 2649}
-		},
-		["frases"] = {
-			["trade"] = "Tenho diversos bons itens para aventureiros, haha, dê uma olhada!"
 		}
 	},
 	["Thanus Blackwood"] = { -- Vendedor de Wands - Guilda dos Sorcerers
@@ -246,6 +322,18 @@ comerciantes = {
 			["greet"] = "Olá |PLAYERNAME|. Seja bem-vindo à minha loja. Escudos são a minha especialidade!",
 			["trade"] = "Essa é a lista de escudos que eu negocio!"
 		}
+	},
+	["Turizaban Ruanis"] = { -- Carteiro - Khazad-Dûm
+		["itens"] = {
+			["c"] = {"correio"}
+		},
+		["frases"] = frases["correio"]
+	},
+	["Vuhtria Rath"] = { -- Carteiro - Hyalakur
+		["itens"] = {
+			["c"] = {"correio"}
+		},
+		["frases"] = frases["correio"]
 	},
 	["Xanthe"] = { -- Vendedor de Rods - Guilda dos Druids
 		["itens"] = {
@@ -344,7 +432,7 @@ destinos = {
 		levelNecessario = 0
 	},
 	["khazad_dum"] = {
-		nome = "Khazad-dûm",
+		nome = "Khazad-Dûm",
 		posicao = {x = 1513, y = 1753, z = 8},
 		custo = 100,
 		levelNecessario = 0,

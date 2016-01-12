@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Zoe" script="Default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="269" head="0" body="0" legs="0" feet="0" addons="3" />
+	<parameters>
+		<parameter key="message_greet" value="Olá |PLAYERNAME|. Seja bem-vindo à minha loja." />
+		<parameter key="message_sendtrade" value="Essa é a lista de mercadorias que eu negocio, você teria algo do meu interesse?" /> 
+		<parameter key="message_farewell" value="Adeus!" />
+		<parameter key="message_walkaway" value="Nos vemos depois!" />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_sellable" value="golden sickle,2418,1;obsidian lance,2425,1;knight axe,2430,1;skull staff,2436,1;hammer of wrath,2444,1;studded club,2448,15;scythe,2550,20;beastslayer axe,3962,500;brutetamer's staff,7379,500;vile axe,7388,1;assassin dagger,7404,1;butcher's axe,7412,1;pair of iron fists,20108,1;" />
+	</parameters>
+</npc>
