@@ -103,12 +103,12 @@ monstros = {
 	["Larva"] = {1, 15},
 	["Leaf Golem"] = {0, 30},
 	["Lich"] = {38, 237},
-	["Lizard Chosen"] = {48, 236}, -- Bônus 1-500 - Apenas centenas - Chance Original: 3%
-	["Lizard Dragon Priest"] = {32, 190}, -- Bônus 1-200 - Apenas centenas - Chance Original: 4%
-	["Lizard High Guard"] = {43, 230}, -- Bônus 1-200 - Apenas centenas - Chance Original: 5%
+	["Lizard Chosen"] = {48, 236, {5, 3}},
+	["Lizard Dragon Priest"] = {32, 190, {2, 4}},
+	["Lizard High Guard"] = {43, 230, {2, 5}},
 	["Lizard Legionnaire"] = {24, 165},
-	["Lizard Magistratus"] = {8, 50}, -- Bônus 1-1900 - Apenas centenas - Chance Original: 14%
-	["Lizard Noble"] = {16, 100}, -- Bônus 1-2000 - Apenas centenas - Chance Original: 10%
+	["Lizard Magistratus"] = {8, 50, {19, 14}},
+	["Lizard Noble"] = {16, 100, {20, 10}},
 	["Lizard Sentinel"] = {9, 80},
 	["Lizard Snakecharmer"] = {8, 55},
 	["Lizard Templar"] = {8, 60},
@@ -153,7 +153,7 @@ monstros = {
 	["Quara Predator Scout"] = {16, 129},
 	["Quara Predator"] = {21, 153},
 	["Rat"] = {0, 4},
-	["Roaring Lion"] = {15, 115}, -- Bônus 1-100 - Apenas centenas - Chance Original: 10%
+	["Roaring Lion"] = {15, 115, {1, 10}},
 	["Rot Elemental"] = {13, 80},
 	["Rotworm"] = {2, 17},
 	["Salamander"] = {3, 15},
@@ -170,7 +170,7 @@ monstros = {
 	["Slug"] = {7, 40},
 	["Smuggler"] = {1, 10},
 	["Snake"] = {0, 4},
-	["Spectre"] = {43, 297}, -- Bônus 1-700 - Apenas centenas - Chance Original: 3%
+	["Spectre"] = {43, 297, {7, 3}},
 	["Spider"] = {0, 5},
 	["Spit Nettle"] = {0, 5},
 	["Stone Golem"] = {6, 40},
@@ -188,7 +188,7 @@ monstros = {
 	["Troll"] = {1, 12},
 	["Undead Gladiator"] = {21, 148},
 	["Valkyrie"] = {1, 12},
-	["Vampire Bride"] = {15, 149}, -- Bônus 1-100 - Apenas centenas - Chance Original: 10%
+	["Vampire Bride"] = {15, 149, {1, 10}},
 	["Vampire Lord"] = {328, 800},
 	["Vampire Viscount"] = {8, 50},
 	["Vampire"] = {8, 60},
@@ -210,21 +210,3 @@ monstrosDano = {}
 for a, b in pairs(monstros) do
 	monstrosDano[a] = {}
 end
-
---	Features do Sistema de Gold após matar
---		Definido - Fazer
---		Criar um local separado para o dinheiro ir
---			O jogador poderá retirar gold a qualquer momento
---				desse local, porém, não poderá depositar lá
---			O jogador poderá transferir todo o dinheiro
---				para o banco caso esteja em um banqueiro
---		Estudar
---		Estudar limite de ouro no sistema para evitar com que o jogador
---		acumule muito ouro nesse sistema já que dá pra retirar a qualquer momento
---		Estudar a possibilidade de um item que aumenta
---			a quantidade de gold obtido por monstro
---		Estudar a implementação de um calculo para verificar se
---		as curas (nos participantes das parties dos atacantes) irá
---			afetar na divisão
---		Estudar a possibilidade do líder da party ativar a divisão
---			igualitária do gold entre os membros da party que estão próximos (30 sqm)
