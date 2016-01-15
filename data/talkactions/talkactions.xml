@@ -40,7 +40,7 @@
 	<talkaction words="/carregarMiniMapa" script="carregarMiniMapa.lua" />
 
 	<!-- player talkactions -->
-	<!-- 
+	<!--
 		<talkaction words="!buypremium" script="buyprem.lua" />
 		<talkaction words="!changesex" script="changesex.lua" />
 		<talkaction words="!uptime" script="uptime.lua" />
@@ -48,6 +48,10 @@
 		<talkaction words="!kills" script="kills.lua" />
 		<talkaction words="!serverinfo" script="serverinfo.lua" />
 	 -->
+	<talkaction words="/saque" separator=" " script="saqueEspecial.lua" />
+	<talkaction words="/saqueEspecial" separator=" " script="saqueEspecial.lua" />
+	<talkaction words="/saque_especial" separator=" " script="saqueEspecial.lua" />
+	<talkaction words="/dividirOuro" script="ouroMonstrosCompartilhado.lua" />
 	<talkaction words="!buyhouse" script="buyhouse.lua" />
 	<talkaction words="!leavehouse" script="leavehouse.lua" />
 	<talkaction words="exura res" script="reviver_masmorra.lua" />
