@@ -81,6 +81,40 @@ function getKeysSortedByValue(tbl, sortFunction)
 	return keys
 end
 
+function print_r(t)
+    local print_r_cache={}
+    local function sub_print_r(t,indent)
+        if (print_r_cache[tostring(t)]) then
+            print(indent.."*"..tostring(t))
+        else
+            print_r_cache[tostring(t)]=true
+            if (type(t)=="table") then
+                for pos,val in pairs(t) do
+                    if (type(val)=="table") then
+                        print(indent.."["..pos.."] => "..tostring(t).." {")
+                        sub_print_r(val,indent..string.rep(" ",string.len(pos)+8))
+                        print(indent..string.rep(" ",string.len(pos)+6).."}")
+                    elseif (type(val)=="string") then
+                        print(indent.."["..pos..'] => "'..val..'"')
+                    else
+                        print(indent.."["..pos.."] => "..tostring(val))
+                    end
+                end
+            else
+                print(indent..tostring(t))
+            end
+        end
+    end
+    if (type(t)=="table") then
+        print(tostring(t).." {")
+        sub_print_r(t,"  ")
+        print("}")
+    else
+        sub_print_r(t,"  ")
+    end
+    print()
+end
+
 function getFluidNameByType(type)
 	if fluids[type] ~= nil then
 		return fluids[type].name
@@ -228,20 +262,146 @@ function Player:transferMoneyTo(target, amount)
 	return true
 end
 
+function Player:gravarOuroMonstros()
+	db.query("UPDATE `players` SET `ouro_monstros` = '" .. self:pegarOuroMonstros() .. "' WHERE `id` = " .. db.escapeString(self:getGuid()))
+end
+
+function Player:definirOuroMonstros(ouroMonstros, limiteOuroMonstros)
+	if limiteOuroMonstros == nil then
+		limiteOuroMonstros = self:pegarLimiteOuroMonstros()
+	end
+
+	jogadoresOuroMonstros[self:getGuid()] = {ouroMonstros, limiteOuroMonstros}
+end
+
+function Player:pegarOuroMonstros()
+	return jogadoresOuroMonstros[self:getGuid()][1]
+end
+
+function Player:pegarLimiteOuroMonstros()
+	return jogadoresOuroMonstros[self:getGuid()][2]
+end
+
+function Player:adicionarOuroMonstros(quantidade, bonus)
+	local playerId = self:getId()
+	local ouroMonstros = self:pegarOuroMonstros()
+	local extra = 0
+
+	if jogadoresOuroMonstrosBonus[playerId] ~= nil and jogadoresOuroMonstrosBonus[playerId] > 0 then
+		extra = round((quantidade + bonus) * (jogadoresOuroMonstrosBonus[playerId]/100))
+	end
+
+	local adicionarOuroMonstros = quantidade + bonus + extra
+	local novoOuroMonstros = ouroMonstros + adicionarOuroMonstros
+	local limiteOuroMonstros = self:pegarLimiteOuroMonstros()
+
+	self:sendTextMessage(MESSAGE_EVENT_DEFAULT, "Você recebeu " .. quantidade .. (bonus > 0 and " (bônus: +" .. bonus .. ")" or "") .. (extra > 0 and " (extra: +" .. extra .. ")" or "") .. (bonus + extra > 0 and " (total: " .. adicionarOuroMonstros .. ")" or "") .. " gold coin" .. formatarPlural(adicionarOuroMonstros) .. " de recompensa pela criatura morta.")
+
+	if novoOuroMonstros > limiteOuroMonstros then
+		local excedente = novoOuroMonstros - limiteOuroMonstros
+		local adicionar = (quantidade + bonus) - excedente
+		self:definirOuroMonstros(ouroMonstros + adicionar, limiteOuroMonstros)
+		self:sendTextMessage(MESSAGE_EVENT_DEFAULT, "No entanto, sua conta especial está no limite (" .. limiteOuroMonstros .. ") e " .. (ouroMonstros == limiteOuroMonstros and "toda " or "parte d") .. "essa quantia foi depositada em sua conta bancária.")
+		self:addMoneyBank(excedente)
+	else
+		self:definirOuroMonstros(novoOuroMonstros, limiteOuroMonstros)
+
+		if quantidade + bonus > 0 then
+			self:sendTextMessage(MESSAGE_EVENT_DEFAULT, "Você possui um total de " .. novoOuroMonstros .. " gold coin" .. formatarPlural(novoOuroMonstros) .. " armazenado" .. formatarPlural(novoOuroMonstros) .. " em sua conta especial, podendo armazenar até " .. limiteOuroMonstros .. " gold coins.")
+		end
+	end
+
+	return true
+end
+
+function Player:removerOuroMonstros(quantidade)
+	local ouroMonstros = self:pegarOuroMonstros()
+	local novoOuroMonstros = ouroMonstros - quantidade
+	self:definirOuroMonstros(novoOuroMonstros, limiteOuroMonstros)
+end
+
+function Player:adicionarOuroMonstrosBonus(valor)
+	jogadoresOuroMonstrosBonus[self:getId()] = valor
+end
+
+function Party:alterarOuroMonstroCompartilhado(forcarValor, ocultarMensagem)
+	local valorAlteracao = 1
+	local mensagem = "foi ativada e será dividida igualmente aos membros da party."
+
+	if self:checarOuroMonstroCompartilhado() then
+		valorAlteracao = 0
+		mensagem = "foi desativada. Apenas o líder receberá as recompensas."
+	end
+
+	mensagem = "A distribuição de ouro por recompensa de monstros " .. mensagem
+
+	if forcarValor ~= nil then
+		valorAlteracao = forcarValor
+	end
+
+	local membros = self:getAllMembers()
+
+	for chave, membro in pairs(membros) do
+		local membroId = membro:getId()
+
+		ouroMonstrosCompartilhando[membroId] = valorAlteracao
+
+		if not ocultarMensagem then
+			membro:sendTextMessage(MESSAGE_INFO_DESCR, mensagem)
+		end
+	end
+end
+
+function Party:checarOuroMonstroCompartilhado()
+	return ouroMonstrosCompartilhando[self:getLeader():getId()] == 1 and true or false
+end
+
+function Party:getAllMembers()
+	local membrosParty = self:getMembers()
+	table.insert(membrosParty, 1, self:getLeader())
+	return membrosParty
+end
+
+function Party:getAllClosestMembers(playerId)
+	local membrosParty = self:getAllMembers()
+	local membrosProximosParty = {}
+
+	local player = Player(playerId)
+	local posicao1 = player:getPosition()
+
+	for chave, membro in pairs(membrosParty) do
+		local posicao2 = membro:getPosition()
+		local distanciaJogadores = posicao1:getDistance(posicao2)
+
+		if distanciaJogadores <= 30 then
+			table.insert(membrosProximosParty, membro)
+		end
+	end
+
+	return membrosProximosParty
+end
+
 function isWalkable(pos, creature, proj, pz)
 	if getTileThingByPos({x = pos.x, y = pos.y, z = pos.z, stackpos = 0}).itemid == 0 then return false end
+
 	if getTopCreature(pos).uid > 0 and creature then return false end
+
 	if getTileInfo(pos).protection and pz then return false, true end
+
 	local n = not proj and 3 or 2
+
 	for i = 0, 255 do
 		pos.stackpos = i
+
 		local tile = getTileThingByPos(pos)
+
 		if tile.itemid ~= 0 and not isCreature(tile.uid) then
 			if hasProperty(tile.uid, n) or hasProperty(tile.uid, 7) then
 				return false
 			end
 		end
 	end
+
 	return true
 end
 
@@ -588,6 +748,7 @@ function Player:receberQuest(quest, storage, modal)
 	self:sendTextMessage(MESSAGE_INFO_DESCR, adicionarItens[2])
 
 	if adicionarItens[1] then
+		self:setStorageValue(storage, adicionarValor)
 		self:setStorageValue(storage, adicionarValor)
 	end
 end

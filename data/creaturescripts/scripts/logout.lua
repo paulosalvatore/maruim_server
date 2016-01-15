@@ -5,5 +5,7 @@ function onLogout(player)
 		nextUseStaminaTime[playerId] = nil
 	end
 
+	player:gravarOuroMonstros()
+
 	return true
 end

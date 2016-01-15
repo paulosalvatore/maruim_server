@@ -11,6 +11,25 @@ function onLogin(player)
 	end
 	player:sendTextMessage(MESSAGE_STATUS_DEFAULT, loginStr)
 
+	-- Ouro Monstros
+	local playerGuid = player:getGuid()
+
+	local resultId = db.storeQuery('SELECT `ouro_monstros`, `limite_ouro_monstros` FROM `players` WHERE `id` = ' .. db.escapeString(playerGuid))
+
+	local jogadorOuroMonstros, jogadorLimiteOuroMonstros
+
+	if resultId then
+		jogadorOuroMonstros = result.getDataInt(resultId, "ouro_monstros")
+		jogadorLimiteOuroMonstros = result.getDataInt(resultId, "limite_ouro_monstros")
+		result.free(resultName)
+	end
+
+	if jogadorLimiteOuroMonstros < limiteOuroMonstrosPadrao then
+		jogadorLimiteOuroMonstros = limiteOuroMonstrosPadrao
+	end
+
+	player:definirOuroMonstros(jogadorOuroMonstros, jogadorLimiteOuroMonstros)
+
 	-- Casamento
 	if player:pegarStatusCasamento() ~= STATUS_CASAMENTO_CASADO then
 		if player:getSex() == PLAYERSEX_FEMALE and player:hasOutfit(329) then
