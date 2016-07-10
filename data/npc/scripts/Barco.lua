@@ -4,7 +4,18 @@ NpcSystem.parseParameters(npcHandler)
 
 function onCreatureAppear(cid)			npcHandler:onCreatureAppear(cid)			end
 function onCreatureDisappear(cid)		npcHandler:onCreatureDisappear(cid)			end
-function onCreatureSay(cid, type, msg)	npcHandler:onCreatureSay(cid, type, msg)	end
+function onCreatureSay(cid, type, msg)
+	local player = Player(cid)
+
+	local pergaminhoId, pergaminhoAction = 1948, 3902
+	local pergaminho = player:getAllItemsByAction(pergaminhoId, pergaminhoAction)
+
+	if #pergaminho == 1 then
+		addEvent(npcSay, 1000, player:getId(), Npc():getId(), "Sinto muito viajante, mas você ainda não pode contratar os meus serviços. Caso queira sair da ilha, basta usar o pergaminho de teleporte que você possui e selecionar a opção 'Sair da Maruim Island'. Até breve!")
+	else
+		npcHandler:onCreatureSay(cid, type, msg)
+	end
+end
 function onThink()						npcHandler:onThink()						end
 
 local npc = Npc()
