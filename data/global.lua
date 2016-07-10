@@ -149,7 +149,8 @@ destinosPergaminhoTeleporte = {
 			{["nome"] = "Phaos Thourasa (utilidades)", ["posicao"] = {x = 598, y = 946, z = 7}},
 			{["nome"] = "Tryn (escudos)", ["posicao"] = {x = 650, y = 953, z = 6}},
 			{["nome"] = "Barna (armas simples corpo-a-corpo)", ["posicao"] = {x = 650, y = 954, z = 7}},
-			{["nome"] = "Barqueiro - Acesso à Parte Baixa da Ilha", ["posicao"] = {x = 588, y = 1018, z = 7}}
+			{["nome"] = "Barqueiro - Acesso à Parte Baixa da Ilha", ["posicao"] = {x = 588, y = 1018, z = 7}},
+			{["nome"] = "Navio - Acesso ao Continente", ["posicao"] = {x = 629, y = 940, z = 6}}
 		}
 	},
 	{
