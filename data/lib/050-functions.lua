@@ -830,6 +830,39 @@ function Player:getAllItemsByAction(itemId, actionId)
 	return itensAction
 end
 
+function Container:getAllItemsById(itemId)
+    local containers = {}
+	table.insert(containers, self)
+
+    local itens = {}
+
+	for a, container in pairs(containers) do
+		for k = (container:getSize() - 1), 0, -1 do
+			local tmp = container:getItem(k)
+			if tmp:isContainer() then
+				table.insert(containers, tmp)
+			elseif not(itemId) or itemId == tmp:getId() then
+				table.insert(itens, tmp)
+			end
+		end
+	end
+
+    return itens
+end
+
+function Container:getAllItemsByAction(itemId, actionId)
+	local itens = self:getAllItemsById()
+	local itensAction = {}
+
+	for a, item in pairs(itens) do
+		if item:getActionId() == actionId then
+			table.insert(itensAction, item)
+		end
+	end
+
+	return itensAction
+end
+
 function Player:abrirModalPergaminhoTeleporte(id)
 	local modalTitulo = "Escolha um Local para Teleportar"
 	local modalMensagem = "Escolha um dos locais abaixo e você será teleportado para lá. "
@@ -886,7 +919,6 @@ function Player:abrirModalSaidaMaruimIsland(id)
 		modal:setDefaultEscapeButton(2)
 		modal:sendToPlayer(self)
 	elseif id == 2 then
-		-- Criar Modal de Escolha das Cidades
 		local modalTitulo = "Tem certeza que deseja sair da Maruim Island?"
 		local modalMensagem = "Escolha uma das cidades que deseja iniciar sua jornada fora da Maruim Island\n\n"
 		modalMensagem = modalMensagem .. "Ao escolher uma cidade você será enviado para o depot da mesma.\n\n"

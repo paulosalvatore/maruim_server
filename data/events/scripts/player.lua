@@ -145,6 +145,18 @@ function Player:onMoveItem(item, count, fromPosition, toPosition)
 		end
 	end
 
+	if item:isContainer() then
+		if fromPosition.x == 65535 then
+			for k, actionId in pairs(itensMovimentoDesativado) do
+				verificarItens = item:getAllItemsByAction(false, actionId)
+				if #verificarItens > 0 then
+					self:sendCancelMessage("Você não pode mover esse item.")
+					return false
+				end
+			end
+		end
+	end
+
 	if isInArray(itensMovimentoDesativado, item:getActionId()) then
 		self:sendCancelMessage("Você não pode mover esse item.")
 		return false
