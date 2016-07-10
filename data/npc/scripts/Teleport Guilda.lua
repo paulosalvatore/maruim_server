@@ -40,20 +40,7 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler.topic[cid] = 0
 		else
 			npcHandler:unGreet(cid)
-			local vocacao = player:getVocation():getId()
-
-			local posicao
-			if isInArray(Vocacoes.sorcerer, vocacao) then
-				posicao = {x = 600, y = 983, z = 7}
-			elseif isInArray(Vocacoes.druid, vocacao) then
-				posicao = {x = 545, y = 948, z = 5}
-			elseif isInArray(Vocacoes.paladin, vocacao) then
-				posicao = {x = 448, y = 957, z = 2}
-			elseif isInArray(Vocacoes.knight, vocacao) then
-				posicao = {x = 647, y = 902, z = 8}
-			end
-
-			player:teleportarJogador(posicao, true)
+			player:teleportarParaGuilda()
 		end
 	end
 end

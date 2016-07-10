@@ -10,7 +10,7 @@ function onSay(player, words, param)
 		else
 			player:removerOuroMonstros(quantidade)
 			player:addMoney(quantidade)
-			player:sendTextMessage(MESSAGE_EVENT_DEFAULT, "Aqui está! O balanço de sua conta especial é " .. ouroMonstros - quantidade .. " gold coin" .. formatarPlural(ouroMonstros - quantidade) .. ".")
+			player:sendTextMessage(MESSAGE_EVENT_DEFAULT, "Aqui está! Você recebeu " .. quantidade .. " gold coin" .. formatarPlural(quantidade) .. ". O balanço de sua conta especial é " .. ouroMonstros - quantidade .. " gold coin" .. formatarPlural(ouroMonstros - quantidade) .. ".")
 		end
 	end
 	return false

@@ -7,6 +7,7 @@ function onCreatureDisappear(cid)			npcHandler:onCreatureDisappear(cid)				end
 function onCreatureSay(player, type, msg)
 	local fraseNpc = "Olá |PLAYERNAME|."
 	local storageValue = player:getStorageValue(Storage.tartaruga)
+
 	if storageValue <= 0 then
 		fraseNpc = fraseNpc .. " Que bons ventos o trazem por aqui? Talvez você queira saber algumas informações sobre minha {tartaruga}."
 	elseif storageValue == 1 then
@@ -14,6 +15,7 @@ function onCreatureSay(player, type, msg)
 	elseif storageValue == 2 then
 		fraseNpc = fraseNpc .. " Você poderá viajar de volta para a {tartaruga} quando quiser."
 	end
+
 	npcHandler:setMessage(MESSAGE_GREET, fraseNpc)
 	npcHandler:onCreatureSay(player, type, msg)
 end
