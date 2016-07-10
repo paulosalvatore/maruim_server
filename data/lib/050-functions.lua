@@ -1,14 +1,18 @@
 function capAll(str)
 	local strLimpa = str
 	local b = string.gmatch(str, "(.*) %[")
+
 	for a in b do
 		b = string.gmatch(a, "(.*) %[")
 		strLimpa = a
 	end
+
 	for a in b do
 		strLimpa = a
 	end
+
 	local novaStr = ""; palavraSeparada = string.gmatch(strLimpa, "([^%s]+)")
+
 	for v in palavraSeparada do
 		v = v:gsub("^%l", string.upper)
 		if novaStr ~= "" then
@@ -17,12 +21,15 @@ function capAll(str)
 			novaStr = v
 		end
 	end
+
 	local formatar = {
 		{"Of", "of"}
 	}
+
 	for a, b in pairs(formatar) do
 		novaStr = novaStr:gsub(b[1], b[2])
 	end
+
 	novaStr = str:gsub(strLimpa, novaStr)
 	return novaStr
 end
@@ -35,17 +42,21 @@ function formatarValor(valor, exibirDecimal)
 	if exibirDecimal == nil then
 		exibirDecimal = false
 	end
+
 	local decimal = string.sub(tostring(valor),-2)
+
 	if not exibirDecimal then
 		while string.sub(tostring(decimal),-1) == "0" do
 			decimal = string.sub(tostring(decimal),-2,string.len(tostring(decimal))-1)
 		end
+
 		if decimal ~= "" then
 			decimal = "." .. decimal
 		end
 	else
 		decimal = "." .. decimal
 	end
+
 	return math.floor(valor/100) .. decimal
 end
 
@@ -67,27 +78,33 @@ function searchArrayKey(t, value)
 			return k
 		end
 	end
+
 	return nil
 end
 
 function getKeysSortedByValue(tbl, sortFunction)
 	local keys = {}
+
 	for key in pairs(tbl) do
 		table.insert(keys, key)
 	end
+
 	table.sort(keys, function(a, b)
 		return sortFunction(tbl[a], tbl[b])
 	end)
+
 	return keys
 end
 
 function print_r(t)
     local print_r_cache={}
+
     local function sub_print_r(t,indent)
         if (print_r_cache[tostring(t)]) then
             print(indent.."*"..tostring(t))
         else
             print_r_cache[tostring(t)]=true
+
             if (type(t)=="table") then
                 for pos,val in pairs(t) do
                     if (type(val)=="table") then
@@ -105,6 +122,7 @@ function print_r(t)
             end
         end
     end
+
     if (type(t)=="table") then
         print(tostring(t).." {")
         sub_print_r(t,"  ")
@@ -112,6 +130,7 @@ function print_r(t)
     else
         sub_print_r(t,"  ")
     end
+
     print()
 end
 
@@ -119,6 +138,7 @@ function getFluidNameByType(type)
 	if fluids[type] ~= nil then
 		return fluids[type].name
 	end
+
 	return nil
 end
 
@@ -155,17 +175,21 @@ function formatarFrase(frase, cid, msg, count, transfer)
 
 	if frase:find("|SENHOR|") then
 		local exibir = "Senhor"
+
 		if player:getSex() == 0 then
 			exibir = "Senhora"
 		end
+
 		frase = frase:gsub("|SENHOR|", exibir)
 	end
 
 	if frase:find("|MESTRE|") then
 		local exibir = "Mestre"
+
 		if player:getSex() == 0 then
 			exibir = "Mestra"
 		end
+
 		frase = frase:gsub("|MESTRE|", exibir)
 	end
 
@@ -182,15 +206,18 @@ function formatarNomeCidade(nomeCidade)
 	elseif nomeCidade == "Khazad-dum" then
 		nomeCidade = "Khazad-dûm"
 	end
+
 	return nomeCidade
 end
 
 function playerExists(name)
 	local resultId = db.storeQuery('SELECT `name` FROM `players` WHERE `name` = ' .. db.escapeString(name))
+
 	if resultId then
 		result.free(resultId)
 		return true
 	end
+
 	return false
 end
 
@@ -201,9 +228,11 @@ end
 function getMoneyCount(string)
 	local b, e = string:find("%d+")
 	local money = b and e and tonumber(string:sub(b, e)) or -1
+
 	if isValidMoney(money) then
 		return money
 	end
+
 	return -1
 end
 
@@ -218,6 +247,7 @@ end
 
 function Player:withdrawMoney(amount)
 	local balance = self:getBankBalance()
+
 	if amount > balance or not self:addMoney(amount) then
 		return false
 	end
@@ -244,11 +274,13 @@ end
 
 function Player:transferMoneyTo(target, amount)
 	local balance = self:getBankBalance()
+
 	if amount > balance then
 		return false
 	end
 
 	local targetPlayer = Player(target)
+
 	if targetPlayer then
 		targetPlayer:setBankBalance(targetPlayer:getBankBalance() + amount)
 	else
@@ -295,7 +327,11 @@ function Player:adicionarOuroMonstros(quantidade, bonus)
 	local novoOuroMonstros = ouroMonstros + adicionarOuroMonstros
 	local limiteOuroMonstros = self:pegarLimiteOuroMonstros()
 
-	self:sendTextMessage(MESSAGE_EVENT_DEFAULT, "Você recebeu " .. quantidade .. (bonus > 0 and " (bônus: +" .. bonus .. ")" or "") .. (extra > 0 and " (extra: +" .. extra .. ")" or "") .. (bonus + extra > 0 and " (total: " .. adicionarOuroMonstros .. ")" or "") .. " gold coin" .. formatarPlural(adicionarOuroMonstros) .. " de recompensa pela criatura morta.")
+	if adicionarOuroMonstros == 0 then
+		self:sendTextMessage(MESSAGE_EVENT_DEFAULT, "Você não recebeu nenhuma recompensa por essa criatura.")
+	else
+		self:sendTextMessage(MESSAGE_EVENT_DEFAULT, "Você recebeu " .. quantidade .. (bonus > 0 and " (bônus: +" .. bonus .. ")" or "") .. (extra > 0 and " (extra: +" .. extra .. ")" or "") .. (bonus + extra > 0 and " (total: " .. adicionarOuroMonstros .. ")" or "") .. " gold coin" .. formatarPlural(adicionarOuroMonstros) .. " de recompensa pela criatura morta.")
+	end
 
 	if novoOuroMonstros > limiteOuroMonstros then
 		local excedente = novoOuroMonstros - limiteOuroMonstros
@@ -491,6 +527,7 @@ function Player:curarJogador(quantidade)
 	if quantidade == nil then
 		quantidade = self:getMaxHealth()-self:getHealth()
 	end
+
 	self:addHealth(quantidade)
 end
 
@@ -656,7 +693,6 @@ function exibirRecompensa(recompensa, container)
 end
 
 function Player:adicionarItensJogador(itens, container, modal)
-
 	local sucesso = false
 	local mensagem
 	local pesoTotalItens = 0
@@ -698,7 +734,6 @@ function Player:adicionarItensJogador(itens, container, modal)
 end
 
 function Player:receberQuest(quest, storage, modal)
-
 	local checarValor = -1
 
 	if quest.checarValor then
@@ -750,5 +785,130 @@ function Player:receberQuest(quest, storage, modal)
 	if adicionarItens[1] then
 		self:setStorageValue(storage, adicionarValor)
 		self:setStorageValue(storage, adicionarValor)
+	end
+end
+
+function Player:getAllItemsById(itemId)
+    local containers = {}
+    local itens = {}
+
+    for i = 1, 10 do
+        local sItem = self:getSlotItem(i)
+        if sItem ~= nil then
+            if sItem:isContainer() then
+                table.insert(containers, sItem)
+            elseif not(id) or id == sItem:getId() then
+                table.insert(itens, sItem)
+            end
+        end
+    end
+
+	for a, container in pairs(containers) do
+		for k = (container:getSize() - 1), 0, -1 do
+			local tmp = container:getItem(k)
+			if tmp:isContainer() then
+				table.insert(containers, tmp)
+			elseif not(itemId) or itemId == tmp:getId() then
+				table.insert(itens, tmp)
+			end
+		end
+	end
+
+    return itens
+end
+
+function Player:getAllItemsByAction(itemId, actionId)
+	local itens = self:getAllItemsById(itemId)
+	local itensAction = {}
+
+	for a, item in pairs(itens) do
+		if item:getActionId() == actionId then
+			table.insert(itensAction, item)
+		end
+	end
+
+	return itensAction
+end
+
+function Player:abrirModalPergaminhoTeleporte(id)
+	local modalTitulo = "Escolha um Local para Teleportar"
+	local modalMensagem = "Escolha um dos locais abaixo e você será teleportado para lá. "
+	modalMensagem = modalMensagem .. "Fique atento com criaturas que esses locais podem conter!\n\n"
+	modalMensagem = modalMensagem .. "OBS.: Esse serviço é gratuito e para uso exclusivo na Maruim Island, quando "
+	modalMensagem = modalMensagem .. "você resolver sair da ilha, esse item será perdido.\n\n"
+	modalMensagem = modalMensagem .. "Para qual local deseja ir?\n"
+	local modal = ModalWindow(modalPergaminhoTeleporte + id - 1, modalTitulo, modalMensagem)
+
+	if id == 1 then
+		for choiceId, valor in pairs(destinosPergaminhoTeleporte) do
+			modal:addChoice(choiceId, valor["nome"])
+		end
+	else
+		destinos = destinosPergaminhoTeleporte[id + 1]
+		modalTitulo = modalTitulo .. " - " .. destinos["nome"]
+		for choiceId, valor in pairs(destinos["destinos"]) do
+			modal:addChoice(choiceId, valor["nome"])
+		end
+	end
+
+	if id > 1 then
+		modal:addButton(3, "Voltar")
+		modal:addButton(2, "Sair")
+		modal:addButton(1, "Escolher")
+	else
+		modal:addButton(1, "Escolher")
+		modal:addButton(2, "Sair")
+	end
+	modal:setDefaultEnterButton(1)
+	modal:setDefaultEscapeButton(2)
+	modal:sendToPlayer(self)
+
+	if id == 1 then
+		self:registerEvent("PergaminhoTeleporte")
+	end
+end
+
+function Player:abrirModalSaidaMaruimIsland(id)
+	if id == 1 then
+		local modalTitulo = "Tem certeza que deseja sair da Maruim Island?"
+		local modalMensagem = "Caso você confirme a saída da Maruim Island você poderá voltar quando quiser, "
+		modalMensagem = modalMensagem .. "porém, você perderá o pergaminho de teleporte e o refil de poções.\n\n"
+		modalMensagem = modalMensagem .. "Tem certeza que deseja sair da Maruim Island?\n\n"
+		modalMensagem = modalMensagem .. "Clique no botão 'Confirmar' para escolher uma das três cidades disponíveis "
+		modalMensagem = modalMensagem .. ", clique em 'Voltar' para voltar ao menu anterior ou em 'Fechar' para"
+		modalMensagem = modalMensagem .. "fechar essa janela de diálogo.\n"
+		local modal = ModalWindow(modalPergaminhoTeleporte + 3, modalTitulo, modalMensagem)
+
+		modal:addButton(3, "Voltar")
+		modal:addButton(2, "Fechar")
+		modal:addButton(1, "Confirmar")
+		modal:setDefaultEnterButton(1)
+		modal:setDefaultEscapeButton(2)
+		modal:sendToPlayer(self)
+	elseif id == 2 then
+		-- Criar Modal de Escolha das Cidades
+		local modalTitulo = "Tem certeza que deseja sair da Maruim Island?"
+		local modalMensagem = "Escolha uma das cidades que deseja iniciar sua jornada fora da Maruim Island\n\n"
+		modalMensagem = modalMensagem .. "Ao escolher uma cidade você será enviado para o depot da mesma.\n\n"
+		modalMensagem = modalMensagem .. "Se tiver dúvidas para encontrar os locais na cidade ou nos arredores "
+		modalMensagem = modalMensagem .. "vá até nosso site e confira o mapa e o guia da cidade. Boa sorte e "
+		modalMensagem = modalMensagem .. "divirta-se!\n\n"
+		modalMensagem = modalMensagem .. "Clique no botão 'Viajar' para viajar até a cidade selecionar "
+		modalMensagem = modalMensagem .. ", clique em 'Voltar' para voltar ao menu anterior ou em 'Fechar' para"
+		modalMensagem = modalMensagem .. "fechar essa janela de diálogo.\n"
+		local modal = ModalWindow(modalPergaminhoTeleporte + 4, modalTitulo, modalMensagem)
+
+		for a, b in pairs(Game.getTowns()) do
+			if isInArray({3, 5, 9}, a) then
+				modal:addChoice(b:getId(), formatarNomeCidade(b:getName()))
+			end
+		end
+
+		modal:addButton(3, "Voltar")
+		modal:addButton(2, "Fechar")
+		modal:addButton(1, "Viajar")
+		modal:setDefaultEnterButton(1)
+		modal:setDefaultEscapeButton(2)
+		modal:sendToPlayer(self)
 	end
 end

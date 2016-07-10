@@ -145,9 +145,8 @@ function Player:onMoveItem(item, count, fromPosition, toPosition)
 		end
 	end
 
-	if item:getActionId() == 2500 or item:getActionId() == 2503 then
+	if isInArray(itensMovimentoDesativado, item:getActionId()) then
 		self:sendCancelMessage("Você não pode mover esse item.")
-
 		return false
 	end
 
@@ -174,7 +173,11 @@ end
 function Player:onTradeRequest(target, item)
 	if getCreatureCondition(self, CONDITION_SPELLCOOLDOWN, 160) then
 		self:sendCancelMessage("Você está ocupado.")
+		return false
+	end
 
+	if isInArray(itensMovimentoDesativado, item:getActionId()) then
+		self:sendCancelMessage("Você não pode trocar esse objeto.")
 		return false
 	end
 
@@ -184,7 +187,11 @@ end
 function Player:onTradeAccept(target, item, targetItem)
 	if getCreatureCondition(self, CONDITION_SPELLCOOLDOWN, 160) then
 		self:sendCancelMessage("Você está ocupado.")
+		return false
+	end
 
+	if isInArray(itensMovimentoDesativado, item:getActionId()) then
+		self:sendCancelMessage("Você não pode trocar esse objeto.")
 		return false
 	end
 

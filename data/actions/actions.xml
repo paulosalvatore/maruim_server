@@ -75,6 +75,9 @@
 
 	<action actionid="9530" script="portaoPundera.lua" />
 
+	<action actionid="3902" script="pergaminhoTeleporte.lua" />
+	<action actionid="3903" script="refilPocoes.lua" />
+
 	<!-- Quests -->
 	<action itemid="1740" script="quests.lua" />
 	<action fromid="1747" toid="1749" script="quests.lua" />
