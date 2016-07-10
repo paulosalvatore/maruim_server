@@ -277,7 +277,7 @@
 	<spawn centerx="875" centery="1826" centerz="4" radius="1">
 		<monster name="Troll Champion" x="0" y="1" z="4" spawntime="60" />
 	</spawn>
-	<spawn centerx="959" centery="1895" centerz="4" radius="1">
+	<spawn centerx="959" centery="1896" centerz="4" radius="1">
 		<npc name="Meldo Shairine" x="1" y="0" z="4" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="951" centery="1906" centerz="4" radius="1">
@@ -1433,11 +1433,11 @@
 		<monster name="Blood Hand" x="-2" y="-2" z="6" spawntime="60" />
 		<monster name="Blood Hand" x="1" y="1" z="6" spawntime="60" />
 	</spawn>
+	<spawn centerx="1074" centery="1564" centerz="6" radius="1">
+		<npc name="Nigos Morionomad" x="0" y="-1" z="6" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="735" centery="1565" centerz="6" radius="1">
 		<monster name="Blood Hand" x="-1" y="0" z="6" spawntime="60" />
-	</spawn>
-	<spawn centerx="1074" centery="1566" centerz="6" radius="1">
-		<npc name="Nigos Morionomad" x="0" y="-1" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="770" centery="1568" centerz="6" radius="1">
 		<monster name="Banshee" x="-1" y="0" z="6" spawntime="60" />
@@ -1509,8 +1509,8 @@
 	<spawn centerx="754" centery="1586" centerz="6" radius="1">
 		<monster name="Blood Priest" x="1" y="0" z="6" spawntime="60" />
 	</spawn>
-	<spawn centerx="1083" centery="1591" centerz="6" radius="1">
-		<npc name="Lucius" x="0" y="0" z="6" spawntime="60" direction="2" />
+	<spawn centerx="1082" centery="1591" centerz="6" radius="1">
+		<npc name="Lucius" x="1" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="861" centery="1604" centerz="6" radius="1">
 		<monster name="Lion" x="0" y="-1" z="6" spawntime="60" />
@@ -4314,6 +4314,7 @@
 	<spawn centerx="1469" centery="1537" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="1124" centery="1538" centerz="7" radius="1" />
 	<spawn centerx="1278" centery="1538" centerz="7" radius="1">
 		<monster name="Nomad" x="0" y="0" z="7" spawntime="60" />
 		<monster name="Nomad" x="1" y="0" z="7" spawntime="1536" />
@@ -4449,8 +4450,8 @@
 	<spawn centerx="889" centery="1553" centerz="7" radius="1">
 		<monster name="Slime" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1063" centery="1553" centerz="7" radius="1">
-		<npc name="Jide Malystona" x="0" y="0" z="7" spawntime="60" direction="2" />
+	<spawn centerx="1064" centery="1553" centerz="7" radius="1">
+		<npc name="Jide Malystona" x="-1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1338" centery="1553" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
@@ -4556,9 +4557,6 @@
 	<spawn centerx="903" centery="1565" centerz="7" radius="1">
 		<monster name="Swamp Troll" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1083" centery="1565" centerz="7" radius="1">
-		<npc name="Ranospight Asharus" x="0" y="-1" z="7" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="1469" centery="1565" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -4576,6 +4574,9 @@
 	</spawn>
 	<spawn centerx="745" centery="1568" centerz="7" radius="1">
 		<monster name="Ghost" x="0" y="-1" z="7" spawntime="110" />
+	</spawn>
+	<spawn centerx="1083" centery="1568" centerz="7" radius="1">
+		<npc name="Ranospight Asharus" x="0" y="-1" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="851" centery="1569" centerz="7" radius="1">
 		<monster name="Swamp Troll" x="0" y="-1" z="7" spawntime="60" />
@@ -4685,9 +4686,7 @@
 	<spawn centerx="1427" centery="1579" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1073" centery="1580" centerz="7" radius="1">
-		<npc name="Arrongaria Turien" x="0" y="-1" z="7" spawntime="60" direction="2" />
-	</spawn>
+	<spawn centerx="1076" centery="1580" centerz="7" radius="1" />
 	<spawn centerx="737" centery="1583" centerz="7" radius="1">
 		<monster name="Shadow Pupil" x="0" y="-1" z="7" spawntime="170" />
 	</spawn>
@@ -4765,7 +4764,7 @@
 	<spawn centerx="980" centery="1592" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1082" centery="1592" centerz="7" radius="1">
+	<spawn centerx="1083" centery="1592" centerz="7" radius="1">
 		<npc name="Vuwulo Retulon" x="1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="884" centery="1593" centerz="7" radius="5">
@@ -4784,6 +4783,9 @@
 	</spawn>
 	<spawn centerx="754" centery="1594" centerz="7" radius="1">
 		<monster name="Ghost" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1095" centery="1594" centerz="7" radius="1">
+		<npc name="Arrongaria Turien" x="-1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1272" centery="1594" centerz="7" radius="1">
 		<monster name="Nomad Blue" x="0" y="0" z="7" spawntime="60" />
@@ -4832,11 +4834,11 @@
 		<monster name="Gnarlhound" x="3" y="-1" z="7" spawntime="60" />
 		<monster name="Gnarlhound" x="2" y="5" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="1061" centery="1606" centerz="7" radius="1">
+		<npc name="Bura Suharulaus" x="-1" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="1258" centery="1606" centerz="7" radius="1">
 		<monster name="Nomad Blue" x="0" y="0" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1061" centery="1607" centerz="7" radius="1">
-		<npc name="Bura Suharulaus" x="-1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1440" centery="1608" centerz="7" radius="1">
 		<monster name="Sandcrawler" x="0" y="0" z="7" spawntime="60" />
@@ -5745,11 +5747,11 @@
 	<spawn centerx="1286" centery="1790" centerz="7" radius="1">
 		<monster name="Spit Nettle" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="808" centery="1791" centerz="7" radius="1">
+		<npc name="Slan Dardosh" x="-1" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="1177" centery="1791" centerz="7" radius="1">
 		<monster name="Centipede" x="1" y="0" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="807" centery="1792" centerz="7" radius="2">
-		<npc name="Slan Dardosh" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="888" centery="1792" centerz="7" radius="1">
 		<monster name="Rabbit" x="0" y="-1" z="7" spawntime="60" />
@@ -5773,9 +5775,6 @@
 	<spawn centerx="1071" centery="1794" centerz="7" radius="1">
 		<monster name="Poison Spider" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="773" centery="1795" centerz="7" radius="1">
-		<npc name="Astantic Wunan" x="0" y="0" z="7" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="1168" centery="1795" centerz="7" radius="1">
 		<monster name="Cobra" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
@@ -5784,6 +5783,9 @@
 	</spawn>
 	<spawn centerx="1271" centery="1795" centerz="7" radius="1">
 		<monster name="Cobra" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="773" centery="1796" centerz="7" radius="1">
+		<npc name="Astantic Wunan" x="0" y="-1" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1159" centery="1796" centerz="7" radius="1">
 		<monster name="Blue Butterfly" x="-1" y="0" z="7" spawntime="60" />
