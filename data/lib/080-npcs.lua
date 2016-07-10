@@ -1,9 +1,10 @@
 atualizarNpcsBanco = false
+interacaoNpcsDesativada = {}
 
 frases = {
 	["correio"] = {
-		["greet"] = "Olá |PLAYERNAME|. Seja bem-vindo aos correios.",
-		["trade"] = "Deseja mandar algum presente?"
+		["greet"] = "Olá |PLAYERNAME|. Seja bem-vindo aos Correios.",
+		["trade"] = "Deseja despachar alguma encomenda? Eu tenho o que você precisa."
 	},
 	["comidas"] = {
 		["greet"] = "Olá |PLAYERNAME|. Seja bem-vindo à minha loja de alimentos.",
@@ -620,6 +621,32 @@ relacionarBarqueiros = {
 }
 
 tempoBlessWoodenStake = 24*60*60
+
+function Player:desativarInteracaoNpcs()
+	interacaoNpcsDesativada[self:getId()] = true
+end
+
+function Player:ativarInteracaoNpcs()
+	interacaoNpcsDesativada[self:getId()] = false
+end
+
+function Player:verificarInteracaoNpcs()
+	return interacaoNpcsDesativada[self:getId()] or false
+end
+
+function npcSay(playerId, npcId, mensagem)
+	local npc = Npc(npcId)
+
+	if not npc then
+		return
+	end
+
+	local player = Player(playerId)
+
+	if player then
+		npc:say(mensagem, TALKTYPE_PRIVATE_NP, false, player, npc:getPosition())
+	end
+end
 
 function atualizarNpcBanco(npc, tipo, informacoes)
 	local npcNome = npc:getName()

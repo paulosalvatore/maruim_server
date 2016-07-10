@@ -400,6 +400,10 @@ if NpcHandler == nil then
 					return
 				end
 
+				if creature:verificarInteracaoNpcs() then
+					return
+				end
+
 				if self.keywordHandler ~= nil then
 					if self:isFocused(cid) and msgtype == TALKTYPE_PRIVATE_PN or not self:isFocused(cid) then
 						local ret = self.keywordHandler:processMessage(cid, msg)

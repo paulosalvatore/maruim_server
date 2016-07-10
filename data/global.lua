@@ -1,10 +1,12 @@
 dofile('data/lib/lib.lua')
 dofile('data/lib/050-functions.lua')
 dofile('data/lib/051-storages.lua')
-dofile('data/lib/itens.lua')
 dofile('data/lib/080-npcs.lua')
+dofile('data/lib/vocacoes.lua')
+dofile('data/lib/itens.lua')
 dofile('data/lib/090-reputacao.lua')
 dofile('data/lib/091-tasks.lua')
+dofile('data/lib/tutorial.lua')
 dofile('data/lib/marcasMapa.lua')
 dofile('data/lib/recompensaNivel.lua')
 dofile('data/lib/carregarMiniMapa.lua')
@@ -99,18 +101,12 @@ conditionsHealing = {
 	CONDITION_BLEEDING
 }
 
-Vocacoes = {
-	sorcerer = {1, 5},
-	druid = {2, 6},
-	paladin = {3, 7},
-	knight = {4, 8}
-}
-
 modificarItensPeso = {}
 
 itemDesativado = 2500
 
 modalTeleportCrystal = 9001
+modalPergaminhoTeleporte = 9002
 modalItensKnight = 5000
 modalQuest = 5500
 modalQuestMaximo = 5999
@@ -128,6 +124,55 @@ posicoesDepot = {
 	[11] = {x = 1326, y = 1912, z = 7}, -- Kyo
 	[12] = {x = 1123, y = 2015, z = 7}, -- Algatar
 	[13] = {x = 1530, y = 1702, z = 7} -- Khazad-dûm
+}
+
+itensMovimentoDesativado = {
+	2500, -- Uso Geral
+	2503, -- Uso Geral
+	3902, -- Pergaminho de Teleporte
+	3903 -- Refil de Poções
+}
+
+destinosPergaminhoTeleporte = {
+	{
+		["nome"] = "Templo"
+	},
+	{
+		["nome"] = "Guilda"
+	},
+	{
+		["nome"] = "NPC's",
+		["destinos"] = {
+			{["nome"] = "Flora (refil de poções)", ["posicao"] = {x = 593, y = 914, z = 7}},
+			{["nome"] = "Sirk Skana (equipamentos de defesa)", ["posicao"] = {x = 575, y = 954, z = 7}},
+			{["nome"] = "Jane e Jack (produtos de criaturas)", ["posicao"] = {x = 567, y = 944, z = 7}},
+			{["nome"] = "Phaos Thourasa (utilidades)", ["posicao"] = {x = 598, y = 946, z = 7}},
+			{["nome"] = "Tryn (escudos)", ["posicao"] = {x = 650, y = 953, z = 6}},
+			{["nome"] = "Barna (armas simples corpo-a-corpo)", ["posicao"] = {x = 650, y = 954, z = 7}},
+			{["nome"] = "Barqueiro - Acesso à Parte Baixa da Ilha", ["posicao"] = {x = 588, y = 1018, z = 7}}
+		}
+	},
+	{
+		["nome"] = "Áreas de Caça",
+		["destinos"] = {
+			{["nome"] = "Montanha - Térreo - Rat, Snake", ["posicao"] = {x = 558, y = 916, z = 7}},
+			{["nome"] = "Montanha - 1º Andar - Wolf, Bug", ["posicao"] = {x = 563, y = 898, z = 6}},
+			{["nome"] = "Montanha - 2º Andar - Snake, Goblin", ["posicao"] = {x = 548, y = 913, z = 5}},
+			{["nome"] = "Montanha - Subsolo 1 - Snake, Cave Rat, Poison Spider, Bug", ["posicao"] = {x = 568, y = 897, z = 8}},
+			{["nome"] = "Montanha - Subsolo 2 - Caminho para Bear, Rotworm, Skeleton", ["posicao"] = {x = 613, y = 866, z = 9}},
+			{["nome"] = "Caverna - Rat, Cave Rat, Bug, Spider", ["posicao"] = {x = 565, y = 933, z = 7}},
+			{["nome"] = "Ilha Norte - Snake, Bug, Spider, Bear, Wolf, Troll", ["posicao"] = {x = 522, y = 923, z = 7}},
+			{["nome"] = "Ilha Norte - Entrada para Caverna dos Skeletons", ["posicao"] = {x = 453, y = 859, z = 7}},
+			{["nome"] = "Caverna - Snakes, Spiders, Poison Spiders", ["posicao"] = {x = 535, y = 992, z = 7}},
+			{["nome"] = "Resistência dos Trolls - Troll, Orc, Minotaur", ["posicao"] = {x = 661, y = 939, z = 8}},
+			{["nome"] = "Forte dos Orcs - Entrada 1 (Pick necessária) - Orc, Orc Spearman", ["posicao"] = {x = 602, y = 996, z = 7}},
+			{["nome"] = "Forte dos Orcs - Entrada 2 - Orc, Orc Spearman", ["posicao"] = {x = 610, y = 1002, z = 7}},
+			{["nome"] = "Vilarejo - Angry Villager", ["posicao"] = {x = 563, y = 1011, z = 7}}
+		}
+	},
+	{
+		["nome"] = "Sair da Maruim Island"
+	}
 }
 
 function getDistanceBetween(firstPosition, secondPosition)

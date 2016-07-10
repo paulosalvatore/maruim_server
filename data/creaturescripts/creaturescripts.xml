@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <creaturescripts>
+	<!-- Tutorial -->
+	<event type="login" name="Tutorial" script="tutorial.lua" />
+	<event type="modalwindow" name="TutorialModal" script="tutorial.lua" />
+
+	<!-- Primeiro Login -->
 	<event type="login" name="firstLogin" script="firstLogin.lua" />
+
+	<!-- Scripts Básicos -->
 	<event type="login" name="PlayerLogin" script="login.lua" />
 	<event type="logout" name="PlayerLogout" script="logout.lua" />
 	<event type="login" name="RegenerateStamina" script="regeneratestamina.lua" />
@@ -8,21 +15,32 @@
 	<event type="death" name="DropLoot" script="droploot.lua" />
 	<event type="extendedopcode" name="ExtendedOpcode" script="extendedopcode.lua" />
 
+	<!-- Tarefas -->
 	<event type="modalwindow" name="Tasks" script="tasks.lua" />
 
+	<!-- Pergaminho de Teleporte -->
+	<event type="modalwindow" name="PergaminhoTeleporte" script="pergaminhoTeleporte.lua" />
+
+	<!-- Cristal de Teleporte -->
 	<event type="modalwindow" name="TeleportCrystal" script="teleportCrystal.lua" />
 
+	<!-- Avançar de Nível -->
 	<event type="advance" name="LevelUp" script="LevelUp.lua" />
 
+	<!-- Armas dos Knights -->
 	<event type="modalwindow" name="ItensKnight" script="itensKnight.lua" />
 
+	<!-- Janela Modal com Informações -->
 	<event type="modalwindow" name="ModalInformativo" script="ModalInformativo.lua" />
 
+	<!-- Recompensas por Nível -->
 	<event type="think" name="RecompensaNivel" script="RecompensaNivel.lua" />
 	<event type="modalwindow" name="RecompensaNivelModal" script="RecompensaNivel.lua" />
 
+	<!-- Sistema de Quests -->
 	<event type="modalwindow" name="Quests" script="Quests.lua" />
 
+	<!-- Scripts das Criaturas (tomar dano e morrer) -->
 	<event type="death" name="CriaturaMorta" script="criaturaMorta.lua" />
 	<event type="healthchange" name="HealthChangeCriatura" script="healthChangeCriatura.lua" />
 </creaturescripts>
