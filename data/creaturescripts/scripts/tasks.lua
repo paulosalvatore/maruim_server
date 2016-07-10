@@ -3,6 +3,7 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 		not modalWindowId == configTasks.storageBase+configTasks.modalTasksDisponiveis and
 		not modalWindowId == configTasks.storageBase+configTasks.modalTasksProgresso and
 		not modalWindowId == configTasks.storageBase+configTasks.modalTasksRealizadas and
+		not modalWindowId == configTasks.storageBase+configTasks.modalTasksAbandonar and
 		not modalWindowId == configTasks.storageBase+configTasks.modalTasksDisponiveisInfo and
 		not modalWindowId == configTasks.storageBase+configTasks.modalTasksProgressoInfo and
 		not modalWindowId == configTasks.storageBase+configTasks.modalTasksRealizadasInfo) or
@@ -17,6 +18,8 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 			player:enviarTasksModalRealizadas()
 		elseif choiceId == 4 then
 			player:enviarTasksModalRecompensas()
+		elseif choiceId == 5 then
+			player:enviarTasksModalAbandonar()
 		end
 	elseif modalWindowId == configTasks.storageBase+configTasks.modalTasksDisponiveis then
 		if buttonId == 1 then
@@ -42,6 +45,12 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 		if buttonId == 1 then
 			player:retirarRecompensa(choiceId)
 		elseif buttonId == 3 then
+			player:enviarTasksModalPrincipal()
+		end
+	elseif modalWindowId == configTasks.storageBase+configTasks.modalTasksAbandonar then
+		if buttonId == 1 then
+			player:abandonarTask(choiceId)
+		else
 			player:enviarTasksModalPrincipal()
 		end
 	elseif modalWindowId == configTasks.storageBase+configTasks.modalTasksDisponiveisInfo then

@@ -12,6 +12,7 @@ configTasks = {
 	modalTasksProgressoInfo = 5,
 	modalTasksRealizadasInfo = 6,
 	modalTasksRecompensas = 7,
+	modalTasksAbandonar = 8,
 	limiteTasksProgresso = 3
 }
 -- Exemplo de Configuração:
@@ -211,6 +212,12 @@ function Player:finalizarTask(taskId)
 	self:setStorageValue(configTasks.storageBase+taskId, configTasks.valorFinalizada)
 end
 
+function Player:abandonarTask(taskId)
+	self:sendTextMessage(MESSAGE_INFO_DESCR, "Você abandonou com sucesso a tarefa '" .. pegarNomeTask(taskId) .. "'.")
+	self:setStorageValue(configTasks.storageBase+configTasks.progresso+taskId, 0)
+	self:setStorageValue(configTasks.storageBase+taskId, 0)
+end
+
 function Creature:checarTask()
 	local tasks = {}
 	for a, b in pairs(Tasks) do
@@ -301,6 +308,7 @@ function Player:enviarTasksModalPrincipal()
 	modal:addChoice(1, "Lista de Tarefas - Disponíveis")
 	modal:addChoice(2, "Lista de Tarefas - Em Progresso")
 	modal:addChoice(3, "Lista de Tarefas - Realizadas")
+	modal:addChoice(5, "Abandonar Tarefas")
 	modal:addButton(1, "Ok")
 	modal:setDefaultEnterButton(1)
 	modal:addButton(2, "Sair")
@@ -393,15 +401,35 @@ function Player:enviarTasksModalRecompensas()
 	end
 end
 
+function Player:enviarTasksModalAbandonar()
+	local modalTitulo = "Abandonar Tarefas"
+	local modalMensagem = "Selecione uma tarefa na lista e clique no botão 'Abandonar', tecle 'Enter' ou dê dois cliques para abandonar a tarefa selecionada.\n"
+	local modalId = configTasks.storageBase+configTasks.modalTasksAbandonar
+	local modal = ModalWindow(modalId, modalTitulo, modalMensagem)
+	local listaTasks = self:pegarTasksProgresso()
+	if #listaTasks > 0 then
+		for a, b in pairs(listaTasks) do
+			modal:addChoice(b, pegarNomeTask(b))
+		end
+		modal:addButton(1, "Abandonar")
+		modal:setDefaultEnterButton(1)
+		modal:addButton(2, "Sair")
+		modal:setDefaultEscapeButton(2)
+		modal:addButton(3, "Voltar")
+		modal:sendToPlayer(self)
+	else
+		self:enviarTasksModalVazio(modalId)
+	end
+end
+
 function Player:enviarTasksModalVazio(modalId)
 	local modalTitulo = "Aviso"
 	local modalMensagem = "Não há nenhuma tarefa para ser exibida.\nClique no botão 'Voltar' e selecione outra opção."
 	local modal = ModalWindow(modalId, modalTitulo, modalMensagem)
 	modal:setDefaultEscapeButton(2)
-	modal:addButton(5, "Ok")
-	modal:addButton(2, "Sair")
 	modal:addButton(3, "Voltar")
-	modal:setDefaultEnterButton(5)
+	modal:addButton(2, "Sair")
+	modal:setDefaultEnterButton(3)
 	modal:sendToPlayer(self)
 end
 
