@@ -2,7 +2,7 @@ recompensaIdBase = 50000
 recompensaPendente = 1
 recompensasInicio = 5
 recompensasOpcoesInicio = 300
-recompensasMaisTardeInicio = 600
+recompensasMaisTardeInicio, recompensasFinalizadasInicio = 600, 600
 recompensasMaximo = 900
 modalRecompensaAberto = {}
 recompensaAguardando = {}
@@ -78,6 +78,11 @@ RecompensasNivel = {
 		nivel = 10,
 		vocacao = {"paladin"},
 		recompensa = {8923, 1}
+	},
+	{
+		nivel = 31,
+		vocacao = {"paladin"},
+		recompensa = {8923, 1}
 	}
 }
 
@@ -110,24 +115,29 @@ function Player:enviarModalRecompensa(recompensaId)
 	if not recompensaId then
 		recompensaId = self:pegarRecompensaPendente()
 	end
+
 	if recompensaId then
 		local recompensaInfo = RecompensasNivel[recompensaId]
 		local adicionarItem = 0
 		local recompensaSelecionada = self:pegarRecompensaOpcaoSelecionada(recompensaId)
+
 		if recompensaInfo.recompensa ~= nil then
 			adicionarItem = recompensaInfo.recompensa
 		elseif recompensaInfo.recompensaOpcoes ~= nil and recompensaSelecionada > 0 then
 			adicionarItem = recompensaInfo.recompensaOpcoes[recompensaSelecionada]
 		end
+
 		if adicionarItem == 0 then
 			local modalTitulo = "Recompensa Disponível"
 			local modalMensagem = "Você atingiu o nível " .. recompensaInfo.nivel .. " e recebeu uma recompensa por isso.\n\n"
 			modalMensagem = modalMensagem .. "No entanto, essa recompensa possui mais de uma opção e você deve escolher apenas uma delas.\n\n"
 			modalMensagem = modalMensagem .. "Selecione um dos itens abaixo e clique em 'Escolher', tecle 'Enter' ou clique duas vezes sobre a opção para marcá-la.\n\n"
 			local modal = ModalWindow(recompensaIdBase+recompensasInicio+recompensasOpcoesInicio+recompensaId, modalTitulo, modalMensagem)
+
 			for a, b in pairs(recompensaInfo.recompensaOpcoes) do
 				modal:addChoice(a, capAll(ItemType(b[1]):getName()))
 			end
+
 			modal:addButton(1, "Escolher")
 			modal:setDefaultEnterButton(1)
 			modal:addButton(2, "Sair")
@@ -139,7 +149,7 @@ function Player:enviarModalRecompensa(recompensaId)
 			local modalTitulo = "Recompensa Disponível"
 			local modalMensagem = "Você recebeu  '" .. exibicaoRecompensa[1] .. "' como recompensa por ter atingido o nível " .. recompensaInfo.nivel .. ".\n\n"
 			modalMensagem = modalMensagem .. "O peso desse item é " .. formatarPeso(pesoItem) .. ".\n\n"
-			modalMensagem = modalMensagem .. "Escolha uma das ações abaixo para receber o item.\n\n"
+			modalMensagem = modalMensagem .. "Escolha uma das ações abaixo para receber o item.\n"
 			local modal = ModalWindow(recompensaIdBase+recompensasInicio+recompensaId, modalTitulo, modalMensagem)
 			local tituloPrimeiraEscolha = "Receber agora"
 			if self:getFreeCapacity() < pesoItem then
@@ -206,6 +216,7 @@ function Player:entregarRecompensa(recompensaId, correio)
 		self:sendTextMessage(MESSAGE_INFO_DESCR, "Você recebeu o item '" .. exibicaoRecompensa[1] .. "'.")
 	end
 	adicionarPara:addItem(item[1], item[2], true, 1)
+	self:setStorageValue(recompensaIdBase+recompensasFinalizadasInicio+recompensaId, 1)
 	self:setStorageValue(recompensaIdBase+recompensasInicio+recompensaId, 0)
 	if not self:pegarRecompensaPendente() then
 		self:unregisterEvent("RecompensaNivel")
@@ -229,6 +240,14 @@ function Player:modalTempoRecompensaMaisTarde(recompensaId)
 	modal:setDefaultEnterButton(1)
 	modal:setDefaultEscapeButton(2)
 	modal:sendToPlayer(self)
+end
+
+function Player:checarRecompensaFinalizada(recompensaId)
+	if self:getStorageValue(recompensaIdBase+recompensasFinalizadasInicio+recompensaId) == 1 then
+		return true
+	end
+
+	return false
 end
 
 function Player:enviarModalRecompensaMaisTarde(recompensaId, tempo)
