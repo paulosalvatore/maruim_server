@@ -863,84 +863,43 @@ function Container:getAllItemsByAction(itemId, actionId)
 	return itensAction
 end
 
-function Player:abrirModalPergaminhoTeleporte(id)
-	local modalTitulo = "Escolha um Local para Teleportar"
-	local modalMensagem = "Escolha um dos locais abaixo e você será teleportado para lá. "
-	modalMensagem = modalMensagem .. "Fique atento com criaturas que esses locais podem conter!\n\n"
-	modalMensagem = modalMensagem .. "OBS.: Esse serviço é gratuito e para uso exclusivo na Maruim Island, quando "
-	modalMensagem = modalMensagem .. "você resolver sair da ilha, esse item será perdido.\n\n"
-	modalMensagem = modalMensagem .. "Para qual local deseja ir?\n"
-	local modal = ModalWindow(modalPergaminhoTeleporte + id - 1, modalTitulo, modalMensagem)
-
-	if id == 1 then
-		for choiceId, valor in pairs(destinosPergaminhoTeleporte) do
-			modal:addChoice(choiceId, valor["nome"])
-		end
-	else
-		destinos = destinosPergaminhoTeleporte[id + 1]
-		modalTitulo = modalTitulo .. " - " .. destinos["nome"]
-		for choiceId, valor in pairs(destinos["destinos"]) do
-			modal:addChoice(choiceId, valor["nome"])
-		end
-	end
-
-	if id > 1 then
-		modal:addButton(3, "Voltar")
-		modal:addButton(2, "Sair")
-		modal:addButton(1, "Escolher")
-	else
-		modal:addButton(1, "Escolher")
-		modal:addButton(2, "Sair")
-	end
-	modal:setDefaultEnterButton(1)
-	modal:setDefaultEscapeButton(2)
-	modal:sendToPlayer(self)
-
-	if id == 1 then
-		self:registerEvent("PergaminhoTeleporte")
-	end
+function Player:checarLogoutDesativado()
+	return logoutDesativado[self:getId()] or false
 end
 
-function Player:abrirModalSaidaMaruimIsland(id)
-	if id == 1 then
-		local modalTitulo = "Tem certeza que deseja sair da Maruim Island?"
-		local modalMensagem = "Caso você confirme a saída da Maruim Island você poderá voltar quando quiser, "
-		modalMensagem = modalMensagem .. "porém, você perderá o pergaminho de teleporte e o refil de poções.\n\n"
-		modalMensagem = modalMensagem .. "Tem certeza que deseja sair da Maruim Island?\n\n"
-		modalMensagem = modalMensagem .. "Clique no botão 'Confirmar' para escolher uma das três cidades disponíveis "
-		modalMensagem = modalMensagem .. ", clique em 'Voltar' para voltar ao menu anterior ou em 'Fechar' para"
-		modalMensagem = modalMensagem .. "fechar essa janela de diálogo.\n"
-		local modal = ModalWindow(modalPergaminhoTeleporte + 3, modalTitulo, modalMensagem)
+function Player:desativarLogout()
+	logoutDesativado[self:getId()] = true
+end
 
-		modal:addButton(3, "Voltar")
-		modal:addButton(2, "Fechar")
-		modal:addButton(1, "Confirmar")
-		modal:setDefaultEnterButton(1)
-		modal:setDefaultEscapeButton(2)
-		modal:sendToPlayer(self)
-	elseif id == 2 then
-		local modalTitulo = "Tem certeza que deseja sair da Maruim Island?"
-		local modalMensagem = "Escolha uma das cidades que deseja iniciar sua jornada fora da Maruim Island\n\n"
-		modalMensagem = modalMensagem .. "Ao escolher uma cidade você será enviado para o depot da mesma.\n\n"
-		modalMensagem = modalMensagem .. "Se tiver dúvidas para encontrar os locais na cidade ou nos arredores "
-		modalMensagem = modalMensagem .. "vá até nosso site e confira o mapa e o guia da cidade. Boa sorte e "
-		modalMensagem = modalMensagem .. "divirta-se!\n\n"
-		modalMensagem = modalMensagem .. "Clique no botão 'Viajar' para viajar até a cidade selecionar "
-		modalMensagem = modalMensagem .. ", clique em 'Voltar' para voltar ao menu anterior ou em 'Fechar' para"
-		modalMensagem = modalMensagem .. "fechar essa janela de diálogo.\n"
-		local modal = ModalWindow(modalPergaminhoTeleporte + 4, modalTitulo, modalMensagem)
+function Player:ativarLogout()
+	logoutDesativado[self:getId()] = false
+end
 
-		for a, b in pairs(Game.getTowns()) do
-			if isInArray({3, 5, 9}, a) then
-				modal:addChoice(b:getId(), formatarNomeCidade(b:getName()))
+
+function Player:pegarMagiaNivel()
+	local nivelJogador = self:getLevel()
+	local count = getPlayerInstantSpellCount(self)
+	local magias = {}
+	for i = 0, count - 1 do
+		local spell = getPlayerInstantSpellInfo(self, i)
+		if spell.level ~= 0 and spell.level == nivelJogador then
+			if spell.manapercent > 0 then
+				spell.mana = spell.manapercent .. "%"
 			end
+
+			table.insert(magias, spell)
+		end
+	end
+
+	local qtdeMagias = #magias
+
+	if qtdeMagias > 0 then
+		local texto = "Você aprendeu " .. qtdeMagias .. " novo" .. formatarPlural(qtdeMagias) .. " feitiço" .. formatarPlural(qtdeMagias) .. ":\n"
+
+		for i, spell in ipairs(magias) do
+			texto = texto .. spell.words .. " - " .. spell.name .. " - Mana: " .. spell.mana .. "\n"
 		end
 
-		modal:addButton(3, "Voltar")
-		modal:addButton(2, "Fechar")
-		modal:addButton(1, "Viajar")
-		modal:setDefaultEnterButton(1)
-		modal:setDefaultEscapeButton(2)
-		modal:sendToPlayer(self)
+		self:sendTextMessage(MESSAGE_INFO_DESCR, texto)
 	end
 end

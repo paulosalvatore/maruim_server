@@ -13,6 +13,10 @@ dofile('data/lib/carregarMiniMapa.lua')
 dofile('data/lib/casamento.lua')
 dofile('data/lib/monstros.lua')
 
+if logoutDesativado == nil then
+	logoutDesativado = {}
+end
+
 limiteOuroMonstrosPadrao = 20000
 
 if jogadoresOuroMonstros == nil then

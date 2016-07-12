@@ -1,4 +1,7 @@
 function onAdvance(player, skill, oldlevel, newlevel)
+
+	player:pegarMagiaNivel()
+
 	if skill == 8 then
 		if newlevel == 10 then
 			local modalId = 5201
