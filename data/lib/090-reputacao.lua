@@ -43,7 +43,9 @@ Reputacao = {
 	},
 	promocao = 100,
 	viagem = {
-		valor = 200,
+		valor = 100,
+		valorRetorno = 300,
+		tempoRetorno = 15*60,
 		acessoLiberado = 500
 	}
 }

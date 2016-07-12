@@ -4,14 +4,26 @@ NpcSystem.parseParameters(npcHandler)
 
 local valorViagem = {}
 
-function onCreatureAppear(cid)
-	Npc():gravarTeleportadorGuilda()
-	npcHandler:onCreatureAppear(cid)
-end
+function onCreatureAppear(cid)				npcHandler:onCreatureAppear(cid)				end
 function onCreatureDisappear(cid)			npcHandler:onCreatureDisappear(cid)				end
 function onCreatureSay(player, type, msg)
-	npcHandler:setMessage(MESSAGE_GREET, "Olá |PLAYERNAME|. Eu posso te levar para a sua {guilda}.")
-	npcHandler:onCreatureSay(player, type, msg)
+	local teleportGuildaRetorno = player:teleportGuildaPosicaoAnterior()
+	local teleportGuildaTempo = player:teleportGuildaTempo()
+
+	if teleportGuildaRetorno > 0 and teleportGuildaTempo then
+		local npcRetorno
+
+		if teleportGuildaRetorno == 4 then
+			npcRetorno = "Albert"
+		else
+			npcRetorno = "Lucius"
+		end
+
+		npcHandler:setMessage(MESSAGE_GREET, "Olá |PLAYERNAME|. Você pode {retornar} para a sala do meu irmão '" .. npcRetorno .. "' na cidade onde você estava, caso queira.")
+		npcHandler:onCreatureSay(player, type, msg)
+	else
+		addEvent(npcSay, 1000, player:getId(), Npc():getId(), formatarFrase("Olá |PLAYERNAME|. Sempre que vier para a guilda através do meu irmão 'Lucius' ou do 'Albert', fale comigo que eu te mandarei de volta para a cidade onde você estava. Mas lembre-se: isso é só pelos próximos 15 minutos após a viagem!", player:getId()))
+	end
 end
 function onThink()							npcHandler:onThink()							end
 
@@ -21,13 +33,10 @@ function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-
-	local npc = Npc()
-	local npcName = npc:getName()
-	if isInArray({"travel", "viagem", "viajar", "guilda"}, msg) then
+	if isInArray({"return", "retorno", "retornar"}, msg) then
 		local acessoLiberado = false
 
-		if npcName == "Albert" or player:pegarReputacao() >= Reputacao.viagem.acessoLiberado then
+		if player:pegarReputacao() >= Reputacao.viagem.acessoLiberado then
 			acessoLiberado = true
 		end
 
@@ -35,7 +44,7 @@ function creatureSayCallback(cid, type, msg)
 			valorViagem[cid] = 0
 			npcHandler:say("Muito bem! Você tem certeza que deseja ir?", cid)
 		else
-			valorViagem[cid] = Reputacao.viagem.valor
+			valorViagem[cid] = Reputacao.viagem.valorRetorno
 			npcHandler:say("Você não possui reputação necessária com a sua guilda para viajar gratuitamente. Será cobrada uma taxa de " .. valorViagem[cid] .. " gold coins. Você deseja ir?", cid)
 		end
 
@@ -45,22 +54,8 @@ function creatureSayCallback(cid, type, msg)
 			npcHandler:say("Você não possui dinheiro suficiente.", cid)
 			npcHandler.topic[cid] = 0
 		else
-			npcHandler:say("Durante os próximos 15 minutos você poderá falar com meu irmão 'Dorius' que ele te mandará novamente para essa sala. Até breve!", cid)
 			npcHandler:unGreet(cid)
-
-			local storageValue
-			local npcId = npc:getId()
-
-			for a, b in pairs(teleportadorGuilda.idsTeleportadorGuilda) do
-				if npcId == b then
-					storageValue = a
-				end
-			end
-
-			player:setStorageValue(Storage.teleportGuildaRetorno, storageValue)
-			player:setStorageValue(Storage.teleportGuildaRetornoTempo, os.time())
-
-			player:teleportarParaGuilda(true)
+			player:teleportarParaGuildaRetorno()
 		end
 	end
 end
