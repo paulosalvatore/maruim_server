@@ -3,7 +3,7 @@ local delay = 30
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 	if item.itemid == 1948 then
-		if player:getCondition(CONDITION_INFIGHT, CONDITIONID_DEFAULT) then
+		if not Tile(player:getPosition()):hasFlag(TILESTATE_PROTECTIONZONE) and player:getCondition(CONDITION_INFIGHT, CONDITIONID_DEFAULT) then
 			return player:sendCancelMessage("Você deve sair de combate.")
 		end
 
