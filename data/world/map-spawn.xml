@@ -359,6 +359,9 @@
 	<spawn centerx="554" centery="904" centerz="5" radius="1">
 		<monster name="Goblin" x="0" y="0" z="5" spawntime="60" />
 	</spawn>
+	<spawn centerx="638" centery="908" centerz="5" radius="1">
+		<npc name="Dorius" x="0" y="-1" z="5" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="567" centery="909" centerz="5" radius="1">
 		<monster name="Goblin" x="0" y="0" z="5" spawntime="60" />
 	</spawn>
@@ -370,6 +373,9 @@
 	</spawn>
 	<spawn centerx="657" centery="914" centerz="5" radius="1">
 		<npc name="Ganor" x="0" y="-1" z="5" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="538" centery="943" centerz="5" radius="1">
+		<npc name="Dorius" x="0" y="-1" z="5" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="546" centery="944" centerz="5" radius="1">
 		<npc name="Xanthe" x="0" y="-1" z="5" spawntime="60" direction="2" />
@@ -1189,6 +1195,9 @@
 	<spawn centerx="658" centery="949" centerz="6" radius="1" />
 	<spawn centerx="650" centery="956" centerz="6" radius="1">
 		<npc name="Tryn" x="-1" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="449" centery="961" centerz="6" radius="1">
+		<npc name="Dorius" x="-1" y="1" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="601" centery="966" centerz="6" radius="1">
 		<npc name="Thanus Blackwood" x="1" y="-1" z="6" spawntime="60" direction="2" />
@@ -2624,6 +2633,9 @@
 	</spawn>
 	<spawn centerx="576" centery="983" centerz="7" radius="1">
 		<monster name="Bug" x="1" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="606" centery="985" centerz="7" radius="1">
+		<npc name="Dorius" x="0" y="-1" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="519" centery="987" centerz="7" radius="1">
 		<monster name="Wasp" x="-1" y="-1" z="7" spawntime="60" />
