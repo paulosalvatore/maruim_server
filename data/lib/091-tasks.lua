@@ -13,6 +13,7 @@ configTasks = {
 	modalTasksRealizadasInfo = 6,
 	modalTasksRecompensas = 7,
 	modalTasksAbandonar = 8,
+	modalTasksAbandonarInfo = 9,
 	limiteTasksProgresso = 3
 }
 -- Exemplo de Configuração:
@@ -411,11 +412,17 @@ function Player:enviarTasksModalAbandonar()
 		for a, b in pairs(listaTasks) do
 			modal:addChoice(b, pegarNomeTask(b))
 		end
-		modal:addButton(1, "Abandonar")
+		modal:addButton(4, "Info")
 		modal:setDefaultEnterButton(1)
 		modal:addButton(2, "Sair")
+		modal:addButton(1, "Abandonar")
 		modal:setDefaultEscapeButton(2)
 		modal:addButton(3, "Voltar")
+		-- modal:addButton(1, "Abandonar")
+		-- modal:setDefaultEnterButton(1)
+		-- modal:addButton(2, "Sair")
+		-- modal:setDefaultEscapeButton(2)
+		-- modal:addButton(3, "Voltar")
 		modal:sendToPlayer(self)
 	else
 		self:enviarTasksModalVazio(modalId)
@@ -426,9 +433,9 @@ function Player:enviarTasksModalVazio(modalId)
 	local modalTitulo = "Aviso"
 	local modalMensagem = "Não há nenhuma tarefa para ser exibida.\nClique no botão 'Voltar' e selecione outra opção."
 	local modal = ModalWindow(modalId, modalTitulo, modalMensagem)
-	modal:setDefaultEscapeButton(2)
 	modal:addButton(3, "Voltar")
 	modal:addButton(2, "Sair")
+	modal:setDefaultEscapeButton(2)
 	modal:setDefaultEnterButton(3)
 	modal:sendToPlayer(self)
 end

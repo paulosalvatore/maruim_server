@@ -50,8 +50,10 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 	elseif modalWindowId == configTasks.storageBase+configTasks.modalTasksAbandonar then
 		if buttonId == 1 then
 			player:abandonarTask(choiceId)
-		else
+		elseif buttonId == 3 then
 			player:enviarTasksModalPrincipal()
+		elseif buttonId == 4 then
+			player:enviarTasksModalInfo(choiceId, configTasks.modalTasksAbandonarInfo)
 		end
 	elseif modalWindowId == configTasks.storageBase+configTasks.modalTasksDisponiveisInfo then
 		if buttonId == 1 then
@@ -70,6 +72,12 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 			player:iniciarTask(choiceId)
 		else
 			player:enviarTasksModalRealizadas()
+		end
+	elseif modalWindowId == configTasks.storageBase+configTasks.modalTasksAbandonarInfo then
+		if buttonId == 1 then
+			player:iniciarTask(choiceId)
+		else
+			player:enviarTasksModalAbandonar()
 		end
 	end
 end
