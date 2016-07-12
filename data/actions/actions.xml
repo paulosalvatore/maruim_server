@@ -131,7 +131,9 @@
 	<action itemid="2096" function="increaseItemId" />
 	<action itemid="2097" function="decreaseItemId" />
 	<action itemid="1786" function="increaseItemId" />
+	<action itemid="1787" function="decreaseItemId" />
 	<action itemid="1788" function="increaseItemId" />
+	<action itemid="1789" function="decreaseItemId" />
 	<action itemid="1790" function="increaseItemId" />
 	<action itemid="1792" function="increaseItemId" />
 	<action itemid="1634" function="increaseItemId" />
@@ -266,6 +268,7 @@
 	<action itemid="6576" script="other/fireworksrocket.lua" />
 	<action itemid="2036" script="other/watch.lua" />
 	<action fromid="1728" toid="1731" script="other/watch.lua" />
+	<action fromid="20239" toid="20242" script="other/watch.lua" />
 	<action itemid="6572" script="other/partytrumpet.lua" />
 	<action itemid="2785" script="other/blueberrybush.lua" />
 	<action itemid="2579" script="other/trap.lua" />
