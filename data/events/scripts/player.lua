@@ -188,8 +188,18 @@ function Player:onTradeRequest(target, item)
 		return false
 	end
 
+	if item:isContainer() then
+		for k, actionId in pairs(itensMovimentoDesativado) do
+			verificarItens = item:getAllItemsByAction(false, actionId)
+			if #verificarItens > 0 then
+				self:sendCancelMessage("Você não pode trocar esse item.")
+				return false
+			end
+		end
+	end
+
 	if isInArray(itensMovimentoDesativado, item:getActionId()) then
-		self:sendCancelMessage("Você não pode trocar esse objeto.")
+		self:sendCancelMessage("Você não pode trocar esse item.")
 		return false
 	end
 
@@ -197,16 +207,6 @@ function Player:onTradeRequest(target, item)
 end
 
 function Player:onTradeAccept(target, item, targetItem)
-	if getCreatureCondition(self, CONDITION_SPELLCOOLDOWN, 160) then
-		self:sendCancelMessage("Você está ocupado.")
-		return false
-	end
-
-	if isInArray(itensMovimentoDesativado, item:getActionId()) then
-		self:sendCancelMessage("Você não pode trocar esse objeto.")
-		return false
-	end
-
 	return true
 end
 
