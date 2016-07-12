@@ -109,6 +109,7 @@ function Player:enviarModalTutorial(id, atualizarPasso)
 		modalMensagem = modalMensagem .. "Caso você tenha dúvida sobre algum item basta acessar o nosso site e pesquisá-lo em nosso exclusivo database de itens!\n"
 	elseif id == 10 then
 		passo = "Informações Adicionais"
+		modalMensagem = modalMensagem .. "Antes do nível 30, fique tranquilo, pois ao morrer você não perderá nenhum item.\n\n"
 		modalMensagem = modalMensagem .. "Você poderá sair da ilha a qualquer momento, basta utilizar o seu pergaminho de teleporte e escolher a opção 'Sair da Maruim Island' e escolher umas das cidades abaixo:\n\n"
 		modalMensagem = modalMensagem .. "Ôttô, a cidade simétrica, Hyalakur, a cidade desértica ou Civitaten, a cidade do vulcão.\n\n"
 		modalMensagem = modalMensagem .. "Lembrando que você não é obrigado a deixar a ilha em algum nível específico e poderá voltar quando quiser (basta procurar o navio mais próximo e pedir uma passagem ao capitão).\n\n"
@@ -236,4 +237,139 @@ function Player:tutorialMestreGuilda()
 	addEvent(npcSay, 5000, self:getId(), npc:getId(), mensagens[2])
 	addEvent(npcSay, 10000, self:getId(), npc:getId(), mensagens[3])
 	addEvent(npcSay, 15000, self:getId(), npc:getId(), mensagens[4])
+end
+
+function Player:abrirModalPergaminhoTeleporte(id)
+	local modalTitulo = "Escolha um Local para Teleportar"
+	local modalMensagem = "Escolha um dos locais abaixo e você será teleportado para lá. "
+	modalMensagem = modalMensagem .. "Fique atento com criaturas que esses locais podem conter!\n\n"
+	modalMensagem = modalMensagem .. "OBS.: Esse serviço é gratuito e para uso exclusivo na Maruim Island, quando "
+	modalMensagem = modalMensagem .. "você resolver sair da ilha, esse item será perdido.\n\n"
+	modalMensagem = modalMensagem .. "Para qual local deseja ir?\n"
+	local modal = ModalWindow(modalPergaminhoTeleporte + id - 1, modalTitulo, modalMensagem)
+
+	if id == 1 then
+		for choiceId, valor in pairs(destinosPergaminhoTeleporte) do
+			modal:addChoice(choiceId, valor["nome"])
+		end
+	else
+		destinos = destinosPergaminhoTeleporte[id + 1]
+		modalTitulo = modalTitulo .. " - " .. destinos["nome"]
+		for choiceId, valor in pairs(destinos["destinos"]) do
+			modal:addChoice(choiceId, valor["nome"])
+		end
+	end
+
+	if id > 1 then
+		modal:addButton(3, "Voltar")
+		modal:addButton(2, "Sair")
+		modal:addButton(1, "Escolher")
+	else
+		modal:addButton(1, "Escolher")
+		modal:addButton(2, "Sair")
+	end
+	modal:setDefaultEnterButton(1)
+	modal:setDefaultEscapeButton(2)
+	modal:sendToPlayer(self)
+
+	if id == 1 then
+		self:registerEvent("PergaminhoTeleporte")
+	end
+end
+
+function Player:abrirModalSaidaMaruimIsland(id)
+	if id == 1 then
+		local modalTitulo = "Tem certeza que deseja sair da Maruim Island?"
+		local modalMensagem = "Caso você confirme a saída da Maruim Island você poderá voltar quando quiser, "
+		modalMensagem = modalMensagem .. "porém, você perderá o pergaminho de teleporte e o refil de poções.\n\n"
+		modalMensagem = modalMensagem .. "Tem certeza que deseja sair da Maruim Island?\n\n"
+		modalMensagem = modalMensagem .. "Clique no botão 'Confirmar' para escolher uma das três cidades disponíveis "
+		modalMensagem = modalMensagem .. ", clique em 'Voltar' para voltar ao menu anterior ou em 'Fechar' para"
+		modalMensagem = modalMensagem .. "fechar essa janela de diálogo.\n"
+		local modal = ModalWindow(modalPergaminhoTeleporte + 3, modalTitulo, modalMensagem)
+
+		modal:addButton(3, "Voltar")
+		modal:addButton(2, "Fechar")
+		modal:addButton(1, "Confirmar")
+		modal:setDefaultEnterButton(1)
+		modal:setDefaultEscapeButton(2)
+		modal:sendToPlayer(self)
+	elseif id == 2 then
+		local modalTitulo = "Tem certeza que deseja sair da Maruim Island?"
+		local modalMensagem = "Escolha uma das cidades que deseja iniciar sua jornada fora da Maruim Island\n\n"
+		modalMensagem = modalMensagem .. "Ao escolher uma cidade você será enviado para o depot da mesma.\n\n"
+		modalMensagem = modalMensagem .. "Se tiver dúvidas para encontrar os locais na cidade ou nos arredores "
+		modalMensagem = modalMensagem .. "vá até nosso site e confira o mapa e o guia da cidade. Boa sorte e "
+		modalMensagem = modalMensagem .. "divirta-se!\n\n"
+		modalMensagem = modalMensagem .. "Clique no botão 'Viajar' para viajar até a cidade selecionar "
+		modalMensagem = modalMensagem .. ", clique em 'Voltar' para voltar ao menu anterior ou em 'Fechar' para"
+		modalMensagem = modalMensagem .. "fechar essa janela de diálogo.\n"
+		local modal = ModalWindow(modalPergaminhoTeleporte + 4, modalTitulo, modalMensagem)
+
+		for a, b in pairs(Game.getTowns()) do
+			if isInArray({3, 5, 9}, a) then
+				modal:addChoice(b:getId(), formatarNomeCidade(b:getName()))
+			end
+		end
+
+		modal:addButton(3, "Voltar")
+		modal:addButton(2, "Fechar")
+		modal:addButton(1, "Viajar")
+		modal:setDefaultEnterButton(1)
+		modal:setDefaultEscapeButton(2)
+		modal:sendToPlayer(self)
+	end
+end
+
+function Player:sairMaruimIsland(choiceId)
+	local pergaminhoId, pergaminhoAction = 1948, 3902
+	local refilId, refilAction = 1949, 3903
+
+	local pergaminho = self:getAllItemsByAction(pergaminhoId, pergaminhoAction)
+	local refil = self:getAllItemsByAction(refilId, refilAction)
+
+	if #pergaminho == 1 and #refil == 1 then
+		pergaminho[1]:remove(1)
+		refil[1]:remove(1)
+
+		local posicao
+		if choiceId == 3 then
+			posicao = 1
+		elseif choiceId == 5 then
+			posicao = 2
+		elseif choiceId == 9 then
+			posicao = 3
+		end
+
+		self:teleportarJogador(teleportadorGuilda.posicoesTeleportadorGuilda[posicao], false, true)
+
+		self:desativarLogout()
+		self:allowMovement(false)
+		self:desativarInteracaoNpcs()
+
+		local mensagens = {
+			"Olá " .. self:getName() .. ". Meu nome é Lucius e eu sou o teleportador da guilda.",
+			"Sempre que você precisar voltar para a sua guilda na Maruim Island basta falar comigo e eu te teleportarei para lá.",
+			"Isso terá um custo, claro, porém, se você possui " .. Reputacao.viagem.acessoLiberado .. " pontos de reputação eu te levarei de graça.",
+			"Eu estou localizado nas três cidades principais.",
+			"Sempre que você utilizar meus serviços, meu irmão 'Dorius' estará na guilda, disponível por 15 minutos após sua viagem, para te trazer de volta até minha sala.",
+			"Desejo-lhe uma boa sorte nesse novo continente e divirta-se!"
+		}
+
+		addEvent(function(playerId)
+			self:ativarLogout()
+			self:allowMovement(true)
+			self:ativarInteracaoNpcs()
+		end, 20650, self:getId())
+
+		local npcId = teleportadorGuilda.idsTeleportadorGuilda[posicao]
+		addEvent(npcSay, 500, self:getId(), npcId, mensagens[1])
+		addEvent(npcSay, 3500, self:getId(), npcId, mensagens[2])
+		addEvent(npcSay, 7500, self:getId(), npcId, mensagens[3])
+		addEvent(npcSay, 13500, self:getId(), npcId, mensagens[4])
+		addEvent(npcSay, 17500, self:getId(), npcId, mensagens[5])
+		addEvent(npcSay, 20500, self:getId(), npcId, mensagens[6])
+	else
+		self:sendCancelMessage("Ocorreu um erro. Por favor, contate a equipe de suporte através do atalho 'Ctrl + Z'.")
+	end
 end

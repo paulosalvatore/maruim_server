@@ -33,19 +33,7 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 		end
 	elseif modalWindowId == modalPergaminhoTeleporte + 4 then
 		if buttonId == 1 then
-			local pergaminhoId, pergaminhoAction = 1948, 3902
-			local refilId, refilAction = 1949, 3903
-
-			local pergaminho = player:getAllItemsByAction(pergaminhoId, pergaminhoAction)
-			local refil = player:getAllItemsByAction(refilId, refilAction)
-
-			if #pergaminho == 1 and #refil == 1 then
-				pergaminho[1]:remove(1)
-				refil[1]:remove(1)
-				player:teleportarJogador(posicoesDepot[choiceId], false, true)
-			else
-				player:sendCancelMessage("Ocorreu um erro. Por favor, contate a equipe de suporte através do atalho 'Ctrl + Z'.")
-			end
+			player:sairMaruimIsland(choiceId)
 		elseif buttonId == 3 then
 			player:abrirModalSaidaMaruimIsland(1)
 		end
