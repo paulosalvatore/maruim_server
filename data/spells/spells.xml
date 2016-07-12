@@ -67,7 +67,7 @@
 		<vocation name="Royal Paladin" />
 		<vocation name="Elite Knight" />
 	</instant>
-	<instant group="attack" spellid="139" name="Curse" words="utori mort" lvl="75" mana="30" range="3" aggressive="1" blockwalls="1" needtarget="1" exhaustion="50000" groupcooldown="2000" needlearn="0" script="attack/curse.lua">
+	<instant group="attack" spellid="139" name="Curse" words="utori mort" lvl="75" mana="30" range="3" aggressive="1" blockwalls="1" needtarget="1" exhaustion="40000" groupcooldown="2000" needlearn="0" script="attack/curse.lua">
 		<vocation name="Sorcerer" />
 		<vocation name="Master Sorcerer" />
 	</instant>
