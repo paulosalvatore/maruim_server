@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <quests>
+	<quest name="Rumores Antigos" startstorageid="3302" startstoragevalue="1">
+		<mission name="Ruídos Estranhos" storageid="3302" startvalue="1" endvalue="6">
+			<missionstate id="1" description="Rumores antigos diziam que uma tumba secreta apareceria para aqueles que ouvissem vozes dos sarcófagos." />
+			<missionstate id="2" description="Uma peça se movimentou nessa estátua, parece uma espécie de entrada secreta." />
+			<missionstate id="3" description="Uma gravura apareceu na estátua: 'O portal se abriu'. Encontre a sala do portal." />
+			<missionstate id="4" description="Destrua os vasos que representam o deus egípcio adormecido há mil anos nessa tumba." />
+			<missionstate id="5" description="Procure o coração da tumba e destrua Horestis." />
+			<missionstate id="6" description="O antigo deus egípicio Horestis foi derrotado." />
+		</mission>
+	</quest>
 	<quest name="Tarefas" startstorageid="30000" startstoragevalue="1">
 		<mission name="Vampire" storageid="30001" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Objetivo: Matar 50 'Vampires'. Recompensa: 200 Pontos de Reputação." />

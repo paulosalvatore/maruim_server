@@ -44,6 +44,7 @@
 		<item id="2439" chance="9687" /><!-- Daraminian Mace -->
 		<item id="2457" chance="8294" /><!-- Steel Helmet -->
 		<item id="2529" chance="3299" /><!-- Black Shield -->
+		<item id="13531" chance="1761" /><!-- Golden Scorpion Pendant -->
 		<item id="13535" chance="548" /><!-- Fist on a Stick -->
 	</loot>
 	<script>

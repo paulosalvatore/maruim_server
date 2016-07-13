@@ -43,4 +43,7 @@
 	<!-- Scripts das Criaturas (tomar dano e morrer) -->
 	<event type="death" name="CriaturaMorta" script="criaturaMorta.lua" />
 	<event type="healthchange" name="HealthChangeCriatura" script="healthChangeCriatura.lua" />
+
+	<!-- Horestis -->
+	<event type="death" name="Horestis" script="horestis.lua" />
 </creaturescripts>

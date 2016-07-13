@@ -92,6 +92,7 @@ conditionsDamage = {
 	["morte"] = {CONDITION_CURSED, COMBAT_DEATHDAMAGE},
 	["físico"] = {CONDITION_BLEEDING, COMBAT_PHYSICALDAMAGE}
 }
+
 conditionsHealing = {
 	CONDITION_POISON,
 	CONDITION_FIRE,
@@ -179,6 +180,22 @@ destinosPergaminhoTeleporte = {
 		["nome"] = "Sair da Maruim Island"
 	}
 }
+
+if configHorestis == nil then
+	configHorestis = {
+		delay = {
+			destruirJarros = 3*60*60,
+			aposMatar = 3*60*1000,
+			liberarSalaAposMorte = 30*1000
+		},
+		jogadorSala = false,
+		jogadorSaiu = false,
+		posicaoTeleporte = {x = 1478, y = 1623, z = 8},
+		destinoTeleporte = {x = 1404, y = 1589, z = 8},
+		teleport = nil,
+		itensNecessarios = {13531, 13532, 13529}
+	}
+end
 
 function getDistanceBetween(firstPosition, secondPosition)
 	local xDif = math.abs(firstPosition.x - secondPosition.x)

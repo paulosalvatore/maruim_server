@@ -295,6 +295,16 @@ comerciantes = {
 			["trade"] = "Tenho diversos bons itens para aventureiros, haha, dê uma olhada!"
 		}
 	},
+	["Sobek"] = { -- Estátua - Vende Piece of Decay Paper
+		["itens"] = {
+			["c"] = {13529},
+			["v"] = {13531, 13532}
+		},
+		["frases"] = {
+			["greet"] = "Sabah el-kheir, etsharafna!",
+			["trade"] = "Hena la!"
+		}
+	},
 	["Talita Dakeris"] = { -- Vendedor de Armas à Distância - Ôttô
 		["itens"] = {
 			["c"] = {"armas_distancia_c"},

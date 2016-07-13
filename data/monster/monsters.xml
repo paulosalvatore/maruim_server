@@ -50,6 +50,7 @@
 	<monster name="Cyclops Smith" file="cyclops smith.xml" />
 	<monster name="Cyclops" file="cyclops.xml" />
 	<monster name="Death Blob" file="death blob.xml" />
+	<monster name="Death Priest" file="death priest.xml" />
 	<monster name="Deepling Brawler" file="deepling brawler.xml" />
 	<monster name="Deepling Elite" file="deepling elite.xml" />
 	<monster name="Deepling Guard" file="deepling guard.xml" />
@@ -83,9 +84,9 @@
 	<monster name="Fahim The Wise" file="fahim the wise.xml" />
 	<monster name="Farm Black Sheep" file="farm black sheep.xml" />
 	<monster name="Farm Deer" file="farm deer.xml" />
-	<monster name="Farm Horse (Brown)" file="farm horse (brown).xml" />
-	<monster name="Farm Horse (Grey)" file="farm horse (grey).xml" />
-	<monster name="Farm Horse" file="farm horse.xml" />
+	<monster name="Farm Horse1" file="farm horse.xml" />
+	<monster name="Farm Horse2" file="farm horse (brown).xml" />
+	<monster name="Farm Horse3" file="farm horse (grey).xml" />
 	<monster name="Farm Pig" file="farm pig.xml" />
 	<monster name="Farm Sheep" file="farm sheep.xml" />
 	<monster name="Filth Toad" file="filth toad.xml" />
@@ -98,16 +99,19 @@
 	<monster name="Gargoyle" file="gargoyle.xml" />
 	<monster name="Ghost" file="ghost.xml" />
 	<monster name="Ghoul" file="ghoul.xml" />
+	<monster name="Ghoulish Hyaena" file="ghoulish hyaena.xml" />
 	<monster name="Giant Spider" file="giant spider.xml" />
 	<monster name="Gnarlhound" file="gnarlhound.xml" />
 	<monster name="Goblin Assassin" file="goblin assassin.xml" />
 	<monster name="Goblin Scavenger" file="goblin scavenger.xml" />
 	<monster name="Goblin" file="goblin.xml" />
 	<monster name="Gozzler" file="gozzler.xml" />
+	<monster name="Grave Guard" file="grave guard.xml" />
 	<monster name="Grave Robber" file="grave robber.xml" />
 	<monster name="Green Djinn" file="green djinn.xml" />
 	<monster name="Green Frog" file="green frog.xml" />
 	<monster name="Grim Reaper" file="grim reaper.xml" />
+	<monster name="Horestis" file="horestis.xml" />
 	<monster name="Husky" file="husky.xml" />
 	<monster name="Hyaena" file="hyaena.xml" />
 	<monster name="Hydra" file="hydra.xml" />
@@ -185,6 +189,7 @@
 	<monster name="Roaring Lion" file="roaring lion.xml" />
 	<monster name="Rot Elemental" file="rot elemental.xml" />
 	<monster name="Rotworm" file="rotworm.xml" />
+	<monster name="Sacred Spider" file="sacred spider.xml" />
 	<monster name="Salamander" file="salamander.xml" />
 	<monster name="Sandcrawler" file="sandcrawler.xml" />
 	<monster name="Sandstone Scorpion" file="sandstone scorpion.xml" />
@@ -215,6 +220,7 @@
 	<monster name="Thornfire Wolf" file="thornfire wolf.xml" />
 	<monster name="Tiger" file="tiger.xml" />
 	<monster name="Toad" file="toad.xml" />
+	<monster name="Tomb Servant" file="tomb servant.xml" />
 	<monster name="Tortoise" file="tortoise.xml" />
 	<monster name="Troll Champion" file="troll champion.xml" />
 	<monster name="Troll" file="troll.xml" />
@@ -230,6 +236,7 @@
 	<monster name="Wasp" file="wasp.xml" />
 	<monster name="Water Elemental" file="water elemental.xml" />
 	<monster name="Weak Fire Elemental" file="weak fire elemental.xml" />
+	<monster name="Wild Horse" file="wild horse.xml" />
 	<monster name="Winter Wolf" file="winter wolf.xml" />
 	<monster name="Wisp" file="wisp.xml" />
 	<monster name="Witch" file="witch.xml" />

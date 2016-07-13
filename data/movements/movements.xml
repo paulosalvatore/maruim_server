@@ -19,6 +19,9 @@
 
 	<movevent event="StepIn" fromaid="4002" toaid="4013" script="cidadao.lua" />
 
+	<!-- Horestis -->
+	<movevent event="StepIn" actionid="3302" script="horestis.lua" />
+
 	<!-- Decaying tiles -->
 	<movevent event="StepIn" itemid="293" script="decay.lua" />
 	<movevent event="StepIn" itemid="461" script="decay.lua" />

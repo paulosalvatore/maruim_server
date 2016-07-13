@@ -4,6 +4,7 @@ local vocationDoor = {
 	[907] = {3, 7},
 	[908] = {4, 8}
 }
+
 local config = {
 	-- ["action" ou "unique"] = {
 		-- [action_id ou unique_id] = {
@@ -12,6 +13,14 @@ local config = {
 		-- }
 	-- }
 	["action"] = {
+		[3303] = {
+			storage = Storage.Horestis.horestis,
+			valor = 3
+		},
+		[3309] = {
+			storage = Storage.Horestis.horestis,
+			valor = 6
+		},
 		[5500] = {
 			storage = 2900,
 			valor = 2
@@ -20,11 +29,14 @@ local config = {
 	["unique"] = {
 	}
 }
+
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local itemId = item:getId()
+
 	if isInArray(questDoors, itemId) then
 		local storage = item.actionid
 		local valor = 1
+
 		if config["action"][item.actionid] or config["unique"][item.uid] then
 			local i
 			if config["action"][item.actionid] then
@@ -39,22 +51,25 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				valor = i.valor
 			end
 		end
+
 		if vocationDoor[item.actionid] ~= nil and not isInArray(vocationDoor[item.actionid], player:getVocation():getId()) then
 			player:sendCancelMessage("Você precisa ser um " .. Vocation(vocationDoor[item.actionid][1]):getName() .. " para abrir essa porta.")
-		elseif vocationDoor[item.actionid] == nil and player:getStorageValue(storage) ~= valor then
+		elseif vocationDoor[item.actionid] == nil and player:getStorageValue(storage) < valor then
 			player:sendTextMessage(MESSAGE_INFO_DESCR, "Essa porta parece estar selada contra intrusos indesejados.")
 		else
 			item:transform(itemId + 1)
 			player:teleportTo(toPosition, true)
 		end
+
 		return true
 	elseif isInArray(levelDoors, itemId) or item.actionid == 2505 then
-		if item.actionid == 2505 or (item.actionid > 0 and player:getLevel() >= item.actionid - 1000) then
+		if player:getGroup():getAccess() or item.actionid == 2505 or (item.actionid > 0 and player:getLevel() >= item.actionid - 1000) then
 			item:transform(itemId + 1)
 			player:teleportTo(toPosition, true)
 		else
 			player:sendTextMessage(MESSAGE_INFO_DESCR, "Apenas os dignos podem passar.")
 		end
+
 		return true
 	elseif isInArray(keys, itemId) then
 		if target.actionid > 0 and target.uid > 0 then
@@ -63,7 +78,9 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				target:transform(doors[target.itemid])
 				return true
 			end
+
 			player:sendTextMessage(MESSAGE_STATUS_SMALL, "A chave não corresponde.")
+
 			return true
 		elseif target.uid > 0 then
 			if item.actionid == target.uid then
@@ -78,16 +95,21 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 					return true
 				end
 			end
+
 			player:sendTextMessage(MESSAGE_STATUS_SMALL, "A chave não corresponde.")
+
 			return true
 		end
+
 		return false
 	end
 
 	if isInArray(horizontalOpenDoors, itemId) or isInArray(verticalOpenDoors, itemId) then
 		local doorCreature = Tile(toPosition):getTopCreature()
+
 		if doorCreature ~= nil then
 			toPosition.x = toPosition.x + 1
+
 			local query = Tile(toPosition):queryAdd(doorCreature, bit.bor(FLAG_IGNOREBLOCKCREATURE, FLAG_PATHFINDING))
 			if query ~= RETURNVALUE_NOERROR then
 				toPosition.x = toPosition.x - 1
@@ -106,6 +128,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		if not isInArray(openSpecialDoors, itemId) then
 			item:transform(itemId - 1)
 		end
+
 		return true
 	end
 
@@ -115,7 +138,9 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		else
 			player:sendTextMessage(MESSAGE_INFO_DESCR, "Está trancada.")
 		end
+
 		return true
 	end
+
 	return false
 end
