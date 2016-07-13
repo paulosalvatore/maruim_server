@@ -9366,7 +9366,6 @@
 		<attribute key="weight" value="100" />
 	</item>
 	<item id="5907" article="a" name="slingshot">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="5908" article="an" name="obsidian knife">
@@ -21781,28 +21780,22 @@
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="13247" article="a" name="hunting horn">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item fromid="13288" toid="13289" article="a" name="huge cauldron" />
 	<item id="13291" article="a" name="maxilla maximus">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="13292" article="a" name="tin key">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="13293" article="a" name="leather whip">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="13294" article="a" name="harness">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="13295" article="a" name="reins">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="13296" name="draptor scales">
@@ -21812,7 +21805,6 @@
 		<attribute key="weight" value="1400" />
 	</item>
 	<item id="13298" article="a" name="carrot on a stick">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="13299" article="a" name="stampor horn">
@@ -21834,12 +21826,10 @@
 		<attribute key="weight" value="112" />
 	</item>
 	<item id="13305" article="a" name="giant shrimp">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="13306" article="a" name="inoperative tin lizzard" />
 	<item id="13307" article="a" name="sweet smelling bait">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="13308" article="a" name="dead boar">
@@ -22074,9 +22064,11 @@
 		<attribute key="duration" value="600" />
 		<attribute key="corpseType" value="blood" />
 	</item>
-	<item id="13495" name="remains of a canopic jar" />
+	<item id="13495" name="remains of a canopic jar">
+		<attribute key="decayTo" value="13500" />
+		<attribute key="duration" value="3600" />
+	</item>
 	<item id="13498" name="scorpion sceptre">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="13500" name="ornate canopic jar" />
@@ -22108,7 +22100,6 @@
 		<attribute key="weight" value="1200" />
 	</item>
 	<item id="13508" article="a" name="slug drug">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="13509" article="a" name="dead donkey">
@@ -22256,23 +22247,18 @@
 		<attribute key="weight" value="300" />
 	</item>
 	<item id="13535" article="a" name="fist on a stick">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="13536" article="a" name="diapason">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="13537" article="a" name="bag of apple slices">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="13538" name="bamboo leaves">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="13539" article="a" name="golden fir cone">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="13540" article="a" name="ominous piece of cloth">
@@ -22808,11 +22794,9 @@
 	</item>
 	<item id="13937" article="a" name="inoperative uniwheel" />
 	<item id="13938" article="a" name="golden can of oil">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="13939" article="a" name="sugar oat">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="13940" name="elemental spikes">
@@ -24164,11 +24148,9 @@
 	<item fromid="15540" toid="15543" article="a" name="wet temple floor" />
 	<item id="15545" article="a" name="foxtail">
 		<attribute key="weight" value="200" />
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 	</item>
 	<item id="15546" article="a" name="four-leaf clover">
 		<attribute key="weight" value="200" />
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 	</item>
 	<item fromid="15547" toid="15554" article="a" name="lava stream" />
 	<item fromid="15555" toid="15556" article="a" name="basket">
@@ -25581,15 +25563,12 @@
 	</item>
 	<item id="18447" article="an" name="iron loadstone">
 		<attribute key="weight" value="200" />
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 	</item>
 	<item id="18448" article="a" name="glow wine">
 		<attribute key="weight" value="200" />
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 	</item>
 	<item id="18449" article="a" name="decorative ribbon">
 		<attribute key="weight" value="200" />
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 	</item>
 	<item id="18450" article="a" name="crystalline sword">
 		<attribute key="weight" value="4800" />
@@ -25833,7 +25812,6 @@
 	</item>
 	<item id="18516" article="a" name="golem wrench">
 		<attribute key="weight" value="200" />
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 	</item>
 	<item id="18517" article="a" name="gnomish voucher type MB">
 		<attribute key="weight" value="80" />
@@ -26751,7 +26729,6 @@
 	</item>
 	<item id="20138" article="a" name="leech">
 		<attribute key="weight" value="200" />
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 	</item>
 	<item id="20139" article="a" name="spiky club">
 		<attribute key="weight" value="3900" />
@@ -29573,7 +29550,6 @@
 	<item id="21450" article="a" name="blood pagoda" />
 	<item id="21452" article="a" name="nail case">
 		<attribute key="weight" value="200" />
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 	</item>
 	<item id="21453" article="a" name="slain vicious manbat">
 		<attribute key="containerSize" value="20" />
@@ -30504,7 +30480,6 @@
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="22608" article="a" name="nightmare horn">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="22609" article="a" name="dream warden claw">
@@ -30788,7 +30763,6 @@
 		<attribute key="weight" value="220" />
 	</item>
 	<item id="23557" article="a" name="control unit">
-		<attribute key="description" value="A hermit near Carlin might be able to tell you more about it." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="23563" article="a" name="mono detector">

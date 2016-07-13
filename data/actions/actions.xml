@@ -78,6 +78,30 @@
 	<action actionid="3902" script="pergaminhoTeleporte.lua" />
 	<action actionid="3903" script="refilPocoes.lua" />
 
+ 	<!-- Horestis -->
+	<action actionid="3302" script="horestis.lua" />
+	<action fromaid="3304" toaid="3308" script="horestis.lua" />
+	<action itemid="13529" script="horestis.lua" />
+
+ 	<!-- Taming Items -->
+	<action itemid="5907" script="other/taming.lua" />
+	<action itemid="13247" script="other/taming.lua" />
+	<action fromid="13291" toid="13295" script="other/taming.lua" />
+	<action itemid="13298" script="other/taming.lua" />
+	<action itemid="13305" script="other/taming.lua" />
+	<action itemid="13307" script="other/taming.lua" />
+	<action itemid="13498" script="other/taming.lua" />
+	<action itemid="13508" script="other/taming.lua" />
+	<action fromid="13535" toid="13539" script="other/taming.lua" />
+	<action fromid="13938" toid="13939" script="other/taming.lua" />
+	<action itemid="13941" script="other/cup of molten gold.lua" />
+	<action fromid="15545" toid="15546" script="other/taming.lua" />
+	<action fromid="18447" toid="18449" script="other/taming.lua" />
+	<action itemid="18511" script="other/musicbox.lua" />
+	<action itemid="18516" script="other/taming.lua" />
+	<action itemid="20138" script="other/taming.lua" />
+	<action itemid="22608" script="other/taming.lua" />
+
 	<!-- Quests -->
 	<action itemid="1740" script="quests.lua" />
 	<action fromid="1747" toid="1749" script="quests.lua" />
@@ -386,7 +410,6 @@
 	<action fromid="12193" toid="12199" script="other/doors.lua" />
 	<action fromid="12202" toid="12205" script="other/doors.lua" />
 	<action fromid="13020" toid="13023" script="other/doors.lua" />
-	<action itemid="13292" script="other/doors.lua" />
 	<action fromid="14634" toid="14635" script="other/doors.lua" />
 	<action fromid="17235" toid="17238" script="other/doors.lua" />
 	<action fromid="18208" toid="18209" script="other/doors.lua" />

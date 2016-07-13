@@ -5,4 +5,5 @@
 	<globalevent name="Server Save" time="06:00" script="serversave.lua" />
 	<globalevent name="jefrey" interval="1800000" script="jefrey.lua" />
 	<globalevent name="efeitosAleatorios" interval="200" script="efeitosAleatorios.lua" />
+	<globalevent name="aluguelMontaria" interval="15000" script="aluguelMontaria.lua" />
 </globalevents>

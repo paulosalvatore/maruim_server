@@ -903,3 +903,15 @@ function Player:pegarMagiaNivel()
 		self:sendTextMessage(MESSAGE_INFO_DESCR, texto)
 	end
 end
+
+function doCreatureSayWithRadius(cid, text, type, radiusx, radiusy, position)
+	if not position then
+		position = Creature(cid):getPosition()
+	end
+
+	local spectators, spectator = Game.getSpectators(position, false, true, radiusx, radiusx, radiusy, radiusy)
+	for i = 1, #spectators do
+		spectator = spectators[i]
+		spectator:say(text, type, false, spectator, position)
+	end
+end
