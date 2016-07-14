@@ -37,15 +37,15 @@
 		<voice sentence="Your riches will be mine!" />
 	</voices>
 	<loot>
-		<item id="12448" chance="12794" /><!-- Rope Belt -->
-		<item id="8838" countmax="3" chance="8974" /><!-- Potatoes -->
-		<item id="2386" chance="5897" /><!-- Axe -->
-		<item id="2398" chance="5671" /><!-- Mace -->
-		<item id="2465" chance="5244" /><!-- Brass Armor -->
-		<item id="8267" chance="2974" /><!-- Nomad Parchment -->
-		<item id="2509" chance="1638" /><!-- Steel Shield -->
-		<item id="2459" chance="1582" /><!-- Iron Helmet -->
-		<item id="5913" chance="1673" /><!-- Brown Piece of Cloth -->
+		<item id="12448" chance="38332" /><!-- Rope Belt -->
+		<item id="8838" countmax="3" chance="16123" /><!-- Potatoes -->
+		<item id="2386" chance="8914" /><!-- Axe -->
+		<item id="2398" chance="7223" /><!-- Mace -->
+		<item id="2465" chance="6126" /><!-- Brass Armor -->
+		<item id="8267" chance="3872" /><!-- Nomad Parchment -->
+		<item id="2509" chance="2416" /><!-- Steel Shield -->
+		<item id="2459" chance="1835" /><!-- Iron Helmet -->
+		<item id="5913" chance="2214" /><!-- Brown Piece of Cloth -->
 	</loot>
 	<script>
 		<event name="HealthChangeCriatura" />
