@@ -1,6 +1,6 @@
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
-	local storageValue = player:getStorageValue(Storage.Horestis.Horestis.horestis)
+	local storageValue = player:getStorageValue(Storage.Horestis.horestis)
 
 	if item.actionid == 3302 then
 		if item.itemid == 1560 then
