@@ -660,7 +660,7 @@
 	<distance id="1294" breakchance="3" /> <!-- Small Stone -->
 	<distance id="2111" action="removecount" /> <!-- Snowball -->
 	<distance id="2389" breakchance="3" /> <!-- Spear -->
-	<distance id="19390" breakchance="1" /> <!-- Spire Spear -->
+	<distance id="19390" breakchance="3" /> <!-- Spire Spear -->
 	<distance id="2399" breakchance="10" /> <!-- Throwing Star -->
 	<distance id="2410" breakchance="7" /> <!-- Throwing Knife -->
 	<distance id="2543" action="removecount" /> <!-- Bolt -->
