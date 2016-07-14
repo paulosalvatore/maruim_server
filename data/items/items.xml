@@ -13132,7 +13132,10 @@
 		<attribute key="weight" value="200" />
 		<attribute key="description" value="It says 'Roses are red, and so is my blood.' Damn, that sounds stupid. You have to start over." />
 	</item>
-	<item id="7536" name="the remains of a spider egg" />
+	<item id="7536" name="the remains of a spider egg">
+		<attribute key="decayTo" value="7585" />
+		<attribute key="duration" value="300" />
+	</item>
 	<item id="7537" article="a" name="spider egg" />
 	<item id="7538" article="a" name="spider web">
 		<attribute key="destroyTo" value="7544" />
@@ -16836,6 +16839,7 @@
 	<item id="9440" article="a" name="fire basin" />
 	<item id="9441" article="a" name="blood basin" />
 	<item id="9442" article="a" name="family banner" />
+	<item id="9443" article="an" name="old clock" />
 	<item fromid="9445" toid="9446" article="a" name="brass throne" />
 	<item id="9447" article="a" name="blood goblet">
 		<attribute key="weight" value="490" />
@@ -20637,6 +20641,7 @@
 	</item>
 	<item fromid="12329" toid="12333" article="a" name="corrupted plantation" />
 	<item fromid="12334" toid="12335" article="a" name="poison field" />
+	<item fromid="12348" toid="12349" article="a" name="dragon shelf" />
 	<item fromid="12350" toid="12360" article="a" name="sleeping dragon" />
 	<item id="12382" article="a" name="scribbled sheet of paper">
 		<attribute key="description" value="Only a single word is scribbled on the sheet: SOLOSARASATIQUARIUM." />
@@ -25855,6 +25860,7 @@
 	<item fromid="18530" toid="18535" name="stairs">
 		<attribute key="floorchange" value="down" />
 	</item>
+	<item fromid="18539" toid="18546" name="stone wall" />
 	<item id="18550" article="a" name="noble sword">
 		<attribute key="weight" value="5000" />
 		<attribute key="description" value="This sword was forged with the enthusiasm and dreams of the Rookgaardians." />
