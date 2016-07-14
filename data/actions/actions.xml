@@ -44,6 +44,7 @@
 	<action itemid="2225" script="geral.lua" /><!-- Piece of Iron -->
 	<action itemid="14756" script="geral.lua" /><!-- Hive Gate -->
 	<action itemid="14768" script="geral.lua" /><!-- Hive Gate -->
+	<action itemid="7537" script="geral.lua" /><!-- Spider Egg -->
 	<action itemid="7585" script="geral.lua" /><!-- Spider Egg -->
 	<action fromid="8046" toid="8047" script="geral.lua" /><!-- Something Sparkling -->
 
@@ -113,6 +114,7 @@
 	<action fromid="18472" toid="18474" script="quests.lua" />
 	<action itemid="18510" script="quests.lua" />
 	<action itemid="12430" script="quests.lua" />
+	<action uniqueid="2497" script="quests.lua" />
 
 	<!-- Tools -->
 	<action itemid="2420" script="tools/machete.lua" />
@@ -240,6 +242,10 @@
 	<action itemid="15134" function="decreaseItemId" />
 	<action itemid="15135" function="increaseItemId" />
 	<action itemid="15136" function="decreaseItemId" />
+	<action itemid="13688" function="increaseItemId" />
+	<action itemid="13689" function="decreaseItemId" />
+	<action itemid="13690" function="increaseItemId" />
+	<action itemid="13691" function="decreaseItemId" />
 
 	<!-- Food -->
 	<action itemid="2328" script="other/food.lua" />

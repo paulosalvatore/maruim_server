@@ -777,6 +777,22 @@ local config = {
 			transformar = {23499, 1, "item"}
 		}
 	},
+	[7537] = {
+		["default"] = {
+			chances = {
+				[7000] = {
+					transformar = {7536, 1, "item"},
+					efeito = {"hit"},
+					criatura = {"Spider", 10000}
+				},
+				[10000] = {
+					transformar = {7536, 1, "item"},
+					efeito = {"hit"},
+					criatura = {"Poison Spider", 10000}
+				},
+			}
+		}
+	},
 	[7585] = {
 		["default"] = {
 			chances = {
