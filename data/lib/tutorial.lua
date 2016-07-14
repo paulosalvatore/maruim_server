@@ -341,6 +341,7 @@ function Player:sairMaruimIsland(choiceId)
 			posicao = 3
 		end
 
+		player:setTown(choiceId)
 		self:teleportarJogador(teleportadorGuilda.posicoesTeleportadorGuilda[posicao], false, true)
 
 		self:desativarLogout()
@@ -350,7 +351,7 @@ function Player:sairMaruimIsland(choiceId)
 		local mensagens = {
 			"Olá " .. self:getName() .. ". Meu nome é Lucius e eu sou o teleportador da guilda.",
 			"Sempre que você precisar voltar para a sua guilda na Maruim Island basta falar comigo e eu te teleportarei para lá.",
-			"Isso terá um custo, claro, porém, se você possui " .. Reputacao.viagem.acessoLiberado .. " pontos de reputação eu te levarei de graça.",
+			"Isso terá um custo, claro, porém, se você possuir " .. Reputacao.viagem.acessoLiberado .. " pontos de reputação eu te levarei de graça.",
 			"Eu estou localizado nas três cidades principais.",
 			"Sempre que você utilizar meus serviços, meu irmão 'Dorius' estará na guilda, disponível por 15 minutos após sua viagem, para te trazer de volta até minha sala.",
 			"Desejo-lhe uma boa sorte nesse novo continente e divirta-se!"

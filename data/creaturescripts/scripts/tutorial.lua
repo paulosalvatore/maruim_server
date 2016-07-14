@@ -33,7 +33,6 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 	elseif modalWindowId == tutorialId then
 		if buttonId == 1 then
 			player:sairTutorial()
-			player:teleportarJogador(Town(1):getTemplePosition(), true)
 		else
 			player:enviarModalTutorial(player:pegarPassoTutorial())
 		end
