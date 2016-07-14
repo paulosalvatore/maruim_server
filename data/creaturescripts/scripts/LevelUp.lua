@@ -56,8 +56,8 @@ function onAdvance(player, skill, oldlevel, newlevel)
 
 		eventoAdicionado = false
 		for a, b in pairs(RecompensasNivel) do
-			if b.nivel == newlevel then
-				if b.vocacao == nil or (b.vocacao ~= nil and isInArray(b.vocacao, string.lower(player:getVocation():getName()))) then
+			if b.vocacao == nil or (b.vocacao ~= nil and isInArray(b.vocacao, string.lower(player:getVocation():getName()))) then
+				if b.nivel <= newlevel then
 					if not player:checarRecompensaFinalizada(a) then
 						player:adicionarRecompensaPendente(a)
 						if not eventoAdicionado then
