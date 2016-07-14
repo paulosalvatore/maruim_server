@@ -7,7 +7,7 @@ Storage = {
 		horestisJarro3 = 3306,
 		horestisJarro4 = 3307,
 		horestisJarro5 = 3308,
-		horestisJarrosBloqueados = 3309,
+		horestisJarrosBloqueados = 3309
 	},
 	itensKnight = 5000,
 	thickFur = 5100,
