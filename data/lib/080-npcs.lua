@@ -12,11 +12,40 @@ frases = {
 	},
 	["moveis"] = {
 		["greet"] = "Seja bem-vindo, |PLAYERNAME|! Procurando por móveis? Você veio ao lugar certo!"
+	},
+	["pocoes"] = {
+		["greet"] = "Olá |PLAYERNAME|. Seja bem-vindo à loja de poções.",
+		["trade"] = "Interessado em algo? Dê uma olhada!"
+	},
+	["runas"] = {
+		["greet"] = "Olá |PLAYERNAME|. Seja bem-vindo à loja de runas.",
+		["trade"] = "As pedras mágicas são os artefatos mais poderosos que existem! Dê uma olhada e me diga se estiver interessado em algo!"
 	}
 }
 
 comerciantes = {
-	["Anth Voon"] = { -- Vendedor de Utilidades - Khazad-Dûm
+	["Alcortone Elio"] = { -- Loja de Runas - Mugulu
+		["itens"] = {
+			["c"] = {"runas_c"},
+			["v"] = {"runas_v"}
+		},
+		["frases"] = frases["runas"]
+	},
+	["Aldina Bixielin"] = { -- Loja de Runas - Algatar
+		["itens"] = {
+			["c"] = {"runas_c"},
+			["v"] = {"runas_v"}
+		},
+		["frases"] = frases["runas"]
+	},
+	["Algarezin Phoranth"] = { -- Loja de Runas - Kyo
+		["itens"] = {
+			["c"] = {"runas_c"},
+			["v"] = {"runas_v"}
+		},
+		["frases"] = frases["runas"]
+	},
+	["Anth Voon"] = { -- Loja de Utilidades - Khazad-Dûm
 		["itens"] = {
 			["c"] = {"utilidades"}
 		}
@@ -39,12 +68,19 @@ comerciantes = {
 			["trade"] = "Interessado em negociar comigo? É pra já!"
 		}
 	},
-	["Arrongaria Turien"] = { -- Vendedor de Utilidades - Hyalakur
+	["Argornim Juvindar"] = { -- Loja de Poções - Mugulu
+		["itens"] = {
+			["c"] = {"pocoes_c"},
+			["v"] = {"pocoes_v"}
+		},
+		["frases"] = frases["pocoes"]
+	},
+	["Arrongaria Turien"] = { -- Loja de Utilidades - Hyalakur
 		["itens"] = {
 			["c"] = {"utilidades"}
 		}
 	},
-	["Artanis"] = { -- Vendedor de Armas à Distância "básicas" - Maruim Island
+	["Artanis"] = { -- Loja de Armas à Distância "Básicas" - Maruim Island
 		["itens"] = {
 			["c"] = {2389, {2410, 25}, {19390, 4}},
 			["v"] = {2389, 2410, 19390}
@@ -60,7 +96,7 @@ comerciantes = {
 		},
 		["frases"] = frases["correio"]
 	},
-	["Ashlynois Homus"] = { -- Vendedor de Utilidades - Mugulu
+	["Ashlynois Homus"] = { -- Loja de Utilidades - Mugulu
 		["itens"] = {
 			["c"] = {"utilidades"}
 		}
@@ -79,7 +115,14 @@ comerciantes = {
 			["v"] = {2376, 2379, 2380, 2384, 2385, 2386, 2388, 2395, 2397, 2398, 2406, 2409, 2412, 2422, 2437, 2439, 2441, 2448, 2449, 2450, 2559, 8601, 8602}
 		}
 	},
-	["Beth"] = { -- Vendedor de Comidas - Civitaten
+	["Belyne Fegotheahi"] = { -- Loja de Poções - Algatar
+		["itens"] = {
+			["c"] = {"pocoes_c"},
+			["v"] = {"pocoes_v"}
+		},
+		["frases"] = frases["pocoes"]
+	},
+	["Beth"] = { -- Loja de Comidas - Civitaten
 		["itens"] = {
 			["c"] = {"comidas_basicas"}
 		},
@@ -94,6 +137,13 @@ comerciantes = {
 			["greet"] = "Olá |PLAYERNAME|. Eu compro e vendo diversos tipos de espadas poderosas. Interessado em algo, cavaleiro?"
 		}
 	},
+	["Dielixa Cymozina"] = { -- Loja de Poções - Ôttô
+		["itens"] = {
+			["c"] = {"pocoes_c"},
+			["v"] = {"pocoes_v"}
+		},
+		["frases"] = frases["pocoes"]
+	},
 	["Doror"] = { -- Loja de Armas - Civitaten
 		["itens"] = {
 			["v"] = {2377, 2378, 2381, 2387, 2391, 2417, 2442, 7452}
@@ -101,6 +151,13 @@ comerciantes = {
 		["frases"] = {
 			["greet"] = "Olá |PLAYERNAME|. Eu compro diversos tipos de armas."
 		}
+	},
+	["Drago Fenne"] = { -- Loja de Poções - Lorn
+		["itens"] = {
+			["c"] = {"pocoes_c"},
+			["v"] = {"pocoes_v"}
+		},
+		["frases"] = frases["pocoes"]
 	},
 	["Eladriani Ewor"] = { -- Loja de Móveis - Civitaten
 		["itens"] = {
@@ -126,12 +183,12 @@ comerciantes = {
 		},
 		["frases"] = frases["correio"]
 	},
-	["Freenya Irin"] = { -- Vendedor de Utilidades - Civitaten
+	["Freenya Irin"] = { -- Loja de Utilidades - Civitaten
 		["itens"] = {
 			["c"] = {"utilidades"}
 		}
 	},
-	["Fron"] = { -- Vendedor de Itens Mágicos - Maruim Island
+	["Fron"] = { -- Loja de Itens Mágicos - Maruim Island
 		["itens"] = {
 			["c"] = {2175, 8819, 8820}
 		},
@@ -163,7 +220,7 @@ comerciantes = {
 		},
 		["frases"] = frases["correio"]
 	},
-	["Gundo Vangidma"] = { -- Vendedor de Armas à Distância - Civitaten
+	["Gundo Vangidma"] = { -- Loja de Armas à Distância - Civitaten
 		["itens"] = {
 			["c"] = {"armas_distancia_c"},
 			["v"] = {"armas_distancia_v", 3965}
@@ -173,7 +230,14 @@ comerciantes = {
 			["trade"] = "Aqui está minha lista! Interessado em algo?"
 		}
 	},
-	["Jachim Melliel"] = { -- Vendedor de Utilidades - Algatar
+	["Ibigos Daymon"] = { -- Loja de Poções - Pundera
+		["itens"] = {
+			["c"] = {"pocoes_c"},
+			["v"] = {"pocoes_v"}
+		},
+		["frases"] = frases["pocoes"]
+	},
+	["Jachim Melliel"] = { -- Loja de Utilidades - Algatar
 		["itens"] = {
 			["c"] = {"utilidades"}
 		}
@@ -183,7 +247,7 @@ comerciantes = {
 			["v"] = {2235, 5878, 5896, 5897, 5902, 8971, 9676, 11113, 12471}
 		}
 	},
-	["James"] = { -- Vendedor de Comidas - Maruim Island
+	["James"] = { -- Loja de Comidas - Maruim Island
 		["itens"] = {
 			["c"] = {"comidas_basicas"}
 		},
@@ -205,7 +269,7 @@ comerciantes = {
 			["v"] = {{2230, 20}, {2235, 42}, 2245, 2805, {5897, 60}, {5902, 45}, {9676, 50}, 10557, 10603, 10606, 11324, {12471, 44}, {12495, 15}, 19738, 19743, 20102, 20103, 21427, 21428}
 		}
 	},
-	["Julius"] = { -- Vendedor de Amuletos - Maruim Island
+	["Julius"] = { -- Loja de Amuletos - Maruim Island
 		["itens"] = {
 			["c"] = {2661, 2172, 2170},
 			["v"] = {2661, 2172, 2170}
@@ -214,12 +278,26 @@ comerciantes = {
 			["greet"] = "Olá |PLAYERNAME|. Eu negocios alguns tipos de amuletos."
 		}
 	},
-	["Kalfafiny Niduril"] = { -- Vendedor de Utilidades - Ôttô
+	["Kalfafiny Niduril"] = { -- Loja de Utilidades - Ôttô
 		["itens"] = {
 			["c"] = {"utilidades"}
 		}
 	},
-	["Lertrac"] = { -- Vendedor de Armas à Distância - Guilda dos Paladins
+	["Kardo Siren"] = { -- Loja de Runas - Pundera
+		["itens"] = {
+			["c"] = {"runas_c"},
+			["v"] = {"runas_v"}
+		},
+		["frases"] = frases["runas"]
+	},
+	["Kilver Dojuf"] = { -- Loja de Runas - Udecoat
+		["itens"] = {
+			["c"] = {"runas_c"},
+			["v"] = {"runas_v"}
+		},
+		["frases"] = frases["runas"]
+	},
+	["Lertrac"] = { -- Loja de Armas à Distância - Guilda dos Paladins
 		["itens"] = {
 			["c"] = {"armas_distancia_c"},
 			["v"] = {"armas_distancia_v"}
@@ -229,7 +307,21 @@ comerciantes = {
 			["trade"] = "Aqui está minha lista! Interessado em algo?"
 		}
 	},
-	["Lucerthor Eletratand"] = { -- Vendedor de Utilidades - Udecoat
+	["Lethai Gimmeroxa"] = { -- Loja de Poções - Udecoat
+		["itens"] = {
+			["c"] = {"pocoes_c"},
+			["v"] = {"pocoes_v"}
+		},
+		["frases"] = frases["pocoes"]
+	},
+	["Lontyrekta Mureus"] = { -- Loja de Poções - Khazad-Dûm
+		["itens"] = {
+			["c"] = {"pocoes_c"},
+			["v"] = {"pocoes_v"}
+		},
+		["frases"] = frases["pocoes"]
+	},
+	["Lucerthor Eletratand"] = { -- Loja de Utilidades - Udecoat
 		["itens"] = {
 			["c"] = {"utilidades"}
 		}
@@ -245,10 +337,17 @@ comerciantes = {
 		},
 		["frases"] = frases["correio"]
 	},
-	["Melamif Tufis"] = { -- Vendedor de Utilidades - Kyo
+	["Melamif Tufis"] = { -- Loja de Utilidades - Kyo
 		["itens"] = {
 			["c"] = {"utilidades"}
 		}
+	},
+	["Mitefrena Gofaryx"] = { -- Loja de Runas - Kyo
+		["itens"] = {
+			["c"] = {"runas_c"},
+			["v"] = {"runas_v"}
+		},
+		["frases"] = frases["runas"]
 	},
 	["Mood Neva"] = { -- Carteiro - Civitaten
 		["itens"] = {
@@ -256,20 +355,41 @@ comerciantes = {
 		},
 		["frases"] = frases["correio"]
 	},
-	["Oragon"] = { -- Vendedor de Utilidades - Pundera
+	["Nigos Morionomad"] = { -- Loja de Runas - Hyalakur
+		["itens"] = {
+			["c"] = {"runas_c"},
+			["v"] = {"runas_v"}
+		},
+		["frases"] = frases["runas"]
+	},
+	["Oragon"] = { -- Loja de Utilidades - Pundera
 		["itens"] = {
 			["c"] = {"utilidades"}
 		}
 	},
-	["Orran Samod"] = { -- Vendedor de Utilidades - Lorn
+	["Orran Samod"] = { -- Loja de Utilidades - Lorn
 		["itens"] = {
 			["c"] = {"utilidades"}
 		}
 	},
-	["Phaos Thourasa"] = { -- Vendedor de Utilidades - Maruim Island
+	["Phaos Thourasa"] = { -- Loja de Utilidades - Maruim Island
 		["itens"] = {
 			["c"] = {"utilidades", 2050}
 		}
+	},
+	["Pith Dalen"] = { -- Loja de Runas - Lorn
+		["itens"] = {
+			["c"] = {"runas_c"},
+			["v"] = {"runas_v"}
+		},
+		["frases"] = frases["runas"]
+	},
+	["Ranospight Asharus"] = { -- Loja de Poções - Hyalakur
+		["itens"] = {
+			["c"] = {"pocoes_c"},
+			["v"] = {"pocoes_v"}
+		},
+		["frases"] = frases["pocoes"]
 	},
 	["Ratur Miren"] = { -- Carteiro - Algatar
 		["itens"] = {
@@ -285,6 +405,13 @@ comerciantes = {
 		["frases"] = {
 			["trade"] = "Tenho diversos bons itens para aventureiros, haha, dê uma olhada!"
 		}
+	},
+	["Sham Edirowanor"] = { -- Loja de Runas - Civitaten
+		["itens"] = {
+			["c"] = {"runas_c"},
+			["v"] = {"runas_v"}
+		},
+		["frases"] = frases["runas"]
 	},
 	["Sirk Skana"] = { -- Loja de Armaduras - Maruim Island
 		["itens"] = {
@@ -305,7 +432,7 @@ comerciantes = {
 			["trade"] = "Hena la!"
 		}
 	},
-	["Talita Dakeris"] = { -- Vendedor de Armas à Distância - Ôttô
+	["Talita Dakeris"] = { -- Loja de Armas à Distância - Ôttô
 		["itens"] = {
 			["c"] = {"armas_distancia_c"},
 			["v"] = {"armas_distancia_v"}
@@ -315,7 +442,14 @@ comerciantes = {
 			["trade"] = "Aqui está minha lista! Interessado em algo?"
 		}
 	},
-	["Thanus Blackwood"] = { -- Vendedor de Wands - Guilda dos Sorcerers
+	["Tatoru Ogilvenno"] = { -- Loja de Runas - Khazad-Dûm
+		["itens"] = {
+			["c"] = {"runas_c"},
+			["v"] = {"runas_v"}
+		},
+		["frases"] = frases["runas"]
+	},
+	["Thanus Blackwood"] = { -- Loja de Wands - Guilda dos Sorcerers
 		["itens"] = {
 			["c"] = {2187, 2188, 2189, 2190, 2191, 8920, 8921, 8922}
 		},
@@ -323,6 +457,13 @@ comerciantes = {
 			["greet"] = "Olá |PLAYERNAME|. Eu vendo wands para sorcerers.",
 			["trade"] = "Aqui estão, dê uma olhada!"
 		}
+	},
+	["Toliashaen Leart"] = { -- Loja de Runas - Ôttô
+		["itens"] = {
+			["c"] = {"runas_c"},
+			["v"] = {"runas_v"}
+		},
+		["frases"] = frases["runas"]
 	},
 	["Tryn"] = { -- Loja de Escudos - Maruim Island
 		["itens"] = {
@@ -346,7 +487,7 @@ comerciantes = {
 		},
 		["frases"] = frases["correio"]
 	},
-	["Xanthe"] = { -- Vendedor de Rods - Guilda dos Druids
+	["Xanthe"] = { -- Loja de Rods - Guilda dos Druids
 		["itens"] = {
 			["c"] = {2181, 2182, 2183, 2185, 2186, 8910, 8911, 8912}
 		},
@@ -365,6 +506,13 @@ comerciantes = {
 			["farewell"] = "Totsiens, gaan veilig!",
 			["walkaway"] = "Die vloek op julle!!"
 		}
+	},
+	["Yugan Peffon"] = { -- Loja de Poções - Civitaten
+		["itens"] = {
+			["c"] = {"pocoes_c"},
+			["v"] = {"pocoes_v"}
+		},
+		["frases"] = frases["pocoes"]
 	}
 }
 

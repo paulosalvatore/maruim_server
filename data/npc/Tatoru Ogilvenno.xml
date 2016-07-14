@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<npc name="Tatoru Ogilvenno" script="Comerciante.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="160" head="117" body="18" legs="132" feet="116" />
+</npc>

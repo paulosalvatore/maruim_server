@@ -60,7 +60,7 @@ if frases["trade"] == nil then
 end
 
 if frases["farewell"] == nil then
-	frases["farewell"] = "Adeus!"
+	frases["farewell"] = "Até a próxima!"
 end
 
 if frases["walkaway"] == nil then
