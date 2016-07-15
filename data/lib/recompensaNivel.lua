@@ -62,12 +62,12 @@ RecompensasNivel = {
 	{
 		nivel = 10,
 		vocacao = {"paladin"},
-		recompensa = {2456, 1}
+		recompensaOpcoes = {{2456, 1}, {2455, 1}}
 	},
 	{
 		nivel = 10,
 		vocacao = {"paladin"},
-		recompensa = {2544, 50}
+		recompensaOpcoes = {{2544, 50}, {2543, 50}}
 	},
 	{
 		nivel = 10,
