@@ -20,6 +20,10 @@ frases = {
 	["runas"] = {
 		["greet"] = "Olá |PLAYERNAME|. Seja bem-vindo à loja de runas.",
 		["trade"] = "As pedras mágicas são os artefatos mais poderosos que existem! Dê uma olhada e me diga se estiver interessado em algo!"
+	},
+	["armas_distancia"] = {
+		["greet"] = "Olá |PLAYERNAME|. Eu negocios diversas armas à distância.",
+		["trade"] = "Aqui está minha lista! Interessado em algo?"
 	}
 }
 
@@ -49,6 +53,12 @@ comerciantes = {
 		["itens"] = {
 			["c"] = {"utilidades"}
 		}
+	},
+	["Amyl Dannozon"] = { -- Loja de Móveis - Khazad-Dûm
+		["itens"] = {
+			["c"] = {"moveis"}
+		},
+		["frases"] = frases["moveis"]
 	},
 	["Andor"] = { -- Loja de Clavas - Guilda dos Knights
 		["itens"] = {
@@ -100,6 +110,12 @@ comerciantes = {
 		["itens"] = {
 			["c"] = {"utilidades"}
 		}
+	},
+	["Astantic Wunan"] = { -- Loja de Móveis - Mugulu
+		["itens"] = {
+			["c"] = {"moveis"}
+		},
+		["frases"] = frases["moveis"]
 	},
 	["Balim"] = { -- Comprador de Tecidos - Ôttô
 		["itens"] = {
@@ -165,6 +181,13 @@ comerciantes = {
 		},
 		["frases"] = frases["moveis"]
 	},
+	["Elron Meldo"] = { -- Loja de Armas à Distância - Algatar
+		["itens"] = {
+			["c"] = {"armas_distancia_c"},
+			["v"] = {"armas_distancia_v"}
+		},
+		["frases"] = frases["armas_distancia"]
+	},
 	["Eron Darmbeon"] = { -- Carteiro - Pundera
 		["itens"] = {
 			["c"] = {"correio"}
@@ -188,13 +211,27 @@ comerciantes = {
 			["c"] = {"utilidades"}
 		}
 	},
+	["Frin Sale"] = { -- Loja de Móveis - Kyo
+		["itens"] = {
+			["c"] = {"moveis"}
+		},
+		["frases"] = frases["moveis"]
+	},
 	["Fron"] = { -- Loja de Itens Mágicos - Maruim Island
 		["itens"] = {
-			["c"] = {2175, 8819, 8820}
+			["c"] = {2182, 2185, 2186, 2188, 2190, 2191, 2260, 2261, 2265, 2266, 2277, 2285, 2301, 7618, 7620, 8704, 23722, 23723}
 		},
 		["frases"] = {
 			["greet"] = "Olá |PLAYERNAME|. Seja bem-vindo à minha loja mágica.",
 			["trade"] = "Precisa de algo para criar algum feitiço? Dê uma olhada."
+		}
+	},
+	["Gabriele"] = { -- Loja de Carnes - Hyalakur
+		["itens"] = {
+			["c"] = {2666, 2671}
+		},
+		["frases"] = {
+			["greet"] = "Olá |PLAYERNAME|. Eu compro diversas armas."
 		}
 	},
 	["Gandor"] = { -- Loja de Armas - Ôttô
@@ -214,6 +251,13 @@ comerciantes = {
 			["greet"] = "Olá |PLAYERNAME|. Eu compro e vendo diversos tipos de machados poderosos. Interessado em algo, cavaleiro?"
 		}
 	},
+	["Garen Dran"] = { -- Loja de Armas à Distância - Kyo
+		["itens"] = {
+			["c"] = {"armas_distancia_c"},
+			["v"] = {"armas_distancia_v"}
+		},
+		["frases"] = frases["armas_distancia"]
+	},
 	["Gogilock Lena"] = { -- Carteiro - Udecoat
 		["itens"] = {
 			["c"] = {"correio"}
@@ -223,12 +267,15 @@ comerciantes = {
 	["Gundo Vangidma"] = { -- Loja de Armas à Distância - Civitaten
 		["itens"] = {
 			["c"] = {"armas_distancia_c"},
-			["v"] = {"armas_distancia_v", 3965}
+			["v"] = {"armas_distancia_v"}
 		},
-		["frases"] = {
-			["greet"] = "Olá |PLAYERNAME|. Eu negocios diversas armas para paladins.",
-			["trade"] = "Aqui está minha lista! Interessado em algo?"
-		}
+		["frases"] = frases["armas_distancia"]
+	},
+	["Hannah"] = { -- Loja de Frutas - Hyalakur
+		["itens"] = {
+			["c"] = {"frutas_basicas"}
+		},
+		["frases"] = frases["pocoes"]
 	},
 	["Ibigos Daymon"] = { -- Loja de Poções - Pundera
 		["itens"] = {
@@ -258,6 +305,12 @@ comerciantes = {
 			["v"] = {2230, 2813, 2817, 3086, 3119, 8859, 10606, 10609, 11214, 12382, 12435, 12437, 12441, 12495, 13159}
 		}
 	},
+	["Jide Malystona"] = { -- Loja de Móveis - Hyalakur
+		["itens"] = {
+			["c"] = {"moveis"}
+		},
+		["frases"] = frases["moveis"]
+	},
 	["Joe"] = { -- Comprador de Ervas - Maruim Island
 		["itens"] = {
 			["c"] = {2799, 2800, 12430},
@@ -277,6 +330,13 @@ comerciantes = {
 		["frases"] = {
 			["greet"] = "Olá |PLAYERNAME|. Eu negocios alguns tipos de amuletos."
 		}
+	},
+	["Jund Alder"] = { -- Loja de Armas à Distância - Udecoat
+		["itens"] = {
+			["c"] = {"armas_distancia_c"},
+			["v"] = {"armas_distancia_v"}
+		},
+		["frases"] = frases["armas_distancia"]
 	},
 	["Kalfafiny Niduril"] = { -- Loja de Utilidades - Ôttô
 		["itens"] = {
@@ -299,8 +359,8 @@ comerciantes = {
 	},
 	["Lertrac"] = { -- Loja de Armas à Distância - Guilda dos Paladins
 		["itens"] = {
-			["c"] = {"armas_distancia_c"},
-			["v"] = {"armas_distancia_v"}
+			["c"] = {"armas_distancia_c", 2399, 2410, 2545, 2546, 2547, 7363, 7364, 7378, 7838, 7839, 7840, 7850, 15649, 18436},
+			["v"] = {"armas_distancia_v", 2410}
 		},
 		["frases"] = {
 			["greet"] = "Olá |PLAYERNAME|. Eu negocios diversas armas para paladins.",
@@ -326,6 +386,13 @@ comerciantes = {
 			["c"] = {"utilidades"}
 		}
 	},
+	["Maran Marilin"] = { -- Loja de Armas à Distância - Mugulu
+		["itens"] = {
+			["c"] = {"armas_distancia_c"},
+			["v"] = {"armas_distancia_v"}
+		},
+		["frases"] = frases["armas_distancia"]
+	},
 	["Maurice"] = { -- Comprador de Produtos de Criaturas - Civitaten
 		["itens"] = {
 			["v"] = {2129, 2229, 2800, 2805, 5678, {5897, 70}, 5899, 8859, 10553, 10557, 10568, 10569, 10574, 10606, 11189, 11191, 11192, 11208, 11210, 11224, 11324, 12399, 12400, 12423, 12440, 12441, 12471, 13757}
@@ -341,6 +408,12 @@ comerciantes = {
 		["itens"] = {
 			["c"] = {"utilidades"}
 		}
+	},
+	["Meld Endimux"] = { -- Loja de Móveis - Ôttô
+		["itens"] = {
+			["c"] = {"moveis"}
+		},
+		["frases"] = frases["moveis"]
 	},
 	["Mitefrena Gofaryx"] = { -- Loja de Runas - Kyo
 		["itens"] = {
@@ -397,6 +470,32 @@ comerciantes = {
 		},
 		["frases"] = frases["correio"]
 	},
+	["Rhurus Tivainga"] = { -- Loja de Armas à Distância - Khazad-Dûm
+		["itens"] = {
+			["c"] = {"armas_distancia_c"},
+			["v"] = {"armas_distancia_v"}
+		},
+		["frases"] = frases["armas_distancia"]
+	},
+	["Rodbla Pheak"] = { -- Loja de Móveis - Algatar
+		["itens"] = {
+			["c"] = {"moveis"}
+		},
+		["frases"] = frases["moveis"]
+	},
+	["Rukarian Miru"] = { -- Loja de Armas à Distância - Hyalakur
+		["itens"] = {
+			["c"] = {"armas_distancia_c"},
+			["v"] = {"armas_distancia_v"}
+		},
+		["frases"] = frases["armas_distancia"]
+	},
+	["Sergh Sinath"] = { -- Loja de Móveis - Lorn
+		["itens"] = {
+			["c"] = {"moveis"}
+		},
+		["frases"] = frases["moveis"]
+	},
 	["Seynos Malia"] = { -- Peixeiro - Maruim Island (Parte Baixa da Ilha)
 		["itens"] = {
 			["c"] = {{2667, 5}},
@@ -413,6 +512,13 @@ comerciantes = {
 		},
 		["frases"] = frases["runas"]
 	},
+	["Silingria Eowst"] = { -- Loja de Armas à Distância - Lorn
+		["itens"] = {
+			["c"] = {"armas_distancia_c"},
+			["v"] = {"armas_distancia_v"}
+		},
+		["frases"] = frases["armas_distancia"]
+	},
 	["Sirk Skana"] = { -- Loja de Armaduras - Maruim Island
 		["itens"] = {
 			["c"] = {2457, 2458, 2459, 2460, 2461, 2463, 2464, 2465, 2467, 2468, 2473, 2478, 2480, 2481, 2482, 2483, 2484, 2508, 2642, 2643, 2647, 2648, 2649},
@@ -422,7 +528,7 @@ comerciantes = {
 			["trade"] = "Tenho diversos bons itens para aventureiros, haha, dê uma olhada!"
 		}
 	},
-	["Sobek"] = { -- Estátua - Vende Piece of Decay Paper
+	["Sobek"] = { -- Estátua - Itens do Horestis
 		["itens"] = {
 			["c"] = {13529},
 			["v"] = {13531, 13532}
@@ -437,10 +543,13 @@ comerciantes = {
 			["c"] = {"armas_distancia_c"},
 			["v"] = {"armas_distancia_v"}
 		},
-		["frases"] = {
-			["greet"] = "Olá |PLAYERNAME|. Eu negocios diversas armas para paladins.",
-			["trade"] = "Aqui está minha lista! Interessado em algo?"
-		}
+		["frases"] = frases["armas_distancia"]
+	},
+	["Tara Alcreka"] = { -- Loja de Móveis - Udecoat
+		["itens"] = {
+			["c"] = {"moveis"}
+		},
+		["frases"] = frases["moveis"]
 	},
 	["Tatoru Ogilvenno"] = { -- Loja de Runas - Khazad-Dûm
 		["itens"] = {
@@ -513,6 +622,13 @@ comerciantes = {
 			["v"] = {"pocoes_v"}
 		},
 		["frases"] = frases["pocoes"]
+	},
+	["Zirom Raularion"] = { -- Loja de Armas à Distância - Pundera
+		["itens"] = {
+			["c"] = {"armas_distancia_c"},
+			["v"] = {"armas_distancia_v"}
+		},
+		["frases"] = frases["armas_distancia"]
 	}
 }
 
