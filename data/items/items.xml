@@ -30847,6 +30847,18 @@
 		<attribute key="weaponType" value="wand" />
 		<attribute key="range" value="3" />
 	</item>
+	<item id="23722" article="a" name="light stone shower rune">
+		<attribute key="type" value="rune" />
+		<attribute key="runeSpellName" value="adori infir mas tera" />
+		<attribute key="weight" value="21" />
+		<attribute key="charges" value="4" />
+	</item>
+	<item id="23723" article="a" name="lightest missile rune">
+		<attribute key="type" value="rune" />
+		<attribute key="runeSpellName" value="adori infir vis" />
+		<attribute key="weight" value="21" />
+		<attribute key="charges" value="10" />
+	</item>
 	<item id="23782" article="a" name="shopping bag">
 		<attribute key="containerSize" value="20" />
 		<attribute key="slotType" value="backpack" />

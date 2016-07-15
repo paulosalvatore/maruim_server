@@ -1,16 +1,5 @@
 function onLogin(player)
 	if player:getLastLoginSaved() == 0 then
-		-- for i = 1, 733 do
-			-- if player:hasOutfit(i) then
-				-- player:addOutfitAddon(i, 1)
-				-- player:addOutfitAddon(i, 2)
-			-- end
-		-- end
-
-		-- for i = 1, 80 do
-			-- player:addMount(i)
-		-- end
-
 		player:addItem(2461)
 		player:addItem(2467)
 		player:addItem(2649)
@@ -29,6 +18,11 @@ function onLogin(player)
 		local mochila = player:addItem(1988, 1)
 		mochila:addItem(2789, 10)
 		mochila:addItem(8704, 5)
+
+		if vocacaoJogador ~= 4 then
+			mochila:addItem(23722, 15)
+			mochila:addItem(23723, 30)
+		end
 
 		local kit = player:addItem(3901, 1)
 		kit:setAttribute(ITEM_ATTRIBUTE_NAME, "rope and shovel kit")
