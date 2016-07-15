@@ -864,8 +864,18 @@ for a, b in pairs(config) do
 end
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
-	if config[item.itemid] ~= nil or config["action"][item.actionid] ~= nil or config["unique"][item.uid] ~= nil or (isInArray(sparkling, item.itemid) and config["sparkling"] ~= nil) then
+
+	if isInArray(itensMovimentoDesativado, target:getActionId()) then
+		self:sendCancelMessage("Você não pode realizar essa ação.")
+		return false
+	end
+
+	if config[item.itemid] ~= nil or
+	config["action"][item.actionid] ~= nil or
+	config["unique"][item.uid] ~= nil or
+	(isInArray(sparkling, item.itemid) and config["sparkling"] ~= nil) then
 		local i
+
 		if config[item.itemid] ~= nil then
 			i = config[item.itemid]
 		elseif config["action"][item.actionid] ~= nil then
@@ -875,16 +885,21 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		elseif isInArray(sparkling, item.itemid) and config["sparkling"] ~= nil then
 			i = config["sparkling"]
 		end
+
 		if i == nil then
 			return false
 		end
+
 		local piso = Tile(toPosition)
 		local topItem = 0
+
 		if piso ~= nil and piso:getTopVisibleThing() ~= nil then
 			topItem = piso:getTopVisibleThing():getId()
 		end
+
 		local adicionarEvento = false
 		local cancelarEvento = false
+
 		if i["default"] ~= nil then
 			i = i["default"]
 			if i.checarItem ~= nil and topItem ~= i.checarItem then
@@ -892,12 +907,12 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			elseif i.tempo ~= nil and i.tempo > 0 then
 				adicionarEvento = true
 			end
-		elseif	isInArray(sparkling, target.itemid) and #piso:getItems() >= 2 and
-				(i["sparkling"][topItem] ~= nil or
-				(i["sparkling"]["ferro"] ~= nil and isInArray(ferro, topItem)) or
-				(i["sparkling"]["carvao"] ~= nil and isInArray(carvao, topItem)) or
-				(i["sparkling"]["arvores"] ~= nil and isInArray(arvores, topItem)) or
-				i["sparkling"] ~= nil) then
+		elseif isInArray(sparkling, target.itemid) and #piso:getItems() >= 2 and
+		(i["sparkling"][topItem] ~= nil or
+		(i["sparkling"]["ferro"] ~= nil and isInArray(ferro, topItem)) or
+		(i["sparkling"]["carvao"] ~= nil and isInArray(carvao, topItem)) or
+		(i["sparkling"]["arvores"] ~= nil and isInArray(arvores, topItem)) or
+		i["sparkling"] ~= nil) then
 			if i["sparkling"]["ferro"] ~= nil and isInArray(ferro, topItem) then
 				i = i["sparkling"]["ferro"]
 			elseif i["sparkling"]["carvao"] ~= nil and isInArray(carvao, topItem) then
@@ -941,16 +956,21 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 		else
 			return false
 		end
+
 		if i == nil then
 			return false
 		end
+
 		if i.chances ~= nil then
 			local chance = math.random(1, 10000)
 			local keys = {}
+
 			for key in pairs(i.chances) do
 				table.insert(keys, key)
 			end
+
 			table.sort(keys)
+
 			for a, b in pairs(keys) do
 				if chance <= b then
 					i = i.chances[b]
@@ -958,87 +978,112 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				end
 			end
 		end
+
 		if i.actionId ~= nil then
 			if item.actionid ~= i.actionId and target.actionid ~= i.actionId then
 				return false
 			end
 		end
+
 		if i.checarPz ~= nil then
 			if player:isPzLocked() then
 				return player:sendCancelMessage("Você não pode entrar nessa área depois de atacar outro jogador.")
 			end
 		end
+
 		if i.quantidadeItemNecessaria ~= nil and player:getItemCount(item.itemid) < i.quantidadeItemNecessaria then
 			return false
 		end
+
 		if i.verificarPosicao ~= nil then
 			local verificarPosicao
+
 			if(i.verificarPosicao[2] == "item") then
 				verificarPosicao = fromPosition
 			elseif(i.verificarPosicao[2] == "target") then
 				verificarPosicao = toPosition
 			end
+
 			if i.verificarPosicao[1].x ~= nil and player:getPosition().x ~= verificarPosicao.x+i.verificarPosicao[1].x then
 				return false
 			end
+
 			if i.verificarPosicao[1].y ~= nil and player:getPosition().y ~= verificarPosicao.y+i.verificarPosicao[1].y then
 				return false
 			end
+
 			if i.verificarPosicao[1].z ~= nil and player:getPosition().z ~= verificarPosicao.z+i.verificarPosicao[1].z then
 				return false
 			end
 		end
+
 		if i.adicionarStorage ~= nil then
 			if player:getStorageValue(i.adicionarStorage[1]) == i.adicionarStorage[2] then
 				return false
 			end
 			player:setStorageValue(i.adicionarStorage[1], i.adicionarStorage[2])
 		end
+
 		local profissaoId = 0
 		local profissaoSkill =  0
+
 		if i.profissao ~= nil then
 			profissaoId = verificiarProfissaoPorNome(i.profissao)
 			profissaoSkill = player:getProfissaoSkill(profissaoId)
+
 			if i.nivelProfissao ~= nil and i.nivelProfissao > 0 and profissaoSkill < i.nivelProfissao then
 				return player:sendCancelMessage("Você precisa possuir nível " .. i.nivelProfissao .. " de " .. i.profissao .. " para realizar essa ação.")
 			end
+
 			if i.expProfissao ~= nil and i.expProfissao > 0 then
 				player:addProfissaoSkillExp(profissaoId, i.expProfissao)
 			end
 		end
+
 		local chanceSucesso = 10000
 		local chanceQuebrar = 0
+
 		if i.chanceSucesso ~= nil then
 			chanceSucesso = i.chanceSucesso
 		end
+
 		if i.chanceQuebrar ~= nil then
 			chanceQuebrar = i.chanceQuebrar
 		end
+
 		local efeito
+
 		if i.efeito ~= nil then
 			efeito = i.efeito
 		end
+
 		if i.profissao ~= nil and verificiarProfissaoPorNome(i.profissao) and chanceSucesso ~= nil and chanceSucesso <= 10000 then
 			chanceSucesso = chanceSucesso+player:getProfissaoChanceColetaAdicional(profissaoId)
 		end
+
 		local chance = 10000
-		if	(chanceSucesso ~= nil and chanceSucesso <= 10000) or
-			(chanceQuebrar ~= nil and chanceQuebrar <= 10000) or
-			(i.transformarAleatorio ~= nil and #i.transformarAleatorio >= 2) then
+
+		if (chanceSucesso ~= nil and chanceSucesso <= 10000) or
+		(chanceQuebrar ~= nil and chanceQuebrar <= 10000) or
+		(i.transformarAleatorio ~= nil and #i.transformarAleatorio >= 2) then
 			chance = math.random(10000)
 		else
 			chanceSucesso = 10000
 		end
+
 		if i.removerItensPlayer ~= nil then
 			for c, v in pairs(i.removerItensPlayer) do
 				local v3 = -1
+
 				if v[3] ~= nil then
 					v3 = v[3]
 				end
+
 				if player:getItemCount(v[1], v3) < v[2] then
 					return false
 				end
 			end
+
 			for c, v in pairs(i.removerItensPlayer) do
 				local v3 = -1
 				if v[3] ~= nil then
@@ -1047,21 +1092,26 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				player:getItemById(v[1], v3):remove(v[2])
 			end
 		end
+
 		if i.removerItensNecessarios ~= nil and i.removerItensNecessarios == 1 and not player:removeItem(item.itemid, i.quantidadeItemNecessaria) then
 			return false
 		end
+
 		if i.removerItem ~= nil and i.removerItem == 1 and not item:remove(1) then
 			return false
 		end
+
 		if i.itensGamePlayer ~= nil then
 			if chance <= chanceSucesso then
 				for c, v in pairs(i.itensGamePlayer) do
 					local itemGamePlayerAdicionar = v[1]
 					local quantidadeItemGamePlayerAdicionar = v[2]
 					local typeItemGamePlayerAdicionar = v[3] or 1
+
 					if type(quantidadeItemGamePlayerAdicionar) == "table" then
 						quantidadeItemGamePlayerAdicionar = math.random(quantidadeItemGamePlayerAdicionar[1], quantidadeItemGamePlayerAdicionar[2])
 					end
+
 					if toPosition.x == 65535 then
 						player:addItem(itemGamePlayerAdicionar, quantidadeItemGamePlayerAdicionar, true, typeItemGamePlayerAdicionar)
 					else
@@ -1072,33 +1122,41 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				efeito = {"poff"}
 			end
 		end
+
 		if i.itensPlayer ~= nil then
 			if chance <= chanceSucesso then
 				for c, v in pairs(i.itensPlayer) do
 					local itemPlayerAdicionar = v[1]
 					local quantidadeItemPlayerAdicionar = v[2]
 					local typeItemPlayerAdicionar = v[3] or 1
+
 					if type(quantidadeItemPlayerAdicionar) == "table" then
 						quantidadeItemPlayerAdicionar = math.random(quantidadeItemPlayerAdicionar[1], quantidadeItemPlayerAdicionar[2])
 					end
+
 					player:addItem(itemPlayerAdicionar, quantidadeItemPlayerAdicionar, true, typeItemPlayerAdicionar)
 				end
 			else
 				efeito = {"poff"}
 			end
 		end
+
 		if i.itensPlayerAleatorio ~= nil then
 			if chance <= chanceSucesso then
 				local chanceItemAleatorio = math.random(10000)
 				local chanceItem = 0
+
 				for c, v in pairs(i.itensPlayerAleatorio) do
 					chanceItem = chanceItem+v[3]
+
 					if chanceItemAleatorio <= chanceItem then
 						local itemAleatorioAdicionar = v[1]
 						local quantidadeItemAleatorioAdicionar = v[2]
+
 						if type(quantidadeItemAleatorioAdicionar) == "table" then
 							quantidadeItemAleatorioAdicionar = math.random(v[2][1], v[2][2])
 						end
+
 						local typeItemAleatorioAdicionar = v[4] or 1
 						player:addItem(itemAleatorioAdicionar, quantidadeItemAleatorioAdicionar, true, typeItemAleatorioAdicionar)
 						chanceItemAleatorio = 100000
@@ -1108,14 +1166,17 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				efeito = {"poff"}
 			end
 		end
+
 		if i.itensGame ~= nil then
 			for c, v in pairs(i.itensGame) do
 				local itemGameAdicionar = v[1]
 				local quantidadeGameAdicionar = v[2]
 				local posicaoGameAdicionar = nil
+
 				if type(quantidadeGameAdicionar) == "table" then
 					quantidadeGameAdicionar = math.random(quantidadeGameAdicionar[1], quantidadeGameAdicionar[2])
 				end
+
 				if (v[3]) and (v[3] ~= "to") then
 					if v[3] == "from" then
 						posicaoGameAdicionar = fromPosition
@@ -1123,9 +1184,11 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 						posicaoGameAdicionar = getPlayerPosition(player)
 					end
 				end
+
 				if posicaoGameAdicionar == nil then
 					posicaoGameAdicionar = toPosition
 				end
+
 				local itemGame = Game.createItem(itemGameAdicionar, quantidadeGameAdicionar, posicaoGameAdicionar)
 				itemGame:decay()
 			end
@@ -1147,6 +1210,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 			if i.chanceNeutra ~= nil and i.chanceNeutra <= 10000 then
 				local chanceNeutra = i.chanceNeutra+chanceSucesso
+
 				if (not (chance <= chanceSucesso)) and (chance <= chanceNeutra) then
 					efeito = {"poff"}
 					realizarTransformacao = false
@@ -1163,8 +1227,10 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 		if i.transformarAleatorio ~= nil and #i.transformarAleatorio >= 2 then
 			local chanceTransformar = 0
+
 			for c, v in pairs(i.transformarAleatorio) do
 				chanceTransformar = chanceTransformar+v[3]
+
 				if chance <= chanceTransformar then
 					if i.transformarAleatorioTipo == "item" then
 						item:transform(v[1], v[2])
@@ -1175,18 +1241,23 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 							item:transform(v[1], v[2])
 						end
 					end
+
 					break
 				end
 			end
 		end
+
 		if i.removerTarget == 1 then
 			if i.chanceNeutra ~= nil and i.chanceNeutra <= 10000 then
 				local chanceNeutra = i.chanceNeutra+chanceSucesso
+
 				if (not (chance <= chanceSucesso)) and (chance <= chanceNeutra) then
 					adicionarEvento = false
+
 					if verificarNovoPontoColetaMadeira then
 						gerarNovoPontoColetaMadeira = false
 					end
+
 					efeito = {"poff"}
 				elseif (not (chance <= chanceSucesso)) then
 					efeito = {"poff"}
@@ -1198,11 +1269,14 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				target:remove(1)
 			end
 		end
+
 		if chanceQuebrar ~= nil and chanceQuebrar <= 10000 and chance <= chanceQuebrar then
 			target:remove(1)
 		end
+
 		if efeito ~= nil and #efeito > 0 then
 			local posicaoEfeito = nil
+
 			if i.efeito[2] and i.efeito[2] ~= "to" then
 				if type(i.efeito[2]) == "table" then
 					posicaoEfeito = fromPosition+i.efeito[2]
@@ -1216,122 +1290,162 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 					elseif i.efeito[2] == "player_target" then
 						posicaoEfeito = toPosition
 					end
+
 					if toPosition.x == 65535 then
 						posicaoEfeito = player:getPosition()
 					end
 				end
 			end
+
 			if posicaoEfeito == nil then
 				posicaoEfeito = toPosition
 			end
+
 			local exibirEfeito = efeito[1]
+
 			if type(efeito[1]) ~= "number" then
 				exibirEfeito = efeitos[efeito[1]]
 			end
+
 			posicaoEfeito:sendMagicEffect(exibirEfeito)
 		end
+
 		if i.criatura ~= nil then
 			local chanceCriatura = 10000
 			local criatura = i.criatura
+
 			if type(criatura) == "table" then
 				if criatura[2] and type(criatura[2]) == "number" and criatura[2] >= 1 and criatura[2] <= 10000 then
 					chanceCriatura = criatura[2]
 				end
+
 				criatura = criatura[1]
 			end
+
 			if math.random(10000) <= chanceCriatura then
 				Game.createMonster(criatura, toPosition)
 			end
 		end
+
 		if i.teleportar ~= nil then
 			local posicaoTeleportar
+
 			if(i.teleportar[2] == "item") then
 				posicaoTeleportar = fromPosition
 			elseif(i.teleportar[2] == "target") then
 				posicaoTeleportar = toPosition
 			end
+
 			if i.teleportar[1].x ~= nil then
 				posicaoTeleportar.x = posicaoTeleportar.x+i.teleportar[1].x
 			end
+
 			if i.teleportar[1].y ~= nil then
 				posicaoTeleportar.y = posicaoTeleportar.y+i.teleportar[1].y
 			end
+
 			if i.teleportar[1].z ~= nil then
 				posicaoTeleportar.z = posicaoTeleportar.z+i.teleportar[1].z
 			end
+
 			player:teleportTo(posicaoTeleportar, true)
 			local exibirEfeito = "teleport"
+
 			if i.efeitoTeleport ~= nil then
 				exibirEfeito = i.efeitoTeleport
 			end
+
 			posicaoTeleportar:sendMagicEffect(efeitos[exibirEfeito])
 		end
+
 		if i.direcionar ~= nil then
 			player:setDirection(direcoes[i.direcionar])
 		end
+
 		if i.verificarPosicaoTeleportar ~= nil then
 			for a, b in pairs(i.verificarPosicaoTeleportar) do
 				local verificarPosicaoTeleportar
+
 				if(b[3] == "item") then
 					verificarPosicaoTeleportar = fromPosition
 				elseif(b[3] == "target") then
 					verificarPosicaoTeleportar = toPosition
 				end
+
 				local posicaoTeleportar = verificarPosicaoTeleportar
-				if 	((b[1].x ~= nil and player:getPosition().x == verificarPosicaoTeleportar.x+b[1].x) or
-					(b[1].y ~= nil and player:getPosition().y == verificarPosicaoTeleportar.y+b[1].y) or
-					(b[1].z ~= nil and player:getPosition().z == verificarPosicaoTeleportar.z+b[1].z)) then
+
+				if ((b[1].x ~= nil and player:getPosition().x == verificarPosicaoTeleportar.x+b[1].x) or
+				(b[1].y ~= nil and player:getPosition().y == verificarPosicaoTeleportar.y+b[1].y) or
+				(b[1].z ~= nil and player:getPosition().z == verificarPosicaoTeleportar.z+b[1].z)) then
 					if b[2].x ~= nil then
 						posicaoTeleportar.x = posicaoTeleportar.x+b[2].x
 					end
+
 					if b[2].y ~= nil then
 						posicaoTeleportar.y = posicaoTeleportar.y+b[2].y
 					end
+
 					if b[2].z ~= nil then
 						posicaoTeleportar.z = posicaoTeleportar.z+b[2].z
 					end
+
 					player:teleportTo(posicaoTeleportar, true)
+
 					local exibirEfeito = "teleport"
+
 					if i.efeitoTeleport ~= nil then
 						exibirEfeito = i.efeitoTeleport
 					end
+
 					posicaoTeleportar:sendMagicEffect(efeitos[exibirEfeito])
+
 					if b[4] ~= nil then
 						player:setDirection(direcoes[b[4]])
 					end
 				end
 			end
 		end
+
 		if i.sons ~= nil and type(i.sons) == "table" and #i.sons > 0 then
 			player:say(formatarFrase(i.sons[math.random(1, #i.sons)], player.uid), TALKTYPE_ORANGE_1, false, 0, toPosition)
 		end
+
 		if i.mensagemPlayer ~= nil then
 			player:sendTextMessage(MESSAGE_INFO_DESCR, i.mensagemPlayer)
 		end
+
 		if i.dano ~= nil then
 			if i.dano[2] == "fixo" then
+
 				local danoMin = i.dano[3]
 				local danoMax = danoMin
+
 				if i.dano[4] ~= nil then
 					danoMax = i.dano[4]
 				end
+
 				doTargetCombatHealth(0, player, conditionsDamage[i.dano[1]][2], danoMin, danoMax, CONST_ME_NONE)
 			elseif i.dano[2] == "cargas" then
 				player:addCondition(condition[item.itemid])
 			end
 		end
+
 		if gerarNovoPontoColetaMadeira then
 			gerarPontoColetaMadeira(toPosition.x .. "," .. toPosition.y .. "," .. toPosition.z)
 		elseif adicionarEvento then
 			local adicionarItemEvento = target.itemid
+
 			if target.itemid == 0 then
 				adicionarItemEvento = item.itemid
 			end
+
 			addEvent(function(posicao, item)
 				Game.createItem(item, 1, posicao)
 			end, i.tempo, toPosition, adicionarItemEvento)
 		end
+
 		return true
 	end
+
 	return false
 end
