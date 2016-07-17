@@ -75,7 +75,7 @@ function Player:sendExtendedOpcode(opcode, buffer)
 	networkMessage:addByte(0x32)
 	networkMessage:addByte(opcode)
 	networkMessage:addString(buffer)
-	networkMessage:sendToPlayer(self)
+	networkMessage:sendToPlayer(self, true)
 	networkMessage:delete()
 	return true
 end
@@ -85,6 +85,14 @@ local addSkillTriesFunc = Player.addSkillTries
 function Player:addSkillTries(...)
 	APPLY_SKILL_MULTIPLIER = false
 	local ret = addSkillTriesFunc(...)
+	APPLY_SKILL_MULTIPLIER = true
+	return ret
+end
+
+local addManaSpentFunc = Player.addManaSpent
+function Player:addManaSpent(...)
+	APPLY_SKILL_MULTIPLIER = false
+	local ret = addManaSpentFunc(...)
 	APPLY_SKILL_MULTIPLIER = true
 	return ret
 end
