@@ -7,10 +7,10 @@ function Player:onLook(thing, position, distance)
 	local description = utf8.convert("You see " .. thing:getDescription(distance))
 
 	if LOOK_MARRIAGE_DESCR and thing:isCreature() then
-        if thing:isPlayer() then
-            description = description .. self:pegarDescricaoCasamento(thing)
-        end
-    end
+		if thing:isPlayer() then
+			description = description .. self:pegarDescricaoCasamento(thing)
+		end
+	end
 
 	if thing:isItem() and thing:getActionId() == 2900 then
 		description = "You see Julia.\n"
@@ -118,7 +118,7 @@ function Player:onLookInShop(itemType, count)
 	return true
 end
 
-function Player:onMoveItem(item, count, fromPosition, toPosition, fromContainer, toContainer)
+function Player:onMoveItem(item, count, fromPosition, toPosition, fromCylinder, toCylinder)
 	local tile = Tile(toPosition)
 
 	if tile and tile:getHouse() ~= nil then
@@ -160,12 +160,36 @@ function Player:onMoveItem(item, count, fromPosition, toPosition, fromContainer,
 	if verificarItem then
 		movimentoBloqueado = true
 		if fromPosition.x == CONTAINER_POSITION and toPosition.x == CONTAINER_POSITION then
-			if toContainer:isItem() then
-				if item:getTopParent() == toContainer:getTopParent() then
+			if toCylinder:isItem() then
+				if item:getTopParent() == toCylinder:getTopParent() then
 					movimentoBloqueado = false
 				end
 			end
 		end
+	end
+
+	if toPosition.x == CONTAINER_POSITION then
+		local containerId = toPosition.y - 64
+		local container = self:getContainerById(containerId)
+		if not container then
+			return true
+		end
+
+		local itemId = container:getId()
+		if itemId == ITEM_REWARD_CONTAINER or itemId == ITEM_REWARD_CHEST then
+			movimentoBloqueado = true
+		end
+
+		local tile = Tile(container:getPosition())
+		for _, item in ipairs(tile:getItems()) do
+			if item:getAttribute(ITEM_ATTRIBUTE_CORPSEOWNER) == 2^31 - 1 and item:getName() == container:getName() then
+				movimentoBloqueado = true
+			end
+		end
+	end
+
+	if item:getAttribute(ITEM_ATTRIBUTE_CORPSEOWNER) == 2^31 - 1 then
+		movimentoBloqueado = true
 	end
 
 	if movimentoBloqueado then
@@ -181,14 +205,14 @@ function Player:onMoveCreature(creature, fromPosition, toPosition)
 end
 
 function Player:onTurn(direction)
-    if self:getDirection() == direction and self:getGroup():getAccess() then
+	if self:getDirection() == direction and self:getGroup():getAccess() then
 
 		local nextPosition = self:getPosition()
 
 		nextPosition:getNextPosition(direction)
 
-        self:teleportTo(nextPosition, true)
-    end
+		self:teleportTo(nextPosition, true)
+	end
 
 	return true
 end
