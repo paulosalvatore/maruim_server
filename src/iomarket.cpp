@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -49,7 +49,7 @@ MarketOfferList IOMarket::getActiveOffers(MarketAction_t action, uint16_t itemId
 		offer.amount = result->getNumber<uint16_t>("amount");
 		offer.price = result->getNumber<uint32_t>("price");
 		offer.timestamp = result->getNumber<uint32_t>("created") + marketOfferDuration;
-		offer.counter = result->getNumber<uint16_t>("id") & 0xFFFF;
+		offer.counter = result->getNumber<uint32_t>("id") & 0xFFFF;
 		if (result->getNumber<uint16_t>("anonymous") == 0) {
 			offer.playerName = result->getString("player_name");
 		} else {
@@ -131,6 +131,11 @@ void IOMarket::processExpiredOffers(DBResult_ptr result, bool)
 		const uint32_t playerId = result->getNumber<uint32_t>("player_id");
 		const uint16_t amount = result->getNumber<uint16_t>("amount");
 		if (result->getNumber<uint16_t>("sale") == 1) {
+			const ItemType& itemType = Item::items[result->getNumber<uint16_t>("itemtype")];
+			if (itemType.id == 0) {
+				continue;
+			}
+
 			Player* player = g_game.getPlayerByGUID(playerId);
 			if (!player) {
 				player = new Player(nullptr);
@@ -138,11 +143,6 @@ void IOMarket::processExpiredOffers(DBResult_ptr result, bool)
 					delete player;
 					continue;
 				}
-			}
-
-			const ItemType& itemType = Item::items[result->getNumber<uint16_t>("itemtype")];
-			if (itemType.id == 0) {
-				continue;
 			}
 
 			if (itemType.stackable) {

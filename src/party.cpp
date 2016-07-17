@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -388,22 +388,22 @@ void Party::updateVocationsList()
 	}
 }
 
-bool Party::setSharedExperience(Player* player, bool _sharedExpActive)
+bool Party::setSharedExperience(Player* player, bool sharedExpActive)
 {
 	if (!player || leader != player) {
 		return false;
 	}
 
-	if (sharedExpActive == _sharedExpActive) {
+	if (this->sharedExpActive == sharedExpActive) {
 		return true;
 	}
 
-	sharedExpActive = _sharedExpActive;
+	this->sharedExpActive = sharedExpActive;
 
 	if (sharedExpActive) {
-		sharedExpEnabled = canEnableSharedExperience();
+		this->sharedExpEnabled = canEnableSharedExperience();
 
-		if (sharedExpEnabled) {
+		if (this->sharedExpEnabled) {
 			leader->sendTextMessage(MESSAGE_INFO_DESCR, "Shared Experience is now active.");
 		} else {
 			leader->sendTextMessage(MESSAGE_INFO_DESCR, "Shared Experience has been activated, but some members of your party are inactive.");

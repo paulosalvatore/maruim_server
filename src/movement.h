@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -85,12 +85,12 @@ class MoveEvents final : public BaseEvents
 
 		MoveEvent* getEvent(Item* item, MoveEvent_t eventType, slots_t slot);
 
-		MoveListMap m_uniqueIdMap;
-		MoveListMap m_actionIdMap;
-		MoveListMap m_itemIdMap;
-		MovePosListMap m_positionMap;
+		MoveListMap uniqueIdMap;
+		MoveListMap actionIdMap;
+		MoveListMap itemIdMap;
+		MovePosListMap positionMap;
 
-		LuaScriptInterface m_scriptInterface;
+		LuaScriptInterface scriptInterface;
 };
 
 typedef uint32_t (StepFunction)(Creature* creature, Item* item, const Position& pos, const Position& fromPos);
@@ -100,7 +100,7 @@ typedef uint32_t (EquipFunction)(MoveEvent* moveEvent, Player* player, Item* ite
 class MoveEvent final : public Event
 {
 	public:
-		explicit MoveEvent(LuaScriptInterface* _interface);
+		explicit MoveEvent(LuaScriptInterface* interface);
 		explicit MoveEvent(const MoveEvent* copy);
 
 		MoveEvent_t getEventType() const;
@@ -154,7 +154,7 @@ class MoveEvent final : public Event
 		static EquipFunction EquipItem;
 		static EquipFunction DeEquipItem;
 
-		MoveEvent_t m_eventType;
+		MoveEvent_t eventType;
 		StepFunction* stepFunction;
 		MoveFunction* moveFunction;
 		EquipFunction* equipFunction;

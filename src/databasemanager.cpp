@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,9 +21,7 @@
 
 #include "configmanager.h"
 #include "databasemanager.h"
-#include "enums.h"
 #include "luascript.h"
-#include "tools.h"
 
 extern ConfigManager g_config;
 
@@ -75,7 +73,7 @@ int32_t DatabaseManager::getDatabaseVersion()
 {
 	if (!tableExists("server_config")) {
 		Database* db = Database::getInstance();
-		db->executeQuery("CREATE TABLE `server_config` (`config` VARCHAR(50) NOT nullptr, `value` VARCHAR(256) NOT nullptr DEFAULT '', UNIQUE(`config`)) ENGINE = InnoDB");
+		db->executeQuery("CREATE TABLE `server_config` (`config` VARCHAR(50) NOT NULL, `value` VARCHAR(256) NOT NULL DEFAULT '', UNIQUE(`config`)) ENGINE = InnoDB");
 		db->executeQuery("INSERT INTO `server_config` VALUES ('db_version', 0)");
 		return 0;
 	}

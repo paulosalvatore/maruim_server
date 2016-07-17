@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,13 +31,18 @@ class RSA;
 class NetworkMessage
 {
 	public:
-		enum { header_length = 2 };
-		enum { crypto_length = 4 };
-		enum { xtea_multiple = 8 };
-		enum { max_body_length = NETWORKMESSAGE_MAXSIZE - header_length - crypto_length - xtea_multiple };
-		enum { max_protocol_body_length = max_body_length - 10 };
+		typedef uint16_t MsgSize_t;
+		// Headers:
+		// 2 bytes for unencrypted message size
+		// 4 bytes for checksum
+		// 2 bytes for encrypted message size
+		static const MsgSize_t INITIAL_BUFFER_POSITION = 8;
+		enum { HEADER_LENGTH = 2 };
+		enum { CHECKSUM_LENGTH = 4 };
+		enum { XTEA_MULTIPLE = 8 };
+		enum { MAX_BODY_LENGTH = NETWORKMESSAGE_MAXSIZE - HEADER_LENGTH - CHECKSUM_LENGTH - XTEA_MULTIPLE };
+		enum { MAX_PROTOCOL_BODY_LENGTH = MAX_BODY_LENGTH - 10 };
 
-		// constructor
 		NetworkMessage() {
 			reset();
 		}
@@ -45,7 +50,7 @@ class NetworkMessage
 		void reset() {
 			overrun = false;
 			length = 0;
-			position = 8;
+			position = INITIAL_BUFFER_POSITION;
 		}
 
 		// simply read functions for incoming message
@@ -67,7 +72,8 @@ class NetworkMessage
 				return 0;
 			}
 
-			T v = *reinterpret_cast<T*>(buffer + position);
+			T v;
+			memcpy(&v, buffer + position, sizeof(T));
 			position += sizeof(T);
 			return v;
 		}
@@ -76,7 +82,7 @@ class NetworkMessage
 		Position getPosition();
 
 		// skips count unknown/unused bytes in an incoming message
-		void skipBytes(int count) {
+		void skipBytes(int16_t count) {
 			position += count;
 		}
 
@@ -96,7 +102,7 @@ class NetworkMessage
 				return;
 			}
 
-			*reinterpret_cast<T*>(buffer + position) = value;
+			memcpy(buffer + position, &value, sizeof(T));
 			position += sizeof(T);
 			length += sizeof(T);
 		}
@@ -105,7 +111,6 @@ class NetworkMessage
 		void addPaddingBytes(size_t n);
 
 		void addString(const std::string& value);
-		void addString(const char* value);
 
 		void addDouble(double value, uint8_t precision = 2);
 
@@ -115,23 +120,21 @@ class NetworkMessage
 		void addItem(const Item* item);
 		void addItemId(uint16_t itemId);
 
-		int32_t getLength() const {
+		MsgSize_t getLength() const {
 			return length;
 		}
 
-		void setLength(int32_t newLength) {
+		void setLength(MsgSize_t newLength) {
 			length = newLength;
 		}
 
-		int32_t getBufferPosition() const {
+		MsgSize_t getBufferPosition() const {
 			return position;
 		}
 
-		void setBufferPosition(int32_t pos) {
-			position = pos;
+		uint16_t getLengthHeader() const {
+			return static_cast<uint16_t>(buffer[0] | buffer[1] << 8);
 		}
-
-		int32_t decodeHeader();
 
 		bool isOverrun() const {
 			return overrun;
@@ -147,12 +150,12 @@ class NetworkMessage
 
 		uint8_t* getBodyBuffer() {
 			position = 2;
-			return buffer + header_length;
+			return buffer + HEADER_LENGTH;
 		}
 
 	protected:
 		inline bool canAdd(size_t size) const {
-			return (size + position) < max_body_length;
+			return (size + position) < MAX_BODY_LENGTH;
 		}
 
 		inline bool canRead(int32_t size) {
@@ -163,8 +166,8 @@ class NetworkMessage
 			return true;
 		}
 
-		int32_t length;
-		int32_t position;
+		MsgSize_t length;
+		MsgSize_t position;
 		bool overrun;
 
 		uint8_t buffer[NETWORKMESSAGE_MAXSIZE];

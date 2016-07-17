@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,6 +29,7 @@
 void printXMLError(const std::string& where, const std::string& fileName, const pugi::xml_parse_result& result);
 
 std::string transformToSHA1(const std::string& input);
+std::string generateToken(const std::string& secret, uint32_t ticks);
 
 void replaceString(std::string& str, const std::string& sought, const std::string& replacement);
 void trim_right(std::string& source, char t);
@@ -42,7 +43,9 @@ typedef std::vector<int32_t> IntegerVec;
 
 StringVec explodeString(const std::string& inString, const std::string& separator, int32_t limit = -1);
 IntegerVec vectorAtoi(const StringVec& stringVector);
-bool hasBitSet(uint32_t flag, uint32_t flags);
+inline bool hasBitSet(uint32_t flag, uint32_t flags) {
+	return (flags & flag) != 0;
+}
 
 std::mt19937& getRandomGenerator();
 int32_t uniform_random(int32_t minNumber, int32_t maxNumber);

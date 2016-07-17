@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,25 +23,18 @@
 
 #include "game.h"
 
-#include "iologindata.h"
 #include "iomarket.h"
 
 #ifndef _WIN32
 #include <csignal> // for sigemptyset()
 #endif
 
-#include "monsters.h"
-#include "outfit.h"
-#include "vocation.h"
 #include "configmanager.h"
 #include "scriptmanager.h"
-#include "tools.h"
 #include "rsa.h"
-#include "protocolgame.h"
 #include "protocolold.h"
 #include "protocollogin.h"
 #include "protocolstatus.h"
-#include "house.h"
 #include "databasemanager.h"
 #include "scheduler.h"
 #include "databasetasks.h"
@@ -117,16 +110,9 @@ int main(int argc, char* argv[])
 		serviceManager.run();
 	} else {
 		std::cout << ">> No services running. The server is NOT online." << std::endl;
-		g_dispatcher.addTask(createTask([]() {
-			g_dispatcher.addTask(createTask([]() {
-				g_scheduler.shutdown();
-				g_databaseTasks.shutdown();
-				g_dispatcher.shutdown();
-			}));
-			g_scheduler.stop();
-			g_databaseTasks.stop();
-			g_dispatcher.stop();
-		}));
+		g_scheduler.shutdown();
+		g_databaseTasks.shutdown();
+		g_dispatcher.shutdown();
 	}
 
 	g_scheduler.join();

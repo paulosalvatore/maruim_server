@@ -17,45 +17,43 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_OUTFIT_H_C56E7A707E3F422C8C93D9BE09916AA3
-#define FS_OUTFIT_H_C56E7A707E3F422C8C93D9BE09916AA3
+#ifndef FS_THREAD_HOLDER_H_BEB56FC46748E71D15A5BF0773ED2E67
+#define FS_THREAD_HOLDER_H_BEB56FC46748E71D15A5BF0773ED2E67
 
+#include <thread>
+#include <atomic>
 #include "enums.h"
 
-struct Outfit {
-	Outfit(std::string name, uint16_t lookType, bool premium, bool unlocked) : name(name), lookType(lookType), premium(premium), unlocked(unlocked) {}
-
-	std::string name;
-	uint16_t lookType;
-	bool premium;
-	bool unlocked;
-};
-
-struct ProtocolOutfit {
-	ProtocolOutfit(const std::string* name, uint16_t lookType, uint8_t addons) : name(name), lookType(lookType), addons(addons) {}
-
-	const std::string* name;
-	uint16_t lookType;
-	uint8_t addons;
-};
-
-class Outfits
+template <typename Derived>
+class ThreadHolder
 {
 	public:
-		static Outfits* getInstance() {
-			static Outfits instance;
-			return &instance;
+		ThreadHolder(): threadState(THREAD_STATE_TERMINATED) {}
+		void start() {
+			setState(THREAD_STATE_RUNNING);
+			thread = std::thread(&Derived::threadMain, static_cast<Derived*>(this));
 		}
 
-		bool loadFromXml();
-
-		const Outfit* getOutfitByLookType(PlayerSex_t sex, uint16_t lookType) const;
-		const std::vector<Outfit>& getOutfits(PlayerSex_t sex) const {
-			return outfits[sex];
+		void stop() {
+			setState(THREAD_STATE_CLOSING);
 		}
 
+		void join() {
+			if (thread.joinable()) {
+				thread.join();
+			}
+		}
+	protected:
+		void setState(ThreadState newState) {
+			threadState.store(newState, std::memory_order_relaxed);
+		}
+
+		ThreadState getState() const {
+			return threadState.load(std::memory_order_relaxed);
+		}
 	private:
-		std::vector<Outfit> outfits[PLAYERSEX_LAST + 1];
+		std::atomic<ThreadState> threadState;
+		std::thread thread;
 };
 
 #endif

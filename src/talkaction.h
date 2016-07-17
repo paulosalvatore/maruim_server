@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -54,13 +54,13 @@ class TalkActions : public BaseEvents
 		// TODO: Store TalkAction objects directly in the list instead of using pointers
 		std::forward_list<TalkAction*> talkActions;
 
-		LuaScriptInterface m_scriptInterface;
+		LuaScriptInterface scriptInterface;
 };
 
 class TalkAction : public Event
 {
 	public:
-		explicit TalkAction(LuaScriptInterface* _interface);
+		explicit TalkAction(LuaScriptInterface* interface);
 
 		bool configureEvent(const pugi::xml_node& node) override;
 

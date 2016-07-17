@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,29 +22,22 @@
 #include "container.h"
 #include "iomap.h"
 #include "game.h"
-#include "player.h"
 
 extern Game g_game;
 
-Container::Container(uint16_t _type) : Item(_type)
-{
-	maxSize = items[_type].maxItems;
-	totalWeight = 0;
-	serializationCount = 0;
-	unlocked = true;
-	pagination = false;
-}
+Container::Container(uint16_t type) :
+	Container(type, items[type].maxItems) {}
 
-Container::Container(uint16_t _type, uint16_t _size) : Item(_type)
-{
-	maxSize = _size;
-	totalWeight = 0;
-	serializationCount = 0;
-	unlocked = true;
-	pagination = false;
-}
+Container::Container(uint16_t type, uint16_t size, bool unlocked /*= true*/, bool pagination /*= false*/) :
+	Item(type),
+	maxSize(size),
+	totalWeight(0),
+	serializationCount(0),
+	unlocked(unlocked),
+	pagination(pagination)
+{}
 
-Container::Container(Tile* tile) : Item(ITEM_BROWSEFIELD)
+Container::Container(Tile* tile) : Container(ITEM_BROWSEFIELD, 30, false, true)
 {
 	TileItemVector* itemVector = tile->getItemList();
 	if (itemVector) {
@@ -56,11 +49,6 @@ Container::Container(Tile* tile) : Item(ITEM_BROWSEFIELD)
 		}
 	}
 
-	maxSize = 30;
-	totalWeight = 0;
-	serializationCount = 0;
-	unlocked = false;
-	pagination = true;
 	setParent(tile);
 }
 
@@ -82,7 +70,7 @@ Container::~Container()
 
 Item* Container::clone() const
 {
-	Container* clone = reinterpret_cast<Container*>(Item::clone());
+	Container* clone = static_cast<Container*>(Item::clone());
 	for (Item* item : itemlist) {
 		clone->addItem(item->clone());
 	}

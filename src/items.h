@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,7 +23,6 @@
 #include "const.h"
 #include "enums.h"
 #include "itemloader.h"
-#include "optional.h"
 #include "position.h"
 
 enum SlotPositionBits : uint32_t {
@@ -116,6 +115,13 @@ class ItemType
 	public:
 		ItemType();
 
+		//non-copyable
+		ItemType(const ItemType& other) = delete;
+		ItemType& operator=(const ItemType& other) = delete;
+
+		ItemType(ItemType&& other) = default;
+		ItemType& operator=(ItemType&& other) = default;
+
 		bool isGroundTile() const {
 			return group == ITEM_GROUP_GROUND;
 		}
@@ -162,7 +168,7 @@ class ItemType
 
 		Abilities& getAbilities() {
 			if (!abilities) {
-				abilities.set(new Abilities());
+				abilities.reset(new Abilities());
 			}
 			return *abilities;
 		}
@@ -197,8 +203,8 @@ class ItemType
 		std::string runeSpellName;
 		std::string vocationString;
 
-		Optional<Abilities> abilities;
-		Optional<ConditionDamage> conditionDamage;
+		std::unique_ptr<Abilities> abilities;
+		std::unique_ptr<ConditionDamage> conditionDamage;
 
 		uint32_t weight;
 		uint32_t levelDoor;
@@ -239,6 +245,7 @@ class ItemType
 		RaceType_t corpseType;
 		FluidTypes_t fluidSource;
 
+		uint8_t floorChange;
 		uint8_t alwaysOnTopOrder;
 		uint8_t lightLevel;
 		uint8_t lightColor;
@@ -246,13 +253,6 @@ class ItemType
 		int8_t hitChance;
 
 		bool forceUse;
-		bool floorChangeDown;
-		bool floorChangeNorth;
-		bool floorChangeSouth;
-		bool floorChangeSouthAlt;
-		bool floorChangeEast;
-		bool floorChangeEastAlt;
-		bool floorChangeWest;
 		bool hasHeight;
 		bool walkStack;
 		bool blockSolid;

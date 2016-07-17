@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,6 +23,7 @@
 #include "protocol.h"
 #include "chat.h"
 #include "creature.h"
+#include "tasks.h"
 
 class NetworkMessage;
 class Player;
@@ -32,6 +33,10 @@ class Container;
 class Tile;
 class Connection;
 class Quest;
+class ProtocolGame;
+typedef std::shared_ptr<ProtocolGame> ProtocolGame_ptr;
+
+extern Game g_game;
 
 struct TextMessage
 {
@@ -44,6 +49,7 @@ struct TextMessage
 	} primary, secondary;
 
 	TextMessage() {
+		type = MESSAGE_STATUS_DEFAULT;
 		primary.value = 0;
 		secondary.value = 0;
 	}
@@ -69,22 +75,19 @@ class ProtocolGame final : public Protocol
 		void login(const std::string& name, uint32_t accnumber, OperatingSystem_t operatingSystem);
 		void logout(bool displayEffect, bool forced);
 
-		void setPlayer(Player* p);
-
 		uint16_t getVersion() const {
 			return version;
 		}
 
 	private:
-		std::unordered_set<uint32_t> knownCreatureSet;
-
+		ProtocolGame_ptr getThis() {
+			return std::static_pointer_cast<ProtocolGame>(shared_from_this());
+		}
 		void connect(uint32_t playerId, OperatingSystem_t operatingSystem);
-		void disconnect() const;
-		void disconnectClient(const std::string& message);
+		void disconnectClient(const std::string& message) const;
 		void writeToOutputBuffer(const NetworkMessage& msg);
 
-		void releaseProtocol() final;
-		void deleteProtocolTask() final;
+		void release() final;
 
 		void checkCreatureAsKnown(uint32_t id, bool& known, uint32_t& removedKnown);
 
@@ -311,23 +314,28 @@ class ProtocolGame final : public Protocol
 
 		friend class Player;
 
-		// Helper so we don't need to bind every time
-#define addGameTask(f, ...) ProtocolGame::addGameTaskInternal(false, 0, std::bind(f, &g_game, __VA_ARGS__))
-#define addGameTaskTimed(delay, f, ...) ProtocolGame::addGameTaskInternal(true, delay, std::bind(f, &g_game, __VA_ARGS__))
+		// Helpers so we don't need to bind every time
+		template <typename Callable, typename... Args>
+		void addGameTask(Callable function, Args&&... args) {
+			g_dispatcher.addTask(createTask(std::bind(function, &g_game, std::forward<Args>(args)...)));
+		}
 
-		template<class FunctionType>
-		static void addGameTaskInternal(bool droppable, uint32_t delay, const FunctionType&);
+		template <typename Callable, typename... Args>
+		void addGameTaskTimed(uint32_t delay, Callable function, Args&&... args) {
+			g_dispatcher.addTask(createTask(delay, std::bind(function, &g_game, std::forward<Args>(args)...)));
+		}
 
+		std::unordered_set<uint32_t> knownCreatureSet;
 		Player* player;
 
 		uint32_t eventConnect;
+		uint32_t challengeTimestamp;
 		uint16_t version;
 
-		uint32_t m_challengeTimestamp;
-		uint8_t m_challengeRandom;
+		uint8_t challengeRandom;
 
-		bool m_debugAssertSent;
-		bool m_acceptPackets;
+		bool debugAssertSent;
+		bool acceptPackets;
 };
 
 #endif

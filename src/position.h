@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,9 +33,7 @@ enum Direction : uint8_t {
 	DIRECTION_NORTHEAST = DIRECTION_DIAGONAL_MASK | 3,
 
 	DIRECTION_LAST = DIRECTION_NORTHEAST,
-	DIRECTION_SOUTH_ALT = 8,
-	DIRECTION_EAST_ALT = 9,
-	DIRECTION_NONE = 10,
+	DIRECTION_NONE = 8,
 };
 
 struct Position

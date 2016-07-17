@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,12 +22,11 @@
 #include "player.h"
 #include "talkaction.h"
 #include "pugicast.h"
-#include "tools.h"
 
 TalkActions::TalkActions()
-	: m_scriptInterface("TalkAction Interface")
+	: scriptInterface("TalkAction Interface")
 {
-	m_scriptInterface.initState();
+	scriptInterface.initState();
 }
 
 TalkActions::~TalkActions()
@@ -42,12 +41,12 @@ void TalkActions::clear()
 	}
 	talkActions.clear();
 
-	m_scriptInterface.reInitState();
+	scriptInterface.reInitState();
 }
 
 LuaScriptInterface& TalkActions::getScriptInterface()
 {
-	return m_scriptInterface;
+	return scriptInterface;
 }
 
 std::string TalkActions::getScriptBaseName() const
@@ -60,12 +59,12 @@ Event* TalkActions::getEvent(const std::string& nodeName)
 	if (strcasecmp(nodeName.c_str(), "talkaction") != 0) {
 		return nullptr;
 	}
-	return new TalkAction(&m_scriptInterface);
+	return new TalkAction(&scriptInterface);
 }
 
 bool TalkActions::registerEvent(Event* event, const pugi::xml_node&)
 {
-	talkActions.push_front(reinterpret_cast<TalkAction*>(event));
+	talkActions.push_front(static_cast<TalkAction*>(event)); // event is guaranteed to be a TalkAction
 	return true;
 }
 
@@ -108,11 +107,8 @@ TalkActionResult_t TalkActions::playerSaySpell(Player* player, SpeakClasses type
 	return TALKACTION_CONTINUE;
 }
 
-TalkAction::TalkAction(LuaScriptInterface* _interface) :
-	Event(_interface)
-{
-	separator = '"';
-}
+TalkAction::TalkAction(LuaScriptInterface* interface) :
+	Event(interface), separator('"') {}
 
 bool TalkAction::configureEvent(const pugi::xml_node& node)
 {
@@ -139,17 +135,17 @@ std::string TalkAction::getScriptEventName() const
 bool TalkAction::executeSay(Player* player, const std::string& param, SpeakClasses type) const
 {
 	//onSay(player, words, param, type)
-	if (!m_scriptInterface->reserveScriptEnv()) {
+	if (!scriptInterface->reserveScriptEnv()) {
 		std::cout << "[Error - TalkAction::executeSay] Call stack overflow" << std::endl;
 		return false;
 	}
 
-	ScriptEnvironment* env = m_scriptInterface->getScriptEnv();
-	env->setScriptId(m_scriptId, m_scriptInterface);
+	ScriptEnvironment* env = scriptInterface->getScriptEnv();
+	env->setScriptId(scriptId, scriptInterface);
 
-	lua_State* L = m_scriptInterface->getLuaState();
+	lua_State* L = scriptInterface->getLuaState();
 
-	m_scriptInterface->pushFunction(m_scriptId);
+	scriptInterface->pushFunction(scriptId);
 
 	LuaScriptInterface::pushUserdata<Player>(L, player);
 	LuaScriptInterface::setMetatable(L, -1, "Player");
@@ -158,5 +154,5 @@ bool TalkAction::executeSay(Player* player, const std::string& param, SpeakClass
 	LuaScriptInterface::pushString(L, param);
 	lua_pushnumber(L, type);
 
-	return m_scriptInterface->callFunction(4);
+	return scriptInterface->callFunction(4);
 }

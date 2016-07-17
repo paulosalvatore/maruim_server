@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -104,7 +104,7 @@ class FileLoader
 		NODE getNextNode(const NODE prev, uint32_t& type);
 
 		FILELOADER_ERRORS getError() const {
-			return m_lastError;
+			return lastError;
 		}
 
 	protected:
@@ -117,12 +117,12 @@ class FileLoader
 		bool parseNode(NODE node);
 
 		inline bool readByte(int32_t& value);
-		inline bool readBytes(uint8_t* buffer, uint32_t size, int32_t pos);
+		inline bool readBytes(uint32_t size, int32_t pos);
 		inline bool safeSeek(uint32_t pos);
 		inline bool safeTell(int32_t& pos);
 
 	protected:
-		struct _cache {
+		struct cache {
 			uint8_t* data;
 			uint32_t loaded;
 			uint32_t base;
@@ -130,19 +130,19 @@ class FileLoader
 		};
 
 #define CACHE_BLOCKS 3
-		_cache m_cached_data[CACHE_BLOCKS];
+		cache cached_data[CACHE_BLOCKS];
 
-		uint8_t* m_buffer;
-		NODE m_root;
-		FILE* m_file;
+		uint8_t* buffer;
+		NODE root;
+		FILE* file;
 
-		FILELOADER_ERRORS m_lastError;
-		uint32_t m_buffer_size;
+		FILELOADER_ERRORS lastError;
+		uint32_t buffer_size;
 
-		uint32_t m_cache_size;
+		uint32_t cache_size;
 #define NO_VALID_CACHE 0xFFFFFFFF
-		uint32_t m_cache_index;
-		uint32_t m_cache_offset;
+		uint32_t cache_index;
+		uint32_t cache_offset;
 
 		inline uint32_t getCacheBlock(uint32_t pos);
 		int32_t loadCacheBlock(uint32_t pos);
@@ -166,24 +166,12 @@ class PropStream
 		}
 
 		template <typename T>
-		inline bool readStruct(T*& ret) {
-			if (size() < sizeof(T)) {
-				ret = nullptr;
-				return false;
-			}
-
-			ret = reinterpret_cast<const T*>(p);
-			p += sizeof(T);
-			return true;
-		}
-
-		template <typename T>
 		inline bool read(T& ret) {
 			if (size() < sizeof(T)) {
 				return false;
 			}
 
-			ret = *reinterpret_cast<const T*>(p);
+			memcpy(&ret, p, sizeof(T));
 			p += sizeof(T);
 			return true;
 		}
@@ -226,7 +214,7 @@ class PropWriteStream
 	public:
 		PropWriteStream() {
 			buffer_size = 32;
-			buffer = reinterpret_cast<char*>(malloc(buffer_size));
+			buffer = static_cast<char*>(malloc(buffer_size));
 			if (!buffer) {
 				throw std::bad_alloc();
 			}
@@ -242,8 +230,8 @@ class PropWriteStream
 		PropWriteStream(const PropWriteStream&) = delete;
 		PropWriteStream& operator=(const PropWriteStream&) = delete;
 
-		const char* getStream(size_t& _size) const {
-			_size = size;
+		const char* getStream(size_t& size) const {
+			size = this->size;
 			return buffer;
 		}
 
@@ -286,7 +274,7 @@ class PropWriteStream
 				throw std::bad_alloc();
 			}
 
-			buffer = reinterpret_cast<char*>(newBuffer);
+			buffer = static_cast<char*>(newBuffer);
 		}
 
 		char* buffer;

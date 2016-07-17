@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,35 +21,25 @@
 
 #include "protocolold.h"
 #include "outputmessage.h"
-#include "connection.h"
-#include "tasks.h"
 
-#include "rsa.h"
 #include "game.h"
 
 extern Game g_game;
 
-void ProtocolOld::dispatchedDisconnectClient(const std::string& message)
-{
-	OutputMessage_ptr output = OutputMessagePool::getInstance()->getOutputMessage(this, false);
-	if (output) {
-		output->addByte(0x0A);
-		output->addString(message);
-		OutputMessagePool::getInstance()->send(output);
-	}
-
-	getConnection()->close();
-}
-
 void ProtocolOld::disconnectClient(const std::string& message)
 {
-	g_dispatcher.addTask(createTask(std::bind(&ProtocolOld::dispatchedDisconnectClient, this, message)));
+	auto output = OutputMessagePool::getOutputMessage();
+	output->addByte(0x0A);
+	output->addString(message);
+	send(output);
+
+	disconnect();
 }
 
 void ProtocolOld::onRecvFirstMessage(NetworkMessage& msg)
 {
 	if (g_game.getGameState() == GAME_STATE_SHUTDOWN) {
-		getConnection()->close();
+		disconnect();
 		return;
 	}
 
@@ -63,7 +53,7 @@ void ProtocolOld::onRecvFirstMessage(NetworkMessage& msg)
 	}
 
 	if (!Protocol::RSA_decrypt(msg)) {
-		getConnection()->close();
+		disconnect();
 		return;
 	}
 

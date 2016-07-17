@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,6 +27,9 @@
 #define CLIENT_VERSION_MIN 1078
 #define CLIENT_VERSION_MAX 1078
 #define CLIENT_VERSION_STR "10.78"
+
+#define AUTHENTICATOR_DIGITS 6U
+#define AUTHENTICATOR_PERIOD 30U
 
 #ifndef __FUNCTION__
 #define __FUNCTION__ __func__
@@ -56,6 +59,7 @@
 #pragma warning(disable:4250) // 'class1' : inherits 'class2::member' via dominance
 #pragma warning(disable:4267) // 'var' : conversion from 'size_t' to 'type', possible loss of data
 #pragma warning(disable:4351) // new behavior: elements of array will be default initialized
+#pragma warning(disable:4458) // declaration hides class member
 #endif
 
 #define strcasecmp _stricmp

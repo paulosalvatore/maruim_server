@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -49,9 +49,9 @@ class ContainerIterator
 class Container : public Item, public Cylinder
 {
 	public:
-		explicit Container(uint16_t _type);
-		Container(uint16_t _type, uint16_t _size);
-		explicit Container(Tile* tile);
+		explicit Container(uint16_t type);
+		Container(uint16_t type, uint16_t size, bool unlocked = true, bool pagination = false);
+		explicit Container(Tile* type);
 		~Container();
 
 		// non-copyable

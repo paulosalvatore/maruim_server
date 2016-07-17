@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -179,11 +179,56 @@ std::string transformToSHA1(const std::string& input)
 	static const char hexDigits[] = {"0123456789abcdef"};
 	for (int hashByte = 20; --hashByte >= 0;) {
 		const uint8_t byte = H[hashByte >> 2] >> (((3 - hashByte) & 3) << 3);
-		size_t index = hashByte << 1;
-		hexstring[index++] = hexDigits[byte >> 4];
-		hexstring[index] = hexDigits[byte & 15];
+		index = hashByte << 1;
+		hexstring[index] = hexDigits[byte >> 4];
+		hexstring[index + 1] = hexDigits[byte & 15];
 	}
 	return std::string(hexstring, 40);
+}
+
+std::string generateToken(const std::string& key, uint32_t ticks)
+{
+	// generate message from ticks
+	std::string message(8, 0);
+	for (uint8_t i = 8; --i; ticks >>= 8) {
+		message[i] = static_cast<char>(ticks & 0xFF);
+	}
+
+	// hmac key pad generation
+	std::string iKeyPad(64, 0x36), oKeyPad(64, 0x5C);
+	for (uint8_t i = 0; i < key.length(); ++i) {
+		iKeyPad[i] ^= key[i];
+		oKeyPad[i] ^= key[i];
+	}
+
+	oKeyPad.reserve(84);
+
+	// hmac concat inner pad with message
+	iKeyPad.append(message);
+
+	// hmac first pass
+	message.assign(transformToSHA1(iKeyPad));
+
+	// hmac concat outer pad with message, conversion from hex to int needed
+	for (uint8_t i = 0; i < message.length(); i += 2) {
+		oKeyPad.push_back(static_cast<char>(std::stol(message.substr(i, 2), nullptr, 16)));
+	}
+
+	// hmac second pass
+	message.assign(transformToSHA1(oKeyPad));
+
+	// calculate hmac offset
+	uint32_t offset = static_cast<uint32_t>(std::stol(message.substr(39, 1), nullptr, 16) & 0xF);
+
+	// get truncated hash
+	uint32_t truncHash = std::stol(message.substr(2 * offset, 8), nullptr, 16) & 0x7FFFFFFF;
+	message.assign(std::to_string(truncHash));
+
+	// return only last AUTHENTICATOR_DIGITS (default 6) digits, also asserts exactly 6 digits
+	uint32_t hashLen = message.length();
+	message.assign(message.substr(hashLen - std::min(hashLen, AUTHENTICATOR_DIGITS)));
+	message.insert(0, AUTHENTICATOR_DIGITS - std::min(hashLen, AUTHENTICATOR_DIGITS), '0');
+	return message;
 }
 
 void replaceString(std::string& str, const std::string& sought, const std::string& replacement)
@@ -251,11 +296,6 @@ IntegerVec vectorAtoi(const StringVec& stringVector)
 	return returnVector;
 }
 
-bool hasBitSet(uint32_t flag, uint32_t flags)
-{
-	return ((flags & flag) == flag);
-}
-
 std::mt19937& getRandomGenerator()
 {
 	static std::random_device rd;
@@ -282,7 +322,18 @@ int32_t normal_random(int32_t minNumber, int32_t maxNumber)
 	} else if (minNumber > maxNumber) {
 		std::swap(minNumber, maxNumber);
 	}
-	return minNumber + std::max<float>(0.f, std::min<float>(1.f, normalRand(getRandomGenerator()))) * (maxNumber - minNumber);
+
+	int32_t increment;
+	const int32_t diff = maxNumber - minNumber;
+	const float v = normalRand(getRandomGenerator());
+	if (v < 0.0) {
+		increment = diff / 2;
+	} else if (v > 1.0) {
+		increment = (diff + 1) / 2;
+	} else {
+		increment = round(v * diff);
+	}
+	return minNumber + increment;
 }
 
 bool boolean_random(double probability/* = 0.5*/)

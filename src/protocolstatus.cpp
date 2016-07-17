@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,11 +22,7 @@
 #include "protocolstatus.h"
 #include "configmanager.h"
 #include "game.h"
-#include "connection.h"
-#include "networkmessage.h"
 #include "outputmessage.h"
-#include "tools.h"
-#include "tasks.h"
 
 extern ConfigManager g_config;
 extern Game g_game;
@@ -53,7 +49,7 @@ void ProtocolStatus::onRecvFirstMessage(NetworkMessage& msg)
 		if (ipStr != g_config.getString(ConfigManager::IP)) {
 			std::map<uint32_t, int64_t>::const_iterator it = ipConnectMap.find(ip);
 			if (it != ipConnectMap.end() && (OTSYS_TIME() < (it->second + g_config.getNumber(ConfigManager::STATUSQUERY_TIMEOUT)))) {
-				getConnection()->close();
+				disconnect();
 				return;
 			}
 		}
@@ -65,7 +61,8 @@ void ProtocolStatus::onRecvFirstMessage(NetworkMessage& msg)
 		//XML info protocol
 		case 0xFF: {
 			if (msg.getString(4) == "info") {
-				g_dispatcher.addTask(createTask(std::bind(&ProtocolStatus::sendStatusString, this)));
+				g_dispatcher.addTask(createTask(std::bind(&ProtocolStatus::sendStatusString,
+									  std::static_pointer_cast<ProtocolStatus>(shared_from_this()))));
 				return;
 			}
 			break;
@@ -78,23 +75,20 @@ void ProtocolStatus::onRecvFirstMessage(NetworkMessage& msg)
 			if (requestedInfo & REQUEST_PLAYER_STATUS_INFO) {
 				characterName = msg.getString();
 			}
-			g_dispatcher.addTask(createTask(std::bind(&ProtocolStatus::sendInfo, this, requestedInfo, characterName)));
+			g_dispatcher.addTask(createTask(std::bind(&ProtocolStatus::sendInfo, std::static_pointer_cast<ProtocolStatus>(shared_from_this()),
+								  requestedInfo, characterName)));
 			return;
 		}
 
 		default:
 			break;
 	}
-	getConnection()->close();
+	disconnect();
 }
 
 void ProtocolStatus::sendStatusString()
 {
-	OutputMessage_ptr output = OutputMessagePool::getInstance()->getOutputMessage(this, false);
-	if (!output) {
-		getConnection()->close();
-		return;
-	}
+	auto output = OutputMessagePool::getOutputMessage();
 
 	setRawMessages(true);
 
@@ -157,17 +151,13 @@ void ProtocolStatus::sendStatusString()
 
 	std::string data = ss.str();
 	output->addBytes(data.c_str(), data.size());
-	OutputMessagePool::getInstance()->send(output);
-	getConnection()->close();
+	send(output);
+	disconnect();
 }
 
 void ProtocolStatus::sendInfo(uint16_t requestedInfo, const std::string& characterName)
 {
-	OutputMessage_ptr output = OutputMessagePool::getInstance()->getOutputMessage(this, false);
-	if (!output) {
-		getConnection()->close();
-		return;
-	}
+	auto output = OutputMessagePool::getOutputMessage();
 
 	if (requestedInfo & REQUEST_BASIC_SERVER_INFO) {
 		output->addByte(0x10);
@@ -233,6 +223,6 @@ void ProtocolStatus::sendInfo(uint16_t requestedInfo, const std::string& charact
 		output->addString(STATUS_SERVER_VERSION);
 		output->addString(CLIENT_VERSION_STR);
 	}
-	OutputMessagePool::getInstance()->send(output);
-	getConnection()->close();
+	send(output);
+	disconnect();
 }

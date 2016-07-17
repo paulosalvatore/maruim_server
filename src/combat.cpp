@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,10 +22,6 @@
 #include "combat.h"
 
 #include "game.h"
-#include "creature.h"
-#include "player.h"
-#include "const.h"
-#include "tools.h"
 #include "weapons.h"
 #include "configmanager.h"
 #include "events.h"
@@ -41,18 +37,6 @@ Combat::Combat() :
 	area(nullptr)
 {
 	//
-}
-
-Combat::~Combat()
-{
-	for (const Condition* condition : params.conditionList) {
-		delete condition;
-	}
-
-	delete params.valueCallback;
-	delete params.tileCallback;
-	delete params.targetCallback;
-	delete area;
 }
 
 CombatDamage Combat::getCombatDamage(Creature* creature, Creature* target) const
@@ -259,7 +243,7 @@ ReturnValue Combat::canDoCombat(Creature* caster, Tile* tile, bool aggressive)
 		return RETURNVALUE_NOTENOUGHROOM;
 	}
 
-	if (tile->floorChange()) {
+	if (tile->hasFlag(TILESTATE_FLOORCHANGE)) {
 		return RETURNVALUE_NOTENOUGHROOM;
 	}
 
@@ -335,7 +319,7 @@ ReturnValue Combat::canDoCombat(Creature* attacker, Creature* target)
 				const Tile* targetPlayerTile = targetPlayer->getTile();
 				if (targetPlayerTile->hasFlag(TILESTATE_NOPVPZONE)) {
 					return RETURNVALUE_ACTIONNOTPERMITTEDINANOPVPZONE;
-				} else if (attackerPlayer->getTile()->hasFlag(TILESTATE_NOPVPZONE) && !targetPlayerTile->hasFlag(TILESTATE_NOPVPZONE) && !targetPlayerTile->hasFlag(TILESTATE_PROTECTIONZONE)) {
+				} else if (attackerPlayer->getTile()->hasFlag(TILESTATE_NOPVPZONE) && !targetPlayerTile->hasFlag(TILESTATE_NOPVPZONE | TILESTATE_PROTECTIONZONE)) {
 					return RETURNVALUE_ACTIONNOTPERMITTEDINANOPVPZONE;
 				}
 			}
@@ -396,13 +380,13 @@ ReturnValue Combat::canDoCombat(Creature* attacker, Creature* target)
 	return g_events->eventCreatureOnTargetCombat(attacker, target);
 }
 
-void Combat::setPlayerCombatValues(formulaType_t _type, double _mina, double _minb, double _maxa, double _maxb)
+void Combat::setPlayerCombatValues(formulaType_t formulaType, double mina, double minb, double maxa, double maxb)
 {
-	formulaType = _type;
-	mina = _mina;
-	minb = _minb;
-	maxa = _maxa;
-	maxb = _maxb;
+	this->formulaType = formulaType;
+	this->mina = mina;
+	this->minb = minb;
+	this->maxa = maxa;
+	this->maxb = maxb;
 }
 
 bool Combat::setParam(CombatParam_t param, uint32_t value)
@@ -465,26 +449,22 @@ bool Combat::setCallback(CallBackParam_t key)
 {
 	switch (key) {
 		case CALLBACK_PARAM_LEVELMAGICVALUE: {
-			delete params.valueCallback;
-			params.valueCallback = new ValueCallback(COMBAT_FORMULA_LEVELMAGIC);
+			params.valueCallback.reset(new ValueCallback(COMBAT_FORMULA_LEVELMAGIC));
 			return true;
 		}
 
 		case CALLBACK_PARAM_SKILLVALUE: {
-			delete params.valueCallback;
-			params.valueCallback = new ValueCallback(COMBAT_FORMULA_SKILL);
+			params.valueCallback.reset(new ValueCallback(COMBAT_FORMULA_SKILL));
 			return true;
 		}
 
 		case CALLBACK_PARAM_TARGETTILE: {
-			delete params.tileCallback;
-			params.tileCallback = new TileCallback();
+			params.tileCallback.reset(new TileCallback());
 			return true;
 		}
 
 		case CALLBACK_PARAM_TARGETCREATURE: {
-			delete params.targetCallback;
-			params.targetCallback = new TargetCallback();
+			params.targetCallback.reset(new TargetCallback());
 			return true;
 		}
 	}
@@ -496,23 +476,24 @@ CallBack* Combat::getCallback(CallBackParam_t key)
 	switch (key) {
 		case CALLBACK_PARAM_LEVELMAGICVALUE:
 		case CALLBACK_PARAM_SKILLVALUE: {
-			return params.valueCallback;
+			return params.valueCallback.get();
 		}
 
 		case CALLBACK_PARAM_TARGETTILE: {
-			return params.tileCallback;
+			return params.tileCallback.get();
 		}
 
 		case CALLBACK_PARAM_TARGETCREATURE: {
-			return params.targetCallback;
+			return params.targetCallback.get();
 		}
 	}
 	return nullptr;
 }
 
-void Combat::CombatHealthFunc(Creature* caster, Creature* target, const CombatParams& params, void* data)
+void Combat::CombatHealthFunc(Creature* caster, Creature* target, const CombatParams& params, CombatDamage* data)
 {
-	CombatDamage damage = *reinterpret_cast<CombatDamage*>(data);
+	assert(data);
+	CombatDamage damage = *data;
 	if (g_game.combatBlockHit(damage, caster, target, params.blockedByShield, params.blockedByArmor, params.itemId != 0)) {
 		return;
 	}
@@ -531,9 +512,10 @@ void Combat::CombatHealthFunc(Creature* caster, Creature* target, const CombatPa
 	}
 }
 
-void Combat::CombatManaFunc(Creature* caster, Creature* target, const CombatParams& params, void* data)
+void Combat::CombatManaFunc(Creature* caster, Creature* target, const CombatParams& params, CombatDamage* data)
 {
-	CombatDamage damage = *reinterpret_cast<CombatDamage*>(data);
+	assert(data);
+	CombatDamage damage = *data;
 	if (damage.primary.value < 0) {
 		if (caster && caster->getPlayer() && target->getPlayer()) {
 			damage.primary.value /= 2;
@@ -546,9 +528,9 @@ void Combat::CombatManaFunc(Creature* caster, Creature* target, const CombatPara
 	}
 }
 
-void Combat::CombatConditionFunc(Creature* caster, Creature* target, const CombatParams& params, void*)
+void Combat::CombatConditionFunc(Creature* caster, Creature* target, const CombatParams& params, CombatDamage*)
 {
-	for (const Condition* condition : params.conditionList) {
+	for (const auto& condition : params.conditionList) {
 		if (caster == target || !target->isImmune(condition->getType())) {
 			Condition* conditionCopy = condition->clone();
 			if (caster) {
@@ -561,12 +543,12 @@ void Combat::CombatConditionFunc(Creature* caster, Creature* target, const Comba
 	}
 }
 
-void Combat::CombatDispelFunc(Creature*, Creature* target, const CombatParams& params, void*)
+void Combat::CombatDispelFunc(Creature*, Creature* target, const CombatParams& params, CombatDamage*)
 {
 	target->removeCombatCondition(params.dispelType);
 }
 
-void Combat::CombatNullFunc(Creature* caster, Creature* target, const CombatParams& params, void*)
+void Combat::CombatNullFunc(Creature* caster, Creature* target, const CombatParams& params, CombatDamage*)
 {
 	CombatConditionFunc(caster, target, params, nullptr);
 	CombatDispelFunc(caster, target, params, nullptr);
@@ -694,7 +676,7 @@ void Combat::addDistanceEffect(Creature* caster, const Position& fromPos, const 
 	}
 }
 
-void Combat::CombatFunc(Creature* caster, const Position& pos, const AreaCombat* area, const CombatParams& params, COMBATFUNC func, void* data)
+void Combat::CombatFunc(Creature* caster, const Position& pos, const AreaCombat* area, const CombatParams& params, COMBATFUNC func, CombatDamage* data)
 {
 	std::forward_list<Tile*> tileList;
 
@@ -783,12 +765,12 @@ void Combat::doCombat(Creature* caster, const Position& position) const
 	if (params.combatType != COMBAT_NONE) {
 		CombatDamage damage = getCombatDamage(caster, nullptr);
 		if (damage.primary.type != COMBAT_MANADRAIN) {
-			doCombatHealth(caster, position, area, damage, params);
+			doCombatHealth(caster, position, area.get(), damage, params);
 		} else {
-			doCombatMana(caster, position, area, damage, params);
+			doCombatMana(caster, position, area.get(), damage, params);
 		}
 	} else {
-		CombatFunc(caster, position, area, params, CombatNullFunc, nullptr);
+		CombatFunc(caster, position, area.get(), params, CombatNullFunc, nullptr);
 	}
 }
 
@@ -918,20 +900,20 @@ void Combat::doCombatDefault(Creature* caster, Creature* target, const CombatPar
 void ValueCallback::getMinMaxValues(Player* player, CombatDamage& damage, bool useCharges) const
 {
 	//onGetPlayerMinMaxValues(...)
-	if (!m_scriptInterface->reserveScriptEnv()) {
+	if (!scriptInterface->reserveScriptEnv()) {
 		std::cout << "[Error - ValueCallback::getMinMaxValues] Call stack overflow" << std::endl;
 		return;
 	}
 
-	ScriptEnvironment* env = m_scriptInterface->getScriptEnv();
-	if (!env->setCallbackId(m_scriptId, m_scriptInterface)) {
-		m_scriptInterface->resetScriptEnv();
+	ScriptEnvironment* env = scriptInterface->getScriptEnv();
+	if (!env->setCallbackId(scriptId, scriptInterface)) {
+		scriptInterface->resetScriptEnv();
 		return;
 	}
 
-	lua_State* L = m_scriptInterface->getLuaState();
+	lua_State* L = scriptInterface->getLuaState();
 
-	m_scriptInterface->pushFunction(m_scriptId);
+	scriptInterface->pushFunction(scriptId);
 
 	LuaScriptInterface::pushUserdata<Player>(L, player);
 	LuaScriptInterface::setMetatable(L, -1, "Player");
@@ -980,7 +962,7 @@ void ValueCallback::getMinMaxValues(Player* player, CombatDamage& damage, bool u
 
 		default: {
 			std::cout << "ValueCallback::getMinMaxValues - unknown callback type" << std::endl;
-			m_scriptInterface->resetScriptEnv();
+			scriptInterface->resetScriptEnv();
 			return;
 		}
 	}
@@ -1000,7 +982,7 @@ void ValueCallback::getMinMaxValues(Player* player, CombatDamage& damage, bool u
 		LuaScriptInterface::reportError(nullptr, "Stack size changed!");
 	}
 
-	m_scriptInterface->resetScriptEnv();
+	scriptInterface->resetScriptEnv();
 }
 
 //**********************************************************//
@@ -1008,20 +990,20 @@ void ValueCallback::getMinMaxValues(Player* player, CombatDamage& damage, bool u
 void TileCallback::onTileCombat(Creature* creature, Tile* tile) const
 {
 	//onTileCombat(creature, pos)
-	if (!m_scriptInterface->reserveScriptEnv()) {
+	if (!scriptInterface->reserveScriptEnv()) {
 		std::cout << "[Error - TileCallback::onTileCombat] Call stack overflow" << std::endl;
 		return;
 	}
 
-	ScriptEnvironment* env = m_scriptInterface->getScriptEnv();
-	if (!env->setCallbackId(m_scriptId, m_scriptInterface)) {
-		m_scriptInterface->resetScriptEnv();
+	ScriptEnvironment* env = scriptInterface->getScriptEnv();
+	if (!env->setCallbackId(scriptId, scriptInterface)) {
+		scriptInterface->resetScriptEnv();
 		return;
 	}
 
-	lua_State* L = m_scriptInterface->getLuaState();
+	lua_State* L = scriptInterface->getLuaState();
 
-	m_scriptInterface->pushFunction(m_scriptId);
+	scriptInterface->pushFunction(scriptId);
 	if (creature) {
 		LuaScriptInterface::pushUserdata<Creature>(L, creature);
 		LuaScriptInterface::setCreatureMetatable(L, -1, creature);
@@ -1030,7 +1012,7 @@ void TileCallback::onTileCombat(Creature* creature, Tile* tile) const
 	}
 	LuaScriptInterface::pushPosition(L, tile->getPosition());
 
-	m_scriptInterface->callFunction(2);
+	scriptInterface->callFunction(2);
 }
 
 //**********************************************************//
@@ -1038,20 +1020,20 @@ void TileCallback::onTileCombat(Creature* creature, Tile* tile) const
 void TargetCallback::onTargetCombat(Creature* creature, Creature* target) const
 {
 	//onTargetCombat(creature, target)
-	if (!m_scriptInterface->reserveScriptEnv()) {
+	if (!scriptInterface->reserveScriptEnv()) {
 		std::cout << "[Error - TargetCallback::onTargetCombat] Call stack overflow" << std::endl;
 		return;
 	}
 
-	ScriptEnvironment* env = m_scriptInterface->getScriptEnv();
-	if (!env->setCallbackId(m_scriptId, m_scriptInterface)) {
-		m_scriptInterface->resetScriptEnv();
+	ScriptEnvironment* env = scriptInterface->getScriptEnv();
+	if (!env->setCallbackId(scriptId, scriptInterface)) {
+		scriptInterface->resetScriptEnv();
 		return;
 	}
 
-	lua_State* L = m_scriptInterface->getLuaState();
+	lua_State* L = scriptInterface->getLuaState();
 
-	m_scriptInterface->pushFunction(m_scriptId);
+	scriptInterface->pushFunction(scriptId);
 
 	if (creature) {
 		LuaScriptInterface::pushUserdata<Creature>(L, creature);
@@ -1077,7 +1059,7 @@ void TargetCallback::onTargetCombat(Creature* creature, Creature* target) const
 		LuaScriptInterface::reportError(nullptr, "Stack size changed!");
 	}
 
-	m_scriptInterface->resetScriptEnv();
+	scriptInterface->resetScriptEnv();
 }
 
 //**********************************************************//
