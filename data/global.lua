@@ -1,17 +1,7 @@
 dofile('data/lib/lib.lua')
-dofile('data/lib/050-functions.lua')
-dofile('data/lib/051-storages.lua')
-dofile('data/lib/080-npcs.lua')
-dofile('data/lib/vocacoes.lua')
-dofile('data/lib/itens.lua')
-dofile('data/lib/090-reputacao.lua')
-dofile('data/lib/091-tasks.lua')
-dofile('data/lib/tutorial.lua')
-dofile('data/lib/marcasMapa.lua')
-dofile('data/lib/recompensaNivel.lua')
-dofile('data/lib/carregarMiniMapa.lua')
-dofile('data/lib/casamento.lua')
-dofile('data/lib/monstros.lua')
+
+PARTY_PROTECTION = 1
+ADVANCED_SECURE_MODE = 1
 
 if logoutDesativado == nil then
 	logoutDesativado = {}
