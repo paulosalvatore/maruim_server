@@ -47,6 +47,8 @@
 	<action itemid="7537" script="geral.lua" /><!-- Spider Egg -->
 	<action itemid="7585" script="geral.lua" /><!-- Spider Egg -->
 	<action fromid="8046" toid="8047" script="geral.lua" /><!-- Something Sparkling -->
+	<action itemid="3743" script="geral.lua" /><!-- Bamboo Lamp -->
+	<action itemid="4404" script="geral.lua" /><!-- Bamboo Lamp -->
 
 	<action actionid="2902" script="geral.lua" /><!-- Janela do Castelo (Miraculum) -->
 	<action actionid="3901" script="geral.lua" /><!-- Rope and Shovel Kit -->
@@ -161,7 +163,9 @@
 	<action itemid="1788" function="increaseItemId" />
 	<action itemid="1789" function="decreaseItemId" />
 	<action itemid="1790" function="increaseItemId" />
+	<action itemid="1791" function="decreaseItemId" />
 	<action itemid="1792" function="increaseItemId" />
+	<action itemid="1793" function="decreaseItemId" />
 	<action itemid="1634" function="increaseItemId" />
 	<action itemid="1635" function="decreaseItemId" />
 	<action itemid="1636" function="increaseItemId" />

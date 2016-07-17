@@ -809,6 +809,16 @@ local config = {
 			}
 		}
 	},
+	[3743] = {
+		["default"] = {
+			transformar = {4404, 1, "item"},
+		}
+	},
+	[4404] = {
+		["default"] = {
+			transformar = {3743, 1, "item"},
+		}
+	},
 	["action"] = {
 		[3901] = {
 			["default"] = {
@@ -865,7 +875,7 @@ end
 
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
-	if isInArray(itensMovimentoDesativado, target:getActionId()) then
+	if isInArray(itensMovimentoDesativado, target.actionid) then
 		self:sendCancelMessage("Você não pode realizar essa ação.")
 		return false
 	end
