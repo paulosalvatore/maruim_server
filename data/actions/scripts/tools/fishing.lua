@@ -10,11 +10,13 @@ setConditionParam(conditionOutfit, CONDITION_PARAM_TICKS, 10000)
 addOutfitCondition(conditionOutfit, 0, 33, 0, 0, 0, 0, 0)
 local conditionEnergy = createConditionObject(CONDITION_ENERGY)
 addDamageCondition(conditionEnergy, 1, 1000, -35)
+
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	local targetId = target.itemid
 	if not isInArray(waterIds, targetId) or not isInArray(shimmerWaterIds, targetId) then
 		return false
 	end
+
 	if isInArray(waterIds, targetId) then
 		if item.itemid == 2580 then
 			if targetId == 10499 then
@@ -23,8 +25,10 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 					player:sendTextMessage(MESSAGE_STATUS_SMALL, "You are not the owner.")
 					return true
 				end
+
 				toPosition:sendMagicEffect(CONST_ME_WATERSPLASH)
 				target:remove()
+
 				local rareChance = math.random(1, 100)
 				if rareChance == 1 then
 					player:addItem(lootVeryRare[math.random(#lootVeryRare)], 1)
@@ -37,29 +41,34 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 				end
 				return true
 			end
+
 			if targetId ~= 7236 then
 				toPosition:sendMagicEffect(CONST_ME_LOSEENERGY)
 			end
+
 			if targetId == 493 or targetId == 15402 then
 				return true
 			end
+
 			player:addSkillTries(SKILL_FISHING, 1)
+
 			if math.random(1, 100) <= math.min(math.max(10 + (player:getEffectiveSkillLevel(SKILL_FISHING) - 10) * 0.597, 10), 50) then
 				if useWorms and not player:removeItem("worm", 1) then
 					return true
 				end
+
 				if targetId == 15401 then
-					local target = Item(target.uid)
 					target:transform(targetId + 1)
 					target:decay()
+
 					if math.random(1, 100) >= 97 then
 						player:addItem(15405, 1)
 						return true
 					end
 				elseif targetId == 7236 then
-					local target = Item(target.uid)
 					target:transform(targetId + 1)
 					target:decay()
+
 					local rareChance = math.random(1, 100)
 					if rareChance == 1 then
 						player:addItem(7158, 1)
@@ -78,7 +87,9 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			if not player:removeItem(8309, 1) then
 				return true
 			end
+
 			toPosition:sendMagicEffect(CONST_ME_WATERSPLASH)
+
 			local chance = math.random(1, 100)
 			if chance <= 10 then
 				player:addItem(10224, 1)
@@ -92,10 +103,11 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	elseif isInArray(shimmerWaterIds, targetId) then
 		if item.itemid == 2580 then
 			player:addSkillTries(SKILL_FISHING, 1)
+
 			if useWorms and not player:removeItem("worm", 1) then
 				return true
 			end
-			-- if math.random(1, 100) <= math.min(math.max(10 + (player:getEffectiveSkillLevel(SKILL_FISHING) - 10) * 0.597, 10), 50) then
+
 			if math.random(1, 100) <= 5 then
 				player:addItem(13546, 1)
 			end
