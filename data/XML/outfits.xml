@@ -47,6 +47,12 @@
 	<outfit type="0" looktype="699" name="Spirit Caller" premium="no" unlocked="yes" enabled="yes" />
 	<outfit type="0" looktype="724" name="Evoker" premium="no" unlocked="yes" enabled="yes" />
 	<outfit type="0" looktype="732" name="Seaweaver" premium="no" unlocked="yes" enabled="yes" />
+	<outfit type="0" looktype="749" name="Sea Dog" premium="yes" unlocked="yes" enabled="yes" />
+	<outfit type="0" looktype="745" name="Recruiter" premium="yes" unlocked="yes" enabled="yes" />
+	<outfit type="0" looktype="759" name="Pumpkin Head" premium="yes" unlocked="yes" enabled="yes" />
+	<outfit type="0" looktype="845" name="Rift Warrior" premium="yes" unlocked="yes" enabled="yes" />
+	<outfit type="0" looktype="852" name="Winter Warden" premium="yes" unlocked="yes" enabled="yes" />
+	<outfit type="0" looktype="873" name="Philosopher" premium="yes" unlocked="yes" enabled="yes" />
 
 	<!-- Male outfits -->
 	<outfit type="1" looktype="128" name="Citizen" premium="no" unlocked="yes" enabled="yes" />
@@ -95,4 +101,10 @@
 	<outfit type="1" looktype="723" name="Spirit Caller" premium="no" unlocked="yes" enabled="yes" />
 	<outfit type="1" looktype="725" name="Evoker" premium="no" unlocked="yes" enabled="yes" />
 	<outfit type="1" looktype="733" name="Seaweaver" premium="no" unlocked="yes" enabled="yes" />
+	<outfit type="1" looktype="750" name="Sea Dog" premium="yes" unlocked="yes" enabled="yes" />
+	<outfit type="1" looktype="746" name="Recruiter" premium="yes" unlocked="yes" enabled="yes" />
+	<outfit type="1" looktype="760" name="Pumpkin Head" premium="yes" unlocked="yes" enabled="yes" />
+	<outfit type="1" looktype="846" name="Rift Warrior" premium="yes" unlocked="yes" enabled="yes" />
+	<outfit type="1" looktype="853" name="Winter Warden" premium="yes" unlocked="yes" enabled="yes" />
+	<outfit type="1" looktype="874" name="Philosopher" premium="yes" unlocked="yes" enabled="yes" />
 </outfits>
