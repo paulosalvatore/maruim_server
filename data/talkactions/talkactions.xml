@@ -55,6 +55,8 @@
 	<talkaction words="!buyhouse" script="buyhouse.lua" />
 	<talkaction words="!leavehouse" script="leavehouse.lua" />
 	<talkaction words="exura res" script="reviver_masmorra.lua" />
+ 	<talkaction words="!cast" separator=" " script="start_cast.lua" />
+	<talkaction words="!stopcast" script="stop_cast.lua" />
 
 	<!-- test effects talkactions -->
 	<talkaction words="!z" separator=" " script="magiceffect.lua" />
