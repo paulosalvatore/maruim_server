@@ -12,6 +12,7 @@ whiteSkullTime = 15 * 60 * 1000
 stairJumpExhaustion = 2000
 experienceByKillingPlayers = false
 expFromPlayersLevelRange = 75
+allowWalkthrough = true
 
 -- Connection Config
 -- NOTE: maxPlayers set to 0 means no limit
@@ -22,18 +23,26 @@ gameProtocolPort = 7172
 statusProtocolPort = 7171
 maxPlayers = 0
 motd = "Seja bem-vindo ao MaruimOT!"
-onePlayerOnlinePerAccount = true
+onePlayerOnlinePerAccount = false
 allowClones = false
 serverName = "MaruimOT"
 statusTimeout = 5000
 replaceKickOnLogin = true
 maxPacketsPerSecond = 40
 
+-- Cast
+enableLiveCasting = true
+liveCastPort = 7173
+
+-- Store Config
+storeImagesUrl = "http://link/to/store"
+storeCoinPacket = 5
+
 -- Deaths
 -- NOTE: Leave deathLosePercent as -1 if you want to use the default
 -- death penalty formula. For the old formula, set it to 10. For
 -- no skill/experience loss, set it to 0.
-deathLosePercent = 0
+deathLosePercent = -1
 
 -- Houses
 -- NOTE: set housePriceEachSQM to -1 to disable the ingame buy house functionality
