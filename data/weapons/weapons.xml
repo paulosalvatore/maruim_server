@@ -1,81 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <weapons>
 	<!-- Rods -->
-	<wand id="23721" level="1" mana="0" script="druid rod.lua"> <!-- Druid Rod -->
+	<wand id="23721" level="1" mana="0" script="druid_rod.lua"><!-- Druid Rod -->
 		<vocation name="Druid" />
 	</wand>
-	<wand id="2182" level="7" mana="2" min="8" max="18" type="earth"> <!-- Snakebit Rod -->
+	<wand id="2182" level="7" mana="2" min="8" max="18" type="earth"><!-- Snakebit Rod -->
 		<vocation name="Druid" />
 	</wand>
-	<wand id="2186" level="13" mana="3" min="13" max="25" type="ice"> <!-- Moonlight Rod -->
+	<wand id="2186" level="13" mana="3" min="13" max="25" type="ice"><!-- Moonlight Rod -->
 		<vocation name="Druid" />
 	</wand>
-	<wand id="2185" level="19" mana="5" min="27" max="33" type="death"> <!-- Necrotic Rod -->
+	<wand id="2185" level="19" mana="5" min="27" max="33" type="death"><!-- Necrotic Rod -->
 		<vocation name="Druid" />
 	</wand>
-	<wand id="8911" level="22" mana="5" min="27" max="33" type="ice"> <!-- Northwind Rod -->
+	<wand id="8911" level="22" mana="5" min="27" max="33" type="ice"><!-- Northwind Rod -->
 		<vocation name="Druid" />
 	</wand>
-	<wand id="2181" level="26" mana="8" min="42" max="48" type="earth"> <!-- Terra Rod -->
+	<wand id="2181" level="26" mana="8" min="42" max="48" type="earth"><!-- Terra Rod -->
 		<vocation name="Druid" />
 	</wand>
-	<wand id="2183" level="33" mana="13" min="55" max="75" type="ice"> <!-- Hailstorm Rod -->
+	<wand id="2183" level="33" mana="13" min="55" max="75" type="ice"><!-- Hailstorm Rod -->
 		<vocation name="Druid" />
 	</wand>
-	<wand id="8912" level="37" mana="13" min="55" max="75" type="earth"> <!-- Springsprout Rod -->
+	<wand id="8912" level="37" mana="13" min="55" max="75" type="earth"><!-- Springsprout Rod -->
 		<vocation name="Druid" />
 	</wand>
-	<wand id="8910" level="42" mana="13" min="55" max="75" type="death"> <!-- Underworld Rod -->
+	<wand id="8910" level="42" mana="13" min="55" max="75" type="death"><!-- Underworld Rod -->
 		<vocation name="Druid" />
 	</wand>
-	<wand id="13872" level="40" mana="13" min="55" max="75" type="ice"> <!-- Shimmer Rod -->
+	<wand id="13872" level="40" mana="13" min="55" max="75" type="ice"><!-- Shimmer Rod -->
 		<vocation name="Druid" />
 	</wand>
-	<wand id="18411" level="65" mana="17" min="70" max="100" type="earth"> <!-- Muck Rod -->
+	<wand id="18411" level="65" mana="17" min="70" max="100" type="earth"><!-- Muck Rod -->
 		<vocation name="Druid" />
 	</wand>
-	<wand id="18412" level="65" mana="17" min="70" max="100" type="ice"> <!-- Glacial Rod -->
+	<wand id="18412" level="65" mana="17" min="70" max="100" type="ice"><!-- Glacial Rod -->
 		<vocation name="Druid" />
 	</wand>
 
 	<!-- Wands -->
-	<wand id="23719" level="1" mana="0" script="sorcerer wand.lua"> <!-- Sorcerer Wand -->
+	<wand id="23719" level="1" mana="0" script="sorcerer_wand.lua"><!-- Sorcerer Wand -->
 		<vocation name="Sorcerer" />
 	</wand>
-	<wand id="2190" level="7" mana="2" min="8" max="18" type="energy"> <!-- Wand of Vortex -->
+	<wand id="2190" level="7" mana="2" min="8" max="18" type="energy"><!-- Wand of Vortex -->
 		<vocation name="Sorcerer" />
 	</wand>
-	<wand id="2191" level="13" mana="3" min="13" max="25" type="fire"> <!-- Wand of Dragonbreath -->
+	<wand id="2191" level="13" mana="3" min="13" max="25" type="fire"><!-- Wand of Dragonbreath -->
 		<vocation name="Sorcerer" />
 	</wand>
-	<wand id="2188" level="19" mana="5" min="27" max="33" type="death"> <!-- Wand of Decay -->
+	<wand id="2188" level="19" mana="5" min="27" max="33" type="death"><!-- Wand of Decay -->
 		<vocation name="Sorcerer" />
 	</wand>
-	<wand id="8921" level="22" mana="5" min="27" max="33" type="fire"> <!-- Wand of Draconia -->
+	<wand id="8921" level="22" mana="5" min="27" max="33" type="fire"><!-- Wand of Draconia -->
 		<vocation name="Sorcerer" />
 	</wand>
-	<wand id="2189" level="26" mana="8" min="42" max="48" type="energy"> <!-- Wand of Cosmic Energy -->
+	<wand id="2189" level="26" mana="8" min="42" max="48" type="energy"><!-- Wand of Cosmic Energy -->
 		<vocation name="Sorcerer" />
 	</wand>
-	<wand id="2187" level="33" mana="13" min="55" max="75" type="fire"> <!-- Wand of Inferno -->
+	<wand id="2187" level="33" mana="13" min="55" max="75" type="fire"><!-- Wand of Inferno -->
 		<vocation name="Sorcerer" />
 	</wand>
-	<wand id="8920" level="37" mana="13" min="55" max="75" type="energy"> <!-- Wand of Starmstorm -->
+	<wand id="8920" level="37" mana="13" min="55" max="75" type="energy"><!-- Wand of Starmstorm -->
 		<vocation name="Sorcerer" />
 	</wand>
-	<wand id="8922" level="42" mana="13" min="55" max="75" type="death"> <!-- Wand of Voodoo -->
+	<wand id="8922" level="42" mana="13" min="55" max="75" type="death"><!-- Wand of Voodoo -->
 		<vocation name="Sorcerer" />
 	</wand>
-	<wand id="13760" level="37" mana="13" min="55" max="75" type="death"> <!-- Wand of Dimensions -->
+	<wand id="13760" level="37" mana="13" min="55" max="75" type="death"><!-- Wand of Dimensions -->
 		<vocation name="Sorcerer" />
 	</wand>
-	<wand id="13880" level="40" mana="13" min="55" max="75" type="energy"> <!-- Shimmer Wand -->
+	<wand id="13880" level="40" mana="13" min="55" max="75" type="energy"><!-- Shimmer Wand -->
 		<vocation name="Sorcerer" />
 	</wand>
-	<wand id="18390" level="65" mana="17" min="70" max="100" type="energy"> <!-- Wand of Defiance -->
+	<wand id="18390" level="65" mana="17" min="70" max="100" type="energy"><!-- Wand of Defiance -->
 		<vocation name="Sorcerer" />
 	</wand>
-	<wand id="18409" level="65" mana="17" min="70" max="100" type="fire"> <!-- Wand of Everblazing -->
+	<wand id="18409" level="65" mana="17" min="70" max="100" type="fire"><!-- Wand of Everblazing -->
 		<vocation name="Sorcerer" />
 	</wand>
 
@@ -114,7 +114,7 @@
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
 	<melee id="2446" level="45" unproperly="1" />
-	<melee id="7402" level="45" unproperly="1" script="dragon slayer.lua">
+	<melee id="7402" level="45" unproperly="1" script="dragon_slayer.lua">
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
@@ -203,6 +203,12 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
+	<melee id="23548" level="25" unproperly="1" />
+	<melee id="23550" level="75" unproperly="1">
+		<vocation name="Knight" />
+		<vocation name="Elite Knight" showInDescription="0" />
+	</melee>
+
 	<!-- Fire -->
 	<melee id="7744" action="removecharge" />
 	<melee id="7745" level="50" action="removecharge" unproperly="1" />
@@ -211,10 +217,11 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
-	<melee id="7748" level="45" action="removecharge" unproperly="1" script="dragon slayer.lua">
+	<melee id="7748" level="45" action="removecharge" unproperly="1" script="dragon_slayer.lua">
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
+
 	<!-- Ice -->
 	<melee id="7763" action="removecharge" />
 	<melee id="7764" level="50" action="removecharge" unproperly="1" />
@@ -223,10 +230,11 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
-	<melee id="7767" level="45" action="removecharge" unproperly="1" script="dragon slayer.lua">
+	<melee id="7767" level="45" action="removecharge" unproperly="1" script="dragon_slayer.lua">
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
+
 	<!-- Earth -->
 	<melee id="7854" action="removecharge" />
 	<melee id="7855" level="50" action="removecharge" unproperly="1" />
@@ -235,10 +243,11 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
-	<melee id="7858" level="45" action="removecharge" unproperly="1" script="dragon slayer.lua">
+	<melee id="7858" level="45" action="removecharge" unproperly="1" script="dragon_slayer.lua">
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
+
 	<!-- Energy -->
 	<melee id="7869" action="removecharge" />
 	<melee id="7870" level="50" action="removecharge" unproperly="1" />
@@ -247,7 +256,7 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
-	<melee id="7873" level="45" action="removecharge" unproperly="1" script="dragon slayer.lua">
+	<melee id="7873" level="45" action="removecharge" unproperly="1" script="dragon_slayer.lua">
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
@@ -367,6 +376,13 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
+	<melee id="23545" level="45" unproperly="1" />
+	<melee id="23547" level="55" unproperly="1" />
+	<melee id="23551" level="75" unproperly="1">
+		<vocation name="Knight" />
+		<vocation name="Elite Knight" showInDescription="0" />
+	</melee>
+
 	<!-- Fire -->
 	<melee id="7749" level="20" action="removecharge" unproperly="1" />
 	<melee id="7750" level="25" action="removecharge" unproperly="1" />
@@ -379,6 +395,7 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
+
 	<!-- Ice -->
 	<melee id="7768" level="20" action="removecharge" unproperly="1" />
 	<melee id="7769" level="25" action="removecharge" unproperly="1" />
@@ -391,6 +408,7 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
+
 	<!-- Earth -->
 	<melee id="7859" level="20" action="removecharge" unproperly="1" />
 	<melee id="7860" level="25" action="removecharge" unproperly="1" />
@@ -403,6 +421,7 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
+
 	<!-- Energy -->
 	<melee id="7874" level="20" action="removecharge" />
 	<melee id="7875" level="25" action="removecharge" unproperly="1" />
@@ -416,7 +435,7 @@
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
 
-	<!--Clubs -->
+	<!-- Clubs -->
 	<melee id="2423" level="20" unproperly="1" />
 	<melee id="7381" level="20" unproperly="1" />
 	<melee id="7425" level="20" unproperly="1" />
@@ -520,6 +539,12 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
+	<melee id="23590" level="70" unproperly="1" />
+	<melee id="23549" level="75" unproperly="1">
+		<vocation name="Knight" />
+		<vocation name="Elite Knight" showInDescription="0" />
+	</melee>
+
 	<!-- Fire -->
 	<melee id="7754" level="20" action="removecharge" unproperly="1" />
 	<melee id="7755" level="35" action="removecharge" unproperly="1" />
@@ -529,6 +554,7 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
+
 	<!-- Ice -->
 	<melee id="7773" level="20" action="removecharge" unproperly="1" />
 	<melee id="7774" level="35" action="removecharge" unproperly="1" />
@@ -538,6 +564,7 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
+
 	<!-- Earth -->
 	<melee id="7864" level="20" action="removecharge" unproperly="1" />
 	<melee id="7865" level="35" action="removecharge" unproperly="1" />
@@ -547,6 +574,7 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
+
 	<!-- Energy -->
 	<melee id="7879" level="20" action="removecharge" unproperly="1" />
 	<melee id="7880" level="35" action="removecharge" unproperly="1" />
@@ -558,134 +586,135 @@
 	</melee>
 
 	<!-- Bows and Crossbows -->
-	<distance id="5803" level="75" unproperly="1"> <!-- Arbalest -->
+	<distance id="5803" level="75" unproperly="1"><!-- Arbalest -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="8849" level="45" unproperly="1"> <!-- Modified Crossbow -->
+	<distance id="8849" level="45" unproperly="1"><!-- Modified Crossbow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="8850" level="60" unproperly="1"> <!-- Chain Bolter -->
+	<distance id="8850" level="60" unproperly="1"><!-- Chain Bolter -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="8853" level="80" unproperly="1"> <!-- Ironworker -->
+	<distance id="8853" level="80" unproperly="1"><!-- Ironworker -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="8852" level="100" unproperly="1"> <!-- Devileye -->
+	<distance id="8852" level="100" unproperly="1"><!-- Devileye -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="8851" level="130" unproperly="1"> <!-- Royal Crossbow -->
+	<distance id="8851" level="130" unproperly="1"><!-- Royal Crossbow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="8857" level="40" unproperly="1"> <!-- Silkweaver Bow -->
+	<distance id="8857" level="40" unproperly="1"><!-- Silkweaver Bow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="8855" level="50" unproperly="1"> <!-- Composite Hornbow -->
+	<distance id="8855" level="50" unproperly="1"><!-- Composite Hornbow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="8856" level="60" unproperly="1"> <!-- Yol's Bow -->
+	<distance id="8856" level="60" unproperly="1"><!-- Yol's Bow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="8858" level="70" unproperly="1"> <!-- Elethriel's Elemental Bow -->
+	<distance id="8858" level="70" unproperly="1"><!-- Elethriel's Elemental Bow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="8854" level="80" unproperly="1"> <!-- Warsinger Bow -->
+	<distance id="8854" level="80" unproperly="1"><!-- Warsinger Bow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="13873" level="40" unproperly="1"> <!-- Shimmer Bow -->
+	<distance id="13873" level="40" unproperly="1"><!-- Shimmer Bow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="15643" level="85" unproperly="1"> <!-- Hive Bow -->
+	<distance id="15643" level="85" unproperly="1"><!-- Hive Bow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="15644" level="50" unproperly="1"> <!-- Ornate Crossbow -->
+	<distance id="15644" level="50" unproperly="1"><!-- Ornate Crossbow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="16111" level="150" unproperly="1"> <!-- Thorn Spitter -->
+	<distance id="16111" level="150" unproperly="1"><!-- Thorn Spitter -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="18453" level="90" unproperly="1"> <!-- Crystal Crossbow -->
+	<distance id="18453" level="90" unproperly="1"><!-- Crystal Crossbow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="18454" level="105" unproperly="1"> <!-- Mycological Bow -->
+	<distance id="18454" level="105" unproperly="1"><!-- Mycological Bow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="21690" level="70" unproperly="1"> <!-- Triple Bolt Crossbow -->
+	<distance id="21690" level="70" unproperly="1"><!-- Triple Bolt Crossbow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="21696" unproperly="1" /> <!-- Icicle Bow -->
-	<distance id="22416" level="75" unproperly="1"> <!-- Crude Umbral Bow -->
+	<distance id="21696" unproperly="1" /><!-- Icicle Bow -->
+	<distance id="22416" level="75" unproperly="1"><!-- Crude Umbral Bow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="22417" level="150" unproperly="1"> <!-- Umbral Bow -->
+	<distance id="22417" level="150" unproperly="1"><!-- Umbral Bow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="22418" level="250" unproperly="1"> <!-- Umbral Master Bow -->
+	<distance id="22418" level="250" unproperly="1"><!-- Umbral Master Bow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="22419" level="75" unproperly="1"> <!-- Crude Umbral Crossbow -->
+	<distance id="22419" level="75" unproperly="1"><!-- Crude Umbral Crossbow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="22420" level="150" unproperly="1"> <!-- Umbral Crossbow -->
+	<distance id="22420" level="150" unproperly="1"><!-- Umbral Crossbow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
-	<distance id="22421" level="250" unproperly="1"> <!-- Umbral Master Crossbow -->
+	<distance id="22421" level="250" unproperly="1"><!-- Umbral Master Crossbow -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
 
  	<!-- Ammunition -->
-	<distance id="1294" breakchance="3" /> <!-- Small Stone -->
-	<distance id="2111" action="removecount" /> <!-- Snowball -->
-	<distance id="2389" breakchance="3" /> <!-- Spear -->
-	<distance id="19390" breakchance="3" /> <!-- Spire Spear -->
-	<distance id="2399" breakchance="10" /> <!-- Throwing Star -->
-	<distance id="2410" breakchance="7" /> <!-- Throwing Knife -->
-	<distance id="2543" action="removecount" /> <!-- Bolt -->
-	<distance id="2544" action="removecount" /> <!-- Arrow -->
-	<distance id="2545" action="removecount" script="poison arrow.lua" /> <!-- Poison Arrow -->
-	<distance id="2546" action="removecount" script="explosive arrow.lua" /> <!-- Burst Arrow -->
-	<distance id="2547" action="removecount" unproperly="1" level="55" /> <!-- Power Bolt -->
-	<distance id="3965" breakchance="6" unproperly="1" level="20" /> <!-- Hunting Spear -->
-	<distance id="6529" action="removecount" unproperly="1" level="110" /> <!-- Infernal Bolt -->
-	<distance id="7363" action="removecount" unproperly="1" level="30" /> <!-- Piercing Bolt -->
-	<distance id="7364" action="removecount" unproperly="1" level="20" /> <!-- Sniper Arrow -->
-	<distance id="7365" action="removecount" unproperly="1" level="40" /> <!-- Onyx Arrow -->
-	<distance id="7366" breakchance="9" script="viper star.lua" /> <!-- Viper Star -->
-	<distance id="7367" breakchance="1" unproperly="1" level="42" /> <!-- Enchanted Spear -->
-	<distance id="7368" breakchance="33" unproperly="1" level="80" /> <!-- Assassin Star -->
-	<distance id="7378" breakchance="3" unproperly="1" level="25" /> <!-- Royal Spear -->
-	<distance id="7838" action="removecount" unproperly="1" level="20" /> <!-- Flash Arrow -->
-	<distance id="7839" action="removecount" unproperly="1" level="20" /> <!-- Shiver Arrow -->
-	<distance id="7840" action="removecount" unproperly="1" level="20" /> <!-- Flaming Arrow -->
-	<distance id="7850" action="removecount" unproperly="1" level="20" /> <!-- Earth Arrow -->
-	<distance id="15648" action="removecount" unproperly="1" level="30" /> <!-- Tarsal Arrow -->
-	<distance id="15649" action="removecount" unproperly="1" level="40" /> <!-- Vortex Bolt -->
-	<distance id="18303" action="removecount" /> <!-- crystal bolt -->
-	<distance id="18304" action="removecount" unproperly="1" level="90" /> <!-- Crystalline Arrow -->
-	<distance id="18435" action="removecount" unproperly="1" level="90" /> <!-- Prismatic Bolt -->
-	<distance id="18436" action="removecount" unproperly="1" level="70" /> <!-- Drill Bolt -->
-	<distance id="18437" action="removecount" unproperly="1" level="70" /> <!-- Envenomed Arrow -->
+	<distance id="1294" breakchance="3" /><!-- Small Stone -->
+	<distance id="2111" action="removecount" /><!-- Snowball -->
+	<distance id="2389" breakchance="3" /><!-- Spear -->
+	<distance id="19390" breakchance="3" /><!-- Spire Spear -->
+	<distance id="2399" breakchance="10" /><!-- Throwing Star -->
+	<distance id="2410" breakchance="7" /><!-- Throwing Knife -->
+	<distance id="2543" action="removecount" /><!-- Bolt -->
+	<distance id="2544" action="removecount" /><!-- Arrow -->
+	<distance id="2545" action="removecount" script="poison_arrow.lua" /><!-- Poison Arrow -->
+	<distance id="2546" action="removecount" script="burst_arrow.lua" /><!-- Burst Arrow -->
+	<distance id="2547" action="removecount" unproperly="1" level="55" /><!-- Power Bolt -->
+	<distance id="3965" breakchance="6" unproperly="1" level="20" /><!-- Hunting Spear -->
+	<distance id="6529" action="removecount" unproperly="1" level="110" /><!-- Infernal Bolt -->
+	<distance id="7363" action="removecount" unproperly="1" level="30" /><!-- Piercing Bolt -->
+	<distance id="7364" action="removecount" unproperly="1" level="20" /><!-- Sniper Arrow -->
+	<distance id="7365" action="removecount" unproperly="1" level="40" /><!-- Onyx Arrow -->
+	<distance id="7366" breakchance="9" script="viper_star.lua" /><!-- Viper Star -->
+	<distance id="7367" breakchance="1" unproperly="1" level="42" /><!-- Enchanted Spear -->
+	<distance id="7368" breakchance="33" unproperly="1" level="80" /><!-- Assassin Star -->
+	<distance id="7378" breakchance="3" unproperly="1" level="25" /><!-- Royal Spear -->
+	<distance id="7838" action="removecount" unproperly="1" level="20" /><!-- Flash Arrow -->
+	<distance id="7839" action="removecount" unproperly="1" level="20" /><!-- Shiver Arrow -->
+	<distance id="7840" action="removecount" unproperly="1" level="20" /><!-- Flaming Arrow -->
+	<distance id="7850" action="removecount" unproperly="1" level="20" /><!-- Earth Arrow -->
+	<distance id="15648" action="removecount" unproperly="1" level="30" /><!-- Tarsal Arrow -->
+	<distance id="15649" action="removecount" unproperly="1" level="40" /><!-- Vortex Bolt -->
+	<distance id="18304" action="removecount" unproperly="1" level="90" /><!-- Crystalline Arrow -->
+	<distance id="18435" action="removecount" unproperly="1" level="90" /><!-- Prismatic Bolt -->
+	<distance id="18436" action="removecount" unproperly="1" level="70" /><!-- Drill Bolt -->
+	<distance id="18437" action="removecount" unproperly="1" level="70" /><!-- Envenomed Arrow -->
+	<distance id="23529" breakchance="31" unproperly="1" level="60" /> <!-- Glooth Spear -->
+	<distance id="23839" action="removecount" unproperly="0" level="1" /> <!-- Simple Arrow -->
 </weapons>
