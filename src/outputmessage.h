@@ -65,7 +65,13 @@ class OutputMessage : public NetworkMessage
 			length += msgLen;
 			position += msgLen;
 		}
-
+		
+		bool isBroadcastMsg() const {
+			return isBroadcastMesssage;
+		}
+		void setBroadcastMsg(bool isBroadcastMesssage) {
+			this->isBroadcastMesssage = isBroadcastMesssage;
+		}
 	protected:
 		template <typename T>
 		inline void add_header(T add) {
@@ -77,6 +83,7 @@ class OutputMessage : public NetworkMessage
 		}
 
 		MsgSize_t outputBufferStart;
+		bool isBroadcastMesssage{false};
 };
 
 class OutputMessagePool

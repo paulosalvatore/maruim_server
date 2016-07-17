@@ -308,7 +308,7 @@ ReturnValue Container::queryAdd(int32_t index, const Thing& thing, uint32_t coun
 			cylinder = cylinder->getParent();
 		}
 
-		if (index == INDEX_WHEREEVER && size() >= capacity()) {
+		if (index == INDEX_WHEREEVER && size() >= capacity() && !hasPagination()) {
 			return RETURNVALUE_CONTAINERNOTENOUGHROOM;
 		}
 	} else {
@@ -338,7 +338,7 @@ ReturnValue Container::queryMaxCount(int32_t index, const Thing& thing, uint32_t
 		return RETURNVALUE_NOTPOSSIBLE;
 	}
 
-	if (hasBitSet(FLAG_NOLIMIT, flags)) {
+	if (hasBitSet(FLAG_NOLIMIT, flags) || hasPagination()) {
 		maxQueryCount = std::max<uint32_t>(1, count);
 		return RETURNVALUE_NOERROR;
 	}
@@ -443,9 +443,16 @@ Cylinder* Container::queryDestination(int32_t& index, const Thing &thing, Item**
 		return this;
 	}
 
+	if (index != INDEX_WHEREEVER) {
+		Item* itemFromIndex = getItemByIndex(index);
+		if (itemFromIndex) {
+			*destItem = itemFromIndex;
+		}
+	}
+
 	bool autoStack = !hasBitSet(FLAG_IGNOREAUTOSTACK, flags);
-	if (autoStack && item->isStackable() && item->getParent() != this) {
-		//try find a suitable item to stack with
+	//try find a suitable item to stack with
+	if (autoStack && item->isStackable() && item->getParent() != this && !(*destItem && (*destItem)->equals(item))) {
 		uint32_t n = 0;
 		for (Item* listItem : itemlist) {
 			if (listItem != item && listItem->equals(item) && listItem->getItemCount() < 100) {
@@ -457,18 +464,11 @@ Cylinder* Container::queryDestination(int32_t& index, const Thing &thing, Item**
 		}
 	}
 
-	if (index != INDEX_WHEREEVER) {
-		Item* itemFromIndex = getItemByIndex(index);
-		if (itemFromIndex) {
-			*destItem = itemFromIndex;
-		}
-
-		Cylinder* subCylinder = dynamic_cast<Cylinder*>(*destItem);
-		if (subCylinder) {
-			index = INDEX_WHEREEVER;
-			*destItem = nullptr;
-			return subCylinder;
-		}
+	Cylinder* subCylinder = dynamic_cast<Cylinder*>(*destItem);
+	if (subCylinder) {
+		index = INDEX_WHEREEVER;
+		*destItem = nullptr;
+		return subCylinder;
 	}
 	return this;
 }

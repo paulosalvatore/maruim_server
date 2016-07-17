@@ -25,6 +25,14 @@
 DepotChest::DepotChest(uint16_t type) :
 	Container(type), maxDepotItems(1500) {}
 
+DepotChest::DepotChest(uint16_t type, bool pagination) :
+	Container(type)
+{
+	maxDepotItems = 2000;
+	maxSize = 32;
+	pagination;
+}
+
 ReturnValue DepotChest::queryAdd(int32_t index, const Thing& thing, uint32_t count,
 		uint32_t flags, Creature* actor/* = nullptr*/) const
 {

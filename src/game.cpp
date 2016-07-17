@@ -123,7 +123,6 @@ void Game::setGameState(GameState_t newState)
 	switch (newState) {
 		case GAME_STATE_INIT: {
 			commands.loadFromXml();
-
 			loadExperienceStages();
 
 			groups.load();
@@ -1183,7 +1182,12 @@ ReturnValue Game::internalMoveItem(Cylinder* fromCylinder, Cylinder* toCylinder,
 
 	//add item
 	if (moveItem /*m - n > 0*/) {
-		toCylinder->addThing(index, moveItem);
+		if (fromCylinder == toCylinder) {
+			toCylinder->addThing(index, moveItem);
+				
+		} else {
+			internalAddItem(toCylinder, moveItem, INDEX_WHEREEVER, flags);
+		}
 	}
 
 	if (itemIndex != -1) {
@@ -1251,7 +1255,7 @@ ReturnValue Game::internalAddItem(Cylinder* toCylinder, Item* item, int32_t inde
 	uint32_t maxQueryCount = 0;
 	ret = destCylinder->queryMaxCount(INDEX_WHEREEVER, *item, item->getItemCount(), maxQueryCount, flags);
 
-	if (ret != RETURNVALUE_NOERROR) {
+	if (ret != RETURNVALUE_NOERROR && toCylinder->getItem() && toCylinder->getItem()->getID() != ITEM_REWARD_CONTAINER) {
 		return ret;
 	}
 
@@ -2383,7 +2387,7 @@ void Game::playerSeekInContainer(uint32_t playerId, uint8_t containerId, uint16_
 	}
 
 	player->setContainerIndex(containerId, index);
-	player->sendContainer(containerId, container, false, index);
+	player->sendContainer(containerId, container, container->hasParent(), index);
 }
 
 void Game::playerUpdateHouseWindow(uint32_t playerId, uint8_t listId, uint32_t windowTextId, const std::string& text)
@@ -3251,6 +3255,10 @@ void Game::playerSay(uint32_t playerId, uint16_t channelId, SpeakClasses type,
 
 	if (type != TALKTYPE_PRIVATE_PN) {
 		player->removeMessageBuffer();
+	}
+
+	if (channelId == CHANNEL_CAST) {
+		player->sendChannelMessage(player->getName(), text, TALKTYPE_CHANNEL_R1, channelId);
 	}
 
 	switch (type) {
@@ -4379,6 +4387,9 @@ void Game::resetCommandTag()
 
 void Game::shutdown()
 {
+	std::cout << "Saving game..." << std::flush;
+	saveGameState();
+
 	std::cout << "Shutting down..." << std::flush;
 
 	g_scheduler.shutdown();
@@ -4650,20 +4661,23 @@ bool Game::loadExperienceStages()
 	for (auto stageNode : doc.child("stages").children()) {
 		if (strcasecmp(stageNode.name(), "config") == 0) {
 			stagesEnabled = stageNode.attribute("enabled").as_bool();
-		} else {
+		}
+		else {
 			uint32_t minLevel, maxLevel, multiplier;
 
 			pugi::xml_attribute minLevelAttribute = stageNode.attribute("minlevel");
 			if (minLevelAttribute) {
 				minLevel = pugi::cast<uint32_t>(minLevelAttribute.value());
-			} else {
+			}
+			else {
 				minLevel = 1;
 			}
 
 			pugi::xml_attribute maxLevelAttribute = stageNode.attribute("maxlevel");
 			if (maxLevelAttribute) {
 				maxLevel = pugi::cast<uint32_t>(maxLevelAttribute.value());
-			} else {
+			}
+			else {
 				maxLevel = 0;
 				lastStageLevel = minLevel;
 				useLastStageLevel = true;
@@ -4672,13 +4686,15 @@ bool Game::loadExperienceStages()
 			pugi::xml_attribute multiplierAttribute = stageNode.attribute("multiplier");
 			if (multiplierAttribute) {
 				multiplier = pugi::cast<uint32_t>(multiplierAttribute.value());
-			} else {
+			}
+			else {
 				multiplier = 1;
 			}
 
 			if (useLastStageLevel) {
 				stages[lastStageLevel] = multiplier;
-			} else {
+			}
+			else {
 				for (uint32_t i = minLevel; i <= maxLevel; ++i) {
 					stages[i] = multiplier;
 				}
@@ -4847,7 +4863,7 @@ void Game::playerReportBug(uint32_t playerId, const std::string& message, const 
 	query << "INSERT INTO `reports` (`conta`, `jogador`, `posicao_x`, `posicao_y`, `posicao_z`, `mensagem`, `categoria`, `data`) VALUES (" << player->getAccount() << ',' << player->getGUID() << ',' << position.getX() << ',' << position.getY() << ',' << position.getZ() << ',' << db->escapeString(message.c_str()) << ',' << db->escapeString(showCategory.c_str()) << ',' << currentTime << ')';
 	db->executeQuery(query.str());
 
-	player->sendTextMessage(MESSAGE_EVENT_DEFAULT, "Sua reportaÃ§Ã£o foi registrada com sucesso.");
+	player->sendTextMessage(MESSAGE_EVENT_DEFAULT, "Sua reportação foi registrada com sucesso.");
 }
 
 void Game::playerDebugAssert(uint32_t playerId, const std::string& assertLine, const std::string& date, const std::string& description, const std::string& comment)
@@ -4993,12 +5009,12 @@ void Game::playerCreateMarketOffer(uint32_t playerId, uint8_t type, uint16_t spr
 			return;
 		}
 
-		DepotChest* depotChest = player->getDepotChest(player->getLastDepotId(), false);
-		if (!depotChest) {
+		DepotLocker* depotLocker = player->getDepotLocker(player->getLastDepotId());
+		if (!depotLocker) {
 			return;
 		}
 
-		std::forward_list<Item*> itemList = getMarketItemList(it.wareId, amount, depotChest, player->getInbox());
+		std::forward_list<Item*> itemList = getMarketItemList(it.wareId, amount, depotLocker);
 		if (itemList.empty()) {
 			return;
 		}
@@ -5132,12 +5148,12 @@ void Game::playerAcceptMarketOffer(uint32_t playerId, uint32_t timestamp, uint16
 	uint64_t totalPrice = static_cast<uint64_t>(offer.price) * amount;
 
 	if (offer.type == MARKETACTION_BUY) {
-		DepotChest* depotChest = player->getDepotChest(player->getLastDepotId(), false);
-		if (!depotChest) {
+		DepotLocker* depotLocker = player->getDepotLocker(player->getLastDepotId());
+		if (!depotLocker) {
 			return;
 		}
 
-		std::forward_list<Item*> itemList = getMarketItemList(it.wareId, amount, depotChest, player->getInbox());
+		std::forward_list<Item*> itemList = getMarketItemList(it.wareId, amount, depotLocker);
 		if (itemList.empty()) {
 			return;
 		}
@@ -5282,12 +5298,12 @@ void Game::parsePlayerExtendedOpcode(uint32_t playerId, uint8_t opcode, const st
 	}
 }
 
-std::forward_list<Item*> Game::getMarketItemList(uint16_t wareId, uint16_t sufficientCount, DepotChest* depotChest, Inbox* inbox)
+std::forward_list<Item*> Game::getMarketItemList(uint16_t wareId, uint16_t sufficientCount, DepotLocker* depotLocker)
 {
 	std::forward_list<Item*> itemList;
 	uint16_t count = 0;
 
-	std::list<Container*> containers { depotChest, inbox };
+	std::list<Container*> containers{depotLocker};
 	do {
 		Container* container = containers.front();
 		containers.pop_front();

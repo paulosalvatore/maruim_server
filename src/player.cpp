@@ -155,6 +155,8 @@ Player::Player(ProtocolGame_ptr p) :
 	operatingSystem = CLIENTOS_NONE;
 	secureMode = false;
 	guid = 0;
+
+	rewardChest = nullptr;
 }
 
 Player::~Player()
@@ -171,6 +173,10 @@ Player::~Player()
 		it.second->decrementReferenceCounter();
 	}
 
+	for (const auto& it : rewardMap) {
+		it.second->decrementReferenceCounter();
+	}
+	
 	inbox->decrementReferenceCounter();
 
 	setWriteItem(nullptr);
@@ -819,7 +825,7 @@ bool Player::canWalkthrough(const Creature* creature) const
 	}
 
 	const Player* player = creature->getPlayer();
-	if (!player) {
+	if (!player || !g_config.getBoolean(ConfigManager::ALLOW_WALKTHROUGH)) {
 		return false;
 	}
 
@@ -855,7 +861,7 @@ bool Player::canWalkthroughEx(const Creature* creature) const
 	}
 
 	const Player* player = creature->getPlayer();
-	if (!player) {
+	if (!player || !g_config.getBoolean(ConfigManager::ALLOW_WALKTHROUGH)) {
 		return false;
 	}
 
@@ -888,6 +894,17 @@ bool Player::isNearDepotBox() const
 	return false;
 }
 
+DepotChest* Player::getDepotBox()
+{
+	DepotChest* depotBoxs = new DepotChest(ITEM_DEPOT);
+	depotBoxs->incrementReferenceCounter();
+	depotBoxs->setMaxDepotItems(getMaxDepotItems());
+	for (uint32_t index = 1; index <= 17; ++index) {
+		depotBoxs->internalAddThing(getDepotChest(18 - index, true));
+	}
+	return depotBoxs;
+}
+
 DepotChest* Player::getDepotChest(uint32_t depotId, bool autoCreate)
 {
 	auto it = depotChests.find(depotId);
@@ -899,9 +916,8 @@ DepotChest* Player::getDepotChest(uint32_t depotId, bool autoCreate)
 		return nullptr;
 	}
 
-	DepotChest* depotChest = new DepotChest(ITEM_DEPOT);
+	DepotChest* depotChest = new DepotChest(ITEM_DEPOT_NULL + depotId, true);
 	depotChest->incrementReferenceCounter();
-	depotChest->setMaxDepotItems(getMaxDepotItems());
 	depotChests[depotId] = depotChest;
 	return depotChest;
 }
@@ -911,6 +927,7 @@ DepotLocker* Player::getDepotLocker(uint32_t depotId)
 	auto it = depotLockerMap.find(depotId);
 	if (it != depotLockerMap.end()) {
 		inbox->setParent(it->second);
+		getDepotBox()->setParent(it->second);
 		return it->second;
 	}
 
@@ -918,9 +935,51 @@ DepotLocker* Player::getDepotLocker(uint32_t depotId)
 	depotLocker->setDepotId(depotId);
 	depotLocker->internalAddThing(Item::CreateItem(ITEM_MARKET));
 	depotLocker->internalAddThing(inbox);
-	depotLocker->internalAddThing(getDepotChest(depotId, true));
+	depotLocker->internalAddThing(getDepotBox());
 	depotLockerMap[depotId] = depotLocker;
 	return depotLocker;
+}
+
+RewardChest* Player::getRewardChest()
+{
+	if (rewardChest != nullptr) {
+		return rewardChest;
+	}
+
+	rewardChest = new RewardChest(ITEM_REWARD_CHEST);
+	return rewardChest;
+}
+
+Reward* Player::getReward(uint32_t rewardId, bool autoCreate)
+{
+	auto it = rewardMap.find(rewardId);
+	if (it != rewardMap.end()) {
+		return it->second;
+	}
+
+	if (!autoCreate) {
+		return nullptr;
+	}
+
+	Reward* reward = new Reward();
+	reward->incrementReferenceCounter();
+	reward->setIntAttr(ITEM_ATTRIBUTE_DATE, rewardId);
+	rewardMap[rewardId] = reward;
+
+	g_game.internalAddItem(getRewardChest(), reward, INDEX_WHEREEVER, FLAG_NOLIMIT);
+
+	return reward;
+}
+
+void Player::removeReward(uint32_t rewardId) {
+	rewardMap.erase(rewardId);
+}
+
+void Player::getRewardList(std::vector<uint32_t>& rewards) {
+	rewards.reserve(rewardMap.size());
+	for (auto& it : rewardMap) {
+		rewards.push_back(it.first);
+	}
 }
 
 void Player::sendCancelMessage(ReturnValue message) const
@@ -1955,7 +2014,7 @@ BlockType_t Player::blockHit(Creature* attacker, CombatType_t combatType, int32_
 			if (it.abilities) {
 				const int16_t& absorbPercent = it.abilities->absorbPercent[combatTypeToIndex(combatType)];
 				if (absorbPercent != 0) {
-					damage -= std::round(damage * (absorbPercent / 100.));
+					damage -= std::ceil(damage * (absorbPercent / 100.));
 
 					uint16_t charges = item->getCharges();
 					if (charges != 0) {
@@ -1966,7 +2025,7 @@ BlockType_t Player::blockHit(Creature* attacker, CombatType_t combatType, int32_
 				if (field) {
 					const int16_t& fieldAbsorbPercent = it.abilities->fieldAbsorbPercent[combatTypeToIndex(combatType)];
 					if (fieldAbsorbPercent != 0) {
-						damage -= std::round(damage * (fieldAbsorbPercent / 100.));
+						damage -= std::ceil(damage * (fieldAbsorbPercent / 100.));
 
 						uint16_t charges = item->getCharges();
 						if (charges != 0) {
@@ -2713,7 +2772,7 @@ Cylinder* Player::queryDestination(int32_t& index, const Thing& thing, Item** de
 
 		std::vector<Container*> containers;
 
-		for (uint32_t slotIndex = CONST_SLOT_FIRST; slotIndex <= CONST_SLOT_LAST; ++slotIndex) {
+		for (uint32_t slotIndex = CONST_SLOT_FIRST; slotIndex <= CONST_SLOT_AMMO; ++slotIndex) {
 			Item* inventoryItem = inventory[slotIndex];
 			if (inventoryItem) {
 				if (inventoryItem == tradeItem) {
@@ -3047,6 +3106,66 @@ std::map<uint32_t, uint32_t>& Player::getAllItemTypeCount(std::map<uint32_t, uin
 	return countMap;
 }
 
+Item* Player::getItemByClientId(uint16_t clientId) const
+{
+	for (int32_t i = CONST_SLOT_FIRST; i <= CONST_SLOT_LAST; i++) {
+		Item* item = inventory[i];
+		if (!item) {
+			continue;
+		}
+
+		if (item->getClientID() == clientId) {
+			return item;
+		}
+
+		if (Container* container = item->getContainer()) {
+			for (ContainerIterator it = container->iterator(); it.hasNext(); it.advance()) {
+				if ((*it)->getClientID() == clientId) {
+					return (*it);
+				}
+			}
+		}
+	}
+	return nullptr;
+}
+
+std::map<uint16_t, uint16_t> Player::getInventoryClientIds() const
+{
+	std::map<uint16_t, uint16_t> itemMap;
+	for (int32_t i = CONST_SLOT_FIRST; i <= CONST_SLOT_LAST; i++) {
+		Item* item = inventory[i];
+		if (!item) {
+			continue;
+		}
+
+		itemMap.emplace(item->getClientID(), Item::countByType(item, -1));
+
+		const ItemType& itemType = Item::items[item->getID()];
+		if (itemType.transformEquipTo) {
+			itemMap.emplace(Item::items[itemType.transformEquipTo].clientId, 1);
+		}
+
+		if (itemType.transformDeEquipTo) {
+			itemMap.emplace(Item::items[itemType.transformDeEquipTo].clientId, 1);
+		}
+
+		if (Container* container = item->getContainer()) {
+			for (ContainerIterator it = container->iterator(); it.hasNext(); it.advance()) {
+				itemMap.emplace((*it)->getClientID(), Item::countByType(*it, -1));
+				const ItemType& itItemType = Item::items[(*it)->getID()];
+				if (itItemType.transformEquipTo) {
+					itemMap.emplace(Item::items[itItemType.transformEquipTo].clientId, 1);
+				}
+
+				if (itItemType.transformDeEquipTo) {
+					itemMap.emplace(Item::items[itItemType.transformDeEquipTo].clientId, 1);
+				}
+			}
+		}
+	}
+	return itemMap;
+}
+
 Thing* Player::getThing(size_t index) const
 {
 	if (index >= CONST_SLOT_FIRST && index <= CONST_SLOT_LAST) {
@@ -3079,6 +3198,7 @@ void Player::postAddNotification(Thing* thing, const Cylinder* oldParent, int32_
 
 		updateInventoryWeight();
 		updateItemsLight();
+		sendInventoryClientIds();
 		sendStats();
 	}
 
@@ -3133,6 +3253,7 @@ void Player::postRemoveNotification(Thing* thing, const Cylinder* newParent, int
 
 		updateInventoryWeight();
 		updateItemsLight();
+		sendInventoryClientIds();
 		sendStats();
 	}
 
@@ -3215,7 +3336,7 @@ void Player::internalAddThing(uint32_t index, Thing* thing)
 	}
 
 	//index == 0 means we should equip this item at the most appropiate slot (no action required here)
-	if (index > 0 && index < 11) {
+	if (index > 0 && index < 12) {
 		if (inventory[index]) {
 			return;
 		}
@@ -3298,18 +3419,16 @@ void Player::doAttacking(uint32_t)
 		Item* tool = getWeapon();
 		const Weapon* weapon = g_weapons->getWeapon(tool);
 		if (weapon) {
-			uint32_t delay;
-
-			if (!weapon->interruptSwing() || canDoAction()) {
+			if (!weapon->interruptSwing()) {
 				result = weapon->useWeapon(this, tool, attackedCreature);
-				delay = getAttackSpeed();
+			} else if (!canDoAction()) {
+				uint32_t delay = getNextActionTime();
+				SchedulerTask* task = createSchedulerTask(delay, std::bind(&Game::checkCreatureAttack,
+				                      &g_game, getID()));
+				setNextActionTask(task);
 			} else {
-				delay = getNextActionTime();
+				result = weapon->useWeapon(this, tool, attackedCreature);
 			}
-
-			SchedulerTask* task = createSchedulerTask(delay, std::bind(&Game::checkCreatureAttack,
-				&g_game, getID()));
-			setNextActionTask(task);
 		} else {
 			result = Weapon::useFist(this, attackedCreature);
 		}
@@ -3513,7 +3632,7 @@ void Player::onAttackedCreature(Creature* target)
 	if (target && target->getZone() == ZONE_PVP) {
 		return;
 	}
-
+	
 	if (target == this) {
 		addInFightTicks();
 		return;
@@ -4577,9 +4696,9 @@ size_t Player::getMaxDepotItems() const
 	if (group->maxDepotItems != 0) {
 		return group->maxDepotItems;
 	} else if (isPremium()) {
-		return 2000;
+		return 8000;
 	}
-	return 1000;
+	return 6000;
 }
 
 std::forward_list<Condition*> Player::getMuteConditions() const

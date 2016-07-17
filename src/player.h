@@ -36,6 +36,8 @@
 #include "groups.h"
 #include "town.h"
 #include "mounts.h"
+#include "reward.h"
+#include "rewardchest.h"
 
 class House;
 class NetworkMessage;
@@ -508,6 +510,12 @@ class Player final : public Creature, public Cylinder
 		void addConditionSuppressions(uint32_t conditions);
 		void removeConditionSuppressions(uint32_t conditions);
 
+		Reward* getReward(uint32_t rewardId, bool autoCreate);
+		void removeReward(uint32_t rewardId);
+		void getRewardList(std::vector<uint32_t>& rewards);
+		RewardChest* getRewardChest();
+		
+		DepotChest* getDepotBox();
 		DepotChest* getDepotChest(uint32_t depotId, bool autoCreate);
 		DepotLocker* getDepotLocker(uint32_t depotId);
 		void onReceiveMail() const;
@@ -852,6 +860,12 @@ class Player final : public Creature, public Cylinder
 			}
 		}
 
+		void sendInventoryClientIds() {
+			if (client) {
+				client->sendInventoryClientIds();
+			}
+		}
+
 		//event methods
 		void onUpdateTileItem(const Tile* tile, const Position& pos, const Item* oldItem,
 		                              const ItemType& oldType, const Item* newItem, const ItemType& newType) final;
@@ -1101,9 +1115,9 @@ class Player final : public Creature, public Cylinder
 				client->sendFightModes();
 			}
 		}
-		void sendNetworkMessage(const NetworkMessage& message) {
+		void sendNetworkMessage(const NetworkMessage& message, bool broadcast = true) {
 			if (client) {
-				client->writeToOutputBuffer(message);
+				client->writeToOutputBuffer(message, broadcast);
 			}
 		}
 
@@ -1124,6 +1138,18 @@ class Player final : public Creature, public Cylinder
 		bool canDoAction() const {
 			return nextAction <= OTSYS_TIME();
 		}
+
+		void setModuleDelay(uint8_t byteortype, int16_t delay) {
+			moduleDelayMap[byteortype] = OTSYS_TIME() + delay;
+		}
+
+		bool canRunModule(uint8_t byteortype) {
+			if (!moduleDelayMap[byteortype]) {
+				return true;
+			}
+			return moduleDelayMap[byteortype] <= OTSYS_TIME();
+		}
+
 		uint32_t getNextActionTime() const;
 
 		Item* getWriteItem(uint32_t& windowTextId, uint16_t& maxWriteLen);
@@ -1135,6 +1161,22 @@ class Player final : public Creature, public Cylinder
 		void learnInstantSpell(const std::string& spellName);
 		void forgetInstantSpell(const std::string& spellName);
 		bool hasLearnedInstantSpell(const std::string& spellName) const;
+
+		bool startLiveCast(const std::string& password) {
+			return client && client->startLiveCast(password);
+		}
+		
+		bool stopLiveCast() {
+			return client && client->stopLiveCast();
+		}
+		
+		bool isLiveCaster() const {
+			return client && client->isLiveCaster();
+		}
+
+		const std::map<uint8_t, OpenContainer>& getOpenContainers() const {
+			return openContainers;
+		}
 
 	protected:
 		std::forward_list<Condition*> getMuteConditions() const;
@@ -1178,6 +1220,8 @@ class Player final : public Creature, public Cylinder
 		size_t getLastIndex() const final;
 		uint32_t getItemTypeCount(uint16_t itemId, int32_t subType = -1) const final;
 		std::map<uint32_t, uint32_t>& getAllItemTypeCount(std::map<uint32_t, uint32_t> &countMap) const final;
+		Item* getItemByClientId(uint16_t clientId) const;
+		std::map<uint16_t, uint16_t> getInventoryClientIds() const;
 		Thing*getThing(size_t index) const final;
 
 		void internalAddThing(Thing* thing) final;
@@ -1190,6 +1234,10 @@ class Player final : public Creature, public Cylinder
 		std::map<uint32_t, DepotLocker*> depotLockerMap;
 		std::map<uint32_t, DepotChest*> depotChests;
 		std::map<uint32_t, int32_t> storageMap;
+		std::map<uint8_t, int64_t> moduleDelayMap;
+
+		std::map<uint32_t, Reward*> rewardMap;
+		RewardChest* rewardChest;
 
 		std::vector<OutfitEntry> outfits;
 		GuildWarList guildWarList;
@@ -1341,6 +1389,7 @@ class Player final : public Creature, public Cylinder
 		friend class Map;
 		friend class Actions;
 		friend class IOLoginData;
+		friend class ProtocolGameBase;
 		friend class ProtocolGame;
 };
 

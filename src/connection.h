@@ -115,6 +115,9 @@ class Connection : public std::enable_shared_from_this<Connection>
 
 		NetworkMessage msg;
 
+		void broadcastMessage(OutputMessage_ptr msg);
+		void dispatchBroadcastMessage(const OutputMessage_ptr& msg);
+
 		boost::asio::deadline_timer readTimer;
 		boost::asio::deadline_timer writeTimer;
 
