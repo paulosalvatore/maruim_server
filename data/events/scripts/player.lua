@@ -118,7 +118,7 @@ function Player:onLookInShop(itemType, count)
 	return true
 end
 
-function Player:onMoveItem(item, count, fromPosition, toPosition)
+function Player:onMoveItem(item, count, fromPosition, toPosition, fromContainer, toContainer)
 	local tile = Tile(toPosition)
 
 	if tile and tile:getHouse() ~= nil then
@@ -145,19 +145,30 @@ function Player:onMoveItem(item, count, fromPosition, toPosition)
 		end
 	end
 
-	if item:isContainer() then
-		if fromPosition.x == 65535 then
-			for k, actionId in pairs(itensMovimentoDesativado) do
-				verificarItens = item:getAllItemsByAction(false, actionId)
-				if #verificarItens > 0 then
-					self:sendCancelMessage("Você não pode mover esse item.")
-					return false
+	local verificarItem = false
+	if isInArray(itensMovimentoDesativado, item:getActionId()) then
+		verificarItem = true
+	elseif item:isContainer() then
+		for k, actionId in pairs(itensMovimentoDesativado) do
+			if #item:getAllItemsByAction(false, actionId) > 0 then
+				verificarItem = true
+			end
+		end
+	end
+
+	local movimentoBloqueado = false
+	if verificarItem then
+		movimentoBloqueado = true
+		if fromPosition.x == CONTAINER_POSITION and toPosition.x == CONTAINER_POSITION then
+			if toContainer:isItem() then
+				if item:getTopParent() == toContainer:getTopParent() then
+					movimentoBloqueado = false
 				end
 			end
 		end
 	end
 
-	if isInArray(itensMovimentoDesativado, item:getActionId()) then
+	if movimentoBloqueado then
 		self:sendCancelMessage("Você não pode mover esse item.")
 		return false
 	end
