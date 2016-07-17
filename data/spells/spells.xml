@@ -464,14 +464,28 @@
 	<rune group="attack" spellid="55" name="Energybomb" id="2262" allowfaruse="1" charges="2" lvl="37" maglv="10" cooldown="2000" groupcooldown="2000" blocktype="solid" script="attack/energy_bomb.lua" />
 	<rune group="attack" spellid="33" name="Energy Wall" id="2279" allowfaruse="1" charges="4" lvl="41" maglv="9" cooldown="2000" groupcooldown="2000" blocktype="solid" script="attack/energy_wall.lua" />
 	<rune group="attack" spellid="7" name="Light Magic Missile" id="2287" allowfaruse="1" charges="10" lvl="15" cooldown="2000" groupcooldown="2000" maglv="0" needtarget="1" blocktype="solid" script="attack/light_magic_missile.lua" />
-	<rune group="attack" spellid="7" name="Lightest Magic Missile" id="23723" allowfaruse="1" charges="10" lvl="1" cooldown="2000" groupcooldown="2000" maglv="0" needtarget="1" blocktype="solid" script="attack/lightest_magic_missile.lua" />
+	<rune group="attack" spellid="7" name="Lightest Magic Missile" id="23723" allowfaruse="1" charges="10" lvl="1" cooldown="2000" groupcooldown="2000" maglv="0" needtarget="1" blocktype="solid" script="attack/lightest_magic_missile.lua">
+		<vocation name="Sorcerer" />
+		<vocation name="Druid" />
+		<vocation name="Paladin" />
+		<vocation name="Master Sorcerer" />
+		<vocation name="Elder Druid" />
+		<vocation name="Royal Paladin" />
+	</rune>
 	<rune group="attack" spellid="8" name="Heavy Magic Missile" id="2311" allowfaruse="1" charges="10" lvl="25" cooldown="2000" groupcooldown="2000" maglv="3" needtarget="1" blocktype="solid" script="attack/heavy_magic_missile.lua" />
 	<rune group="attack" spellid="18" name="Explosion" id="2313" allowfaruse="1" charges="6" lvl="31" maglv="6" cooldown="2000" groupcooldown="2000" blocktype="solid" script="attack/explosion.lua" />
 	<rune group="attack" spellid="21" name="Sudden Death" id="2268" allowfaruse="1" charges="3" lvl="45" maglv="15" cooldown="2000" groupcooldown="2000" needtarget="1" blocktype="solid" script="attack/sudden_death.lua" />
 	<rune group="attack" spellid="114" name="Icicle" id="2271" allowfaruse="1" charges="5" lvl="28" maglv="4" cooldown="2000" groupcooldown="2000" needtarget="1" script="attack/icicle.lua" />
 	<rune group="attack" spellid="115" name="Avalanche" id="2274" allowfaruse="1" charges="4" lvl="30" maglv="4" cooldown="2000" groupcooldown="2000" script="attack/avalanche.lua" />
 	<rune group="attack" spellid="116" name="Stone Shower" id="2288" allowfaruse="1" charges="4" lvl="28" maglv="4" cooldown="2000" groupcooldown="2000" script="attack/stone_shower.lua" />
-	<rune group="attack" spellid="116" name="Light Stone Shower" id="23722" allowfaruse="1" charges="4" lvl="1" maglv="0" cooldown="2000" groupcooldown="2000" script="attack/light_stone_shower.lua" />
+	<rune group="attack" spellid="116" name="Light Stone Shower" id="23722" allowfaruse="1" charges="4" lvl="1" maglv="0" cooldown="2000" groupcooldown="2000" script="attack/light_stone_shower.lua">
+		<vocation name="Sorcerer" />
+		<vocation name="Druid" />
+		<vocation name="Paladin" />
+		<vocation name="Master Sorcerer" />
+		<vocation name="Elder Druid" />
+		<vocation name="Royal Paladin" />
+	</rune>
 	<rune group="attack" spellid="117" name="Thunderstorm" id="2315" allowfaruse="1" charges="4" lvl="28" maglv="4" cooldown="2000" groupcooldown="2000" script="attack/thunderstorm.lua" />
 	<rune group="attack" spellid="77" name="Stalagmite" id="2292" allowfaruse="1" charges="10" lvl="24" maglv="3" cooldown="2000" groupcooldown="2000" needtarget="1" script="attack/stalagmite.lua" />
 	<rune group="attack" spellid="130" name="Holy Missile" id="2295" allowfaruse="1" charges="5" lvl="27" maglv="4" cooldown="2000" groupcooldown="2000" needtarget="1" blocktype="solid" script="attack/holy_missile.lua">
@@ -561,7 +575,7 @@
 		<vocation name="Master Sorcerer" />
 		<vocation name="Elder Druid" />
 	</conjure>
-	<conjure name="Lightest Magic Missile" words="adori infir vis" lvl="1" mana="6" soul="0" reagentId="2260" conjureId="23723" conjureCount="10" cooldown="2000" groupcooldown="2000" needlearn="0" function="conjureRune">
+	<conjure name="Lightest Magic Missile" words="adori infir vis" lvl="1" mana="6" soul="1" reagentId="2260" conjureId="23723" conjureCount="10" cooldown="2000" groupcooldown="2000" needlearn="0" function="conjureRune">
 		<vocation name="Sorcerer" />
 		<vocation name="Druid" />
 		<vocation name="Paladin" />
