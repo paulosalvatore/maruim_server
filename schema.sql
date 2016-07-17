@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `password` char(40) NOT NULL,
   `type` int(11) NOT NULL DEFAULT '1',
   `premdays` int(11) NOT NULL DEFAULT '0',
+  `coins` INT(12) NOT NULL DEFAULT '0',
   `lastday` int(10) unsigned NOT NULL DEFAULT '0',
   `email` varchar(255) NOT NULL DEFAULT '',
   `creation` int(11) NOT NULL DEFAULT '0',
@@ -279,6 +280,27 @@ CREATE TABLE IF NOT EXISTS `player_depotitems` (
   FOREIGN KEY (`player_id`) REFERENCES `players`(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
+CREATE TABLE IF NOT EXISTS `player_rewards` (
+  `player_id` int(11) NOT NULL,
+  `sid` int(11) NOT NULL,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `itemtype` smallint(6) NOT NULL,
+  `count` smallint(5) NOT NULL DEFAULT '0',
+  `attributes` blob NOT NULL,
+  UNIQUE KEY `player_id_2` (`player_id`, `sid`),
+  FOREIGN KEY (`player_id`) REFERENCES `players`(`id`) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS `store_history` (
+   `account_id` int(11) NOT NULL,
+   `mode` smallint(2) NOT NULL DEFAULT '0',
+   `description` VARCHAR(3500) NOT NULL,
+   `coin_amount` int(12) NOT NULL,
+   `time` bigint(20) unsigned NOT NULL,
+   KEY `account_id` (`account_id`),
+   FOREIGN KEY (`account_id`) REFERENCES `accounts`(`id`) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
 CREATE TABLE IF NOT EXISTS `player_inboxitems` (
   `player_id` int(11) NOT NULL,
   `sid` int(11) NOT NULL,
@@ -319,6 +341,16 @@ CREATE TABLE IF NOT EXISTS `server_config` (
   `config` varchar(50) NOT NULL,
   `value` varchar(256) NOT NULL DEFAULT '',
   PRIMARY KEY `config` (`config`)
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS `live_casts` (
+  `player_id` int(11) NOT NULL,
+  `cast_name` varchar(255) NOT NULL,
+  `password` boolean NOT NULL DEFAULT false,
+  `description` varchar(255),
+  `spectators` smallint(5) DEFAULT 0,
+  UNIQUE KEY `player_id_2` (`player_id`),
+  FOREIGN KEY (`player_id`) REFERENCES `players`(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 INSERT INTO `server_config` (`config`, `value`) VALUES ('db_version', '18'), ('motd_hash', ''), ('motd_num', '0'), ('players_record', '0');
