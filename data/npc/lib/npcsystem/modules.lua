@@ -619,9 +619,6 @@ if Modules == nil then
 					else
 						local names = {}
 						names[#names + 1] = name
-						if atualizarNpcsBanco then
-							atualizarNpcBanco(Npc(), "comerciante", {itemid, cost, itemSubType, "c"})
-						end
 						self:addBuyableItem(names, itemid, cost, subType, attributes, realName)
 					end
 				else
@@ -669,9 +666,6 @@ if Modules == nil then
 				if name ~= nil and itemid ~= nil and cost ~= nil then
 					local names = {}
 					names[#names + 1] = name
-					if atualizarNpcsBanco then
-						atualizarNpcBanco(Npc(), "comerciante", {itemid, cost, itemSubType, "v"})
-					end
 					self:addSellableItem(names, itemid, cost, realName, subType)
 				else
 					print("[Warning : " .. Npc():getName() .. "] NpcSystem:", "Parameter(s) missing for item:", name, itemid, cost)
@@ -805,6 +799,10 @@ if Modules == nil then
 			else
 				shopItem.buy = cost
 			end
+
+			if atualizarNpcsBanco then
+				atualizarNpcBanco(Npc(), "comerciante", {itemid, cost, itemSubType, "c"})
+			end
 		end
 
 		if names ~= nil and SHOPMODULE_MODE ~= SHOPMODULE_MODE_TRADE then
@@ -904,6 +902,10 @@ if Modules == nil then
 				table.insert(self.npcHandler.shopItems, {id = itemid, buy = -1, sell = cost, subType = itemSubType, name = realName or getItemName(itemid), peso = modificarItensPeso[itemid] or 0})
 			else
 				shopItem.sell = cost
+			end
+
+			if atualizarNpcsBanco then
+				atualizarNpcBanco(Npc(), "comerciante", {itemid, cost, itemSubType, "v"})
 			end
 		end
 
