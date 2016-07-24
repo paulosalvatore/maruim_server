@@ -5150,6 +5150,9 @@
 	<spawn centerx="1277" centery="1686" centerz="7" radius="1">
 		<monster name="Doomsday Cultist" x="0" y="1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="753" centery="1687" centerz="7" radius="1">
+		<monster name="Dryad" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="1084" centery="1687" centerz="7" radius="1">
 		<monster name="Cyclops" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -5201,6 +5204,12 @@
 	<spawn centerx="1333" centery="1694" centerz="7" radius="1">
 		<monster name="Novice Of The Cult" x="-1" y="0" z="7" spawntime="110" />
 	</spawn>
+	<spawn centerx="744" centery="1695" centerz="7" radius="1">
+		<monster name="Dryad" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="760" centery="1695" centerz="7" radius="1">
+		<monster name="Dryad" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="1077" centery="1695" centerz="7" radius="1">
 		<monster name="Cyclops" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -5219,6 +5228,12 @@
 	<spawn centerx="1372" centery="1700" centerz="7" radius="1">
 		<monster name="Gargoyle" x="-1" y="-1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="774" centery="1701" centerz="7" radius="1">
+		<monster name="Dryad" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="732" centery="1702" centerz="7" radius="1">
+		<monster name="Dryad" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="1067" centery="1702" centerz="7" radius="2">
 		<monster name="Cyclops Drone" x="-2" y="-2" z="7" spawntime="60" />
 		<monster name="Cyclops Drone" x="2" y="0" z="7" spawntime="60" />
@@ -5228,6 +5243,9 @@
 	</spawn>
 	<spawn centerx="1289" centery="1702" centerz="7" radius="1">
 		<monster name="Novice Of The Cult" x="1" y="0" z="7" spawntime="140" />
+	</spawn>
+	<spawn centerx="753" centery="1703" centerz="7" radius="1">
+		<monster name="Dryad" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="986" centery="1704" centerz="7" radius="1">
 		<monster name="Lion" x="-1" y="0" z="7" spawntime="60" />
@@ -5274,8 +5292,14 @@
 		<monster name="Gargoyle" x="1" y="-1" z="7" spawntime="120" />
 		<monster name="Gargoyle" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="744" centery="1710" centerz="7" radius="1">
+		<monster name="Dryad" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="1213" centery="1710" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="766" centery="1711" centerz="7" radius="1">
+		<monster name="Dryad" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1369" centery="1712" centerz="7" radius="2">
 		<monster name="Stone Golem" x="0" y="-2" z="7" spawntime="60" />
@@ -5284,6 +5308,9 @@
 		<monster name="Gargoyle" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1198" centery="1715" centerz="7" radius="1" />
+	<spawn centerx="775" centery="1716" centerz="7" radius="1">
+		<monster name="Dryad" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="1123" centery="1716" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
@@ -5320,6 +5347,9 @@
 		<monster name="Stone Golem" x="2" y="-2" z="7" spawntime="120" />
 		<monster name="Stone Golem" x="-2" y="2" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="755" centery="1721" centerz="7" radius="1">
+		<monster name="Dryad" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="1086" centery="1721" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
@@ -5335,6 +5365,9 @@
 	<spawn centerx="1467" centery="1722" centerz="7" radius="2">
 		<monster name="Stone Golem" x="-1" y="-1" z="7" spawntime="60" />
 		<monster name="Stone Golem" x="2" y="2" z="7" spawntime="120" />
+	</spawn>
+	<spawn centerx="739" centery="1723" centerz="7" radius="1">
+		<monster name="Dryad" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1133" centery="1723" centerz="7" radius="1">
 		<monster name="Gnarlhound" x="1" y="0" z="7" spawntime="60" />
@@ -5352,12 +5385,18 @@
 	<spawn centerx="906" centery="1728" centerz="7" radius="1">
 		<monster name="Winter Wolf" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="746" centery="1729" centerz="7" radius="1">
+		<monster name="Dryad" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="867" centery="1729" centerz="7" radius="1">
 		<monster name="Winter Wolf" x="0" y="-1" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1417" centery="1729" centerz="7" radius="2">
 		<monster name="Gargoyle" x="-1" y="-1" z="7" spawntime="60" />
 		<monster name="Gargoyle" x="2" y="1" z="7" spawntime="120" />
+	</spawn>
+	<spawn centerx="768" centery="1730" centerz="7" radius="1">
+		<monster name="Dryad" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1494" centery="1730" centerz="7" radius="2">
 		<monster name="Gargoyle" x="1" y="-1" z="7" spawntime="120" />
@@ -5368,6 +5407,9 @@
 	</spawn>
 	<spawn centerx="1204" centery="1731" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="775" centery="1732" centerz="7" radius="1">
+		<monster name="Dryad" x="-1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1108" centery="1732" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="-1" z="7" spawntime="60" />
