@@ -196,12 +196,14 @@ end
 
 function Player:entregarRecompensa(recompensaId, correio)
 	modalRecompensaAberto[self:getId()] = false
+
 	local recompensaInfo = RecompensasNivel[recompensaId]
 	local item = recompensaInfo.recompensa
 	if item == nil then
 		local recompensaSelecionada = self:pegarRecompensaOpcaoSelecionada(recompensaId)
 		item = recompensaInfo.recompensaOpcoes[recompensaSelecionada]
 	end
+
 	local adicionarPara = self
 	local exibicaoRecompensa = pegarExibicaoRecompensa(item)
 	if correio ~= nil then
@@ -210,9 +212,11 @@ function Player:entregarRecompensa(recompensaId, correio)
 	else
 		self:sendTextMessage(MESSAGE_INFO_DESCR, "Você recebeu o item '" .. exibicaoRecompensa[1] .. "'.")
 	end
+
 	adicionarPara:addItem(item[1], item[2], true, 1)
 	self:setStorageValue(recompensaIdBase+recompensasFinalizadasInicio+recompensaId, 1)
 	self:setStorageValue(recompensaIdBase+recompensasInicio+recompensaId, 0)
+
 	if not self:pegarRecompensaPendente() then
 		self:unregisterEvent("RecompensaNivel")
 		self:setStorageValue(recompensaIdBase+recompensaPendente, 0)
