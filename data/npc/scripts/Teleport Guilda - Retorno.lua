@@ -7,9 +7,9 @@ local valorViagem = {}
 function onCreatureAppear(cid)				npcHandler:onCreatureAppear(cid)				end
 function onCreatureDisappear(cid)			npcHandler:onCreatureDisappear(cid)				end
 function onCreatureSay(player, type, msg)
+	local fraseNpc
 	local teleportGuildaRetorno = player:teleportGuildaPosicaoAnterior()
 	local teleportGuildaTempo = player:teleportGuildaTempo()
-
 	if teleportGuildaRetorno > 0 and teleportGuildaTempo then
 		local npcRetorno
 
@@ -19,11 +19,14 @@ function onCreatureSay(player, type, msg)
 			npcRetorno = "Lucius"
 		end
 
-		npcHandler:setMessage(MESSAGE_GREET, "Olá |PLAYERNAME|. Você pode {retornar} para a sala do meu irmão '" .. npcRetorno .. "' na cidade onde você estava, caso queira.")
-		npcHandler:onCreatureSay(player, type, msg)
+		fraseNpc = "Você pode {retornar} para a sala do meu irmão '" .. npcRetorno .. "' na cidade onde você estava, caso queira."
 	else
-		addEvent(npcSay, 1000, player:getId(), Npc():getId(), formatarFrase("Olá |PLAYERNAME|. Sempre que vier para a guilda através do meu irmão 'Lucius' ou do 'Albert', fale comigo que eu te mandarei de volta para a cidade onde você estava. Mas lembre-se: isso é só pelos próximos 15 minutos após a viagem!", player:getId()))
+		fraseNpc = "Sempre que vier para a guilda através do meu irmão 'Lucius' ou do 'Albert', fale comigo que eu te mandarei de volta para a cidade onde você estava. Mas lembre-se: isso é só pelos próximos 15 minutos após a viagem!"
+		npcHandler.topic[player:getId()] = 2
 	end
+
+	npcHandler:setMessage(MESSAGE_GREET, "Olá |PLAYERNAME|. " .. fraseNpc)
+	npcHandler:onCreatureSay(player, type, msg)
 end
 function onThink()							npcHandler:onThink()							end
 
@@ -33,7 +36,7 @@ function creatureSayCallback(cid, type, msg)
 	end
 
 	local player = Player(cid)
-	if isInArray({"return", "retorno", "retornar"}, msg) then
+	if isInArray({"return", "retorno", "retornar"}, msg) and npcHandler.topic[cid] == 0 then
 		local acessoLiberado = false
 
 		if player:pegarReputacao() >= Reputacao.viagem.acessoLiberado then
