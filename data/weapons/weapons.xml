@@ -37,6 +37,9 @@
 	<wand id="18412" level="65" mana="17" min="70" max="100" type="ice"><!-- Glacial Rod -->
 		<vocation name="Druid" />
 	</wand>
+	<wand id="25888" level="65" mana="17" min="70" max="100" type="ice"><!-- Rod of Mayhem -->
+		<vocation name="Druid" />
+	</wand>
 
 	<!-- Wands -->
 	<wand id="23719" level="1" mana="0" script="sorcerer_wand.lua"><!-- Sorcerer Wand -->
@@ -76,6 +79,9 @@
 		<vocation name="Sorcerer" />
 	</wand>
 	<wand id="18409" level="65" mana="17" min="70" max="100" type="fire"><!-- Wand of Everblazing -->
+		<vocation name="Sorcerer" />
+	</wand>
+	<wand id="25887" level="65" mana="17" min="70" max="100" type="energy"><!-- Wand of Mayhem -->
 		<vocation name="Sorcerer" />
 	</wand>
 
@@ -205,6 +211,14 @@
 	</melee>
 	<melee id="23548" level="25" unproperly="1" />
 	<melee id="23550" level="75" unproperly="1">
+		<vocation name="Knight" />
+		<vocation name="Elite Knight" showInDescription="0" />
+	</melee>
+	<melee id="25879" level="100" unproperly="1">
+		<vocation name="Knight" />
+		<vocation name="Elite Knight" showInDescription="0" />
+	</melee>
+	<melee id="25880" level="100" unproperly="1">
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
@@ -382,6 +396,14 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
+	<melee id="25881" level="100" unproperly="1">
+		<vocation name="Knight" />
+		<vocation name="Elite Knight" showInDescription="0" />
+	</melee>
+	<melee id="25882" level="100" unproperly="1">
+		<vocation name="Knight" />
+		<vocation name="Elite Knight" showInDescription="0" />
+	</melee>
 
 	<!-- Fire -->
 	<melee id="7749" level="20" action="removecharge" unproperly="1" />
@@ -544,6 +566,14 @@
 		<vocation name="Knight" />
 		<vocation name="Elite Knight" showInDescription="0" />
 	</melee>
+	<melee id="25883" level="100" unproperly="1">
+		<vocation name="Knight" />
+		<vocation name="Elite Knight" showInDescription="0" />
+	</melee>
+	<melee id="25884" level="100" unproperly="1">
+		<vocation name="Knight" />
+		<vocation name="Elite Knight" showInDescription="0" />
+	</melee>
 
 	<!-- Fire -->
 	<melee id="7754" level="20" action="removecharge" unproperly="1" />
@@ -680,6 +710,14 @@
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
 	<distance id="22421" level="250" unproperly="1"><!-- Umbral Master Crossbow -->
+		<vocation name="Paladin" />
+		<vocation name="Royal Paladin" showInDescription="0" />
+	</distance>
+	<distance id="25885" level="100" unproperly="1"><!-- Bow of Mayhem -->
+		<vocation name="Paladin" />
+		<vocation name="Royal Paladin" showInDescription="0" />
+	</distance>
+	<distance id="25886" level="100" unproperly="1"><!-- Crossbow of Mayhem -->
 		<vocation name="Paladin" />
 		<vocation name="Royal Paladin" showInDescription="0" />
 	</distance>
