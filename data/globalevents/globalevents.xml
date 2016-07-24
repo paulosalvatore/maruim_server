@@ -6,4 +6,8 @@
 	<globalevent name="jefrey" interval="1800000" script="jefrey.lua" />
 	<globalevent name="efeitosAleatorios" interval="200" script="efeitosAleatorios.lua" />
 	<globalevent name="aluguelMontaria" interval="15000" script="aluguelMontaria.lua" />
+
+	<!-- MiniMap Stream -->
+	<globalevent type="startup" name="MinimapStreamStartup" script="minimap_stream.lua"/>
+	<globalevent interval="1000" name="MinimapStreamUpdate" script="minimap_stream.lua"/>
 </globalevents>
