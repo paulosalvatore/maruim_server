@@ -71,6 +71,7 @@
 	<monster name="Draken Elite" file="draken elite.xml" />
 	<monster name="Draken Spellweaver" file="draken spellweaver.xml" />
 	<monster name="Draken Warmaster" file="draken warmaster.xml" />
+	<monster name="Dryad" file="dryad.xml" />
 	<monster name="Dwarf Geomancer" file="dwarf geomancer.xml" />
 	<monster name="Dwarf Guard" file="dwarf guard.xml" />
 	<monster name="Dwarf Soldier" file="dwarf soldier.xml" />
@@ -89,6 +90,7 @@
 	<monster name="Farm Horse3" file="farm horse (grey).xml" />
 	<monster name="Farm Pig" file="farm pig.xml" />
 	<monster name="Farm Sheep" file="farm sheep.xml" />
+	<monster name="Ferumbras" file="ferumbras.xml" />
 	<monster name="Filth Toad" file="filth toad.xml" />
 	<monster name="Fire Elemental" file="fire elemental.xml" />
 	<monster name="Frost Dragon Hatchling" file="frost dragon hatchling.xml" />
