@@ -36,7 +36,6 @@ function Player:confirmarSairTutorial()
 end
 
 function Player:enviarModalTutorial(id, atualizarPasso)
-	self:allowMovement(false)
 
 	if atualizarPasso == nil or atualizarPasso then
 		self:atualizarPassoTutorial(id)
@@ -217,6 +216,8 @@ function Player:tutorialMestreGuilda()
 	local npcReputacao = pegarNpcReputacao(vocacaoJogador)
 	local npc = Npc(npcReputacao)
 
+	self:desativarLogout()
+	self:allowMovement(false)
 	self:desativarInteracaoNpcs()
 
 	local mensagens = {
@@ -227,10 +228,17 @@ function Player:tutorialMestreGuilda()
 	}
 
 	addEvent(function(playerId)
-		self:enviarTasksModalPrincipal()
-		self:registerEvent("Tasks")
-		self:allowMovement(true)
-		self:ativarInteracaoNpcs()
+		local player = Player(playerId)
+		if not player then
+			return
+		end
+
+		player:enviarTasksModalPrincipal()
+		player:registerEvent("Tasks")
+		player:ativarLogout()
+		player:allowMovement(true)
+		player:ativarInteracaoNpcs()
+		player:sairTutorial()
 	end, 21150, self:getId())
 
 	addEvent(npcSay, 150, self:getId(), npc:getId(), mensagens[1])
@@ -373,4 +381,8 @@ function Player:sairMaruimIsland(choiceId)
 	else
 		self:sendCancelMessage("Ocorreu um erro. Por favor, contate a equipe de suporte através do atalho 'Ctrl + Z'.")
 	end
+end
+
+function Player:xx()
+	
 end

@@ -66,7 +66,6 @@ function onModalWindow(player, modalWindowId, buttonId, choiceId)
 					player:enviarModalTutorial(12)
 				elseif modalWindowId == tutorialId+12 then
 					player:tutorialMestreGuilda()
-					player:sairTutorial()
 				else
 					player:confirmarSairTutorial()
 				end
