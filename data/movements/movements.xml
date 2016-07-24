@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <movements>
+	<!-- Elevador -->
 	<movevent event="StepIn" itemid="20227" script="elevador.lua" />
 	<movevent event="StepIn" itemid="23425" script="elevador.lua" />
 
+	<!-- Tiles de Vocações -->
 	<movevent event="StepIn" fromaid="901" toaid="904" script="vocationTile.lua" />
 
+	<!-- Labirinto do Minotauro -->
 	<movevent event="StepIn" actionid="2700" script="labirintoMinotauro.lua" />
 
+	<!-- Bloquear Movimento -->
 	<movevent event="StepIn" actionid="2901" script="blockMovementStorage.lua" />
 	<movevent event="StepIn" actionid="2504" script="blockMovement.lua" />
 	<movevent event="StepIn" itemid="5755" script="blockMovement.lua" />
 
+	<!-- Funções de AddItem -->
 	<movevent event="AddItem" tileitem="1" itemid="6279" script="add_item.lua" />
 	<movevent event="AddItem" tileitem="1" itemid="1410" script="add_item.lua" />
 	<movevent event="AddItem" tileitem="1" itemid="2096" script="add_item.lua" />
 	<movevent event="AddItem" tileitem="1" itemid="2229" script="add_item.lua" />
 	<movevent event="AddItem" tileitem="1" itemid="21430" script="add_item.lua" />
 
+	<!-- Cidadão -->
 	<movevent event="StepIn" fromaid="4002" toaid="4013" script="cidadao.lua" />
 
 	<!-- Horestis -->
