@@ -13746,8 +13746,8 @@
 	<spawn centerx="930" centery="1905" centerz="8" radius="1">
 		<monster name="Weak Fire Elemental" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1037" centery="1906" centerz="8" radius="1">
-		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1036" centery="1906" centerz="8" radius="1">
+		<monster name="Lizard Dragon Priest" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1199" centery="1906" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
@@ -13786,14 +13786,14 @@
 	<spawn centerx="937" centery="1908" centerz="8" radius="1">
 		<monster name="Thornfire Wolf" x="1" y="1" z="8" spawntime="110" />
 	</spawn>
+	<spawn centerx="1073" centery="1908" centerz="8" radius="1">
+		<monster name="Lizard Dragon Priest" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1255" centery="1908" centerz="8" radius="1">
 		<monster name="Smuggler" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1073" centery="1909" centerz="8" radius="1">
-		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1075" centery="1909" centerz="8" radius="1">
-		<monster name="Lizard Legionnaire" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1076" centery="1909" centerz="8" radius="1">
+		<monster name="Lizard Legionnaire" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1360" centery="1909" centerz="8" radius="1">
 		<monster name="Bug" x="0" y="0" z="8" spawntime="60" />
@@ -13818,15 +13818,15 @@
 		<monster name="Crocodile" x="-2" y="-1" z="8" spawntime="60" />
 		<monster name="Crocodile" x="2" y="1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1035" centery="1911" centerz="8" radius="1">
-		<monster name="Lizard Legionnaire" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1036" centery="1911" centerz="8" radius="1">
+		<monster name="Lizard Legionnaire" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1132" centery="1911" centerz="8" radius="2">
 		<monster name="Carniphila" x="1" y="-2" z="8" spawntime="60" />
 		<monster name="Carniphila" x="-2" y="2" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1051" centery="1912" centerz="8" radius="1">
-		<monster name="Lizard Legionnaire" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1052" centery="1912" centerz="8" radius="1">
+		<monster name="Lizard Legionnaire" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1240" centery="1912" centerz="8" radius="1">
 		<monster name="Bandit" x="0" y="0" z="8" spawntime="60" />
@@ -13838,26 +13838,29 @@
 		<monster name="Killer Caiman" x="-1" y="0" z="8" spawntime="60" />
 		<monster name="Killer Caiman" x="2" y="2" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1034" centery="1913" centerz="8" radius="1">
-		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
 	<spawn centerx="1058" centery="1913" centerz="8" radius="1">
 		<monster name="Lizard Legionnaire" x="0" y="1" z="8" spawntime="170" />
 	</spawn>
-	<spawn centerx="1052" centery="1914" centerz="8" radius="1">
-		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1034" centery="1914" centerz="8" radius="1">
+		<monster name="Lizard Dragon Priest" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1069" centery="1914" centerz="8" radius="1">
 		<monster name="Lizard Legionnaire" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1076" centery="1914" centerz="8" radius="1">
-		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1077" centery="1914" centerz="8" radius="1">
+		<monster name="Lizard Dragon Priest" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1357" centery="1914" centerz="8" radius="1">
 		<monster name="Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1365" centery="1914" centerz="8" radius="1">
 		<monster name="Bug" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1041" centery="1915" centerz="8" radius="1">
+		<monster name="Lizard Dragon Priest" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1052" centery="1915" centerz="8" radius="1">
+		<monster name="Lizard Dragon Priest" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1120" centery="1915" centerz="8" radius="2">
 		<monster name="Carniphila" x="-2" y="-2" z="8" spawntime="60" />
@@ -13869,9 +13872,6 @@
 	</spawn>
 	<spawn centerx="934" centery="1916" centerz="8" radius="1">
 		<monster name="Fire Elemental" x="-1" y="-1" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1041" centery="1916" centerz="8" radius="1">
-		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1332" centery="1916" centerz="8" radius="1">
 		<monster name="Spider" x="0" y="0" z="8" spawntime="60" />
@@ -13904,8 +13904,8 @@
 	<spawn centerx="987" centery="1918" centerz="8" radius="1">
 		<monster name="Fire Elemental" x="-1" y="1" z="8" spawntime="110" />
 	</spawn>
-	<spawn centerx="1042" centery="1918" centerz="8" radius="1">
-		<monster name="Lizard Legionnaire" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1043" centery="1918" centerz="8" radius="1">
+		<monster name="Lizard Legionnaire" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1191" centery="1918" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
@@ -13916,8 +13916,8 @@
 	<spawn centerx="939" centery="1919" centerz="8" radius="1">
 		<monster name="Thornfire Wolf" x="0" y="-1" z="8" spawntime="110" />
 	</spawn>
-	<spawn centerx="1079" centery="1919" centerz="8" radius="1">
-		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1080" centery="1919" centerz="8" radius="1">
+		<monster name="Lizard Dragon Priest" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1138" centery="1919" centerz="8" radius="1">
 		<monster name="Carniphila" x="-1" y="1" z="8" spawntime="60" />
@@ -13937,8 +13937,8 @@
 	<spawn centerx="1559" centery="1920" centerz="8" radius="1">
 		<monster name="Killer Caiman" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1049" centery="1921" centerz="8" radius="1">
-		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1050" centery="1921" centerz="8" radius="1">
+		<monster name="Lizard Dragon Priest" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1556" centery="1921" centerz="8" radius="2">
 		<monster name="Crocodile" x="-2" y="-1" z="8" spawntime="60" />
@@ -13970,8 +13970,8 @@
 	<spawn centerx="1072" centery="1924" centerz="8" radius="1">
 		<monster name="Lizard Legionnaire" x="1" y="-1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1035" centery="1925" centerz="8" radius="1">
-		<monster name="Lizard Legionnaire" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1034" centery="1925" centerz="8" radius="1">
+		<monster name="Lizard Legionnaire" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1191" centery="1925" centerz="8" radius="1">
 		<monster name="Crab" x="0" y="0" z="8" spawntime="60" />
@@ -13982,14 +13982,11 @@
 	<spawn centerx="917" centery="1926" centerz="8" radius="1">
 		<monster name="Fire Elemental" x="1" y="0" z="8" spawntime="110" />
 	</spawn>
-	<spawn centerx="1037" centery="1926" centerz="8" radius="1">
-		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1038" centery="1926" centerz="8" radius="1">
+		<monster name="Lizard Dragon Priest" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1053" centery="1926" centerz="8" radius="1">
 		<monster name="Lizard Legionnaire" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1074" centery="1926" centerz="8" radius="1">
-		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1116" centery="1926" centerz="8" radius="2">
 		<monster name="Carniphila" x="-1" y="-2" z="8" spawntime="60" />
@@ -14004,8 +14001,11 @@
 	<spawn centerx="1050" centery="1927" centerz="8" radius="1">
 		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1065" centery="1927" centerz="8" radius="1">
-		<monster name="Lizard Legionnaire" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1066" centery="1927" centerz="8" radius="1">
+		<monster name="Lizard Legionnaire" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1074" centery="1927" centerz="8" radius="1">
+		<monster name="Lizard Dragon Priest" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1201" centery="1927" centerz="8" radius="1">
 		<monster name="Crab" x="0" y="0" z="8" spawntime="60" />
@@ -14019,8 +14019,8 @@
 	<spawn centerx="887" centery="1929" centerz="8" radius="1">
 		<monster name="Fire Elemental" x="1" y="-1" z="8" spawntime="110" />
 	</spawn>
-	<spawn centerx="1064" centery="1929" centerz="8" radius="1">
-		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1064" centery="1930" centerz="8" radius="1">
+		<monster name="Lizard Dragon Priest" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1503" centery="1930" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
@@ -14035,15 +14035,15 @@
 	<spawn centerx="965" centery="1931" centerz="8" radius="1">
 		<monster name="Fire Elemental" x="0" y="-1" z="8" spawntime="110" />
 	</spawn>
-	<spawn centerx="1037" centery="1931" centerz="8" radius="1">
-		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
-		<monster name="Lizard Legionnaire" x="-1" y="1" z="8" spawntime="60" />
+	<spawn centerx="1038" centery="1931" centerz="8" radius="1">
+		<monster name="Lizard Dragon Priest" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1185" centery="1931" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1035" centery="1932" centerz="8" radius="1">
 		<monster name="Lizard Legionnaire" x="-1" y="-1" z="8" spawntime="60" />
+		<monster name="Lizard Legionnaire" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1046" centery="1932" centerz="8" radius="1">
 		<monster name="Lizard Legionnaire" x="-1" y="0" z="8" spawntime="60" />
@@ -14064,6 +14064,9 @@
 		<monster name="Lizard Legionnaire" x="1" y="-1" z="8" spawntime="60" />
 		<monster name="Lizard Legionnaire" x="-1" y="1" z="8" spawntime="60" />
 	</spawn>
+	<spawn centerx="1063" centery="1934" centerz="8" radius="1">
+		<monster name="Lizard Dragon Priest" x="0" y="1" z="8" spawntime="60" />
+	</spawn>
 	<spawn centerx="1122" centery="1934" centerz="8" radius="2">
 		<monster name="Carniphila" x="-2" y="-1" z="8" spawntime="60" />
 		<monster name="Carniphila" x="2" y="0" z="8" spawntime="60" />
@@ -14074,18 +14077,12 @@
 	<spawn centerx="1051" centery="1935" centerz="8" radius="1">
 		<monster name="Lizard Legionnaire" x="-1" y="-1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1063" centery="1935" centerz="8" radius="1">
-		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
 	<spawn centerx="1079" centery="1935" centerz="8" radius="1">
 		<monster name="Lizard Dragon Priest" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Lizard Dragon Priest" x="1" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="979" centery="1936" centerz="8" radius="1">
 		<monster name="Fire Elemental" x="-1" y="1" z="8" spawntime="110" />
-	</spawn>
-	<spawn centerx="1049" centery="1936" centerz="8" radius="1">
-		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1133" centery="1936" centerz="8" radius="2">
 		<monster name="Carniphila" x="1" y="-1" z="8" spawntime="60" />
@@ -14104,8 +14101,11 @@
 		<monster name="Lizard Dragon Priest" x="-1" y="1" z="8" spawntime="60" />
 		<monster name="Lizard Dragon Priest" x="1" y="1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1065" centery="1937" centerz="8" radius="1">
-		<monster name="Lizard Legionnaire" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1049" centery="1937" centerz="8" radius="1">
+		<monster name="Lizard Dragon Priest" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1064" centery="1937" centerz="8" radius="1">
+		<monster name="Lizard Legionnaire" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1148" centery="1937" centerz="8" radius="2">
 		<monster name="Carniphila" x="0" y="-2" z="8" spawntime="60" />
@@ -14131,9 +14131,9 @@
 		<monster name="Lizard Legionnaire" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Lizard Legionnaire" x="1" y="1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1058" centery="1942" centerz="8" radius="1">
-		<monster name="Lizard Legionnaire" x="0" y="0" z="8" spawntime="60" />
-		<monster name="Lizard Legionnaire" x="0" y="1" z="8" spawntime="1792" />
+	<spawn centerx="1059" centery="1942" centerz="8" radius="1">
+		<monster name="Lizard Legionnaire" x="-1" y="0" z="8" spawntime="60" />
+		<monster name="Lizard Legionnaire" x="-1" y="1" z="8" spawntime="1792" />
 	</spawn>
 	<spawn centerx="1070" centery="1942" centerz="8" radius="1">
 		<monster name="Lizard Dragon Priest" x="-1" y="1" z="8" spawntime="60" />
@@ -14165,14 +14165,14 @@
 	<spawn centerx="1260" centery="1945" centerz="8" radius="1">
 		<monster name="Corym Charlatan" x="1" y="-1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1051" centery="1946" centerz="8" radius="1">
-		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
 	<spawn centerx="942" centery="1947" centerz="8" radius="1">
 		<monster name="Fire Elemental" x="0" y="-1" z="8" spawntime="110" />
 	</spawn>
-	<spawn centerx="1075" centery="1947" centerz="8" radius="1">
-		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1051" centery="1947" centerz="8" radius="1">
+		<monster name="Lizard Dragon Priest" x="0" y="-1" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1076" centery="1947" centerz="8" radius="1">
+		<monster name="Lizard Dragon Priest" x="-1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1478" centery="1947" centerz="8" radius="2">
 		<monster name="Crocodile" x="2" y="-1" z="8" spawntime="60" />
@@ -14223,11 +14223,8 @@
 		<monster name="Lizard Dragon Priest" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Lizard Dragon Priest" x="1" y="1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1065" centery="1952" centerz="8" radius="1">
-		<monster name="Lizard Legionnaire" x="0" y="0" z="8" spawntime="60" />
-	</spawn>
-	<spawn centerx="1076" centery="1952" centerz="8" radius="1">
-		<monster name="Lizard Legionnaire" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1064" centery="1952" centerz="8" radius="1">
+		<monster name="Lizard Legionnaire" x="1" y="0" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1212" centery="1952" centerz="8" radius="1">
 		<monster name="Crocodile" x="0" y="0" z="8" spawntime="60" />
@@ -14243,8 +14240,11 @@
 		<monster name="Lizard Legionnaire" x="-1" y="-1" z="8" spawntime="60" />
 		<monster name="Lizard Legionnaire" x="1" y="-1" z="8" spawntime="1792" />
 	</spawn>
-	<spawn centerx="1067" centery="1953" centerz="8" radius="1">
-		<monster name="Lizard Dragon Priest" x="0" y="0" z="8" spawntime="60" />
+	<spawn centerx="1068" centery="1953" centerz="8" radius="1">
+		<monster name="Lizard Dragon Priest" x="-1" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1076" centery="1953" centerz="8" radius="1">
+		<monster name="Lizard Legionnaire" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
 	<spawn centerx="1529" centery="1953" centerz="8" radius="1">
 		<monster name="Killer Caiman" x="0" y="0" z="8" spawntime="60" />
