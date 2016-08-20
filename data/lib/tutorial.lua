@@ -349,7 +349,7 @@ function Player:sairMaruimIsland(choiceId)
 			posicao = 3
 		end
 
-		player:setTown(choiceId)
+		self:setTown(choiceId)
 		self:teleportarJogador(teleportadorGuilda.posicoesTeleportadorGuilda[posicao], false, true)
 
 		self:desativarLogout()
