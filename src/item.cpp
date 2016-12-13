@@ -27,7 +27,6 @@
 #include "house.h"
 #include "game.h"
 #include "bed.h"
-#include "rewardchest.h"
 
 #include "actions.h"
 #include "spells.h"
@@ -54,8 +53,6 @@ Item* Item::CreateItem(const uint16_t type, uint16_t count /*= 0*/)
 	if (it.id != 0) {
 		if (it.isDepot()) {
 			newItem = new DepotLocker(type);
-		} else if (it.isRewardChest()) {
-			newItem = new RewardChest(type);
 		} else if (it.isContainer()) {
 			newItem = new Container(type);
 		} else if (it.isTeleport()) {
@@ -147,17 +144,10 @@ Item* Item::CreateItem(PropStream& propStream)
 	return Item::CreateItem(id, 0);
 }
 
-Item::Item(const uint16_t type, uint16_t count /*= 0*/)
+Item::Item(const uint16_t type, uint16_t count /*= 0*/) :
+	id(type)
 {
-	parent = nullptr;
-	referenceCounter = 0;
-
-	id = type;
-	attributes = nullptr;
-
 	const ItemType& it = items[id];
-
-	setItemCount(1);
 
 	if (it.isFluidContainer() || it.isSplash()) {
 		setFluidType(count);
@@ -175,24 +165,14 @@ Item::Item(const uint16_t type, uint16_t count /*= 0*/)
 		}
 	}
 
-	loadedFromMap = false;
 	setDefaultDuration();
 }
 
 Item::Item(const Item& i) :
-	Thing()
+	Thing(), id(i.id), count(i.count), loadedFromMap(i.loadedFromMap)
 {
-	parent = nullptr;
-	referenceCounter = 0;
-
-	id = i.id;
-	count = i.count;
-	loadedFromMap = i.loadedFromMap;
-
 	if (i.attributes) {
-		attributes = new ItemAttributes(*i.attributes);
-	} else {
-		attributes = nullptr;
+		attributes.reset(new ItemAttributes(*i.attributes));
 	}
 }
 
@@ -200,14 +180,9 @@ Item* Item::clone() const
 {
 	Item* item = Item::CreateItem(id, count);
 	if (attributes) {
-		item->attributes = new ItemAttributes(*attributes);
+		item->attributes.reset(new ItemAttributes(*attributes));
 	}
 	return item;
-}
-
-Item::~Item()
-{
-	delete attributes;
 }
 
 bool Item::equals(const Item* otherItem) const
@@ -220,7 +195,7 @@ bool Item::equals(const Item* otherItem) const
 		return !otherItem->attributes;
 	}
 
-	const ItemAttributes* otherAttributes = otherItem->attributes;
+	const auto& otherAttributes = otherItem->attributes;
 	if (!otherAttributes || attributes->attributeBits != otherAttributes->attributeBits) {
 		return false;
 	}
@@ -282,9 +257,7 @@ void Item::setID(uint16_t newid)
 		removeAttribute(ITEM_ATTRIBUTE_DURATION);
 	}
 
-	if (!isRewardCorpse()) {
-		removeAttribute(ITEM_ATTRIBUTE_CORPSEOWNER);
-	}
+	removeAttribute(ITEM_ATTRIBUTE_CORPSEOWNER);
 
 	if (newDuration > 0 && (!prevIt.stopTime || !hasAttribute(ITEM_ATTRIBUTE_DURATION))) {
 		setDecaying(DECAYING_FALSE);
@@ -665,7 +638,7 @@ bool Item::unserializeAttr(PropStream& propStream)
 	return true;
 }
 
-bool Item::unserializeItemNode(FileLoader&, NODE, PropStream& propStream)
+bool Item::unserializeItemNode(OTB::Loader&, const OTB::Node&, PropStream& propStream)
 {
 	return unserializeAttr(propStream);
 }

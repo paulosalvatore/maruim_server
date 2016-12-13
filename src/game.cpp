@@ -48,29 +48,8 @@ extern Vocations g_vocations;
 extern GlobalEvents* g_globalEvents;
 extern Events* g_events;
 
-Game::Game() :
-	wildcardTree(false),
-	offlineTrainingWindow(std::numeric_limits<uint32_t>::max(), "Choose a Skill", "Please choose a skill:")
+Game::Game()
 {
-	gameState = GAME_STATE_NORMAL;
-	worldType = WORLD_TYPE_PVP;
-
-	serviceManager = nullptr;
-	lastStageLevel = 0;
-	playersRecord = 0;
-	motdNum = 0;
-	useLastStageLevel = false;
-	stagesEnabled = false;
-
-	lastBucket = 0;
-
-	//(1440 minutes/day)/(3600 seconds/day)*10 seconds event interval
-	int32_t dayCycle = 3600;
-	lightHourDelta = 1440 * 10 / dayCycle;
-	lightHour = SUNRISE + (SUNSET - SUNRISE) / 2;
-	lightLevel = LIGHT_LEVEL_DAY;
-	lightState = LIGHT_STATE_DAY;
-
 	offlineTrainingWindow.choices.emplace_back("Sword Fighting and Shielding", SKILL_SWORD);
 	offlineTrainingWindow.choices.emplace_back("Axe Fighting and Shielding", SKILL_AXE);
 	offlineTrainingWindow.choices.emplace_back("Club Fighting and Shielding", SKILL_CLUB);
@@ -123,6 +102,7 @@ void Game::setGameState(GameState_t newState)
 	switch (newState) {
 		case GAME_STATE_INIT: {
 			commands.loadFromXml();
+
 			loadExperienceStages();
 
 			groups.load();
@@ -772,6 +752,7 @@ void Game::playerMoveCreature(Player* player, Creature* movingCreature, const Po
 
 ReturnValue Game::internalMoveCreature(Creature* creature, Direction direction, uint32_t flags /*= 0*/)
 {
+	creature->setLastPosition(creature->getPosition());
 	const Position& currentPos = creature->getPosition();
 	Position destPos = getNextPosition(direction, currentPos);
 
@@ -1182,12 +1163,7 @@ ReturnValue Game::internalMoveItem(Cylinder* fromCylinder, Cylinder* toCylinder,
 
 	//add item
 	if (moveItem /*m - n > 0*/) {
-		if (fromCylinder == toCylinder) {
-			toCylinder->addThing(index, moveItem);
-				
-		} else {
-			internalAddItem(toCylinder, moveItem, INDEX_WHEREEVER, flags);
-		}
+		toCylinder->addThing(index, moveItem);
 	}
 
 	if (itemIndex != -1) {
@@ -1255,7 +1231,7 @@ ReturnValue Game::internalAddItem(Cylinder* toCylinder, Item* item, int32_t inde
 	uint32_t maxQueryCount = 0;
 	ret = destCylinder->queryMaxCount(INDEX_WHEREEVER, *item, item->getItemCount(), maxQueryCount, flags);
 
-	if (ret != RETURNVALUE_NOERROR && toCylinder->getItem() && toCylinder->getItem()->getID() != ITEM_REWARD_CONTAINER) {
+	if (ret != RETURNVALUE_NOERROR) {
 		return ret;
 	}
 
@@ -1851,6 +1827,11 @@ void Game::playerOpenPrivateChannel(uint32_t playerId, std::string& receiver)
 		return;
 	}
 
+	if (player->getName() == receiver) {
+		player->sendCancelMessage("You cannot set up a private message channel with yourself.");
+		return;
+	}
+
 	player->sendOpenPrivateChannel(receiver);
 }
 
@@ -2403,8 +2384,6 @@ void Game::playerUpdateHouseWindow(uint32_t playerId, uint8_t listId, uint32_t w
 	House* house = player->getEditHouse(internalWindowTextId, internalListId);
 	if (house && house->canEditAccessList(internalListId, player) && internalWindowTextId == windowTextId && listId == 0) {
 		house->setAccessList(internalListId, text);
-		player->setEditHouse(nullptr);
-		return;
 	}
 
 	player->setEditHouse(nullptr);
@@ -2587,7 +2566,7 @@ void Game::playerAcceptTrade(uint32_t playerId)
 		player->setTradeState(TRADE_TRANSFER);
 		tradePartner->setTradeState(TRADE_TRANSFER);
 
-		std::map<Item*, uint32_t>::iterator it = tradeItems.find(tradeItem1);
+		auto it = tradeItems.find(tradeItem1);
 		if (it != tradeItems.end()) {
 			ReleaseItem(it->first);
 			tradeItems.erase(it);
@@ -2758,7 +2737,7 @@ void Game::internalCloseTrade(Player* player)
 	}
 
 	if (player->getTradeItem()) {
-		std::map<Item*, uint32_t>::iterator it = tradeItems.find(player->getTradeItem());
+		auto it = tradeItems.find(player->getTradeItem());
 		if (it != tradeItems.end()) {
 			ReleaseItem(it->first);
 			tradeItems.erase(it);
@@ -2776,7 +2755,7 @@ void Game::internalCloseTrade(Player* player)
 
 	if (tradePartner) {
 		if (tradePartner->getTradeItem()) {
-			std::map<Item*, uint32_t>::iterator it = tradeItems.find(tradePartner->getTradeItem());
+			auto it = tradeItems.find(tradePartner->getTradeItem());
 			if (it != tradeItems.end()) {
 				ReleaseItem(it->first);
 				tradeItems.erase(it);
@@ -3039,7 +3018,7 @@ void Game::playerFollowCreature(uint32_t playerId, uint32_t creatureId)
 	player->setFollowCreature(getCreatureByID(creatureId));
 }
 
-void Game::playerSetFightModes(uint32_t playerId, fightMode_t fightMode, chaseMode_t chaseMode, bool secureMode)
+void Game::playerSetFightModes(uint32_t playerId, fightMode_t fightMode, bool chaseMode, bool secureMode)
 {
 	Player* player = getPlayerByID(playerId);
 	if (!player) {
@@ -3255,10 +3234,6 @@ void Game::playerSay(uint32_t playerId, uint16_t channelId, SpeakClasses type,
 
 	if (type != TALKTYPE_PRIVATE_PN) {
 		player->removeMessageBuffer();
-	}
-
-	if (channelId == CHANNEL_CAST) {
-		player->sendChannelMessage(player->getName(), text, TALKTYPE_CHANNEL_R1, channelId);
 	}
 
 	switch (type) {
@@ -4387,9 +4362,6 @@ void Game::resetCommandTag()
 
 void Game::shutdown()
 {
-	std::cout << "Saving game..." << std::flush;
-	saveGameState();
-
 	std::cout << "Shutting down..." << std::flush;
 
 	g_scheduler.shutdown();
@@ -4661,23 +4633,20 @@ bool Game::loadExperienceStages()
 	for (auto stageNode : doc.child("stages").children()) {
 		if (strcasecmp(stageNode.name(), "config") == 0) {
 			stagesEnabled = stageNode.attribute("enabled").as_bool();
-		}
-		else {
+		} else {
 			uint32_t minLevel, maxLevel, multiplier;
 
 			pugi::xml_attribute minLevelAttribute = stageNode.attribute("minlevel");
 			if (minLevelAttribute) {
 				minLevel = pugi::cast<uint32_t>(minLevelAttribute.value());
-			}
-			else {
+			} else {
 				minLevel = 1;
 			}
 
 			pugi::xml_attribute maxLevelAttribute = stageNode.attribute("maxlevel");
 			if (maxLevelAttribute) {
 				maxLevel = pugi::cast<uint32_t>(maxLevelAttribute.value());
-			}
-			else {
+			} else {
 				maxLevel = 0;
 				lastStageLevel = minLevel;
 				useLastStageLevel = true;
@@ -4686,15 +4655,13 @@ bool Game::loadExperienceStages()
 			pugi::xml_attribute multiplierAttribute = stageNode.attribute("multiplier");
 			if (multiplierAttribute) {
 				multiplier = pugi::cast<uint32_t>(multiplierAttribute.value());
-			}
-			else {
+			} else {
 				multiplier = 1;
 			}
 
 			if (useLastStageLevel) {
 				stages[lastStageLevel] = multiplier;
-			}
-			else {
+			} else {
 				for (uint32_t i = minLevel; i <= maxLevel; ++i) {
 					stages[i] = multiplier;
 				}
@@ -4851,19 +4818,33 @@ void Game::kickPlayer(uint32_t playerId, bool displayEffect)
 	player->kickPlayer(displayEffect);
 }
 
-void Game::playerReportBug(uint32_t playerId, const std::string& message, const Position& position, const std::string& showCategory)
+void Game::playerReportBug(uint32_t playerId, const std::string& message, const Position& position, uint8_t category)
 {
 	Player* player = getPlayerByID(playerId);
 	if (!player) {
 		return;
 	}
-	Database* db = Database::getInstance();
-	std::ostringstream query;
-	uint64_t currentTime = time(nullptr);
-	query << "INSERT INTO `reports` (`conta`, `jogador`, `posicao_x`, `posicao_y`, `posicao_z`, `mensagem`, `categoria`, `data`) VALUES (" << player->getAccount() << ',' << player->getGUID() << ',' << position.getX() << ',' << position.getY() << ',' << position.getZ() << ',' << db->escapeString(message.c_str()) << ',' << db->escapeString(showCategory.c_str()) << ',' << currentTime << ')';
-	db->executeQuery(query.str());
 
-	player->sendTextMessage(MESSAGE_EVENT_DEFAULT, "Sua reportação foi registrada com sucesso.");
+	if (player->getAccountType() == ACCOUNT_TYPE_NORMAL) {
+		return;
+	}
+
+	std::string fileName = "data/reports/" + player->getName() + " report.txt";
+	FILE* file = fopen(fileName.c_str(), "a");
+	if (!file) {
+		player->sendTextMessage(MESSAGE_EVENT_DEFAULT, "There was an error when processing your report, please contact a gamemaster.");
+		return;
+	}
+
+	const Position& playerPosition = player->getPosition();
+	if (category == BUG_CATEGORY_MAP) {
+		fprintf(file, "------------------------------\nName: %s [Map Position: %u, %u, %u] [Player Position: %u, %u, %u]\nComment: %s\n", player->getName().c_str(), position.x, position.y, position.z, playerPosition.x, playerPosition.y, playerPosition.z, message.c_str());
+	} else {
+		fprintf(file, "------------------------------\nName: %s [Player Position: %u, %u, %u]\nComment: %s\n", player->getName().c_str(), playerPosition.x, playerPosition.y, playerPosition.z, message.c_str());
+	}
+	fclose(file);
+
+	player->sendTextMessage(MESSAGE_EVENT_DEFAULT, "Your report has been sent to " + g_config.getString(ConfigManager::SERVER_NAME) + ".");
 }
 
 void Game::playerDebugAssert(uint32_t playerId, const std::string& assertLine, const std::string& date, const std::string& description, const std::string& comment)
@@ -5009,12 +4990,12 @@ void Game::playerCreateMarketOffer(uint32_t playerId, uint8_t type, uint16_t spr
 			return;
 		}
 
-		DepotLocker* depotLocker = player->getDepotLocker(player->getLastDepotId());
-		if (!depotLocker) {
+		DepotChest* depotChest = player->getDepotChest(player->getLastDepotId(), false);
+		if (!depotChest) {
 			return;
 		}
 
-		std::forward_list<Item*> itemList = getMarketItemList(it.wareId, amount, depotLocker);
+		std::forward_list<Item*> itemList = getMarketItemList(it.wareId, amount, depotChest, player->getInbox());
 		if (itemList.empty()) {
 			return;
 		}
@@ -5148,12 +5129,12 @@ void Game::playerAcceptMarketOffer(uint32_t playerId, uint32_t timestamp, uint16
 	uint64_t totalPrice = static_cast<uint64_t>(offer.price) * amount;
 
 	if (offer.type == MARKETACTION_BUY) {
-		DepotLocker* depotLocker = player->getDepotLocker(player->getLastDepotId());
-		if (!depotLocker) {
+		DepotChest* depotChest = player->getDepotChest(player->getLastDepotId(), false);
+		if (!depotChest) {
 			return;
 		}
 
-		std::forward_list<Item*> itemList = getMarketItemList(it.wareId, amount, depotLocker);
+		std::forward_list<Item*> itemList = getMarketItemList(it.wareId, amount, depotChest, player->getInbox());
 		if (itemList.empty()) {
 			return;
 		}
@@ -5298,12 +5279,12 @@ void Game::parsePlayerExtendedOpcode(uint32_t playerId, uint8_t opcode, const st
 	}
 }
 
-std::forward_list<Item*> Game::getMarketItemList(uint16_t wareId, uint16_t sufficientCount, DepotLocker* depotLocker)
+std::forward_list<Item*> Game::getMarketItemList(uint16_t wareId, uint16_t sufficientCount, DepotChest* depotChest, Inbox* inbox)
 {
 	std::forward_list<Item*> itemList;
 	uint16_t count = 0;
 
-	std::list<Container*> containers{depotLocker};
+	std::list<Container*> containers { depotChest, inbox };
 	do {
 		Container* container = containers.front();
 		containers.pop_front();

@@ -31,8 +31,6 @@ Container::Container(uint16_t type) :
 Container::Container(uint16_t type, uint16_t size, bool unlocked /*= true*/, bool pagination /*= false*/) :
 	Item(type),
 	maxSize(size),
-	totalWeight(0),
-	serializationCount(0),
 	unlocked(unlocked),
 	pagination(pagination)
 {}
@@ -109,24 +107,22 @@ Attr_ReadValue Container::readAttr(AttrTypes_t attr, PropStream& propStream)
 	return Item::readAttr(attr, propStream);
 }
 
-bool Container::unserializeItemNode(FileLoader& f, NODE node, PropStream& propStream)
+bool Container::unserializeItemNode(OTB::Loader& loader, const OTB::Node& node, PropStream& propStream)
 {
-	bool ret = Item::unserializeItemNode(f, node, propStream);
+	bool ret = Item::unserializeItemNode(loader, node, propStream);
 	if (!ret) {
 		return false;
 	}
 
-	uint32_t type;
-	NODE nodeItem = f.getChildNode(node, type);
-	while (nodeItem) {
+	for (auto& itemNode : node.children) {
 		//load container items
-		if (type != OTBM_ITEM) {
+		if (itemNode.type != OTBM_ITEM) {
 			// unknown type
 			return false;
 		}
 
 		PropStream itemPropStream;
-		if (!f.getProps(nodeItem, itemPropStream)) {
+		if (!loader.getProps(itemNode, itemPropStream)) {
 			return false;
 		}
 
@@ -135,14 +131,12 @@ bool Container::unserializeItemNode(FileLoader& f, NODE node, PropStream& propSt
 			return false;
 		}
 
-		if (!item->unserializeItemNode(f, nodeItem, itemPropStream)) {
+		if (!item->unserializeItemNode(loader, itemNode, itemPropStream)) {
 			return false;
 		}
 
 		addItem(item);
 		updateItemWeight(item->getWeight());
-
-		nodeItem = f.getNextNode(nodeItem, type);
 	}
 	return true;
 }
@@ -308,7 +302,7 @@ ReturnValue Container::queryAdd(int32_t index, const Thing& thing, uint32_t coun
 			cylinder = cylinder->getParent();
 		}
 
-		if (index == INDEX_WHEREEVER && size() >= capacity() && !hasPagination()) {
+		if (index == INDEX_WHEREEVER && size() >= capacity()) {
 			return RETURNVALUE_CONTAINERNOTENOUGHROOM;
 		}
 	} else {
@@ -338,7 +332,7 @@ ReturnValue Container::queryMaxCount(int32_t index, const Thing& thing, uint32_t
 		return RETURNVALUE_NOTPOSSIBLE;
 	}
 
-	if (hasBitSet(FLAG_NOLIMIT, flags) || hasPagination()) {
+	if (hasBitSet(FLAG_NOLIMIT, flags)) {
 		maxQueryCount = std::max<uint32_t>(1, count);
 		return RETURNVALUE_NOERROR;
 	}
@@ -443,16 +437,9 @@ Cylinder* Container::queryDestination(int32_t& index, const Thing &thing, Item**
 		return this;
 	}
 
-	if (index != INDEX_WHEREEVER) {
-		Item* itemFromIndex = getItemByIndex(index);
-		if (itemFromIndex) {
-			*destItem = itemFromIndex;
-		}
-	}
-
 	bool autoStack = !hasBitSet(FLAG_IGNOREAUTOSTACK, flags);
-	//try find a suitable item to stack with
-	if (autoStack && item->isStackable() && item->getParent() != this && !(*destItem && (*destItem)->equals(item))) {
+	if (autoStack && item->isStackable() && item->getParent() != this) {
+		//try find a suitable item to stack with
 		uint32_t n = 0;
 		for (Item* listItem : itemlist) {
 			if (listItem != item && listItem->equals(item) && listItem->getItemCount() < 100) {
@@ -464,11 +451,18 @@ Cylinder* Container::queryDestination(int32_t& index, const Thing &thing, Item**
 		}
 	}
 
-	Cylinder* subCylinder = dynamic_cast<Cylinder*>(*destItem);
-	if (subCylinder) {
-		index = INDEX_WHEREEVER;
-		*destItem = nullptr;
-		return subCylinder;
+	if (index != INDEX_WHEREEVER) {
+		Item* itemFromIndex = getItemByIndex(index);
+		if (itemFromIndex) {
+			*destItem = itemFromIndex;
+		}
+
+		Cylinder* subCylinder = dynamic_cast<Cylinder*>(*destItem);
+		if (subCylinder) {
+			index = INDEX_WHEREEVER;
+			*destItem = nullptr;
+			return subCylinder;
+		}
 	}
 	return this;
 }
@@ -625,7 +619,7 @@ uint32_t Container::getItemTypeCount(uint16_t itemId, int32_t subType/* = -1*/) 
 	return count;
 }
 
-std::map<uint32_t, uint32_t>& Container::getAllItemTypeCount(std::map<uint32_t, uint32_t> &countMap) const
+std::map<uint32_t, uint32_t>& Container::getAllItemTypeCount(std::map<uint32_t, uint32_t>& countMap) const
 {
 	for (Item* item : itemlist) {
 		countMap[item->getID()] += item->getItemCount();

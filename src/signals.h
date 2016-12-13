@@ -1,6 +1,6 @@
 /**
  * The Forgotten Server - a free and open-source MMORPG server emulator
- * Copyright (C) 2016  Mark Samman <mark.samman@gmail.com>
+ * Copyright (C) 2015  Mark Samman <mark.samman@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,30 +17,25 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef FS_PROTOCOLOLD_H_5487B862FE144AE0904D098A3238E161
-#define FS_PROTOCOLOLD_H_5487B862FE144AE0904D098A3238E161
+#ifndef FS_SIGNALHANDLINGTHREAD_H_01C6BF08B0EFE9E200175D108CF0B35F
+#define FS_SIGNALHANDLINGTHREAD_H_01C6BF08B0EFE9E200175D108CF0B35F
 
-#include "protocol.h"
+#include <boost/asio.hpp>
 
-class NetworkMessage;
-
-class ProtocolOld final : public Protocol
+class Signals
 {
+	boost::asio::signal_set set;
 	public:
-		// static protocol information
-		enum {server_sends_first = false};
-		enum {protocol_identifier = 0x01};
-		enum {use_checksum = false};
-		static const char* protocol_name() {
-			return "old login protocol";
-		}
+		Signals(boost::asio::io_service& service);
 
-		explicit ProtocolOld(Connection_ptr connection) : Protocol(connection) {}
+	private:
+		void asyncWait();
+		static void dispatchSignalHandler(int signal);
 
-		void onRecvFirstMessage(NetworkMessage& msg) final;
-
-	protected:
-		void disconnectClient(const std::string& message);
+		static void sigintHandler();
+		static void sighupHandler();
+		static void sigtermHandler();
+		static void sigusr1Handler();
 };
 
 #endif

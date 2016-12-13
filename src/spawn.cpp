@@ -31,13 +31,7 @@ extern ConfigManager g_config;
 extern Monsters g_monsters;
 extern Game g_game;
 
-#define MINSPAWN_INTERVAL 1000
-
-Spawns::Spawns()
-{
-	loaded = false;
-	started = false;
-}
+static constexpr int32_t MINSPAWN_INTERVAL = 1000;
 
 bool Spawns::loadFromXml(const std::string& filename)
 {
@@ -251,17 +245,12 @@ void Spawn::checkSpawn()
 
 		spawnBlock_t& sb = it.second;
 		if (OTSYS_TIME() >= sb.lastSpawn + sb.interval) {
-			if (sb.mType->isBlockable && findPlayer(sb.pos)) {
+			if (findPlayer(sb.pos)) {
 				sb.lastSpawn = OTSYS_TIME();
 				continue;
 			}
 
-			if (sb.mType->isBlockable) {
-				spawnMonster(spawnId, sb.mType, sb.pos, sb.direction);
-			} else {
-				scheduleSpawn(spawnId, sb, 3 * NONBLOCKABLE_SPAWN_INTERVAL);
-			}
-
+			spawnMonster(spawnId, sb.mType, sb.pos, sb.direction);
 			if (++spawnCount >= static_cast<uint32_t>(g_config.getNumber(ConfigManager::RATE_SPAWN))) {
 				break;
 			}
@@ -270,17 +259,6 @@ void Spawn::checkSpawn()
 
 	if (spawnedMap.size() < spawnMap.size()) {
 		checkSpawnEvent = g_scheduler.addEvent(createSchedulerTask(getInterval(), std::bind(&Spawn::checkSpawn, this)));
-	}
-}
-
-void Spawn::scheduleSpawn(uint32_t spawnId, spawnBlock_t& sb, uint16_t interval)
-{
-	if (interval <= 0) {
-		spawnMonster(spawnId, sb.mType, sb.pos, sb.direction);
-	}
-	else {
-		g_game.addMagicEffect(sb.pos, CONST_ME_TELEPORT);
-		g_scheduler.addEvent(createSchedulerTask(1400, std::bind(&Spawn::scheduleSpawn, this, spawnId, sb, interval - NONBLOCKABLE_SPAWN_INTERVAL)));
 	}
 }
 

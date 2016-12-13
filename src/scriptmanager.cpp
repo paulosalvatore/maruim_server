@@ -29,7 +29,6 @@
 #include "weapons.h"
 #include "globalevent.h"
 #include "events.h"
-#include "modules.h"
 
 Actions* g_actions = nullptr;
 CreatureEvents* g_creatureEvents = nullptr;
@@ -40,14 +39,8 @@ Spells* g_spells = nullptr;
 TalkActions* g_talkActions = nullptr;
 MoveEvents* g_moveEvents = nullptr;
 Weapons* g_weapons = nullptr;
-Modules* g_modules = nullptr;
 
 extern LuaEnvironment g_luaEnvironment;
-
-ScriptingManager::ScriptingManager()
-{
-	//
-}
 
 ScriptingManager::~ScriptingManager()
 {
@@ -117,12 +110,6 @@ bool ScriptingManager::loadScriptSystems()
 	g_events = new Events();
 	if (!g_events->load()) {
 		std::cout << "> ERROR: Unable to load events!" << std::endl;
-		return false;
-	}
-
-	g_modules = new Modules();
-	if (!g_modules->loadFromXml()) {
-		std::cout << "> ERROR: Unable to load modules!" << std::endl;
 		return false;
 	}
 

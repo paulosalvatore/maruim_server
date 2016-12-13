@@ -19,8 +19,6 @@
 
 #include "otpch.h"
 
-#include <boost/range/adaptor/reversed.hpp>
-
 #include "iologindata.h"
 #include "configmanager.h"
 #include "game.h"
@@ -119,15 +117,27 @@ bool IOLoginData::loginserverAuthentication(const std::string& name, const std::
 	return true;
 }
 
-uint32_t IOLoginData::gameworldAuthentication(const std::string& accountName, const std::string& password, std::string& characterName)
+uint32_t IOLoginData::gameworldAuthentication(const std::string& accountName, const std::string& password, std::string& characterName, std::string& token, uint32_t tokenTime)
 {
 	Database* db = Database::getInstance();
 
 	std::ostringstream query;
-	query << "SELECT `id`, `password` FROM `accounts` WHERE `name` = " << db->escapeString(accountName);
+	query << "SELECT `id`, `password`, `secret` FROM `accounts` WHERE `name` = " << db->escapeString(accountName);
 	DBResult_ptr result = db->storeQuery(query.str());
 	if (!result) {
 		return 0;
+	}
+
+	std::string secret = decodeSecret(result->getString("secret"));
+	if (!secret.empty()) {
+		if (token.empty()) {
+			return 0;
+		}
+
+		bool tokenValid = token == generateToken(secret, tokenTime) || token == generateToken(secret, tokenTime - 1) || token == generateToken(secret, tokenTime + 1);
+		if (!tokenValid) {
+			return 0;
+		}
 	}
 
 	if (transformToSHA1(password) != result->getString("password")) {
@@ -375,7 +385,7 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 
 	static const std::string skillNames[] = {"skill_fist", "skill_club", "skill_sword", "skill_axe", "skill_dist", "skill_shielding", "skill_fishing"};
 	static const std::string skillNameTries[] = {"skill_fist_tries", "skill_club_tries", "skill_sword_tries", "skill_axe_tries", "skill_dist_tries", "skill_shielding_tries", "skill_fishing_tries"};
-	static const size_t size = sizeof(skillNames) / sizeof(std::string);
+	static constexpr size_t size = sizeof(skillNames) / sizeof(std::string);
 	for (uint8_t i = 0; i < size; ++i) {
 		uint16_t skillLevel = result->getNumber<uint16_t>(skillNames[i]);
 		uint64_t skillTries = result->getNumber<uint64_t>(skillNameTries[i]);
@@ -464,7 +474,7 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 			const std::pair<Item*, int32_t>& pair = it->second;
 			Item* item = pair.first;
 			int32_t pid = pair.second;
-			if (pid >= 1 && pid <= 11) {
+			if (pid >= 1 && pid <= 10) {
 				player->internalAddThing(pid, item);
 			} else {
 				ItemMap::const_iterator it2 = itemMap.find(pid);
@@ -478,10 +488,6 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 				}
 			}
 		}
-	}
-
-	if (!player->inventory[CONST_SLOT_STORE_INBOX]) {
-		player->internalAddThing(CONST_SLOT_STORE_INBOX, Item::CreateItem(ITEM_STORE_INBOX));
 	}
 
 	//load depot items
@@ -516,54 +522,6 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 		}
 	}
 
-	//load reward chest items
-	itemMap.clear();
-	
-	query.str(std::string());
-	query << "SELECT `pid`, `sid`, `itemtype`, `count`, `attributes` FROM `player_rewards` WHERE `player_id` = " << player->getGUID() << " ORDER BY `sid` DESC";
-	if ((result = db->storeQuery(query.str()))) {
-		loadItems(itemMap, result);
-		
-		//first loop handles the reward containers to retrieve its date attribute
-		//for (ItemMap::iterator it = itemMap.begin(), end = itemMap.end(); it != end; ++it) {
-		for (auto& it : itemMap) {
-			const std::pair<Item*, int32_t>& pair = it.second;
-			Item* item = pair.first;
-			
-			int32_t pid = pair.second;
-			if (pid >= 0 && pid < 100) {
-				Reward* reward = player->getReward(item->getIntAttr(ITEM_ATTRIBUTE_DATE), true);
-				if (reward) {
-					it.second = std::pair<Item*, int32_t>(reward->getItem(), pid); //update the map with the special reward container
-				}
-			} else {
-				break;
-			}
-		}
-		
-		//second loop (this time a reverse one) to insert the items in the correct order
-		//for (ItemMap::const_reverse_iterator it = itemMap.rbegin(), end = itemMap.rend(); it != end; ++it) {
-		for (const auto& it : boost::adaptors::reverse(itemMap)) {
-			const std::pair<Item*, int32_t>& pair = it.second;
-			Item* item = pair.first;
-			
-			int32_t pid = pair.second;
-			if (pid >= 0 && pid < 100) {
-				break;
-			}
-	
-			ItemMap::const_iterator it2 = itemMap.find(pid);
-			if (it2 == itemMap.end()) {
-				continue;
-			}
-
-			Container* container = it2->second.first->getContainer();
-			if (container) {
-				container->internalAddThing(item);
-			}
-		}
-	}
-	
 	//load inbox items
 	itemMap.clear();
 
@@ -835,7 +793,7 @@ bool IOLoginData::savePlayer(Player* player)
 	DBInsert itemsQuery("INSERT INTO `player_items` (`player_id`, `pid`, `sid`, `itemtype`, `count`, `attributes`) VALUES ");
 
 	ItemBlockList itemList;
-	for (int32_t slotId = 1; slotId <= 11; ++slotId) {
+	for (int32_t slotId = 1; slotId <= 10; ++slotId) {
 		Item* item = player->inventory[slotId];
 		if (item) {
 			itemList.emplace_back(slotId, item);
@@ -870,35 +828,6 @@ bool IOLoginData::savePlayer(Player* player)
 		}
 	}
 
-	//save reward items
-	query.str(std::string());
-	query << "DELETE FROM `player_rewards` WHERE `player_id` = " << player->getGUID();
-	
-	if (!db->executeQuery(query.str())) {
-		return false;
-	}
-	
-	std::vector<uint32_t> rewardList;
-	player->getRewardList(rewardList);
-	
-	if (!rewardList.empty()) {
-		DBInsert rewardQuery("INSERT INTO `player_rewards` (`player_id`, `pid`, `sid`, `itemtype`, `count`, `attributes`) VALUES ");
-		itemList.clear();
-		
-		int running = 0;
-		for (const auto& rewardId : rewardList) {
-			Reward* reward = player->getReward(rewardId, false);
-			// rewards that are empty or older than 7 days aren't stored
-			if (!reward->empty() && (time(nullptr) - rewardId <= 60 * 60 * 24 * 7)) {
-				itemList.emplace_back(++running, reward);
-			}
-		}
-	
-			if (!saveItems(player, itemList, rewardQuery, propWriteStream)) {
-			return false;
-		}
-	}
-	
 	//save inbox items
 	query.str(std::string());
 	query << "DELETE FROM `player_inboxitems` WHERE `player_id` = " << player->getGUID();

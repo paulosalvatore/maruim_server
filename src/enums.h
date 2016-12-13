@@ -138,7 +138,7 @@ enum RaceType_t : uint8_t {
 	RACE_ENERGY,
 };
 
-enum CombatType_t {
+enum CombatType_t : uint16_t {
 	COMBAT_NONE = 0,
 
 	COMBAT_PHYSICALDAMAGE = 1 << 0,
@@ -247,19 +247,6 @@ enum skills_t : uint8_t {
 
 	SKILL_FIRST = SKILL_FIST,
 	SKILL_LAST = SKILL_FISHING
-};
-
-enum skillsStats_t : uint8_t {
-	SKILL_FIGHTFIST = 0,
-	SKILL_CRITICAL_HIT_CHANCE = 1,
-	SKILL_CRITICAL_HIT_DAMAGE = 2,
-	SKILL_LIFE_LEECH_CHANCE = 3,
-	SKILL_LIFE_LEECH_AMOUNT = 4,
-	SKILL_MANA_LEECH_CHANCE = 5,
-	SKILL_MANA_LEECH_AMOUNT = 6,
-
-	SKILL_STATS_FIRST = SKILL_FIGHTFIST,
-	SKILL_STATS_LAST = SKILL_MANA_LEECH_AMOUNT
 };
 
 enum stats_t {
@@ -398,11 +385,10 @@ enum ReturnValue {
 	RETURNVALUE_YOUNEEDAMAGICITEMTOCASTSPELL,
 	RETURNVALUE_CANNOTCONJUREITEMHERE,
 	RETURNVALUE_YOUNEEDTOSPLITYOURSPEARS,
-	RETURNVALUE_NAMEISTOOAMBIGIOUS,
+	RETURNVALUE_NAMEISTOOAMBIGUOUS,
 	RETURNVALUE_CANONLYUSEONESHIELD,
 	RETURNVALUE_NOPARTYMEMBERSINRANGE,
 	RETURNVALUE_YOUARENOTTHEOWNER,
-	RETURNVALUE_REWARDCHESTISEMPTY,
 };
 
 enum SpeechBubble_t
@@ -439,36 +425,21 @@ enum MapMark_t
 };
 
 struct Outfit_t {
-	Outfit_t() {
-		reset();
-	}
-
-	void reset() {
-		lookType = 0;
-		lookTypeEx = 0;
-		lookMount = 0;
-		lookHead = 0;
-		lookBody = 0;
-		lookLegs = 0;
-		lookFeet = 0;
-		lookAddons = 0;
-	}
-
-	uint16_t lookType;
-	uint16_t lookTypeEx;
-	uint16_t lookMount;
-	uint8_t lookHead;
-	uint8_t lookBody;
-	uint8_t lookLegs;
-	uint8_t lookFeet;
-	uint8_t lookAddons;
+	uint16_t lookType = 0;
+	uint16_t lookTypeEx = 0;
+	uint16_t lookMount = 0;
+	uint8_t lookHead = 0;
+	uint8_t lookBody = 0;
+	uint8_t lookLegs = 0;
+	uint8_t lookFeet = 0;
+	uint8_t lookAddons = 0;
 };
 
 struct LightInfo {
 	uint8_t level = 0;
 	uint8_t color = 0;
-	LightInfo() = default;
-	LightInfo(uint8_t level, uint8_t color) : level(level), color(color) {}
+	constexpr LightInfo() = default;
+	constexpr LightInfo(uint8_t level, uint8_t color) : level(level), color(color) {}
 };
 
 struct ShopInfo {
@@ -477,18 +448,16 @@ struct ShopInfo {
 	uint32_t buyPrice;
 	uint32_t sellPrice;
 	std::string realName;
-	uint32_t peso;
 
 	ShopInfo() {
 		itemId = 0;
 		subType = 1;
 		buyPrice = 0;
 		sellPrice = 0;
-		peso = 0;
 	}
 
-	ShopInfo(uint16_t itemId, int32_t subType = 0, uint32_t buyPrice = 0, uint32_t sellPrice = 0, std::string realName = "", uint32_t peso = 0)
-		: itemId(itemId), subType(subType), buyPrice(buyPrice), sellPrice(sellPrice), realName(realName), peso(peso) {}
+	ShopInfo(uint16_t itemId, int32_t subType = 0, uint32_t buyPrice = 0, uint32_t sellPrice = 0, std::string realName = "")
+		: itemId(itemId), subType(subType), buyPrice(buyPrice), sellPrice(sellPrice), realName(std::move(realName)) {}
 };
 
 struct MarketOffer {
@@ -549,7 +518,7 @@ struct ModalWindow
 	bool priority;
 
 	ModalWindow(uint32_t id, std::string title, std::string message)
-		: title(title), message(message), id(id), defaultEnterButton(0xFF), defaultEscapeButton(0xFF), priority(false) {}
+		: title(std::move(title)), message(std::move(message)), id(id), defaultEnterButton(0xFF), defaultEscapeButton(0xFF), priority(false) {}
 };
 
 enum CombatOrigin
