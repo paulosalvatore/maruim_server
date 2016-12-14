@@ -41,18 +41,6 @@ function onLogin(player)
 
 	-- Stamina
 	nextUseStaminaTime[player.uid] = 0
-	
-	-- Rewards notice
-	local rewards = #player:getRewardList()
-	if rewards > 0 then
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, string.format("You have %s %s in your reward chest.", rewards == 1 and 'one' or rewards, rewards > 1 and "rewards" or "reward"))
-	end
-
-	-- Update player id 
-	local stats = player:inBossFight()
-	if stats then
-		stats.playerId = player:getId()
-	end
 
 	-- Events
 	player:registerEvent("PrepareDeath")
@@ -60,7 +48,6 @@ function onLogin(player)
 	player:registerEvent("DropLoot")
 	player:registerEvent("MatarCriatura")
 	player:registerEvent("LevelUp")
-	player:registerEvent("BossParticipation")
 
 	if player:checarRecompensaPendente() then
 		player:registerEvent("RecompensaNivel")

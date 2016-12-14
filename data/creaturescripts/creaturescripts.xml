@@ -47,9 +47,4 @@
 
 	<!-- Horestis -->
 	<event type="death" name="Horestis" script="horestis.lua" />
-
-	<!-- Boss -->
-	<event type="death" name="BossDeath" script="boss.lua" />
-	<event type="healthchange" name="BossParticipation" script="boss.lua" />
-	<event type="think" name="BossThink" script="boss.lua" />
 </creaturescripts>
