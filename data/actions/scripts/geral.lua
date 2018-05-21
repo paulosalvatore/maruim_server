@@ -34,6 +34,7 @@ local config = {
 		},
 		[6574] = {
 			transformar = {8846, 1},
+			removerItem = 1,
 			efeito = {"hit"}
 		},
 		[2561] = {
