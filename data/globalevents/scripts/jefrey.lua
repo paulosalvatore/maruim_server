@@ -70,6 +70,6 @@ function iniciarJefrey()
 end
 
 function onThink(interval, lastExecution)
-	-- iniciarJefrey()
+	iniciarJefrey()
     return true
 end
